@@ -12,6 +12,10 @@ Dieses Repository enthält **Forschungscode, Offline-Beispiele und Messdaten**. 
 
 ## Was ist gemessen?
 
+**Im Kleinen haben wir es geschafft:** In den fünf geprüften, verkürzten SHA256d-Rechnungen mit 4 bis 16 Runden je Kompression hat die Kästchenmaschine alle acht unbekannten Noncebits aus der vorgegebenen Zielhash-Bedingung abgeleitet. Die gefundenen Eingaben wurden unabhängig nachgerechnet und bestätigt.
+
+**Beim vollständigen SHA256d steht dieser Nachweis noch aus.** Unsere verfügbare Rechenleistung und unsere Zeit begrenzen, welche größeren Versuche wir durchführen können. Die bisherigen vollständigen Läufe zeigen aber auch eine Grenze der getesteten Regeln: Selbst wenn sie bis zum Stillstand rechnen, bestimmen sie in diesen Fällen keine Noncebits. Deshalb ist bisher offen, ob mehr Rechenleistung allein genügt oder stärkere Ableitungsregeln nötig sind. Die kleinen Erfolge sind belegt; ein entsprechender Erfolg beim vollständigen Bitcoin-Verfahren ist noch nicht belegt.
+
 Alle Aussagen gelten für die jeweils genannten Vorlagen, freien Bits und Regeln. Zeiten sind Einzelmessungen auf Fables CPU-Umgebung, keine Leistungsversprechen.
 
 | Versuch | Vorgabe | Ergebnis | Beleg |
