@@ -95,6 +95,21 @@ Wenn euch die Arbeit interessiert, freue ich mich über Rückmeldungen, unabhän
 
 ### Sponsoren und Forschungspartner gesucht
 
+#### Welche Messungen eine Hardware-Schätzung braucht
+
+Unabhängige Noncegruppen lassen sich grundsätzlich parallel bearbeiten. Ob eine größere GPU-/CPU-Ausstattung den gewünschten Durchsatz erreicht, muss jedoch an der konkreten Implementierung gemessen werden. Die Gruppenzahl allein und schnelle kleine Kontrollfälle reichen dafür nicht aus. Dafür benötigen wir:
+
+- **Vollständige Laufzeit je Gruppe:** Aufbau beziehungsweise wiederverwendeter Aufbau, Datenübertragung, Propagation, weitere Verzweigungen und unabhängige Trefferprüfung; Mittelwert sowie Streuung und langsame Fälle, jeweils mit Hardware und Stapelgröße.
+- **Tatsächlich eingesparte Kandidatenprüfungen:** Wie viele der 256 Kandidaten werden bereits durch gemeinsame Ableitungen ausgeschlossen, wie viele müssen einzeln entschieden werden? Innere Einschränkungen und ein Fixpunkt allein belegen noch keine eingesparte Sucharbeit.
+- **Ergebnisanteile:** vollständig ausgeschlossene Gruppen, Gruppen mit bestätigten Treffern und weiterhin unentschiedene Gruppen (OPEN). Ein Fixpunkt ohne Entscheidung ist kein vollständig bearbeiteter Suchbereich.
+- **Gemessene Skalierung:** vollständig entschiedene Gruppen pro Sekunde bei einer und mehreren Recheneinheiten, einschließlich Speicherbedarf, Verteilung und Übertragungsaufwand. Für einen Suchvorteil ist außerdem ein Vergleich mit direkter SHA256d-Auswertung derselben Kandidaten auf vergleichbarer Hardware nötig.
+
+**Diese vollständige Durchsatz- und Skalierungsmessung liegt hier noch nicht vor.** In den dokumentierten Wurzeltests am vollständigen SHA256d mit acht freien Bits wurden keine Noncebits abgeleitet und keine Kandidaten ausgeschlossen. Daraus folgt weder eine schnelle vollständige Gruppenprüfung noch ein gemessener Hardwarebedarf. Beispielannahmen wie „50–200 Millisekunden pro Gruppe“ sind keine Ergebnisse dieses Projekts.
+
+Bei einem gemessenen Gesamtdurchsatz von **G vollständig entschiedenen Gruppen pro Sekunde** benötigt der gesamte 32-Bit-Noncebereich einer festen Vorlage rechnerisch **16.777.216 / G Sekunden**. Das setzt voraus, dass dieser Durchsatz über den Bereich gehalten wird; OPEN-Fälle müssen berücksichtigt werden. Diese Rechnung beschreibt den Prüfaufwand, nicht die Wahrscheinlichkeit eines Blockfunds.
+
+#### Was Unterstützung ermöglichen würde
+
 **Was mehr Rechenleistung nachweisen könnte:** Ein festgelegter, endlicher Suchbereich lässt sich mit ausreichender Rechenzeit und geeignetem Speicher vollständig untersuchen. Bei einer festen Blockvorlage umfasst der gesamte 32-Bit-Noncebereich 4.294.967.296 Kandidaten beziehungsweise 16.777.216 Gruppen mit jeweils acht freien Bits. Damit wäre ein vollständiger Vergleich möglich: Findet die Kästchenmaschine genau die gültigen Kandidaten, die eine unabhängige SHA256d-Referenz bestätigt, und welchen Rechenaufwand benötigt sie dafür? Unentschiedene Gruppen zählen dabei nicht als geprüft und müssten vollständig aufgelöst werden.
 
 **Ein solcher Korrektheitsnachweis ist grundsätzlich möglich; ein Blockfund ist nicht garantiert.** Auch ein vollständig geprüfter Bereich kann keinen Treffer enthalten. Für einen kontrollierten Versuch kann eine historische Vorlage mit bekanntem Treffer verwendet werden; das belegt die korrekte Suche in diesem Fall, aber keinen neuen Mainnet-Block und keinen Geschwindigkeitsvorteil. Mehr Ressourcen würden umfangreichere Nachweise und Messungen ermöglichen. Wie viel Hardware unsere konkrete Implementierung dafür benötigt und ob sie einen aktuellen Suchbereich rechtzeitig bewältigen kann, ist noch nicht bestimmt.
