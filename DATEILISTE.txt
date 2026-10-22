@@ -83,6 +83,7 @@ experimente/ergebnisse/ERGEBNIS_K3.json
 experimente/ergebnisse/ERGEBNIS_K4.json
 experimente/ergebnisse/ERGEBNIS_K5_ZEIT.json
 experimente/ergebnisse/ERGEBNIS_KOMPOSITION.json
+experimente/ergebnisse/ERGEBNIS_MINER_GENESIS_SEARCH.json
 experimente/ergebnisse/ERGEBNIS_P0.json
 experimente/ergebnisse/ERGEBNIS_P1.json
 experimente/ergebnisse/ERGEBNIS_P2F1.json

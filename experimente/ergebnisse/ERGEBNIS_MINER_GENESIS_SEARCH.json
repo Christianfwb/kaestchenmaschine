@@ -1,0 +1,317 @@
+{
+  "status": "OK",
+  "cases": [
+    {
+      "case": "exact_w1_known",
+      "start": 2083236892,
+      "count": 2,
+      "all_solutions": true,
+      "expected_nonces": [
+        2083236893
+      ],
+      "result": {
+        "status": "FOUND",
+        "nonces": [
+          2083236893
+        ],
+        "stats": {
+          "gpu_batches": 2,
+          "propagated_groups": 3,
+          "rejected_groups": 1,
+          "split_groups": 1,
+          "inferred_nonce_bits": 0,
+          "verified_witnesses": 1,
+          "unresolved_groups": 0,
+          "peak_frontier": 2,
+          "requested_inputs": 2,
+          "seconds": 1.148701899976004
+        },
+        "complete": true,
+        "open_groups": [],
+        "search_method": "GPU domain propagation and branching",
+        "nonce": 2083236893,
+        "hash": "000000000019d6689c085ae165831e934ff763ae46a2a6c172b3f1b60a8ce26f"
+      },
+      "elapsed_seconds": 1.1496965999831446
+    },
+    {
+      "case": "exact_w1_empty",
+      "start": 2083236894,
+      "count": 2,
+      "all_solutions": true,
+      "expected_nonces": [],
+      "result": {
+        "status": "EXHAUSTED",
+        "nonces": [],
+        "stats": {
+          "gpu_batches": 2,
+          "propagated_groups": 3,
+          "rejected_groups": 2,
+          "split_groups": 1,
+          "inferred_nonce_bits": 0,
+          "verified_witnesses": 0,
+          "unresolved_groups": 0,
+          "peak_frontier": 2,
+          "requested_inputs": 2,
+          "seconds": 0.8041720999754034
+        },
+        "complete": true,
+        "open_groups": [],
+        "search_method": "GPU domain propagation and branching"
+      },
+      "elapsed_seconds": 0.8044922000262886
+    },
+    {
+      "case": "exact_w2_known",
+      "start": 2083236892,
+      "count": 4,
+      "all_solutions": true,
+      "expected_nonces": [
+        2083236893
+      ],
+      "result": {
+        "status": "FOUND",
+        "nonces": [
+          2083236893
+        ],
+        "stats": {
+          "gpu_batches": 3,
+          "propagated_groups": 7,
+          "rejected_groups": 3,
+          "split_groups": 3,
+          "inferred_nonce_bits": 0,
+          "verified_witnesses": 1,
+          "unresolved_groups": 0,
+          "peak_frontier": 4,
+          "requested_inputs": 4,
+          "seconds": 1.6375620000180788
+        },
+        "complete": true,
+        "open_groups": [],
+        "search_method": "GPU domain propagation and branching",
+        "nonce": 2083236893,
+        "hash": "000000000019d6689c085ae165831e934ff763ae46a2a6c172b3f1b60a8ce26f"
+      },
+      "elapsed_seconds": 1.6381088999914937
+    },
+    {
+      "case": "exact_w2_empty",
+      "start": 2083236888,
+      "count": 4,
+      "all_solutions": true,
+      "expected_nonces": [],
+      "result": {
+        "status": "EXHAUSTED",
+        "nonces": [],
+        "stats": {
+          "gpu_batches": 3,
+          "propagated_groups": 7,
+          "rejected_groups": 4,
+          "split_groups": 3,
+          "inferred_nonce_bits": 0,
+          "verified_witnesses": 0,
+          "unresolved_groups": 0,
+          "peak_frontier": 4,
+          "requested_inputs": 4,
+          "seconds": 1.391170700022485
+        },
+        "complete": true,
+        "open_groups": [],
+        "search_method": "GPU domain propagation and branching"
+      },
+      "elapsed_seconds": 1.3915860999841243
+    },
+    {
+      "case": "exact_w3_known",
+      "start": 2083236888,
+      "count": 8,
+      "all_solutions": true,
+      "expected_nonces": [
+        2083236893
+      ],
+      "result": {
+        "status": "FOUND",
+        "nonces": [
+          2083236893
+        ],
+        "stats": {
+          "gpu_batches": 4,
+          "propagated_groups": 15,
+          "rejected_groups": 7,
+          "split_groups": 7,
+          "inferred_nonce_bits": 0,
+          "verified_witnesses": 1,
+          "unresolved_groups": 0,
+          "peak_frontier": 8,
+          "requested_inputs": 8,
+          "seconds": 2.235992999980226
+        },
+        "complete": true,
+        "open_groups": [],
+        "search_method": "GPU domain propagation and branching",
+        "nonce": 2083236893,
+        "hash": "000000000019d6689c085ae165831e934ff763ae46a2a6c172b3f1b60a8ce26f"
+      },
+      "elapsed_seconds": 2.2365700000082143
+    },
+    {
+      "case": "exact_w3_empty",
+      "start": 2083236880,
+      "count": 8,
+      "all_solutions": true,
+      "expected_nonces": [],
+      "result": {
+        "status": "EXHAUSTED",
+        "nonces": [],
+        "stats": {
+          "gpu_batches": 4,
+          "propagated_groups": 15,
+          "rejected_groups": 8,
+          "split_groups": 7,
+          "inferred_nonce_bits": 0,
+          "verified_witnesses": 0,
+          "unresolved_groups": 0,
+          "peak_frontier": 8,
+          "requested_inputs": 8,
+          "seconds": 2.058039999974426
+        },
+        "complete": true,
+        "open_groups": [],
+        "search_method": "GPU domain propagation and branching"
+      },
+      "elapsed_seconds": 2.0584574000095017
+    },
+    {
+      "case": "exact_unaligned_partial",
+      "start": 2083236891,
+      "count": 5,
+      "all_solutions": true,
+      "expected_nonces": [
+        2083236893
+      ],
+      "result": {
+        "status": "FOUND",
+        "nonces": [
+          2083236893
+        ],
+        "stats": {
+          "gpu_batches": 3,
+          "propagated_groups": 8,
+          "rejected_groups": 4,
+          "split_groups": 3,
+          "inferred_nonce_bits": 0,
+          "verified_witnesses": 1,
+          "unresolved_groups": 0,
+          "peak_frontier": 4,
+          "requested_inputs": 5,
+          "seconds": 1.5908585999859497
+        },
+        "complete": true,
+        "open_groups": [],
+        "search_method": "GPU domain propagation and branching",
+        "nonce": 2083236893,
+        "hash": "000000000019d6689c085ae165831e934ff763ae46a2a6c172b3f1b60a8ce26f"
+      },
+      "elapsed_seconds": 1.5912166999769397
+    },
+    {
+      "case": "first_hit_256",
+      "start": 2083236864,
+      "count": 256,
+      "all_solutions": false,
+      "expected_nonces": [
+        2083236893
+      ],
+      "result": {
+        "status": "FOUND",
+        "nonces": [
+          2083236893
+        ],
+        "stats": {
+          "gpu_batches": 12,
+          "propagated_groups": 447,
+          "rejected_groups": 184,
+          "split_groups": 255,
+          "inferred_nonce_bits": 0,
+          "verified_witnesses": 1,
+          "unresolved_groups": 0,
+          "peak_frontier": 256,
+          "requested_inputs": 256,
+          "seconds": 8.674323000013828
+        },
+        "complete": false,
+        "open_groups": [],
+        "search_method": "GPU domain propagation and branching",
+        "nonce": 2083236893,
+        "hash": "000000000019d6689c085ae165831e934ff763ae46a2a6c172b3f1b60a8ce26f"
+      },
+      "elapsed_seconds": 8.675698999955785
+    },
+    {
+      "case": "exhausted_256",
+      "start": 2083237120,
+      "count": 256,
+      "all_solutions": false,
+      "expected_nonces": [],
+      "result": {
+        "status": "EXHAUSTED",
+        "nonces": [],
+        "stats": {
+          "gpu_batches": 13,
+          "propagated_groups": 511,
+          "rejected_groups": 256,
+          "split_groups": 255,
+          "inferred_nonce_bits": 0,
+          "verified_witnesses": 0,
+          "unresolved_groups": 0,
+          "peak_frontier": 256,
+          "requested_inputs": 256,
+          "seconds": 8.86536390002584
+        },
+        "complete": true,
+        "open_groups": [],
+        "search_method": "GPU domain propagation and branching"
+      },
+      "elapsed_seconds": 8.866332600009628
+    },
+    {
+      "case": "injected_limit_open_not_discarded",
+      "result": {
+        "status": "OPEN",
+        "nonces": [],
+        "stats": {
+          "gpu_batches": 2,
+          "propagated_groups": 3,
+          "rejected_groups": 0,
+          "split_groups": 1,
+          "inferred_nonce_bits": 0,
+          "verified_witnesses": 0,
+          "unresolved_groups": 2,
+          "peak_frontier": 2,
+          "requested_inputs": 2,
+          "seconds": 0.021937799989245832
+        },
+        "complete": false,
+        "open_groups": [
+          [
+            2083236892,
+            0
+          ],
+          [
+            2083236893,
+            0
+          ]
+        ],
+        "search_method": "GPU domain propagation and branching"
+      }
+    },
+    {
+      "case": "stop_before_prepare_and_after_propagation",
+      "status": "OK"
+    }
+  ],
+  "live_rpc": false,
+  "submissions": 0,
+  "sat_or_forward_fallback_imports": false,
+  "scope": "Complete small-group sets and first-hit/exhaustion at256; test-only hashlib oracle."
+}
