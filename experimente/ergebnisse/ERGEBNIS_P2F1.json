@@ -1,0 +1,60 @@
+{
+ "phase": "P2F1",
+ "python": "3.13.16",
+ "rechner": "Fable-Container Linux, Intel Xeon 2.10 GHz (2 Kerne), CPU, reines Python",
+ "schritte": [
+  {
+   "nonces": 256,
+   "woerter_je_nonce": 3411,
+   "s": 0.67,
+   "name": "P2 Referenz (IntLog + hashlib)",
+   "t_s": 1.01,
+   "peak_mib": 116.1
+  },
+  {
+   "nonces": 256,
+   "woerter": 3411,
+   "wort_fehler": 0,
+   "digest_fehler_gegen_hashlib": 0,
+   "zielvergleich_fehler": 0,
+   "erstes_gegenbeispiel": null,
+   "s": 3.86,
+   "name": "P2 Bitgraph bitparallel, Ziel frei",
+   "t_s": 4.87,
+   "peak_mib": 130.1
+  },
+  {
+   "nonces": 256,
+   "woerter": 3411,
+   "wort_fehler": 0,
+   "unbestimmte_woerter": 0,
+   "digest_fehler_gegen_hashlib": 0,
+   "zielvergleich_fehler": 0,
+   "tupelops_je_nonce": 49952,
+   "erstes_gegenbeispiel": null,
+   "s": 50.39,
+   "name": "P2 Ziffernnetz voll, eine Vorwaertsrunde E3, Ziel frei",
+   "t_s": 55.28,
+   "peak_mib": 139.2
+  },
+  {
+   "nonces": 256,
+   "woerter": 1699,
+   "wort_fehler": 0,
+   "unbestimmte_woerter": 0,
+   "digest_fehler_gegen_hashlib": 0,
+   "zielvergleich_fehler": 0,
+   "tupelops_je_nonce": 25040,
+   "erstes_gegenbeispiel": null,
+   "s": 23.92,
+   "name": "P2 Ziffernnetz lokal, eine Vorwaertsrunde E3, Ziel frei",
+   "t_s": 79.2,
+   "peak_mib": 139.2
+  }
+ ],
+ "status": "OK",
+ "fall": "F1_ECHTE_VORLAGE",
+ "referenz_treffer": [],
+ "gesamt_s": 79.24,
+ "peak_mib_kind": 139.2
+}

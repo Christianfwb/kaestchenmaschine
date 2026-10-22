@@ -1,0 +1,24 @@
+FABLE AN GHOST – VORRATSDATENBANK (Christians Idee): EINSCHAETZUNG UND 16-BIT-MODELLVERSUCH, 2026-10-22
+Nur Modell (Mini-SHA, 4 Register x 4 Bit, 8 Runden, gleiche Bauart, zweimal angewandt, Ziel 1 zu 16), CPU, 70 s, Python 3.13.16,
+Fable-Container. Kein echter Lauf, kein Miner-Eingriff. Nachrechnen: python -I vorrat_modell.py. Einschaetzung (Diskussion) im Chat an Christian.
+
+== KERN ==========================================================================================================================
+Vorlagenunabhaengig speicherbar ist nur die zweite Anwendung (Eingabe H1, Start = Konstanten). Dort ist jeder gueltige Eintrag so
+teuer wie ein Block. Die erste Anwendung haengt am Midstate (Vorgaengerhash + Merkle), der verfaellt mit jedem Block. Rueckwaerts
+rechnen geht Runde fuer Runde, aber der Startzustand ergibt sich dabei, er wird nicht gewaehlt – ein Eintrag nuetzt nur, wenn
+eine spaetere Vorlage (oder ein per Coinbase erzeugter Midstate) genau diesen 256-Bit-Zustand trifft: 1 zu 2^256 je Eintrag
+gegenueber 1 zu 2^78 beim direkten Suchen. Der Vorrat verlegt die Lotterie vom Ende (Target, 78 Bit) zum Anfang (Startzustand,
+256 Bit). Anzahl moeglicher Blockhashes 2^178 – endlich, aber nicht erfassbar.
+
+== MODELL (16-Bit-Labor) =========================================================================================================
+A  zweite Anwendung rueckwaerts (Ende + Woerter gewaehlt, Start muss Konstanten treffen): 200 000 Eintraege, 4 Treffer (erwartet 3,
+   1 zu 65 536). Direkt vorwaerts: 16 Versuche je gueltigem H1. Rueckwaerts ist hier 4 096-mal teurer als vorwaerts.
+B  erste Anwendung, Vorrat (Startzustand, Merkle-Ende, Zeit) -> Nonce, 2 000 neue Vorlagen, direkt = 34 Kompressionen je Block:
+   Vorrat      256 Eintraege (   16 gueltig):   0 nachschlagbar, Vorarbeit     768
+   Vorrat    4 096 Eintraege (  241 gueltig):   0 nachschlagbar, Vorarbeit  12 288
+   Vorrat   65 536 Eintraege (4 006 gueltig):   1 nachschlagbar, Vorarbeit 196 608
+   Vorrat 1 048 576 Eintraege (65 531 gueltig): 8 nachschlagbar, Vorarbeit 3 145 728  (= 393 000 je nachgeschlagenem Block)
+   Beim Erzeugen stimmt nur 1 von 16 Rueckrechnungen (Ziel muss nach dem sich ergebenden Start nachgeprueft werden) – kein Vorteil
+   auch beim Erzeugen. Beispiel-Eintrag: Start=f8f8 Merkle=6 Zeit=9 -> Nonce=4 (Nachweis H1=4be9 -> H2=0207).
+Christian hat die Idee nach den Zahlen zurueckgestellt ("war nur eine Idee"). Kein Folgeauftrag. Ich warte auf die Pruefung des
+Zielhash-Versuchs (FABLE_AN_GHOST_ZIELHASH_VERSUCH_20261022).

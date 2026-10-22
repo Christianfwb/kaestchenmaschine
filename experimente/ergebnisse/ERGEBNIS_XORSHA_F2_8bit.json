@@ -1,0 +1,65 @@
+{
+ "fall": "F2",
+ "freie_bits": 8,
+ "python": "3.13.16",
+ "rechner": "Fable-Container Linux, Intel Xeon 2.10 GHz (2 Kerne), CPU",
+ "status": "OK",
+ "schritte": [
+  {
+   "graphknoten": 207833,
+   "und_gatter": 74525,
+   "xor_gatter": 133298,
+   "wurzel": "Gatterknoten",
+   "name": "Aufbau",
+   "t_s": 0.25,
+   "peak_mib": 53.2
+  },
+  {
+   "status": "FIXPUNKT",
+   "sweeps": 4,
+   "feste_knoten": 230,
+   "s": 1.44,
+   "name": "E1 mit Zielbedingung (liefert die festen Werte)",
+   "t_s": 1.69,
+   "peak_mib": 53.3
+  },
+  {
+   "basisvektoren": 74534,
+   "davon_und_ausgaenge": 74525,
+   "xor_formen": 133298,
+   "mittlere_termzahl_xor_formen": 11381.08,
+   "max_termzahl": 36011,
+   "max_gleichzeitig_gehaltene_formen": 1861,
+   "s": 13.5,
+   "name": "Affine Formen (Referenzzaehlung, nur lebende Formen gehalten)",
+   "t_s": 15.23,
+   "peak_mib": 74.4
+  },
+  {
+   "gleichungen": 231,
+   "rang": 120,
+   "eliminationsschritte": 268,
+   "widerspruch": false,
+   "abgeleitete_eingangsbeziehungen": [],
+   "und_variablen_in_reduzierten_gleichungen": 69346,
+   "s": 10.68,
+   "name": "Gauss-Elimination",
+   "t_s": 25.91,
+   "peak_mib": 76.4
+  }
+ ],
+ "ergebnis": {
+  "widerspruch": false,
+  "abgeleitete_eingangsbeziehungen": [],
+  "rang": 120,
+  "gleichungen": 231,
+  "orakel_gueltige_kandidaten": [
+   2083236893
+  ],
+  "orakel_unloesbar": false,
+  "sound": true,
+  "lesart": "keine Eingangsbeziehung und kein Widerspruch aus den XOR-Gleichungen (bei dieser Lockerung)"
+ },
+ "gesamt_s": 25.92,
+ "peak_mib": 76.4
+}

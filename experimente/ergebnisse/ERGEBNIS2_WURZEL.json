@@ -1,0 +1,82 @@
+{
+ "stufe": "1b Wurzeltest Array-Paare",
+ "beginn": "2026-10-22 17:28:15",
+ "python": "3.13.16",
+ "grenze": {
+  "zeit_s": 600.0,
+  "ram_mib": 400.0,
+  "paare": 2500000
+ },
+ "auswertungen": [
+  {
+   "art": "E1",
+   "fall": "F1",
+   "status": "OK",
+   "abbruchgrund": null,
+   "wall_s": 1.9,
+   "peak_rss_mib_extern": 68.9,
+   "rueckgabe": 0,
+   "ausgabe": "ERGEBNIS2_E1_F1.json",
+   "ergebnis_status": "FIXPUNKT",
+   "fehler": null,
+   "letzter_schritt": "E1 Wurzel (Ziel = 1)"
+  },
+  {
+   "art": "E1",
+   "fall": "F2",
+   "status": "OK",
+   "abbruchgrund": null,
+   "wall_s": 1.8,
+   "peak_rss_mib_extern": 68.9,
+   "rueckgabe": 0,
+   "ausgabe": "ERGEBNIS2_E1_F2.json",
+   "ergebnis_status": "FIXPUNKT",
+   "fehler": null,
+   "letzter_schritt": "E1 Wurzel (Ziel = 1)"
+  },
+  {
+   "art": "E4",
+   "fall": "F1",
+   "status": "OK",
+   "abbruchgrund": null,
+   "wall_s": 155.1,
+   "peak_rss_mib_extern": 383.9,
+   "rueckgabe": 0,
+   "ausgabe": "ERGEBNIS2_E4_F1.json",
+   "ergebnis_status": "FIXPUNKT",
+   "fehler": null,
+   "letzter_schritt": "Austausch 2 E1"
+  },
+  {
+   "art": "E4",
+   "fall": "F2",
+   "status": "OFFEN",
+   "abbruchgrund": "RAM 407 MiB > 400",
+   "wall_s": 151.6,
+   "peak_rss_mib_extern": 407.4,
+   "rueckgabe": -9,
+   "ausgabe": "ERGEBNIS2_E4_F2.json",
+   "ergebnis_status": null,
+   "fehler": null,
+   "letzter_schritt": "Austausch 2 E1"
+  },
+  {
+   "art": "E4D",
+   "fall": "F1",
+   "status": "NOT_RUN",
+   "grund": "Basis F2 extern abgebrochen: RAM 407 MiB > 400"
+  },
+  {
+   "art": "E4D",
+   "fall": "F2",
+   "status": "NOT_RUN",
+   "grund": "Basis F2 extern abgebrochen: RAM 407 MiB > 400"
+  }
+ ],
+ "gate": {
+  "freigabe": false,
+  "grund": "Basis F2 extern abgebrochen: RAM 407 MiB > 400"
+ },
+ "ende": "2026-10-22 17:33:26",
+ "gesamt_wall_s": 310.4
+}

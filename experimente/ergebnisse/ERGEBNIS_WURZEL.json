@@ -1,0 +1,86 @@
+{
+ "stufe": "1 Wurzeltest",
+ "beginn": "2026-10-22 17:07:57",
+ "python": "3.13.16",
+ "grenze": {
+  "zeit_s": 600.0,
+  "ram_mib": 400.0,
+  "paare": 500000
+ },
+ "auswertungen": [
+  {
+   "art": "E1",
+   "fall": "F1",
+   "status": "OK",
+   "abbruchgrund": null,
+   "wall_s": 2.2,
+   "peak_rss_mib_extern": 53.9,
+   "rueckgabe": 0,
+   "ausgabe": "ERGEBNIS_E1_F1.json",
+   "ergebnis_status": "FIXPUNKT",
+   "letzter_schritt": "E1 Wurzel (Ziel = 1)"
+  },
+  {
+   "art": "E1",
+   "fall": "F2",
+   "status": "OK",
+   "abbruchgrund": null,
+   "wall_s": 1.8,
+   "peak_rss_mib_extern": 55.5,
+   "rueckgabe": 0,
+   "ausgabe": "ERGEBNIS_E1_F2.json",
+   "ergebnis_status": "FIXPUNKT",
+   "letzter_schritt": "E1 Wurzel (Ziel = 1)"
+  },
+  {
+   "art": "E4",
+   "fall": "F1",
+   "status": "OK",
+   "abbruchgrund": null,
+   "wall_s": 13.1,
+   "peak_rss_mib_extern": 244.6,
+   "rueckgabe": 0,
+   "ausgabe": "ERGEBNIS_E4_F1.json",
+   "ergebnis_status": "OPEN",
+   "letzter_schritt": "Austausch 1 E4"
+  },
+  {
+   "art": "E4",
+   "fall": "F2",
+   "status": "OK",
+   "abbruchgrund": null,
+   "wall_s": 12.0,
+   "peak_rss_mib_extern": 246.5,
+   "rueckgabe": 0,
+   "ausgabe": "ERGEBNIS_E4_F2.json",
+   "ergebnis_status": "OPEN",
+   "letzter_schritt": "Austausch 1 E4"
+  },
+  {
+   "art": "E4D",
+   "fall": "F1",
+   "status": "OK",
+   "abbruchgrund": null,
+   "wall_s": 60.1,
+   "peak_rss_mib_extern": 248.4,
+   "rueckgabe": 0,
+   "ausgabe": "ERGEBNIS_E4D_F1.json",
+   "ergebnis_status": "OPEN",
+   "letzter_schritt": "Austausch 1 E4"
+  },
+  {
+   "art": "E4D",
+   "fall": "F2",
+   "status": "OK",
+   "abbruchgrund": null,
+   "wall_s": 56.0,
+   "peak_rss_mib_extern": 249.1,
+   "rueckgabe": 0,
+   "ausgabe": "ERGEBNIS_E4D_F2.json",
+   "ergebnis_status": "OPEN",
+   "letzter_schritt": "Austausch 1 E4"
+  }
+ ],
+ "ende": "2026-10-22 17:10:22",
+ "gesamt_wall_s": 145.2
+}

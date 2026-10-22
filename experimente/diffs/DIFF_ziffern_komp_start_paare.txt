@@ -1,0 +1,27 @@
+--- alt/ziffern_komp.py	2026-10-22 17:55:39.842717913 +0900
++++ ziffern_komp.py	2026-10-22 18:05:35.263775992 +0900
+@@ -37,12 +37,23 @@
+         m |= r << (vx * gz)
+     return m
+ 
+-def e4(N, dom=None, max_runden=200, max_paare=20000, pruef=None, nachpruefung=False):
++def e4(N, dom=None, max_runden=200, max_paare=20000, pruef=None, nachpruefung=False, start_paare=None):
++    """start_paare (optional, 2026-10-22): zusaetzlich vorgegebene Paarmasken (z. B. Auffrischer vom Kettenende, kette.py).
++    Sie werden nach dem Anlegen der Grundpaare hineingeschnitten bzw. angelegt; alles Weitere unveraendert. Nur Schnitte -> sound.
++    start_paare=None ergibt exakt das bisherige Verhalten."""
+     st, dom, _, info0 = e3(N, dom, max_runden=max_runden, pruef=pruef)
+     if st != 'FIXPUNKT': return st, dom, {}, dict(runden=info0['runden'], tupelops=info0['tupelops'], paare=0, phase='E3-Vorpropagation')
+     gr = N.groesse
+     paare, bez_mit, pst = grundpaare(N, dom, max_paare)
+     if pst != 'OK': return pst, dom, paare, dict(runden=0, tupelops=info0['tupelops'], paare=len(paare), phase='Grundpaare')
++    if start_paare:
++        for (x, y), m in start_paare.items():
++            alt = paare.get((x, y))
++            if alt is None:
++                if len(paare) >= max_paare: return 'OPEN_PAARGRENZE', dom, paare, dict(runden=0, tupelops=info0['tupelops'], paare=len(paare), phase='Auffrischer anlegen')
++                paare[(x, y)] = m
++            else: paare[(x, y)] = alt & m
++            if paare[(x, y)] == 0: return 'WIDERSPRUCH', dom, paare, dict(runden=0, tupelops=info0['tupelops'], paare=len(paare), phase='Auffrischer')
+     basis_nb = {}
+     for (x, y) in paare: basis_nb.setdefault(x, set()).add(y); basis_nb.setdefault(y, set()).add(x)
+     bez = []

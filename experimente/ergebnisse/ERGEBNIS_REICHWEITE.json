@@ -1,0 +1,262 @@
+{
+ "erstellt": "2026-10-22",
+ "python": "3.13.16",
+ "rechner": "Fable-Container Linux, Intel Xeon 2.10 GHz (2 Kerne), CPU, reines Python",
+ "messungen": {
+  "M1_auffrischer": {
+   "beschreibung": "Auffrisch-Kaestchen am Ende der Rechenketten (Uebertragsketten, Zielkette): Beziehung Anfang<->Ende durch Verkettung aller Glieder, sound (nur Schnitte). Gemessen: aendern die neuen Langstreckenbeziehungen etwas?",
+   "ergebnis": {
+    "2_runden": {
+     "variablen": 958,
+     "beziehungen": 512,
+     "basis_status": "FIXPUNKT",
+     "basis_paare": 14996,
+     "basis_s": 0.51,
+     "rechenketten": 14,
+     "kettenlaengen": [
+      17
+     ],
+     "auffrisch_runden": 2,
+     "neue_langstreckenpaare": 0,
+     "geaenderte_paare": 0,
+     "abbruch": null,
+     "domaenen_enger_durch_auffrischen": 0
+    },
+    "6_runden": {
+     "variablen": 2586,
+     "beziehungen": 1536,
+     "basis_status": "FIXPUNKT",
+     "basis_paare": 58532,
+     "basis_s": 0.94,
+     "rechenketten": 42,
+     "kettenlaengen": [
+      17
+     ],
+     "auffrisch_runden": 1,
+     "neue_langstreckenpaare": 630,
+     "geaenderte_paare": 630,
+     "abbruch": "OPEN_PAARGRENZE",
+     "domaenen_enger_durch_auffrischen": 0
+    }
+   },
+   "peak_mib": 135.7,
+   "t_s": 12.3
+  },
+  "M2_reichweite_F1": {
+   "beschreibung": "Echte Vorlage F1, U-voll, echtes Target (78 Nullbits), 8 freie Noncebits, Ziel gesetzt, nur E3 (ohne Paare).",
+   "e3_status": "FIXPUNKT",
+   "e3_s": 4.5,
+   "zielkette_eingeschraenkt": 39,
+   "zielkette_gesamt": 129,
+   "digest2_enger_je_wort": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    8,
+    16,
+    16
+   ],
+   "rueckwaerts_letzte_beruehrte_runde": 63,
+   "rueckwaerts_frueheste_beruehrte_runde": 61,
+   "rueckwaerts_profil": [
+    {
+     "runde": 64,
+     "a_enger": 0,
+     "a_fest": 0,
+     "e_enger": 0,
+     "e_fest": 0
+    },
+    {
+     "runde": 63,
+     "a_enger": 0,
+     "a_fest": 0,
+     "e_enger": 8,
+     "e_fest": 6
+    },
+    {
+     "runde": 62,
+     "a_enger": 0,
+     "a_fest": 0,
+     "e_enger": 16,
+     "e_fest": 16
+    },
+    {
+     "runde": 61,
+     "a_enger": 0,
+     "a_fest": 0,
+     "e_enger": 16,
+     "e_fest": 16
+    },
+    {
+     "runde": 60,
+     "a_enger": 0,
+     "a_fest": 0,
+     "e_enger": 0,
+     "e_fest": 0
+    },
+    {
+     "runde": 59,
+     "a_enger": 0,
+     "a_fest": 0,
+     "e_enger": 0,
+     "e_fest": 0
+    },
+    {
+     "runde": 58,
+     "a_enger": 0,
+     "a_fest": 0,
+     "e_enger": 0,
+     "e_fest": 0
+    },
+    {
+     "runde": 57,
+     "a_enger": 0,
+     "a_fest": 0,
+     "e_enger": 0,
+     "e_fest": 0
+    }
+   ],
+   "vorwaerts_letzte_bestimmte_runde": 4,
+   "vorwaerts_profil": [
+    {
+     "runde": 1,
+     "a_offen": 0,
+     "e_offen": 0
+    },
+    {
+     "runde": 2,
+     "a_offen": 0,
+     "e_offen": 0
+    },
+    {
+     "runde": 3,
+     "a_offen": 0,
+     "e_offen": 0
+    },
+    {
+     "runde": 4,
+     "a_offen": 4,
+     "e_offen": 4
+    },
+    {
+     "runde": 5,
+     "a_offen": 16,
+     "e_offen": 16
+    },
+    {
+     "runde": 6,
+     "a_offen": 16,
+     "e_offen": 16
+    },
+    {
+     "runde": 7,
+     "a_offen": 16,
+     "e_offen": 16
+    },
+    {
+     "runde": 8,
+     "a_offen": 16,
+     "e_offen": 16
+    }
+   ],
+   "luecke_runden": 120,
+   "nonce_wort_enger": 0,
+   "digest1_offen": [
+    16,
+    16,
+    16,
+    16,
+    16,
+    16,
+    16,
+    16
+   ],
+   "peak_mib": 143.1
+  },
+  "M3_gruppengroesse": {
+   "beschreibung": "Haengt die Vorwaertsreichweite an der Gruppengroesse? Freie Noncebits 1..16, sonst identisch.",
+   "ergebnis": {
+    "1_freie_bits": {
+     "gruppengroesse": 2,
+     "erste_vollstaendig_offene_runde": 5,
+     "profil_a_runde1_bis_8": [
+      0,
+      0,
+      0,
+      2,
+      16,
+      16,
+      16,
+      16
+     ],
+     "digest1_offene_ziffern": 128
+    },
+    "2_freie_bits": {
+     "gruppengroesse": 4,
+     "erste_vollstaendig_offene_runde": 5,
+     "profil_a_runde1_bis_8": [
+      0,
+      0,
+      0,
+      2,
+      16,
+      16,
+      16,
+      16
+     ],
+     "digest1_offene_ziffern": 128
+    },
+    "4_freie_bits": {
+     "gruppengroesse": 16,
+     "erste_vollstaendig_offene_runde": 5,
+     "profil_a_runde1_bis_8": [
+      0,
+      0,
+      0,
+      3,
+      16,
+      16,
+      16,
+      16
+     ],
+     "digest1_offene_ziffern": 128
+    },
+    "8_freie_bits": {
+     "gruppengroesse": 256,
+     "erste_vollstaendig_offene_runde": 5,
+     "profil_a_runde1_bis_8": [
+      0,
+      0,
+      0,
+      4,
+      16,
+      16,
+      16,
+      16
+     ],
+     "digest1_offene_ziffern": 128
+    },
+    "16_freie_bits": {
+     "gruppengroesse": 65536,
+     "erste_vollstaendig_offene_runde": 5,
+     "profil_a_runde1_bis_8": [
+      0,
+      0,
+      0,
+      8,
+      16,
+      16,
+      16,
+      16
+     ],
+     "digest1_offene_ziffern": 128
+    }
+   },
+   "peak_mib": 170.4
+  }
+ },
+ "gesamt_s": 41.3,
+ "peak_mib": 170.4
+}

@@ -1,0 +1,57 @@
+FABLE AN GHOST – ABSCHLUSSPRUEFUNGEN: (1) ZIELHASH-VERGLEICH ABGESCHLOSSEN, (2) RUNDENKURVE, 2026-10-23
+Kopien, CPU, Python 3.13.16, Fable-Container (Xeon 2,10 GHz, 2 Kerne). Extern ueberwacht (RSS alle 0,1 s, 600 s / 400 MiB / 2,5 Mio. Paare je Lauf).
+Kein Baum, kein Miner-Eingriff, keine GPU/RPC/Einreichung, keine Wiederholung, keine Erweiterung. Genau die beauftragten Laeufe.
+
+== (1) ZIELHASH-VERGLEICH: E1 ALLEIN BIS ZUM FIXPUNKT (Bedingung B, derselbe H*, F1, Nonce 0..255) ===============================
+Lauf: zielhash_kind.py B E1 mit Durchlaufgrenze 1 000 000 (statt 12), keine weitere Regel. Ergebnis: FIXPUNKT nach 41 Durchlaeufen,
+E1 10,6 s, Gesamt 11,6 s, Peak 90 MiB. Status OK, Ausgang OFFEN, 0 Noncebits, 0 Ausschluesse (Orakel: keine Nonce erfuellt B).
+Vergleich an denselben 1 024 Messstellen (Register a..h je Runde beider Anwendungen), feste Bits je Register:
+  feste Bitknoten gesamt:  E1 (12 Durchl.) 2 902  |  E1 (Fixpunkt, 41) 5 041  |  E1+E4 (gestern) 5 111
+  H2-Register:             E1-Fixpunkt und E1+E4 IDENTISCH an allen 512 H2-Messstellen: a57, a58 b58, a59-c59, a60-d60, a61-e61,
+                           a62-f62, a63-g63, Runde 64 alle – jeweils 32/32.
+  Was E1+E4 noch zusaetzlich bestimmt: +70 Bitknoten, davon an Messstellen genau 4 einzelne Bits in der ERSTEN Anwendung:
+                           e5, f6, g7, h8 je 1 Bit (ein Bit, das die e->f->g->h-Kette entlangrutscht). Sonst nichts. 0 Noncebits bei beiden.
+KORREKTUR meines gestrigen Berichts (BERICHT_ZIELHASH): Dort steht, die Paare bestimmten a57-a60 "vollstaendig statt bruchstueckhaft" und
+"hier bringen die Paare erstmals am echten Netz etwas Sichtbares". Das war die Durchlaufgrenze, nicht die Paare. E1 allein erreicht
+dasselbe Registerbild. Der Zusatz der Paare an der Zielhash-Aufgabe sind 70 Bitknoten ohne Wirkung auf Nonce oder Rueckwaertsreichweite.
+Auch die T2-Mechanismus-Erklaerung ist damit eine Erklaerung fuer E1 (Bitregeln ueber Uebertragsketten), nicht fuer Paare.
+
+== (2) RUNDENKURVE: REDUZIERTES SHA256d MIT R RUNDEN ===============================================================================
+Modell (vorab festgelegt, runden_kind.py Docstring): Kompression mit genau R Runden (K[0..R-1]), Rundenfunktion unveraendert; Erweiterung
+W[16..R-1] nach SHA-256-Regel (R <= 16: keine Erweiterung); Padding unveraendert (Header 2 Bloecke, Digest 1 Block); Feed-forward
+unveraendert; alle drei Kompressionen (Block 1 -> Midstate, Block 2 -> H1, H1 -> H2) mit R Runden. R = 64 ist textgleich SHA256d
+(sha_ziffern.compress_r, gegen hashlib geprueft, 4 Nonces). AUSDRUECKLICH NICHT DAS BITCOIN-VERFAHREN (64 Runden).
+Aufgabe je R: Vorlage F1, 8 freie Noncebits (0..255). Kontrollnonce vorab aus Samen 'KONTROLLE_RUNDENKURVE_2026-10-23_R<R>' (sha256 mod 256),
+Zielhash = reduziertes SHA256d(Vorlage, Kontrollnonce). Dem Loeser nur Vorlage, freie Bits, Zielhash (256 Bits + 128 Ziffern fest), NICHT die
+Kontrollnonce, keine Referenz-Zwischenwerte. E1 bis Fixpunkt ohne Durchlaufgrenze; E1+E4 nur, falls E1 nicht entscheidet. Orakel danach:
+alle 256 Kandidaten mit der Integer-Referenz (pruefung.IntegerOps, getrennter Code), alle Treffer muessen erhalten bleiben.
+  R   Bitknoten  Ziffern  E1-Durchl.  E1-Zeit  Peak    Noncebits  verbleibend  Orakel-Treffer  Kontrolle  Ausgang
+   4      3 092    3 976        6      0,02 s  32 MiB     8/8          1           [109]         109    TREFFER_ABGELEITET
+   6      8 206    5 508       23      0,23 s  33 MiB     8/8          1           [ 51]          51    TREFFER_ABGELEITET
+   8     13 484    7 040       26      0,43 s  35 MiB     8/8          1           [120]         120    TREFFER_ABGELEITET
+  12     23 183   10 104       96      2,77 s  38 MiB     8/8          1           [ 71]          71    TREFFER_ABGELEITET
+  16     32 926   13 168      140      6,12 s  40 MiB     8/8          1           [197]          197    TREFFER_ABGELEITET
+In allen fuenf Faellen: E1 allein (Bitregeln, kein Ziffernnetz, keine Paare) leitet alle 8 Noncebits ab, schliesst 255 Kandidaten aus, der eine
+verbleibende ist der vom Orakel unabhaengig bestaetigte einzige Treffer = Kontrollnonce. Keine Widersprueche, kein falscher Ausschluss, E4 nicht
+benoetigt. Alle Bitknoten im Graphen fest (z. B. 32 924 / 32 924 bei R = 16): die Maschine bestimmt die gesamte Rechnung.
+GEMESSEN ist damit: bis 16 Runden je Kompression loest die Kaestchenmaschine die exakte Zielhash-Aufgabe mit 8 freien Bits durch reine
+Propagation, ohne Suche, in Sekunden. NICHT GEMESSEN: 17 bis 63 Runden (nicht beauftragt). Bei 64 Runden (gestern, gleicher Aufbau, gleicher
+Loeser) bleibt die Aufgabe OFFEN mit 0 Noncebits. Wo zwischen 16 und 64 die Ableitung abbricht und ob sie allmaehlich oder abrupt endet, ist
+OFFEN. Auffaellig, aber nur VERMUTUNG: bis R = 16 gibt es keine Nachrichtenerweiterung (W16.. fehlen), die Nonce tritt nur als W3 in Runde 4 ein.
+Keine Aussage ueber mehr freie Bits, andere Vorlagen oder Suchvorteile; die Aufgabe mit 8 freien Bits ist auch durch 256 Hashes loesbar.
+
+== EINORDNUNG =======================================================================================================================
+IMPLEMENTIERT: compress_r + runden-Parameter in sha_ziffern.py (Standard 64 unveraendert, DIFF_sha_ziffern_runden.txt, 64 Zeilen);
+  Durchlaufparameter in zielhash_kind.py (DIFF_zielhash_kind_sweeps.txt); runden_kind.py, lauf_runden.py, lauf_zielhash_fix.py.
+GETESTET: R = 64 gegen hashlib gleich; Graphgroesse 64 Runden unveraendert 207 917; Kontrollnonce in allen Faellen erhalten.
+GEMESSEN: Tabelle oben; Zielhash B/E1 Fixpunkt 41 Durchlaeufe.
+VERMUTET: Rolle der Nachrichtenerweiterung; dass die E1-Ableitung zwischen 16 und 64 Runden endet (nur die Endpunkte sind gemessen).
+OFFEN: Rundenkurve 17..63; zweiter Zielhash; Paare auf reduzierten Runden (nicht gebraucht, daher nicht gemessen).
+Keine Neuheitsbehauptung, kein Beweis der Ausschoepfung, kein Hardwaregewinn, keine Mainnet-Aussage. Miner unberuehrt.
+
+== DATEIEN ==========================================================================================================================
+Neu: lauf_zielhash_fix.py, ERGEBNIS_ZIELHASH_FIX.json, ERGEBNIS_ZIELHASH_B_E1_FIX.json, runden_kind.py, lauf_runden.py, ERGEBNIS_RUNDEN.json,
+ERGEBNIS_RUNDEN_R04/06/08/12/16.json (je mit Karte aller Messstellen), DIFF_sha_ziffern_runden.txt, DIFF_zielhash_kind_sweeps.txt.
+Geaendert: sha_ziffern.py, zielhash_kind.py. Unveraendert: ZIELHASH_V1.json, FAELLE_SHA256D.json, ziffern_sha.py, ziffern_array.py, ziffern_komp.py,
+austausch.py, e1_bit.py, ziffern.py, bausteine.py, gatter.py, pruefung.py, teilbits.py. Nachrechnen: python -I lauf_zielhash_fix.py (12 s);
+python -I lauf_runden.py (11 s).

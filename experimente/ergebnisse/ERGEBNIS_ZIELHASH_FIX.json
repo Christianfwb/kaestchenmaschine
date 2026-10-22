@@ -1,0 +1,156 @@
+{
+ "messung": "Zielhash B/E1 bis Fixpunkt",
+ "grenze": {
+  "zeit_s": 600.0,
+  "ram_mib": 400.0
+ },
+ "status": "OK",
+ "abbruchgrund": null,
+ "wall_s": 11.6,
+ "peak_rss_mib_extern": 90.2,
+ "rueckgabe": 0,
+ "vergleich": {
+  "e1_sweeps": {
+   "status": "FIXPUNKT",
+   "sweeps": 41,
+   "s": 10.64,
+   "bitknoten_fest": 5041,
+   "noncebits": [],
+   "name": "E1",
+   "t_s": 11.24,
+   "peak_mib": 89.9
+  },
+  "bitknoten_fest": {
+   "e1_12": 2902,
+   "e1_fix": 5041,
+   "e1e4": 5111
+  },
+  "noncebits": {
+   "e1_fix": [],
+   "e1e4": []
+  },
+  "messstellen_verschieden": [
+   {
+    "messstelle": "H1 r5 e",
+    "e1_12": 0,
+    "e1_fix": 0,
+    "e1e4": 1
+   },
+   {
+    "messstelle": "H1 r6 f",
+    "e1_12": 0,
+    "e1_fix": 0,
+    "e1e4": 1
+   },
+   {
+    "messstelle": "H1 r7 g",
+    "e1_12": 0,
+    "e1_fix": 0,
+    "e1e4": 1
+   },
+   {
+    "messstelle": "H1 r8 h",
+    "e1_12": 0,
+    "e1_fix": 0,
+    "e1e4": 1
+   },
+   {
+    "messstelle": "H2 r57 a",
+    "e1_12": 0,
+    "e1_fix": 32,
+    "e1e4": 32
+   },
+   {
+    "messstelle": "H2 r58 a",
+    "e1_12": 10,
+    "e1_fix": 32,
+    "e1e4": 32
+   },
+   {
+    "messstelle": "H2 r58 b",
+    "e1_12": 0,
+    "e1_fix": 32,
+    "e1e4": 32
+   },
+   {
+    "messstelle": "H2 r59 a",
+    "e1_12": 13,
+    "e1_fix": 32,
+    "e1e4": 32
+   },
+   {
+    "messstelle": "H2 r59 b",
+    "e1_12": 10,
+    "e1_fix": 32,
+    "e1e4": 32
+   },
+   {
+    "messstelle": "H2 r59 c",
+    "e1_12": 0,
+    "e1_fix": 32,
+    "e1e4": 32
+   },
+   {
+    "messstelle": "H2 r60 a",
+    "e1_12": 20,
+    "e1_fix": 32,
+    "e1e4": 32
+   },
+   {
+    "messstelle": "H2 r60 b",
+    "e1_12": 13,
+    "e1_fix": 32,
+    "e1e4": 32
+   },
+   {
+    "messstelle": "H2 r60 c",
+    "e1_12": 10,
+    "e1_fix": 32,
+    "e1e4": 32
+   },
+   {
+    "messstelle": "H2 r60 d",
+    "e1_12": 0,
+    "e1_fix": 32,
+    "e1e4": 32
+   },
+   {
+    "messstelle": "H2 r61 b",
+    "e1_12": 20,
+    "e1_fix": 32,
+    "e1e4": 32
+   },
+   {
+    "messstelle": "H2 r61 c",
+    "e1_12": 13,
+    "e1_fix": 32,
+    "e1e4": 32
+   },
+   {
+    "messstelle": "H2 r61 d",
+    "e1_12": 10,
+    "e1_fix": 32,
+    "e1e4": 32
+   },
+   {
+    "messstelle": "H2 r62 c",
+    "e1_12": 20,
+    "e1_fix": 32,
+    "e1e4": 32
+   },
+   {
+    "messstelle": "H2 r62 d",
+    "e1_12": 13,
+    "e1_fix": 32,
+    "e1e4": 32
+   },
+   {
+    "messstelle": "H2 r63 d",
+    "e1_12": 20,
+    "e1_fix": 32,
+    "e1e4": 32
+   }
+  ],
+  "ausgang": "OFFEN"
+ }
+}

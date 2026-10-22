@@ -1,0 +1,66 @@
+{
+ "phase": "K1",
+ "python": "3.13.16",
+ "rechner": "Fable-Container Linux, Intel Xeon 2.10 GHz (2 Kerne), CPU, reines Python",
+ "schritte": [
+  {
+   "faelle": 66064,
+   "fehler": 0,
+   "name": "K1 Tabellen ROWS/COLS/TRANS alle Masken (2x2,2x4,4x2,4x4)",
+   "t_s": 0.95,
+   "peak_mib": 30.2
+  },
+  {
+   "faelle": 3531680,
+   "fehler": 0,
+   "plan": {
+    "2x2x2": {
+     "art": "vollstaendig",
+     "maskenpaare": 256,
+     "domaenen": 64
+    },
+    "2x2x4": {
+     "art": "vollstaendig",
+     "maskenpaare": 4096,
+     "domaenen": 256
+    },
+    "2x4x2": {
+     "art": "Rand + 3000 Zufall (Seed) + 400 universell",
+     "maskenpaare": 3409,
+     "domaenen": 256
+    },
+    "2x4x4": {
+     "art": "Rand + 3000 Zufall (Seed) + 400 universell",
+     "maskenpaare": 3409,
+     "domaenen": 1024
+    },
+    "4x2x2": {
+     "art": "vollstaendig",
+     "maskenpaare": 4096,
+     "domaenen": 256
+    },
+    "4x2x4": {
+     "art": "Rand + 3000 Zufall (Seed) + 400 universell",
+     "maskenpaare": 3409,
+     "domaenen": 1024
+    },
+    "4x4x2": {
+     "art": "Rand + 3000 Zufall (Seed) + 400 universell",
+     "maskenpaare": 3409,
+     "domaenen": 1024
+    },
+    "4x4x4": {
+     "art": "Rand + 3000 Zufall (Seed) + 400 universell",
+     "maskenpaare": 3409,
+     "domaenen": 4096
+    }
+   },
+   "name": "K1 komponiere() gegen Definition",
+   "t_s": 13.53,
+   "peak_mib": 31.2
+  }
+ ],
+ "status": "OK",
+ "gesamt_s": 13.53,
+ "peak_mib_kind": 31.2
+}

@@ -1,0 +1,53 @@
+FABLE AN GHOST – KLEINES BEISPIEL: GEMEINSAME XOR-GLEICHUNGEN GEGEN BIT- UND PAARREGELN, 2026-10-22
+Ein Lauf, 0,29 s, Peak unter 50 MiB. Kopien, CPU, Python 3.13.16. Miner unberuehrt, keine GPU/RPC, kein Suchlauf, kein SHA-Lauf.
+Ghosts Auftrag: zuerst ein Beispiel vorlegen, bei dem gemeinsame XOR-Gleichungen einen Konflikt erkennen, den unsere bisherigen
+Bit- und Paarregeln uebersehen. Das liegt hiermit vor, samt Gegenprobe.
+
+== VORAB: ZWEI KORREKTUREN AN MEINER LETZTEN AUSSAGE =========================================================================
+1. "Die Nachrichtenerweiterung ist affin" – FALSCH. Sie lautet w[i] = w[i-16] + sigma0 + w[i-7] + sigma1, mit Additionen und
+   Uebertraegen. Affin sind nur sigma0 und sigma1 selbst (Rotationen, Verschiebungen, XOR). Ghosts Korrektur ist richtig.
+2. "Der aussichtsreichste Ort ist der affine Teil" – das war eine Vermutung ohne Beleg und ist als solche zurueckgenommen.
+Was abschnittsweise verlustfrei zusammenfassbar ist, aendert nichts an den schwierigen Uebergaengen zwischen den Abschnitten.
+
+== DAS BEISPIEL (xor_beispiel.py, ERGEBNIS_XOR_BEISPIEL.json) ================================================================
+Beide Faelle: vier freie Eingangsbits, erschoepfend nachgerechnet, beide OHNE Loesung (0 von 16 Belegungen).
+FALL A – dreistellige Paritaeten:  x1^x2^x3 = 1,  x1^x2^x4 = 1,  x3^x4 = 1.
+  Aus den ersten beiden folgt x3^x4 = 0, im Widerspruch zur dritten. Jede Gleichung einzeln ist erfuellbar, und bei einer
+  dreistelligen Paritaet ist JEDES Variablenpaar voellig frei – Paare koennen dort per Bauart nichts einschraenken.
+FALL B – nur zweistellige Paritaeten: x1^x2 = 0, x2^x3 = 0, x1^x3 = 1. Ebenfalls unloesbar, aber alle Gleichungen binaer.
+  Gegenprobe: hier MUSS eine Paarrechnung mit Radius-1-Komposition den Konflikt finden.
+
+  Fall            | Graph            | E1 (Bitregeln)        | E1+E4 (Paare, Radius 1)              | GF(2)-Elimination
+  A dreistellig   | 12 Knoten,       | Konflikt NICHT erkannt| Konflikt NICHT erkannt               | Konflikt ERKANNT
+                  | echter Gatterkn. | FIXPUNKT, 16 erlaubt  | FIXPUNKT, 16 erlaubt, 15 Paare       | 4 Schritte, 0,000024 s
+  B zweistellig   | 11 Knoten,       | Konflikt NICHT erkannt| Konflikt ERKANNT                     | Konflikt ERKANNT
+                  | echter Gatterkn. | FIXPUNKT, 16 erlaubt  | WIDERSPRUCH, 0 erlaubt, 3 Paare      | 4 Schritte, 0,000011 s
+In beiden Faellen war die Wurzel nach dem Aufbau ein echter Gatterknoten – nichts wurde beim Aufbau vorentschieden (die Lehre
+aus dem Ein-Bit-Fehler ist eingebaut und wird jetzt immer mitgemessen).
+
+== WAS DAMIT BELEGT IST – UND WAS NICHT ======================================================================================
+BELEGT: Es gibt Konflikte, die gemeinsame XOR-Gleichungen in Mikrosekunden finden und die unsere Bit- und Paarregeln nicht
+sehen – Fall A, mit erschoepfender Referenz. Die Trennung liegt an der Stelligkeit: dreistellige Paritaeten sind fuer Paare
+unsichtbar, weil jede Zweier-Projektion vollstaendig frei bleibt. Das ist derselbe Grund, aus dem Ghosts Dreier-Mechanismus
+ansetzt – nur loest die GF(2)-Elimination es global statt an einer vorab gewaehlten Stelle.
+BELEGT AUCH (Gegenprobe): Bei zweistelligen Paritaeten finden die Paare den Konflikt selbst. Der Unterschied kommt also nicht
+aus einer anderen Benennung oder einer schnelleren Bibliothek, sondern aus der Stelligkeit der Beziehung.
+NEBENBEFUND, ehrlich: E1 allein fand auch Fall B nicht – die Bitregeln auf dem Gattergraphen sind hier schwaecher als die Paare.
+NICHT BELEGT: dass solche Konflikte im SHA-Graphen vorkommen oder dort erhalten bleiben. Genau das ist Ghosts naechster Schritt
+und ich habe ihn NICHT vorweggenommen. Einordnung ohne Anspruch: Gauss-Elimination ueber XOR-Beziehungen ist in der
+Literatur als XOR-Schluss bekannt (unter anderem in CryptoMiniSat) und hilft bei manchen kryptografischen Aufgaben; fuer
+SHA-256-Urbilder ist kein Durchbruch damit bekannt. Unser Beispiel sagt darueber nichts, es trennt nur unsere drei Regelmengen.
+
+== VORSCHLAG FUER DEN NAECHSTEN SCHRITT (nicht gestartet) ====================================================================
+Ghosts Frage "kommen solche Beziehungen im SHA-Graphen vor und bleiben sie erhalten?" ist messbar und klein:
+  1. Aus dem echten Bitgraphen alle XOR-Gatter als Paritaetsgleichungen ausziehen; UND-Gatter liefern je eine neue freie
+     Variable (ihre Ausgabe), ueber die nichts Lineares bekannt ist – so bleibt die Darstellung exakt, nur schwaecher.
+  2. Zaehlen: wie viele Gleichungen, wie viele Variablen, welcher Rang nach Elimination, und – entscheidend – ob die
+     Zielbedingung ueber rein lineare Wege mit den Noncebits verbunden ist oder ob auf JEDEM Weg eine Addition liegt.
+  3. Falls Wege existieren: pruefen, ob die Elimination einen Konflikt oder feste Noncebits liefert; falls nicht, genau das
+     berichten. Kosten: Minuten, kein Suchlauf, Grenzen wie bisher.
+Das beantwortet die Frage mit Zahlen statt mit meiner Vermutung von vorhin.
+
+== DATEIEN ===================================================================================================================
+xor_beispiel.py, ERGEBNIS_XOR_BEISPIEL.json. Unveraendert mitgeliefert: gatter.py, sha_ziffern.py, ziffern.py, ziffern_komp.py,
+ziffern_sha.py, e1_bit.py, bausteine.py, pruefung.py, teilbits.py. Nachrechnen: python -I xor_beispiel.py (0,3 s).

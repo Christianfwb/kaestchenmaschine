@@ -1,0 +1,101 @@
+{
+ "art": "E4",
+ "fall": "F1_ECHTE_VORLAGE",
+ "umfang": "U-voll",
+ "target_nullbits": 78,
+ "python": "3.13.16",
+ "rechner": "Fable-Container Linux, Intel Xeon 2.10 GHz (2 Kerne), CPU, reines Python",
+ "status": "OK",
+ "schritte": [
+  {
+   "knoten": 207917,
+   "s": 0.24,
+   "name": "Aufbau Bitgraph",
+   "t_s": 0.25,
+   "peak_mib": 53.0
+  },
+  {
+   "status": "FIXPUNKT",
+   "sweeps": 4,
+   "s": 1.36,
+   "noncebits_abgeleitet": [],
+   "knoten_fest": 601,
+   "knoten_gesamt": 207915,
+   "ausgeschlossene_nonces_der_gruppe": 0,
+   "zeuge_in_allen_bitdomaenen": null,
+   "name": "E1 Wurzel (Ziel = 1)",
+   "t_s": 1.61,
+   "peak_mib": 55.5
+  },
+  {
+   "variablen": 71761,
+   "beziehungen": 49952,
+   "zuordnungen_bit_ziffer": 3412,
+   "s": 0.22,
+   "name": "Aufbau Ziffernnetz",
+   "t_s": 1.84,
+   "peak_mib": 74.2
+  },
+  {
+   "status": "OPEN_PAARGRENZE",
+   "runden": 1,
+   "tupelops": 6817416,
+   "paare": 500000,
+   "s": 10.8,
+   "ziffern_eingeschraenkt_gegen_start": 6325,
+   "nonceziffern_fest": [],
+   "noncebits_aus_ziffern": [],
+   "name": "Austausch 1 E4",
+   "t_s": 12.78,
+   "peak_mib": 244.6
+  }
+ ],
+ "open_grund": {
+  "e4_status": "OPEN_PAARGRENZE",
+  "info": {
+   "runden": 1,
+   "tupelops": 6817416,
+   "paare": 500000,
+   "phase": "Komposition"
+  }
+ },
+ "ergebnis": {
+  "status": "OPEN",
+  "austauschrunden": 1,
+  "e1_aufrufe": 0,
+  "e4_aufrufe": 1,
+  "e1_s": 0.0,
+  "e4_s": 10.8,
+  "schnitte_bits_zu_ziffern": 3647,
+  "schnitte_ziffern_zu_bits": 0,
+  "noncebits_abgeleitet_bitgraph": [],
+  "noncebits_abgeleitet_ziffern": [],
+  "nonceziffern_fest": [],
+  "ausgeschlossene_nonces_bitgraph": 0,
+  "ausgeschlossene_nonces_ziffern": 0,
+  "ausgeschluss_gegen_orakel_ok": true,
+  "interne_einschraenkungen": {
+   "bitknoten_fest": 601,
+   "bitknoten_gesamt": 207915,
+   "ziffernvariablen_eingeschraenkt_gegen_start": 6325,
+   "ziffernvariablen_gesamt": 71761,
+   "paare": 500000,
+   "paare_eingeschraenkt": 48184
+  },
+  "zeuge": {
+   "in_allen_ziffern": null,
+   "in_allen_paaren": null,
+   "in_allen_bits": null
+  },
+  "e4_letzte_info": {
+   "runden": 1,
+   "tupelops": 6817416,
+   "paare": 500000,
+   "phase": "Komposition"
+  },
+  "paargrenze": 500000
+ },
+ "hinweis": "Status OPEN; \"OK\" = Auswertung sauber beendet, nicht \"Ableitung gefunden\"",
+ "gesamt_s": 12.84,
+ "peak_mib_kind": 244.6
+}

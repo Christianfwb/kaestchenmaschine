@@ -1,0 +1,11 @@
+{
+ "samen": "FABLE_GHOST_CHRISTIAN_ZIELHASH_2026-10-22_V1",
+ "regel": "sha256(samen) als little-endian Zahl modulo (Target+1); dadurch sicher <= Target und ohne Kenntnis eines Kandidaten gewaehlt",
+ "vorlage": "F1_ECHTE_VORLAGE",
+ "target_hex": "0000000000000000000200930000000000000000000000000000000000000000",
+ "zielzahl_hex": "000000000000000000003e3dc1c114eabc41c7d323e007ba6174ee03e238bef0",
+ "zielhash_bitcoin": "000000000000000000003e3dc1c114eabc41c7d323e007ba6174ee03e238bef0",
+ "digest_bytes_hex": "f0be38e203ee7461ba07e023d3c741bcea14c1c13d3e00000000000000000000",
+ "fuehrende_nullbits": 82,
+ "festgelegt": "2026-10-22 vor jedem Suchlauf; keine Kandidaten gegen diesen Wert gehasht"
+}

@@ -1,0 +1,133 @@
+{
+ "art": "E4",
+ "fall": "F1_ECHTE_VORLAGE",
+ "umfang": "U-voll",
+ "target_nullbits": 78,
+ "python": "3.13.16",
+ "rechner": "Fable-Container Linux, Intel Xeon 2.10 GHz (2 Kerne), CPU, reines Python",
+ "status": "OK",
+ "schritte": [
+  {
+   "knoten": 207917,
+   "s": 0.25,
+   "name": "Aufbau Bitgraph",
+   "t_s": 0.25,
+   "peak_mib": 68.2
+  },
+  {
+   "status": "FIXPUNKT",
+   "sweeps": 4,
+   "s": 1.21,
+   "noncebits_abgeleitet": [],
+   "knoten_fest": 601,
+   "knoten_gesamt": 207915,
+   "ausgeschlossene_nonces_der_gruppe": 0,
+   "zeuge_in_allen_bitdomaenen": null,
+   "name": "E1 Wurzel (Ziel = 1)",
+   "t_s": 1.47,
+   "peak_mib": 70.5
+  },
+  {
+   "variablen": 71761,
+   "beziehungen": 49952,
+   "zuordnungen_bit_ziffer": 3412,
+   "s": 0.19,
+   "name": "Aufbau Ziffernnetz",
+   "t_s": 1.66,
+   "peak_mib": 90.5
+  },
+  {
+   "status": "FIXPUNKT",
+   "runden": 4,
+   "tupelops": 45290585,
+   "paare": 1890765,
+   "s": 79.46,
+   "ziffern_eingeschraenkt_gegen_start": 6339,
+   "nonceziffern_fest": [],
+   "noncebits_aus_ziffern": [],
+   "name": "Austausch 1 E4",
+   "t_s": 81.25,
+   "peak_mib": 299.5
+  },
+  {
+   "status": "FIXPUNKT",
+   "sweeps": 2,
+   "s": 0.64,
+   "noncebits": [],
+   "knoten_fest": 643,
+   "name": "Austausch 1 E1",
+   "t_s": 81.97,
+   "peak_mib": 299.5
+  },
+  {
+   "status": "FIXPUNKT",
+   "runden": 4,
+   "tupelops": 42017228,
+   "paare": 1890765,
+   "s": 71.98,
+   "ziffern_eingeschraenkt_gegen_start": 6339,
+   "nonceziffern_fest": [],
+   "noncebits_aus_ziffern": [],
+   "name": "Austausch 2 E4",
+   "t_s": 154.05,
+   "peak_mib": 383.8
+  },
+  {
+   "status": "FIXPUNKT",
+   "sweeps": 1,
+   "s": 0.3,
+   "noncebits": [],
+   "knoten_fest": 643,
+   "name": "Austausch 2 E1",
+   "t_s": 154.44,
+   "peak_mib": 383.8
+  }
+ ],
+ "ergebnis": {
+  "status": "FIXPUNKT",
+  "austauschrunden": 2,
+  "e1_aufrufe": 2,
+  "e4_aufrufe": 2,
+  "e1_s": 0.94,
+  "e4_s": 151.44,
+  "schnitte_bits_zu_ziffern": 3647,
+  "schnitte_ziffern_zu_bits": 25,
+  "noncebits_abgeleitet_bitgraph": [],
+  "noncebits_abgeleitet_ziffern": [],
+  "nonceziffern_fest": [],
+  "ausgeschlossene_nonces_bitgraph": 0,
+  "ausgeschlossene_nonces_ziffern": 0,
+  "ausgeschluss_gegen_orakel_ok": true,
+  "interne_einschraenkungen": {
+   "bitknoten_fest": 643,
+   "bitknoten_gesamt": 207915,
+   "ziffernvariablen_eingeschraenkt_gegen_start": 6339,
+   "ziffernvariablen_gesamt": 71761,
+   "paare": 1890765,
+   "paare_eingeschraenkt": 63669,
+   "speicher_paare_mib": 18.0
+  },
+  "zeuge": {
+   "in_allen_ziffern": null,
+   "in_allen_paaren": null,
+   "in_allen_bits": null
+  },
+  "e4_letzte_info": {
+   "runden": 4,
+   "tupelops": 42017228,
+   "paare": 1890765,
+   "paare_eingeschraenkt": 63669,
+   "bez_mit_paaren": 45768,
+   "speicher_paare_bytes": 18907650,
+   "nachpruefung_e3": {
+    "status": "FIXPUNKT",
+    "geaendert": false,
+    "runden": 1
+   }
+  },
+  "paargrenze": 2500000
+ },
+ "hinweis": "Status FIXPUNKT; \"OK\" = Auswertung sauber beendet, nicht \"Ableitung gefunden\"",
+ "gesamt_s": 154.82,
+ "peak_mib_kind": 383.8
+}

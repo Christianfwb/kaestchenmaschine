@@ -1,0 +1,141 @@
+{
+ "art": "E4",
+ "fall": "F2_GENESIS_HISTORISCH",
+ "umfang": "U-voll",
+ "target_nullbits": 32,
+ "python": "3.13.16",
+ "rechner": "Fable-Container Linux, Intel Xeon 2.10 GHz (2 Kerne), CPU, reines Python",
+ "status": "OK",
+ "schritte": [
+  {
+   "knoten": 207833,
+   "s": 0.52,
+   "name": "Aufbau Bitgraph",
+   "t_s": 0.53,
+   "peak_mib": 67.8
+  },
+  {
+   "status": "FIXPUNKT",
+   "sweeps": 4,
+   "s": 1.25,
+   "noncebits_abgeleitet": [],
+   "knoten_fest": 230,
+   "knoten_gesamt": 207831,
+   "ausgeschlossene_nonces_der_gruppe": 0,
+   "zeuge_in_allen_bitdomaenen": true,
+   "name": "E1 Wurzel (Ziel = 1)",
+   "t_s": 1.86,
+   "peak_mib": 71.6
+  },
+  {
+   "variablen": 71777,
+   "beziehungen": 49952,
+   "zuordnungen_bit_ziffer": 3412,
+   "s": 0.23,
+   "name": "Aufbau Ziffernnetz",
+   "t_s": 2.08,
+   "peak_mib": 89.5
+  },
+  {
+   "status": "FIXPUNKT",
+   "runden": 4,
+   "tupelops": 44322560,
+   "paare": 1896089,
+   "paare_eingeschraenkt": 63341,
+   "s": 76.7,
+   "noncebits": [],
+   "knoten_fest": 230,
+   "nonceziffern_fest": [],
+   "noncebits_aus_ziffern": [],
+   "name": "Austausch 1 E4",
+   "t_s": 79.2,
+   "peak_mib": 301.7
+  },
+  {
+   "status": "FIXPUNKT",
+   "sweeps": 2,
+   "s": 0.59,
+   "noncebits": [],
+   "knoten_fest": 244,
+   "nonceziffern_fest": [],
+   "noncebits_aus_ziffern": [],
+   "name": "Austausch 1 E1",
+   "t_s": 79.85,
+   "peak_mib": 301.7
+  },
+  {
+   "status": "FIXPUNKT",
+   "runden": 4,
+   "tupelops": 42133419,
+   "paare": 1896020,
+   "paare_eingeschraenkt": 63272,
+   "s": 70.53,
+   "noncebits": [],
+   "knoten_fest": 244,
+   "nonceziffern_fest": [],
+   "noncebits_aus_ziffern": [],
+   "name": "Austausch 2 E4",
+   "t_s": 150.46,
+   "peak_mib": 368.1
+  },
+  {
+   "status": "FIXPUNKT",
+   "sweeps": 1,
+   "s": 0.31,
+   "noncebits": [],
+   "knoten_fest": 244,
+   "nonceziffern_fest": [],
+   "noncebits_aus_ziffern": [],
+   "name": "Austausch 2 E1",
+   "t_s": 150.83,
+   "peak_mib": 368.1
+  }
+ ],
+ "ergebnis": {
+  "status": "FIXPUNKT",
+  "austauschrunden": 2,
+  "e1_aufrufe": 2,
+  "e4_aufrufe": 2,
+  "e1_s": 0.9,
+  "e4_s": 146.44,
+  "schnitte_bits_zu_ziffern": 3541,
+  "schnitte_ziffern_zu_bits": 5,
+  "noncebits_abgeleitet_bitgraph": [],
+  "noncebits_abgeleitet_ziffern": [],
+  "nonceziffern_fest": [],
+  "ausgeschlossene_nonces_bitgraph": 0,
+  "ausgeschlossene_nonces_ziffern": 0,
+  "ausgeschluss_gegen_orakel_ok": true,
+  "interne_einschraenkungen": {
+   "bitknoten_fest": 244,
+   "bitknoten_gesamt": 207831,
+   "ziffernvariablen_eingeschraenkt_gegen_start": 6147,
+   "ziffernvariablen_gesamt": 71777,
+   "paare": 1896020,
+   "paare_eingeschraenkt": 63272,
+   "speicher_paare_mib": 18.1
+  },
+  "zeuge": {
+   "in_allen_ziffern": true,
+   "in_allen_paaren": true,
+   "in_allen_bits": true
+  },
+  "e4_letzte_info": {
+   "runden": 4,
+   "tupelops": 42133419,
+   "paare": 1896020,
+   "paare_eingeschraenkt": 63272,
+   "bez_mit_paaren": 45881,
+   "speicher_paare_bytes": 18960200,
+   "nachpruefung_e3": {
+    "status": "FIXPUNKT",
+    "geaendert": false,
+    "runden": 1
+   }
+  },
+  "paargrenze": 2500000
+ },
+ "hinweis": "Status FIXPUNKT; \"OK\" = Auswertung sauber beendet, nicht \"Ableitung gefunden\"",
+ "gesamt_s": 151.64,
+ "peak_mib_kind": 368.1
+}

@@ -1,0 +1,3152 @@
+{
+ "erstellt": "2026-10-22",
+ "zweck": "Materialidentifikation + Referenzorakel (hashlib SHA256d) fuer den Plan FABLE_AN_GHOST_PLAN_ECHTER_SHA256D. Kein Suchlauf.",
+ "faelle": [
+  {
+   "name": "F1_ECHTE_VORLAGE",
+   "beschreibung": "Gespeicherte echte Vorlage (Hoehe 972527, extra 0000000000000000), echtes nBits/Target, Nonce 0..255. Kein Live-Mining, keine Einreichung, keine Aussage ueber heutige Gueltigkeit.",
+   "header_hex_ohne_nonce": "0000002088e886ebf4db67690d7239dbbe494df487b195114e8c01000000000000000000c5df54fbce5209b9b844e4ee8bac0d1efc535df0f7eb6534a8a3c89411f7b39fcd1ed96a93000217",
+   "nbits_hex": "17020093",
+   "target_hex": "0000000000000000000200930000000000000000000000000000000000000000",
+   "target_nullbits": 78,
+   "basis_nonce": 0,
+   "freie_nonce_bits": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+   ],
+   "nonce_bereich": [
+    0,
+    255
+   ],
+   "anzahl_nonces": 256,
+   "referenz_treffer": [],
+   "midstate_hex": "4ad265922554a49cf9e2bbd33680e89c58d3cc60f18189a10241be83976c9e1b",
+   "referenz": [
+    {
+     "nonce": 0,
+     "hash_bitcoin_order": "b5a75560b89ed97c965f61d83c632412e32290c25f89dd0fd5cfade0c013fc8f",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 1,
+     "hash_bitcoin_order": "7f4d666f12948604a3364da8523b730cc4154162ea6c5cdd563a5c2f6076ebf6",
+     "fuehrende_nullbits": 1,
+     "treffer": false
+    },
+    {
+     "nonce": 2,
+     "hash_bitcoin_order": "fde479e0846d6019ad0e50e0aab83f8de8d082848002fa8aa37537a7a1e685f7",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 3,
+     "hash_bitcoin_order": "da84e5dee5bd06b08f5366c429c7920b39317d8c5680c21e5732e47502dac90d",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 4,
+     "hash_bitcoin_order": "37832ab03582b9397654cf951e4e81375782eee636e8517d77486a3e617fe1cf",
+     "fuehrende_nullbits": 2,
+     "treffer": false
+    },
+    {
+     "nonce": 5,
+     "hash_bitcoin_order": "c73108a3429e7e2f08476bb948d290fd7440d8c99a5f6b9e4d9361d0bd891559",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 6,
+     "hash_bitcoin_order": "553b2ed4181d27775ff64138b452d7f50d22ae76076c9660cb016bec6b51ea4d",
+     "fuehrende_nullbits": 1,
+     "treffer": false
+    },
+    {
+     "nonce": 7,
+     "hash_bitcoin_order": "ff5f072bb72ef8cda9a71df5a6243995bd50de0dfd15ade0b6bb07409c1961df",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 8,
+     "hash_bitcoin_order": "a05818887b53acf5074b47898a0c6b4141ccc16261254aafb2cadd6020717db2",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 9,
+     "hash_bitcoin_order": "54468e2ec624ad5387b461fbd7793afd2eb870b681abe18e2422979dac2c6199",
+     "fuehrende_nullbits": 1,
+     "treffer": false
+    },
+    {
+     "nonce": 10,
+     "hash_bitcoin_order": "acc8a71e3d11af999c90f0af02c17297e17ab38715b294fac461a4deb1a287b4",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 11,
+     "hash_bitcoin_order": "2c32fff97b6e3ff8df2dcf23fa26767cd96988acab6c9fccbb01e6d036c293f4",
+     "fuehrende_nullbits": 2,
+     "treffer": false
+    },
+    {
+     "nonce": 12,
+     "hash_bitcoin_order": "3d9acde5bc5180e51b7ce9ceb3d67a6b0ef221e3d4a482e62d8b81ec5500ab6e",
+     "fuehrende_nullbits": 2,
+     "treffer": false
+    },
+    {
+     "nonce": 13,
+     "hash_bitcoin_order": "63881d8727bbba15a4dab1b7e26b9c214e5ddc73bbe49d7274be98aaca6218e8",
+     "fuehrende_nullbits": 1,
+     "treffer": false
+    },
+    {
+     "nonce": 14,
+     "hash_bitcoin_order": "ab610554092577bbe451a8c4b37a98bc3838cdf3eb035592973e855d7349d8ad",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 15,
+     "hash_bitcoin_order": "32d2e7a28c12b876c07ac4247f3215392b83d32a3eccbc4e1a8a77f2f437bd9f",
+     "fuehrende_nullbits": 2,
+     "treffer": false
+    },
+    {
+     "nonce": 16,
+     "hash_bitcoin_order": "3a8723f850d538a98ea34d81684c30c1ad6ff75eb8712e10796b0fd0a3bc3513",
+     "fuehrende_nullbits": 2,
+     "treffer": false
+    },
+    {
+     "nonce": 17,
+     "hash_bitcoin_order": "1f98f70b546ac21452cd79c811a17ca75ed267ed5ff254e547444b49af71c27c",
+     "fuehrende_nullbits": 3,
+     "treffer": false
+    },
+    {
+     "nonce": 18,
+     "hash_bitcoin_order": "9f111c94e03e365a2cde6b37a864d6e9087585fa1eb5f55f256f2943c0f06daa",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 19,
+     "hash_bitcoin_order": "e0b14e8b06b4bd6d67b02bb5e224d5b6be286afffa1dc97114499ece1ed4b432",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 20,
+     "hash_bitcoin_order": "b11521709a065e847c85832a078bc06943727b2ec45c7eef5a89e042bb99b553",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 21,
+     "hash_bitcoin_order": "7be9c1d33b8f60a625d39196b36ce54f4bd728327099e7de12d00cf1c2bb14eb",
+     "fuehrende_nullbits": 1,
+     "treffer": false
+    },
+    {
+     "nonce": 22,
+     "hash_bitcoin_order": "a33697a310c1d0a5c871ad2fd1e5386d9f40311e1f19d8e671e12e61b6cfdd71",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 23,
+     "hash_bitcoin_order": "3d2e374781cafa007d47325d36af17ef793ce865aac3c06d38e81d15fe6c2ea2",
+     "fuehrende_nullbits": 2,
+     "treffer": false
+    },
+    {
+     "nonce": 24,
+     "hash_bitcoin_order": "a1fbba1b96f9796013d910eed1ec94ae3cd3d4f3f8e7a63fe7ae5dc870e0fbae",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 25,
+     "hash_bitcoin_order": "704d9ae7e9e52b07ba247356dee04654fc0e704c253547c359280d2d3e0daf7e",
+     "fuehrende_nullbits": 1,
+     "treffer": false
+    },
+    {
+     "nonce": 26,
+     "hash_bitcoin_order": "e9ee5cdebed6bc3b013cb5a5ca7a109c43fb87e78fe4c399c630a6db0796b441",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 27,
+     "hash_bitcoin_order": "080d75765ceeaaa3a32e6190770d74268ff3068975811bd6ba9467ed3bfb8f6e",
+     "fuehrende_nullbits": 4,
+     "treffer": false
+    },
+    {
+     "nonce": 28,
+     "hash_bitcoin_order": "ba178594752d1d1cc7d8f8e8f6092f53699c956368ff31b7e6d3e4a592636175",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 29,
+     "hash_bitcoin_order": "012a275a6e3ea35ec829832c74b4e96d44daf66b7c9f64627ad9421b84f28c9e",
+     "fuehrende_nullbits": 7,
+     "treffer": false
+    },
+    {
+     "nonce": 30,
+     "hash_bitcoin_order": "e9eaadb6a8f0007c725495e7a8f1ef2d60a82b5b3c6e59f395e4d42497735140",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 31,
+     "hash_bitcoin_order": "3140dcb97cdaa1b0b138993f547936a52783632d185addeb7273b9f021c5dd73",
+     "fuehrende_nullbits": 2,
+     "treffer": false
+    },
+    {
+     "nonce": 32,
+     "hash_bitcoin_order": "3969150a24cbdc5c393ec428f28d2586cfb80aa27ccfd76b47cb0a229376fcc7",
+     "fuehrende_nullbits": 2,
+     "treffer": false
+    },
+    {
+     "nonce": 33,
+     "hash_bitcoin_order": "20b48127fe7480e4cb930c621018fe2cb04d1798f4905e2d42d47bb9b17f5612",
+     "fuehrende_nullbits": 2,
+     "treffer": false
+    },
+    {
+     "nonce": 34,
+     "hash_bitcoin_order": "0b70c61929e1fc36eb4bac0cb02d2c80d38588ea6b5ffe207dec62fdf1c2d8b1",
+     "fuehrende_nullbits": 4,
+     "treffer": false
+    },
+    {
+     "nonce": 35,
+     "hash_bitcoin_order": "aea6de642e290473e046b3546f93b5ee3af63c06d908969b429c795af106f5a7",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 36,
+     "hash_bitcoin_order": "787df1aed549a45efad3e2f21f220a74f19ddca0ee51233b16ac8acf62265e43",
+     "fuehrende_nullbits": 1,
+     "treffer": false
+    },
+    {
+     "nonce": 37,
+     "hash_bitcoin_order": "1368abd3f4297746a9d57397c76d1d897473b820462c9e777ff0bf8e137e3dee",
+     "fuehrende_nullbits": 3,
+     "treffer": false
+    },
+    {
+     "nonce": 38,
+     "hash_bitcoin_order": "9b8c94b1b9b681a274266d2e6e0fdc1f68293f837f1b42bc182b50b028385188",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 39,
+     "hash_bitcoin_order": "4ae0017af2f6e853b359185c157e18f2051565be0613b9beec789f2f300bf59c",
+     "fuehrende_nullbits": 1,
+     "treffer": false
+    },
+    {
+     "nonce": 40,
+     "hash_bitcoin_order": "8695011c6aaafe580bcd3d346c466e858f3f7ff8f78c561ae6db7dc7cc4dc6c3",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 41,
+     "hash_bitcoin_order": "fe8c380282515ea1c272845763e2fe306862e0458d98cf0a1467a3ae4d34de9a",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 42,
+     "hash_bitcoin_order": "ad28ef9344a757ef14969ea1ae9ba2602a9abfc124cbcef3692dd3016371b982",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 43,
+     "hash_bitcoin_order": "966dd23e32891b4c08188df3642c5463662a03c369e0a051b322e20d2853b829",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 44,
+     "hash_bitcoin_order": "3a023f43b78d077faf6a4412deacf4c971f597ceb9b2c7e4e7a0d67db2b26536",
+     "fuehrende_nullbits": 2,
+     "treffer": false
+    },
+    {
+     "nonce": 45,
+     "hash_bitcoin_order": "d6ea53f8f4275929f98913fc4e87b9073fbe5e7603ec5b2afc7d9e77d471f940",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 46,
+     "hash_bitcoin_order": "dcbd337cd6bb43138bffbaa9e2c8427804a1cd3e20f24635c0cc29f154b9bce2",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 47,
+     "hash_bitcoin_order": "933ba0d4f21b768b0551d5b3a8d495fb92edbacfcf415c308abc4b69a7afffdc",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 48,
+     "hash_bitcoin_order": "5c311d4a4374ae6c77ede7f2e20eaa8528dcb798e7866f080b8520a4a421d36c",
+     "fuehrende_nullbits": 1,
+     "treffer": false
+    },
+    {
+     "nonce": 49,
+     "hash_bitcoin_order": "4f50c2f7f52d2e758a7c02746be96ed156f31c271a829ad3516c37f0dfca615a",
+     "fuehrende_nullbits": 1,
+     "treffer": false
+    },
+    {
+     "nonce": 50,
+     "hash_bitcoin_order": "ee1916d04ea8e4035c831f4a31ecb01e1be3f4fa51808ce817e2c39164700584",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 51,
+     "hash_bitcoin_order": "e9c14d1ee202a6fab91262321fb0adede837a87d70ce85139a691acd59ba57d1",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 52,
+     "hash_bitcoin_order": "da60ffb7d14b141de889cb0ef9430ea6adc8322f865f4b9f766273fe5ced8143",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 53,
+     "hash_bitcoin_order": "cf833dbf1e7bea9aca2f47b9355ec1dcaa34863f0245e642aee07938d32e56ff",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 54,
+     "hash_bitcoin_order": "6ea60706d24cdad4cfc5f108340807697d14cfab147bd500677f31a25542f240",
+     "fuehrende_nullbits": 1,
+     "treffer": false
+    },
+    {
+     "nonce": 55,
+     "hash_bitcoin_order": "8dba0a4ac0e4dbaf6c453b0a503cbcdb4d56d1ba3db2749e42134ee2b888076a",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 56,
+     "hash_bitcoin_order": "93d064ceba1365656b6a87e6954a42ee36fbb010617ae4b52fb48abb3bf7f497",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 57,
+     "hash_bitcoin_order": "cfbe6b081102bd2dae1b7c5324fde26c15ff6fd67b1e6412edaf45f841e5b68a",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 58,
+     "hash_bitcoin_order": "0a0de5a8427b786255e39c4e49a2053cab9f278e41e60fc8994aa1ba1b962aaf",
+     "fuehrende_nullbits": 4,
+     "treffer": false
+    },
+    {
+     "nonce": 59,
+     "hash_bitcoin_order": "f6c5662067558a34e6b3d57c630f8e14d4b2f81ca4f6382b756e974043402b4e",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 60,
+     "hash_bitcoin_order": "f94a50a380b8850a344c117234539cce35f41e9c8b5e55bdc626b62787ef5888",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 61,
+     "hash_bitcoin_order": "c122a07b34cf38f89c30eaef4751b5eba73258df124e599c019169c9744fefba",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 62,
+     "hash_bitcoin_order": "afe176c4ccca8b09d89b5396038dab59d0f170da92331e0330d0af8c97f0c7a3",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 63,
+     "hash_bitcoin_order": "43aab3c0485888f52100aa2b46d81776d4cc757be881b5884b66bb13f50ff5a3",
+     "fuehrende_nullbits": 1,
+     "treffer": false
+    },
+    {
+     "nonce": 64,
+     "hash_bitcoin_order": "aa543bdb94c00869d545703f6ffa863589fccdda6f7f619a34051572da721175",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 65,
+     "hash_bitcoin_order": "5a735c3ea0b5458e8454626bd94fb3d9a38ba47ac24d4b6485300f0ec1e82cf4",
+     "fuehrende_nullbits": 1,
+     "treffer": false
+    },
+    {
+     "nonce": 66,
+     "hash_bitcoin_order": "42e21378d2a30ceceb43c496c3890ff0946794d64f146fdff0b8fc63e3b2b053",
+     "fuehrende_nullbits": 1,
+     "treffer": false
+    },
+    {
+     "nonce": 67,
+     "hash_bitcoin_order": "be1bdfcee10ed8530613b72ec4abafaf7cfde680dcacbc498c98cc3a9151daa0",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 68,
+     "hash_bitcoin_order": "3b7ebc1661f10a909d537be9447ade9abbeb170009bc671074f49e1d4fbbbf52",
+     "fuehrende_nullbits": 2,
+     "treffer": false
+    },
+    {
+     "nonce": 69,
+     "hash_bitcoin_order": "5356ebd29fafabedf304f06d0549328c457bdf14b04b422f41dc11e4ac60a5e1",
+     "fuehrende_nullbits": 1,
+     "treffer": false
+    },
+    {
+     "nonce": 70,
+     "hash_bitcoin_order": "7f25ad4d4d1bc393c4faf08fe6f6dfaaa26976a85751ae1e51c9a72f5b15c45b",
+     "fuehrende_nullbits": 1,
+     "treffer": false
+    },
+    {
+     "nonce": 71,
+     "hash_bitcoin_order": "fdc3c9898ed2f2e95c6ab64c71dcb843a55385ccac2d266bf3509421a446e20c",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 72,
+     "hash_bitcoin_order": "f76a4bd576c0d9dda6f45c776201489143f5068ba58254a161d87578b82fd55e",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 73,
+     "hash_bitcoin_order": "ec6f240189f60f3854760eab4b60641c33c6aae9960d5da24f07e2cf24c224ed",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 74,
+     "hash_bitcoin_order": "8454f7cd4d5346bcdd8189035f7b3f221209f39431d273cb35fa8fc82050a6d3",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 75,
+     "hash_bitcoin_order": "89d8d3b4dcd5ad507637b1aa3866677c53ea7dbb6cbf328ae784b059881c3b01",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 76,
+     "hash_bitcoin_order": "13c4becb357371f7a461e72dcc9ce88d26c5397c5f38b10425c4fbe8345e9819",
+     "fuehrende_nullbits": 3,
+     "treffer": false
+    },
+    {
+     "nonce": 77,
+     "hash_bitcoin_order": "ddae53bd019d2cc66ca9fcab48c4e819e8018ec63c3e14c9f3cbb45808ad4899",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 78,
+     "hash_bitcoin_order": "ab6ff0f3cc5d2eb6e8faff2789a941a24030ce87d94822e676a80d2c73a35673",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 79,
+     "hash_bitcoin_order": "8536b9c8d7543ac95bca4d420a4be48e776097ee4a74a9d80b1534d753925eb8",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 80,
+     "hash_bitcoin_order": "216655ea1a812894771eca1f8b06bbaf98c06e36e8fbad1338f4693ae1bf9006",
+     "fuehrende_nullbits": 2,
+     "treffer": false
+    },
+    {
+     "nonce": 81,
+     "hash_bitcoin_order": "03ce442c5cffc81597b9c6b5bc523abf145cb75412b79160c69469e8b61cc66a",
+     "fuehrende_nullbits": 6,
+     "treffer": false
+    },
+    {
+     "nonce": 82,
+     "hash_bitcoin_order": "4bf30664aca4841612897e007edcac950194cc4e9e25289cae01125e437fdc4e",
+     "fuehrende_nullbits": 1,
+     "treffer": false
+    },
+    {
+     "nonce": 83,
+     "hash_bitcoin_order": "7e0bf77cda1e567802558736aa001087268e828bba28f09fc1ab6a4dfeb5410a",
+     "fuehrende_nullbits": 1,
+     "treffer": false
+    },
+    {
+     "nonce": 84,
+     "hash_bitcoin_order": "4cedbadedbb07e832be4dbe4687a36fc70de80955f118f5c82803fff2d6546ed",
+     "fuehrende_nullbits": 1,
+     "treffer": false
+    },
+    {
+     "nonce": 85,
+     "hash_bitcoin_order": "cf6a35252833ab033d1422600c8590a511be9d8a3de4563707a96cf6dae4fbd0",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 86,
+     "hash_bitcoin_order": "10864f57358444b4cdd4eb61f874df47eb8b4f4067e7fca264d3c2f7051ada7a",
+     "fuehrende_nullbits": 3,
+     "treffer": false
+    },
+    {
+     "nonce": 87,
+     "hash_bitcoin_order": "077a183e91fb4f8099b5937bb208594978be9d11daebce8facf35d6fd11f163b",
+     "fuehrende_nullbits": 5,
+     "treffer": false
+    },
+    {
+     "nonce": 88,
+     "hash_bitcoin_order": "59e1ffaa42dfaeb2058a8aca78639f8d2edcd7f369d68860a0ed26111456da72",
+     "fuehrende_nullbits": 1,
+     "treffer": false
+    },
+    {
+     "nonce": 89,
+     "hash_bitcoin_order": "1eeefdd19208500c312898e93d0f2648972f6640630729d209d27ee9efe6c7ee",
+     "fuehrende_nullbits": 3,
+     "treffer": false
+    },
+    {
+     "nonce": 90,
+     "hash_bitcoin_order": "dea785bf24e0721e9ce2dce78fde256d33a723f2e1ec9b795e231fcc51ee705c",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 91,
+     "hash_bitcoin_order": "d4914a32b8e52de2b9cec7bda0966cebdffeecc8e0bca2a120c39809ca3b79f7",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 92,
+     "hash_bitcoin_order": "38c960707f8b2034f178212bbfb82b6ba0b25d5a7879ea900aefdf33b0113636",
+     "fuehrende_nullbits": 2,
+     "treffer": false
+    },
+    {
+     "nonce": 93,
+     "hash_bitcoin_order": "135dee0ba6234947332f80144faef6b0df4881019229c45f3795673bd1206fe9",
+     "fuehrende_nullbits": 3,
+     "treffer": false
+    },
+    {
+     "nonce": 94,
+     "hash_bitcoin_order": "789a83ebf91d68d9af96277b4aede9ae1378b5e1c33d624dfbeb1dfa496b81c7",
+     "fuehrende_nullbits": 1,
+     "treffer": false
+    },
+    {
+     "nonce": 95,
+     "hash_bitcoin_order": "56345d04b17179180b9bbcc4cd5890d8e9b17f0d8d2f6ef3051da8d661dd44dc",
+     "fuehrende_nullbits": 1,
+     "treffer": false
+    },
+    {
+     "nonce": 96,
+     "hash_bitcoin_order": "0033ff39514b84ec5428a9af538075790ee514a8f1426f5874e84e5ce57fa0ae",
+     "fuehrende_nullbits": 10,
+     "treffer": false
+    },
+    {
+     "nonce": 97,
+     "hash_bitcoin_order": "0d79509ff615a269024696662beee8634ea1305d3d1465bc1b3be88e8f0b94a6",
+     "fuehrende_nullbits": 4,
+     "treffer": false
+    },
+    {
+     "nonce": 98,
+     "hash_bitcoin_order": "4d52ad88fd516148b68f005209aaa1fd0e47cda563d2870d321900d4f0885d35",
+     "fuehrende_nullbits": 1,
+     "treffer": false
+    },
+    {
+     "nonce": 99,
+     "hash_bitcoin_order": "e1ad23721fe20d386857075650c1c47c2d9264aa838138f29d10904575156f4a",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 100,
+     "hash_bitcoin_order": "2c555b3260a2ba05e72b973fbbdbedb1ccd3ad7cc185cce1b1857f597ccefbb7",
+     "fuehrende_nullbits": 2,
+     "treffer": false
+    },
+    {
+     "nonce": 101,
+     "hash_bitcoin_order": "56dda975f3e2694f675859d1ce9149b302559854c2fead59a4f58f91551b776f",
+     "fuehrende_nullbits": 1,
+     "treffer": false
+    },
+    {
+     "nonce": 102,
+     "hash_bitcoin_order": "6db4766de3d34468581e9cbb5b7d20cba89c290565a8717844f7120a4cd315a0",
+     "fuehrende_nullbits": 1,
+     "treffer": false
+    },
+    {
+     "nonce": 103,
+     "hash_bitcoin_order": "8428153e52fbae0225758aac585f10eea208437498dad521dbb418b9e9d00eff",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 104,
+     "hash_bitcoin_order": "d135883ef88394d803f6f19c3a27b487219e357242d6aa2065d5da3567a1baec",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 105,
+     "hash_bitcoin_order": "f59eb41c6fd1fb6341cac05c6fbecfe4d2a0a1fcd2b935c765c99d7e10856f84",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 106,
+     "hash_bitcoin_order": "025e8dc93f3139b4a2d365afd41a5acc6428965972003a71554bf57c3fa47f70",
+     "fuehrende_nullbits": 6,
+     "treffer": false
+    },
+    {
+     "nonce": 107,
+     "hash_bitcoin_order": "5e286bc5440782431ff5cdae153f12a012127ba76b943ede465bdd71d80deaf8",
+     "fuehrende_nullbits": 1,
+     "treffer": false
+    },
+    {
+     "nonce": 108,
+     "hash_bitcoin_order": "76fe5f11923741ed96bf67c661c10980a1ba251ec93fcef96c3dbda837a84707",
+     "fuehrende_nullbits": 1,
+     "treffer": false
+    },
+    {
+     "nonce": 109,
+     "hash_bitcoin_order": "8d2b9ed8b02543847a1c4347b334861aa1a61aac59bad4254baa639b67885029",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 110,
+     "hash_bitcoin_order": "074bf9bea53a1e016e170557e9abffba0af70c775638c49919b7ba781b5dcc77",
+     "fuehrende_nullbits": 5,
+     "treffer": false
+    },
+    {
+     "nonce": 111,
+     "hash_bitcoin_order": "361cd3453093471b27cf80e09c75ae567487a99433573b80ef9c935c9e170011",
+     "fuehrende_nullbits": 2,
+     "treffer": false
+    },
+    {
+     "nonce": 112,
+     "hash_bitcoin_order": "b2daf9086d4896a9dd12780af492973bd5e295a7823529ab5ca8cc97759d73ff",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 113,
+     "hash_bitcoin_order": "263cbd2522ee837a7289b9d424d966fc470a198e5742907c3a1fadca390a0b4d",
+     "fuehrende_nullbits": 2,
+     "treffer": false
+    },
+    {
+     "nonce": 114,
+     "hash_bitcoin_order": "15110dcaaaf62ac631add64ab059900df6844df816c92c6f21a86c0c7a2da30f",
+     "fuehrende_nullbits": 3,
+     "treffer": false
+    },
+    {
+     "nonce": 115,
+     "hash_bitcoin_order": "52e99f04d0d679084dd4e0ac8742a82035bf99e2ce9beca1ef7cbd275afa7566",
+     "fuehrende_nullbits": 1,
+     "treffer": false
+    },
+    {
+     "nonce": 116,
+     "hash_bitcoin_order": "9006dfab2b3a209f92630d016e9bbfb997e8e8cea8347c089b39231c7a068d4b",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 117,
+     "hash_bitcoin_order": "8c737c475c0ba56d01f19a02c5dab6b4c2f2c8a0c2874774f2ce6a0a0d6c19c6",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 118,
+     "hash_bitcoin_order": "d5ec6a60af760f01414eabc6658ac1e2d63c4585f5a5f9d08abba68c945455c0",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 119,
+     "hash_bitcoin_order": "63d7fe8ffa29981260d20944417250385dc23dfa713f0517ad4dd33ad1933ed8",
+     "fuehrende_nullbits": 1,
+     "treffer": false
+    },
+    {
+     "nonce": 120,
+     "hash_bitcoin_order": "2d7255de92272b6ef3829b1eef7e1f3726d2b50ace95c36bef9ac8f3f926f82c",
+     "fuehrende_nullbits": 2,
+     "treffer": false
+    },
+    {
+     "nonce": 121,
+     "hash_bitcoin_order": "32676c0954f91cbd32f6632c0a778db267cfc001f59ddec4764d631c084cb0e3",
+     "fuehrende_nullbits": 2,
+     "treffer": false
+    },
+    {
+     "nonce": 122,
+     "hash_bitcoin_order": "78b6b746693d9512c82e9399ac3619b3c71531d2df4278d5aa0ae2420c3f5230",
+     "fuehrende_nullbits": 1,
+     "treffer": false
+    },
+    {
+     "nonce": 123,
+     "hash_bitcoin_order": "2ef051bcf521f786e2c6abbd55e7f7a3f8c79a306a4d34b7455e18f75a6c7c0a",
+     "fuehrende_nullbits": 2,
+     "treffer": false
+    },
+    {
+     "nonce": 124,
+     "hash_bitcoin_order": "fa185e9dba341de9e0d7d52d64991741707961cc9faff5fe518d549d4eb9d609",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 125,
+     "hash_bitcoin_order": "fba0b17a0b68b215d84a90d82afa55f7c721cc8103f249121a5b4de80d373dcc",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 126,
+     "hash_bitcoin_order": "67cbe975f3245a3a3126ba3c77308d373ad1a7b9b7f1f36a23a906d3b532bdec",
+     "fuehrende_nullbits": 1,
+     "treffer": false
+    },
+    {
+     "nonce": 127,
+     "hash_bitcoin_order": "5028a9eee88f11a67da56ef464eb020cc565e72c752f6d1322105dcb5c0e7d20",
+     "fuehrende_nullbits": 1,
+     "treffer": false
+    },
+    {
+     "nonce": 128,
+     "hash_bitcoin_order": "d5e33ec6abc948a32ef799727793f8afc7757131d71c6ab80cb41a6a68d35a69",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 129,
+     "hash_bitcoin_order": "166eebda41465ca3ae84edd10ba729f4cad20b136470696badba440456180096",
+     "fuehrende_nullbits": 3,
+     "treffer": false
+    },
+    {
+     "nonce": 130,
+     "hash_bitcoin_order": "6a90b5c58390c0167b7b6dba1e2919a25c83fa0e953b05e10e19175d125359c7",
+     "fuehrende_nullbits": 1,
+     "treffer": false
+    },
+    {
+     "nonce": 131,
+     "hash_bitcoin_order": "58a149f0c063f2d0b7be4c235bab69ee455f488a876f62f670a7df3fef9db617",
+     "fuehrende_nullbits": 1,
+     "treffer": false
+    },
+    {
+     "nonce": 132,
+     "hash_bitcoin_order": "c570a9b230d4868df8ef346125b22906eeeb254d049e61d190e68dbfef249ee2",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 133,
+     "hash_bitcoin_order": "6b9950f90268c1ccd2f9cd5107391d51ad3aaabffa52880c88e586678b80a31c",
+     "fuehrende_nullbits": 1,
+     "treffer": false
+    },
+    {
+     "nonce": 134,
+     "hash_bitcoin_order": "0c642454f9e6cd8825d3715a528887d4c386560caec6aea1c7fe48d941ba6942",
+     "fuehrende_nullbits": 4,
+     "treffer": false
+    },
+    {
+     "nonce": 135,
+     "hash_bitcoin_order": "014cd0386f0def77ab2f5c69752815015d5f90eed9706b6b716c8b2f3057b226",
+     "fuehrende_nullbits": 7,
+     "treffer": false
+    },
+    {
+     "nonce": 136,
+     "hash_bitcoin_order": "eb72ac909938b735c007e14a898cd722f9369a3c6a237a36a144202b21089cc3",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 137,
+     "hash_bitcoin_order": "f017ed8ac56b5d22fb93b0b40d8f826437371b5187dd931d96418ea3e6181c0b",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 138,
+     "hash_bitcoin_order": "fb9e668830c7f32ad6a93557b5a932c1565222dc71624b99e57d837d36c60115",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 139,
+     "hash_bitcoin_order": "291f1ccbde7163f59159182c82f49b95513d384fd1bd58ace5b34f18e7c9e03d",
+     "fuehrende_nullbits": 2,
+     "treffer": false
+    },
+    {
+     "nonce": 140,
+     "hash_bitcoin_order": "56cff3c75bf1be48cb443f379848931cc52b1392a337d0c2a4d17c0bad425ede",
+     "fuehrende_nullbits": 1,
+     "treffer": false
+    },
+    {
+     "nonce": 141,
+     "hash_bitcoin_order": "52f3375aed4e86ec634500a006fe430a1e7dcdc23a3eb521ecd3cf77b6bc1acd",
+     "fuehrende_nullbits": 1,
+     "treffer": false
+    },
+    {
+     "nonce": 142,
+     "hash_bitcoin_order": "c99dec648958b90da92ef85e65e68dcb4d5c189f9c8f8fe2f9d787f232a86208",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 143,
+     "hash_bitcoin_order": "252bf1983cb489fca1e33bd7ab22aa31f8836fc907f87a35012682bee30ead0c",
+     "fuehrende_nullbits": 2,
+     "treffer": false
+    },
+    {
+     "nonce": 144,
+     "hash_bitcoin_order": "a22334c7f18327e5c49ab82fb18b311339053584fb5e4b7ca27e29889165574e",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 145,
+     "hash_bitcoin_order": "31a6ba5dc3f3a24321cfd36cc886d25424d2faef6e4bbe43f193af40a0f90234",
+     "fuehrende_nullbits": 2,
+     "treffer": false
+    },
+    {
+     "nonce": 146,
+     "hash_bitcoin_order": "0d2f64871b5d27ff4167e2a1e2000102ab8a1dd4df0c156e0f4fa10c538ae64a",
+     "fuehrende_nullbits": 4,
+     "treffer": false
+    },
+    {
+     "nonce": 147,
+     "hash_bitcoin_order": "b02cc30e57d5715becf041dabd27e10158aba14d6df98737c4b793cbb0b3ff40",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 148,
+     "hash_bitcoin_order": "9e646cae1f2183b1392f38dda6295a9f50397c90c8a7a6173cd94186800c2504",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 149,
+     "hash_bitcoin_order": "d944516897dcd94cd61db312dfc14fd25ff5827fabec895dc18ae8ef6e15fc11",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 150,
+     "hash_bitcoin_order": "94ea90a8fe3adb3bae7b16c6fb22f854b548e4c92de5c0d40118ff52590d8078",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 151,
+     "hash_bitcoin_order": "4992ec2703d45897cc4ac6c56cfbf6cd51628311e418a443cdbd8eda9d15cc92",
+     "fuehrende_nullbits": 1,
+     "treffer": false
+    },
+    {
+     "nonce": 152,
+     "hash_bitcoin_order": "c102d3b8bb301a2959b03b70dd2465fbf3ae2dcc0a05fd69c0bde621750827b0",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 153,
+     "hash_bitcoin_order": "55bb5c32ee180b3b7d62f9afe3a64ca4e8477ab0cc1d1398d335e0514a7ea230",
+     "fuehrende_nullbits": 1,
+     "treffer": false
+    },
+    {
+     "nonce": 154,
+     "hash_bitcoin_order": "9df784d210911dc503ab4c346ce6d7928b419337cc415c5d831cc8fd8c16a243",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 155,
+     "hash_bitcoin_order": "ed91404c14456e76df89fb5d3a7a8797e62ffda4f9e46571434671d3d3b6d4e8",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 156,
+     "hash_bitcoin_order": "61fef642e8b35a39456f2ff875b247deaa9f45e4e136261071e4c4d551422cd8",
+     "fuehrende_nullbits": 1,
+     "treffer": false
+    },
+    {
+     "nonce": 157,
+     "hash_bitcoin_order": "520dd914c05a6cc91ae7045de00a1a7d183eb3192d5c5a9eab5e7d3c9057b830",
+     "fuehrende_nullbits": 1,
+     "treffer": false
+    },
+    {
+     "nonce": 158,
+     "hash_bitcoin_order": "8ac34c6dda6315bf54b96a08991f83e999e26ec53e646e7df65153ef2c1d3257",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 159,
+     "hash_bitcoin_order": "1b6835a934e5c39f4469d440196d5ec94f66a448cd918d4fd0a07b9c36d586e6",
+     "fuehrende_nullbits": 3,
+     "treffer": false
+    },
+    {
+     "nonce": 160,
+     "hash_bitcoin_order": "2e8b3c84ef3b26a6ea37dd2a58687a56733c34382a3b50493b73204b120c3850",
+     "fuehrende_nullbits": 2,
+     "treffer": false
+    },
+    {
+     "nonce": 161,
+     "hash_bitcoin_order": "b93d4321e8999991070cd2a8cc3e15c627239e89332795cad944eab005f12fd2",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 162,
+     "hash_bitcoin_order": "d92153873438be20f8c5de7d91f288ab942d15bd21d85b87dd628c7b052b11d3",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 163,
+     "hash_bitcoin_order": "0951a40235e05544fd9cb84264c6aec58116aacebf864021128c29393dbcb197",
+     "fuehrende_nullbits": 4,
+     "treffer": false
+    },
+    {
+     "nonce": 164,
+     "hash_bitcoin_order": "12b90d3b61deff7517f254d842a16e2f6df340b79062c018bcafda8fd59f2dec",
+     "fuehrende_nullbits": 3,
+     "treffer": false
+    },
+    {
+     "nonce": 165,
+     "hash_bitcoin_order": "a97b8df3b8d42ef77e0cbb2d95e90d20fd2d0037efda19f37f4201b098b4145f",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 166,
+     "hash_bitcoin_order": "7c74b862b795fa0c2eddf8c5d05de47b622955e953f8026de10a718d8db20f2a",
+     "fuehrende_nullbits": 1,
+     "treffer": false
+    },
+    {
+     "nonce": 167,
+     "hash_bitcoin_order": "0ae5e0fa10245aea35938d24be8162982b1bf0c66637b5e6e64ce94c7baf4345",
+     "fuehrende_nullbits": 4,
+     "treffer": false
+    },
+    {
+     "nonce": 168,
+     "hash_bitcoin_order": "6f03e27367cf479b32bb714b65e133a7e3b33438072347e3b05e10960498f171",
+     "fuehrende_nullbits": 1,
+     "treffer": false
+    },
+    {
+     "nonce": 169,
+     "hash_bitcoin_order": "4dec1996dbef06e7983a87f940a8f3183f10b81fd69e1dd3693f0bcf0e7e6f2c",
+     "fuehrende_nullbits": 1,
+     "treffer": false
+    },
+    {
+     "nonce": 170,
+     "hash_bitcoin_order": "39131ebb495554727ebb0f8018acfd58ef5172440eb465f17b4e8cd3307dbba5",
+     "fuehrende_nullbits": 2,
+     "treffer": false
+    },
+    {
+     "nonce": 171,
+     "hash_bitcoin_order": "5be8364ce63e00536b0fb42e3a12b47ef37076bdf2ae0a4b803904ebda2c4074",
+     "fuehrende_nullbits": 1,
+     "treffer": false
+    },
+    {
+     "nonce": 172,
+     "hash_bitcoin_order": "8543fb97bf5c163cbddcd85d635e38c5d39227ab4f7ddf9fb621a25bc5a854ee",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 173,
+     "hash_bitcoin_order": "aa459901ba0abed48837f6ba72dc7fa0417aaa0dbaa0ab2bc4e027eb85a1666f",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 174,
+     "hash_bitcoin_order": "e356a8a8d84121f5466e1ed769de61108c809452b4331764b0ddc6f5059d6a01",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 175,
+     "hash_bitcoin_order": "69794224862544bb3198bdb2d33874bd73021333552dc5c2e3cb6d31c8ed9ffb",
+     "fuehrende_nullbits": 1,
+     "treffer": false
+    },
+    {
+     "nonce": 176,
+     "hash_bitcoin_order": "0dbe9cddee411c60c2016c2a2673325b913d61cc74155eec30089ea1408ca6bc",
+     "fuehrende_nullbits": 4,
+     "treffer": false
+    },
+    {
+     "nonce": 177,
+     "hash_bitcoin_order": "8be5bb665ad118a563c6d30d0a67037e2f39527e5833b489bd8f11cffa70a9c6",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 178,
+     "hash_bitcoin_order": "7a1eb4662a882103af51231e063a954dca4e3c1bed02dacbbe093c8c543fd2ca",
+     "fuehrende_nullbits": 1,
+     "treffer": false
+    },
+    {
+     "nonce": 179,
+     "hash_bitcoin_order": "80d8016ce4638281a6311daf4f587834ea950b52427b25eca472fd979198c97d",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 180,
+     "hash_bitcoin_order": "486b92be1bbaf1e7dc28652cbadf0bbbdf2e0b0b7528da394018e56a6d273e24",
+     "fuehrende_nullbits": 1,
+     "treffer": false
+    },
+    {
+     "nonce": 181,
+     "hash_bitcoin_order": "8b6d6ad9eb1bf6367524b6021c1236d0cc5a7fca45a9aac7a1dd769e5ef37354",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 182,
+     "hash_bitcoin_order": "cb672842cb5d1e12467f389c640bcd8c0d8f4e2a0c035e57ecfb82cd1f56b91a",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 183,
+     "hash_bitcoin_order": "316a206ca06f64caaaa92d82bb63b45fbebe168f08f608a119fca1ec4741947c",
+     "fuehrende_nullbits": 2,
+     "treffer": false
+    },
+    {
+     "nonce": 184,
+     "hash_bitcoin_order": "65791e59a1702a51a56d40e27d7a6aa71484784b8242a36d8206e0346164ff58",
+     "fuehrende_nullbits": 1,
+     "treffer": false
+    },
+    {
+     "nonce": 185,
+     "hash_bitcoin_order": "944e0c2c0d280669c5e87a6a13e74859b658c6ea6cc9432756ee14c3eec43333",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 186,
+     "hash_bitcoin_order": "59ed042974d894acbbe60c43ceb3b776a9467ad04089dd42e14d31e88288916f",
+     "fuehrende_nullbits": 1,
+     "treffer": false
+    },
+    {
+     "nonce": 187,
+     "hash_bitcoin_order": "81db849728dd39d1cb34e279d3477adabfdcd9fdd2a82987237392b382585f77",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 188,
+     "hash_bitcoin_order": "2c0d216f33c0366568aef0edda33297b83c907388834c369006cee58a0b06cc7",
+     "fuehrende_nullbits": 2,
+     "treffer": false
+    },
+    {
+     "nonce": 189,
+     "hash_bitcoin_order": "15ca4ba5adfa7d8094757b4a6af8b551189e1f58ee7e5fcf743e10305419edb7",
+     "fuehrende_nullbits": 3,
+     "treffer": false
+    },
+    {
+     "nonce": 190,
+     "hash_bitcoin_order": "5045e9acfbc79c4879d17ab06e6ec4cfc3223b30e006ef9e93c19ec72c1d8b6c",
+     "fuehrende_nullbits": 1,
+     "treffer": false
+    },
+    {
+     "nonce": 191,
+     "hash_bitcoin_order": "591e9ce4df5b7efd27a10b930a96ac2ebe48e79c794b74a86b7898e8efc710ab",
+     "fuehrende_nullbits": 1,
+     "treffer": false
+    },
+    {
+     "nonce": 192,
+     "hash_bitcoin_order": "2f11b41514187394ad5695a33722e2d96f582c4c93d3392d018965f25e19b074",
+     "fuehrende_nullbits": 2,
+     "treffer": false
+    },
+    {
+     "nonce": 193,
+     "hash_bitcoin_order": "d762c3d960c77184979e8869a943a516ede2be13a574f5374eb8567ef7f30386",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 194,
+     "hash_bitcoin_order": "b2a796ed2e087cd193a2822d53845ffd40a584023cde787a7f3211c8599c70e1",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 195,
+     "hash_bitcoin_order": "c50cf630b64d1dccbd340ab87cbe24b42a19f9618839aad04baafe8b18d6401b",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 196,
+     "hash_bitcoin_order": "7071df9d2450f26140ebc205ae802dc467155b063c0e8b40566b219a23406dae",
+     "fuehrende_nullbits": 1,
+     "treffer": false
+    },
+    {
+     "nonce": 197,
+     "hash_bitcoin_order": "5a71dfae289ff5db486e90493ead86f9099fd2b0293b197a470d6050a4d58dd0",
+     "fuehrende_nullbits": 1,
+     "treffer": false
+    },
+    {
+     "nonce": 198,
+     "hash_bitcoin_order": "cd3fa0163d581f7a914bdc5cdd56477907e37c2e878fce06dc2c713319216a75",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 199,
+     "hash_bitcoin_order": "97c978274b8f75079dda351e2815c9930b8112ae13195cbbaeeefd36363df988",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 200,
+     "hash_bitcoin_order": "d04e49463c0b69d02a01dfc06beec8569cbd656e9c00a096136d034666fc42ef",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 201,
+     "hash_bitcoin_order": "5b2d9361209ecbf06b6db70d695e6548877152dca740e81b8728af484fde7d51",
+     "fuehrende_nullbits": 1,
+     "treffer": false
+    },
+    {
+     "nonce": 202,
+     "hash_bitcoin_order": "1ed083c7d73cf1621d0b2cffeff7c9f300ade4bfc7faf6254f76dcbaf45a2bd4",
+     "fuehrende_nullbits": 3,
+     "treffer": false
+    },
+    {
+     "nonce": 203,
+     "hash_bitcoin_order": "8a16bbe4729c9f975d3e1a1fd8ff8ec284d49c0702460f967c50d2e417bd808c",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 204,
+     "hash_bitcoin_order": "0747075e27be6de1a523c7fc0ae129305d3672e579598331828d62e8a48c992b",
+     "fuehrende_nullbits": 5,
+     "treffer": false
+    },
+    {
+     "nonce": 205,
+     "hash_bitcoin_order": "6fbdb45a271c18760777c9f36722ab3ce6d2eb85167af4f9b815565aefc3e3d9",
+     "fuehrende_nullbits": 1,
+     "treffer": false
+    },
+    {
+     "nonce": 206,
+     "hash_bitcoin_order": "fa9fae1cf9593c01cc059844608f9defeee0668043d3ee1c385b280d55e3d4dd",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 207,
+     "hash_bitcoin_order": "7b16fb8949ce12fb829951c249d616bdaba1eccab9d841ea463268d7a672a599",
+     "fuehrende_nullbits": 1,
+     "treffer": false
+    },
+    {
+     "nonce": 208,
+     "hash_bitcoin_order": "b700b66ae19e869f242a3da2967b0deb9a9af216aaadffc79a77213c46e0d1a9",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 209,
+     "hash_bitcoin_order": "4efada652dd96a192f1b79338e8c7634121872c3716cff6312a4714e89b52fd6",
+     "fuehrende_nullbits": 1,
+     "treffer": false
+    },
+    {
+     "nonce": 210,
+     "hash_bitcoin_order": "0afd6c1c98fef09e4c28165fd3cff0b312da93e061eb64beddab4c0a840f9f51",
+     "fuehrende_nullbits": 4,
+     "treffer": false
+    },
+    {
+     "nonce": 211,
+     "hash_bitcoin_order": "c06f3c682648328a690afeb980e682c5fe1e754e19076887f26b4cc591bfac74",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 212,
+     "hash_bitcoin_order": "0bca3aa66af12887d5432e56d881e6be78106062a54f107db1f933d640629189",
+     "fuehrende_nullbits": 4,
+     "treffer": false
+    },
+    {
+     "nonce": 213,
+     "hash_bitcoin_order": "a698ca780e91605f8d0609f1fe320e7c2d206e5388c496965ab5feb8b041810f",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 214,
+     "hash_bitcoin_order": "d07855d2ea592e7047b4db34a499755d01c6507010609823ed68c2ad300fb0b4",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 215,
+     "hash_bitcoin_order": "00bf9b4d564cde3fdfa92db400f3fd653a8871e89a79156162b8afa90718ce94",
+     "fuehrende_nullbits": 8,
+     "treffer": false
+    },
+    {
+     "nonce": 216,
+     "hash_bitcoin_order": "64018c35b8e179fe4c09b4eb6bd8af78dc9aaf253a6850a21bc8bcccde48305f",
+     "fuehrende_nullbits": 1,
+     "treffer": false
+    },
+    {
+     "nonce": 217,
+     "hash_bitcoin_order": "763901c751f2c13fa5e2417bcd35ae60fb5331e4089beb0a428d3ed311b04e1d",
+     "fuehrende_nullbits": 1,
+     "treffer": false
+    },
+    {
+     "nonce": 218,
+     "hash_bitcoin_order": "9166c61df36ec34dfba731d30c913df762d2444ac4855dc5b63bc6a21a255a63",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 219,
+     "hash_bitcoin_order": "a15ea08a03c847c2a54038ea6b1394c36cefdf378f03821457fa27d4a7a4db61",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 220,
+     "hash_bitcoin_order": "b6c3ba4d693a7946d613cd455bcf2e0f011255c9295a895eba640e14e8518d13",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 221,
+     "hash_bitcoin_order": "7dce38881a3b6b850eac57780b3f8d3047a7c51611e5285098414a5a5968d83f",
+     "fuehrende_nullbits": 1,
+     "treffer": false
+    },
+    {
+     "nonce": 222,
+     "hash_bitcoin_order": "556c8dab20ef382fb05ead19feb0b3b45535db9d9a41da66023f64dcd8e0bfe4",
+     "fuehrende_nullbits": 1,
+     "treffer": false
+    },
+    {
+     "nonce": 223,
+     "hash_bitcoin_order": "bb4e2a73239e2cc97ca626d76cb58f20c9bcb71ee971cdd10621ce2e1cea111d",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 224,
+     "hash_bitcoin_order": "9ca391aa6946ecef41b82d8a7ac6d995cc29c21e4204825a1917bb5fd746f75e",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 225,
+     "hash_bitcoin_order": "1222b7e85acf042cd2bc78a05805d727d18c39049c29c67ab810f106d1c61671",
+     "fuehrende_nullbits": 3,
+     "treffer": false
+    },
+    {
+     "nonce": 226,
+     "hash_bitcoin_order": "10a05d3f72e8abe91aae1609155d215be90bfcb2298a2c735defdeeba8465ce1",
+     "fuehrende_nullbits": 3,
+     "treffer": false
+    },
+    {
+     "nonce": 227,
+     "hash_bitcoin_order": "4d153ef4defe19c425d16d4f0e9c4f2a2c85c25b29eaa3dd77364db41da03366",
+     "fuehrende_nullbits": 1,
+     "treffer": false
+    },
+    {
+     "nonce": 228,
+     "hash_bitcoin_order": "a24060a0c3adfc64fa4ea6766b3813a6b472bf9826ce041897eb239ee69d0779",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 229,
+     "hash_bitcoin_order": "051473ed60ce5e93266a90420e548a8e3f60c9f28df7675e2f30ef20c5940349",
+     "fuehrende_nullbits": 5,
+     "treffer": false
+    },
+    {
+     "nonce": 230,
+     "hash_bitcoin_order": "bfa5714c9676cab41d941ecfff971e009fa38ea7c49fb5062b43f72d8d12c479",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 231,
+     "hash_bitcoin_order": "0eb18d4db9615c70ebf4789454f613a6d8270e659b0b809647cd5c63370f8053",
+     "fuehrende_nullbits": 4,
+     "treffer": false
+    },
+    {
+     "nonce": 232,
+     "hash_bitcoin_order": "82d039d9214f9e3723014ea27ad8d6c05cc23d64afb4f8e7f28723f87ab3a6b9",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 233,
+     "hash_bitcoin_order": "887cdf30e1a9ee4ebaa71b53efa93f42d2ffdce0655dd9707afa1ae283bd89c0",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 234,
+     "hash_bitcoin_order": "e673efae019927206743c52f1d0039bfdc134475cd842a49415317aa08001a89",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 235,
+     "hash_bitcoin_order": "39a2d5ac8ee9d00628b28385dc4f0ad2c2c158dc62d00d570d2edf0bc1fd075d",
+     "fuehrende_nullbits": 2,
+     "treffer": false
+    },
+    {
+     "nonce": 236,
+     "hash_bitcoin_order": "7e60aadb6aa570dcfa11cef55d3a52a21391e3c10c3d3655257c1b0eff579062",
+     "fuehrende_nullbits": 1,
+     "treffer": false
+    },
+    {
+     "nonce": 237,
+     "hash_bitcoin_order": "fefd65d89b85a3c9d70111ff5bcc7a6a59f5d3f8aedecf3d1e2434617aa5a128",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 238,
+     "hash_bitcoin_order": "7cad014a476f13c2f637954f4f5e434eaf374e406d089263dc5722822be8978b",
+     "fuehrende_nullbits": 1,
+     "treffer": false
+    },
+    {
+     "nonce": 239,
+     "hash_bitcoin_order": "3ae686b295f91dc0c540eb0321e1621776ab6ac381936349d9e2d8b2137760ac",
+     "fuehrende_nullbits": 2,
+     "treffer": false
+    },
+    {
+     "nonce": 240,
+     "hash_bitcoin_order": "13fc747919794d4fe85061ebf9a20bfbac2fb84e20627e6776f5ca34f1ca657d",
+     "fuehrende_nullbits": 3,
+     "treffer": false
+    },
+    {
+     "nonce": 241,
+     "hash_bitcoin_order": "446772d06ea3b198e1dafbdce9b68607efc18a459a8924a6a9cbf31cf8fe7667",
+     "fuehrende_nullbits": 1,
+     "treffer": false
+    },
+    {
+     "nonce": 242,
+     "hash_bitcoin_order": "ecaf5ce5d02850ab993bb6bd6e643f3c91f7fd9033a955b05d46e55c01377e3d",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 243,
+     "hash_bitcoin_order": "a1f1554a3e8c7dd69ec74fe73ad66ef5b884299f43e17af466f8329aad8b934e",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 244,
+     "hash_bitcoin_order": "1cb2f97debc055c19ddb2ad18735186eab21f387080d8214022be9c890b2aa1c",
+     "fuehrende_nullbits": 3,
+     "treffer": false
+    },
+    {
+     "nonce": 245,
+     "hash_bitcoin_order": "f1a97abd7d8b8e4911b25b785ade9412970c0eb30116612e36112fcdc9238bc0",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 246,
+     "hash_bitcoin_order": "0a0166ef4f920671682eb4382e3edec31fb7467ab67a4c9705e51c515cf99c91",
+     "fuehrende_nullbits": 4,
+     "treffer": false
+    },
+    {
+     "nonce": 247,
+     "hash_bitcoin_order": "7eab582d1bac987fb860906cb480002e96fc0a7d7c59acc5a66f47c84fd62e84",
+     "fuehrende_nullbits": 1,
+     "treffer": false
+    },
+    {
+     "nonce": 248,
+     "hash_bitcoin_order": "876457eb4e7eecf671e3a83bca759e10c612a23fab6af7c7fc05fbcd2837ee10",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 249,
+     "hash_bitcoin_order": "c65a0cd0b82d553cbb0d91e82d6607bc40cc5f087fd7bae142a9388768125453",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 250,
+     "hash_bitcoin_order": "619ab3d4bb77a628a5ca3a0b8bff5ee835fee15644ae2b77d4388c4417042df8",
+     "fuehrende_nullbits": 1,
+     "treffer": false
+    },
+    {
+     "nonce": 251,
+     "hash_bitcoin_order": "e05a42ab31b7b24e2b8bcc63263ce57aaf2118eba594f6739fa8b987a9b1d4bd",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 252,
+     "hash_bitcoin_order": "7da02e425417d332d0225ee393d130d7ee04a60c8b116314ef27cba91f127b68",
+     "fuehrende_nullbits": 1,
+     "treffer": false
+    },
+    {
+     "nonce": 253,
+     "hash_bitcoin_order": "3dd2d3f8242c2aef260899d0747651a6cc3afb1f66f5597c3aa456d5f956eb87",
+     "fuehrende_nullbits": 2,
+     "treffer": false
+    },
+    {
+     "nonce": 254,
+     "hash_bitcoin_order": "868b0210eccbff1d70efc193745df3b3ad76f287b0fefec62d3f79bf709d5c70",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 255,
+     "hash_bitcoin_order": "c12b4aab61491891c532e5dd6815bddcd08eb45e70828d933bac3f6913c75f4f",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    }
+   ],
+   "quelle": {
+    "pfad_im_pruefpaket": "forschung_einfache_vorlagen/VORLAGEN.json",
+    "sha256": "cc783868db255b27bf199ab345071e6be4240f0694bce668bce92ab132fc76bb",
+    "source": "(lokaler Pfad des gespeicherten Vorlagenlaufs entfernt; Datei-Hash siehe source_sha256)",
+    "source_sha256": "14b299f2f297f1bfa46c3b2174ed85c9348b86cac70c5b3623bc0b21125c25e8",
+    "height": 972527,
+    "previous": "000000000000000000018c4e1195b187f44d49bedb39720d6967dbf4eb86e888",
+    "scope": "Offline variants of saved template. No RPC, no submission, no current validity claim.",
+    "extra": "0000000000000000"
+   }
+  },
+  {
+   "name": "F2_GENESIS_HISTORISCH",
+   "beschreibung": "Historische Trefferkontrolle: Genesis-Header (pruefung.header), Target aus nBits 1d00ffff, 256 Nonces um den bekannten Treffer. Getrennt von F1 auszuweisen.",
+   "header_hex_ohne_nonce": "0100000000000000000000000000000000000000000000000000000000000000000000003ba3edfd7a7b12b27ac72c3e67768f617fc81bc3888a51323a9fb8aa4b1e5e4a29ab5f49ffff001d",
+   "nbits_hex": "1d00ffff",
+   "target_hex": "00000000ffff0000000000000000000000000000000000000000000000000000",
+   "target_nullbits": 32,
+   "basis_nonce": 2083236864,
+   "freie_nonce_bits": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+   ],
+   "nonce_bereich": [
+    2083236864,
+    2083237119
+   ],
+   "anzahl_nonces": 256,
+   "referenz_treffer": [
+    2083236893
+   ],
+   "midstate_hex": "bc909a336358bff090ccac7d1e59caa8c3c8d8e94f0103c896b187364719f91b",
+   "referenz": [
+    {
+     "nonce": 2083236864,
+     "hash_bitcoin_order": "f5883ebf5209d6cde6a3490db439a7436ebe9c19002eb63e10deb13bb282b79b",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 2083236865,
+     "hash_bitcoin_order": "f56857aadf1791e78a5bf6e659754afa0db7dd1a2e4ad8e9c8cd68c3980aade2",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 2083236866,
+     "hash_bitcoin_order": "782dec1cb24812fb83c5ae525c4dc9f7ba7e646c4edc0df56a5a2ce2b79525e2",
+     "fuehrende_nullbits": 1,
+     "treffer": false
+    },
+    {
+     "nonce": 2083236867,
+     "hash_bitcoin_order": "61b895c45ac15c297a6b9b33ab1f79bc007cd7055a0b046c1b0fbd703edb984a",
+     "fuehrende_nullbits": 1,
+     "treffer": false
+    },
+    {
+     "nonce": 2083236868,
+     "hash_bitcoin_order": "9ac9f9bcc340ca664dfbe5898e4a7795e07705ef696dcfbbc4ecdf09c7a331e7",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 2083236869,
+     "hash_bitcoin_order": "68b0ecfa8ca697b1922f87e8f0baca7cc401646fbfe572b05581222bbce644cc",
+     "fuehrende_nullbits": 1,
+     "treffer": false
+    },
+    {
+     "nonce": 2083236870,
+     "hash_bitcoin_order": "c38ac06dfbc7ad4b17ccef2c018ec185a587fd4374780c59719edadf035c15fc",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 2083236871,
+     "hash_bitcoin_order": "0b34b9f7fb4fd6c4d105862476082bb6e6481821a09c0d5944c4027327cb615a",
+     "fuehrende_nullbits": 4,
+     "treffer": false
+    },
+    {
+     "nonce": 2083236872,
+     "hash_bitcoin_order": "f2f1d9c4a0b4957eedbd7016e71cb3e8053ddea5069b2d5527b71bf6aa6439e5",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 2083236873,
+     "hash_bitcoin_order": "c8b05e1d500018a73bce8c7fcbc572b5cb96bf0926083cf30a9e7ef0291d47a6",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 2083236874,
+     "hash_bitcoin_order": "b11cd2343175d6bf47bfa732f73571b51124502dcd53b1baaf94b24b09dd738e",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 2083236875,
+     "hash_bitcoin_order": "36c08e0139a04470556e28060c1ac494b3825fa508d92a2b548a883611f2ce00",
+     "fuehrende_nullbits": 2,
+     "treffer": false
+    },
+    {
+     "nonce": 2083236876,
+     "hash_bitcoin_order": "4ff79607a6cd035aea02f76e72fd71e8c5b4c16cbecfca3cde4928758a2ae3f2",
+     "fuehrende_nullbits": 1,
+     "treffer": false
+    },
+    {
+     "nonce": 2083236877,
+     "hash_bitcoin_order": "76a6ca1583b4bb45f16cbbcfaf1646b524eb0b1751d475118d057c9ffdef3204",
+     "fuehrende_nullbits": 1,
+     "treffer": false
+    },
+    {
+     "nonce": 2083236878,
+     "hash_bitcoin_order": "8881849513bd35ea773ddb8190deb2277439214cd0be5390630661729c76b3ef",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 2083236879,
+     "hash_bitcoin_order": "94f0362b7d67971195aabfc16685f6acfd2baaa9b0d540cc04e8440032a00cb6",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 2083236880,
+     "hash_bitcoin_order": "734fea27db67e198321cbb33f7b5cf995a8b9d72d891021f0a19d2b9ae0b528c",
+     "fuehrende_nullbits": 1,
+     "treffer": false
+    },
+    {
+     "nonce": 2083236881,
+     "hash_bitcoin_order": "97ed0fcdc57c9102cc242a4ea86b920621437458615df25273226c35d7efddd7",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 2083236882,
+     "hash_bitcoin_order": "4d0f511f84d592bfba3639c2186d5acb109a675cad402eebf967c5b62982020e",
+     "fuehrende_nullbits": 1,
+     "treffer": false
+    },
+    {
+     "nonce": 2083236883,
+     "hash_bitcoin_order": "a2b082d13874a90b0b5520ce9b3ee7cf6a459c39d301bd301fff5ac77a9833ab",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 2083236884,
+     "hash_bitcoin_order": "e6986156a7857c847030cac91d141362407f06916a8e1dd56c538c34f1822290",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 2083236885,
+     "hash_bitcoin_order": "61176533d7489c1bc6af29e5d47055003e97d9a1f5d8155c8e0dea0d2f442172",
+     "fuehrende_nullbits": 1,
+     "treffer": false
+    },
+    {
+     "nonce": 2083236886,
+     "hash_bitcoin_order": "6dae00197a0d16ebafc56c681d4e80c4d76d573751b9d4481d5440f146cd5ef1",
+     "fuehrende_nullbits": 1,
+     "treffer": false
+    },
+    {
+     "nonce": 2083236887,
+     "hash_bitcoin_order": "ddca400f443dcc1d2cbc346a9909796e54204bbe284b441aa57270072a0417af",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 2083236888,
+     "hash_bitcoin_order": "d2dabf8e39e9ea202c3ab7a545c3ececf1279983e18bcb008c050480d9899d87",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 2083236889,
+     "hash_bitcoin_order": "8b3dba6b96974eec17872990b1d3e923fcce710c6b16391b33324a8c4a4fe9db",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 2083236890,
+     "hash_bitcoin_order": "36e049f4f81b2952e3f5c8ac41182d36c076fa70c1dbd22a65d39fbe2aa3062e",
+     "fuehrende_nullbits": 2,
+     "treffer": false
+    },
+    {
+     "nonce": 2083236891,
+     "hash_bitcoin_order": "e21115f96ee0eaad062fd170942b91bb1f43b395757eb87e5a7c97e9823d1383",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 2083236892,
+     "hash_bitcoin_order": "8cdc343dc1ca87b0fae7d09a6537a536fec9784a3c4541b770bfb5881c5d66d9",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 2083236893,
+     "hash_bitcoin_order": "000000000019d6689c085ae165831e934ff763ae46a2a6c172b3f1b60a8ce26f",
+     "fuehrende_nullbits": 43,
+     "treffer": true
+    },
+    {
+     "nonce": 2083236894,
+     "hash_bitcoin_order": "9b227a4a5daa0cbae6874144bc5d7797d0513e320aceadeb3b06304971a41b1c",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 2083236895,
+     "hash_bitcoin_order": "8fef4789791f62e71dca8230ff21a311153284c8de8ff4fc15ca44948944539d",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 2083236896,
+     "hash_bitcoin_order": "8fdcfc731d141c45314b554c999726b2306ff3f62279d5f3943a4ce1a792dc6c",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 2083236897,
+     "hash_bitcoin_order": "e429cce84b5a4f3b0e40ec9bd9f3deb0a3dd47b99c5ba4c1b0c7bc253f466ca4",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 2083236898,
+     "hash_bitcoin_order": "97ee1ee288310d7a689e4851fbb419d2ff406e2c6d23d43050d72dff6200ae8b",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 2083236899,
+     "hash_bitcoin_order": "02fbc5c471ad6d2ec1d09cd0a2ebf3266c4c480bc82fd09078348d19cef71812",
+     "fuehrende_nullbits": 6,
+     "treffer": false
+    },
+    {
+     "nonce": 2083236900,
+     "hash_bitcoin_order": "c1cc2031437dbf060dedb2bf1acc45437c800577c7a0bf1ef1b9f4fa9a739c6a",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 2083236901,
+     "hash_bitcoin_order": "e067154a856d588a21f439ce7f3b1c8ecf0b9c1c354ade4ee2e7c6dc40905364",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 2083236902,
+     "hash_bitcoin_order": "bb274fb2fc4b1c51058d1adef67ec169664030c81cd8812205ecd342eaf6d95f",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 2083236903,
+     "hash_bitcoin_order": "1f7036e8898076ff7bc2c853a45ec32bf32fa2eb04ca0fa61cb9055b1047ec04",
+     "fuehrende_nullbits": 3,
+     "treffer": false
+    },
+    {
+     "nonce": 2083236904,
+     "hash_bitcoin_order": "694d3dee387f939c9d6852325130c6405462b486adf930ea2715da93093fae59",
+     "fuehrende_nullbits": 1,
+     "treffer": false
+    },
+    {
+     "nonce": 2083236905,
+     "hash_bitcoin_order": "8cba54a35847773ceab9d646c7969371b85f9974af6b83b89a92b3d76250dc7e",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 2083236906,
+     "hash_bitcoin_order": "bdf05a9da05682d02796d2caf383f1ee2e44fa999b98dc2f9c314cf6a0e09cc3",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 2083236907,
+     "hash_bitcoin_order": "50549b7c81c78444e9f84cadd5cce6a94bd7fb86cf99a0f639634980ccf80e13",
+     "fuehrende_nullbits": 1,
+     "treffer": false
+    },
+    {
+     "nonce": 2083236908,
+     "hash_bitcoin_order": "f2ac76f4dfb81df4c649a5f18fa2719f7adbe34a085a5d3967007221e9e86f03",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 2083236909,
+     "hash_bitcoin_order": "2a46834a4d408b8af7e8e7c7649f9fd4b2ee3fba60d98070e4c71f7e26337612",
+     "fuehrende_nullbits": 2,
+     "treffer": false
+    },
+    {
+     "nonce": 2083236910,
+     "hash_bitcoin_order": "a1a30006d16d657c66d7e4c944509762f073254a054fc9d55fa6a5375053f8fa",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 2083236911,
+     "hash_bitcoin_order": "6f6cfeb5571ad5074b624e4c8a84f3cae6a23c60de9031ede42a0b40d0d6b690",
+     "fuehrende_nullbits": 1,
+     "treffer": false
+    },
+    {
+     "nonce": 2083236912,
+     "hash_bitcoin_order": "6176cd6f46354884d5962a1965d162d94c5745860a87830943f46c802002a45a",
+     "fuehrende_nullbits": 1,
+     "treffer": false
+    },
+    {
+     "nonce": 2083236913,
+     "hash_bitcoin_order": "ef92ac432b1a2d8dfc05ca1fe0815c24112f0ea9bc5327b149d10ae2eff6aba4",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 2083236914,
+     "hash_bitcoin_order": "b50fe86147472679264bb7b6eb447b3310b4b377d8a0a3b375949fa030c3a2e3",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 2083236915,
+     "hash_bitcoin_order": "765da1bff264f853d01f0c3c80e1f8dd78f21c4d947d4fa722da68e92be59478",
+     "fuehrende_nullbits": 1,
+     "treffer": false
+    },
+    {
+     "nonce": 2083236916,
+     "hash_bitcoin_order": "5acaf223f4af6e246081eb491e62c49e50ca92d62b0f02523911bda39b7fef3c",
+     "fuehrende_nullbits": 1,
+     "treffer": false
+    },
+    {
+     "nonce": 2083236917,
+     "hash_bitcoin_order": "e1de6346067444e534064bd8ea53501b7ace1c7910e6574315ea6a441e2bc317",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 2083236918,
+     "hash_bitcoin_order": "e21e29340b85da2e986bc544c9efbe29de5011030c266891fc8c8f0f7bfc1266",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 2083236919,
+     "hash_bitcoin_order": "87e1c0b744913ea14af7315cfa05e81a526bca049e398c40c8670cc9339dee50",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 2083236920,
+     "hash_bitcoin_order": "94d49e23ef8ccaeba682419493df215b0bdbc9ca89cfeb5b6d7105e8f577e9e2",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 2083236921,
+     "hash_bitcoin_order": "135d2cea878ebd2ac785282b6bb40fb62129123f3fa9193bd8ea14aaad833bf9",
+     "fuehrende_nullbits": 3,
+     "treffer": false
+    },
+    {
+     "nonce": 2083236922,
+     "hash_bitcoin_order": "c6739884e416aea4a07dc30a0bac885fbaf0d79f13b76f0493725c3e1bc46c61",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 2083236923,
+     "hash_bitcoin_order": "01bd1c256d9bbadedf43d2e55daf920056bbf53b3b7deb5959c4fcd4eccadaec",
+     "fuehrende_nullbits": 7,
+     "treffer": false
+    },
+    {
+     "nonce": 2083236924,
+     "hash_bitcoin_order": "92e9a364d8d720d8a5c93a50cce4308b14fb2405ae58ba9032e03a64622a49e8",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 2083236925,
+     "hash_bitcoin_order": "4bd519e8bb86812bbfaf5572f3a34fac1f1b4bc51571b479bbc773471fc26a46",
+     "fuehrende_nullbits": 1,
+     "treffer": false
+    },
+    {
+     "nonce": 2083236926,
+     "hash_bitcoin_order": "cf212b976ba9ba14ebbbf2a3b449f5489bd7194c6ee29a4dcc2cfc553ab88eb5",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 2083236927,
+     "hash_bitcoin_order": "fc14d31636a531769cca1fa727c8329b09cd56271ad8e47a47e244288bf7df7b",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 2083236928,
+     "hash_bitcoin_order": "5a2b4b0a579197ffec20c49ade03f637e5d161e40fb48d2cca9cbd18c52d4732",
+     "fuehrende_nullbits": 1,
+     "treffer": false
+    },
+    {
+     "nonce": 2083236929,
+     "hash_bitcoin_order": "303d00428e826c6b410b9e78d69f38c64ea6dfff737a773278677277d9c54938",
+     "fuehrende_nullbits": 2,
+     "treffer": false
+    },
+    {
+     "nonce": 2083236930,
+     "hash_bitcoin_order": "b5e5c4344d07a7818a054d88459bb77970f1ef75af3282e017ef52b2768095df",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 2083236931,
+     "hash_bitcoin_order": "f7506d447163637063fa4597c64fa8d8a80914c1991aa46acee6559d06c3bc7e",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 2083236932,
+     "hash_bitcoin_order": "7b8bc573084d8e70e3109e641ca499fc6102581b6e48b5faf9b779065527ce53",
+     "fuehrende_nullbits": 1,
+     "treffer": false
+    },
+    {
+     "nonce": 2083236933,
+     "hash_bitcoin_order": "56490f19cbf4ba69ce8cad33eba87bb0e19af2f624872db06fa8f605f03d5fb1",
+     "fuehrende_nullbits": 1,
+     "treffer": false
+    },
+    {
+     "nonce": 2083236934,
+     "hash_bitcoin_order": "3f5a1b82dd600945cdab6daeda51a13ebb99d366e0efc0f62bec04780ac083f5",
+     "fuehrende_nullbits": 2,
+     "treffer": false
+    },
+    {
+     "nonce": 2083236935,
+     "hash_bitcoin_order": "cd32b3e2b5d0f8f28da7a9a0887e9af68184ef1cdd71bc416f471dadc26254b6",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 2083236936,
+     "hash_bitcoin_order": "d0b71010897c8eabcdd22a85207edd4d7431cd6a605b96e30e67daa7d6ba4350",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 2083236937,
+     "hash_bitcoin_order": "2c3569e7943db4a45361623237959902e43801c954b8e5e71a7dd8c0cc045157",
+     "fuehrende_nullbits": 2,
+     "treffer": false
+    },
+    {
+     "nonce": 2083236938,
+     "hash_bitcoin_order": "25edacb7bcaa238555678d5c95d8d3b73d5ae24b7a3e0b8fa77c83bb2c825e6e",
+     "fuehrende_nullbits": 2,
+     "treffer": false
+    },
+    {
+     "nonce": 2083236939,
+     "hash_bitcoin_order": "80c3733d0f6742a6f16bdad241d45eb210df7046aeef43f946a38b2233def862",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 2083236940,
+     "hash_bitcoin_order": "647a869f1c8618d2bd216c8d4006595969418a93a9ca3d7666d7b0e76179caa4",
+     "fuehrende_nullbits": 1,
+     "treffer": false
+    },
+    {
+     "nonce": 2083236941,
+     "hash_bitcoin_order": "7a2146e6b526cbdb1ee10a1db83e4be4482c776699c2fe8ecb72b8aadd3cf8f7",
+     "fuehrende_nullbits": 1,
+     "treffer": false
+    },
+    {
+     "nonce": 2083236942,
+     "hash_bitcoin_order": "7aa47ff7291542919151d76522cd4c82db0e0c5f9cd4d7e1803abc36b4157e81",
+     "fuehrende_nullbits": 1,
+     "treffer": false
+    },
+    {
+     "nonce": 2083236943,
+     "hash_bitcoin_order": "50168d63bb36e7fffc02aa0cf07b9c9edf336a88102bead9e5995ad4f9b1da96",
+     "fuehrende_nullbits": 1,
+     "treffer": false
+    },
+    {
+     "nonce": 2083236944,
+     "hash_bitcoin_order": "309346e8008ff9cec7f0006b85a42cf36b684f5abe97fe487f7ce004f733d758",
+     "fuehrende_nullbits": 2,
+     "treffer": false
+    },
+    {
+     "nonce": 2083236945,
+     "hash_bitcoin_order": "e2087423a7e495d0e2c4369880be45bfba7e3ada602ddedb7eb1325de5d324d3",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 2083236946,
+     "hash_bitcoin_order": "0bbc6cdb563c1cb0630157d2071f13eace61eb9630533378a86fd6cadc56e59a",
+     "fuehrende_nullbits": 4,
+     "treffer": false
+    },
+    {
+     "nonce": 2083236947,
+     "hash_bitcoin_order": "061517bd41289696a4b7b67e4f2d39a571fc54598eb58fb90c272ca8883a84d5",
+     "fuehrende_nullbits": 5,
+     "treffer": false
+    },
+    {
+     "nonce": 2083236948,
+     "hash_bitcoin_order": "9ceefd0dff02d8cba746d0c7c8ef007de55a62dba555589f40b404d1e4b3d2d8",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 2083236949,
+     "hash_bitcoin_order": "ccde7d279f9f292585aeef0f4f06dc7ea8c96fe01c3b0c1572cf515f3c17941f",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 2083236950,
+     "hash_bitcoin_order": "f9aa22d1307b5f772b844b5e18478209a70a9301d60630cd20c2302ca3a36abd",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 2083236951,
+     "hash_bitcoin_order": "7947c39014c7a4e643f0cef9495b27231bbbc905d35539cd01dcc58ccb656180",
+     "fuehrende_nullbits": 1,
+     "treffer": false
+    },
+    {
+     "nonce": 2083236952,
+     "hash_bitcoin_order": "f04ed95cd0ec958086a87354368491ae152f0a7acb769c638c8487762f4e3cdf",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 2083236953,
+     "hash_bitcoin_order": "bc120804a2850191106f34b613ed8330163d73a134d255243481f6c27886cfee",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 2083236954,
+     "hash_bitcoin_order": "c842b2c99d3bfcb2dc79e142023c2442ef76871611a1b58c30df98ef8de31b1a",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 2083236955,
+     "hash_bitcoin_order": "53ffb0fd32dce35c1330442aaaae3cc3ecd029d070810f23525c50fae5671c5c",
+     "fuehrende_nullbits": 1,
+     "treffer": false
+    },
+    {
+     "nonce": 2083236956,
+     "hash_bitcoin_order": "527166b5325eaf3f60dadd8f7398187f087021ef1ee2370cce073fd0cf517b38",
+     "fuehrende_nullbits": 1,
+     "treffer": false
+    },
+    {
+     "nonce": 2083236957,
+     "hash_bitcoin_order": "8f902bc751f8006e70bbc855840ed03c05a4fe64b9df3f9ad92b8366eabb66f7",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 2083236958,
+     "hash_bitcoin_order": "66fcf0d93b813afa849ab3bee48764d5593a51b9e300115bbea1f8ec3c573786",
+     "fuehrende_nullbits": 1,
+     "treffer": false
+    },
+    {
+     "nonce": 2083236959,
+     "hash_bitcoin_order": "68befb87b91015dc1b9da3b607753df818b6eedd0ae83d3d339889543d204fe0",
+     "fuehrende_nullbits": 1,
+     "treffer": false
+    },
+    {
+     "nonce": 2083236960,
+     "hash_bitcoin_order": "f49b20f5436121e475f97aa9d88e46b71857f15c649534cf3b1e33fa753b94f2",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 2083236961,
+     "hash_bitcoin_order": "42fa715e49e2a513fea2e4f05dbf0c095bd9cf6556a4913069776f10b28142b7",
+     "fuehrende_nullbits": 1,
+     "treffer": false
+    },
+    {
+     "nonce": 2083236962,
+     "hash_bitcoin_order": "8b034e7b487c0b366d3bb589fa95f97fb85c748a9a860e4bdd366bc6b095d064",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 2083236963,
+     "hash_bitcoin_order": "f3e3fcf6109ecb3043ab016f2dbdbdbbc79f9b5fbfd9ba43764b25bd5430b294",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 2083236964,
+     "hash_bitcoin_order": "2adea7aad3e066aed8eeb9f1e0e65e0324301c4b6df52b13780e29f7ab3150cb",
+     "fuehrende_nullbits": 2,
+     "treffer": false
+    },
+    {
+     "nonce": 2083236965,
+     "hash_bitcoin_order": "14e41bbe4eb9a9f76e2a798bf7f9eff157668189a4ee4476b172ce9e3bad4218",
+     "fuehrende_nullbits": 3,
+     "treffer": false
+    },
+    {
+     "nonce": 2083236966,
+     "hash_bitcoin_order": "c9acecd7da4c2062e6e21e5ca4d6b94c2b1d8e1e16207da80e7ff7bbbf754464",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 2083236967,
+     "hash_bitcoin_order": "aaabb9ec4c18e713206a3fb6097ee1ae741bdf24dcb66758b69760dce260157f",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 2083236968,
+     "hash_bitcoin_order": "d2d419f727b6542d7d8557709007bbcc976f11fe0c60222f511b62193fe709b9",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 2083236969,
+     "hash_bitcoin_order": "2cdfd1acab824b498dada9a5bdc95f5025f254101ef685673c347de951877a2d",
+     "fuehrende_nullbits": 2,
+     "treffer": false
+    },
+    {
+     "nonce": 2083236970,
+     "hash_bitcoin_order": "00bbf7b1c59723ffdd2ff6367343299f6fd7cd71ffdeca5f54c3214b1ffc9d09",
+     "fuehrende_nullbits": 8,
+     "treffer": false
+    },
+    {
+     "nonce": 2083236971,
+     "hash_bitcoin_order": "2d98aa415b0a95ab7dd8501734f32bd632de243a3af12badfc7d547fc727bbe6",
+     "fuehrende_nullbits": 2,
+     "treffer": false
+    },
+    {
+     "nonce": 2083236972,
+     "hash_bitcoin_order": "6b42a96abd3236cdabcd359a3858e761deae35773dc27626586c22a2ec06114a",
+     "fuehrende_nullbits": 1,
+     "treffer": false
+    },
+    {
+     "nonce": 2083236973,
+     "hash_bitcoin_order": "83dde5fe217689fcd0c044da8e6623b111cee9b7e22207e06109403550732f53",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 2083236974,
+     "hash_bitcoin_order": "af89b0f1809b9c1ebb8f3823345388299d46f39d2033f966b67a9562e4583f65",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 2083236975,
+     "hash_bitcoin_order": "375cc67f69400a00b4c88636171132e1cea12fd3f0161f811eb62ad7fbb9ce42",
+     "fuehrende_nullbits": 2,
+     "treffer": false
+    },
+    {
+     "nonce": 2083236976,
+     "hash_bitcoin_order": "a0428ae85aab8a13c7f2c322d3171ffc405bddbb59a869c83cb337956d8c99a2",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 2083236977,
+     "hash_bitcoin_order": "e3dd088e4d45971f5d45abeca71735295890c5fe1c924760047acd877365dcc4",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 2083236978,
+     "hash_bitcoin_order": "3f2d4e67f577589130aaeb07b8345aeeda8a44e28bd912e5109e05b0bc68828d",
+     "fuehrende_nullbits": 2,
+     "treffer": false
+    },
+    {
+     "nonce": 2083236979,
+     "hash_bitcoin_order": "23e4cc0e3e5b5f3c190523e1b72ed317dd7289304d7f1591d20865e9ee368afa",
+     "fuehrende_nullbits": 2,
+     "treffer": false
+    },
+    {
+     "nonce": 2083236980,
+     "hash_bitcoin_order": "2951df05fa8e26387fcf442ebf6fc8ad24bebdbecfbffe51c87f4dab60e3868c",
+     "fuehrende_nullbits": 2,
+     "treffer": false
+    },
+    {
+     "nonce": 2083236981,
+     "hash_bitcoin_order": "9ae0c74caf3c16ad740682ba5b2941f6284df34fdc3cf273ebd771ca52fad639",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 2083236982,
+     "hash_bitcoin_order": "910466193752a0d8b131e7ee38fbea2dc1a592c3506f0787214cbe78632e092b",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 2083236983,
+     "hash_bitcoin_order": "f56003951b7cdbd72a0c010efcfacc77e89f268570182a3e7f1b31572cb9304c",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 2083236984,
+     "hash_bitcoin_order": "f3b99c1988c6c1b9acafb550f1743465afa8fd9eedaf32f7c077c3e26025eb11",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 2083236985,
+     "hash_bitcoin_order": "e6521eceba5e191f13fbfd086ceaac00d60d3420483ef5a2aa2f53db0924dfb9",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 2083236986,
+     "hash_bitcoin_order": "ca263b186af9be7e72b12c0e82c11d3d69725d5a70795b36a1a4c2d17dee4e11",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 2083236987,
+     "hash_bitcoin_order": "bff3630fba1780d865e4419cd97799374111fb40286325c722f2d0a49a47aef5",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 2083236988,
+     "hash_bitcoin_order": "4512996c70ae64b72d397128333be1a012ca5b677763e761db6b11ef4da14a69",
+     "fuehrende_nullbits": 1,
+     "treffer": false
+    },
+    {
+     "nonce": 2083236989,
+     "hash_bitcoin_order": "403de038e4d423a2f8c081bd13c99b507b00f054b442ea9fd24605fdb689d2f3",
+     "fuehrende_nullbits": 1,
+     "treffer": false
+    },
+    {
+     "nonce": 2083236990,
+     "hash_bitcoin_order": "4e145090a9284a9ba5c4fc8ec237d25f3ecb3c8f7237a52b77f6ffbbf8872919",
+     "fuehrende_nullbits": 1,
+     "treffer": false
+    },
+    {
+     "nonce": 2083236991,
+     "hash_bitcoin_order": "f48870f9870c508c1545f51c34c190fee83647f02ccba5eb5efc441f9476c85f",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 2083236992,
+     "hash_bitcoin_order": "b974f5c192fa07b5cc399687a12a443e261801d529ff1753321436c405e5fe4f",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 2083236993,
+     "hash_bitcoin_order": "c4434cee9716aaf9c7705125819a2e9933598169e576bed41ff3ef30bf7223eb",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 2083236994,
+     "hash_bitcoin_order": "11d98c23f3f0b44ec38761d1fdc90e499da719c5065050ab39a9e8fd80ca2812",
+     "fuehrende_nullbits": 3,
+     "treffer": false
+    },
+    {
+     "nonce": 2083236995,
+     "hash_bitcoin_order": "239913a375be8d8c70e722c2010274576238df1522bf9210771e404336214837",
+     "fuehrende_nullbits": 2,
+     "treffer": false
+    },
+    {
+     "nonce": 2083236996,
+     "hash_bitcoin_order": "a0ad454c75288ad3129434fdf6a9251a2bd8927d5b5d0d9fbdc2239ed3dca500",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 2083236997,
+     "hash_bitcoin_order": "6f69ed28653dc348477db0815769fe2ed1cb449d59b19bd4218e06e21e3d8dfd",
+     "fuehrende_nullbits": 1,
+     "treffer": false
+    },
+    {
+     "nonce": 2083236998,
+     "hash_bitcoin_order": "e99b2d4ff3618909bb3499d25d84894b26119ac18cf41730ea4d221812fc7f16",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 2083236999,
+     "hash_bitcoin_order": "091c103c85649660da64ec132d2ba554ce49979253a99c001362fb80b646350e",
+     "fuehrende_nullbits": 4,
+     "treffer": false
+    },
+    {
+     "nonce": 2083237000,
+     "hash_bitcoin_order": "a8de2ed9abb00e0d764b347c30ff437cd0b47b0f147d6d290d8158b60565156e",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 2083237001,
+     "hash_bitcoin_order": "877dc56c75b9ce1bd1b0c6b121b912e5dd139f4440004af688695302dff649ff",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 2083237002,
+     "hash_bitcoin_order": "b2d4b53b1019ca23da46ccdfa85706aae90574dc76a5a5fe799fdc41cce69e04",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 2083237003,
+     "hash_bitcoin_order": "39360de5ee4668ecb9ae5319a452991e969b7669305715786d72c01628553e17",
+     "fuehrende_nullbits": 2,
+     "treffer": false
+    },
+    {
+     "nonce": 2083237004,
+     "hash_bitcoin_order": "fa691ec1066d3436cc8379fcbe7c0f5d11ea410130be0b70cfc29364cda350f8",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 2083237005,
+     "hash_bitcoin_order": "52fdce05d2e3c2b7d05383e35211cfdb2cfb638aed718fc50cef1861b0dec756",
+     "fuehrende_nullbits": 1,
+     "treffer": false
+    },
+    {
+     "nonce": 2083237006,
+     "hash_bitcoin_order": "b629a34eeae2db532dfd64954cea6a00deca51d556e23e8f8b5f831d69d4ff4a",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 2083237007,
+     "hash_bitcoin_order": "251c4163972d4465cdf22563579cbcdac4812d7109ab8bd2d053f1d5b688b2d4",
+     "fuehrende_nullbits": 2,
+     "treffer": false
+    },
+    {
+     "nonce": 2083237008,
+     "hash_bitcoin_order": "f25c1bc58aa25fd54810f1658167875280dc151883c7dbe592947cc4e8f5053a",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 2083237009,
+     "hash_bitcoin_order": "9f849fd254e71bb8ed8c6f3c8dde8e3014aca13c8b5d2e996b0d877d17325457",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 2083237010,
+     "hash_bitcoin_order": "2ac441bfdc0b95b46e870ee2afa73b3981c9fc44083a9f2a2ccbbb55d28090a3",
+     "fuehrende_nullbits": 2,
+     "treffer": false
+    },
+    {
+     "nonce": 2083237011,
+     "hash_bitcoin_order": "bf55d9ae7f2a14827a73c477382244117ce9b4834629623c2fb6d3ac3078b099",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 2083237012,
+     "hash_bitcoin_order": "2f3514d307533735b3a873e53de6036d11b06fbb4d4e6a73079926b3de70ad20",
+     "fuehrende_nullbits": 2,
+     "treffer": false
+    },
+    {
+     "nonce": 2083237013,
+     "hash_bitcoin_order": "fd35aaf7db37da3a5f9519d3028f0d8f014d9980b564d845cab560ec11f69097",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 2083237014,
+     "hash_bitcoin_order": "e14cb6bc5e45d21d3fb893f0d68bc2ce416a475775c00e017f7ff14030909497",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 2083237015,
+     "hash_bitcoin_order": "b57a2c0cd3e27df1145f51b5283d3c0a8ba03e9cb2041f792c6f66821d7b9a47",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 2083237016,
+     "hash_bitcoin_order": "94e8a34b21c12bd27c5418b8c31f541408f3796d8ed7f4e2b50a147c0824b892",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 2083237017,
+     "hash_bitcoin_order": "5d0fc6a81d4546350bc4fa0d7460b140cb7fcd348b39fa0b3882e863192b035e",
+     "fuehrende_nullbits": 1,
+     "treffer": false
+    },
+    {
+     "nonce": 2083237018,
+     "hash_bitcoin_order": "3114dddde6c511fd042fe29c3becab07cda6dc36d2c71c73463bea5e8097cc22",
+     "fuehrende_nullbits": 2,
+     "treffer": false
+    },
+    {
+     "nonce": 2083237019,
+     "hash_bitcoin_order": "8248331dd9e7bfe4faf0ae646a9a05c34634a2e6a366f30572c161e3c34f4c4b",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 2083237020,
+     "hash_bitcoin_order": "c1c488a34cb3ff67f5038b23da8f829c7662ef9212afeeeff1d5b8d65c8c4d83",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 2083237021,
+     "hash_bitcoin_order": "3b9f76b7de8ddb0bab657463c7d4048be80574b04ccc25e5fb54c6e61236c908",
+     "fuehrende_nullbits": 2,
+     "treffer": false
+    },
+    {
+     "nonce": 2083237022,
+     "hash_bitcoin_order": "496d76006e820207942ebcf4973d8c35a87db9afc376cafd8716283ed7c3604d",
+     "fuehrende_nullbits": 1,
+     "treffer": false
+    },
+    {
+     "nonce": 2083237023,
+     "hash_bitcoin_order": "165ae41c919e743899bc9cc09e5c6b832cdeed49b6e3c9243ab9c2059a9e5d6a",
+     "fuehrende_nullbits": 3,
+     "treffer": false
+    },
+    {
+     "nonce": 2083237024,
+     "hash_bitcoin_order": "1aeac4f4795d3fe8af2f05f8bb5ecb3f8764b305088036bd381b44046c72791f",
+     "fuehrende_nullbits": 3,
+     "treffer": false
+    },
+    {
+     "nonce": 2083237025,
+     "hash_bitcoin_order": "8db706abb02fc86799491721f30e19372fd7947d7861e81a96d42f0dc2c9d3e9",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 2083237026,
+     "hash_bitcoin_order": "370077e8ba6e892a667e9735b67a7c5280a33062c3b56480847cbf47c9905fef",
+     "fuehrende_nullbits": 2,
+     "treffer": false
+    },
+    {
+     "nonce": 2083237027,
+     "hash_bitcoin_order": "afe036543ad066c02ddadd7c5e95126528287cb89f394b0599de6e6af16b20bd",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 2083237028,
+     "hash_bitcoin_order": "d7130e6f3fb6c320fc1b9370e6e7cf820d3cdf0a1cba10a96cf8965edd1b0ef3",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 2083237029,
+     "hash_bitcoin_order": "31ba2f43bb28abd900bf8f4f4bda968614e695adce6568e2878089727d6196a4",
+     "fuehrende_nullbits": 2,
+     "treffer": false
+    },
+    {
+     "nonce": 2083237030,
+     "hash_bitcoin_order": "03e81ea9f9d36bf020bcd7f954542efa6760b89c9b9ef0e81140fc5eccc47ba7",
+     "fuehrende_nullbits": 6,
+     "treffer": false
+    },
+    {
+     "nonce": 2083237031,
+     "hash_bitcoin_order": "fcfff8b0d23277f980900e276506cec3287aca96abf5122b10962127e956a25e",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 2083237032,
+     "hash_bitcoin_order": "3aefcf41f232b1df09615c46883543d5c8b42fbace1a9f8c3db3e913052ec8a0",
+     "fuehrende_nullbits": 2,
+     "treffer": false
+    },
+    {
+     "nonce": 2083237033,
+     "hash_bitcoin_order": "2b060109f10718d16b958320cf4556ef439d09935507049511b0826c81a5bacc",
+     "fuehrende_nullbits": 2,
+     "treffer": false
+    },
+    {
+     "nonce": 2083237034,
+     "hash_bitcoin_order": "e20ed4779d5647d5e4c174ef4011af9dd4b652478dbb9cbed1b8a52107305ad6",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 2083237035,
+     "hash_bitcoin_order": "c1225162bc00dbad69fa23fefbfb15a10af33909c1a31f26665cb9ed0a5f82c7",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 2083237036,
+     "hash_bitcoin_order": "40b0493fcfce3db4f0aecba700e8d6ad64adf8dd2ea56424df5d6b81cbea2cbb",
+     "fuehrende_nullbits": 1,
+     "treffer": false
+    },
+    {
+     "nonce": 2083237037,
+     "hash_bitcoin_order": "8324628f2199aac5f9b45e07a212e8d9dfd5bdbd04e6eda2fdf34ce3a9d837c6",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 2083237038,
+     "hash_bitcoin_order": "345c774344d7f1bff110047a01e5e669b3f49458cee20f8863f4425336779f91",
+     "fuehrende_nullbits": 2,
+     "treffer": false
+    },
+    {
+     "nonce": 2083237039,
+     "hash_bitcoin_order": "4a48d6f8039f486d29d4b9d24b4853e4801bfefc403e5d40d269e815d421cec9",
+     "fuehrende_nullbits": 1,
+     "treffer": false
+    },
+    {
+     "nonce": 2083237040,
+     "hash_bitcoin_order": "0fc9119b9918b5ddde061278b0d62bc114b27f2b340c361b5c066656b2644332",
+     "fuehrende_nullbits": 4,
+     "treffer": false
+    },
+    {
+     "nonce": 2083237041,
+     "hash_bitcoin_order": "796cd2d9b8749e76b0c8bd719a88f3f066f7454db92efe72675a3f17feaae3c4",
+     "fuehrende_nullbits": 1,
+     "treffer": false
+    },
+    {
+     "nonce": 2083237042,
+     "hash_bitcoin_order": "fb4f0f4f1c626ae0b2b43870593ab1fb88f1b39c58c6fd214b0a0c29ec74192f",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 2083237043,
+     "hash_bitcoin_order": "ca02cd7ef0d471a2a62957491ea4b5bb026fd9b8c41f4361b99fee1d1fe59b29",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 2083237044,
+     "hash_bitcoin_order": "809b16f8eb4d8bffddeb70fd5ae91f273794ce3b0576602f8028bad7cd11de53",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 2083237045,
+     "hash_bitcoin_order": "303e6ef907fa508dc38a5053f67309fb972188da47e6a99f5e1ad4b4c4d09ee7",
+     "fuehrende_nullbits": 2,
+     "treffer": false
+    },
+    {
+     "nonce": 2083237046,
+     "hash_bitcoin_order": "e4e5b35f30cbdf4fe324a13c4870dc80390077bd0fc2f6a0e971b05b8354da35",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 2083237047,
+     "hash_bitcoin_order": "0a592f735bbc05b559000597bf8b2a1d851c7e7eb84f77063d7f2ad4498f5d09",
+     "fuehrende_nullbits": 4,
+     "treffer": false
+    },
+    {
+     "nonce": 2083237048,
+     "hash_bitcoin_order": "f4b47ccb88f566d607e765ff3946a38b690e8aa8cfe1454ab741c07a20efc6bd",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 2083237049,
+     "hash_bitcoin_order": "d6edceac544ce2dae66f748e01c16ae90dbc582b2fd0ac46a86cbc169a0bffe8",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 2083237050,
+     "hash_bitcoin_order": "9910bc95f55258c7899e699e85fb0252018f02acfb73ff3d8ba1ea315da184e4",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 2083237051,
+     "hash_bitcoin_order": "04830d51967716e5a785f7f3420d9fdc3f157b95d832b27beb83d20bb399966c",
+     "fuehrende_nullbits": 5,
+     "treffer": false
+    },
+    {
+     "nonce": 2083237052,
+     "hash_bitcoin_order": "62bebc345a59d2d42d8b970116fada927dc695d072256e6c8b7cbe5af04b8487",
+     "fuehrende_nullbits": 1,
+     "treffer": false
+    },
+    {
+     "nonce": 2083237053,
+     "hash_bitcoin_order": "796eeaf51bde38ce72440acbc11bcc9ceeccd46a629eff227cc94c56a0b81edc",
+     "fuehrende_nullbits": 1,
+     "treffer": false
+    },
+    {
+     "nonce": 2083237054,
+     "hash_bitcoin_order": "cd3dd420707a25e64f786f08b74764521e0faeee6eeaaedc3059321535b4512e",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 2083237055,
+     "hash_bitcoin_order": "bcfca6b32a4b60858e488b392ad1025a3f9e5d6ddaac2e80de0da6541d9521e7",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 2083237056,
+     "hash_bitcoin_order": "25250a7f2cafa944fe9622f1f344af4706d321fa47225f3a71e9c753ebae981b",
+     "fuehrende_nullbits": 2,
+     "treffer": false
+    },
+    {
+     "nonce": 2083237057,
+     "hash_bitcoin_order": "bd3c7f88987d44c00db3eda8f3feab668dc2ca85cfc29a4938f371bdfbbb9d58",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 2083237058,
+     "hash_bitcoin_order": "3bb572e7b46e04341a7ec968bb908c2003be9c3a85189b626de0349e59a40e23",
+     "fuehrende_nullbits": 2,
+     "treffer": false
+    },
+    {
+     "nonce": 2083237059,
+     "hash_bitcoin_order": "43674fec80f1f1c8690e776a25732d91cb7d8efaf8307f1c794a4c63b8a32520",
+     "fuehrende_nullbits": 1,
+     "treffer": false
+    },
+    {
+     "nonce": 2083237060,
+     "hash_bitcoin_order": "1c5370ab48e931b1fe93970d64656cabdecea7908603a0b9c7f21d6c65468485",
+     "fuehrende_nullbits": 3,
+     "treffer": false
+    },
+    {
+     "nonce": 2083237061,
+     "hash_bitcoin_order": "f3edbfa180dd68e5a039743fb683aec33dafb7b847eb74df7f521343734139bf",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 2083237062,
+     "hash_bitcoin_order": "3379e967133307aced7d3557d9edbc53f8eda102e46e19345c27a63ff016456b",
+     "fuehrende_nullbits": 2,
+     "treffer": false
+    },
+    {
+     "nonce": 2083237063,
+     "hash_bitcoin_order": "606c61e0ae7d9bee8c81164cd3492f1cd286a00d96d74fde24f8df61fed1bce4",
+     "fuehrende_nullbits": 1,
+     "treffer": false
+    },
+    {
+     "nonce": 2083237064,
+     "hash_bitcoin_order": "ed3a8ddd3760d2b8e0bf4b3810dcf1642d3d11c4bad6e6b64e91cd05983b3271",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 2083237065,
+     "hash_bitcoin_order": "92b2d5862c2269a467e1e7fca2e23f2319fffb6a5748272a8071c7579f6ee4b7",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 2083237066,
+     "hash_bitcoin_order": "4fae0e3a8d7211a679fec71a6d5ea0f506072d9d557028f79ce7199c609d50c0",
+     "fuehrende_nullbits": 1,
+     "treffer": false
+    },
+    {
+     "nonce": 2083237067,
+     "hash_bitcoin_order": "59b95e641df5160bf13d083326db8b9e058b87f62cca28c279d4e54301b8a66f",
+     "fuehrende_nullbits": 1,
+     "treffer": false
+    },
+    {
+     "nonce": 2083237068,
+     "hash_bitcoin_order": "f98e9d3617c5ede18c5fdbdccf35a1d324d4c7b45343ffabddc5fb15cb3fe7ed",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 2083237069,
+     "hash_bitcoin_order": "d7a393853b88ca7426dcb9778e4dda9583bcdea2683fe929e30bd454ca193fac",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 2083237070,
+     "hash_bitcoin_order": "4ed73e3580ecd34eb5b0491fccb86b2bb06bad849c29f47bd4fcd80c6453a77d",
+     "fuehrende_nullbits": 1,
+     "treffer": false
+    },
+    {
+     "nonce": 2083237071,
+     "hash_bitcoin_order": "638a3ca25193786d2695d1ef0b0d3df9174e3fe2c8fb4b56fe8aa8ae0d4729ec",
+     "fuehrende_nullbits": 1,
+     "treffer": false
+    },
+    {
+     "nonce": 2083237072,
+     "hash_bitcoin_order": "876943033fa1fd0cdcc156262c0566ac02470f2fbbc0694aea059c4f04f67a42",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 2083237073,
+     "hash_bitcoin_order": "9fd76e97e5a9620bf4dcc9d82cacb4a114f74e53b440a09bf97c9b14a6e0fad5",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 2083237074,
+     "hash_bitcoin_order": "3776093f2dd7552cbc71dadeb807f0a96771600f2dff052e576e69dffdf1523a",
+     "fuehrende_nullbits": 2,
+     "treffer": false
+    },
+    {
+     "nonce": 2083237075,
+     "hash_bitcoin_order": "bbf84a39c86bd6043705b21adfb2416ce09a0d42eeded23b6e685b7ef28188e5",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 2083237076,
+     "hash_bitcoin_order": "8ce73f6cd87bdd928c93283c792b1de732bc2d18d2cc66abed61586c149468d2",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 2083237077,
+     "hash_bitcoin_order": "f3b9880b43740a933945c601e7300f6957f49d32f55934fae985209e54c91340",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 2083237078,
+     "hash_bitcoin_order": "c385a864d572c2784ea7e1ace99fd0dbc4566c620391c3dab04e626086abd40d",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 2083237079,
+     "hash_bitcoin_order": "655800ab0640b4de19a3c52df2b14590d0485f3427b5e3b5a53ddc7e6b6cf634",
+     "fuehrende_nullbits": 1,
+     "treffer": false
+    },
+    {
+     "nonce": 2083237080,
+     "hash_bitcoin_order": "3f42739c7237154502c80814fd538f52e5976f22446fc494bac86d34e4a6d7bd",
+     "fuehrende_nullbits": 2,
+     "treffer": false
+    },
+    {
+     "nonce": 2083237081,
+     "hash_bitcoin_order": "b7d01edfcc8cfd19880a4ed1d8ca3c2973a15d28e8575940779701b627dd7666",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 2083237082,
+     "hash_bitcoin_order": "f31bfc545a8f8dc0742c09c4aff46ebfca0edc721da8533d9dc72f49366fe5af",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 2083237083,
+     "hash_bitcoin_order": "ec889e08929710b34fd0b0f0cdb7d24a52756afe916a43be99c29e464ec31a30",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 2083237084,
+     "hash_bitcoin_order": "f8181e3c01462b83a06980d1f526fa43af25aeb4ead084cab5518ce072db7efa",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 2083237085,
+     "hash_bitcoin_order": "24b33fa294509ed831e1039f008a6a21317f9cbdbfac5da90598a5845db46d8b",
+     "fuehrende_nullbits": 2,
+     "treffer": false
+    },
+    {
+     "nonce": 2083237086,
+     "hash_bitcoin_order": "6cb9a60150120f2e797b2187b4238a0ded33e85dc963b948ea15a44ae0812fe3",
+     "fuehrende_nullbits": 1,
+     "treffer": false
+    },
+    {
+     "nonce": 2083237087,
+     "hash_bitcoin_order": "70e5d1a323fc949bcac5f041b51879ba4c97b6cca9cb609f620f63b443ed3354",
+     "fuehrende_nullbits": 1,
+     "treffer": false
+    },
+    {
+     "nonce": 2083237088,
+     "hash_bitcoin_order": "cc014c4cfc96a6efe226af2b9213377e87692f1a054ca6350485266533eaf247",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 2083237089,
+     "hash_bitcoin_order": "327a6f2b3125794debe8b7ee0ccab4853b9a53edc325a5e4a2b67825a4541d87",
+     "fuehrende_nullbits": 2,
+     "treffer": false
+    },
+    {
+     "nonce": 2083237090,
+     "hash_bitcoin_order": "04da1d6e4f56f5e51f414fa74231c0e95c7567ad28d1e1e39ca13abb1cc5f6d7",
+     "fuehrende_nullbits": 5,
+     "treffer": false
+    },
+    {
+     "nonce": 2083237091,
+     "hash_bitcoin_order": "c12c679d77950c1e978c54e8f9bcc07b3c061ff702bb855f40b7a560eb6a4985",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 2083237092,
+     "hash_bitcoin_order": "119fb95b37028d8772cef1783f0e135b6dbaaffaed81a4cec9f435eb8676f405",
+     "fuehrende_nullbits": 3,
+     "treffer": false
+    },
+    {
+     "nonce": 2083237093,
+     "hash_bitcoin_order": "e0a752c1468dc9537228b85fb0e299c792cf78fed331ea5ed83a10572a45640a",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 2083237094,
+     "hash_bitcoin_order": "4d6f5d85117ed8d8faad34eb3184907040da9d21fd22ebf2de10720981e9e9d6",
+     "fuehrende_nullbits": 1,
+     "treffer": false
+    },
+    {
+     "nonce": 2083237095,
+     "hash_bitcoin_order": "093a1b1c84ca1f909ebe2dc7b4113cbe6524fe731d4701d29b783e23529c5ae8",
+     "fuehrende_nullbits": 4,
+     "treffer": false
+    },
+    {
+     "nonce": 2083237096,
+     "hash_bitcoin_order": "687e820aa494e0c7a9d6f6b518cd7de0719e8fa2fcbb7ac0720b9aa910cc18b2",
+     "fuehrende_nullbits": 1,
+     "treffer": false
+    },
+    {
+     "nonce": 2083237097,
+     "hash_bitcoin_order": "6176a5da6550f8397749981a8ec06e8641bfe74a6ce615f599c1ea7dfe08673c",
+     "fuehrende_nullbits": 1,
+     "treffer": false
+    },
+    {
+     "nonce": 2083237098,
+     "hash_bitcoin_order": "35a23b57faedf2c9e794812d615e9f2b9f521ba5738e0b96e922a450c146c1d8",
+     "fuehrende_nullbits": 2,
+     "treffer": false
+    },
+    {
+     "nonce": 2083237099,
+     "hash_bitcoin_order": "b627bd1d4b211f33c1c76de434adf1240ea5f20db9ea146ea74833e5ab659f4c",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 2083237100,
+     "hash_bitcoin_order": "9d25519f1300c78210d78f4377f8a84b9b30e2c577c0130770c624381b42c3b4",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 2083237101,
+     "hash_bitcoin_order": "81f4662033e592eda0b6a22c65f05aba25e1568ff47d5cf385436d7936a316c3",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 2083237102,
+     "hash_bitcoin_order": "b9c3182595608f24e3c94e955150bf306e3e2cd4990bf713a5dc3e829396267c",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 2083237103,
+     "hash_bitcoin_order": "bf22d684183af42ec81a46817f59614ed3066c7ca2730223b7d5240ed97522ab",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 2083237104,
+     "hash_bitcoin_order": "a1eb55468b6db0312dfa9fbc3c65130fa2b40dae4b49bd2e25a3dd24bccf3b9b",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 2083237105,
+     "hash_bitcoin_order": "525159a6bf2690b96a708b7748255e25d98585b50b06b2753f2eead326fd54d3",
+     "fuehrende_nullbits": 1,
+     "treffer": false
+    },
+    {
+     "nonce": 2083237106,
+     "hash_bitcoin_order": "f9bc7aa383d5e28b1b7d0796b0fb0bb5dc450cae0294d43a034b1f5ef779a3da",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 2083237107,
+     "hash_bitcoin_order": "1bc0fd752e2dd85b7c91730a66ec63ba3773eff36e84b0e88e458abeceac239e",
+     "fuehrende_nullbits": 3,
+     "treffer": false
+    },
+    {
+     "nonce": 2083237108,
+     "hash_bitcoin_order": "12a753024746e4bd8c818573f57841a90c6c3744a7cf964058a63550830e1c3b",
+     "fuehrende_nullbits": 3,
+     "treffer": false
+    },
+    {
+     "nonce": 2083237109,
+     "hash_bitcoin_order": "a21f32cb0042a2db3792cdb35738782edbd679e0431c6a88087b96aa077de699",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 2083237110,
+     "hash_bitcoin_order": "15a35be1dcdf6cf84a1289d0c138583fad8a096b610e14eb9af7aea4fcf8be1b",
+     "fuehrende_nullbits": 3,
+     "treffer": false
+    },
+    {
+     "nonce": 2083237111,
+     "hash_bitcoin_order": "787b9db27e8e0741e649c5151d15f693450ab1c666ea2e7422e56be2288f3d43",
+     "fuehrende_nullbits": 1,
+     "treffer": false
+    },
+    {
+     "nonce": 2083237112,
+     "hash_bitcoin_order": "016725e8d4c9d6a5622faffbcf7c957fcaea28e9bb9491490adbbb4c5c88bf5d",
+     "fuehrende_nullbits": 7,
+     "treffer": false
+    },
+    {
+     "nonce": 2083237113,
+     "hash_bitcoin_order": "500b43e6e10bde34cf3a14de6a95d84eeb995d199552a8a0dda9dbcf34afb055",
+     "fuehrende_nullbits": 1,
+     "treffer": false
+    },
+    {
+     "nonce": 2083237114,
+     "hash_bitcoin_order": "9d354852b68fd3b208b17cfc061fa24ef16a18defd1e91d11d5a7696651bf4db",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 2083237115,
+     "hash_bitcoin_order": "13bd62aceab250e3895b50451bd15143fb95b105f6efa555d51743368443c58d",
+     "fuehrende_nullbits": 3,
+     "treffer": false
+    },
+    {
+     "nonce": 2083237116,
+     "hash_bitcoin_order": "d4e9169d7abc72b3c76dc0ebfb621dfbd1b779831252a4f3ab570c05ee217155",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 2083237117,
+     "hash_bitcoin_order": "0f17a1fde41f32886bcd3c8c3bf947e206a9a3cb0afab5af19d64c5ab947098c",
+     "fuehrende_nullbits": 4,
+     "treffer": false
+    },
+    {
+     "nonce": 2083237118,
+     "hash_bitcoin_order": "96ed390e0990d3d880d805aa1d3dcce0dfa9fd41b364edb9e09dea46d6308d63",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    },
+    {
+     "nonce": 2083237119,
+     "hash_bitcoin_order": "a27a1207d423667aabfac428f53f47a4b0efc43e6c97a249456af1474792f2c8",
+     "fuehrende_nullbits": 0,
+     "treffer": false
+    }
+   ],
+   "quelle": {
+    "pfad_im_pruefpaket": "kaestchen_dauerbetrieb/pruefung.py (header(), MERKLE, BITS, NONCE)",
+    "bekannter_treffer_nonce": 2083236893,
+    "bekannter_hash": "000000000019d6689c085ae165831e934ff763ae46a2a6c172b3f1b60a8ce26f"
+   }
+  }
+ ],
+ "hinweis_veroeffentlichung": "2026-10-23: Feld quelle.source von F1 (lokaler Windows-Pfad) entfernt; alle Rechendaten unveraendert."
+}

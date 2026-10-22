@@ -1,0 +1,95 @@
+FABLE AN GHOST – STUFE 0: AUFBAU UND PRUEFUNG DER VOLLSTAENDIGEN SHA256d-RECHENSCHALTUNG (BIT + ZIFFERN), 2026-10-22
+Status STUFE 0: OK – alle Phasen bestanden, 0 Fehler in allen Vergleichen. Kein Suchlauf, keine E4-Propagation, keine GPU/RPC/Einreichung,
+Miner unberuehrt. Alles an Kopien (Verzeichnis sha256d/). Rechner: Fable-Container Linux, Intel Xeon 2,10 GHz (2 Kerne), 8 GiB, Python 3.13.16,
+reines Python (kein numpy). Alle Zeiten Einzelmessungen dieses Rechners. Grenze je Phase 600 s / 400 MiB (Elternprozess lauf_stufe0.py,
+RSS-Abfrage alle 0,1 s ueber /proc, Kind wird bei Ueberschreitung beendet -> ABORTED; kam nicht vor).
+
+== ERGEBNIS JE PHASE (Lauf 3 = gueltiger Gesamtlauf, ERGEBNIS_STUFE0.json + ERGEBNIS_P*.json) ==================================
+Phase  Wall    Peak-RSS (extern)  Inhalt / Zaehler
+P0     5,7 s   17,6 MiB   Bausteine ueber ZiffernOps + E3 (Testkopie): w=8 erschoepfend shr und rot fuer alle n=1..7 und alle 256 x: 3 584 Faelle, 0 Fehler;
+                          w=32 Zufall (Seed 20261022): shr 3/10, rot 2,6,7,11,13,17,18,19,22,25, xor(3), ch, maj, add(5-stellig), add(2): 2 550 Faelle, 0 Fehler.
+                          Vergleichskette je Ziel (F1, F2), Ziffern-LE-Kette (128 Beziehungen, E3, le_128 frei ausgelesen) UND eigenstaendige Bitkette
+                          (gatter-Form, 256 Eingaenge, funktional): Werte 0, T-1, T, T+1, 2^256-1, T mit je einem gekippten Bit (256), T +/- 2^(8b) fuer alle
+                          Bytegrenzen (64), 1 500 Zufall 256 Bit, 1 500 Zufall unterhalb der Zielnullbits, 500 Zufall 8 Bit darunter: 3 825 Werte je Ziel,
+                          0 Fehler Ziffernkette, 0 Fehler Bitkette. Adapter: alle 15 Ziffernmasken Rundreise (Obermenge; Produktmengen exakt), alle 9 Bitmasken-
+                          paare exakt, negierte Knoten dom_von/dom_schneiden fuer alle Masken: 42 Faelle, 0 Fehler. Alias (gleich + add): 256 Faelle, 0 Fehler.
+                          Nonce-Rundreise je Fall (256 Nonces: Bits->Ziffern->Bits und Noncebit-Lage b -> Wortbit 8*(3-b//8)+b%8): 0 Fehler.
+P1     2,1 s   180,8 MiB  Aufbau. Bitgraph ueber BitLog (gatter.Ops unveraendert + Protokoll) IDENTISCH mit gatter.build (Knotenzahl, Root, Digest, Eingaenge):
+                          F1 207 917 Knoten (Root 207 916), F2 207 833 Knoten; Aufbau 0,3–0,7 s. Protokoll 3 411 Woerter je Rechnung (beide Anwendungen, inkl.
+                          aller Zwischensummen 'add2', w16..63, Register, Feed-forward); Protokollfolge Bit == Ziffern == Integer (Phase/Art/Nr) -> semantische
+                          Zuordnung von 3 411 Wortpaaren Bit<->Ziffer ohne Knoten-IDs.
+                          Ziffernnetz U-voll: 71 761 Variablen (51 232 Ziffern, 20 529 Uebertraege/LE), 49 952 Beziehungen (ADD 19 200, XOR 14 336, ROT1 12 192,
+                          CH 2 048, MAJ 2 048, LE 128), 2 605 Konstanten vor Propagation, freie Eingaenge H1_nonce[12..15]; Aufbau 0,1–0,3 s.
+                          U-lokal: 36 569 Variablen, 25 040 Beziehungen, Digest1 = 8 VARIABLE Woerter (128 freie Ziffern), 1 801 Konstanten.
+P2F1   79,4 s  139,5 MiB  Digestpruefung F1, alle 256 Nonces, ZIEL FREI (le nicht gesetzt, nur Header/Nonce/Konstanten gesetzt):
+                          Referenz IntLog-Enddigest == hashlib fuer 256/256. Bitgraph bitparallel (ein 256-Bit-Int je Knoten): 3 411 x 256 Wortvergleiche
+                          gegen Integer-Referenz 0 Fehler, 256 Digests == hashlib, Zielausgang == (Hash <= Target) 256/256 (3,3 s).
+                          Ziffernnetz U-voll: Nonceziffern aus den Bitgraph-Eingaben gesetzt, EINE Vorwaertsrunde E3 (Tabellen-GAC, Ermittlung aus dem Netz,
+                          49 952 Beziehungsbesuche je Nonce): 3 411 x 256 Woerter 0 Fehler, 0 unbestimmt, 256 Digests == hashlib, le_128 == (<=) 256/256 (47,7 s).
+                          U-lokal: Digest1-Ziffern aus der Bitgraph-Auswertung (NICHT aus der Referenz) -> 1 699 x 256 Woerter 0 Fehler, Digest == hashlib,
+                          le == (<=) 256/256 (22,5 s).
+P2F2   78,3 s  138,8 MiB  dasselbe fuer F2 (Genesis-Gruppe): 0 Fehler ueberall; der bekannte Treffer 2083236893 ist der einzige mit Zielausgang 1.
+P3     10,6 s  156,9 MiB  Fixpunkt-Stichproben (volle Propagation bis Fixpunkt, Eingaben fest, Zielausgang FREI, dann getrennt gesetzt):
+                          F1 Nonce 0 und 255, F2 Nonce 2083236893 (Treffer) und 2083236864 (Basis). Je Probe:
+                          E1 (Gauss-Seidel, 12-Durchlauf-Regel) Ziel frei: FIXPUNKT nach 2 Durchlaeufen, 0 unbestimmte Wortbits, 0 Wortfehler, Digest == hashlib,
+                          Root-Domaene == {<=-Ergebnis} (0,6–0,7 s). E1 Ziel = 1: Nichttreffer WIDERSPRUCH (1 Durchlauf, 0,15–0,25 s), Treffer FIXPUNKT (0,8 s).
+                          E3 U-voll Ziel frei: FIXPUNKT nach 2 Runden (99 904 Tupelbesuche), 0 Wortfehler, Digest == hashlib, le == (<=) (0,25–0,3 s).
+                          E3 U-voll Ziel = 1: Nichttreffer WIDERSPRUCH in Runde 1 (leere Variable H2_add_4944[3], d. h. ein Feed-forward-Wort der 2. Anwendung),
+                          Treffer FIXPUNKT. E3 U-lokal (Digest1 aus E1-Domaenen ueber den Adapter): ebenso 0 Fehler, Status wie erwartet.
+P4     15,0 s  153,0 MiB  Grundpaarzaehlung am Wurzelknoten (Suchnetz: Ziel = 1, Nonce frei bzw. Digest1 frei) – NUR E3 + Zaehlen, KEINE E4-Propagation:
+                          U-voll F1: E3 FIXPUNKT nach 6 Runden (6,57 Mio. Tupelbesuche, 4,8 s), 63 101 unbestimmte Variablen, 0 durch E3 festgelegte Nonceziffern,
+                          45 776 Beziehungen mit >= 2 unbestimmten Variablen, 242 397 Grundpaare (< Grenze 500 000), Zaehlung 0,3 s. F2 voll: 243 052 Grundpaare.
+                          U-lokal: 126 476 (F1) / 127 191 (F2) Grundpaare, 32 957 / 33 133 unbestimmte Variablen (Digest1 hier vollstaendig frei – in Stufe 1
+                          engt E1 sie ein; Zahl ist Obergrenze).
+Gesamt 191,1 s Wall, hoechster Peak 180,8 MiB (P1, beide Faelle zugleich im Speicher). Ausgabe gesamt < 1 MiB (nur Zaehler/Status, Gegenbeispiele leer).
+
+== GHOSTS PRAEZISIERUNGEN – UMSETZUNG ======================================================================================================
+1. Zielausgang frei: In P2/P3 wird le nirgends gesetzt; nur Header/Nonce/Konstanten; alle Zwischenwerte und der Digest werden aus Bitgraph (funktional/E1)
+   bzw. Ziffernnetz (E3 ueber die Tupeltabellen) ERMITTELT und erst danach verglichen. Komparator separat mit freiem Ausgang (P0, 3 825 Werte je Ziel).
+   Erst P3 'Ziel = 1' und P4 setzen den Zielausgang. Keine Referenz-Zwischenwerte im Netz; fuer U-lokal kommt Digest1 aus dem Bitgraphen/E1.
+2. Zwischenwoerter: nicht ueber compress(trace), sondern ueber Protokoll-Operatorklassen (IntLog/BitLog/ZiffernOps in sha_ziffern.py): jedes Ergebniswort
+   jeder Operation beider Anwendungen (3 411 je Rechnung, inkl. w16..63, Zwischensummen, Register, Feed-forward). pruefung.py/gatter.py unveraendert
+   (Hashes unten); Enddigest zusaetzlich unabhaengig gegen hashlib (P2: 512 Digests, P3: 4 Proben). Die drei Ops-Klassen sind getrennte Implementierungen
+   (Integer / gatter.Ops / Ziffernnetz) – die gemeinsame compress-Funktion liefert nur die gleiche Aufrufreihenfolge, die Gleichheit wurde gemessen.
+3. Zuordnung Bit<->Ziffer ueber (Phase, Art, laufende Nr.) der Protokollfolge, Folgen in P1 auf Gleichheit geprueft; Woerter der beiden Anwendungen durch
+   Phase H1/H2 eindeutig. Negierte Knoten ueber dom_von/dom_schneiden (P0 geprueft), Konstanten 0/1 als Knoten 0/1, geteilte Ausdruecke bleiben geteilt
+   (gatter.shared, Netz.geteilt), Alias = gleiche Variablen.
+4. U-lokal: Digest1 sind acht variable Woerter; nie Digest der Basisnonce als Konstante. Midstate (Block 1) ist Konstante. F2-Basis kanonisch 2083236864.
+5. Feste ungueltige Kandidaten liefern bei freiem Ziel ihren echten Digest (P2: 511 Nichttreffer + 1 Treffer); mit Ziel = 1 WIDERSPRUCH (P3-Proben).
+   OPEN kam nicht vor; wenn, wuerde es als OPEN (nicht leer) berichtet.
+6. Vergleichskette: 0, T-1, T, T+1, 2^256-1, alle 256 Einzelbit-Kippungen, Byte-/Wortgrenzen, Zufall mit festem Seed (P0). Nonce-Rundreise alle 256 Nonces
+   je Gruppe, Negation/Alias/Adapter gezielt (P0).
+7. Paarregel (ziffern_sha.py, U3/U4): Grundpaare nur zwischen Variablen, die nach der E3-Vorpropagation unbestimmt sind; nie Konstanten-/Selbstpaare;
+   Beziehungen mit < 2 unbestimmten Variablen bekommen keine Paare; Komposition (Radius 1) nur ueber gemeinsame Nachbarn im Grundpaar-Graphen; Tupel-
+   Projektionen pflegen nur vorhandene Paare; fehlende Paare universell; E3 + Originalbeziehungen bleiben aktiv. Zaehlung P4: 242 397 Grundpaare (U-voll).
+8. Speicher: Elternprozess ueberwacht das Kind durchgehend (0,1 s), nicht nur zwischen Knoten; Paargrenze wird VOR jeder Einfuegung geprueft (grundpaare()
+   und setze()). Gemessen: Peak 181 MiB (P1), Pairs in P4 als dict mit Tupelschluesseln: Peak 153 MiB fuer 243 052 Paare inkl. Netz und Bitgraph.
+   ziffern.py UNVERAENDERT (Hash unten); Aenderungen in der Testkopie ziffern_sha.py (importiert Netz/Tabellen), Diff beiliegend.
+9. Ausgabe nur Zaehler/Hashes/Status, erstes Gegenbeispiel bei Fehler (leer geblieben). Kein automatischer Wechsel U-voll -> U-lokal vorgesehen.
+10. Status/Rechner/Python/Zeit je Phase oben und in den JSON.
+
+== KORREKTUREN UND GETRENNTE LAEUFE ===========================================================================================================
+Lauf 1 (Phasen einzeln gestartet: P0; P1+P2F1; P2F2+P3): P0, P1, P2F1, P2F2 OK. P3 meldete FEHLER, obwohl alle Einzelwerte richtig waren: in meinem
+  Bewertungsausdruck wurde fuer die U-voll-Domaenen der le-Index des U-lokal-Netzes benutzt (Variable Nd war inzwischen auf das lokale Netz umgesetzt) –
+  Fehler im Testausdruck, nicht in Netz oder Propagation. Ergebnisdatei aufbewahrt: lauf1_2/ERGEBNIS_P3_lauf1_FEHLER.json. Korrektur: le_voll/le_lokal
+  getrennt gehalten (Kommentar an der Stelle in stufe0_kind.py).
+Lauf 2: P3 + P4 nach der Korrektur: OK (lauf1_2/ERGEBNIS_P3_lauf2.json, ERGEBNIS_P4_lauf2.json).
+Lauf 3 (gueltig): alle sechs Phasen in einer Kette, unveraenderter Code: Ergebnis oben. Keine weiteren Wiederholungen.
+
+== HINWEISE FUER STUFE 1 (noch nicht freigegeben, gemeinsame Entscheidung) ==================================================================
+- E3 an der Wurzel (Ziel = 1, Nonce frei) legt KEINE Nonceziffer fest (P4) – erwartet, das ist nur GAC ohne Paare. E1 an der Wurzel wurde in Stufe 0 nicht
+  gelaufen (kein Suchnetz-Lauf); aus den Minermessungen bekannt: 0 abgeleitete Noncebits.
+- Kosten E4 an der Wurzel (VERMUTUNG aus Zaehlung, nicht gemessen): 242 397 Grundpaare, ~63 000 unbestimmte Variablen; die Radius-1-Komposition besucht je
+  Variable y alle Nachbarpaare (ADD-Variablen haben 4–8 Nachbarn) mit je bis zu 16x4 Wertpruefungen – grob 50–150 Mio. Operationen je Runde in reinem
+  Python, d. h. Minuten je Runde; mehrere Runden bis Fixpunkt. Ein 10-Minuten-Budget an der Wurzel koennte in U-voll ueberschritten werden (-> OFFEN,
+  Bericht, dann Entscheidung). Optionen fuer die gemeinsame Entscheidung: (a) Budget 10 min beibehalten und OFFEN akzeptieren, (b) Wurzelbudget auf 30 min,
+  (c) Kompositionsschritt vorab in einer kompakteren Form (z. B. Masken-Arithmetik je Variable) umsetzen und erneut in Stufe 0 gegen die jetzige
+  Fassung auf Gleichheit pruefen, bevor Stufe 1 laeuft. Ich schlage (c)+(a) vor, mache aber nichts davon ohne Freigabe.
+- Zeugen/Verwerfungen in Stufe 1/2 werden wie geplant gegen FAELLE_SHA256D.json (Orakel) abgesichert; F1 erwartet leer, F2 genau {2083236893}.
+
+== DATEIEN UND HASHES ==========================================================================================================================
+Unveraendert (Hashes identisch mit Pruefpaket bzw. M4-Paket): gatter.py 75611ddf…, pruefung.py 0ad28cd4…, teilbits.py 0d2aaed2…, bausteine.py 1df1ab31…,
+ziffern.py 21c46892… (vollstaendig in SHA256SUMS.txt). Neu: sha_ziffern.py (ZiffernOps/BitLog/IntLog, SHR, LE-Kette, Netzaufbau, Adapter),
+ziffern_sha.py (Testkopie E3/E4 mit U1–U4) + DIFF_ziffern_zu_ziffern_sha.txt, stufe0_kind.py (Phasen), lauf_stufe0.py (Elternwaechter),
+FAELLE_SHA256D.json (aus dem Plan, unveraendert), ERGEBNIS_STUFE0.json, ERGEBNIS_P0/P1/P2F1/P2F2/P3/P4.json, lauf1_2/ (Lauf 1 Fehlerdatei, Lauf 2).
+Nachrechnen: python -I lauf_stufe0.py  (alle Phasen, ~3,5 min, < 200 MiB).

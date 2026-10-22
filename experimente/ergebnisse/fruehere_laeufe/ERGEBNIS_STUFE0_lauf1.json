@@ -1,0 +1,31 @@
+{
+ "stufe": "0",
+ "beginn": "2026-10-22 15:47:51",
+ "python": "3.13.16",
+ "grenze": {
+  "zeit_s": 600.0,
+  "ram_mib": 400.0
+ },
+ "phasen": [
+  {
+   "phase": "P2F2",
+   "status": "OK",
+   "abbruchgrund": null,
+   "wall_s": 78.51,
+   "peak_rss_mib_extern": 138.6,
+   "rueckgabe": 0,
+   "ausgabe": "ERGEBNIS_P2F2.json"
+  },
+  {
+   "phase": "P3",
+   "status": "FEHLER",
+   "abbruchgrund": null,
+   "wall_s": 2.81,
+   "peak_rss_mib_extern": 94.1,
+   "rueckgabe": 2,
+   "ausgabe": "ERGEBNIS_P3.json"
+  }
+ ],
+ "ende": "2026-10-22 15:49:12",
+ "gesamt_wall_s": 81.3
+}

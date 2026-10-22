@@ -1,0 +1,51 @@
+FABLE AN GHOST – VIER-WEGE-WAHRHEITSTABELLEN BEI ZWEI FREIEN NONCEBITS, 2026-10-22
+Ein Lauf, extern ueberwacht (Budget 120 s / 400 MiB): tatsaechlich 0,2 s Wall, Peak 15,7 MiB. Kopien, CPU, reines Python 3.13.16,
+Fable-Container (Xeon 2,10 GHz, 2 Kerne). Miner unberuehrt, keine GPU/RPC/Einreichung, keine Ausweitung auf mehr freie Bits.
+Status OK: alle acht Endhashes und alle acht Zielentscheidungen stimmen mit hashlib ueberein, Genesis-Treffer erhalten.
+
+== AUFBAU ====================================================================================================================
+Zwei freie Noncebits (Bit 0 und 1) -> vier Kandidaten je Fall. Jedes Zwischenbit ist eine Wahrheitstabelle mit vier Eintraegen,
+gespeichert als 4-Bit-Maske: Eintrag k = Wert dieses Bits fuer Kandidat k. UND = bitweises Und der Masken, XOR = bitweises Xor,
+Negation = 15 minus Maske, Konstante 0/1 = Maske 0/15. Das ist exakt und verlustfrei: eine Tabelle ueber vier Eingaben beschreibt
+die Funktion vollstaendig. Gemeinsames Speichern identischer Tabellen ist eingebaut, weil eine Tabelle IST ihre Maskenzahl –
+gleiche Tabelle, gleicher Wert, kein Duplikat moeglich.
+Gerechnet wird derselbe Weg wie im Bitgraphen: pruefung.compress ueber beide Hashanwendungen (Nachrichtenerweiterung, 64 Runden,
+Feed-forward, zweite Anwendung mit Padding), danach die Zielvergleichskette ueber alle 256 Digestbits in Bitcoin-Byteordnung
+wie in gatter.build. Dieselben Vorlagen, dieselben Noncegruppen und dieselben Zielgrenzen wie im Zwei-Bit-Vergleich:
+  F1 echte Vorlage: Nonce 0, 1, 2, 3; Target 78 Nullbits.
+  F2 Genesis: Nonce 2083236892..895 (der bekannte Treffer 2083236893 liegt in der Gruppe); Target 32 Nullbits.
+
+== MESSWERTE =================================================================================================================
+  Fall  | Gatter gesamt | davon UND/XOR   | unterschiedliche Tabellen | Rechnung+Zielkette | Peak    | Zielmaske
+  F1    |   249 600     | 94 080 / 155 520|      16 von 16 moeglich   |   0,07 s           | 15,8 MiB| 0000 -> kein Kandidat erfuellt das Ziel
+  F2    |   249 600     | 94 080 / 155 520|      16 von 16 moeglich   |   0,04 s           | 15,9 MiB| 0010 -> genau Kandidat 2083236893
+Unabhaengige Pruefung (hashlib, erst nach der Rechnung gelesen, nie eingespeist): alle vier Digests je Fall bitgleich mit
+hashlib.sha256(sha256(header||nonce)), alle vier Zielentscheidungen gleich dem Vergleich int.from_bytes(hash,'little') <= Target.
+F1: alle vier verfehlen (fuehrende Nullbits 0, 1, 0, 0). F2: genau einer trifft, 43 fuehrende Nullbits – er bleibt erhalten.
+Direktvergleich wie beauftragt: dieselben vier Kandidaten mit hashlib auszuwerten kostet 0,0000097 s (F1) bzw. 0,0000052 s (F2),
+Mittel aus 100 Wiederholungen. Die Tabellenrechnung ist also rund 6 800- bis 7 900-mal langsamer.
+
+== EINORDNUNG (ehrlich, und das ist der Kern) ================================================================================
+Was gezeigt ist: Unser Interpreter kann die vollstaendige Bitcoin-Rechnung fuer vier Kandidaten GEMEINSAM und EXAKT darstellen.
+Ein Durchgang mit 249 600 Gattern liefert alle vier Ergebnisse samt Zielentscheidung, nachweislich richtig. Das ist sauber und
+es ist die kompakteste exakte Darstellung, die wir bisher haben – alles andere (Zifferndomaenen, Paare) verliert unterwegs etwas,
+diese nicht.
+Was NICHT gezeigt ist – und ich will es deutlich sagen, weil es diesmal zaehlt: Ein Suchvorteil ist das nicht. Die Tabellenbreite
+vier bedeutet, dass vier Kandidaten gleichzeitig durch dieselben Gatter laufen; die Kosten je Gatter sind unveraendert. Das ist
+genau die Technik, die man Bitscheiben nennt, und sie ist in jedem ernsthaften Miner laengst eingebaut – auf der GPU mit 32 oder
+64 Kandidaten je Register statt vier. Der Aufwand waechst linear mit der Zahl der Kandidaten, sobald die Maschinenwortbreite
+ueberschritten ist. Es bleibt Vorwaertsrechnen, kein Rueckwaertsableiten.
+Alle 16 moeglichen Tabellen kommen tatsaechlich vor. Es gibt also keine Ersparnis durch gemeinsames Speichern: die Darstellung
+ist exakt, aber nicht kleiner als vier Einzelrechnungen – sie ist nur besser gebuendelt.
+Bemerkenswert bleibt der Zusammenhang zum Zwei-Bit-Vergleich von vorhin: Dieselben vier Kandidaten, dieselbe Zielgrenze. Die
+Tabellenrechnung entscheidet beide Faelle in Hundertstelsekunden vollstaendig und richtig, waehrend E1 und E1+E4 nach 4 bis 183
+Sekunden kein einziges Noncebit ableiten und bei F1 den Ausschluss nicht einmal bemerken. Der Unterschied: Die Tabellen fuehren
+die Kandidaten EINZELN mit (vier Eintraege nebeneinander), die Domaenen- und Paarrechnung fuehrt eine Naeherung ueber alle
+Kandidaten GEMEINSAM. Das Einzelmitfuehren ist exakt und teuer pro Kandidat; die Naeherung ist billig pro Kandidat und zu schwach.
+Genau zwischen diesen beiden Polen liegt die offene Frage des ganzen Projekts, und dieser Versuch markiert den einen Pol sauber.
+
+== DATEIEN ===================================================================================================================
+tabellen4_kind.py (Rechnung und Pruefung), lauf_tabellen4.py (Elternprozess mit Budgetwaechter), ERGEBNIS_TABELLEN4.json
+(alle Messwerte, je Kandidat Digestvergleich und Zielentscheidung), FAELLE_SHA256D.json.
+Unveraendert mitgeliefert: sha_ziffern.py, pruefung.py, gatter.py, teilbits.py, ziffern.py, bausteine.py.
+Nachrechnen: python -I lauf_tabellen4.py (0,2 s).

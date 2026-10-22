@@ -1,0 +1,12 @@
+15c15
+< BED, ART, AUS = sys.argv[1], sys.argv[2], sys.argv[3]; MAXP = int(sys.argv[4]) if len(sys.argv) > 4 else 2500000; T0 = time.perf_counter()
+---
+> BED, ART, AUS = sys.argv[1], sys.argv[2], sys.argv[3]; MAXP = int(sys.argv[4]) if len(sys.argv) > 4 else 2500000; SWEEPS = int(sys.argv[5]) if len(sys.argv) > 5 else 12; T0 = time.perf_counter()
+21c21
+<            rechner='Fable-Container Linux, Intel Xeon 2.10 GHz (2 Kerne), CPU', status='LAEUFT', schritte=[], paargrenze=MAXP)
+---
+>            rechner='Fable-Container Linux, Intel Xeon 2.10 GHz (2 Kerne), CPU', status='LAEUFT', schritte=[], paargrenze=MAXP, e1_durchlaufgrenze=SWEEPS)
+62c62
+< t = time.perf_counter(); st1, sw = e1_lauf(g, d); t1 = time.perf_counter() - t
+---
+> t = time.perf_counter(); st1, sw = e1_lauf(g, d, max_sweeps=SWEEPS); t1 = time.perf_counter() - t

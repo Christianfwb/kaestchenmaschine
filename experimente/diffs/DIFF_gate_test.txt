@@ -1,0 +1,12 @@
+--- alt/gate_test.py	2026-10-22 17:35:06.830658749 +0900
++++ gate_test.py	2026-10-22 17:45:05.079555440 +0900
+@@ -49,6 +49,9 @@
+     szenario('Basis F1 Datei fehlt', dict(datei=None), dict(datei=FIX), False),
+     szenario('Basis F2 Datei ungueltig', dict(datei=FIX), dict(datei='kaputt'), False),
+     szenario('Basis F1 Status-Feld fehlt (ergebnis ohne status)', dict(datei=dict(status='OK', ergebnis={}, schritte=[])), dict(datei=FIX), False),
++    szenario('Basis F2 RAM-Abbruch in der ABSCHLUSSPRUEFUNG trotz zuvor FIXPUNKT (Schritte FIXPUNKT, kein ergebnis-Block)',
++             dict(datei=FIX), dict(datei=dict(status='LAEUFT', schritte=[dict(name='Austausch 2 E4', status='FIXPUNKT'), dict(name='Austausch 2 E1', status='FIXPUNKT')]), dauer=2.0), False),
++    szenario('Basis F1 wiederverwendet (gueltiger Beleg) + F2 neu FIXPUNKT', dict(datei=FIX), dict(datei=FIX), True),
+ ]
+ alle = all(r['bestanden'] for r in res)
+ json.dump(dict(bestanden=alle, szenarien=res), open(HERE / 'ERGEBNIS_GATE_TEST.json', 'w'), indent=1)

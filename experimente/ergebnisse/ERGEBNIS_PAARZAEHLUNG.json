@@ -1,0 +1,24 @@
+{
+ "zweck": "Zaehlung (kein Lauf): wie viele Paare die Radius-1-Schliessung an der Wurzel hoechstens anlegt",
+ "ergebnis": {
+  "F1_ECHTE_VORLAGE": {
+   "grundpaare": 242397,
+   "radius1_zusatzpaare": 1649304,
+   "paare_gesamt_radius1": 1891701,
+   "variablen_mit_paaren": 63101,
+   "grad_median": 7,
+   "grad_max": 30,
+   "zaehlzeit_s": 1.9
+  },
+  "F2_GENESIS_HISTORISCH": {
+   "grundpaare": 243052,
+   "radius1_zusatzpaare": 1654032,
+   "paare_gesamt_radius1": 1897084,
+   "variablen_mit_paaren": 63259,
+   "grad_median": 7,
+   "grad_max": 30,
+   "zaehlzeit_s": 1.8
+  }
+ },
+ "peak_mib": 320.4
+}

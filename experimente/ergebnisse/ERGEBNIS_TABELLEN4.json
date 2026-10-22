@@ -1,0 +1,182 @@
+{
+ "messung": "Vier-Wege-Wahrheitstabellen bei zwei freien Noncebits",
+ "python": "3.13.16",
+ "rechner": "Fable-Container Linux, Intel Xeon 2.10 GHz (2 Kerne), CPU, reines Python",
+ "faelle": [
+  {
+   "fall": "F1_ECHTE_VORLAGE",
+   "noncen": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "zielnullbits": 78,
+   "aufbauzeit_rechnung_s": 0.07,
+   "aufbauzeit_zielkette_s": 0.0,
+   "und_gatter": 89344,
+   "xor_gatter": 160256,
+   "gatter_gesamt": 249600,
+   "unterschiedliche_tabellen": 16,
+   "tabellen_moeglich": 16,
+   "tabellen_liste": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15
+   ],
+   "zielmaske_le": 0,
+   "kandidaten_die_das_ziel_erfuellen": [],
+   "vergleich_direkt_hashlib": {
+    "vier_kandidaten_s": 9.73e-06,
+    "mittel_aus_wiederholungen": 100,
+    "faktor_tabellen_langsamer": 6840
+   },
+   "pruefung_gegen_hashlib": [
+    {
+     "nonce": 0,
+     "digest_gleich_hashlib": true,
+     "hash_bitcoin": "b5a75560b89ed97c965f61d83c632412e32290c25f89dd0fd5cfade0c013fc8f",
+     "fuehrende_nullbits": 0,
+     "zielentscheidung_tabelle": false,
+     "zielentscheidung_hashlib": false,
+     "stimmt": true
+    },
+    {
+     "nonce": 1,
+     "digest_gleich_hashlib": true,
+     "hash_bitcoin": "7f4d666f12948604a3364da8523b730cc4154162ea6c5cdd563a5c2f6076ebf6",
+     "fuehrende_nullbits": 1,
+     "zielentscheidung_tabelle": false,
+     "zielentscheidung_hashlib": false,
+     "stimmt": true
+    },
+    {
+     "nonce": 2,
+     "digest_gleich_hashlib": true,
+     "hash_bitcoin": "fde479e0846d6019ad0e50e0aab83f8de8d082848002fa8aa37537a7a1e685f7",
+     "fuehrende_nullbits": 0,
+     "zielentscheidung_tabelle": false,
+     "zielentscheidung_hashlib": false,
+     "stimmt": true
+    },
+    {
+     "nonce": 3,
+     "digest_gleich_hashlib": true,
+     "hash_bitcoin": "da84e5dee5bd06b08f5366c429c7920b39317d8c5680c21e5732e47502dac90d",
+     "fuehrende_nullbits": 0,
+     "zielentscheidung_tabelle": false,
+     "zielentscheidung_hashlib": false,
+     "stimmt": true
+    }
+   ],
+   "bekannter_treffer_erhalten": null,
+   "alles_korrekt": true,
+   "peak_mib": 15.8
+  },
+  {
+   "fall": "F2_GENESIS_HISTORISCH",
+   "noncen": [
+    2083236892,
+    2083236893,
+    2083236894,
+    2083236895
+   ],
+   "zielnullbits": 32,
+   "aufbauzeit_rechnung_s": 0.04,
+   "aufbauzeit_zielkette_s": 0.0,
+   "und_gatter": 89344,
+   "xor_gatter": 160256,
+   "gatter_gesamt": 249600,
+   "unterschiedliche_tabellen": 16,
+   "tabellen_moeglich": 16,
+   "tabellen_liste": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15
+   ],
+   "zielmaske_le": 2,
+   "kandidaten_die_das_ziel_erfuellen": [
+    2083236893
+   ],
+   "vergleich_direkt_hashlib": {
+    "vier_kandidaten_s": 5.18e-06,
+    "mittel_aus_wiederholungen": 100,
+    "faktor_tabellen_langsamer": 7868
+   },
+   "pruefung_gegen_hashlib": [
+    {
+     "nonce": 2083236892,
+     "digest_gleich_hashlib": true,
+     "hash_bitcoin": "8cdc343dc1ca87b0fae7d09a6537a536fec9784a3c4541b770bfb5881c5d66d9",
+     "fuehrende_nullbits": 0,
+     "zielentscheidung_tabelle": false,
+     "zielentscheidung_hashlib": false,
+     "stimmt": true
+    },
+    {
+     "nonce": 2083236893,
+     "digest_gleich_hashlib": true,
+     "hash_bitcoin": "000000000019d6689c085ae165831e934ff763ae46a2a6c172b3f1b60a8ce26f",
+     "fuehrende_nullbits": 43,
+     "zielentscheidung_tabelle": true,
+     "zielentscheidung_hashlib": true,
+     "stimmt": true
+    },
+    {
+     "nonce": 2083236894,
+     "digest_gleich_hashlib": true,
+     "hash_bitcoin": "9b227a4a5daa0cbae6874144bc5d7797d0513e320aceadeb3b06304971a41b1c",
+     "fuehrende_nullbits": 0,
+     "zielentscheidung_tabelle": false,
+     "zielentscheidung_hashlib": false,
+     "stimmt": true
+    },
+    {
+     "nonce": 2083236895,
+     "digest_gleich_hashlib": true,
+     "hash_bitcoin": "8fef4789791f62e71dca8230ff21a311153284c8de8ff4fc15ca44948944539d",
+     "fuehrende_nullbits": 0,
+     "zielentscheidung_tabelle": false,
+     "zielentscheidung_hashlib": false,
+     "stimmt": true
+    }
+   ],
+   "bekannter_treffer_erhalten": true,
+   "alles_korrekt": true,
+   "peak_mib": 15.9
+  }
+ ],
+ "status": "OK",
+ "gesamt_s": 0.11,
+ "peak_mib": 15.9,
+ "einordnung": "Gemeinsame exakte Auswertung aller vier Kandidaten in einem Durchgang. KEIN nachgewiesener Suchvorteil: die Kosten je Gatter sind dieselben wie bei einer Einzelrechnung, nur werden vier Kandidaten gleichzeitig gefuehrt. Hoechstens 16 verschiedene Tabellen existieren ueberhaupt; die Rechnung ist damit exakt, aber nicht kleiner als vier Einzelrechnungen.",
+ "wall_s_extern": 0.2,
+ "peak_mib_extern": 15.7,
+ "abbruchgrund": null
+}

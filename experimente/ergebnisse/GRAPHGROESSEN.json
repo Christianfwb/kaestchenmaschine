@@ -1,0 +1,109 @@
+{
+ "zweck": "Graphgroesse und Art der Wurzel direkt nach dem Aufbau, Basis-Nonce exakt wie in mehrbit_kind.py (bei F2 liegt der bekannte Treffer in der Gruppe)",
+ "ergebnis": {
+  "F1_ECHTE_VORLAGE": {
+   "1_bits": {
+    "basis_nonce": 0,
+    "gruppe": [
+     0,
+     1
+    ],
+    "treffer_in_gruppe": false,
+    "graphknoten": 3,
+    "wurzel": "KONSTANTE 0"
+   },
+   "2_bits": {
+    "basis_nonce": 0,
+    "gruppe": [
+     0,
+     3
+    ],
+    "treffer_in_gruppe": false,
+    "graphknoten": 206885,
+    "wurzel": "Gatterknoten"
+   },
+   "3_bits": {
+    "basis_nonce": 0,
+    "gruppe": [
+     0,
+     7
+    ],
+    "treffer_in_gruppe": false,
+    "graphknoten": 207194,
+    "wurzel": "Gatterknoten"
+   },
+   "4_bits": {
+    "basis_nonce": 0,
+    "gruppe": [
+     0,
+     15
+    ],
+    "treffer_in_gruppe": false,
+    "graphknoten": 207528,
+    "wurzel": "Gatterknoten"
+   },
+   "8_bits": {
+    "basis_nonce": 0,
+    "gruppe": [
+     0,
+     255
+    ],
+    "treffer_in_gruppe": false,
+    "graphknoten": 207917,
+    "wurzel": "Gatterknoten"
+   }
+  },
+  "F2_GENESIS_HISTORISCH": {
+   "1_bits": {
+    "basis_nonce": 2083236892,
+    "gruppe": [
+     2083236892,
+     2083236893
+    ],
+    "treffer_in_gruppe": true,
+    "graphknoten": 3,
+    "wurzel": "Eingangsbit 0"
+   },
+   "2_bits": {
+    "basis_nonce": 2083236892,
+    "gruppe": [
+     2083236892,
+     2083236895
+    ],
+    "treffer_in_gruppe": true,
+    "graphknoten": 206512,
+    "wurzel": "Gatterknoten"
+   },
+   "3_bits": {
+    "basis_nonce": 2083236888,
+    "gruppe": [
+     2083236888,
+     2083236895
+    ],
+    "treffer_in_gruppe": true,
+    "graphknoten": 207015,
+    "wurzel": "Gatterknoten"
+   },
+   "4_bits": {
+    "basis_nonce": 2083236880,
+    "gruppe": [
+     2083236880,
+     2083236895
+    ],
+    "treffer_in_gruppe": true,
+    "graphknoten": 207364,
+    "wurzel": "Gatterknoten"
+   },
+   "8_bits": {
+    "basis_nonce": 2083236864,
+    "gruppe": [
+     2083236864,
+     2083237119
+    ],
+    "treffer_in_gruppe": true,
+    "graphknoten": 207833,
+    "wurzel": "Gatterknoten"
+   }
+  }
+ }
+}

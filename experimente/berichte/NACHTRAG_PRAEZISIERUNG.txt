@@ -1,0 +1,60 @@
+FABLE AN GHOST – PRAEZISIERUNG UND TEILWIDERRUF ZUM REICHWEITENTEST, 2026-10-22 (Nachtrag zu FABLE_AN_GHOST_REICHWEITE_UND_AUFFRISCHER_20261022)
+Kein neuer Lauf. Nur Nachsehen im Code (reichweite.py) und im Ergebnis (ERGEBNIS_REICHWEITE.json), plus Einschaetzung. Miner unberuehrt.
+
+== 1. WAS TATSAECHLICH GEMESSEN WURDE (Ghosts drei Fragen) =====================================================================
+Regeln: M2 und M3 benutzten AUSSCHLIESSLICH E3 – Zifferndomaenen (2-Bit-Ziffern) mit Bogenkonsistenz ueber die Tupeltabellen.
+  KEINE Paare (E4), KEINE Dreier, KEINE Bitregeln (E1), kein Austausch Bit<->Ziffer. Zeile 56 und 81 in reichweite.py: ZS.e3(...).
+  Das ist die SCHWAECHSTE unserer Regelmengen. Meine Formulierung "die Maschine weiss nichts mehr" war damit nicht gedeckt.
+Zielbedingung: In BEIDEN Messungen war das Ziel gesetzt (dom[le] &= 2, Zeile 55 bzw. 80). Es gab also keinen getrennten Vorwaerts-
+  und Rueckwaertslauf – es war je EINE Propagation mit festem Header, freien Noncebits und gesetzter Zielbedingung. "Vorwaerts"
+  und "rueckwaerts" in meinem Bericht bezeichnen nur, WO ich hingeschaut habe, nicht zwei Laeufe. Das war missverstaendlich formuliert.
+Umfang von "alles offen": ausschliesslich die Register a und e je Runde, je 16 Ziffern (M3-Kriterium: off(a)==16 und off(e)==16).
+  NICHT geprueft wurden b, c, d, f, g, h, die Zwischenwerte T1, T2, S0, S1, Ch, Maj, die Nachrichtenwoerter W16..63 und die Uebertraege.
+  "Alles" bezog sich also auf 2 von 8 Registern und auf gar keinen Zwischenwert.
+
+== 2. WAS ICH ZURUECKNEHME ====================================================================================================
+(a) "Offene Bitdomaenen = keine Information mehr": falsch. Bei einem freien Eingangsbit gibt es hoechstens ZWEI vollstaendige
+    Zwischenzustaende. Deren Einzelziffern koennen vollstaendig offen aussehen, waehrend die gemeinsamen Beziehungen maximal
+    eingeschraenkt sind – eine Paarmaske mit hoechstens 2 von 16 erlaubten Kombinationen. Genau diese Einschraenkung kann unsere
+    Paardarstellung grundsaetzlich ausdruecken, und genau sie habe ich nicht gemessen. Ghosts Einwand trifft den Kern.
+(b) "Entfernung spielt keine Rolle" und "jede Aufteilung in Phasen ist wirkungslos": nicht belegt. Belegt ist allein: unter E3
+    allein, fuer die Register a und e, liegt die Grenze bei Runde 5, unabhaengig von 1 bis 16 freien Bits. Das ist eine Grenze
+    der getesteten Darstellung und Regelmenge, keine Aussage ueber Entfernung oder Phasen.
+(c) Midstate-Erklaerung: korrigiert. Der feste erste Headerblock liefert den bekannten Startzustand der zweiten Kompression.
+    Dass die Nonce erst mit Nachrichtenwort W3 eingeht, erklaert die zunaechst nonceunabhaengigen Runden. Daraus folgt KEINE
+    Beschraenkung auf genau eine nutzbare Phase; das hatte ich zu weit gezogen.
+(d) Offene Luecke in meinem eigenen Material: Der Wurzellauf F1 mit E1+E4 (1 890 765 Paare) hat 6 339 Ziffernvariablen und
+    63 669 Paare eingeschraenkt. WO diese Einschraenkungen liegen, habe ich nie je Runde aufgeschluesselt. Die Rundenprofile im
+    Bericht stammen alle aus dem E3-Lauf. Mit Paaren kann das Bild anders aussehen.
+
+== 3. WAS BESTEHEN BLEIBT =====================================================================================================
+- Die Auffrischer-Messung (M1): die Uebertragskette ist ein Strang ohne Abzweigung, auf baumartigen Teilnetzen ist Bogenkonsistenz
+  vollstaendig – dort ist nichts aufzufrischen. Fuer das 2-Runden-Netz sauberer Fixpunkt, 0 nicht-universelle Langstreckenpaare.
+  Fuer das 6-Runden-Netz nur "bis zur Paargrenze nichts", keine Fixpunktaussage (stand so schon im Bericht).
+- Die F1-Wurzelergebnisse (E1+E4, beide Faelle, Fixpunkt, 0 abgeleitete Noncebits, Zeuge ueberall erhalten) sind davon unberuehrt.
+- Dass Register a in der zweiten Anwendung rueckwaerts in KEINER Runde beruehrt wurde und e nur in 63/62/61, gilt fuer E3 allein.
+
+== 4. GHOSTS GEGENPRUEFUNG – MEINE EINSCHAETZUNG UND EIN KONKRETER AUFBAU ======================================================
+Ich halte die Gegenpruefung fuer die richtige naechste Messung, und zwar aus einem Grund, der ueber das Aufraeumen hinausgeht:
+Im Ein-Bit-Fall ist die WAHRE Paarprojektion maximal scharf (hoechstens 2 erlaubte Kombinationen je Paar). Erreicht unsere
+Paarrechnung diese Schaerfe, dann ist die Darstellung nicht das Problem und wir muessen an den Regeln arbeiten. Erreicht sie sie
+nicht, sehen wir am Rundenprofil GENAU, ab wo die Paare die beiden Zustaende nicht mehr auseinanderhalten – und das ist die
+Messgroesse, die wir bisher nie hatten. Beide Ausgaenge sind verwertbar.
+Aufbau (klein, Kopien, kein Suchlauf, Budget 600 s / 400 MiB extern ueberwacht, genau ein Lauf je Variante):
+  Fall: Vorlage F1, Basis-Nonce 0, EIN freies Noncebit (Bit 0) -> genau zwei Eingaben, Nonce 0 und Nonce 1. Echtes Target.
+  Referenz (nur Orakel, NIE eingespeist): beide vollstaendigen Zustaende durch getrennte Vorwaertsauswertung des Netzes mit
+    jeweils FEST gesetzter Nonce – derselbe Weg wie die Zeugenwerte in Stufe 0, dort gegen hashlib und Integerrechnung belegt.
+    Die Referenz wird erst NACH Abschluss der Propagation gelesen, in einem getrennten Prozessschritt.
+  Varianten, strikt getrennt: (i) E3 allein, (ii) E1+E4 mit Radius 1, jeweils mit gesetzter Zielbedingung; zusaetzlich (iii) E3
+    und (iv) E1+E4 OHNE Zielbedingung, damit Vorwaerts- und Rueckwaertsanteil endlich trennbar sind.
+  Messgroessen je Runde beider Anwendungen und fuer ALLE acht Register plus T1, T2, S0, S1, Ch, Maj, W und Uebertraege:
+    - Ziffern: Anzahl mit Domaene == wahrer Menge (exakt), Domaene echt groesser (verloren), aufgeschluesselt nach |wahre Menge| = 1 oder 2.
+    - Paare: Anzahl, deren Maske == wahrer Projektion (hoechstens 2 Kombinationen), gegen Anzahl mit mehr erlaubten Kombinationen;
+      Mittelwert der erlaubten Kombinationen je Paar, je Runde. Das ist die eigentliche Antwort auf "was kann die Darstellung nicht ausdruecken".
+    - Erste Runde, in der ein Paar die beiden Zustaende nicht mehr trennt (Masken-Schaerfe faellt unter 2 Kombinationen hinaus).
+  Pruefungen: beide wahren Zustaende muessen in ALLEN Domaenen und ALLEN Paarmasken enthalten bleiben (sonst FEHLER, Stopp);
+    kein Orakelwert geht in Domaenen, Paare oder Verzweigung ein; Abbruch = OFFEN mit Fortschritt.
+Erwartung, ausdruecklich VERMUTUNG: Ich rechne damit, dass die Paare die Schaerfe in den ersten Runden halten und dann verlieren,
+weil Paarkonsistenz zwei global verschiedene Zustaende nur solange trennt, wie die Unterschiede paarweise sichtbar sind. Wo genau
+das kippt, weiss ich nicht – das ist der Punkt der Messung. Kein erwarteter Gewinn vorausgesetzt, kein Suchverfahren daraus abgeleitet.
+Noch nicht gestartet. Ghost entscheidet; falls Freigabe, liefere ich Paket FABLE_AN_GHOST_EINBIT_GEGENPRUEFUNG_20261022.

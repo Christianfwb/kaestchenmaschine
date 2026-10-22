@@ -1,0 +1,75 @@
+{
+ "netz": {
+  "variablen": 551,
+  "beziehungen": 256,
+  "beschreibung": "eine SHA-Runde auf 32-Bit-Woertern, b..h fest, a/e-Ausgang 8 Ziffern fest, a,e,w frei"
+ },
+ "messung": {
+  "ziffern_sha.e4": {
+   "status": "FIXPUNKT",
+   "s": 0.23,
+   "paare": 4299,
+   "runden": 2,
+   "tupelops": 148267,
+   "dom_hash": 6787194886814288822,
+   "paar_hash": -5640999008232390879
+  },
+  "ziffern_komp.e4": {
+   "status": "FIXPUNKT",
+   "s": 0.3,
+   "paare": 4299,
+   "runden": 2,
+   "tupelops": 66059,
+   "dom_hash": 6787194886814288822,
+   "paar_hash": -5640999008232390879
+  }
+ },
+ "gleich": true,
+ "messung2": {
+  "beschreibung": "dieselbe Runde, nur a-Ausgang, e-Ausgang und d fest (rueckwaerts), Rest frei",
+  "messung": {
+   "ziffern_sha.e4": {
+    "status": "FIXPUNKT",
+    "s": 0.27,
+    "paare": 4743,
+    "runden": 2,
+    "dom_hash": 1562128843790674527,
+    "paar_hash": -8375555053983756224
+   },
+   "ziffern_komp.e4": {
+    "status": "FIXPUNKT",
+    "s": 0.32,
+    "paare": 4743,
+    "runden": 2,
+    "dom_hash": 1562128843790674527,
+    "paar_hash": -8375555053983756224
+   }
+  },
+  "gleich": true
+ },
+ "messung3": {
+  "beschreibung": "sechs SHA-Runden (32 Bit), nur e,f,g nach Runde 6 fest (rueckwaerts), Rest frei",
+  "variablen": 2586,
+  "beziehungen": 1536,
+  "messung": {
+   "ziffern_sha.e4": {
+    "status": "FIXPUNKT",
+    "s": 3.05,
+    "paare": 52078,
+    "runden": 2,
+    "dom_hash": 8454902920078304739,
+    "paar_hash": -4422307385180010776
+   },
+   "ziffern_komp.e4": {
+    "status": "FIXPUNKT",
+    "s": 0.97,
+    "paare": 52078,
+    "runden": 2,
+    "dom_hash": 8454902920078304739,
+    "paar_hash": -4422307385180010776
+   }
+  },
+  "gleich": true,
+  "peak_mib": 47.8
+ }
+}

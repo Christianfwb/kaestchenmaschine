@@ -1,0 +1,23 @@
+{
+ "phase": "K2",
+ "python": "3.13.16",
+ "rechner": "Fable-Container Linux, Intel Xeon 2.10 GHz (2 Kerne), CPU, reines Python",
+ "schritte": [
+  {
+   "faelle": 320,
+   "fehler": 0,
+   "offene_faelle_gezaehlt": 39,
+   "stati": {
+    "WIDERSPRUCH": 201,
+    "OPEN_PAARGRENZE": 39,
+    "FIXPUNKT": 80
+   },
+   "name": "K2 Gleichheit ziffern_komp.e4 == ziffern_sha.e4 (Status, Domaenen, alle Paare)",
+   "t_s": 0.73,
+   "peak_mib": 29.7
+  }
+ ],
+ "status": "OK",
+ "gesamt_s": 0.73,
+ "peak_mib_kind": 29.7
+}

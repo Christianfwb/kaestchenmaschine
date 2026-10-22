@@ -1,0 +1,28 @@
+{
+ "fall": "F1",
+ "freie_bits": 8,
+ "python": "3.13.16",
+ "rechner": "Fable-Container Linux, Intel Xeon 2.10 GHz (2 Kerne), CPU",
+ "status": "OFFEN",
+ "schritte": [
+  {
+   "graphknoten": 207917,
+   "und_gatter": 74536,
+   "xor_gatter": 133371,
+   "wurzel": "Gatterknoten",
+   "name": "Aufbau",
+   "t_s": 0.26,
+   "peak_mib": 53.3
+  },
+  {
+   "status": "FIXPUNKT",
+   "sweeps": 4,
+   "feste_knoten": 601,
+   "s": 1.25,
+   "name": "E1 mit Zielbedingung (liefert die festen Werte)",
+   "t_s": 1.51,
+   "peak_mib": 53.3
+  }
+ ],
+ "abbruchgrund": "RAM 415 MiB > 400"
+}

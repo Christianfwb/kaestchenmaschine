@@ -1,0 +1,238 @@
+{
+ "phase": "P3",
+ "python": "3.13.16",
+ "rechner": "Fable-Container Linux, Intel Xeon 2.10 GHz (2 Kerne), CPU, reines Python",
+ "schritte": [
+  {
+   "fall": "F1_ECHTE_VORLAGE",
+   "nonce": 0,
+   "erwartet_le": 0,
+   "E1_ziel_frei": {
+    "status": "FIXPUNKT",
+    "sweeps": 2,
+    "unbestimmte_wortbits": 0,
+    "wort_fehler": 0,
+    "digest_gleich_hashlib": true,
+    "root_domaene": 1,
+    "s": 0.7
+   },
+   "E1_ziel_1": {
+    "status": "WIDERSPRUCH",
+    "sweeps": 1,
+    "s": 0.25
+   },
+   "E3_voll_ziel_frei": {
+    "status": "FIXPUNKT",
+    "runden": 2,
+    "tupelops": 99904,
+    "wort_fehler": 0,
+    "digest_gleich_hashlib": true,
+    "le_domaene": 1,
+    "s": 0.26
+   },
+   "E3_voll_ziel_1": {
+    "status": "WIDERSPRUCH",
+    "runden": 1,
+    "leer": "H2_add_4944[3]",
+    "s": 0.18
+   },
+   "E3_lokal_ziel_frei": {
+    "status": "FIXPUNKT",
+    "runden": 2,
+    "wort_fehler": 0,
+    "digest_gleich_hashlib": true,
+    "le_domaene": 1,
+    "s": 0.12
+   },
+   "E3_lokal_ziel_1": {
+    "status": "WIDERSPRUCH",
+    "runden": 1,
+    "s": 0.07
+   },
+   "bewertung": {
+    "ziel_frei_korrekt": true,
+    "ziel_1_erwartet": "WIDERSPRUCH",
+    "ziel_1_E1": "WIDERSPRUCH",
+    "ziel_1_E3_voll": "WIDERSPRUCH",
+    "ziel_1_E3_lokal": "WIDERSPRUCH"
+   },
+   "name": "P3 F1_ECHTE_VORLAGE nonce 0",
+   "t_s": 2.56,
+   "peak_mib": 94.2
+  },
+  {
+   "fall": "F1_ECHTE_VORLAGE",
+   "nonce": 255,
+   "erwartet_le": 0,
+   "E1_ziel_frei": {
+    "status": "FIXPUNKT",
+    "sweeps": 2,
+    "unbestimmte_wortbits": 0,
+    "wort_fehler": 0,
+    "digest_gleich_hashlib": true,
+    "root_domaene": 1,
+    "s": 0.61
+   },
+   "E1_ziel_1": {
+    "status": "WIDERSPRUCH",
+    "sweeps": 1,
+    "s": 0.14
+   },
+   "E3_voll_ziel_frei": {
+    "status": "FIXPUNKT",
+    "runden": 2,
+    "tupelops": 99904,
+    "wort_fehler": 0,
+    "digest_gleich_hashlib": true,
+    "le_domaene": 1,
+    "s": 0.3
+   },
+   "E3_voll_ziel_1": {
+    "status": "WIDERSPRUCH",
+    "runden": 1,
+    "leer": "H2_add_4944[3]",
+    "s": 0.15
+   },
+   "E3_lokal_ziel_frei": {
+    "status": "FIXPUNKT",
+    "runden": 2,
+    "wort_fehler": 0,
+    "digest_gleich_hashlib": true,
+    "le_domaene": 1,
+    "s": 0.13
+   },
+   "E3_lokal_ziel_1": {
+    "status": "WIDERSPRUCH",
+    "runden": 1,
+    "s": 0.07
+   },
+   "bewertung": {
+    "ziel_frei_korrekt": true,
+    "ziel_1_erwartet": "WIDERSPRUCH",
+    "ziel_1_E1": "WIDERSPRUCH",
+    "ziel_1_E3_voll": "WIDERSPRUCH",
+    "ziel_1_E3_lokal": "WIDERSPRUCH"
+   },
+   "name": "P3 F1_ECHTE_VORLAGE nonce 255",
+   "t_s": 4.67,
+   "peak_mib": 96.5
+  },
+  {
+   "fall": "F2_GENESIS_HISTORISCH",
+   "nonce": 2083236893,
+   "erwartet_le": 1,
+   "E1_ziel_frei": {
+    "status": "FIXPUNKT",
+    "sweeps": 2,
+    "unbestimmte_wortbits": 0,
+    "wort_fehler": 0,
+    "digest_gleich_hashlib": true,
+    "root_domaene": 2,
+    "s": 0.59
+   },
+   "E1_ziel_1": {
+    "status": "FIXPUNKT",
+    "sweeps": 2,
+    "s": 0.84
+   },
+   "E3_voll_ziel_frei": {
+    "status": "FIXPUNKT",
+    "runden": 2,
+    "tupelops": 99904,
+    "wort_fehler": 0,
+    "digest_gleich_hashlib": true,
+    "le_domaene": 2,
+    "s": 0.29
+   },
+   "E3_voll_ziel_1": {
+    "status": "FIXPUNKT",
+    "runden": 2,
+    "leer": null,
+    "s": 0.25
+   },
+   "E3_lokal_ziel_frei": {
+    "status": "FIXPUNKT",
+    "runden": 2,
+    "wort_fehler": 0,
+    "digest_gleich_hashlib": true,
+    "le_domaene": 2,
+    "s": 0.17
+   },
+   "E3_lokal_ziel_1": {
+    "status": "FIXPUNKT",
+    "runden": 2,
+    "s": 0.13
+   },
+   "bewertung": {
+    "ziel_frei_korrekt": true,
+    "ziel_1_erwartet": "FIXPUNKT",
+    "ziel_1_E1": "FIXPUNKT",
+    "ziel_1_E3_voll": "FIXPUNKT",
+    "ziel_1_E3_lokal": "FIXPUNKT"
+   },
+   "name": "P3 F2_GENESIS_HISTORISCH nonce 2083236893",
+   "t_s": 8.66,
+   "peak_mib": 157.7
+  },
+  {
+   "fall": "F2_GENESIS_HISTORISCH",
+   "nonce": 2083236864,
+   "erwartet_le": 0,
+   "E1_ziel_frei": {
+    "status": "FIXPUNKT",
+    "sweeps": 2,
+    "unbestimmte_wortbits": 0,
+    "wort_fehler": 0,
+    "digest_gleich_hashlib": true,
+    "root_domaene": 1,
+    "s": 0.64
+   },
+   "E1_ziel_1": {
+    "status": "WIDERSPRUCH",
+    "sweeps": 1,
+    "s": 0.15
+   },
+   "E3_voll_ziel_frei": {
+    "status": "FIXPUNKT",
+    "runden": 2,
+    "tupelops": 99904,
+    "wort_fehler": 0,
+    "digest_gleich_hashlib": true,
+    "le_domaene": 1,
+    "s": 0.25
+   },
+   "E3_voll_ziel_1": {
+    "status": "WIDERSPRUCH",
+    "runden": 1,
+    "leer": "H2_add_4944[3]",
+    "s": 0.15
+   },
+   "E3_lokal_ziel_frei": {
+    "status": "FIXPUNKT",
+    "runden": 2,
+    "wort_fehler": 0,
+    "digest_gleich_hashlib": true,
+    "le_domaene": 1,
+    "s": 0.17
+   },
+   "E3_lokal_ziel_1": {
+    "status": "WIDERSPRUCH",
+    "runden": 1,
+    "s": 0.07
+   },
+   "bewertung": {
+    "ziel_frei_korrekt": true,
+    "ziel_1_erwartet": "WIDERSPRUCH",
+    "ziel_1_E1": "WIDERSPRUCH",
+    "ziel_1_E3_voll": "WIDERSPRUCH",
+    "ziel_1_E3_lokal": "WIDERSPRUCH"
+   },
+   "name": "P3 F2_GENESIS_HISTORISCH nonce 2083236864",
+   "t_s": 10.75,
+   "peak_mib": 157.7
+  }
+ ],
+ "status": "OK",
+ "gesamt_s": 10.77,
+ "peak_mib_kind": 157.7
+}

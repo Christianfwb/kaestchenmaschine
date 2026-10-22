@@ -1,0 +1,16 @@
+--- alt/ziffern_array.py	2026-10-22 17:35:06.835498672 +0900
++++ ziffern_array.py	2026-10-22 17:43:49.317091657 +0900
+@@ -48,6 +48,13 @@
+             if self.masks[i] != (1 << (self.gr[x] * self.gr[y])) - 1: n += 1
+         return n
+     def bytes_gesamt(self): return self.keys.itemsize * len(self.keys) + self.masks.itemsize * len(self.masks)
++    def zeuge_ok(self, werte):
++        """Streaming-Pruefung (kein dict, keine Kopie): liegt die Belegung werte[v] in ALLEN Paarmasken? Liefert (ok, erstes_verletztes_paar|None)."""
++        NV = self.NV; gr = self.gr; keys = self.keys; masks = self.masks
++        for i in range(len(keys)):
++            x, y = divmod(keys[i], NV)
++            if not (masks[i] >> (werte[x] * gr[y] + werte[y])) & 1: return False, (x, y)
++        return True, None
+ 
+ def radius1_schluessel(grund, NV):
+     """Alle Schluessel (x<y) der Radius-1-Schliessung aus den Grundpaaren: numpy, sortiert, eindeutig. Liefert (keys ndarray int64, csr_ptr, csr_idx)."""

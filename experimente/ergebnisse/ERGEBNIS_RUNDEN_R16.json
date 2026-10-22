@@ -1,0 +1,2218 @@
+{
+ "runden": 16,
+ "modell": "reduziertes SHA256d (siehe Docstring), NICHT Bitcoin",
+ "vorlage": "F1_ECHTE_VORLAGE",
+ "noncebereich": [
+  0,
+  255
+ ],
+ "samen": "KONTROLLE_RUNDENKURVE_2026-10-23_R16",
+ "zielhash_bitcoin": "ba2892f7a2ba1649d75cbd6f434a6d072ea69115422388f32d0476965e2452bf",
+ "python": "3.13.16",
+ "rechner": "Fable-Container Linux, Intel Xeon 2.10 GHz (2 Kerne), CPU",
+ "status": "OK",
+ "schritte": [
+  {
+   "graphknoten": 32926,
+   "ziffernvariablen": 13168,
+   "beziehungen": 8448,
+   "name": "Aufbau",
+   "t_s": 0.04,
+   "peak_mib": 39.2
+  },
+  {
+   "beschreibung": "Hash = Zielhash: 256 Digestbits und 128 Digestziffern fest; Kontrollnonce NICHT uebergeben",
+   "name": "Festlegung",
+   "t_s": 0.05,
+   "peak_mib": 39.7
+  },
+  {
+   "status": "FIXPUNKT",
+   "sweeps": 140,
+   "s": 6.12,
+   "bitknoten_fest": 32924,
+   "noncebits": [
+    [
+     0,
+     1
+    ],
+    [
+     1,
+     0
+    ],
+    [
+     2,
+     1
+    ],
+    [
+     3,
+     0
+    ],
+    [
+     4,
+     0
+    ],
+    [
+     5,
+     0
+    ],
+    [
+     6,
+     1
+    ],
+    [
+     7,
+     1
+    ]
+   ],
+   "verbleibende_kandidaten": 1,
+   "name": "E1",
+   "t_s": 6.17,
+   "peak_mib": 40.0
+  }
+ ],
+ "paargrenze": 2500000,
+ "karte": [
+  {
+   "phase": "H1",
+   "runde": 1,
+   "reg": "a",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H1",
+   "runde": 1,
+   "reg": "b",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H1",
+   "runde": 1,
+   "reg": "c",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H1",
+   "runde": 1,
+   "reg": "d",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H1",
+   "runde": 1,
+   "reg": "e",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H1",
+   "runde": 1,
+   "reg": "f",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H1",
+   "runde": 1,
+   "reg": "g",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H1",
+   "runde": 1,
+   "reg": "h",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H1",
+   "runde": 2,
+   "reg": "a",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H1",
+   "runde": 2,
+   "reg": "b",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H1",
+   "runde": 2,
+   "reg": "c",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H1",
+   "runde": 2,
+   "reg": "d",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H1",
+   "runde": 2,
+   "reg": "e",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H1",
+   "runde": 2,
+   "reg": "f",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H1",
+   "runde": 2,
+   "reg": "g",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H1",
+   "runde": 2,
+   "reg": "h",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H1",
+   "runde": 3,
+   "reg": "a",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H1",
+   "runde": 3,
+   "reg": "b",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H1",
+   "runde": 3,
+   "reg": "c",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H1",
+   "runde": 3,
+   "reg": "d",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H1",
+   "runde": 3,
+   "reg": "e",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H1",
+   "runde": 3,
+   "reg": "f",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H1",
+   "runde": 3,
+   "reg": "g",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H1",
+   "runde": 3,
+   "reg": "h",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H1",
+   "runde": 4,
+   "reg": "a",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H1",
+   "runde": 4,
+   "reg": "b",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H1",
+   "runde": 4,
+   "reg": "c",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H1",
+   "runde": 4,
+   "reg": "d",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H1",
+   "runde": 4,
+   "reg": "e",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H1",
+   "runde": 4,
+   "reg": "f",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H1",
+   "runde": 4,
+   "reg": "g",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H1",
+   "runde": 4,
+   "reg": "h",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H1",
+   "runde": 5,
+   "reg": "a",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H1",
+   "runde": 5,
+   "reg": "b",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H1",
+   "runde": 5,
+   "reg": "c",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H1",
+   "runde": 5,
+   "reg": "d",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H1",
+   "runde": 5,
+   "reg": "e",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H1",
+   "runde": 5,
+   "reg": "f",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H1",
+   "runde": 5,
+   "reg": "g",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H1",
+   "runde": 5,
+   "reg": "h",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H1",
+   "runde": 6,
+   "reg": "a",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H1",
+   "runde": 6,
+   "reg": "b",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H1",
+   "runde": 6,
+   "reg": "c",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H1",
+   "runde": 6,
+   "reg": "d",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H1",
+   "runde": 6,
+   "reg": "e",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H1",
+   "runde": 6,
+   "reg": "f",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H1",
+   "runde": 6,
+   "reg": "g",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H1",
+   "runde": 6,
+   "reg": "h",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H1",
+   "runde": 7,
+   "reg": "a",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H1",
+   "runde": 7,
+   "reg": "b",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H1",
+   "runde": 7,
+   "reg": "c",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H1",
+   "runde": 7,
+   "reg": "d",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H1",
+   "runde": 7,
+   "reg": "e",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H1",
+   "runde": 7,
+   "reg": "f",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H1",
+   "runde": 7,
+   "reg": "g",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H1",
+   "runde": 7,
+   "reg": "h",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H1",
+   "runde": 8,
+   "reg": "a",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H1",
+   "runde": 8,
+   "reg": "b",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H1",
+   "runde": 8,
+   "reg": "c",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H1",
+   "runde": 8,
+   "reg": "d",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H1",
+   "runde": 8,
+   "reg": "e",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H1",
+   "runde": 8,
+   "reg": "f",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H1",
+   "runde": 8,
+   "reg": "g",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H1",
+   "runde": 8,
+   "reg": "h",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H1",
+   "runde": 9,
+   "reg": "a",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H1",
+   "runde": 9,
+   "reg": "b",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H1",
+   "runde": 9,
+   "reg": "c",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H1",
+   "runde": 9,
+   "reg": "d",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H1",
+   "runde": 9,
+   "reg": "e",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H1",
+   "runde": 9,
+   "reg": "f",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H1",
+   "runde": 9,
+   "reg": "g",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H1",
+   "runde": 9,
+   "reg": "h",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H1",
+   "runde": 10,
+   "reg": "a",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H1",
+   "runde": 10,
+   "reg": "b",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H1",
+   "runde": 10,
+   "reg": "c",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H1",
+   "runde": 10,
+   "reg": "d",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H1",
+   "runde": 10,
+   "reg": "e",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H1",
+   "runde": 10,
+   "reg": "f",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H1",
+   "runde": 10,
+   "reg": "g",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H1",
+   "runde": 10,
+   "reg": "h",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H1",
+   "runde": 11,
+   "reg": "a",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H1",
+   "runde": 11,
+   "reg": "b",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H1",
+   "runde": 11,
+   "reg": "c",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H1",
+   "runde": 11,
+   "reg": "d",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H1",
+   "runde": 11,
+   "reg": "e",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H1",
+   "runde": 11,
+   "reg": "f",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H1",
+   "runde": 11,
+   "reg": "g",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H1",
+   "runde": 11,
+   "reg": "h",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H1",
+   "runde": 12,
+   "reg": "a",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H1",
+   "runde": 12,
+   "reg": "b",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H1",
+   "runde": 12,
+   "reg": "c",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H1",
+   "runde": 12,
+   "reg": "d",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H1",
+   "runde": 12,
+   "reg": "e",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H1",
+   "runde": 12,
+   "reg": "f",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H1",
+   "runde": 12,
+   "reg": "g",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H1",
+   "runde": 12,
+   "reg": "h",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H1",
+   "runde": 13,
+   "reg": "a",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H1",
+   "runde": 13,
+   "reg": "b",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H1",
+   "runde": 13,
+   "reg": "c",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H1",
+   "runde": 13,
+   "reg": "d",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H1",
+   "runde": 13,
+   "reg": "e",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H1",
+   "runde": 13,
+   "reg": "f",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H1",
+   "runde": 13,
+   "reg": "g",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H1",
+   "runde": 13,
+   "reg": "h",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H1",
+   "runde": 14,
+   "reg": "a",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H1",
+   "runde": 14,
+   "reg": "b",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H1",
+   "runde": 14,
+   "reg": "c",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H1",
+   "runde": 14,
+   "reg": "d",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H1",
+   "runde": 14,
+   "reg": "e",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H1",
+   "runde": 14,
+   "reg": "f",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H1",
+   "runde": 14,
+   "reg": "g",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H1",
+   "runde": 14,
+   "reg": "h",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H1",
+   "runde": 15,
+   "reg": "a",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H1",
+   "runde": 15,
+   "reg": "b",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H1",
+   "runde": 15,
+   "reg": "c",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H1",
+   "runde": 15,
+   "reg": "d",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H1",
+   "runde": 15,
+   "reg": "e",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H1",
+   "runde": 15,
+   "reg": "f",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H1",
+   "runde": 15,
+   "reg": "g",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H1",
+   "runde": 15,
+   "reg": "h",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H1",
+   "runde": 16,
+   "reg": "a",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H1",
+   "runde": 16,
+   "reg": "b",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H1",
+   "runde": 16,
+   "reg": "c",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H1",
+   "runde": 16,
+   "reg": "d",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H1",
+   "runde": 16,
+   "reg": "e",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H1",
+   "runde": 16,
+   "reg": "f",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H1",
+   "runde": 16,
+   "reg": "g",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H1",
+   "runde": 16,
+   "reg": "h",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H2",
+   "runde": 1,
+   "reg": "a",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H2",
+   "runde": 1,
+   "reg": "b",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H2",
+   "runde": 1,
+   "reg": "c",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H2",
+   "runde": 1,
+   "reg": "d",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H2",
+   "runde": 1,
+   "reg": "e",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H2",
+   "runde": 1,
+   "reg": "f",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H2",
+   "runde": 1,
+   "reg": "g",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H2",
+   "runde": 1,
+   "reg": "h",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H2",
+   "runde": 2,
+   "reg": "a",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H2",
+   "runde": 2,
+   "reg": "b",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H2",
+   "runde": 2,
+   "reg": "c",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H2",
+   "runde": 2,
+   "reg": "d",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H2",
+   "runde": 2,
+   "reg": "e",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H2",
+   "runde": 2,
+   "reg": "f",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H2",
+   "runde": 2,
+   "reg": "g",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H2",
+   "runde": 2,
+   "reg": "h",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H2",
+   "runde": 3,
+   "reg": "a",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H2",
+   "runde": 3,
+   "reg": "b",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H2",
+   "runde": 3,
+   "reg": "c",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H2",
+   "runde": 3,
+   "reg": "d",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H2",
+   "runde": 3,
+   "reg": "e",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H2",
+   "runde": 3,
+   "reg": "f",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H2",
+   "runde": 3,
+   "reg": "g",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H2",
+   "runde": 3,
+   "reg": "h",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H2",
+   "runde": 4,
+   "reg": "a",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H2",
+   "runde": 4,
+   "reg": "b",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H2",
+   "runde": 4,
+   "reg": "c",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H2",
+   "runde": 4,
+   "reg": "d",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H2",
+   "runde": 4,
+   "reg": "e",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H2",
+   "runde": 4,
+   "reg": "f",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H2",
+   "runde": 4,
+   "reg": "g",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H2",
+   "runde": 4,
+   "reg": "h",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H2",
+   "runde": 5,
+   "reg": "a",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H2",
+   "runde": 5,
+   "reg": "b",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H2",
+   "runde": 5,
+   "reg": "c",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H2",
+   "runde": 5,
+   "reg": "d",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H2",
+   "runde": 5,
+   "reg": "e",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H2",
+   "runde": 5,
+   "reg": "f",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H2",
+   "runde": 5,
+   "reg": "g",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H2",
+   "runde": 5,
+   "reg": "h",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H2",
+   "runde": 6,
+   "reg": "a",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H2",
+   "runde": 6,
+   "reg": "b",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H2",
+   "runde": 6,
+   "reg": "c",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H2",
+   "runde": 6,
+   "reg": "d",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H2",
+   "runde": 6,
+   "reg": "e",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H2",
+   "runde": 6,
+   "reg": "f",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H2",
+   "runde": 6,
+   "reg": "g",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H2",
+   "runde": 6,
+   "reg": "h",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H2",
+   "runde": 7,
+   "reg": "a",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H2",
+   "runde": 7,
+   "reg": "b",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H2",
+   "runde": 7,
+   "reg": "c",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H2",
+   "runde": 7,
+   "reg": "d",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H2",
+   "runde": 7,
+   "reg": "e",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H2",
+   "runde": 7,
+   "reg": "f",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H2",
+   "runde": 7,
+   "reg": "g",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H2",
+   "runde": 7,
+   "reg": "h",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H2",
+   "runde": 8,
+   "reg": "a",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H2",
+   "runde": 8,
+   "reg": "b",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H2",
+   "runde": 8,
+   "reg": "c",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H2",
+   "runde": 8,
+   "reg": "d",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H2",
+   "runde": 8,
+   "reg": "e",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H2",
+   "runde": 8,
+   "reg": "f",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H2",
+   "runde": 8,
+   "reg": "g",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H2",
+   "runde": 8,
+   "reg": "h",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H2",
+   "runde": 9,
+   "reg": "a",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H2",
+   "runde": 9,
+   "reg": "b",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H2",
+   "runde": 9,
+   "reg": "c",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H2",
+   "runde": 9,
+   "reg": "d",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H2",
+   "runde": 9,
+   "reg": "e",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H2",
+   "runde": 9,
+   "reg": "f",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H2",
+   "runde": 9,
+   "reg": "g",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H2",
+   "runde": 9,
+   "reg": "h",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H2",
+   "runde": 10,
+   "reg": "a",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H2",
+   "runde": 10,
+   "reg": "b",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H2",
+   "runde": 10,
+   "reg": "c",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H2",
+   "runde": 10,
+   "reg": "d",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H2",
+   "runde": 10,
+   "reg": "e",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H2",
+   "runde": 10,
+   "reg": "f",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H2",
+   "runde": 10,
+   "reg": "g",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H2",
+   "runde": 10,
+   "reg": "h",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H2",
+   "runde": 11,
+   "reg": "a",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H2",
+   "runde": 11,
+   "reg": "b",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H2",
+   "runde": 11,
+   "reg": "c",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H2",
+   "runde": 11,
+   "reg": "d",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H2",
+   "runde": 11,
+   "reg": "e",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H2",
+   "runde": 11,
+   "reg": "f",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H2",
+   "runde": 11,
+   "reg": "g",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H2",
+   "runde": 11,
+   "reg": "h",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H2",
+   "runde": 12,
+   "reg": "a",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H2",
+   "runde": 12,
+   "reg": "b",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H2",
+   "runde": 12,
+   "reg": "c",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H2",
+   "runde": 12,
+   "reg": "d",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H2",
+   "runde": 12,
+   "reg": "e",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H2",
+   "runde": 12,
+   "reg": "f",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H2",
+   "runde": 12,
+   "reg": "g",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H2",
+   "runde": 12,
+   "reg": "h",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H2",
+   "runde": 13,
+   "reg": "a",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H2",
+   "runde": 13,
+   "reg": "b",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H2",
+   "runde": 13,
+   "reg": "c",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H2",
+   "runde": 13,
+   "reg": "d",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H2",
+   "runde": 13,
+   "reg": "e",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H2",
+   "runde": 13,
+   "reg": "f",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H2",
+   "runde": 13,
+   "reg": "g",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H2",
+   "runde": 13,
+   "reg": "h",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H2",
+   "runde": 14,
+   "reg": "a",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H2",
+   "runde": 14,
+   "reg": "b",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H2",
+   "runde": 14,
+   "reg": "c",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H2",
+   "runde": 14,
+   "reg": "d",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H2",
+   "runde": 14,
+   "reg": "e",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H2",
+   "runde": 14,
+   "reg": "f",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H2",
+   "runde": 14,
+   "reg": "g",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H2",
+   "runde": 14,
+   "reg": "h",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H2",
+   "runde": 15,
+   "reg": "a",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H2",
+   "runde": 15,
+   "reg": "b",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H2",
+   "runde": 15,
+   "reg": "c",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H2",
+   "runde": 15,
+   "reg": "d",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H2",
+   "runde": 15,
+   "reg": "e",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H2",
+   "runde": 15,
+   "reg": "f",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H2",
+   "runde": 15,
+   "reg": "g",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H2",
+   "runde": 15,
+   "reg": "h",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H2",
+   "runde": 16,
+   "reg": "a",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H2",
+   "runde": 16,
+   "reg": "b",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H2",
+   "runde": 16,
+   "reg": "c",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H2",
+   "runde": 16,
+   "reg": "d",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H2",
+   "runde": 16,
+   "reg": "e",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H2",
+   "runde": 16,
+   "reg": "f",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H2",
+   "runde": 16,
+   "reg": "g",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H2",
+   "runde": 16,
+   "reg": "h",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  }
+ ],
+ "ergebnis": {
+  "status": "FIXPUNKT",
+  "stufe": "E1",
+  "ausgang": "TREFFER_ABGELEITET",
+  "noncebits_nach_e1": [
+   [
+    0,
+    1
+   ],
+   [
+    1,
+    0
+   ],
+   [
+    2,
+    1
+   ],
+   [
+    3,
+    0
+   ],
+   [
+    4,
+    0
+   ],
+   [
+    5,
+    0
+   ],
+   [
+    6,
+    1
+   ],
+   [
+    7,
+    1
+   ]
+  ],
+  "noncebits_abgeleitet": [
+   [
+    0,
+    1
+   ],
+   [
+    1,
+    0
+   ],
+   [
+    2,
+    1
+   ],
+   [
+    3,
+    0
+   ],
+   [
+    4,
+    0
+   ],
+   [
+    5,
+    0
+   ],
+   [
+    6,
+    1
+   ],
+   [
+    7,
+    1
+   ]
+  ],
+  "ausgeschlossene_nonces": 255,
+  "verbleibende_kandidaten": 1,
+  "orakel": {
+   "treffer": [
+    197
+   ],
+   "kontrollnonce": 197,
+   "anzahl_treffer": 1
+  },
+  "bitknoten_fest": 32924,
+  "bitknoten_gesamt": 32924,
+  "ziffern_fest": 8304,
+  "ziffern_fest_start": 876,
+  "ziffern_gesamt": 13168,
+  "paare": 0,
+  "paare_eingeschraenkt": null,
+  "e4_letzte_info": null,
+  "nachpruefung": null
+ },
+ "gesamt_s": 6.22,
+ "peak_mib_kind": 40.2
+}

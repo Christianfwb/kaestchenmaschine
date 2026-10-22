@@ -1,0 +1,68 @@
+FABLE AN GHOST – PHASENVERGLEICH MIT NUMPY, EXAKT IN GANZEN ZAHLEN, 2026-10-22
+Ein Lauf, extern ueberwacht (Budget 120 s / 400 MiB): tatsaechlich 2,0 s Wall, Peak 47,3 MiB. Kopien, CPU, Python 3.13.16,
+NumPy 2.5.3, Fable-Container (Xeon 2,10 GHz, 2 Kerne). Miner unberuehrt, keine groesseren Gruppen, keine Fortsetzung.
+Status OK: Pruefstein bestanden, danach beide Zwei-Bit-SHA-Faelle, alle acht Digests und alle acht Zielentscheidungen
+unabhaengig gegen hashlib geprueft, Genesis-Treffer erhalten. Referenzwerte erst nach der Rechnung gelesen.
+
+== 1. DARSTELLUNG – AUSDRUECKLICH DEFINIERT ==================================================================================
+Bei n freien Eingangsbits gibt es N = 2^n Faelle; ein Fall ist eine vollstaendige Belegung der freien Bits.
+  Zustand eines Bits = ganzzahliger Vektor der Laenge N. Eintrag k = Wert dieses Bits IM FALL k.
+  EINZELWERT (sicher bekannt): alle N Eintraege gleich (konstant 0 oder 1).
+  ALTERNATIVE MOEGLICHKEITEN: Eintraege verschieden – das Bit ist je nach Fall anders.
+  GEMEINSAME BINDUNG: steckt NICHT in den Werten, sondern darin, dass alle Bits ueber DENSELBEN Fallindex k indiziert sind.
+    Sie geht genau dann verloren, wenn man je Variable nur die Menge ihrer Werte behaelt (Domaene) oder nur Wertepaare
+    (Paartabelle) statt des Fallindex. Solange der Fallindex steht, kann die Bindung nicht unbemerkt verschwinden.
+  Gatter exakt in ganzen Zahlen, ohne Gleitkomma, ohne Rundung: UND = a*b, XOR = a + b - 2*a*b, NICHT = 1 - a (elementweise).
+  Rueckwaerts/Zielbedingung: der Ausgang wird nicht gesetzt, sondern die Faelle, die ihn nicht erfuellen, werden gestrichen
+    (Auswahl ueber den Fallindex) – exakt, und die Bindung bleibt, weil der Index bleibt.
+  EHRLICHE EINSCHRAENKUNG zum Namen "Phase": Was eine echte Quantendarstellung maechtig machen wuerde, ist Interferenz –
+    negative oder komplexe Amplituden, die sich ausloeschen. Hier sind alle Eintraege 0 oder 1, es gibt keine Interferenz.
+    Und auch mit Vorzeichen braeuchte man weiterhin den gemeinsamen Fallindex, also N Eintraege. Der Name aendert daran nichts.
+
+== 2. PRUEFSTEIN "NUR 00 ODER 11" (z = x XOR y, rueckwaerts mit z = 0) ========================================================
+Soll: genau {(0,0), (1,1)}; 01 und 10 duerfen nicht hinzukommen.
+  Darstellung            | erlaubte Belegungen | korrekt | Operationen | Speicher   | Zeit je Durchgang (20 000 Wdh.)
+  Phasenvektor (NumPy)   | (0,0), (1,1)        | ja      |      1      | 100 Byte   | 14,1 Mikrosekunden
+  Vier-Wege-Tabelle      | (0,0), (1,1)        | ja      |      1      |  84 Byte   |  0,69 Mikrosekunden
+  Paartabelle (Paarmaske)| (0,0), (1,1)        | ja      |     12 Tupelops | 1 Paar | 45,6 Mikrosekunden (50 Wdh.)
+  Paartabelle (nur Einzeldomaenen, ohne Paar) | (0,0), (0,1), (1,0), (1,1) | NEIN | – | – | –
+Lesart, und das gehoert zur Ehrlichkeit dazu: Bei nur ZWEI Variablen ist die Bindung 00/11 eine reine Paarbeziehung. Unsere
+Paartabelle haelt sie exakt – der Pruefstein trennt die Verfahren also NICHT. Getrennt wird nur die Einzeldomaenen-Sicht, die
+01 und 10 faelschlich zulaesst; das ist genau der bekannte Unterschied zwischen E3 und E4 und nichts Neues. Ein Pruefstein, der
+Paare wirklich ueberfordert, braeuchte mindestens drei gebundene Variablen (z. B. x XOR y XOR z = 0 mit allen dreien frei).
+Der Pruefstein ist bestanden, und alle drei Darstellungen bestehen ihn.
+
+== 3. BEIDE ZWEI-BIT-SHA-FAELLE IN PHASENDARSTELLUNG ==========================================================================
+Gleiche Vorlagen, gleiche Noncegruppen, gleiche Zielgrenzen wie im Vier-Wege-Versuch und im Zwei-Bit-Vergleich.
+  Fall | Gatter   | Laufzeit | Speicher je Bit | erfuellende Kandidaten      | Treffer erhalten | alles korrekt
+  F1   | 249 600  | 0,52 s   | 32 Byte         | keiner                      | –                | ja
+  F2   | 249 600  | 0,42 s   | 32 Byte         | 2083236893 (der bekannte)   | ja               | ja
+Alle acht Digests bitgleich mit hashlib, alle acht Zielentscheidungen gleich dem Vergleich gegen die Zielgrenze.
+
+== 4. DIE BEAUFTRAGTE FRAGE: IST DAS NUR EINE ANDERE CODIERUNG? ==============================================================
+JA – genau das ist der Befund, und ich berichte ihn so, wie Ghost es verlangt hat.
+  Gleiche erlaubte Belegungen, vorwaerts und rueckwaerts: identisch mit der Vier-Wege-Tabelle, in jedem geprueften Punkt.
+  Gleiche Operationszahl: 249 600 Gatter in beiden Darstellungen, Gatter fuer Gatter dieselbe Rechnung.
+  Speicher: Phasenvektor 32 Byte je Bit (4 x int64) gegen eine kleine Ganzzahl (4-Bit-Maske) bei der Vier-Wege-Tabelle.
+  Laufzeit: Phasen 0,42–0,52 s je Fall gegen 0,04–0,07 s bei der Vier-Wege-Tabelle – NumPy ist hier rund zehnmal LANGSAMER,
+    weil jede Operation auf einem Vier-Element-Feld laeuft und der Aufruf teurer ist als die Rechnung. Dazu 0,215 s
+    NumPy-Startaufwand, getrennt gemessen und nicht in die Laufzeiten eingerechnet.
+  Der Fallvektor der Laenge 4 und die 4-Bit-Maske sind dieselbe Information: Eintrag k gegen Bit k. Die Phasendarstellung
+  codiert unsere Vier-Wege-Tabelle um, sie fuegt nichts hinzu. Kein Vorteil aus der Benennung, keiner aus NumPy.
+Zum Vergleich der frueheren Messung: dieselben vier Kandidaten direkt mit hashlib kosten 0,000005 bis 0,00001 s.
+  Phasen sind davon rund 50 000-fach entfernt, die Vier-Wege-Tabelle rund 7 000-fach.
+
+== 5. WAS DAS FUER DIE RICHTUNG HEISST =======================================================================================
+Alle drei exakten Darstellungen (Vier-Wege-Tabelle, Phasenvektor, und jede Variante davon) haben dieselbe Eigenschaft: Sie
+halten die Bindung, indem sie ALLE Faelle einzeln mitfuehren. Der Speicher und die Arbeit wachsen deshalb mit der Zahl der
+Faelle, also mit 2^n. Die naeherenden Darstellungen (Domaenen, Paare, Dreier) wachsen nicht mit 2^n, verlieren dafuer die
+Bindung – gemessen am vollen SHA256d so weit, dass sie bei zwei freien Bits nichts mehr ableiten.
+Dazwischen gibt es bisher nichts, was wir gefunden haetten. Eine Darstellung, die Bindung ueber 128 Runden haelt und dabei
+NICHT mit 2^n waechst, ist die offene Frage – und sie ist dieselbe Frage, an der die veroeffentlichte Forschung haengt.
+Keine Mainnet-Aussage, kein Suchvorteil behauptet.
+
+== DATEIEN ===================================================================================================================
+phasen_kind.py (Definition, Pruefstein, SHA-Faelle, Pruefungen), lauf_phasen.py (Elternprozess mit Budgetwaechter),
+ERGEBNIS_PHASEN.json (alle Messwerte, je Kandidat Digestvergleich und Zielentscheidung), FAELLE_SHA256D.json.
+Unveraendert mitgeliefert: sha_ziffern.py, pruefung.py, gatter.py, teilbits.py, ziffern.py, bausteine.py, ziffern_komp.py,
+ziffern_sha.py. Nachrechnen: python -I lauf_phasen.py (2 s).

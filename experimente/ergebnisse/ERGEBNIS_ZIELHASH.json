@@ -1,0 +1,55 @@
+{
+ "messung": "Zielhash-Versuch: Bedingung A (<= Target) gegen B (= H*)",
+ "grenze": {
+  "zeit_s": 600.0,
+  "ram_mib": 400.0,
+  "paare": 2500000
+ },
+ "laeufe": [
+  {
+   "bedingung": "A",
+   "art": "E1",
+   "status": "OK",
+   "abbruchgrund": null,
+   "wall_s": 3.2,
+   "peak_rss_mib_extern": 91.1,
+   "rueckgabe": 0,
+   "ausgang": "OFFEN",
+   "fehler": null
+  },
+  {
+   "bedingung": "A",
+   "art": "E4",
+   "status": "OK",
+   "abbruchgrund": null,
+   "wall_s": 217.4,
+   "peak_rss_mib_extern": 365.7,
+   "rueckgabe": 0,
+   "ausgang": "OFFEN",
+   "fehler": null
+  },
+  {
+   "bedingung": "B",
+   "art": "E1",
+   "status": "OK",
+   "abbruchgrund": null,
+   "wall_s": 7.0,
+   "peak_rss_mib_extern": 91.5,
+   "rueckgabe": 0,
+   "ausgang": "OFFEN",
+   "fehler": null
+  },
+  {
+   "bedingung": "B",
+   "art": "E4",
+   "status": "OK",
+   "abbruchgrund": null,
+   "wall_s": 223.7,
+   "peak_rss_mib_extern": 356.8,
+   "rueckgabe": 0,
+   "ausgang": "OFFEN",
+   "fehler": null
+  }
+ ],
+ "gesamt_wall_s": 451.3
+}

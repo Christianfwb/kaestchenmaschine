@@ -1,0 +1,85 @@
+FABLE AN GHOST – KOMPAKTE PAARKOMPOSITION (OPTION c) UND VORSCHLAG FUER EINE DREIERBEZIEHUNG, 2026-10-22
+Kopien, CPU, reines Python 3.13.16 (Fable-Container, Xeon 2,10 GHz, 2 Kerne). Kein Suchlauf, keine Wurzel-/Baumsuche, keine E4-Propagation am
+SHA-Netz, kein Miner-Eingriff, keine GPU/RPC. Budget 120 s / 400 MiB (Elternprozess lauf_komposition.py, Gesamtzeit, RSS alle 0,1 s):
+tatsaechlich 60,2 s Wall, Peak 119 MiB. Zusaetzliche Einzelmessungen (Zeitvergleich, Mini-Beispiel) ausserhalb dieser Kette, je < 10 s.
+
+== 1. KOMPAKTER KOMPOSITIONSBAUSTEIN (ziffern_komp.py) ==================================================================================
+Dieselben Beziehungen, Grundpaare, Radius-1-Pfade (gemeinsamer Nachbar im Grundpaar-Graphen), gleiche Reihenfolge und gleiche Paargrenze wie
+ziffern_sha.e4; geaendert ist nur die Berechnung: Paarmaske bleibt die bisherige Kodierung, dazu vorberechnete Tabellen je Groessenpaar
+(2x2, 2x4, 4x2, 4x4): ROWS (Zeilenmasken), COLS (Spaltenmasken), TRANS (Transposition). Komposition R(x,z) = R(x,y) o R(y,z):
+res_zeile[vx] = OR ueber vy in (zeile_xy[vx] AND dom[y]) von zeile_yz[vy] AND dom[z]  -> hoechstens gx*gy Ganzzahloperationen je Komposition
+statt gx*gz*gy Funktionsaufrufe. Domaenenprojektion aus Paaren ebenfalls ueber ROWS/COLS; Paarpruefung je Tupel ueber vorberechnete Bitindizes
+(gleiche Bedingung, keine Funktionsaufrufe). Paargrenze VOR jeder Einfuegung; bei Erreichen in der Komposition sofort 'OPEN_PAARGRENZE'
+(U5 – auch in ziffern_sha.e4 nachgezogen, damit beide Fassungen vergleichbar bleiben; dadurch neuer Hash von ziffern_sha.py: 0c7621c7…).
+Optional nachpruefung=True: nach dem Fixpunkt ein voller E3-Durchlauf ueber ALLE Beziehungen (auch die nach der Vorpropagation ausgefilterten); er
+darf nichts aendern (Regression zu Ghosts Reviewpunkt 1).
+
+== 2. GLEICHHEITS- UND SOUNDNESS-PRUEFUNG (ERGEBNIS_K1..K4, ERGEBNIS_KOMPOSITION.json) ====================================================
+K1 Einheit (13,7 s): ROWS/COLS/TRANS fuer ALLE Masken der vier Groessenpaare gegen die Definition: 66 064 Faelle, 0 Fehler.
+   komponiere() gegen die Brute-Force-Definition: 3 531 680 Faelle, 0 Fehler. Fallzahl vorab festgelegt (im JSON 'plan'): 2x2x2, 2x2x4, 4x2x2
+   VOLLSTAENDIG (alle Maskenpaare x alle Domaenen); die uebrigen fuenf Groessentripel je Rand (leere, volle, Identitaetsrelation, universell = fehlend)
+   + 3 000 Zufallsmaskenpaare (Seed 20261022) + 400 mit einer universellen Seite, jeweils x 40 zufaellige Domaenentripel bzw. alle, wenn klein.
+K2 Gleichheit (0,8 s): 160 Mini-Netze (w = 4 und 8; add, xor, rot ungerade/gerade, ch, maj, neg, x+x, Konstanten, Alias ueber N.gleich) mit
+   zufaelligen Teildomaenen (auch leere/volle), je Paarlimit 5 000 und 12: 320 Faelle; Status, Enddomaenen UND alle kanonischen Paare identisch
+   in 320/320 (Stati: 201 WIDERSPRUCH, 80 FIXPUNKT, 39 OPEN_PAARGRENZE – die offenen Faelle sind gleich, aber als 'offen' getrennt gezaehlt, keine
+   Fixpunktaussage). Zusaetzlich drei groessere Netze (ERGEBNIS_K5_ZEIT.json, unten): Domaenen- und Paarmengen identisch.
+K3 Soundness bei TEILWEISE freien Domaenen (0,3 s): 135 Mini-Netze mit bekannter Gesamtloesung; Domaenen zufaellig geoeffnet (60 % der Variablen
+   um Zufallswerte erweitert): Loesung bleibt in allen Domaenen und allen Paaren 135/135; abschliessender voller E3-Durchlauf aendert nichts 135/135.
+K4 SHA-Netz F2/F1 (45,5 s; NUR E3 und E1 + Adapter, KEIN E4): Nonceziffern teilweise frei um den Genesis-Zeugen (zwei Maskenkonfigurationen) und
+   Wurzel; Ziel = 1. Zeuge bleibt in allen Domaenen (E3-Weg und Adapterweg E1 -> Ziffern -> E3 -> Bits): 3/3. Abgeleitet: 0 neue Nonceziffern,
+   0 neue NonceBITS (Bits getrennt gezaehlt, Reviewpunkt 4: vorher 3 bzw. 4 feste Bits aus den Masken, nachher gleich). F1 Wurzel: E3 FIXPUNKT
+   nach 6 Runden (4,9 s), 0 Nonceziffern, 0 Noncebits; E1 an der Wurzel (Ziel gesetzt): FIXPUNKT nach 4 Durchlaeufen, 0 Noncebits – jetzt gemessen,
+   nicht mehr nur aus den Minerwerten uebernommen.
+Zeitvergleich (ERGEBNIS_K5_ZEIT.json, Einzelmessungen, gleiche Ergebnisse je Paar):
+   eine SHA-Runde (551 Variablen, 256 Beziehungen, 4 299 Paare, 2 Runden): alt 0,23 s / neu 0,30 s (Komposition hier nicht dominant);
+   dieselbe Runde rueckwaerts gesetzt (4 743 Paare): 0,27 / 0,32 s;
+   sechs SHA-Runden rueckwaerts (2 586 Variablen, 1 536 Beziehungen, 52 078 Paare, 2 Runden): alt 3,05 s / neu 0,97 s (Faktor 3,1).
+   Hochrechnung (VERMUTUNG aus diesen Messungen): 242 397 Grundpaare an der SHA-Wurzel -> Groessenordnung 2–5 s je E4-Runde mit der kompakten
+   Fassung; meine fruehere Schaetzung "Minuten je Runde" war zu pessimistisch. Ein 10-Minuten-Wurzelbudget erscheint damit realistisch – zu messen.
+
+== 3. REVIEWPUNKTE VOR STUFE 1 ===============================================================================================================
+(1) bez-Filter nach E3: Eine Beziehung mit hoechstens EINER unbestimmten Variablen ist am E3-Fixpunkt bogenkonsistent: ihre Projektion auf diese
+    Variable ist bereits geschnitten; jede spaetere Verengung dieser Variablen durch andere Beziehungen bleibt eine Teilmenge davon, also konsistent,
+    und die Beziehung kann keine andere Variable mehr einschraenken (alle uebrigen fest). Sie ist damit fuer Paare und Tupelschritte wirkungslos,
+    nicht verletzt. Leere Domaene wird ueberall erkannt. Regression: nachpruefung=True (voller E3 ueber ALLE Beziehungen nach dem Fixpunkt) in
+    K3 135/135 und im Mini-Beispiel ohne Aenderung. Fuer Stufe 1 schlage ich vor, nachpruefung an der Wurzel einzuschalten (Kosten eine E3-Runde).
+(2) Teilweise freie Domaenen: K3 (Mini-Netze, E4) und K4 (SHA-Netz, E3 + Adapter, Zeuge erhalten). E4 auf dem SHA-Netz mit Teildomaenen ist
+    Gegenstand von Stufe 1, nicht vorgezogen.
+(3) Paargrenze: U5, sofortige Rueckkehr OPEN_PAARGRENZE; extern ueberwacht; in K2 39-mal ausgeloest (Limit 12), identisch in beiden Fassungen.
+(4) Nonceziffern und Noncebits werden getrennt berichtet (K4).
+(5) Vollstaendigkeit: alle Aussagen gelten fuer die geprueften Eingaben/Faelle; keine allgemeine Vollstaendigkeitsbehauptung.
+
+== 4. VORSCHLAG: EINE DREIERBEZIEHUNG (MECHANISMUS 2) ======================================================================================
+Mechanismus, wie ich ihn verstehe: Join zweier vorhandener Beziehungen ueber ihre gemeinsame Variable, Projektion auf drei Grenzvariablen,
+Tabelle einmal statisch aus den Originaltabellen (64 Zellen, 3 Variablen-IDs), als zusaetzliche 3-stellige Beziehung ins Netz – E3/E4 bleiben
+unveraendert; die Dreierbeziehung liefert nur zusaetzliche Schnitte (sound, weil sie eine Projektion der Loesungsmenge ist).
+Unterscheidendes Mini-Beispiel (dreier_beispiel.py, ERGEBNIS_DREIER_BEISPIEL.json; w = 4, x und y frei, 256 Eingaben):
+    x0 = y XOR x;  r2 = rot3(x0) (ROT1 mischt Nachbarziffern);  m3 = maj(y, x, r2) = 13 fest.
+    Wahre Loesungen 15. E4 (Paare, Radius 1): 144 Eingaben zugelassen. E4 + EINE Dreierbeziehung D(y[1], x[1], r2[1]) = Join von
+    XOR(y[1], x[1], x0[1]) und ROT1(r2[1], x0[0], x0[1]) ueber x0[1] (32 von 64 Tupeln; Inhalt: niedriges Bit von r2[1] = hohes Bit von y[1] XOR x[1]):
+    64 Eingaben zugelassen. Beide sound (alle 15 Loesungen enthalten), beide Fassungen (sha/komp) identisch, Nachpruefung ohne Aenderung.
+    Gefunden durch Zufallssuche: 400 kleine Netze, in 1 Netz Gewinn durch einen Join-Dreier (Suche ueber alle Joins mit genau einer gemeinsamen
+    Variablen; universelle Joins verworfen). Die Struktur: Zwei Woerter treffen sich (XOR), das Ergebnis kehrt ROTIERT (ungerade Rotation, Ziffern
+    verschoben) in einer Beziehung mit denselben Woertern zurueck – Paare halten die Parität ueber die verschobene Ziffer nicht.
+EINE Stelle im SHA-Netz (vorab festgelegt, begrenzt): Σ1(e60) in Runde 60 der ZWEITEN Anwendung – die erste Runde, deren e-Ausgang e61 durch das
+    echte Ziel vollstaendig bestimmt ist (Digestwort 7 = IV7 + h64, h64 = e61; Wort 6 -> e62). Dort: s_j = e60[j+3] XOR ROT1(e60[j+5], e60[j+6])
+    XOR ROT1(e60[j+12], e60[j+13]) ueber Zwischenwort t_j = r6_j XOR r11_j. Dreier je Ziffer j (16 Ziffern):
+    D_j(e60[j+3], t_j, e60[j+5]) = Join XOR(r6_j = e60[j+3], r11_j, t_j) |><| ROT1(r11_j, e60[j+5], e60[j+6]) ueber r11_j
+    und D'_j(t_j, s_j, e60[j+12]) = Join XOR(t_j, r25_j, s_j) |><| ROT1(r25_j, e60[j+12], e60[j+13]) ueber r25_j  -> 32 Dreierbeziehungen,
+    je 32 gueltige von 64 Tupeln, Metadaten 32 x (3 IDs + 64-Bit-Maske), Joinaufwand 16 x 16 Tupel je Dreier, einmalig; Propagationskosten
+    ~1 000 zusaetzliche Tupelbesuche je Runde, 96 Paare (grossteils schon vorhanden). Variablenidentitaet ueber die Protokollnamen (H2, rot11/rot25,
+    xor, Nr.) – kein Knoten-ID-Vergleich. Umfang ehrlich: nur diese 32 Dreier; ein negatives Ergebnis gilt nur fuer diese Stelle.
+    Messplan (getrennt, nach der Paar-Basismessung): Wurzel F1/F2 mit E1+E4 (Basis), dann E1+E4+32 Dreier, gleiche Limits; Vergleich
+    abgeleitete Nonceziffern/-bits, Domaenengroessen der e60/t/s-Variablen, Paarzahl, Zeit. Mechanismen 1 und 3 bleiben unangetastet.
+Warum nicht der a-Pfad (Σ0(a)+Maj): a64 speist Digestwoerter 0..3, die vom Ziel nicht eingeschraenkt sind; der e-Pfad traegt die Zielinformation.
+VERMUTUNG, nicht gemessen: ob die 32 Dreier am SHA-Netz etwas ausschliessen, ist offen; das Mini-Beispiel belegt nur, dass der Mechanismus Faelle
+unterscheidet, die Paare nicht unterscheiden.
+
+== 5. DATEIEN ==================================================================================================================================
+Neu: ziffern_komp.py (e4a7629c…), komposition_kind.py, lauf_komposition.py, e1_bit.py (E1-Kopie aus stufe0_kind.py), dreier_beispiel.py,
+ERGEBNIS_K1..K4.json, ERGEBNIS_KOMPOSITION.json, ERGEBNIS_K5_ZEIT.json, ERGEBNIS_DREIER_BEISPIEL.json.
+Geaendert: ziffern_sha.py (U5 sofortiges OPEN_PAARGRENZE, Hash 0c7621c7…; DIFF_ziffern_zu_ziffern_sha.txt neu erzeugt).
+Unveraendert gegenueber Stufe 0: sha_ziffern.py (8a4245b0…), ziffern.py, bausteine.py, gatter.py, pruefung.py, teilbits.py, FAELLE_SHA256D.json.
+Nachrechnen: python -I lauf_komposition.py  (~60 s), python -I dreier_beispiel.py (< 2 s).
+Naechster Schritt nach Ghosts Pruefung: begrenzter Wurzellauf Stufe 1 (10 min / 400 MiB je Wurzelauswertung, E4 kompakt, nachpruefung an,
+Abbruch = OFFEN, kein automatischer Folgelauf).

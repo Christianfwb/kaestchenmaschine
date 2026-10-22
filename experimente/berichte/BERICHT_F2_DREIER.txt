@@ -1,0 +1,70 @@
+FABLE AN GHOST – F2-ABSCHLUSS (PRUEFSPEICHER REPARIERT) UND DREIERLAEUFE, 2026-10-22
+Kopien, CPU, Python 3.13.16 + numpy 2.5.3 (nur Schluesselaufbau), Fable-Container (Xeon 2,10 GHz, 2 Kerne). Kein Baum, kein Miner-Eingriff,
+keine GPU/RPC/Einreichung. Reihenfolge wie beauftragt: Reparatur -> Regressionen -> F2 einmal -> Gate -> zwei Dreierlaeufe. Genau diese Laeufe, keine weiteren.
+
+== ERGEBNIS IN DREI SAETZEN ======================================================================================================================
+1. F2 (Genesis) ist jetzt vollstaendig: E1+E4 (1 896 020 Paare) erreicht den Radius-1-FIXPUNKT, Nachpruefung E3 unveraendert, Genesis-Zeuge in ALLEN
+   Bitdomaenen, ALLEN Zifferndomaenen und ALLEN Paarmasken, Orakelabgleich bestanden, Prozess regulaer beendet (152 s, Peak 365 MiB) – 0 Noncebits,
+   0 Nonceziffern, 0 Ausschluesse.
+2. Gate bestanden (gueltiger F1-Beleg aus dem vorigen Lauf + neuer F2-Beleg) -> beide Dreierlaeufe gelaufen: FIXPUNKT, alle Pruefungen bestanden.
+3. Die 32 Dreier an Sigma1(e60) aendern am Wurzelknoten NICHTS an der Nonce (0/0/0 in beiden Faellen); intern: F1 +45 engere Paare
+   (63 714 statt 63 669) bei gleich vielen eingeschraenkten Ziffern, F2 keine zusaetzliche Einschraenkung (63 272 = 63 272). Kein Gewinn an dieser Stelle.
+
+== 1. REPARATUR (nur Pruefcode/Speicherlebenszyklus, keine Rechenregel) ==========================================================================
+- ziffern_array.PaarSpeicher.zeuge_ok(werte): Streaming ueber keys/masks (divmod, Maskenbit), KEIN als_dict, keine O(Paarzahl)-Kopie; prueft ALLE
+  Paarmasken, liefert zusaetzlich das erste verletzte Paar. e4 selbst unveraendert (DIFF_ziffern_array_zeuge_ok.txt: 16 Zeilen, nur die Methode).
+- Austauschschleife unveraendert aus wurzel_kind2 nach austausch.py herausgeloest (Funktion); einzige Aenderung: vor jedem neuen E4-Aufbau wird der
+  alte Paarspeicher freigegeben (paare = None), nachdem seine Zaehler (Paarzahl, eingeschraenkte Paare) im Schrittprotokoll stehen; die Zifferndomaenen
+  (Ergebnis des alten Aufrufs) bleiben – sie sind die einzige Information, die der naechste Aufruf braucht. zd_neu wird nach Uebernahme geloescht.
+- wurzel_kind3.py = wurzel_kind2.py mit genau diesen zwei Aenderungen (DIFF_wurzel_kind2_zu_kind3.txt, 77 Zeilen). lauf_wurzel2.py unveraendert
+  (Hash 40069549…); lauf_wurzel3.py nutzt dessen lauf()/freigabe() und ergaenzt nur die F1-Wiederverwendung.
+
+== 2. REGRESSIONEN (ERGEBNIS_PRUEFSPEICHER_TEST.json, ERGEBNIS_GATE_TEST.json; 0,8 s + < 5 s, 48 MiB) =========================================
+T1 Streaming gegen dict-Pruefung: 32 Mini-Netze mit bekannter Loesung (Groessen 2 und 4, kanonische Schluessel geprueft): korrekter Zeuge 32/32 beide
+   True; absichtlich verbotener Wert (Belegung auf ein 0-Bit einer Paarmaske) 32/32 beide False; absichtlich verbotene Paarbelegung (Maske am Zeugenbit
+   manipuliert, Kopie zurueckgesetzt) 32/32 beide False und erstes verletztes Paar richtig benannt. 96 Faelle, 0 Abweichungen.
+T2 Lebenszyklus: kleiner gekoppelter Bit/Ziffern-Fall (zwei SHA-artige Runden auf 32-Bit-Woertern, 8 freie Eingangsbits, Zielkette auf a2 bit- und
+   ziffernseitig; 736 Bitknoten, 959 Ziffernvariablen, 3 733 Paare): Austauschschleife mit freigeben=False (alter Stand) und freigeben=True: Status
+   (FIXPUNKT nach 2 Austauschrunden), alle Bit- und Zifferndomaenen und alle Paarmasken identisch.
+Gate-Regression erneut, 12 Szenarien, darunter neu: "RAM-Abbruch in der ABSCHLUSSPRUEFUNG trotz zuvor FIXPUNKT (Schritte FIXPUNKT, kein ergebnis-
+   Block)" -> NOT_RUN, kein Kindstart; und "F1 wiederverwendeter gueltiger Beleg + F2 neu FIXPUNKT" -> Freigabe. BESTANDEN.
+
+== 3. F1-WIEDERVERWENDUNG (explizit) ===============================================================================================================
+F1-Basis NICHT neu gemessen. Wiederverwendet: ERGEBNIS2_E4_F1.json (sha256 c0ba0150…), Lauf lauf_wurzel2.py / wurzel_kind2.py vom 2026-10-22,
+Vorlage FAELLE_SHA256D.json F1 (Hoehe 972527, nBits 0x17020093), 8 freie Noncebits, U-voll, Paargrenze 2 500 000, Regelcode ziffern_array.e4
+(Rechenteil unveraendert; Datei-Hash aenderte sich nur durch die additive Methode zeuge_ok), ziffern_sha.py 0c7621c7…, sha_ziffern.py 8a4245b0…,
+e1_bit.py cfa14b51… Status OK / FIXPUNKT / Rueckgabe 0 / kein Abbruch; der Beleg wird in lauf_wurzel3.py vor dem Gate erneut auf diese Kriterien geprueft.
+
+== 4. NEUE LAEUFE (ERGEBNIS3_WURZEL.json, ERGEBNIS2_E4_F2.json, ERGEBNIS2_E4D_F1.json, ERGEBNIS2_E4D_F2.json; 600 s / 400 MiB / 2,5 Mio. je Lauf) ==
+Art  Fall  Wall     Peak-RSS   Verlauf
+E4   F2   151,9 s   365 MiB    Austausch 1: Bits->Ziffern 3 541 Schnitte; E4 FIXPUNKT (4 Runden, 1 896 089 Paare, 63 341 enger, 76,7 s); Ziffern->Bits
+                               5 Schnitte; E1 FIXPUNKT (244 Knoten fest, +14 gegenueber E1 allein). Austausch 2: E4 FIXPUNKT (1 896 020 Paare, 63 272 enger,
+                               70,5 s), E1 FIXPUNKT -> Gesamt-FIXPUNKT. Nachpruefung E3: FIXPUNKT, unveraendert. Zeuge: Bits/Ziffern/Paare alle True
+                               (Zeugenwerte aus dem Netz mit festem Zeugen-Nonce, Digest gegen hashlib, LE = 1). 0 Noncebits (Bitgraph und Ziffern), 0 Nonceziffern,
+                               0 ausgeschlossene Nonces (Orakel: genau der Zeuge ist Treffer – nicht ausgeschlossen). Peak 365 MiB (vorher 407 -> Reparatur wirkt).
+E4D  F1   197,5 s   370 MiB    Dreier: 32 Beziehungen, Zuordnung per Assertion, Trace-Abgleich 256/256 (42,9 s). E4 FIXPUNKT (1 892 311 Paare = +1 546 durch die
+                               Dreier; 63 714 enger = +45 gegenueber Basis 63 669), 6 339 Ziffern enger (= Basis), 643 Bitknoten fest (= Basis), 2 Austauschrunden,
+                               Nachpruefung unveraendert. 0 Noncebits, 0 Nonceziffern, 0 Ausschluesse.
+E4D  F2   197,9 s   370 MiB    dito: 1 897 661 Paare (+1 641), 63 272 enger (= Basis), 6 147 Ziffern enger (= Basis), 244 Bitknoten (= Basis); Zeuge in allen
+                               Bits/Ziffern/Paaren (inkl. Dreier-Paaren); 0/0/0. Nachpruefung unveraendert.
+Vergleich Basis vs Zusatz je Fall (Noncebits / Nonceziffern / Ausschluesse / Ziffern enger / Paare enger / Bitknoten fest / Zeit E4 / Peak):
+  F1: Basis 0/0/0 / 6 339 / 63 669 / 643 / 151 s / 384 MiB   –   +Dreier 0/0/0 / 6 339 / 63 714 / 643 / 150 s (+43 s Dreier-Aufbau/Abgleich) / 370 MiB
+  F2: Basis 0/0/0 / 6 147 / 63 272 / 244 / 146 s / 365 MiB   –   +Dreier 0/0/0 / 6 147 / 63 272 / 244 / 150 s (+42 s) / 370 MiB
+Neue Gesamtwallzeit 547 s (ohne wiederverwendetes F1).
+
+== LESART (ehrlich) ================================================================================================================================
+BELEGT: Am Wurzelknoten beider Faelle (echte Vorlage mit 78 Zielnullbits, Genesis mit 32) leitet E1+E4 mit vollstaendiger Radius-1-Schliessung
+(1,9 Mio. Paare) nichts ueber die Nonce ab; die 32 Dreier an Sigma1(e60) aendern daran nichts (F1: 45 Paare enger, sonst identisch; F2: identisch).
+Alles sound: Zeuge erhalten, keine Ausschluesse gegen das Orakel, Nachpruefungen unveraendert. "Keine Eingangsableitung" ist das Ergebnis dieser Stelle
+und dieses Radius – kein Urteil ueber die Idee des Beziehungsgedaechtnisses, nur ueber Radius 1 plus diese 32 Dreier an der Wurzel.
+In einfachen Worten fuer Christian: Das Ziel drueckt rueckwaerts rund 63 000 Beziehungen und gut 6 000 Kaestchen enger – aber nach 64 Runden und zwei
+Hashanwendungen kommt an der Nonce davon nichts an, auch nicht mit dem Dreier-Gedaechtnis an der gewaehlten Stelle. Was das fuer den naechsten
+Schritt heisst, entscheiden wir drei; ich starte nichts.
+
+== DATEIEN =========================================================================================================================================
+Neu: wurzel_kind3.py (a888ee30…) + DIFF_wurzel_kind2_zu_kind3.txt, austausch.py (7444f090…), lauf_wurzel3.py (4a480fb6…), pruefspeicher_test.py,
+ERGEBNIS_PRUEFSPEICHER_TEST.json, gate_test.py (e00f44e3…) + DIFF_gate_test.txt, ERGEBNIS_GATE_TEST.json, ziffern_array.py (b383734a…, nur zeuge_ok)
++ DIFF_ziffern_array_zeuge_ok.txt, ERGEBNIS3_WURZEL.json, ERGEBNIS2_E4_F2.json (neu, vollstaendig), ERGEBNIS2_E4D_F1.json, ERGEBNIS2_E4D_F2.json,
+lauf1_2/ERGEBNIS2_E4_F2_lauf1b_OFFEN.json (der abgebrochene vorige F2-Lauf, aufbewahrt), ERGEBNIS2_E4_F1.json (wiederverwendet, unveraendert).
+Unveraendert: lauf_wurzel2.py, wurzel_kind2.py, e1_bit.py, ziffern_komp.py, ziffern_sha.py, sha_ziffern.py, ziffern.py, bausteine.py, gatter.py,
+pruefung.py, teilbits.py, mininetze.py, FAELLE_SHA256D.json. Nachrechnen: python -I pruefspeicher_test.py; python -I gate_test.py; python -I lauf_wurzel3.py (~9 min).

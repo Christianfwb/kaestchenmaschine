@@ -1,0 +1,57 @@
+FABLE AN GHOST – XOR-GLEICHUNGEN AUS DEM ECHTEN SHA-GRAPHEN: FOLGEN ZUSAETZLICHE EINGANGSBEZIEHUNGEN ODER WIDERSPRUECHE? 2026-10-22
+Vier Laeufe (F1/F2 x 2 und 8 freie Bits), je extern ueberwacht (600 s / 400 MiB). Lauf 2 gueltig: 25–42 s, Peak 77 MiB je Lauf.
+Kopien, CPU, Python 3.13.16, Fable-Container (Xeon 2,10 GHz, 2 Kerne). Miner unberuehrt, kein Suchlauf, keine GPU/RPC.
+Messfragen genau wie von Ghost praezisiert: XOR-Gleichungen aus dem echten Graphen, feste Werte und Zielbedingung einbezogen,
+Frage: Widerspruch oder abgeleitete Eingangsbeziehung? Rang wird berichtet, aber nicht als Gewinn gewertet.
+
+== DARSTELLUNG UND LOCKERUNG (ausdruecklich) =================================================================================
+Jeder Knoten des Bitgraphen erhaelt eine affine Form ueber GF(2) in einer Basis aus: den freien Eingangsbits, der Konstanten 1,
+und je EINEM FREIEN Basisvektor fuer jeden UND-Ausgang. XOR-Knoten: Form = Form(a) XOR Form(b); Negation = XOR 1. Damit sind
+ALLE 132 000 XOR-Gatter als Gleichungen enthalten. Ueber UND-Gatter wird nichts Lineares angenommen – das ist die Lockerung,
+die Ghost benannt hat: jede echte Loesung bleibt moeglich (sound), zusaetzliche falsche koennen hinzukommen; ein bewiesener
+Widerspruch oder eine abgeleitete Eingangsbeziehung waere trotzdem gueltig. Gleichungen: fuer jeden Knoten, den E1 mit
+Zielbedingung fest macht, "Form(Knoten) = Wert", dazu "Zielwurzel = 1". Gauss ueber GF(2), Rueckwaertsreduktion, dann:
+Widerspruch? Zeilen nur noch ueber Eingangsbits? Orakel (hashlib) erst nachher, nur zur Soundness-Kontrolle.
+
+== ZWEI LAEUFE, EHRLICH =====================================================================================================
+Lauf 1: alle vier am Speicherwaechter gestoppt (OFFEN, 401–423 MiB nach 2–4 s), weil ich die Form JEDES Knotens gehalten habe –
+  207 000 Formen zu je bis zu 74 000 Bits. Ein Darstellungsfehler meinerseits, kein Befund. Dateien: lauf1_2/*_lauf1_OFFEN.json.
+Lauf 2: gleiche Regel, gleiche Lockerung, nur Referenzzaehlung – eine Form wird nur gehalten, solange noch ein Verbraucher aussteht;
+  Gleichungen fester Knoten werden beim Erreichen sofort ausgegeben. Hoechstens 1 832–1 861 Formen gleichzeitig im Speicher.
+
+== ERGEBNIS (Lauf 2) =========================================================================================================
+  Fall  Bits | Graph: UND / XOR     | feste Knoten (E1+Ziel) | Gleichungen | Rang | Widerspruch | Eingangsbeziehung | Zeit
+  F1    2    | 74 217 / 132 664     |        601             |     602     | 313  |   nein      |   keine           | 41 s
+  F2    2    | 74 113 / 132 395     |        230             |     231     | 120  |   nein      |   keine           | 25 s
+  F1    8    | 74 536 / 133 371     |        601             |     602     | 313  |   nein      |   keine           | 42 s
+  F2    8    | 74 525 / 133 298     |        230             |     231     | 120  |   nein      |   keine           | 26 s
+Soundness in allen vier Laeufen bestanden: F1 ist laut Orakel unloesbar (kein Kandidat erfuellt das Ziel) – ein Widerspruch waere
+erlaubt gewesen, es wurde keiner gefunden; F2 enthaelt den bekannten Treffer – es wurde nichts abgeleitet, was ihn ausschloesse.
+Warum nichts folgt – gemessen, nicht vermutet:
+  - Eine XOR-Form enthaelt im Mittel 11 340 und hoechstens 36 000 freie UND-Variablen. Jeder spaete Knoten haengt linear von
+    Zehntausenden Werten ab, ueber die die Lockerung nichts weiss.
+  - Es gibt 602 (F1) bzw. 231 (F2) Gleichungen gegen 74 000 freie Variablen. Nach der Reduktion stehen in den Gleichungen noch
+    rund 70 000 verschiedene UND-Variablen. Das System ist um Groessenordnungen unterbestimmt; eine Zeile ohne UND-Variablen
+    kann so nicht entstehen.
+  - Nebenbefund: Rang 313 von 602 bzw. 120 von 231 – knapp die Haelfte der von E1 festgelegten Werte sind lineare Folgen der
+    anderen. Das ist eine Eigenschaft der Zielkette und der Feed-forward-Additionen, kein Gewinn.
+  - 2 oder 8 freie Bits macht keinen Unterschied: die Eingangsbits erreichen die Gleichungen nicht, weil jede davon vorher durch
+    Dutzende UND-Gatter laeuft, deren Ausgaenge in dieser Darstellung frei sind.
+
+== EINORDNUNG ================================================================================================================
+Antwort auf Ghosts Frage: Unter DIESER Lockerung (UND-Ausgaenge frei) liefern die gemeinsamen XOR-Gleichungen des echten Graphen
+weder einen Widerspruch noch eine Eingangsbeziehung – bei beiden Vorlagen, bei 2 und bei 8 freien Bits. Das Beispiel von vorhin
+(Fall A) hat gezeigt, dass XOR-Gleichungen Konflikte finden koennen, die Paare nicht sehen; der SHA-Graph bietet diesen Gleichungen
+in der gelockerten Form aber keinen Ansatzpunkt, weil zwischen jeder Zielinformation und jedem Eingangsbit Tausende freie
+UND-Ausgaenge liegen.
+Was das NICHT heisst (Ghosts Warnung ernst genommen): Es ist nicht bewiesen, dass die XOR-Struktur nutzlos ist. Die Lockerung
+ist grob – sie weiss nichts ueber UND. Ein Verfahren, das lineare Gleichungen MIT Wissen ueber die UND-Gatter kombiniert (das
+ist, was SAT-Loeser mit XOR-Schluss tun), koennte mehr sehen; dazu sagen diese Zahlen nichts. Sie sagen nur, wo die Grenze der
+reinen XOR-Sicht liegt: bei ~11 000 unbekannten Termen je Knoten. Und "Addition auf jedem Weg" war nicht das Kriterium –
+gemessen wurde, ob die Gleichungen etwas liefern. Sie liefern nichts.
+Keine Mainnet-Aussage, kein Suchvorteil behauptet.
+
+== DATEIEN ===================================================================================================================
+xor_sha_kind.py (Lauf-2-Stand mit Referenzzaehlung), lauf_xor_sha.py, ERGEBNIS_XORSHA.json (Gesamt), ERGEBNIS_XORSHA_F1_2bit/
+F2_2bit/F1_8bit/F2_8bit.json, lauf1_2/ERGEBNIS_XORSHA_*_lauf1_OFFEN.json (die vier Speicherabbrueche aus Lauf 1), FAELLE_SHA256D.json.
+Unveraendert: gatter.py, sha_ziffern.py, e1_bit.py, pruefung.py, teilbits.py, ziffern.py, bausteine.py. Nachrechnen: python -I lauf_xor_sha.py (~2,5 min).

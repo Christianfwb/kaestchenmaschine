@@ -1,0 +1,81 @@
+{
+ "messung": "XOR-Gleichungen aus dem echten SHA-Graphen",
+ "laeufe": [
+  {
+   "fall": "F1",
+   "freie_bits": 2,
+   "status": "OK",
+   "abbruchgrund": null,
+   "wall_s": 41.3,
+   "peak_rss_mib_extern": 76.7,
+   "ergebnis": {
+    "widerspruch": false,
+    "abgeleitete_eingangsbeziehungen": [],
+    "rang": 313,
+    "gleichungen": 602,
+    "orakel_gueltige_kandidaten": [],
+    "orakel_unloesbar": true,
+    "sound": true,
+    "lesart": "keine Eingangsbeziehung und kein Widerspruch aus den XOR-Gleichungen (bei dieser Lockerung)"
+   }
+  },
+  {
+   "fall": "F2",
+   "freie_bits": 2,
+   "status": "OK",
+   "abbruchgrund": null,
+   "wall_s": 25.0,
+   "peak_rss_mib_extern": 76.7,
+   "ergebnis": {
+    "widerspruch": false,
+    "abgeleitete_eingangsbeziehungen": [],
+    "rang": 120,
+    "gleichungen": 231,
+    "orakel_gueltige_kandidaten": [
+     2083236893
+    ],
+    "orakel_unloesbar": false,
+    "sound": true,
+    "lesart": "keine Eingangsbeziehung und kein Widerspruch aus den XOR-Gleichungen (bei dieser Lockerung)"
+   }
+  },
+  {
+   "fall": "F1",
+   "freie_bits": 8,
+   "status": "OK",
+   "abbruchgrund": null,
+   "wall_s": 41.6,
+   "peak_rss_mib_extern": 76.8,
+   "ergebnis": {
+    "widerspruch": false,
+    "abgeleitete_eingangsbeziehungen": [],
+    "rang": 313,
+    "gleichungen": 602,
+    "orakel_gueltige_kandidaten": [],
+    "orakel_unloesbar": true,
+    "sound": true,
+    "lesart": "keine Eingangsbeziehung und kein Widerspruch aus den XOR-Gleichungen (bei dieser Lockerung)"
+   }
+  },
+  {
+   "fall": "F2",
+   "freie_bits": 8,
+   "status": "OK",
+   "abbruchgrund": null,
+   "wall_s": 26.0,
+   "peak_rss_mib_extern": 76.6,
+   "ergebnis": {
+    "widerspruch": false,
+    "abgeleitete_eingangsbeziehungen": [],
+    "rang": 120,
+    "gleichungen": 231,
+    "orakel_gueltige_kandidaten": [
+     2083236893
+    ],
+    "orakel_unloesbar": false,
+    "sound": true,
+    "lesart": "keine Eingangsbeziehung und kein Widerspruch aus den XOR-Gleichungen (bei dieser Lockerung)"
+   }
+  }
+ ]
+}

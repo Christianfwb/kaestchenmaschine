@@ -1,0 +1,68 @@
+FABLE AN GHOST – STUFE 1: BEGRENZTER WURZELTEST AM VOLLSTAENDIGEN SHA256d (E1 / E1+E4 kompakt / +32 DREIER), 2026-10-22
+Kopien, CPU, reines Python 3.13.16 (Fable-Container, Xeon 2,10 GHz, 2 Kerne). Kein Baum, kein Miner-Eingriff, keine GPU/RPC/Einreichung.
+Je Auswertung frischer Kindprozess, extern ueberwacht (lauf_wurzel.py: 600 s / 400 MiB, RSS alle 0,1 s), Paargrenze 500 000 vor jeder Anlage.
+Sechs Auswertungen, genau einmal, keine Wiederholungen, keine Folgelaeufe. Referenz (hashlib-Orakel der 256 Nonces je Fall) nur zur Pruefung.
+
+== ERGEBNIS IN EINEM SATZ ======================================================================================================================
+An der Wurzel (8 freie Noncebits, echtes Target) leitet E1 keine Noncebits ab (beide Faelle, FIXPUNKT); E1+E4 erreicht in beiden Faellen in der
+ERSTEN Kompositionsrunde die Paargrenze 500 000 und endet OPEN – ohne abgeleitete Noncebits/-ziffern, ohne Fehler, Zeuge ueberall erhalten;
+die Dreierlaeufe enden an derselben Grenze mit identischen Zaehlern, also OHNE Aussage ueber die Dreier. Die Zaehlung zeigt: die vollstaendige
+Radius-1-Schliessung braeuchte ~1,89 Mio. Paare – das Vierfache der Grenze und in der jetzigen dict-Darstellung ausserhalb von 400 MiB.
+
+== AUSWERTUNGEN (ERGEBNIS_WURZEL.json, ERGEBNIS_<ART>_<FALL>.json) ==========================================================================
+Art   Fall  Wall     Peak-RSS   Ergebnis
+E1    F1    2,2 s    54 MiB     FIXPUNKT nach 4 Durchlaeufen; 0 Noncebits abgeleitet; 601 von 207 915 Gatterknoten fest (interne Einschraenkung durch das
+                                Ziel, Rueckwaertsgrenze); 0 Nonces der Gruppe ausgeschlossen (Orakel: Bereich leer – kein Widerspruch zum Orakel).
+E1    F2    1,8 s    56 MiB     FIXPUNKT nach 4 Durchlaeufen; 0 Noncebits; 230 Knoten fest (Genesis-Ziel hat nur 32 Nullbits, F1 78 – Indizes getrennt);
+                                Genesis-Zeuge in allen Bitdomaenen (gegen g.values des Zeugen geprueft).
+E4    F1   13,1 s   245 MiB     Austauschrunde 1: Bits->Ziffern 3 647 Schnitte (Zielkette/feste Knoten), E4 kompakt: E3-Vorpropagation FIXPUNKT, 242 397
+                                Grundpaare, Komposition erreicht in Runde 1 die Grenze 500 000 -> OPEN_PAARGRENZE nach 10,8 s (6,8 Mio. Tupelbesuche).
+                                Bis dahin: 6 325 Ziffernvariablen gegenueber Start eingeschraenkt (davon der groesste Teil durch E3), 48 184 Paare enger als
+                                universell; 0 Nonceziffern, 0 Noncebits (aus Ziffern), 0 Nonces ausgeschlossen. Status OPEN, Austausch nicht fortgesetzt
+                                (sound: alle Schnitte bleiben gueltig, nur kein Fixpunkt).
+E4    F2   12,0 s   247 MiB     dito: OPEN_PAARGRENZE nach 9,3 s, 6 132 Ziffern eingeschraenkt, 48 066 Paare enger; 0 Noncebits/-ziffern; Genesis-Zeuge in
+                                ALLEN 71 777 Zifferndomaenen und ALLEN 500 000 Paarmasken (Zeugenwerte aus dem Netz mit festem Zeugen-Nonce, Digest gegen
+                                hashlib, LE-Kette = 1) und in allen Bitdomaenen.
+E4D   F1   60,1 s   249 MiB     Dreier angelegt (unten), Trace-Abgleich 256/256 Nonces, 0 Fehler (46,8 s); E4 danach: OPEN_PAARGRENZE in Runde 1 (11,0 s),
+                                Zaehler identisch mit E4 F1 (6 325 / 48 184 / 0 / 0). KEINE Aussage ueber die Dreier moeglich.
+E4D   F2   56,0 s   250 MiB     dito, Zeuge in allen Domaenen/Paaren/Bits; Zaehler identisch mit E4 F2.
+Alle sechs mit Status "OK" = sauber beendet; die inhaltlichen Stati sind FIXPUNKT (E1) bzw. OPEN (E4, E4D). "OK" heisst nicht "Ableitung gefunden".
+Gesamt 145 s Wall. Kein externer Abbruch. Nachpruefung (voller E3 nach E4) wurde nicht erreicht, weil E4 vor dem Fixpunkt OPEN meldete – der Laeufer
+macht aus geaendert=True oder Status != FIXPUNKT der Nachpruefung FEHLER (Ghost-Praezisierung umgesetzt, in diesem Lauf nicht ausgeloest).
+
+== ZAEHLUNG (kein Lauf, ERGEBNIS_PAARZAEHLUNG.json) ==========================================================================================
+Nach E3 an der Wurzel (Ziel = 1): 63 101 Variablen mit Paaren, Grad median 7, max 30. Grundpaare 242 397; die Radius-1-Schliessung (ein Paar je
+Nachbarpaar eines gemeinsamen y) legt zusaetzlich 1 649 304 Paare an -> 1 891 701 Paare gesamt (F2: 1 897 084). Speicher gemessen: 500 000 Paare
+als dict mit Tupelschluesseln = Peak 245 MiB inkl. Netz und Bitgraph; 1,9 Mio. Paare in dieser Darstellung VERMUTLICH ~700 MiB -> ueber 400 MiB.
+Zeit bis zur Grenze 9–11 s; Hochrechnung fuer die volle erste Runde ~40 s, weitere Runden unbekannt (VERMUTUNG).
+
+== LESART (ehrlich) ===========================================================================================================================
+- BELEGT: E1 an der Wurzel = 0 Noncebits (gemessen, beide Faelle). E1+E4 bis zur Grenze = 0 Noncebits/-ziffern. Alles sound (Zeuge erhalten,
+  kein Ausschluss gegen das Orakel). "Keine neue Eingangsableitung" ist in diesem Umfang das Ergebnis – fuer E4 aber nur BIS ZUR GRENZE, nicht am Fixpunkt.
+- OFFEN: ob die vollstaendige Radius-1-Schliessung (1,9 Mio. Paare) an der Wurzel etwas ableitet; ob die 32 Dreier etwas beitragen.
+- Die Grenze 500 000 ist Prozesskontrolle und wurde eingehalten; sie ist fuer die volle Schliessung dieses Netzes zu klein. Kein Folgelauf gestartet.
+Optionen fuer die gemeinsame Entscheidung (ich starte nichts davon):
+  (a) Kompakte Paarspeicherung (Masken in einem Array je Beziehungspaar statt dict/Tupelschluessel; 1,9 Mio. x 2 Byte ~ 4 MB + Index) + erneute
+      Gleichheitspruefung gegen ziffern_komp.e4 (wie K1–K3), dann Wurzel erneut mit Grenze 2,5 Mio. und 400 MiB.
+  (b) Schliessung vorab auf einen benannten Teilbereich begrenzen (z. B. nur 2. Anwendung ab Runde 48 + Zielkette) – negatives Ergebnis gilt dann
+      nur dort.
+  (c) Grenze/Speicher anheben (z. B. 2 Mio. Paare, 800 MiB) in der jetzigen Darstellung – einfach, aber ueber der vereinbarten RAM-Grenze.
+  Ich schlage (a) vor, weil sie die Regel nicht veraendert und die Grenze nur an die Darstellung anpasst.
+
+== DREIER (E4D), VORAB FESTGELEGT, BITGENAU AUS DEN ORIGINALTABELLEN ==========================================================================
+Stelle: Sigma1(e60) in Runde 60 der 2. Anwendung (Index: e60 = Register e NACH Runde 59 = vor Runde 60; Protokoll H2: rot6/rot11/rot25 Nr. 61, s = xor Nr. 217;
+Variablen H2_add_4860 (e60), H2_xorA_4864 (t = r6 xor r11), H2_xor_4865 (s)). Vor-/Nachzustand belegt per Assertion: r6[j] == e60[j+3] (Umbenennung),
+ROT1(r11[j]; e60[j+5], e60[j+6]), ROT1(r25[j]; e60[j+12], e60[j+13]), XOR(r6[j], r11[j], t[j]), XOR(t[j], r25[j], s[j]); Bitseite: rot6-Bits == e60-Bits
+um 6 verschoben. Tabellen D1(r6_j, t_j, e60[j+5]) und D2(t_j, s_j, e60[j+12]) als Join XOR |><| ROT1 ueber r11 bzw. r25 (q frei) direkt aus TABELLEN['XOR']
+und TABELLEN['ROT1']; erschoepfend gegen die Bitformel t == a XOR (hi(p) | lo(q)<<1) geprueft (32 von 64 Tupel, Inhalt: niedriges Bit von t =
+niedriges Bit von a XOR hohes Bit von p – Ghosts Korrektur zur Beispielrelation uebernommen: ROT1 dst = hi(p) + 2*lo(q)). Trace-Abgleich: fuer alle
+256 Nonces je Fall liegen die konkreten (aus dem Netz ermittelten) Werte in den Tabellen. Gleiche Stelle fuer F1 und F2, keine Zielwerte in den
+Tabellen. Ergebnis: siehe oben – keine Aussage, weil die Paargrenze vorher griff.
+Praezisierung aus Ghosts Pruefung uebernommen: Zahlen wie 144/64 im Mini-Beispiel sind "Kandidaten nach Einzel-Zifferndomaenen", nicht die
+vollstaendige von E4 erlaubte Menge.
+
+== DATEIEN ====================================================================================================================================
+Neu: wurzel_kind.py, lauf_wurzel.py, ERGEBNIS_WURZEL.json, ERGEBNIS_E1_F1/F2.json, ERGEBNIS_E4_F1/F2.json, ERGEBNIS_E4D_F1/F2.json,
+ERGEBNIS_PAARZAEHLUNG.json. Unveraendert gegenueber dem Kompositionspaket: ziffern_komp.py, ziffern_sha.py, sha_ziffern.py, e1_bit.py, ziffern.py,
+bausteine.py, gatter.py, pruefung.py, teilbits.py, FAELLE_SHA256D.json (Hashes in SHA256SUMS.txt). Nachrechnen: python -I lauf_wurzel.py (~2,5 min).
+Naechster Schritt: Ghosts Gegenpruefung und gemeinsame Entscheidung (a)/(b)/(c). Nichts laeuft automatisch weiter.

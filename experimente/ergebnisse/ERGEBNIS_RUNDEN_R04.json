@@ -1,0 +1,682 @@
+{
+ "runden": 4,
+ "modell": "reduziertes SHA256d (siehe Docstring), NICHT Bitcoin",
+ "vorlage": "F1_ECHTE_VORLAGE",
+ "noncebereich": [
+  0,
+  255
+ ],
+ "samen": "KONTROLLE_RUNDENKURVE_2026-10-23_R4",
+ "zielhash_bitcoin": "2cd09c70f87003c9f1db1b46e5351515f89d4c1d09b29b4fa80ccda05495b2d8",
+ "python": "3.13.16",
+ "rechner": "Fable-Container Linux, Intel Xeon 2.10 GHz (2 Kerne), CPU",
+ "status": "OK",
+ "schritte": [
+  {
+   "graphknoten": 3092,
+   "ziffernvariablen": 3976,
+   "beziehungen": 2304,
+   "name": "Aufbau",
+   "t_s": 0.01,
+   "peak_mib": 31.9
+  },
+  {
+   "beschreibung": "Hash = Zielhash: 256 Digestbits und 128 Digestziffern fest; Kontrollnonce NICHT uebergeben",
+   "name": "Festlegung",
+   "t_s": 0.01,
+   "peak_mib": 32.1
+  },
+  {
+   "status": "FIXPUNKT",
+   "sweeps": 6,
+   "s": 0.02,
+   "bitknoten_fest": 3090,
+   "noncebits": [
+    [
+     0,
+     1
+    ],
+    [
+     1,
+     0
+    ],
+    [
+     2,
+     1
+    ],
+    [
+     3,
+     1
+    ],
+    [
+     4,
+     0
+    ],
+    [
+     5,
+     1
+    ],
+    [
+     6,
+     1
+    ],
+    [
+     7,
+     0
+    ]
+   ],
+   "verbleibende_kandidaten": 1,
+   "name": "E1",
+   "t_s": 0.03,
+   "peak_mib": 32.1
+  }
+ ],
+ "paargrenze": 2500000,
+ "karte": [
+  {
+   "phase": "H1",
+   "runde": 1,
+   "reg": "a",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H1",
+   "runde": 1,
+   "reg": "b",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H1",
+   "runde": 1,
+   "reg": "c",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H1",
+   "runde": 1,
+   "reg": "d",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H1",
+   "runde": 1,
+   "reg": "e",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H1",
+   "runde": 1,
+   "reg": "f",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H1",
+   "runde": 1,
+   "reg": "g",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H1",
+   "runde": 1,
+   "reg": "h",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H1",
+   "runde": 2,
+   "reg": "a",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H1",
+   "runde": 2,
+   "reg": "b",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H1",
+   "runde": 2,
+   "reg": "c",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H1",
+   "runde": 2,
+   "reg": "d",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H1",
+   "runde": 2,
+   "reg": "e",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H1",
+   "runde": 2,
+   "reg": "f",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H1",
+   "runde": 2,
+   "reg": "g",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H1",
+   "runde": 2,
+   "reg": "h",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H1",
+   "runde": 3,
+   "reg": "a",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H1",
+   "runde": 3,
+   "reg": "b",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H1",
+   "runde": 3,
+   "reg": "c",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H1",
+   "runde": 3,
+   "reg": "d",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H1",
+   "runde": 3,
+   "reg": "e",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H1",
+   "runde": 3,
+   "reg": "f",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H1",
+   "runde": 3,
+   "reg": "g",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H1",
+   "runde": 3,
+   "reg": "h",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H1",
+   "runde": 4,
+   "reg": "a",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H1",
+   "runde": 4,
+   "reg": "b",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H1",
+   "runde": 4,
+   "reg": "c",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H1",
+   "runde": 4,
+   "reg": "d",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H1",
+   "runde": 4,
+   "reg": "e",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H1",
+   "runde": 4,
+   "reg": "f",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H1",
+   "runde": 4,
+   "reg": "g",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H1",
+   "runde": 4,
+   "reg": "h",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H2",
+   "runde": 1,
+   "reg": "a",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H2",
+   "runde": 1,
+   "reg": "b",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H2",
+   "runde": 1,
+   "reg": "c",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H2",
+   "runde": 1,
+   "reg": "d",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H2",
+   "runde": 1,
+   "reg": "e",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H2",
+   "runde": 1,
+   "reg": "f",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H2",
+   "runde": 1,
+   "reg": "g",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H2",
+   "runde": 1,
+   "reg": "h",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H2",
+   "runde": 2,
+   "reg": "a",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H2",
+   "runde": 2,
+   "reg": "b",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H2",
+   "runde": 2,
+   "reg": "c",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H2",
+   "runde": 2,
+   "reg": "d",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H2",
+   "runde": 2,
+   "reg": "e",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H2",
+   "runde": 2,
+   "reg": "f",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H2",
+   "runde": 2,
+   "reg": "g",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H2",
+   "runde": 2,
+   "reg": "h",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H2",
+   "runde": 3,
+   "reg": "a",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H2",
+   "runde": 3,
+   "reg": "b",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H2",
+   "runde": 3,
+   "reg": "c",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H2",
+   "runde": 3,
+   "reg": "d",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H2",
+   "runde": 3,
+   "reg": "e",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H2",
+   "runde": 3,
+   "reg": "f",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H2",
+   "runde": 3,
+   "reg": "g",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H2",
+   "runde": 3,
+   "reg": "h",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H2",
+   "runde": 4,
+   "reg": "a",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H2",
+   "runde": 4,
+   "reg": "b",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H2",
+   "runde": 4,
+   "reg": "c",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H2",
+   "runde": 4,
+   "reg": "d",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H2",
+   "runde": 4,
+   "reg": "e",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H2",
+   "runde": 4,
+   "reg": "f",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H2",
+   "runde": 4,
+   "reg": "g",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  },
+  {
+   "phase": "H2",
+   "runde": 4,
+   "reg": "h",
+   "bits_fest": 32,
+   "ziffern_fest": 16,
+   "bits_fest_nach_e1": 32
+  }
+ ],
+ "ergebnis": {
+  "status": "FIXPUNKT",
+  "stufe": "E1",
+  "ausgang": "TREFFER_ABGELEITET",
+  "noncebits_nach_e1": [
+   [
+    0,
+    1
+   ],
+   [
+    1,
+    0
+   ],
+   [
+    2,
+    1
+   ],
+   [
+    3,
+    1
+   ],
+   [
+    4,
+    0
+   ],
+   [
+    5,
+    1
+   ],
+   [
+    6,
+    1
+   ],
+   [
+    7,
+    0
+   ]
+  ],
+  "noncebits_abgeleitet": [
+   [
+    0,
+    1
+   ],
+   [
+    1,
+    0
+   ],
+   [
+    2,
+    1
+   ],
+   [
+    3,
+    1
+   ],
+   [
+    4,
+    0
+   ],
+   [
+    5,
+    1
+   ],
+   [
+    6,
+    1
+   ],
+   [
+    7,
+    0
+   ]
+  ],
+  "ausgeschlossene_nonces": 255,
+  "verbleibende_kandidaten": 1,
+  "orakel": {
+   "treffer": [
+    109
+   ],
+   "kontrollnonce": 109,
+   "anzahl_treffer": 1
+  },
+  "bitknoten_fest": 3090,
+  "bitknoten_gesamt": 3090,
+  "ziffern_fest": 2568,
+  "ziffern_fest_start": 516,
+  "ziffern_gesamt": 3976,
+  "paare": 0,
+  "paare_eingeschraenkt": null,
+  "e4_letzte_info": null,
+  "nachpruefung": null
+ },
+ "gesamt_s": 0.05,
+ "peak_mib_kind": 32.2
+}

@@ -1,0 +1,1 @@
+numpy>=1.24   # nur fuer ziffern_array (E4 mit Paarspeicher) und phasen_kind; Bitgraph, E1, E3 und die Beispiele 1/2 laufen ohne numpy

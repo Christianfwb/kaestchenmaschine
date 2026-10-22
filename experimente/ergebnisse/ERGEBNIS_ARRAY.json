@@ -1,0 +1,22 @@
+{
+ "stufe": "Array-Gleichheit",
+ "beginn": "2026-10-22 17:26:41",
+ "python": "3.13.16",
+ "grenze": {
+  "zeit_s": 120.0,
+  "ram_mib": 400.0
+ },
+ "phasen": [
+  {
+   "phase": "A1",
+   "status": "OK",
+   "abbruchgrund": null,
+   "wall_s": 5.49,
+   "peak_rss_mib_extern": 68.9,
+   "rueckgabe": 0,
+   "ausgabe": "ERGEBNIS_A1.json"
+  }
+ ],
+ "ende": "2026-10-22 17:26:46",
+ "gesamt_wall_s": 5.5
+}

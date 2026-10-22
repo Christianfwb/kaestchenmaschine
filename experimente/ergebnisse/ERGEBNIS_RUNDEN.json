@@ -1,0 +1,116 @@
+{
+ "messung": "Rundenkurve reduziertes SHA256d, F1, 8 freie Noncebits, Zielhash aus Kontrollnonce",
+ "grenze": {
+  "zeit_s": 600.0,
+  "ram_mib": 400.0,
+  "paare": 2500000
+ },
+ "laeufe": [
+  {
+   "runden": 4,
+   "status": "OK",
+   "abbruchgrund": null,
+   "wall_s": 0.2,
+   "peak_rss_mib_extern": 27.2,
+   "rueckgabe": 0,
+   "ausgang": "TREFFER_ABGELEITET",
+   "stufe": "E1",
+   "e1_status": "FIXPUNKT",
+   "e1_sweeps": 6,
+   "e1_s": 0.02,
+   "noncebits_e1": 8,
+   "noncebits": 8,
+   "verbleibende_kandidaten": 1,
+   "treffer": [
+    109
+   ],
+   "paare": 0,
+   "fehler": null
+  },
+  {
+   "runden": 6,
+   "status": "OK",
+   "abbruchgrund": null,
+   "wall_s": 0.5,
+   "peak_rss_mib_extern": 33.4,
+   "rueckgabe": 0,
+   "ausgang": "TREFFER_ABGELEITET",
+   "stufe": "E1",
+   "e1_status": "FIXPUNKT",
+   "e1_sweeps": 23,
+   "e1_s": 0.23,
+   "noncebits_e1": 8,
+   "noncebits": 8,
+   "verbleibende_kandidaten": 1,
+   "treffer": [
+    51
+   ],
+   "paare": 0,
+   "fehler": null
+  },
+  {
+   "runden": 8,
+   "status": "OK",
+   "abbruchgrund": null,
+   "wall_s": 0.6,
+   "peak_rss_mib_extern": 34.8,
+   "rueckgabe": 0,
+   "ausgang": "TREFFER_ABGELEITET",
+   "stufe": "E1",
+   "e1_status": "FIXPUNKT",
+   "e1_sweeps": 26,
+   "e1_s": 0.43,
+   "noncebits_e1": 8,
+   "noncebits": 8,
+   "verbleibende_kandidaten": 1,
+   "treffer": [
+    120
+   ],
+   "paare": 0,
+   "fehler": null
+  },
+  {
+   "runden": 12,
+   "status": "OK",
+   "abbruchgrund": null,
+   "wall_s": 3.0,
+   "peak_rss_mib_extern": 37.6,
+   "rueckgabe": 0,
+   "ausgang": "TREFFER_ABGELEITET",
+   "stufe": "E1",
+   "e1_status": "FIXPUNKT",
+   "e1_sweeps": 96,
+   "e1_s": 2.77,
+   "noncebits_e1": 8,
+   "noncebits": 8,
+   "verbleibende_kandidaten": 1,
+   "treffer": [
+    71
+   ],
+   "paare": 0,
+   "fehler": null
+  },
+  {
+   "runden": 16,
+   "status": "OK",
+   "abbruchgrund": null,
+   "wall_s": 6.4,
+   "peak_rss_mib_extern": 39.8,
+   "rueckgabe": 0,
+   "ausgang": "TREFFER_ABGELEITET",
+   "stufe": "E1",
+   "e1_status": "FIXPUNKT",
+   "e1_sweeps": 140,
+   "e1_s": 6.12,
+   "noncebits_e1": 8,
+   "noncebits": 8,
+   "verbleibende_kandidaten": 1,
+   "treffer": [
+    197
+   ],
+   "paare": 0,
+   "fehler": null
+  }
+ ],
+ "gesamt_wall_s": 10.7
+}

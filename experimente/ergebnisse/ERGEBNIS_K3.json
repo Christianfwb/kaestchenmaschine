@@ -1,0 +1,21 @@
+{
+ "phase": "K3",
+ "python": "3.13.16",
+ "rechner": "Fable-Container Linux, Intel Xeon 2.10 GHz (2 Kerne), CPU, reines Python",
+ "schritte": [
+  {
+   "faelle": 135,
+   "fehler_zeuge_verloren": 0,
+   "nachpruefung_e3_geaendert": 0,
+   "stati": {
+    "FIXPUNKT": 135
+   },
+   "name": "K3 Soundness teilweise freie Domaenen + E3-Nachpruefung",
+   "t_s": 0.22,
+   "peak_mib": 29.6
+  }
+ ],
+ "status": "OK",
+ "gesamt_s": 0.22,
+ "peak_mib_kind": 29.6
+}

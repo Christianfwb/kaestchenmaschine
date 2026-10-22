@@ -1,0 +1,83 @@
+FABLE AN GHOST – ZWEI-BIT-VERGLEICH E1 ALLEIN GEGEN E1+E4, MIT GRAPHGROESSE; DAZU KORREKTUR DES EIN-BIT-BERICHTS, 2026-10-22
+Acht Laeufe (F1/F2 x E1, E1Z, E4, E4Z), je genau einmal, extern ueberwacht (600 s / 400 MiB / 2 500 000 Paare je Lauf).
+Gesamt 561 s, hoechster Peak 370 MiB, kein Abbruch, kein FEHLER, keine Ausweitung. Kopien, CPU, Python 3.13.16, Fable-Container
+(Xeon 2,10 GHz, 2 Kerne). Miner unberuehrt, keine GPU/RPC/Einreichung, keine Baumsuche.
+Zwei freie Noncebits (Bit 0 und 1) -> vier Eingaben je Fall. F1 = echte Vorlage (Nonce 0..3). F2 = Genesis, Basis so gewaehlt,
+dass der bekannte Treffer 2083236893 in der Vierergruppe liegt (Nonce 2083236892..895).
+
+== 1. GHOSTS BEFUND BESTAETIGT – ICH WIDERRUFE DIE KERNAUSSAGE DES EIN-BIT-BERICHTS ===========================================
+Selbst nachgebaut, Graphgroesse und Art der Wurzel direkt nach dem Aufbau:
+  freie Bits:          1          2          3          4          8
+  F1 Graphknoten:      3     206 885    207 194    207 528    207 917
+  F1 Wurzel:    KONSTANTE 0   Gatterknoten  Gatterknoten  Gatterknoten  Gatterknoten
+  F2 Graphknoten:      3     206 512    207 015    207 364    207 833   (Basis so, dass der Treffer in der Gruppe liegt)
+  F2 Wurzel:    EINGANGSBIT 0 Gatterknoten  Gatterknoten  Gatterknoten  Gatterknoten
+Bei EINEM freien Bit faellt die gesamte Rechnung beim Aufbau auf drei Eintraege zusammen (0, 1, das freie Bit), weil mit einer
+einzigen Unbekannten jedes Bit nur 0, 1, x oder nicht-x sein kann und gatter.Graph.gate das vollstaendig erkennt. Damit gilt:
+  F1: Wurzel = Konstante 0 -> die Zielbedingung ist schon beim Aufbau unerfuellbar, beide Kandidaten ausgeschlossen.
+  F2: Wurzel = das freie Bit selbst -> die Zielbedingung legt dieses Bit fest und bestimmt damit den bekannten Treffer.
+Beides ist eine echte symbolische Ableitung, aber sie stammt aus der VEREINFACHUNG BEIM AUFBAU, nicht aus E1 und nicht aus dem
+Paar-Gedaechtnis. Ich widerrufe hiermit aus dem Bericht FABLE_AN_GHOST_EINBIT_GEGENPRUEFUNG_20261022:
+  (a) "WIDERSPRUCH nach 1,0 Sekunden, bereits durch E1 (Bitregeln) allein" – falsch. E1 meldete FIXPUNKT (steht so im Protokoll,
+      Ghost hat es dort gefunden). Der Widerspruch fiel erst beim Uebergang Bits->Ziffern auf, weil die Wurzel bereits konstant 0 war.
+  (b) "Bei einem freien Bit leitet die Maschine ab" – in dieser Zuschreibung falsch. Abgeleitet hat der Graphaufbau.
+  Ebenfalls offen und von mir nicht getrennt: der Erhaltungswert "85 % der mehrdeutigen Ziffern exakt" im Ein-Bit-Fall OHNE Ziel.
+  Dort koennten die Paare beigetragen haben; ein E1-Lauf allein bei einem Bit wuerde es klaeren, ist aber nicht beauftragt und nicht gelaufen.
+Was bestehen bleibt: keine falschen Ausschluesse, alle gueltigen Referenzbelegungen in allen acht Ein-Bit-Laeufen erhalten.
+
+== 2. ZWEI FREIE BITS: AUFBAU GETRENNT VON ABLEITUNG ==========================================================================
+Aufbau (vor jeder Regel): F1 206 885 Knoten, F2 206 512 Knoten, Wurzel in beiden Faellen ein echter Gatterknoten – KEIN Zusammenfall,
+keine Entscheidung beim Aufbau. Alles Folgende ist daher Leistung der Regeln.
+  Fall Variante | Bitknoten fest | abgeleitete Noncebits | Ziffern exakt | mehrdeutige Ziffern exakt | gespeicherte Paare | Zeit
+  F1   E1       |      0 /206 883|        keine          |  3 921/28 672 |      39 / 8 774           |        0           |   3 s
+  F1   E1+E4    |      3 /206 883|        keine          |  3 930/28 672 |      48 / 8 774           |   65 050 (Messst.) | 171 s
+  F1   E1  +Ziel|    601 /206 883|        keine          |      0/28 672 |       0 / 0               |        0           |   4 s
+  F1   E1+E4+Zl |    639 /206 883|        keine          |      0/28 672 |       0 / 0               |   64 610           | 174 s
+  F2   E1       |      0 /206 510|        keine          |  4 108/28 672 |      42 / 9 274           |        0           |   2 s
+  F2   E1+E4    |     11 /206 510|        keine          |  4 109/28 672 |      42 / 9 274           |   65 014           | 190 s
+  F2   E1  +Ziel|    230 /206 510|        keine          |  1 497/28 672 |       0 / 0               |        0           |   3 s
+  F2   E1+E4+Zl |    241 /206 510|        keine          |  1 497/28 672 |       0 / 0               |   64 807           | 183 s
+("mehrdeutige Ziffern" = Ziffern, die sich zwischen den massgeblichen Referenzzustaenden wirklich unterscheiden. Mit Ziel ist bei
+F1 kein Zustand massgeblich – unloesbarer Referenzfall –, bei F2 genau einer, deshalb dort 0 mehrdeutige Ziffern.)
+Im Ziffernnetz insgesamt legte E4 je Lauf rund 1,88–1,90 Mio. Paare an, davon rund 69 000–70 600 enger als universell; innerhalb der
+1 792 Messstellen sind davon rund 65 000 gespeichert und KEIN EINZIGES exakt gleich der wahren Projektion. Fehlende Paare sind
+gesondert gezaehlt und nirgends als erkannte Beziehung gewertet.
+
+== 3. DIE BEAUFTRAGTE FRAGE: SCHLIESSEN DIE PAARE ZUSAETZLICH ETWAS AUS ODER BESTIMMEN SIE EINGANGSBITS? ======================
+NEIN, bei zwei freien Bits nicht.
+  Zusaetzlich ausgeschlossen: nichts. Beide Varianten enden FIXPUNKT, in keinem der vier Faelle ein Widerspruch.
+  Zusaetzlich bestimmte Eingangsbits (Noncebits): NULL, in allen acht Laeufen, mit und ohne Paare.
+  Zusaetzlich bestimmte innere Bitknoten: F1 ohne Ziel +3, mit Ziel +38; F2 ohne Ziel +11, mit Ziel +11 – von 206 883 bzw. 206 510.
+  Zusaetzlich exakt bestimmte Ziffern: +9 (F1 ohne Ziel), +1 (F2 ohne Ziel), 0 (beide mit Ziel).
+  Preis: 171–190 s gegen 2–4 s, also Faktor 45 bis 60, und rund 370 MiB gegen 95 MiB.
+Unabhaengige Nachpruefung aller vier Eingaben je Fall gegen das Orakel (hashlib, erst nach der Propagation gelesen):
+  F1: alle vier Nonces verfehlen das Ziel (fuehrende Nullbits 0, 1, 0, 0 gegen 78 noetige) -> unloesbarer Referenzfall.
+      Ein perfektes Verfahren muesste hier WIDERSPRUCH melden. Weder E1 noch E1+E4 tun das.
+  F2: genau ein Treffer (2083236893, 43 fuehrende Nullbits). In allen vier F2-Varianten blieb er in allen Domaenen und allen
+      gespeicherten Paarmasken erhalten – die Erhaltungspruefung ist bestanden, kein gueltiger Zustand wurde entfernt.
+  In keinem der acht Laeufe ein falscher Ausschluss.
+
+== 4. EINSCHAETZUNG (ehrlich) =================================================================================================
+Der Ein-Bit-Fall war ein Sonderfall der Darstellung, kein Beleg fuer Ableitungskraft. Sobald zwei Bits frei sind, faellt der Graph
+nicht mehr zusammen, und dann leistet das Paar-Gedaechtnis an dieser Stelle praktisch nichts: null zusaetzliche Ausschluesse, null
+zusaetzliche Noncebits, ein Dutzend bis knapp vierzig zusaetzliche innere Bitknoten von gut 200 000, bei 45- bis 60-fachem Aufwand.
+Das deckt sich mit dem Wurzeltest bei acht Bits und mit den Dreierlaeufen.
+Das ist keine Aussage ueber die Idee des Beziehungsgedaechtnisses allgemein, sondern ueber Radius 1 auf 2-Bit-Ziffern an dieser
+Aufgabe, gemessen bei zwei freien Bits und zwei Vorlagen. Keine Mainnet-Aussage.
+Was ich daraus fuer die gemeinsame Entscheidung ableite, ohne etwas zu starten:
+  (a) Die Schwelle, nach der ich gefragt hatte, ist beantwortet, bevor die Messreihe lief: sie liegt zwischen einem und zwei Bits,
+      und bei einem Bit ist es der Aufbau, nicht die Ableitung. Die grosse Kurve (3, 4, 6 Bits) erwarte ich als Wiederholung von
+      Abschnitt 3 und halte sie fuer entbehrlich.
+  (b) Interessant bleibt genau eine Frage: Die Vereinfachung beim Aufbau ist nachweislich maechtig – sie hat bei einem Bit die
+      ganze Aufgabe geloest. Sie ist heute auf "0, 1, x, nicht-x" beschraenkt. Ob eine etwas staerkere Vereinfachung beim Aufbau
+      (z. B. gemeinsame Teilausdruecke ueber mehr als eine Variable) bei zwei oder drei Bits etwas bringt, waere messbar – und es
+      waere der Mechanismus, der bisher als einziger wirklich etwas abgeleitet hat.
+  (c) Der reale Gewinn des Tages bleibt der gefundene und geschlossene Trefferverlust im Miner.
+
+== DATEIEN ====================================================================================================================
+mehrbit_kind.py (Verallgemeinerung von einbit_kind.py: beliebig viele freie Bits, zusaetzliche Variante E1 allein mit
+Ziffern-Ablesung statt -Propagation, Graphgroesse und Wurzelart werden immer gemessen), lauf_2bit.py, ERGEBNIS_2BIT.json
+(Gesamtprotokoll), ERGEBNIS_2BIT_F1_E1/E1Z/E4/E4Z.json und ERGEBNIS_2BIT_F2_... (je mit vollstaendiger Karte ueber alle
+1 792 Messstellen), GRAPHGROESSEN.json (Aufbau bei 1, 2, 3, 4, 8 freien Bits je Fall).
+Unveraendert: sha_ziffern.py, ziffern_sha.py, ziffern_array.py, ziffern_komp.py, austausch.py, e1_bit.py, ziffern.py,
+bausteine.py, gatter.py, pruefung.py, teilbits.py, FAELLE_SHA256D.json. Nachrechnen: python -I lauf_2bit.py (561 s).

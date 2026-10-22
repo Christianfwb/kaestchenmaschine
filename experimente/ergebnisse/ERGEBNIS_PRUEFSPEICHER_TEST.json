@@ -1,0 +1,25 @@
+{
+ "T1": {
+  "faelle": 96,
+  "fehler": 0,
+  "arten": {
+   "korrekt": 32,
+   "wert_verboten": 32,
+   "paar_verboten": 32
+  },
+  "groessen_2_und_4": true
+ },
+ "T2": {
+  "status": "FIXPUNKT",
+  "austauschrunden": 2,
+  "bitknoten": 736,
+  "ziffernvariablen": 959,
+  "paare": 3733,
+  "gleich_status_domaenen_paare": true,
+  "bits_fest": 31,
+  "ziffern_fest": 624
+ },
+ "status": "OK",
+ "gesamt_s": 0.8,
+ "peak_mib": 47.5
+}

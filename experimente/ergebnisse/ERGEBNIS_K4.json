@@ -1,0 +1,110 @@
+{
+ "phase": "K4",
+ "python": "3.13.16",
+ "rechner": "Fable-Container Linux, Intel Xeon 2.10 GHz (2 Kerne), CPU, reines Python",
+ "schritte": [
+  {
+   "masken_nonceziffern": [
+    15,
+    15,
+    15,
+    15
+   ],
+   "E3_status": "FIXPUNKT",
+   "E3_runden": 6,
+   "E3_s": 4.91,
+   "nonceziffern_neu_fest": 0,
+   "noncebits_fest_vorher": 0,
+   "noncebits_fest_nachher": 0,
+   "zeuge_in_allen_domaenen": null,
+   "adapterweg": {
+    "E1_status": "FIXPUNKT",
+    "E1_sweeps": 4,
+    "E3_status": "FIXPUNKT",
+    "zeuge_erhalten": null,
+    "noncebits_fest_E1": 0
+   },
+   "name": "K4 F1_ECHTE_VORLAGE wurzel",
+   "t_s": 12.57,
+   "peak_mib": 82.9
+  },
+  {
+   "masken_nonceziffern": [
+    3,
+    9,
+    10,
+    3
+   ],
+   "E3_status": "FIXPUNKT",
+   "E3_runden": 6,
+   "E3_s": 4.75,
+   "nonceziffern_neu_fest": 0,
+   "noncebits_fest_vorher": 3,
+   "noncebits_fest_nachher": 3,
+   "zeuge_in_allen_domaenen": true,
+   "adapterweg": {
+    "E1_status": "FIXPUNKT",
+    "E1_sweeps": 4,
+    "E3_status": "FIXPUNKT",
+    "zeuge_erhalten": true,
+    "noncebits_fest_E1": 3
+   },
+   "name": "K4 F2_GENESIS_HISTORISCH zeuge_plus_zufall",
+   "t_s": 23.68,
+   "peak_mib": 120.5
+  },
+  {
+   "masken_nonceziffern": [
+    3,
+    12,
+    3,
+    3
+   ],
+   "E3_status": "FIXPUNKT",
+   "E3_runden": 6,
+   "E3_s": 4.85,
+   "nonceziffern_neu_fest": 0,
+   "noncebits_fest_vorher": 4,
+   "noncebits_fest_nachher": 4,
+   "zeuge_in_allen_domaenen": true,
+   "adapterweg": {
+    "E1_status": "FIXPUNKT",
+    "E1_sweeps": 4,
+    "E3_status": "FIXPUNKT",
+    "zeuge_erhalten": true,
+    "noncebits_fest_E1": 4
+   },
+   "name": "K4 F2_GENESIS_HISTORISCH zeuge_nur_bits",
+   "t_s": 34.39,
+   "peak_mib": 120.5
+  },
+  {
+   "masken_nonceziffern": [
+    15,
+    15,
+    15,
+    15
+   ],
+   "E3_status": "FIXPUNKT",
+   "E3_runden": 6,
+   "E3_s": 4.75,
+   "nonceziffern_neu_fest": 0,
+   "noncebits_fest_vorher": 0,
+   "noncebits_fest_nachher": 0,
+   "zeuge_in_allen_domaenen": true,
+   "adapterweg": {
+    "E1_status": "FIXPUNKT",
+    "E1_sweeps": 4,
+    "E3_status": "FIXPUNKT",
+    "zeuge_erhalten": true,
+    "noncebits_fest_E1": 0
+   },
+   "name": "K4 F2_GENESIS_HISTORISCH wurzel",
+   "t_s": 45.38,
+   "peak_mib": 120.5
+  }
+ ],
+ "status": "OK",
+ "gesamt_s": 45.38,
+ "peak_mib_kind": 120.5
+}

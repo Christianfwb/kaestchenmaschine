@@ -1,0 +1,75 @@
+--- wurzel_kind.py	2026-10-22 17:07:22.129196946 +0900
++++ wurzel_kind2.py	2026-10-22 17:28:15.551691583 +0900
+@@ -1,5 +1,6 @@
+ #!/usr/bin/env python3
+-"""STUFE 1 – WURZELTEST, KINDPROZESS (Fable, 2026-10-22). python -I wurzel_kind.py <E1|E4|E4D> <F1|F2> <ausgabe.json>
++"""STUFE 1b – WURZELTEST MIT ARRAY-PAAREN, KINDPROZESS (Fable, 2026-10-22). python -I wurzel_kind2.py <E1|E4|E4D> <F1|F2> <ausgabe.json> <paargrenze>
++Wie wurzel_kind.py, aber E4 = ziffern_array.e4 (kompakte Paarspeicherung, Grenze vor Allokation). E1-Code (e1_bit.py) unveraendert.
+ Eine Wurzelauswertung (8 freie Noncebits, echtes Target gesetzt, U-voll), frischer isolierter Zustand:
+   E1  : Bogenkonsistenz auf dem Bitgraphen (12-Durchlauf-Regel).
+   E4  : E1 + Ziffernnetz (E3 + kompakte Paarbeziehungen ziffern_komp.e4, nachpruefung) im Austausch (nur Schneiden), bis Fixpunkt oder 20 Runden (dann OPEN).
+@@ -8,10 +9,10 @@
+ Fortschritt nach jedem Schritt in FORTSCHRITT_<...>.json (bei externem Abbruch = OFFEN mit Fortschritt)."""
+ import sys, json, time, struct, resource, pathlib, platform, hashlib
+ HERE = pathlib.Path(__file__).resolve().parent; sys.path.insert(0, str(HERE))
+-import sha_ziffern as SZ, ziffern_sha as ZS, ziffern_komp as ZK, pruefung as P, gatter as G
++import sha_ziffern as SZ, ziffern_sha as ZS, ziffern_array as ZA, pruefung as P, gatter as G
+ from ziffern import TABELLEN, GROESSEN
+ from e1_bit import e1_lauf
+-ART, FALL, AUS = sys.argv[1], sys.argv[2], sys.argv[3]; T0 = time.perf_counter()
++ART, FALL, AUS = sys.argv[1], sys.argv[2], sys.argv[3]; T0 = time.perf_counter(); MAXP = int(sys.argv[4]) if len(sys.argv) > 4 else 2500000
+ FD = next(F for F in json.loads((HERE / 'FAELLE_SHA256D.json').read_text())['faelle'] if F['name'].startswith(FALL))
+ h76 = bytes.fromhex(FD['header_hex_ohne_nonce']); T = int(FD['target_hex'], 16); base = FD['basis_nonce']; bits = FD['freie_nonce_bits']
+ ERG = dict(art=ART, fall=FD['name'], umfang='U-voll', target_nullbits=FD['target_nullbits'], python=platform.python_version(),
+@@ -24,7 +25,7 @@
+     ERG.update(k); ERG['status'] = status; ERG['gesamt_s'] = round(time.perf_counter() - T0, 2); ERG['peak_mib_kind'] = round(peak(), 1); speichern()
+     fort('fertig ' + status); sys.stderr.write('\n'); sys.exit(0 if status in ('OK',) else 2)
+ def fehler(name, **k): schritt('FEHLER ' + name, **k); ende('FEHLER', fehler=dict(name=name, **k))
+-MAXP = 500000; GRUPPE = [(base & ~0xff) | n for n in range(256)]; TREFFER = set(FD['referenz_treffer'])
++GRUPPE = [(base & ~0xff) | n for n in range(256)]; TREFFER = set(FD['referenz_treffer'])
+ 
+ # ---------- Aufbau ----------
+ t = time.perf_counter(); g, inputs, blog, bout, root = SZ.baue_bitgraph(h76, base, bits, T); tb = time.perf_counter() - t
+@@ -111,7 +112,7 @@
+ def zeuge_ziffern_ok(dom, paare):
+     if zeuge_val is None: return None, None
+     d_ok = all((dom[v] >> zeuge_val[v]) & 1 for v in range(len(dom)))
+-    p_ok = all(m >> (zeuge_val[x] * N.groesse[y] + zeuge_val[y]) & 1 for (x, y), m in paare.items())
++    p_ok = all(m >> (zeuge_val[x] * N.groesse[y] + zeuge_val[y]) & 1 for (x, y), m in (paare.als_dict().items() if paare is not None else ()))
+     return d_ok, p_ok
+ def ziffern_fest(dom): return [(j, dom[v].bit_length() - 1) for j, v in enumerate(eing) if N.dom[v] == 15 and dom[v] & (dom[v] - 1) == 0]
+ def noncebits_aus_ziffern(dom):
+@@ -132,7 +133,7 @@
+ 
+ # ---------- Austausch E1 <-> E4 ----------
+ zd = list(N.dom); zd[le] &= 2; zd0 = list(zd)
+-paare = {}; stat = dict(austausch=0, e1=0, e4=0, e4_s=0.0, e1_s=0.0, bits_zu_ziffern_schnitte=0, ziffern_zu_bits_schnitte=0)
++paare = None; stat = dict(austausch=0, e1=0, e4=0, e4_s=0.0, e1_s=0.0, bits_zu_ziffern_schnitte=0, ziffern_zu_bits_schnitte=0)
+ status = None; info4 = {}
+ for runde in range(1, 21):
+     stat['austausch'] = runde; geaendert = False
+@@ -145,13 +146,13 @@
+     if status == 'WIDERSPRUCH': break
+     # E4 kompakt (inkl. E3), Paare frisch aus dem aktuellen Zustand (isoliert je Aufruf), Nachpruefung
+     t = time.perf_counter(); fort('Austausch %d: E4' % runde)
+-    st4, zd_neu, paare, info4 = ZK.e4(N, zd, max_runden=200, max_paare=MAXP, nachpruefung=True, pruef=lambda r, o: fort('Austausch %d: E4 Runde %d ops %d Paare %d' % (runde, r, o, len(paare))))
++    st4, zd_neu, paare, info4 = ZA.e4(N, zd, max_runden=200, max_paare=MAXP, nachpruefung=True, pruef=lambda r, o: fort('Austausch %d: E4 Runde %d ops %d' % (runde, r, o)))
+     stat['e4'] += 1; stat['e4_s'] += time.perf_counter() - t
+     np_ = info4.get('nachpruefung_e3')
+     if np_ is not None and (np_['geaendert'] or np_['status'] != 'FIXPUNKT'): fehler('Nachpruefung E3 nach E4', nachpruefung=np_)
+     if zd_neu != zd: geaendert = True
+     zd = zd_neu
+-    schritt('Austausch %d E4' % runde, status=st4, runden=info4.get('runden'), tupelops=info4.get('tupelops'), paare=len(paare), s=round(time.perf_counter() - t, 2),
++    schritt('Austausch %d E4' % runde, status=st4, runden=info4.get('runden'), tupelops=info4.get('tupelops'), paare=(len(paare) if paare is not None else info4.get('paare')), s=round(time.perf_counter() - t, 2),
+             ziffern_eingeschraenkt_gegen_start=eingeschraenkt(zd, zd0), nonceziffern_fest=ziffern_fest(zd), noncebits_aus_ziffern=noncebits_aus_ziffern(zd))
+     if st4 == 'WIDERSPRUCH': status = 'WIDERSPRUCH'; break
+     if st4 != 'FIXPUNKT': status = 'OPEN'; ERG['open_grund'] = dict(e4_status=st4, info=info4); break
+@@ -183,6 +184,7 @@
+     noncebits_abgeleitet_bitgraph=noncebits_fest(d), noncebits_abgeleitet_ziffern=noncebits_aus_ziffern(zd), nonceziffern_fest=ziffern_fest(zd),
+     ausgeschlossene_nonces_bitgraph=len(aus_b), ausgeschlossene_nonces_ziffern=len(aus_z), ausgeschluss_gegen_orakel_ok=True,
+     interne_einschraenkungen=dict(bitknoten_fest=bits_fest_gesamt(d), bitknoten_gesamt=len(g.nodes) - 2, ziffernvariablen_eingeschraenkt_gegen_start=eingeschraenkt(zd, zd0),
+-                                  ziffernvariablen_gesamt=len(zd), paare=len(paare), paare_eingeschraenkt=sum(1 for (x, y), m in paare.items() if m != (1 << (N.groesse[x] * N.groesse[y])) - 1)),
++                                  ziffernvariablen_gesamt=len(zd), paare=(len(paare) if paare is not None else info4.get('paare')), paare_eingeschraenkt=(paare.eingeschraenkt() if paare is not None else None),
++                                  speicher_paare_mib=(round(paare.bytes_gesamt() / 2**20, 1) if paare is not None else None)),
+     zeuge=dict(in_allen_ziffern=zd_ok, in_allen_paaren=zp_ok, in_allen_bits=zeuge_bits_ok(d)), e4_letzte_info=info4, paargrenze=MAXP)
+ ende('OK', hinweis='Status %s; "OK" = Auswertung sauber beendet, nicht "Ableitung gefunden"' % status)

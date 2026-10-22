@@ -1,0 +1,123 @@
+{
+ "messung": "Gemeinsame XOR-Gleichungen gegen Bit- und Paarregeln",
+ "python": "3.13.16",
+ "rechner": "Fable-Container Linux, Intel Xeon 2.10 GHz (2 Kerne), CPU",
+ "faelle": [
+  {
+   "fall": "A_dreistellig",
+   "gleichungen": [
+    [
+     [
+      0,
+      1,
+      2
+     ],
+     1
+    ],
+    [
+     [
+      0,
+      1,
+      3
+     ],
+     1
+    ],
+    [
+     [
+      2,
+      3
+     ],
+     1
+    ]
+   ],
+   "referenz_loesungen": 0,
+   "graph": {
+    "knoten": 12,
+    "wurzel": "echter Gatterknoten",
+    "beim_aufbau_entschieden": false
+   },
+   "E1": {
+    "status": "FIXPUNKT",
+    "konflikt_erkannt": false,
+    "noch_erlaubte_belegungen": 16,
+    "zeit_s": 0.000252
+   },
+   "E1_E4": {
+    "status": "FIXPUNKT",
+    "konflikt_erkannt": false,
+    "noch_erlaubte_belegungen": 16,
+    "gespeicherte_paare": 15,
+    "davon_universell": 0,
+    "tupelops": 288,
+    "zeit_s": 0.288486
+   },
+   "GF2": {
+    "loesbar": false,
+    "konflikt_erkannt": true,
+    "eliminationsschritte": 4,
+    "zeit_s": 2.409e-05
+   }
+  },
+  {
+   "fall": "B_zweistellig",
+   "gleichungen": [
+    [
+     [
+      0,
+      1
+     ],
+     0
+    ],
+    [
+     [
+      1,
+      2
+     ],
+     0
+    ],
+    [
+     [
+      0,
+      2
+     ],
+     1
+    ]
+   ],
+   "referenz_loesungen": 0,
+   "graph": {
+    "knoten": 11,
+    "wurzel": "echter Gatterknoten",
+    "beim_aufbau_entschieden": false
+   },
+   "E1": {
+    "status": "FIXPUNKT",
+    "konflikt_erkannt": false,
+    "noch_erlaubte_belegungen": 16,
+    "zeit_s": 2.8e-05
+   },
+   "E1_E4": {
+    "status": "WIDERSPRUCH",
+    "konflikt_erkannt": true,
+    "noch_erlaubte_belegungen": 0,
+    "gespeicherte_paare": 3,
+    "davon_universell": 0,
+    "tupelops": 28,
+    "zeit_s": 0.000107
+   },
+   "GF2": {
+    "loesbar": false,
+    "konflikt_erkannt": true,
+    "eliminationsschritte": 4,
+    "zeit_s": 1.114e-05
+   }
+  }
+ ],
+ "ergebnis": {
+  "trennt_der_fall_A": true,
+  "gegenprobe_B_von_paaren_erkannt": true,
+  "referenz_beide_unloesbar": true
+ },
+ "status": "OK",
+ "gesamt_s": 0.29,
+ "peak_mib": 28.7
+}

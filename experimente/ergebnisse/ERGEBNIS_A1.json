@@ -1,0 +1,76 @@
+{
+ "phase": "A1",
+ "python": "3.13.16",
+ "rechner": "Fable-Container Linux, Intel Xeon 2.10 GHz (2 Kerne), CPU, Python + numpy 2.5.3 (nur Aufbau)",
+ "schritte": [
+  {
+   "faelle": 480,
+   "fehler": 0,
+   "grenze_nur_eine_fassung": 0,
+   "zaehlung": {
+    "status_WIDERSPRUCH": 316,
+    "grenze_OPEN_PAARGRENZE": 79,
+    "fixpunkt_FIXPUNKT": 85
+   },
+   "name": "A1 Gleichheit Array gegen komp (Mini-Netze, Limits 5000/12/3)",
+   "t_s": 0.62,
+   "peak_mib": 45.7
+  },
+  {
+   "faelle": 135,
+   "fehler": 0,
+   "name": "A1 Soundness (Loesung in Domaenen und Masken, Nachpruefung)",
+   "t_s": 0.68,
+   "peak_mib": 45.7
+  },
+  {
+   "variablen": 551,
+   "beziehungen": 256,
+   "status_komp": "FIXPUNKT",
+   "status_array": "FIXPUNKT",
+   "gleich": true,
+   "art": "fixpunkt",
+   "paare_komp": 4882,
+   "paare_array": 4882,
+   "s_komp": 0.08,
+   "s_array": 0.1,
+   "name": "A1 SHA-1-Runden-Netz",
+   "t_s": 1.04,
+   "peak_mib": 48.3
+  },
+  {
+   "variablen": 2586,
+   "beziehungen": 1536,
+   "status_komp": "FIXPUNKT",
+   "status_array": "FIXPUNKT",
+   "gleich": true,
+   "art": "fixpunkt",
+   "paare_komp": 52054,
+   "paare_array": 52054,
+   "s_komp": 0.78,
+   "s_array": 1.26,
+   "name": "A1 SHA-6-Runden-Netz",
+   "t_s": 5.27,
+   "peak_mib": 75.6
+  },
+  {
+   "gleich": true,
+   "art": "fixpunkt",
+   "status": "FIXPUNKT",
+   "name": "A1 Dreier-Beispiel dreier=False",
+   "t_s": 5.27,
+   "peak_mib": 75.6
+  },
+  {
+   "gleich": true,
+   "art": "fixpunkt",
+   "status": "FIXPUNKT",
+   "name": "A1 Dreier-Beispiel dreier=True",
+   "t_s": 5.28,
+   "peak_mib": 75.6
+  }
+ ],
+ "status": "OK",
+ "gesamt_s": 5.28,
+ "peak_mib_kind": 75.6
+}

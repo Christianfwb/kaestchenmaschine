@@ -1,0 +1,49 @@
+{
+ "stufe": "Komposition",
+ "beginn": "2026-10-22 16:50:33",
+ "python": "3.13.16",
+ "grenze": {
+  "zeit_s": 120.0,
+  "ram_mib": 400.0
+ },
+ "phasen": [
+  {
+   "phase": "K1",
+   "status": "OK",
+   "abbruchgrund": null,
+   "wall_s": 13.7,
+   "peak_rss_mib_extern": 31.5,
+   "rueckgabe": 0,
+   "ausgabe": "ERGEBNIS_K1.json"
+  },
+  {
+   "phase": "K2",
+   "status": "OK",
+   "abbruchgrund": null,
+   "wall_s": 0.8,
+   "peak_rss_mib_extern": 29.7,
+   "rueckgabe": 0,
+   "ausgabe": "ERGEBNIS_K2.json"
+  },
+  {
+   "phase": "K3",
+   "status": "OK",
+   "abbruchgrund": null,
+   "wall_s": 0.3,
+   "peak_rss_mib_extern": 27.9,
+   "rueckgabe": 0,
+   "ausgabe": "ERGEBNIS_K3.json"
+  },
+  {
+   "phase": "K4",
+   "status": "OK",
+   "abbruchgrund": null,
+   "wall_s": 45.45,
+   "peak_rss_mib_extern": 119.3,
+   "rueckgabe": 0,
+   "ausgabe": "ERGEBNIS_K4.json"
+  }
+ ],
+ "ende": "2026-10-22 16:51:34",
+ "gesamt_wall_s": 60.2
+}

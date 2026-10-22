@@ -1,0 +1,64 @@
+#!/usr/bin/env python3
+"""STUFE 1b – WURZELTEST MIT ARRAY-PAAREN, ELTERNPROZESS (Fable, 2026-10-22). Je Auswertung ein Kindprozess (wurzel_kind2.py ART FALL),
+extern ueberwacht (RSS alle 0,1 s, Wall): 600 s / 400 MiB je Auswertung inkl. Aufbau; Paargrenze 2 500 000 (im Kind, vor Allokation).
+Reihenfolge: E1 F1/F2 (Referenz, unveraenderter E1-Code), E4 F1/F2 (Basis), E4D F1/F2 (Dreier) NUR nach bestandenem Gate:
+  Gate = fuer BEIDE Basisfaelle: Kind regulaer beendet (kein externer Abbruch), Ergebnisdatei vorhanden und gueltig, Prozessstatus 'OK',
+  kein Fehlerfeld, inhaltlicher Status (ergebnis.status) == 'FIXPUNKT', Zeugen-/Orakelpruefungen bestanden. Alles andere (OPEN, OFFEN, FEHLER,
+  Abbruch Zeit/RAM/Paargrenze, fehlende/ungueltige Datei) => beide Zusatzlaeufe NOT_RUN, kein Kindprozess dafuer gestartet (gate_test.py)."""
+import subprocess, sys, time, json, pathlib, platform
+HERE = pathlib.Path(__file__).resolve().parent; ZEIT_S, RAM_MIB, MAXP = 600.0, 400.0, 2500000
+def rss_mib(pid):
+    try:
+        for z in open('/proc/%d/status' % pid):
+            if z.startswith('VmRSS:'): return int(z.split()[1]) / 1024
+    except FileNotFoundError: return 0.0
+    return 0.0
+def kind_starten(art, fall, aus):
+    return subprocess.Popen([sys.executable, '-I', str(HERE / 'wurzel_kind2.py'), art, fall, aus, str(MAXP)], cwd=str(HERE))
+def lauf(art, fall, erg, starter=kind_starten, ausgabe_dir=HERE):
+    aus = 'ERGEBNIS2_%s_%s.json' % (art, fall); p = ausgabe_dir / aus
+    if p.exists(): p.unlink()
+    t = time.perf_counter(); kind = starter(art, fall, aus); peak = 0.0; grund = None
+    while kind.poll() is None:
+        time.sleep(0.1); r = rss_mib(kind.pid); peak = max(peak, r)
+        if r > RAM_MIB: grund = 'RAM %.0f MiB > %.0f' % (r, RAM_MIB)
+        elif time.perf_counter() - t > ZEIT_S: grund = 'Wall > %.0f s' % ZEIT_S
+        if grund: kind.kill(); kind.wait(); break
+    wall = time.perf_counter() - t
+    try: k = json.loads(p.read_text()) if p.exists() else None
+    except Exception: k = 'UNGUELTIG'
+    gueltig = isinstance(k, dict)
+    if grund:
+        status = 'OFFEN'
+        if gueltig: k['status'] = 'OFFEN'; k['abbruchgrund'] = grund; p.write_text(json.dumps(k, indent=1))
+    else: status = k['status'] if gueltig else ('FEHLER_UNGUELTIGE_AUSGABE' if k == 'UNGUELTIG' else 'FEHLER_OHNE_AUSGABE')
+    e = dict(art=art, fall=fall, status=status, abbruchgrund=grund, wall_s=round(wall, 1), peak_rss_mib_extern=round(peak, 1), rueckgabe=kind.returncode,
+             ausgabe=aus if gueltig else None, ergebnis_status=(k.get('ergebnis') or {}).get('status') if gueltig else None,
+             fehler=k.get('fehler') if gueltig else None, letzter_schritt=(k['schritte'][-1]['name'] if gueltig and k.get('schritte') else None))
+    erg['auswertungen'].append(e); print('%-4s %-3s %-8s %7.1f s  Peak %6.1f MiB  %s %s' % (art, fall, status, wall, peak, e['ergebnis_status'] or '', grund or ''), flush=True)
+    return e
+def freigabe(basis):
+    """basis: dict (art,fall) -> Eintrag aus lauf(). Freigabe nur bei vollstaendig erfolgreicher Basis beider Faelle."""
+    for fall in ('F1', 'F2'):
+        e = basis.get(('E4', fall))
+        if not isinstance(e, dict): return False, 'Basis %s fehlt' % fall
+        if e.get('abbruchgrund'): return False, 'Basis %s extern abgebrochen: %s' % (fall, e['abbruchgrund'])
+        if e.get('status') != 'OK': return False, 'Basis %s Prozessstatus %s' % (fall, e.get('status'))
+        if e.get('fehler'): return False, 'Basis %s Fehler' % fall
+        if e.get('ergebnis_status') != 'FIXPUNKT': return False, 'Basis %s inhaltlich %s (kein FIXPUNKT)' % (fall, e.get('ergebnis_status'))
+        if e.get('rueckgabe') != 0: return False, 'Basis %s Rueckgabecode %s' % (fall, e.get('rueckgabe'))
+    return True, 'beide Basisfaelle FIXPUNKT ohne Fehler/Abbruch'
+def hauptlauf(starter=kind_starten, ausgabe_dir=HERE, protokoll='ERGEBNIS2_WURZEL.json'):
+    erg = dict(stufe='1b Wurzeltest Array-Paare', beginn=time.strftime('%Y-%m-%d %H:%M:%S'), python=platform.python_version(), grenze=dict(zeit_s=ZEIT_S, ram_mib=RAM_MIB, paare=MAXP), auswertungen=[])
+    basis = {}
+    for art in ('E1', 'E4'):
+        for fall in ('F1', 'F2'): basis[(art, fall)] = lauf(art, fall, erg, starter, ausgabe_dir)
+    ok, grund = freigabe(basis); erg['gate'] = dict(freigabe=ok, grund=grund)
+    if ok:
+        for fall in ('F1', 'F2'): lauf('E4D', fall, erg, starter, ausgabe_dir)
+    else:
+        for fall in ('F1', 'F2'): erg['auswertungen'].append(dict(art='E4D', fall=fall, status='NOT_RUN', grund=grund))
+        print('E4D NOT_RUN:', grund)
+    erg['ende'] = time.strftime('%Y-%m-%d %H:%M:%S'); erg['gesamt_wall_s'] = round(sum(x.get('wall_s', 0) for x in erg['auswertungen']), 1)
+    (ausgabe_dir / protokoll).write_text(json.dumps(erg, indent=1)); return erg
+if __name__ == '__main__': hauptlauf()

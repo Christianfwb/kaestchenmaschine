@@ -1,0 +1,79 @@
+{
+ "stufe": "1c F2-Abschluss + Dreier",
+ "beginn": "2026-10-22 17:45:05",
+ "python": "3.13.16",
+ "grenze": {
+  "zeit_s": 600.0,
+  "ram_mib": 400.0,
+  "paare": 2500000
+ },
+ "auswertungen": [
+  {
+   "art": "E4",
+   "fall": "F1",
+   "status": "OK",
+   "abbruchgrund": null,
+   "wall_s": 155.1,
+   "peak_rss_mib_extern": 383.9,
+   "rueckgabe": 0,
+   "ausgabe": "ERGEBNIS2_E4_F1.json",
+   "ergebnis_status": "FIXPUNKT",
+   "fehler": null,
+   "letzter_schritt": "Austausch 2 E1",
+   "wiederverwendet": true,
+   "herkunft": {
+    "datei": "ERGEBNIS2_E4_F1.json",
+    "sha256": "c0ba01506493174a015c85741f9364c616afd3918fa4be2cad5f3637efda3bc6",
+    "lauf": "lauf_wurzel2.py / wurzel_kind2.py, 2026-10-22",
+    "kind_status": "OK",
+    "ergebnis_status": "FIXPUNKT",
+    "paare": 1890765
+   }
+  },
+  {
+   "art": "E4",
+   "fall": "F2",
+   "status": "OK",
+   "abbruchgrund": null,
+   "wall_s": 151.9,
+   "peak_rss_mib_extern": 365.4,
+   "rueckgabe": 0,
+   "ausgabe": "ERGEBNIS2_E4_F2.json",
+   "ergebnis_status": "FIXPUNKT",
+   "fehler": null,
+   "letzter_schritt": "Austausch 2 E1"
+  },
+  {
+   "art": "E4D",
+   "fall": "F1",
+   "status": "OK",
+   "abbruchgrund": null,
+   "wall_s": 197.5,
+   "peak_rss_mib_extern": 370.0,
+   "rueckgabe": 0,
+   "ausgabe": "ERGEBNIS2_E4D_F1.json",
+   "ergebnis_status": "FIXPUNKT",
+   "fehler": null,
+   "letzter_schritt": "Austausch 2 E1"
+  },
+  {
+   "art": "E4D",
+   "fall": "F2",
+   "status": "OK",
+   "abbruchgrund": null,
+   "wall_s": 197.9,
+   "peak_rss_mib_extern": 370.0,
+   "rueckgabe": 0,
+   "ausgabe": "ERGEBNIS2_E4D_F2.json",
+   "ergebnis_status": "FIXPUNKT",
+   "fehler": null,
+   "letzter_schritt": "Austausch 2 E1"
+  }
+ ],
+ "gate": {
+  "freigabe": true,
+  "grund": "beide Basisfaelle FIXPUNKT ohne Fehler/Abbruch"
+ },
+ "ende": "2026-10-22 17:54:13",
+ "gesamt_wall_s": 547.3
+}

@@ -1,0 +1,64 @@
+99c99,121
+< def rechenweg(ops, header76, base, bits, umfang, nonce_wort=None, digest1=None):
+---
+> def compress_r(state, words, op, trace=None, runden=64):
+>     """REDUZIERTES SHA-256 (Rundenkurve, 2026-10-23): wie pruefung.compress, aber nur die ersten `runden` Runden und die
+>     Erweiterung nur bis W[runden-1]. Feed-forward und Rundenfolge unveraendert. runden=64 ist textgleich zu pruefung.compress."""
+>     w = list(words)
+>     for i in range(16, runden):
+>         s0 = op.xor(op.rot(w[i-15],7),op.rot(w[i-15],18),op.shr(w[i-15],3))
+>         s1 = op.xor(op.rot(w[i-2],17),op.rot(w[i-2],19),op.shr(w[i-2],10))
+>         w.append(op.add(w[i-16],s0,w[i-7],s1))
+>     a,b,c,d,e,f,g,h = state
+>     for i in range(runden):
+>         s1 = op.xor(op.rot(e,6),op.rot(e,11),op.rot(e,25))
+>         s0 = op.xor(op.rot(a,2),op.rot(a,13),op.rot(a,22))
+>         t1 = op.add(h,s1,op.ch(e,f,g),op.const(P.K[i]),w[i])
+>         t2 = op.add(s0,op.maj(a,b,c))
+>         a,b,c,d,e,f,g,h = op.add(t1,t2),a,b,c,op.add(d,t1),e,f,g
+>         if trace is not None: trace.append((a,b,c,d,e,f,g,h))
+>     return tuple(op.add(x,y) for x,y in zip(state,(a,b,c,d,e,f,g,h)))
+> 
+> def _comp(runden):
+>     if runden == 64: return P.compress
+>     return lambda state, words, op, trace=None: compress_r(state, words, op, trace, runden)
+> 
+> def rechenweg(ops, header76, base, bits, umfang, nonce_wort=None, digest1=None, runden=64):
+103c125
+<     out = {}
+---
+>     out = {}; comp = _comp(runden)
+106c128
+<         mid = P.compress(P.IV, struct.unpack('>16I', padded[:64]), P.IntegerOps)    # noncefreier Block 1: Konstante (zulaessig)
+---
+>         mid = comp(P.IV, struct.unpack('>16I', padded[:64]), P.IntegerOps)    # noncefreier Block 1: Konstante (zulaessig)
+111c133
+<         tr1 = []; d1 = P.compress(tuple(ops.const(x) for x in mid), words, ops, trace=tr1); out['H1_trace'] = tr1
+---
+>         tr1 = []; d1 = comp(tuple(ops.const(x) for x in mid), words, ops, trace=tr1); out['H1_trace'] = tr1
+117c139
+<     tr2 = []; d2 = P.compress(tuple(ops.const(x) for x in P.IV), words2, ops, trace=tr2); out['H2_trace'] = tr2; out['digest2'] = d2
+---
+>     tr2 = []; d2 = comp(tuple(ops.const(x) for x in P.IV), words2, ops, trace=tr2); out['H2_trace'] = tr2; out['digest2'] = d2
+120c142
+< def baue_bitgraph(header76, base, bits, target):
+---
+> def baue_bitgraph(header76, base, bits, target, runden=64, mit_ziel=True):
+129c151
+<     out = rechenweg(ops, header76, base, bits, 'voll', nonce_wort=tuple(nonce_w))
+---
+>     out = rechenweg(ops, header76, base, bits, 'voll', nonce_wort=tuple(nonce_w), runden=runden)
+132a155
+>     if not mit_ziel: return graph, inputs, ops, out, None
+138c161
+< def baue_ziffernnetz(header76, base, bits, target, umfang, mit_ziel=True):
+---
+> def baue_ziffernnetz(header76, base, bits, target, umfang, mit_ziel=True, runden=64):
+148c171
+<         out = rechenweg(ops, header76, base, bits, 'voll', nonce_wort=nonce_w); eing = nonce_w
+---
+>         out = rechenweg(ops, header76, base, bits, 'voll', nonce_wort=nonce_w, runden=runden); eing = nonce_w
+151c174
+<         out = rechenweg(ops, header76, base, bits, 'lokal', digest1=d1); eing = d1
+---
+>         out = rechenweg(ops, header76, base, bits, 'lokal', digest1=d1, runden=runden); eing = d1

@@ -1,0 +1,74 @@
+FABLE AN GHOST – ARRAY-PAARE: GLEICHHEIT, GATE-REGRESSION, WURZELTEST MIT 2,5 MIO. PAARGRENZE, 2026-10-22
+Kopien, CPU, Python 3.13.16 + numpy 2.5.3 (nur beim Aufbau der Schluessel), Fable-Container (Xeon 2,10 GHz, 2 Kerne). Kein Baum, kein Miner-
+Eingriff, keine GPU/RPC/Einreichung. Reihenfolge wie beauftragt: (1) Gleichheitsreihe, (2) Gate-Regression, (3) Wurzeltest, (4) Zusatz nur nach Gate.
+
+== ERGEBNIS IN DREI SAETZEN ====================================================================================================================
+1. Die kompakte Speicherung liefert dieselben Ergebnisse wie ziffern_komp.e4 (480 Mini-Netz-Faelle, Soundness 135/135, SHA-1- und SHA-6-Runden-Netze,
+   Dreier-Beispiel: 0 Abweichungen); die Gate-Regression besteht (10 Szenarien).
+2. F1 (echte Vorlage, 78 Zielnullbits): E1+E4 erreicht mit 1 890 765 Paaren den vollstaendigen Radius-1-FIXPUNKT (zwei Austauschrunden, 155 s,
+   Peak 384 MiB, Nachpruefung E3 unveraendert) – und leitet KEIN Noncebit, KEINE Nonceziffer ab, schliesst KEINE Nonce aus. Das ist das Ergebnis.
+3. F2 (Genesis): dieselben Rechenschritte endeten ebenfalls alle FIXPUNKT (0 Noncebits), aber der Kindprozess wurde in der ABSCHLUSSPRUEFUNG vom
+   externen Waechter bei 407 MiB beendet -> formal OFFEN; Gate blockierte korrekt beide Dreierlaeufe (NOT_RUN). Keine Wiederholung gestartet.
+
+== (1) GLEICHHEITSREIHE (array_kind.py, lauf_array.py: 120 s / 400 MiB; tatsaechlich 5,5 s, 69 MiB; ERGEBNIS_A1.json) =========================
+Darstellung (ziffern_array.py): alle Paare, die die Radius-1-Schliessung je anlegen kann (Grundpaare + Nachbarpaare je gemeinsamem y), werden VORAB
+gezaehlt (numpy: Schluessel x*NV+y, unique) und gegen die Grenze geprueft; erst dann keys (array 'q', 8 B) und masks (array 'H', 2 B, Start universell)
+allokiert; Lookup per bisect; Nachbarschaft als CSR; Zeilen-/Spalten-/Transpositionstabellen wie ziffern_komp. Regeln, Reihenfolge (Tupel-,
+Kompositions-, Domaenenschritt; y-Reihenfolge = Einfuegereihenfolge des Grundpaar-Graphen, Nachbarn sortiert), Transposition, Groessen 2/4,
+"fehlend = universell", "leer = WIDERSPRUCH" unveraendert. Erklaerte Unterschiede: (a) Paargrenze greift VOR der Allokation (alte Fassung mitten
+in der Komposition mit Teilstand); (b) Schritt 3 (Domaenen aus Paaren) laeuft in Schluesselreihenfolge statt dict-Einfuegereihenfolge – am Fixpunkt
+ohne Wirkung, bei vorzeitigem Abbruch (OFFEN/WIDERSPRUCH) koennen Zwischendomaenen abweichen, deshalb dort nur Statusvergleich.
+Mini-Netze: 160 Netze (w=4/8; add, xor, rot gerade/ungerade, ch, maj, neg, x+x, Konstanten, Alias) x Limits 5000/12/3 = 480 Faelle: 85 FIXPUNKT mit
+identischen Domaenen, identischen Masken aller alten Paare und ausschliesslich universellen Zusatzpaaren; 316 WIDERSPRUCH (Status gleich); 79 an der
+Paargrenze (beide Fassungen OPEN_PAARGRENZE, 0 Faelle, in denen nur eine Fassung die Grenze meldet). 0 Fehler.
+Soundness: 135 Netze mit bekannter Loesung, teilweise freie Domaenen: Loesung in allen Domaenen und Masken, Nachpruefung E3 ohne Aenderung: 0 Fehler.
+SHA-1-Runden-Netz (4 882 Paare) und SHA-6-Runden-Netz (52 054 Paare): FIXPUNKT, identisch (komp 0,78 s / array 1,26 s – Array-Fassung ist durch die
+bisect-Lookups langsamer, nicht schneller; sie spart nur Speicher). Dreier-Beispiel mit/ohne Dreier: identisch.
+
+== (2) GATE-REGRESSION (gate_test.py, ERGEBNIS_GATE_TEST.json) =================================================================================
+Befund aus Ghosts Pruefung bestaetigt: der vorige Laeufer (lauf_wurzel.py) prüfte nur den Prozessstatus "OK" und startete die Dreier trotz
+inhaltlich OPEN. Neuer Laeufer lauf_wurzel2.py: Freigabe nur, wenn fuer BEIDE Basisfaelle gilt: kein externer Abbruch, Datei vorhanden und gueltig,
+Prozessstatus OK, kein Fehlerfeld, Rueckgabecode 0, ergebnis.status == FIXPUNKT. Regression mit simulierten Kindern (kein Wurzellauf, < 5 s):
+Positivfall (beide FIXPUNKT -> E4D gestartet), F1 OPEN, F2 OPEN, Timeout extern, RAM-Abbruch extern, FEHLER, Rueckgabecode 1 trotz FIXPUNKT-Datei,
+Datei fehlt, Datei ungueltig, Statusfeld fehlt -> in allen neun Negativfaellen beide E4D NOT_RUN und KEIN Kindprozess dafuer gestartet. BESTANDEN.
+Korrektur waehrend des Tests (dokumentiert): das RAM-Szenario brauchte ein "laufendes" simuliertes Kind, sonst endet es, bevor der Waechter misst.
+
+== (3) WURZELTEST (lauf_wurzel2.py / wurzel_kind2.py, 600 s / 400 MiB je Auswertung, Paargrenze 2 500 000; ERGEBNIS2_*.json) ================
+Art  Fall  Wall     Peak-RSS (extern, gesamter Kindprozess inkl. Bitgraph, Netz, Tabellen, numpy-Puffer)  Ergebnis
+E1   F1    1,9 s    69 MiB    FIXPUNKT, 4 Durchlaeufe, 0 Noncebits, 601 Knoten fest (E1-Code e1_bit.py unveraendert, Hash cfa14b51…; Werte wie voriger Lauf)
+E1   F2    1,8 s    69 MiB    FIXPUNKT, 0 Noncebits, 230 Knoten fest, Genesis-Zeuge in allen Bitdomaenen
+E4   F1  155,1 s   384 MiB    Austausch 1: Bits->Ziffern 3 647 Schnitte; E4: E3-Vorpropagation, 242 397 Grundpaare, Radius-1-Menge 1 890 765 Paare
+                               (< 2,5 Mio., allokiert: 18,0 MiB keys+masks), FIXPUNKT nach 4 Runden, 45,3 Mio. Tupelbesuche, 79,5 s; 6 339 Ziffern enger als
+                               Start, 63 669 Paare enger als universell; Ziffern->Bits 25 Schnitte; E1 FIXPUNKT (2 Durchlaeufe, 643 Knoten fest, +42 gegenueber E1
+                               allein = interne Einschraenkung aus dem Ziffernnetz). Austausch 2: E4 erneut FIXPUNKT (72 s, keine Aenderung), E1 FIXPUNKT ->
+                               Gesamt-FIXPUNKT. Nachpruefung E3 (alle Beziehungen): FIXPUNKT, unveraendert. 0 Noncebits (Bitgraph), 0 Noncebits (aus Ziffern),
+                               0 Nonceziffern, 0 ausgeschlossene Nonces (Orakel: Bereich leer – kein Widerspruch).
+E4   F2  151,6 s   407 MiB    Austausch 1: E4 FIXPUNKT (4 Runden, 1 896 089 Paare, 76 s), E1 FIXPUNKT (244 Knoten fest); Austausch 2: E4 FIXPUNKT
+                               (1 896 020 Paare, 72 s), E1 FIXPUNKT – also inhaltlich derselbe Weg wie F1 mit 0 Noncebits/-ziffern bis einschliesslich
+                               "Austausch 2 E1" (ERGEBNIS2_E4_F2.json, Schritte vorhanden). DANN externer Abbruch "RAM 407 MiB > 400" in der Abschluss-
+                               pruefung: meine Zeugenpruefung ueber alle Paare (als_dict) baut ein Python-dict mit 1,9 Mio. Eintraegen auf – das ist ein
+                               Speicherfehler meines PRUEFCODES, nicht des Verfahrens. Status OFFEN, keine Zeugen-/Orakel-Endaussage fuer F2, kein ergebnis-Block.
+E4D  F1/F2  NOT_RUN            Gate: "Basis F2 extern abgebrochen: RAM 407 MiB > 400". Kein Kindprozess gestartet.
+Gesamt 310 s. Speicherbild (gemessen/VERMUTUNG): Paarspeicher selbst 18 MiB; Peak 300 MiB nach dem ersten E4, 384 MiB nach dem zweiten – der zweite
+Aufruf baut einen zweiten Paarspeicher samt numpy-Puffern, waehrend der erste noch referenziert ist (VERMUTUNG: ~80 MiB), dazu Bitgraph (~50 MiB),
+Netz, Index-Cache, Tabellen (~10 MiB) und Python-Objekte der Zaehlung. Das ist der tatsaechliche Gesamtspeicher samt Index und Zwischenpuffern.
+
+== LESART ======================================================================================================================================
+BELEGT (F1): Am Wurzelknoten des echten Falls erreicht E1+E4 mit vollstaendiger Radius-1-Schliessung (1,89 Mio. Paare) den Fixpunkt und leitet
+nichts ueber die Nonce ab – weder Bits noch Ziffern noch Ausschluesse; intern werden 6 339 Ziffernvariablen, 63 669 Paare und 42 zusaetzliche Bitknoten
+eingeschraenkt, aber diese Einschraenkungen erreichen die Eingabe nicht. "Keine neue Eingangsableitung" ist das zulaessige, hier gemessene Ergebnis.
+F2: alle Rechenschritte zeigen dasselbe Bild (0 Noncebits/-ziffern), die Endpruefung fehlt -> OFFEN, nicht als Ergebnis gewertet.
+OFFEN bleibt: die 32 Dreier (NOT_RUN); ein Wurzellauf mit Radius > 1 oder vollstaendiger Schliessung war nie Teil des Umfangs.
+Einordnung fuer Christian, ohne Formeln: Das Paar-Gedaechtnis haelt nach dem Ziel rueckwaerts gut 60 000 Beziehungen enger als "alles erlaubt" – aber
+nach 64 Runden und zwei Hashanwendungen ist davon an der Nonce nichts mehr zu spueren. Das sagt nichts gegen die Idee, nur gegen Radius 1 an dieser Stelle.
+Fuer die gemeinsame Entscheidung (ich starte nichts): (i) Pruefcode korrigieren (Zeugenpruefung ohne dict, zweiten Paarspeicher vor Neuaufbau
+freigeben), dann F2 einmal erneut und – bei beidseitigem FIXPUNKT – die Dreierlaeufe; (ii) stattdessen oder danach eine Stelle mit echter
+Rueckwaertswirkung waehlen (z. B. Dreier/Join ueber Carry-Ketten der letzten Runden), vorab festgelegt wie bisher.
+
+== DATEIEN ====================================================================================================================================
+Neu: ziffern_array.py (861e7708…), array_kind.py, lauf_array.py, mininetze.py (Kopie des Generators aus komposition_kind.py), wurzel_kind2.py +
+DIFF_wurzel_kind_zu_kind2.txt, lauf_wurzel2.py + DIFF_lauf_wurzel_zu_wurzel2.txt, gate_test.py, ERGEBNIS_A1.json, ERGEBNIS_ARRAY.json,
+ERGEBNIS_GATE_TEST.json, ERGEBNIS2_WURZEL.json, ERGEBNIS2_E1_F1/F2.json, ERGEBNIS2_E4_F1.json, ERGEBNIS2_E4_F2.json (OFFEN, Fortschritt).
+Unveraendert (Hashes wie Wurzeltest-Paket): ziffern_komp.py, ziffern_sha.py, sha_ziffern.py, e1_bit.py, ziffern.py, bausteine.py, gatter.py,
+pruefung.py, teilbits.py, FAELLE_SHA256D.json, wurzel_kind.py, lauf_wurzel.py (als Diff-Basis). Nachrechnen: python -I lauf_array.py; python -I gate_test.py;
+python -I lauf_wurzel2.py (~5 min; F2 endet wie beschrieben, solange der Pruefcode unveraendert ist).

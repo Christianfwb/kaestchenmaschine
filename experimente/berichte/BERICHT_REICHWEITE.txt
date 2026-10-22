@@ -1,0 +1,77 @@
+FABLE AN GHOST – AUFFRISCH-KAESTCHEN AM KETTENENDE UND DIE GEMESSENE REICHWEITE DER RUECKWAERTSABLEITUNG, 2026-10-22
+Christians Idee, von mir umgesetzt und gemessen. Kopien, CPU, Python 3.13.16, Fable-Container (Xeon 2,10 GHz, 2 Kerne), 41 s, Peak 170 MiB.
+Kein Suchlauf, kein Baum, kein Miner-Eingriff, keine GPU/RPC/Einreichung. Nachrechnen: python -I reichweite.py.
+Anlass: Christian hat widersprochen, dass unser Dreieck an der richtigen Stelle sass. Seine Lesart: die Herkunft verduennt sich
+entlang der Rechenketten, also braucht es AM ENDE einer Kette ein Kaestchen, das bis zum Anfang zurueckbindet. Das habe ich gebaut.
+
+== DAS WICHTIGSTE ZUERST =======================================================================================================
+Die Reichweite der Ableitung haengt NICHT an der Gruppengroesse und nicht an der Kettenlaenge, sondern allein an der Rundenzahl:
+  vorwaerts vom Header: Runde 1–3 vollstaendig bestimmt, Runde 4 teilweise, ab Runde 5 ist JEDE Ziffer offen – bei 1 freien Noncebit
+  genauso wie bei 16 (Gruppengroesse 2 bis 65 536, identische Grenze).
+  rueckwaerts vom echten Ziel: Runde 64–61 der zweiten Anwendung beruehrt (e in 62 und 61 vollstaendig bestimmt), ab Runde 60 nichts.
+  Dazwischen: 120 Runden, in denen kein einziges Kaestchen eingeschraenkt ist.
+Damit ist die Familie "Herkunft laenger festhalten" (Paare, Dreiecke, Auffrischer, Phasen, kleinere Gruppen) fuer dieses Netz
+ausgemessen: Sie alle verschieben die Grenze um keine Runde. Das ist ein Ergebnis mit Belegen, keine Meinung – und es ersetzt
+die bisherigen Einzelbefunde (Wurzeltest, Dreierlaeufe) durch eine Erklaerung.
+
+== M1 AUFFRISCH-KAESTCHEN (kette.py) ===========================================================================================
+Bauweise (sound, nur Schnitte): Eine Rechenkette wird NICHT ueber den Nachbarschaftsgrad gefunden – im Paargraphen hat kein
+Kaestchen Grad 2, weil jede Addition fuenf Kaestchen miteinander verbindet (gemessen: kleinster Grad 14 im SHA-Rundennetz). Die
+Ketten werden deshalb BENANNT: die Uebertragskette jeder Addition (c_0 … c_16, Laenge 17) und die Zielkette (le_0 … le_128).
+Auffrischer = Verkettung der Paarmasken ueber alle Glieder, Schnitt in das Paar (Anfang, Ende); zusaetzlich jedes Teilstueck.
+Ergebnis:
+  2-Runden-Netz (958 Variablen, 14 996 Paare, 14 Ketten): Der Auffrischer findet KEINE EINZIGE nicht-universelle Langstrecken-
+  beziehung. Es gibt an den Uebertragsketten nichts aufzufrischen. Sauberer Fixpunkt, Domaenen unveraendert.
+  6-Runden-Netz (2 586 Variablen, 58 532 Paare, 42 Ketten): 630 Langstreckenbeziehungen angelegt; der anschliessende Durchlauf
+  erreichte die Paargrenze 600 000 -> OPEN_PAARGRENZE. Bis dahin keine Domaenenaenderung. EHRLICH: fuer diesen Fall ist das keine
+  Fixpunktaussage, sondern "bis zur Grenze nichts".
+Erklaerung (nicht nur Befund): Eine Uebertragskette ist ein Strang ohne Abzweigung. Unsere Grundregel rechnet einen solchen Strang
+bereits exakt durch – auf baumartigen Teilnetzen ist Bogenkonsistenz vollstaendig. Was dort nie verlorengeht, kann man nicht
+auffrischen. Christians Beobachtung "je weiter weg, desto ungenauer" stimmt, aber der Verlust sitzt nicht in der Kette.
+
+== M2 REICHWEITE AM ECHTEN FALL F1 (U-voll, echtes Target 78 Nullbits, 8 freie Noncebits, Ziel gesetzt, nur E3, 4,8 s) =========
+Rueckwaerts (zweite Anwendung): Zielkette 39 von 129 Gliedern eingeschraenkt; Digestwoerter 5/6/7 enger (8/16/16 Ziffern),
+Woerter 0–4 unberuehrt. Register e: Runde 63 acht Ziffern (sechs fest), Runde 62 und 61 alle 16 Ziffern fest, Runde 60 und frueher
+NICHTS. Register a: in keiner Runde beruehrt.
+Vorwaerts (erste Anwendung, Header fest bis auf die Nonce): Runden 1–3 vollstaendig, Runde 4 noch 12 von 16 Ziffern bestimmt,
+ab Runde 5 alles offen; Digest1 vollstaendig offen (128 von 128 Ziffern), Nonce-Wort 0 von 16 eingeschraenkt.
+Luecke: 120 Runden ohne jede Einschraenkung.
+
+== M3 HAENGT DIE REICHWEITE AN DER GRUPPENGROESSE? (dieselbe Vorlage, nur andere Anzahl freier Noncebits) ======================
+  freie Bits:      1        2        4        8       16
+  Gruppe:          2        4       16      256   65 536
+  alles offen ab:  Runde 5  Runde 5  Runde 5  Runde 5  Runde 5
+  Runde-4-Profil:  2        2        3        4        8   (offene Ziffern von 16)
+Mit einem EINZIGEN unbekannten Bit verliert die Darstellung nach vier Runden alles. Aufteilen in Phasen oder kleinere Gruppen
+verschiebt die Grenze nicht – die Ungenauigkeit kommt von der Rundenzahl, nicht von der Menge der Moeglichkeiten.
+
+== WAS DAS BEDEUTET (ehrlich, und was es NICHT bedeutet) ======================================================================
+Der Grund ist die Darstellung selbst: Bei 8 freien Bits gibt es in Wahrheit nur 256 Moeglichkeiten. Unsere Kaestchen koennen aber
+nicht sagen "entweder dieser ganze Zustand oder jener", sondern nur "dieser Wert ist hier moeglich". Nach vier Runden Durchmischung
+ist in jedem Kaestchen jeder Wert moeglich, und die Verbindung zwischen den Kaestchen ist auf Paare (oder Tripel) beschraenkt.
+Die 256 Moeglichkeiten vollstaendig mitzufuehren heisst, 256 Zustaende mitzufuehren – das ist 256-mal rechnen, also genau das
+Hashen, das wir ersetzen wollten. Das ist kein Umsetzungsmangel, sondern die Grenze des Verfahrens an dieser Aufgabe.
+NICHT belegt ist damit: dass die Kaestchenmaschine nutzlos waere. Sie ist dort stark, wo wenig unbekannt ist – Pruefen, Nachrechnen,
+reduzierte Rundenzahlen; die 512 Digestpruefungen und der Genesis-Zeuge in allen Domaenen und Paaren zeigen das.
+NICHT belegt ist auch eine allgemeine Unmoeglichkeitsaussage: gemessen sind diese Vorlage, diese Darstellung (2-Bit-Ziffern,
+Paare, Radius 1, 32 Dreier, Auffrischer) und diese Gruppengroessen. Zum Vergleich ohne Anspruch: veroeffentlichte Urbildangriffe
+auf SHA-256 erreichen etwa 45–52 der 64 Runden bei astronomischem Aufwand; wir sind bei 4 vorwaerts und 4 rueckwaerts.
+Keine Mainnet-Aussage, keine Aussage ueber heutige Einreichbarkeit.
+
+== VORSCHLAG FUER DIE GEMEINSAME ENTSCHEIDUNG (ich starte nichts) =============================================================
+(a) Richtung schliessen: Die Rueckwaertsableitung als Weg zum Nonce-Suchen mit Belegen abschliessen – diese drei Messungen sind
+    der Abschlussbeleg. Kraft in Durchsatz, Trefferabsicherung und Betriebssicherheit des Miners stecken (dort war der heutige
+    reale Gewinn: der moegliche Trefferverlust und Patch 3.1.2).
+(b) Frage wechseln, Maschine behalten: reduzierte Rundenzahlen (bis etwa 8 Runden) als Forschungsgegenstand, wo die Maschine
+    nachweislich etwas ableitet – sauber, veroeffentlichbar, ohne Mining-Versprechen.
+(c) Eine letzte gezielte Messung, falls wir die Grenze schwarz auf weiss wollen: ab welcher Rundenzahl bricht die Ableitung
+    zusammen (3, 4, 5, 6, 8, 12 Runden, Ziel gesetzt, Gruppe 256) – eine Kurve statt zweier Punkte. Kosten: wenige Minuten CPU.
+Christians Vorrang bleibt: richtige Ableitung vor Geschwindigkeit. Hier gibt es keine falsche Ableitung – es gibt gar keine.
+
+== DATEIEN =====================================================================================================================
+Neu: kette.py (benannte Rechenketten + Auffrischer, sound), reichweite.py (die drei Messungen), ERGEBNIS_REICHWEITE.json.
+Geaendert: ziffern_komp.py – neuer optionaler Parameter start_paare (vorgegebene Paarmasken werden nach den Grundpaaren
+hineingeschnitten); start_paare=None ergibt exakt das bisherige Verhalten, auf 80 Mini-Netzen gegen die alte Fassung geprueft,
+0 Abweichungen (DIFF_ziffern_komp_start_paare.txt).
+Unveraendert: ziffern_sha.py, ziffern_array.py, sha_ziffern.py, e1_bit.py, ziffern.py, bausteine.py, gatter.py, pruefung.py,
+teilbits.py, FAELLE_SHA256D.json.

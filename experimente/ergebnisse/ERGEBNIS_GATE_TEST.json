@@ -1,0 +1,101 @@
+{
+ "bestanden": true,
+ "szenarien": [
+  {
+   "szenario": "Positiv: beide FIXPUNKT",
+   "freigabe": true,
+   "grund": "beide Basisfaelle FIXPUNKT ohne Fehler/Abbruch",
+   "e4d_not_run": false,
+   "e4d_kind_gestartet": true,
+   "bestanden": true
+  },
+  {
+   "szenario": "Basis F1 OPEN (Paargrenze)",
+   "freigabe": false,
+   "grund": "Basis F1 inhaltlich OPEN (kein FIXPUNKT)",
+   "e4d_not_run": true,
+   "e4d_kind_gestartet": false,
+   "bestanden": true
+  },
+  {
+   "szenario": "Basis F2 OPEN (Paargrenze)",
+   "freigabe": false,
+   "grund": "Basis F2 inhaltlich OPEN (kein FIXPUNKT)",
+   "e4d_not_run": true,
+   "e4d_kind_gestartet": false,
+   "bestanden": true
+  },
+  {
+   "szenario": "Basis F1 Timeout extern",
+   "freigabe": false,
+   "grund": "Basis F1 extern abgebrochen: Wall > 0 s",
+   "e4d_not_run": true,
+   "e4d_kind_gestartet": false,
+   "bestanden": true
+  },
+  {
+   "szenario": "Basis F2 RAM-Abbruch extern",
+   "freigabe": false,
+   "grund": "Basis F2 extern abgebrochen: RAM 999 MiB > 400",
+   "e4d_not_run": true,
+   "e4d_kind_gestartet": false,
+   "bestanden": true
+  },
+  {
+   "szenario": "Basis F1 FEHLER",
+   "freigabe": false,
+   "grund": "Basis F1 Prozessstatus FEHLER",
+   "e4d_not_run": true,
+   "e4d_kind_gestartet": false,
+   "bestanden": true
+  },
+  {
+   "szenario": "Basis F2 Rueckgabecode 1 trotz FIXPUNKT-Datei",
+   "freigabe": false,
+   "grund": "Basis F2 Rueckgabecode 1",
+   "e4d_not_run": true,
+   "e4d_kind_gestartet": false,
+   "bestanden": true
+  },
+  {
+   "szenario": "Basis F1 Datei fehlt",
+   "freigabe": false,
+   "grund": "Basis F1 Prozessstatus FEHLER_OHNE_AUSGABE",
+   "e4d_not_run": true,
+   "e4d_kind_gestartet": false,
+   "bestanden": true
+  },
+  {
+   "szenario": "Basis F2 Datei ungueltig",
+   "freigabe": false,
+   "grund": "Basis F2 Prozessstatus FEHLER_UNGUELTIGE_AUSGABE",
+   "e4d_not_run": true,
+   "e4d_kind_gestartet": false,
+   "bestanden": true
+  },
+  {
+   "szenario": "Basis F1 Status-Feld fehlt (ergebnis ohne status)",
+   "freigabe": false,
+   "grund": "Basis F1 inhaltlich None (kein FIXPUNKT)",
+   "e4d_not_run": true,
+   "e4d_kind_gestartet": false,
+   "bestanden": true
+  },
+  {
+   "szenario": "Basis F2 RAM-Abbruch in der ABSCHLUSSPRUEFUNG trotz zuvor FIXPUNKT (Schritte FIXPUNKT, kein ergebnis-Block)",
+   "freigabe": false,
+   "grund": "Basis F2 extern abgebrochen: RAM 999 MiB > 400",
+   "e4d_not_run": true,
+   "e4d_kind_gestartet": false,
+   "bestanden": true
+  },
+  {
+   "szenario": "Basis F1 wiederverwendet (gueltiger Beleg) + F2 neu FIXPUNKT",
+   "freigabe": true,
+   "grund": "beide Basisfaelle FIXPUNKT ohne Fehler/Abbruch",
+   "e4d_not_run": false,
+   "e4d_kind_gestartet": true,
+   "bestanden": true
+  }
+ ]
+}

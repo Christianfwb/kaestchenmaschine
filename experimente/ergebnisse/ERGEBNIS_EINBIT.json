@@ -1,0 +1,158 @@
+{
+ "messung": "Ein-Bit-Gegenpruefung",
+ "beginn": "2026-10-22 18:50:58",
+ "python": "3.13.16",
+ "grenze": {
+  "zeit_s": 600.0,
+  "ram_mib": 400.0,
+  "paare": 2500000
+ },
+ "laeufe": [
+  {
+   "fall": "F1",
+   "variante": "E3",
+   "status": "OK",
+   "abbruchgrund": null,
+   "wall_s": 3.0,
+   "peak_rss_mib_extern": 61.3,
+   "rueckgabe": 0,
+   "ausgabe": "ERGEBNIS_EINBIT_F1_E3.json",
+   "fehler": null,
+   "ergebnis": {
+    "status": "FIXPUNKT",
+    "alle_gueltigen_referenzbelegungen_erhalten": true,
+    "massgebliche_zustaende": 2,
+    "unloesbarer_referenzfall": false,
+    "paare_insgesamt": 0
+   }
+  },
+  {
+   "fall": "F1",
+   "variante": "E3Z",
+   "status": "OK",
+   "abbruchgrund": null,
+   "wall_s": 5.8,
+   "peak_rss_mib_extern": 61.4,
+   "rueckgabe": 0,
+   "ausgabe": "ERGEBNIS_EINBIT_F1_E3Z.json",
+   "fehler": null,
+   "ergebnis": {
+    "status": "FIXPUNKT",
+    "alle_gueltigen_referenzbelegungen_erhalten": true,
+    "massgebliche_zustaende": 0,
+    "unloesbarer_referenzfall": true,
+    "paare_insgesamt": 0
+   }
+  },
+  {
+   "fall": "F1",
+   "variante": "E4",
+   "status": "OK",
+   "abbruchgrund": null,
+   "wall_s": 95.5,
+   "peak_rss_mib_extern": 181.6,
+   "rueckgabe": 0,
+   "ausgabe": "ERGEBNIS_EINBIT_F1_E4.json",
+   "fehler": null,
+   "ergebnis": {
+    "status": "FIXPUNKT",
+    "alle_gueltigen_referenzbelegungen_erhalten": true,
+    "massgebliche_zustaende": 2,
+    "unloesbarer_referenzfall": false,
+    "paare_insgesamt": 763320
+   }
+  },
+  {
+   "fall": "F1",
+   "variante": "E4Z",
+   "status": "OK",
+   "abbruchgrund": null,
+   "wall_s": 1.2,
+   "peak_rss_mib_extern": 60.3,
+   "rueckgabe": 0,
+   "ausgabe": "ERGEBNIS_EINBIT_F1_E4Z.json",
+   "fehler": null,
+   "ergebnis": {
+    "status": "WIDERSPRUCH",
+    "alle_gueltigen_referenzbelegungen_erhalten": true,
+    "massgebliche_zustaende": 0,
+    "unloesbarer_referenzfall": true,
+    "paare_insgesamt": 0
+   }
+  },
+  {
+   "fall": "F2",
+   "variante": "E3",
+   "status": "OK",
+   "abbruchgrund": null,
+   "wall_s": 3.0,
+   "peak_rss_mib_extern": 61.5,
+   "rueckgabe": 0,
+   "ausgabe": "ERGEBNIS_EINBIT_F2_E3.json",
+   "fehler": null,
+   "ergebnis": {
+    "status": "FIXPUNKT",
+    "alle_gueltigen_referenzbelegungen_erhalten": true,
+    "massgebliche_zustaende": 2,
+    "unloesbarer_referenzfall": false,
+    "paare_insgesamt": 0
+   }
+  },
+  {
+   "fall": "F2",
+   "variante": "E3Z",
+   "status": "OK",
+   "abbruchgrund": null,
+   "wall_s": 5.4,
+   "peak_rss_mib_extern": 61.5,
+   "rueckgabe": 0,
+   "ausgabe": "ERGEBNIS_EINBIT_F2_E3Z.json",
+   "fehler": null,
+   "ergebnis": {
+    "status": "FIXPUNKT",
+    "alle_gueltigen_referenzbelegungen_erhalten": true,
+    "massgebliche_zustaende": 1,
+    "unloesbarer_referenzfall": false,
+    "paare_insgesamt": 0
+   }
+  },
+  {
+   "fall": "F2",
+   "variante": "E4",
+   "status": "OK",
+   "abbruchgrund": null,
+   "wall_s": 88.2,
+   "peak_rss_mib_extern": 181.3,
+   "rueckgabe": 0,
+   "ausgabe": "ERGEBNIS_EINBIT_F2_E4.json",
+   "fehler": null,
+   "ergebnis": {
+    "status": "FIXPUNKT",
+    "alle_gueltigen_referenzbelegungen_erhalten": true,
+    "massgebliche_zustaende": 2,
+    "unloesbarer_referenzfall": false,
+    "paare_insgesamt": 749543
+   }
+  },
+  {
+   "fall": "F2",
+   "variante": "E4Z",
+   "status": "OK",
+   "abbruchgrund": null,
+   "wall_s": 2.7,
+   "peak_rss_mib_extern": 66.5,
+   "rueckgabe": 0,
+   "ausgabe": "ERGEBNIS_EINBIT_F2_E4Z.json",
+   "fehler": null,
+   "ergebnis": {
+    "status": "FIXPUNKT",
+    "alle_gueltigen_referenzbelegungen_erhalten": true,
+    "massgebliche_zustaende": 1,
+    "unloesbarer_referenzfall": false,
+    "paare_insgesamt": 0
+   }
+  }
+ ],
+ "ende": "2026-10-22 18:54:23",
+ "gesamt_wall_s": 204.8
+}

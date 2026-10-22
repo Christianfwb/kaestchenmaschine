@@ -1,0 +1,32 @@
+{
+ "wahre_loesungen": 15,
+ "E4_paare": {
+  "status": "FIXPUNKT",
+  "zugelassene_eingaben": 144,
+  "sound": true,
+  "paare": 24,
+  "beziehungen": 6,
+  "dreier_tupel": 0,
+  "gleich_mit_ziffern_sha": true,
+  "nachpruefung": {
+   "status": "FIXPUNKT",
+   "geaendert": false,
+   "runden": 1
+  }
+ },
+ "E4_plus_Dreier": {
+  "status": "FIXPUNKT",
+  "zugelassene_eingaben": 64,
+  "sound": true,
+  "paare": 24,
+  "beziehungen": 7,
+  "dreier_tupel": 32,
+  "gleich_mit_ziffern_sha": true,
+  "nachpruefung": {
+   "status": "FIXPUNKT",
+   "geaendert": false,
+   "runden": 1
+  }
+ },
+ "E3_alle_eingaben_fest_gleich_wahr": true
+}

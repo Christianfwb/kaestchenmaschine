@@ -1,0 +1,43 @@
+{
+ "art": "E1",
+ "fall": "F1_ECHTE_VORLAGE",
+ "umfang": "U-voll",
+ "target_nullbits": 78,
+ "python": "3.13.16",
+ "rechner": "Fable-Container Linux, Intel Xeon 2.10 GHz (2 Kerne), CPU, reines Python",
+ "status": "OK",
+ "schritte": [
+  {
+   "knoten": 207917,
+   "s": 0.45,
+   "name": "Aufbau Bitgraph",
+   "t_s": 0.45,
+   "peak_mib": 68.0
+  },
+  {
+   "status": "FIXPUNKT",
+   "sweeps": 4,
+   "s": 1.29,
+   "noncebits_abgeleitet": [],
+   "knoten_fest": 601,
+   "knoten_gesamt": 207915,
+   "ausgeschlossene_nonces_der_gruppe": 0,
+   "zeuge_in_allen_bitdomaenen": null,
+   "name": "E1 Wurzel (Ziel = 1)",
+   "t_s": 1.75,
+   "peak_mib": 70.4
+  }
+ ],
+ "ergebnis": {
+  "status": "FIXPUNKT",
+  "sweeps": 4,
+  "s": 1.29,
+  "noncebits_abgeleitet": [],
+  "knoten_fest": 601,
+  "knoten_gesamt": 207915,
+  "ausgeschlossene_nonces_der_gruppe": 0,
+  "zeuge_in_allen_bitdomaenen": null
+ },
+ "gesamt_s": 1.75,
+ "peak_mib_kind": 70.4
+}

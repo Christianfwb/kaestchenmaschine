@@ -1,0 +1,204 @@
+{
+ "messung": "Phasenvergleich (exakte Ganzzahl-Fallvektoren) gegen Paartabelle und Vier-Wege-Tabelle",
+ "python": "3.13.16",
+ "numpy": "2.5.3",
+ "numpy_import_s": 0.215,
+ "rechner": "Fable-Container Linux, Intel Xeon 2.10 GHz (2 Kerne), CPU",
+ "status": "OK",
+ "pruefstein": {
+  "soll_erlaubt": [
+   [
+    0,
+    0
+   ],
+   [
+    1,
+    1
+   ]
+  ],
+  "phasen": {
+   "erlaubt": [
+    [
+     0,
+     0
+    ],
+    [
+     1,
+     1
+    ]
+   ],
+   "korrekt": true,
+   "operationen": 1,
+   "speicher_byte": 100,
+   "zeit_s": 1.412e-05
+  },
+  "vier_wege_tabelle": {
+   "erlaubt": [
+    [
+     0,
+     0
+    ],
+    [
+     1,
+     1
+    ]
+   ],
+   "korrekt": true,
+   "operationen": 1,
+   "speicher_byte": 84,
+   "zeit_s": 6.86e-07
+  },
+  "paartabelle": {
+   "einzeldomaenen_erlaubt": [
+    [
+     0,
+     0
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     1,
+     0
+    ],
+    [
+     1,
+     1
+    ]
+   ],
+   "paarmaske_erlaubt": [
+    [
+     0,
+     0
+    ],
+    [
+     1,
+     1
+    ]
+   ],
+   "korrekt_als_paar": true,
+   "einzeldomaenen_allein_korrekt": false,
+   "gespeicherte_paare": 1,
+   "tupeloperationen": 12,
+   "zeit_s": 4.5604e-05
+  },
+  "bemerkung": "Bei NUR ZWEI Variablen ist die Bindung 00/11 eine reine Paarbeziehung \u2013 unsere Paartabelle haelt sie exakt. Die Einzeldomaenen allein (ohne Paar) lassen 01 und 10 faelschlich zu; deshalb sind beide Zeilen getrennt ausgewiesen. Phasenvektor und Vier-Wege-Tabelle halten sie ebenfalls exakt \u2013 sie fuehren die vier Faelle einzeln mit."
+ },
+ "pruefstein_bestanden": true,
+ "sha_faelle": [
+  {
+   "fall": "F1_ECHTE_VORLAGE",
+   "noncen": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "laufzeit_s": 0.52,
+   "und_gatter": 89344,
+   "xor_gatter": 160256,
+   "gatter_gesamt": 249600,
+   "speicher_je_bit_byte": 32,
+   "speicher_je_bit_vier_wege_tabelle_byte": "1 kleine Ganzzahl (4-Bit-Maske)",
+   "erfuellende_kandidaten": [],
+   "bekannter_treffer_erhalten": null,
+   "pruefung_gegen_hashlib": [
+    {
+     "nonce": 0,
+     "digest_gleich_hashlib": true,
+     "zielentscheidung_phasen": false,
+     "zielentscheidung_hashlib": false,
+     "stimmt": true,
+     "fuehrende_nullbits": 0
+    },
+    {
+     "nonce": 1,
+     "digest_gleich_hashlib": true,
+     "zielentscheidung_phasen": false,
+     "zielentscheidung_hashlib": false,
+     "stimmt": true,
+     "fuehrende_nullbits": 1
+    },
+    {
+     "nonce": 2,
+     "digest_gleich_hashlib": true,
+     "zielentscheidung_phasen": false,
+     "zielentscheidung_hashlib": false,
+     "stimmt": true,
+     "fuehrende_nullbits": 0
+    },
+    {
+     "nonce": 3,
+     "digest_gleich_hashlib": true,
+     "zielentscheidung_phasen": false,
+     "zielentscheidung_hashlib": false,
+     "stimmt": true,
+     "fuehrende_nullbits": 0
+    }
+   ],
+   "alles_korrekt": true,
+   "peak_mib": 45.4
+  },
+  {
+   "fall": "F2_GENESIS_HISTORISCH",
+   "noncen": [
+    2083236892,
+    2083236893,
+    2083236894,
+    2083236895
+   ],
+   "laufzeit_s": 0.42,
+   "und_gatter": 89344,
+   "xor_gatter": 160256,
+   "gatter_gesamt": 249600,
+   "speicher_je_bit_byte": 32,
+   "speicher_je_bit_vier_wege_tabelle_byte": "1 kleine Ganzzahl (4-Bit-Maske)",
+   "erfuellende_kandidaten": [
+    2083236893
+   ],
+   "bekannter_treffer_erhalten": true,
+   "pruefung_gegen_hashlib": [
+    {
+     "nonce": 2083236892,
+     "digest_gleich_hashlib": true,
+     "zielentscheidung_phasen": false,
+     "zielentscheidung_hashlib": false,
+     "stimmt": true,
+     "fuehrende_nullbits": 0
+    },
+    {
+     "nonce": 2083236893,
+     "digest_gleich_hashlib": true,
+     "zielentscheidung_phasen": true,
+     "zielentscheidung_hashlib": true,
+     "stimmt": true,
+     "fuehrende_nullbits": 43
+    },
+    {
+     "nonce": 2083236894,
+     "digest_gleich_hashlib": true,
+     "zielentscheidung_phasen": false,
+     "zielentscheidung_hashlib": false,
+     "stimmt": true,
+     "fuehrende_nullbits": 0
+    },
+    {
+     "nonce": 2083236895,
+     "digest_gleich_hashlib": true,
+     "zielentscheidung_phasen": false,
+     "zielentscheidung_hashlib": false,
+     "stimmt": true,
+     "fuehrende_nullbits": 0
+    }
+   ],
+   "alles_korrekt": true,
+   "peak_mib": 47.0
+  }
+ ],
+ "gesamt_s": 1.87,
+ "peak_mib": 47.0,
+ "wall_s_extern": 2.0,
+ "peak_mib_extern": 47.3,
+ "abbruchgrund": null
+}

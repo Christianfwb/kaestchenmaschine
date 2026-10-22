@@ -1,0 +1,130 @@
+{
+ "phase": "P1",
+ "python": "3.13.16",
+ "rechner": "Fable-Container Linux, Intel Xeon 2.10 GHz (2 Kerne), CPU, reines Python",
+ "schritte": [
+  {
+   "fall": "F1_ECHTE_VORLAGE",
+   "gatter_build_knoten": 207917,
+   "gatter_build_s": 0.22,
+   "bitgraph_knoten": 207917,
+   "bitgraph_root": 207916,
+   "bitgraph_identisch_mit_gatter_build": true,
+   "bitgraph_s": 0.24,
+   "protokoll_woerter": 3411,
+   "voll": {
+    "variablen": 71761,
+    "ziffern": 51232,
+    "uebertraege_le": 20529,
+    "beziehungen": 49952,
+    "je_typ": {
+     "ROT1": 12192,
+     "XOR": 14336,
+     "ADD": 19200,
+     "CH": 2048,
+     "MAJ": 2048,
+     "LE0": 124,
+     "LE3": 1,
+     "LE1": 1,
+     "LE2": 2
+    },
+    "konstante_variablen_vor_propagation": 2605,
+    "aufbau_s": 0.09,
+    "protokoll_woerter": 3411,
+    "zuordnung_bit_ziffer_semantisch": 3411,
+    "eingangsvariablen": [
+     "H1_nonce[12]",
+     "H1_nonce[13]",
+     "H1_nonce[14]",
+     "H1_nonce[15]"
+    ]
+   },
+   "lokal": {
+    "variablen": 36569,
+    "ziffern": 26240,
+    "uebertraege_le": 10329,
+    "beziehungen": 25040,
+    "je_typ": {
+     "ROT1": 6096,
+     "XOR": 7168,
+     "ADD": 9600,
+     "CH": 1024,
+     "MAJ": 1024,
+     "LE0": 124,
+     "LE3": 1,
+     "LE1": 1,
+     "LE2": 2
+    },
+    "konstante_variablen_vor_propagation": 1801,
+    "aufbau_s": 0.09,
+    "protokoll_woerter": 1699,
+    "zuordnung_bit_ziffer_semantisch": "nur H2 (lokal), Zuordnung ueber Phase/Art/Nr",
+    "eingangsvariablen": 8
+   },
+   "name": "P1 F1_ECHTE_VORLAGE",
+   "t_s": 0.67,
+   "peak_mib": 121.7
+  },
+  {
+   "fall": "F2_GENESIS_HISTORISCH",
+   "gatter_build_knoten": 207833,
+   "gatter_build_s": 0.66,
+   "bitgraph_knoten": 207833,
+   "bitgraph_root": 207832,
+   "bitgraph_identisch_mit_gatter_build": true,
+   "bitgraph_s": 0.26,
+   "protokoll_woerter": 3411,
+   "voll": {
+    "variablen": 71777,
+    "ziffern": 51248,
+    "uebertraege_le": 20529,
+    "beziehungen": 49952,
+    "je_typ": {
+     "ROT1": 12192,
+     "XOR": 14336,
+     "ADD": 19200,
+     "CH": 2048,
+     "MAJ": 2048,
+     "LE0": 120,
+     "LE3": 8
+    },
+    "konstante_variablen_vor_propagation": 2621,
+    "aufbau_s": 0.26,
+    "protokoll_woerter": 3411,
+    "zuordnung_bit_ziffer_semantisch": 3411,
+    "eingangsvariablen": [
+     "H1_nonce[12]",
+     "H1_nonce[13]",
+     "H1_nonce[14]",
+     "H1_nonce[15]"
+    ]
+   },
+   "lokal": {
+    "variablen": 36569,
+    "ziffern": 26240,
+    "uebertraege_le": 10329,
+    "beziehungen": 25040,
+    "je_typ": {
+     "ROT1": 6096,
+     "XOR": 7168,
+     "ADD": 9600,
+     "CH": 1024,
+     "MAJ": 1024,
+     "LE0": 120,
+     "LE3": 8
+    },
+    "konstante_variablen_vor_propagation": 1801,
+    "aufbau_s": 0.1,
+    "protokoll_woerter": 1699,
+    "zuordnung_bit_ziffer_semantisch": "nur H2 (lokal), Zuordnung ueber Phase/Art/Nr",
+    "eingangsvariablen": 8
+   },
+   "name": "P1 F2_GENESIS_HISTORISCH",
+   "t_s": 1.99,
+   "peak_mib": 188.0
+  }
+ ],
+ "status": "OK",
+ "gesamt_s": 2.03,
+ "peak_mib_kind": 188.0
+}

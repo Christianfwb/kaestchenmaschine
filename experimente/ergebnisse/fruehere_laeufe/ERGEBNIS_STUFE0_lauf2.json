@@ -1,0 +1,31 @@
+{
+ "stufe": "0",
+ "beginn": "2026-10-22 15:49:29",
+ "python": "3.13.16",
+ "grenze": {
+  "zeit_s": 600.0,
+  "ram_mib": 400.0
+ },
+ "phasen": [
+  {
+   "phase": "P3",
+   "status": "OK",
+   "abbruchgrund": null,
+   "wall_s": 10.85,
+   "peak_rss_mib_extern": 151.7,
+   "rueckgabe": 0,
+   "ausgabe": "ERGEBNIS_P3.json"
+  },
+  {
+   "phase": "P4",
+   "status": "OK",
+   "abbruchgrund": null,
+   "wall_s": 15.7,
+   "peak_rss_mib_extern": 150.5,
+   "rueckgabe": 0,
+   "ausgabe": "ERGEBNIS_P4.json"
+  }
+ ],
+ "ende": "2026-10-22 15:49:56",
+ "gesamt_wall_s": 26.5
+}

@@ -1,0 +1,76 @@
+FABLE AN GHOST – EIN-BIT-GEGENPRUEFUNG: KARTE DER ERHALTENEN UND VERLORENEN BEZIEHUNGEN, 2026-10-22
+Acht Laeufe (zwei Faelle x vier Varianten), je genau einmal, extern ueberwacht (600 s / 400 MiB / 2 500 000 Paare je Lauf).
+Gesamt 205 s Wall, hoechster Peak 182 MiB, kein Abbruch, kein FEHLER, keine Wiederholung. Kopien, CPU, Python 3.13.16,
+Fable-Container (Xeon 2,10 GHz, 2 Kerne). Miner unberuehrt, keine GPU/RPC/Einreichung, keine Baumsuche, keine Optimierung.
+Ein freies Noncebit (Bit 0) -> genau zwei Eingaben. F1 = echte gespeicherte Vorlage (Nonce 0 und 1, echtes Target, 78 Nullbits).
+F2 = Genesis, Basis so gewaehlt, dass der bekannte Treffer 2083236893 in der Gruppe liegt (Erhaltungspruefung).
+
+== GHOST HATTE RECHT, UND ZWAR DEUTLICH =======================================================================================
+Meine Aussage "ab Runde 5 ist alles offen, die Information ist weg" war ein Messartefakt der schwaechsten Regelmenge.
+Mit Paaren bleiben die beiden Zustaende ueber BEIDE Hashanwendungen hinweg erhalten:
+  F1 ohne Ziel, nur E3:    Register a exakt bis H1-Runde 4 (88 %), ab Runde 5 null Prozent, und null Prozent bis zum Ende.
+  F1 ohne Ziel, E1+E4:     Register a exakt 81–100 % in JEDER der 128 Runden, auch H2-Runde 64 (94 %).
+Ueber alle 1 792 Messstellen (Register a..h, S1, S0, Ch, Maj, T1, T2 je Runde beider Anwendungen, 28 672 Ziffern):
+  Variante            Ziffern exakt   davon mit zwei wahren Werten exakt   Ziffern verloren
+  F1 E3  (ohne Ziel)      1 425 / 28 672        24 / 20 416                  27 247
+  F1 E4  (ohne Ziel)     25 622 / 28 672    17 366 / 20 416                   3 050
+  F2 E3  (ohne Ziel)      1 443 / 28 672        26 / 20 252                  27 229
+  F2 E4  (ohne Ziel)     25 536 / 28 672    17 116 / 20 252                   3 136
+"Zwei wahre Werte" heisst: die Ziffer unterscheidet sich zwischen den beiden Zustaenden wirklich. E3 haelt davon 24 von 20 416,
+E1+E4 haelt 17 366 von 20 416 – also 85 Prozent. Die Darstellung kann die zwei Welten sehr wohl ausdruecken; E3 allein kann es nicht.
+
+== DAS WICHTIGERE ERGEBNIS: MIT ZIELBEDINGUNG WIRD WIRKLICH ABGELEITET ========================================================
+F1 mit Ziel, E1+E4: WIDERSPRUCH nach 1,0 Sekunden, bereits durch E1 (Bitregeln) allein, vor jedem Paarschritt.
+  Das ist ein echter Ausschluss: bewiesen, dass WEDER Nonce 0 NOCH Nonce 1 das echte Ziel erfuellt – ohne sie zu hashen.
+  Orakel bestaetigt: beide sind keine Treffer (unloesbarer Referenzfall, so ausgewiesen). Kein gueltiger Zustand verloren.
+F1 mit Ziel, E3 allein: FIXPUNKT, kein Widerspruch erkannt. E3 sieht den Ausschluss nicht, E1 sieht ihn.
+F2 mit Ziel, E1+E4: FIXPUNKT in 2,5 s, und ALLE 28 672 gemessenen Ziffern sind exakt auf den wahren Wert bestimmt –
+  der bekannte Treffer wurde vollstaendig abgeleitet und erhalten, der Nichttreffer ausgeschlossen. Paarspeicher am Ende leer,
+  weil nach E1 und Austausch schon alles bestimmt war (keine Variable mit zwei Moeglichkeiten mehr uebrig).
+F2 mit Ziel, E3 allein: FIXPUNKT, 1 497 von 28 672 Ziffern exakt – E3 bleibt weit zurueck.
+Damit ist belegt: Bei EINEM freien Bit leitet die Maschine am vollstaendigen Bitcoin-SHA256d mit echtem Ziel tatsaechlich ab –
+Ausschluss im einen Fall, vollstaendige Bestimmung des Treffers im anderen. Beim Wurzeltest mit ACHT freien Bits tat sie das nicht.
+Der Unterschied liegt also nicht in der Darstellung und nicht in der Rundenzahl, sondern in der Zahl der freien Bits.
+
+== PAARE: NUR TATSAECHLICH GESPEICHERTE GEZAEHLT ==============================================================================
+Innerhalb der Messstellen gibt es 215 040 moegliche Ziffernpaare. Gespeichert sind bei E1+E4 nur 31 453 (F1) bzw. 31 004 (F2);
+183 587 bzw. 184 036 sind NICHT gespeichert und damit universell – sie erscheinen in keiner Zaehlung als erkannte Beziehung.
+Von den gespeicherten sind 9 289 (F1) bzw. 8 659 (F2) exakt gleich der wahren Projektion der zwei Zustaende, der Rest schwaecher
+(im Mittel 3,9 erlaubte Kombinationen statt 2). Bei E3 ist kein einziges Paar gespeichert (die Variante kennt keine Paare).
+Grund fuer die Luecke: Grundpaare entstehen nur innerhalb einer Beziehung; Ziffern desselben Wortes, die in keiner gemeinsamen
+Beziehung stehen, bekommen nur ueber die Radius-1-Schliessung ein Paar – und auch nur, wenn sie einen gemeinsamen Nachbarn haben.
+AUSDRUECKLICH: Paarmasken beweisen keine Erhaltung der zwei Gesamtzustaende. "Exakt" heisst nur, dass die Maske genau die
+Kombinationen dieser zwei Zustaende enthaelt; ob das Netz global nur diese zwei Zustaende zulaesst, folgt daraus nicht.
+
+== WAS DIE ZIELBEDINGUNG ALLEIN BEWIRKT (Vergleich gleicher Messstellen) ======================================================
+F1: ohne Ziel FIXPUNKT mit 25 622 exakten Ziffern – mit Ziel WIDERSPRUCH. Die Zielbedingung bewirkt hier den vollstaendigen
+    Ausschluss der Gruppe; eine Messstellenkarte ist dann gegenstandslos (keine gueltige Referenzbelegung).
+F2: ohne Ziel 25 536 exakte Ziffern bei zwei massgeblichen Zustaenden – mit Ziel 28 672 von 28 672 exakt bei einem massgeblichen
+    Zustand. Die Zielbedingung halbiert die Moeglichkeiten und macht aus "fast exakt fuer zwei Welten" eine vollstaendige Bestimmung.
+Bei E3 bewirkt die Zielbedingung fast nichts (F2: 1 443 -> 1 497 exakte Ziffern).
+
+== HINWEIS ZUR LESART DER KENNZAHLEN (ehrlich) ================================================================================
+Im unloesbaren Fall (F1 mit Ziel) ist die wahre Wertemenge jeder Ziffer leer. Dann sind "exakt" und "verloren" rechnerisch
+entwertet: F1 E4Z zeigt 12 891 "exakte" Ziffern, weil deren Domaene nach dem Widerspruch leer ist. Die einzige sinnvolle Frage
+dort ist, OB der Widerspruch erkannt wird – E1 ja, E3 nein. Das steht so auch in der JSON.
+Alle acht Laeufe: kein einziger falscher Ausschluss. Jede gueltige Referenzbelegung blieb in allen Domaenen und allen
+gespeicherten Paarmasken erhalten (Pruefung nach der Propagation, Orakel nie eingespeist).
+
+== WAS DAS NICHT HEISST =======================================================================================================
+Kein Geschwindigkeitsvorteil: zwei Nonces zu hashen kostet Mikrosekunden, unsere Ableitung 1 bis 95 Sekunden. Das ist eine
+Aussage ueber Ableitungskraft, nicht ueber Suche. Keine Mainnet-Aussage, keine Aussage zur heutigen Einreichbarkeit.
+Gemessen sind ein freies Bit, diese zwei Vorlagen, Radius 1 und diese Messstellen. Ob bei zwei, drei oder vier freien Bits
+noch abgeleitet wird, ist OFFEN – beim Wurzeltest mit acht Bits wurde nichts abgeleitet.
+
+== VORSCHLAG (ich starte nichts) ==============================================================================================
+Die naheliegende naechste Messung ist jetzt scharf umrissen und klein: dieselbe Gegenpruefung mit 2, 3, 4 und 6 freien Bits,
+Variante E1+E4 mit Zielbedingung, beide Faelle, gleiche Grenzen. Gesucht ist die Schwelle, ab der der Ausschluss (F1) bzw. die
+Bestimmung des Treffers (F2) zusammenbricht. Das ist die Kurve, die aus zwei Punkten eine Aussage macht – und sie entscheidet,
+ob das Verfahren eine nutzbare Groessenordnung hat oder bei zwei Moeglichkeiten stehenbleibt. Aufwand: F1 bricht vermutlich
+frueh ab (Widerspruch = schnell), F2 bis etwa 100 s je Lauf; acht Laeufe, unter 20 Minuten.
+
+== DATEIEN ====================================================================================================================
+einbit_kind.py, lauf_einbit.py, ERGEBNIS_EINBIT.json (Gesamtprotokoll), ERGEBNIS_EINBIT_F1_E3/E3Z/E4/E4Z.json und
+ERGEBNIS_EINBIT_F2_... (je mit vollstaendiger Karte ueber alle 1 792 Messstellen), FAELLE_SHA256D.json.
+Unveraendert: sha_ziffern.py, ziffern_sha.py, ziffern_array.py, ziffern_komp.py, austausch.py, e1_bit.py, ziffern.py,
+bausteine.py, gatter.py, pruefung.py, teilbits.py. Nachrechnen: python -I lauf_einbit.py (205 s).

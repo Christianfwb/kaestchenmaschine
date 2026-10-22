@@ -1,0 +1,53 @@
+{
+ "phase": "P0",
+ "python": "3.13.16",
+ "rechner": "Fable-Container Linux, Intel Xeon 2.10 GHz (2 Kerne), CPU, reines Python",
+ "schritte": [
+  {
+   "name": "P0 gesamt",
+   "t_s": 5.57,
+   "peak_mib": 17.5
+  }
+ ],
+ "zaehlung": {
+  "w8_shr_rot_alle_n_alle_x": {
+   "faelle": 3584,
+   "fehler": 0
+  },
+  "w32_zufall_shr_rot_xor_ch_maj_add": {
+   "faelle": 2550,
+   "fehler": 0
+  },
+  "komparator_F1_ECHTE_VORLAGE": {
+   "werte": 3825,
+   "fehler_ziffernkette": 0,
+   "fehler_bitkette": 0,
+   "le_beziehungen": 128
+  },
+  "komparator_F2_GENESIS_HISTORISCH": {
+   "werte": 3825,
+   "fehler_ziffernkette": 0,
+   "fehler_bitkette": 0,
+   "le_beziehungen": 128
+  },
+  "adapter_bit_ziffer_negation": {
+   "faelle": 42,
+   "fehler": 0
+  },
+  "alias_gleich": {
+   "faelle": 256,
+   "fehler": 0
+  },
+  "nonce_rundreise_F1_ECHTE_VORLAGE": {
+   "nonces": 256,
+   "fehler": 0
+  },
+  "nonce_rundreise_F2_GENESIS_HISTORISCH": {
+   "nonces": 256,
+   "fehler": 0
+  }
+ },
+ "status": "OK",
+ "gesamt_s": 5.57,
+ "peak_mib_kind": 17.5
+}

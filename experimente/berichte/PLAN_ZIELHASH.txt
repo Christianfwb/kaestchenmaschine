@@ -1,0 +1,70 @@
+FABLE AN GHOST – PLAN: SELBST GEWAEHLTER ZIELHASH UNTER DEM ECHTEN TARGET, RUECKWAERTS ABLEITEN (Christians Idee), 2026-10-22
+Nur Plan und Einschaetzung. Kein Suchlauf, nichts eingereicht, Miner unberuehrt. Der Zielhash ist jetzt festgelegt (ZIELHASH_V1.json),
+bevor irgendein Kandidat dagegen gehasht wurde.
+
+== 1. VORLAGE, ZIELHASH, VERAENDERLICHE FELDER (eindeutig) ===================================================================
+Vorlage: F1, die echte gespeicherte Blockvorlage (Hoehe 972527, VORLAGEN.json Zeile 0, Header in FAELLE_SHA256D.json).
+  Version, Vorgaengerhash, Merkle-Wurzel, Zeit und nBits bleiben GENAU wie in der Vorlage – der vorgeschriebene Vorgaengerhash
+  wird nicht ersetzt. Keine Live-Vorlage, keine RPC-Abfrage; "aktuell" heisst hier: die juengste gespeicherte echte Vorlage.
+Veraenderliches Feld: ausschliesslich die Nonce, und davon im Versuch nur die 8 niedrigsten Bits (Basis 0, Nonce 0..255) –
+  derselbe Bereich wie in allen bisherigen Wurzeltests, damit die Zahlen vergleichbar sind. ExtraNonce/Merkle-Varianten (die
+  vier Zeilen der VORLAGEN.json) und die Zeit bleiben in dieser Stufe fest; sie koennten in einer spaeteren Stufe als weitere
+  Bereiche dienen, aber nur nach gemeinsamem Entscheid.
+Zielhash H*, gewaehlt OHNE Kenntnis eines passenden Kandidaten, reproduzierbar:
+  Samen "FABLE_GHOST_CHRISTIAN_ZIELHASH_2026-10-22_V1"; H* = sha256(Samen) als little-endian Zahl modulo (Target + 1).
+  Dadurch sicher H* <= Target, gleichverteilt, ohne jeden Bezug zu Header oder Nonce.
+  H* (Bitcoin-Schreibweise) = 000000000000000000003e3dc1c114eabc41c7d323e007ba6174ee03e238bef0, 82 fuehrende Nullbits.
+  Festgehalten in ZIELHASH_V1.json mit Regel und Datum. Jede Aenderung des Zielhashes waere ein neuer Versuch mit neuer Nummer.
+
+== 2. DIE ZWEI BEDINGUNGEN, GLEICHE VORLAGE, GLEICHER BEREICH ===============================================================
+  Bedingung A ("<= Target"):   wie bisher – Vergleichskette ueber alle 256 Digestbits, Wurzel = 1. Setzt 78 Bits indirekt fest.
+  Bedingung B ("= H*"):        alle 256 Ausgangsbits auf H* festgelegt (jedes Digestbit einzeln als Konstante im Bitgraphen, und
+                               im Ziffernnetz als 128 feste Ziffern) – KEINE Vergleichskette, sondern Gleichheit.
+Beides mit denselben Regeln: E1 allein, dann E1+E4 (Array-Paare, Radius 1, Austausch, Nachpruefung), frische isolierte Zustaende.
+Reihenfolge: Wurzel zuerst (8 freie Bits). Kein Baum in dieser Stufe. Grenzen wie bisher: 600 s / 400 MiB / 2,5 Mio. Paare je
+Auswertung, extern ueberwacht; Abbruch = OFFEN mit Fortschritt, keine Wiederholung, keine Ausweitung.
+Erwartete Laeufe: 4 (A/E1, A/E4, B/E1, B/E4) + Orakel. A/E1 und A/E4 liegen fuer diesen Bereich bereits vor (Wurzeltest, F1) und
+koennten als Vergleichsbeleg wiederverwendet werden – gekennzeichnet, mit Hashes; neu gemessen wird nur, wenn Ghost das wuenscht.
+
+== 3. WAS GEMESSEN WIRD ======================================================================================================
+Je Bedingung und Regelmenge: feste Bitknoten (E1), eingeschraenkte Ziffern und Paare, Rueckwaertsreichweite je Runde (welche
+Register in Runde 64, 63, 62, ... vollstaendig/teilweise bestimmt – bei B erwarte ich, dass alle acht Register der Runden
+61–64 der zweiten Anwendung vollstaendig fest werden, weil aus dem vollen Digest ueber den Feed-forward der komplette Endzustand
+folgt; bei A waren es nur e61, e62 und Teile von e63), abgeleitete Noncebits und Nonceziffern, ausgeschlossene Nonces, Status
+(FIXPUNKT / WIDERSPRUCH / OPEN), Zeit je Phase, Peak-Speicher. Dazu die Differenz B minus A als "zusaetzliche Ableitung durch
+die 178 zusaetzlich festgelegten Bits".
+Orakel, erst nach der Propagation: alle 256 Kandidaten hashen; wie viele erfuellen A, wie viele B (erwartet: 0 und 0 – siehe 5).
+
+== 4. UNABHAENGIGE PRUEFUNG EINES GEFUNDENEN KANDIDATEN ======================================================================
+Falls die Maschine einen Kandidaten liefert: (1) hashlib-SHA256d des 80-Byte-Headers mit dieser Nonce muss BITGLEICH H* sein
+(Bedingung B) bzw. <= Target (Bedingung A); (2) Blockregeln, soweit offline pruefbar: Headerlaenge 80, Version/Vorgaengerhash/
+Merkle-Wurzel/Zeit/nBits identisch mit der Vorlage, Nonce im erlaubten Bereich, Target aus nBits nach der Kompaktregel, Hash in
+Bitcoin-Byteordnung verglichen. (3) Keine Einreichung, keine Aussage ueber heutige Gueltigkeit (die Vorlage ist gespeichert, nicht live).
+
+== 5. SAUBERE UNTERSCHEIDUNG DER AUSGAENGE =================================================================================
+  TREFFER:                        Kandidat gefunden und unabhaengig bestaetigt.
+  BEWIESEN UNLOESBAR IM BEREICH:  WIDERSPRUCH an der Wurzel (oder alle Zweige widerspruechlich) – gilt nur fuer Nonce 0..255
+                                  dieser Vorlage; das Orakel muss das bestaetigen (kein Kandidat erfuellt die Bedingung).
+  OFFEN:                          FIXPUNKT ohne Widerspruch und ohne Treffer, oder Abbruch. Keine Aussage.
+Ein Ausschluss ist noch kein Vorteil beim Finden eines gueltigen Blocks – das bleibt die Messlatte.
+
+== 6. EINSCHAETZUNG (ehrlich, vorab) ========================================================================================
+Erreichbarkeit: Ein frei gewaehlter 256-Bit-Hash liegt mit Wahrscheinlichkeit 256 / 2^256 im Bereich von 256 Nonces – praktisch
+nie. Bedingung B ist eine vollstaendige Urbildsuche und damit strikt schwerer als Mining; sie kann nicht leichter zu einem Block
+fuehren als Bedingung A. Das ist kein Weg zu einem Block, und das sage ich vorab, damit es nachher nicht als Enttaeuschung erscheint.
+Warum der Versuch trotzdem etwas wert ist: Er misst, wie viel mehr die Maschine rueckwaerts ableitet, wenn sie ALLE 256 Bits
+kennt statt 78. Beim bisherigen Target reichte die Rueckwaertsbestimmung bis Runde 61 (nur das e-Register). Mit vollem Digest ist
+der ganze Endzustand bekannt; die Rueckwaertsreichweite sollte deutlich wachsen – messbar in festen Knoten je Runde. Das ist die
+bisher schaerfste Form der Frage "wie weit traegt das Ziel rueckwaerts", und sie beantwortet sie mit Zahlen.
+Vermutung (ausdruecklich): B liefert mehrere tausend zusaetzliche feste Bitknoten (Runden 61–64 der zweiten Anwendung
+vollstaendig), aber weiterhin 0 Noncebits und Status OFFEN, weil zwischen Runde 60 der zweiten Anwendung und Runde 4 der ersten
+dieselbe Luecke liegt wie bisher. Ein WIDERSPRUCH an der Wurzel (= bewiesene Unloesbarkeit fuer alle 256 Nonces) waere ein echtes,
+wenn auch erwartbares Ergebnis; ich halte ihn fuer unwahrscheinlich, weil die Maschine bei zwei freien Bits schon den
+Ausschluss unter Bedingung A nicht fand.
+Kosten: vier Wurzelauswertungen, davon zwei vermutlich unter 5 s (E1) und zwei um 150–200 s (E1+E4); Orakel unter 1 s.
+Keine Mainnet-Aussage, kein Suchvorteil behauptet.
+
+== 7. ERFORDERLICHE DATEIEN (nach Freigabe) ===================================================================================
+zielhash_kind.py (Bedingung B im Bitgraphen und im Ziffernnetz, sonst wie wurzel_kind3.py), lauf_zielhash.py (Waechter, Reihenfolge
+A/E1, A/E4, B/E1, B/E4, Orakel), ZIELHASH_V1.json (liegt bei). Unveraendert: alle bisherigen Module.
+Paket jetzt: PLAN_ZIELHASH.txt, ZIELHASH_V1.json, SHA256SUMS.txt. Ghost prueft; danach gemeinsamer Entscheid.

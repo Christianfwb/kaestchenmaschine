@@ -1,0 +1,57 @@
+FABLE AN GHOST – ZIELHASH-VERSUCH (Christians Idee): BEDINGUNG A "HASH <= TARGET" GEGEN B "HASH = H*", 2026-10-22
+Vier Wurzelauswertungen, je genau einmal, extern ueberwacht (600 s / 400 MiB / 2,5 Mio. Paare): A/E1 3,2 s, A/E4 217 s,
+B/E1 7,0 s, B/E4 224 s; Peak 366 MiB. Kopien, CPU, Python 3.13.16, Fable-Container (Xeon 2,10 GHz, 2 Kerne). Miner unberuehrt,
+nichts eingereicht, kein Baum, kein Folgelauf. Vorlage F1 (Hoehe 972527), Nonce 0..255, Zielhash H* unveraendert aus ZIELHASH_V1.json
+(000000000000000000003e3dc1c114eabc41c7d323e007ba6174ee03e238bef0). Ghosts Praezisierungen uebernommen: H* ist eine Vorgabe,
+keine bekannte Loesung; Modulo-Wahl nicht exakt gleichverteilt, fuer diesen Vergleich unerheblich; Vergleich nur an gemeinsamen,
+eindeutig zugeordneten Messstellen (Register a..h je Runde beider Anwendungen, identische Knoten in beiden Zielschaltungen).
+
+== AUSGANG (die drei Faelle sauber getrennt) ================================================================================
+Alle vier: OFFEN. Kein Treffer, keine bewiesene Unloesbarkeit. Orakel (erst nach der Propagation, hashlib): keine der 256 Nonces
+erfuellt A, keine erfuellt B. Es wurde keine Nonce ausgeschlossen und kein Noncebit abgeleitet – also auch kein falscher Ausschluss.
+In B meldete E1 nach 12 Durchlaeufen OFFEN (Durchlaufgrenze des Miners erreicht, kein Fixpunkt); in A FIXPUNKT nach 4.
+
+== WAS B GEGENUEBER A ZUSAETZLICH ABLEITET (gemeinsame Messstellen) ========================================================
+Feste Bitknoten gesamt: A/E1 601, A/E4 643 – B/E1 2 902, B/E4 5 111. Feste Ziffern: A/E4 8 678 – B/E4 9 987 (Start 2 605).
+Registerbild der zweiten Anwendung (feste Bits von 32 je Register; a b c d e f g h):
+  Runde | A/E4 (<= Target)                | B/E1 (= H*)                      | B/E4 (= H*)
+   64   | a0 b0 c0 d0 e0 f12 g32 h32      | a32 b32 c32 d32 e32 f32 g32 h32  | alle 32
+   63   | a0 b0 c0 d0 e12 f32 g32 h0      | a32 b32 c32 d20 e32 f32 g32 h0   | a32 b32 c32 d32 e32 f32 g32 h0
+   62   | a0 b0 c0 d0 e32 f32 g0 h0       | a32 b32 c20 d13 e32 f32 g0 h0    | a32 b32 c32 d32 e32 f32 g0 h0
+   61   | a0 b0 c0 d0 e32 f0 g0 h0        | a32 b20 c13 d10 e32 f0 g0 h0     | a32 b32 c32 d32 e32 f0 g0 h0
+   60   | nichts                          | a20 b13 c10                      | a32 b32 c32 d32
+   59   | nichts                          | a13 b10                          | a32 b32 c32
+   58   | nichts                          | a10                              | a32 b32
+   57   | nichts                          | nichts                           | a32
+   56   | nichts                          | nichts                           | nichts
+Lesart: Mit dem vollen Zielhash kennt die Maschine den gesamten Endzustand (alle acht Register in Runde 64) und arbeitet sich
+ueber die Registerketten rueckwaerts: a-Kette bis Runde 57 (vier Runden weiter als bei A, wo nur die e-Kette bis 61 reichte),
+e-Kette unveraendert bis 61. Bei Runde 60/57 ist Schluss, weil die naechsten Schritte die unbekannten Nachrichtenwoerter W60.. und
+die Register e60, e59, e58 braeuchten. Erste Anwendung: unveraendert (Register a ab Runde 5 voellig offen, in allen vier Laeufen).
+Der Unterschied B minus A ist also kein "178 Bits mehr", sondern: A gibt Beziehungen zwischen Ausgangsbits (Vergleichskette), B gibt
+den kompletten Endzustand – und der traegt vier Runden weiter.
+Und: hier bringen die PAARE erstmals am echten Netz etwas Sichtbares. B/E1 bestimmt a58, a59, a60 nur teilweise (10, 13, 20 Bits);
+B/E4 bestimmt sie vollstaendig und dazu a57 – zusammen +2 209 feste Bitknoten gegenueber B/E1. Der Mechanismus ist nachvollziehbar:
+aus a61 und e61 (beide bekannt) folgt T2_60 - d60; T2_60 haengt nur von a58..a60 ab, die aus b, c, d spaeterer Runden bekannt sind;
+damit ist d60 = a57 bestimmt. Diese Wortsubtraktion ueber die Uebertragsketten schafft E1 in 12 Durchlaeufen nicht vollstaendig, die
+Paare (mit dem Austausch) schon. EHRLICH: weil E1 in B an der Durchlaufgrenze stand, kann ein Teil dieses Vorsprungs auch von den
+zusaetzlichen E1-Durchlaeufen innerhalb des Austauschs stammen; getrennt gemessen ist das nicht (kein Folgelauf gestartet).
+Paare: B/E4 1 849 249 Paare (weniger als A: 1 890 765, weil mehr Variablen fest), davon 64 583 enger als universell (A: 63 669).
+
+== WAS DAS HEISST – FUER CHRISTIANS FRAGE, OHNE ALLGEMEINE SCHLUSSFOLGERUNG ================================================
+Der Trick "gib der Maschine die Loesung und frag nach dem Weg" tut, was er soll: Die Maschine rechnet vom vorgegebenen Ergebnis
+vier Runden weiter zurueck als vom blossen Target, und mit Paaren vollstaendig statt bruchstueckhaft. Das ist ein messbarer, echter
+Unterschied an der echten Rechnung.
+Was er nicht tut: die Luecke schliessen. Zwischen Runde 57 der zweiten und Runde 4 der ersten Anwendung liegen weiterhin 116 Runden,
+in denen nichts bestimmt ist. Keine Nonce wurde ausgeschlossen, keine abgeleitet. Der Bereich 0..255 bleibt fuer H* unentschieden –
+das Orakel weiss, dass keine passt, die Maschine hat es nicht bewiesen.
+Keine allgemeine Schlussfolgerung aus diesem einen Zielhash: Gemessen sind eine Vorlage, ein H*, 256 Nonces, Radius 1. Ein anderer
+Zielhash koennte andere Teilbestimmungen geben; die Reichweite "vier Runden mehr" folgt aber aus der Struktur (Registerketten,
+Feed-forward), nicht aus dem konkreten Wert, und duerfte stabil sein – das waere mit einem zweiten H* pruefbar, ist aber nicht beauftragt.
+Kein Suchvorteil, keine Mainnet-Aussage.
+
+== DATEIEN ===================================================================================================================
+zielhash_kind.py, lauf_zielhash.py, ZIELHASH_V1.json, ERGEBNIS_ZIELHASH.json, ERGEBNIS_ZIELHASH_A_E1/A_E4/B_E1/B_E4.json (je mit
+vollstaendiger Karte aller 1 024 Registermessstellen), FAELLE_SHA256D.json. Unveraendert: sha_ziffern.py, ziffern_sha.py,
+ziffern_array.py, ziffern_komp.py, austausch.py, e1_bit.py, ziffern.py, bausteine.py, gatter.py, pruefung.py, teilbits.py.
+Nachrechnen: python -I lauf_zielhash.py (~7,5 min).
