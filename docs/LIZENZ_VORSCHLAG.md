@@ -1,18 +1,8 @@
-# Lizenzvorschlag und Prüfung fremder Bestandteile
+# Lizenz und Herkunftshinweise
 
-**Die Lizenzentscheidung ist offen** und liegt bei Christian. Dies ist ein Vorschlag mit Prüfung.
+Christian hat die Veröffentlichung als Open Source freigegeben. Seit dem 23. Oktober 2026 gilt die [MIT-Lizenz](../LICENSE) für den eigenen Code, die Dokumentation und die eigenen Ergebnisdateien dieses Repositorys. Der frühere Vorschlag einer getrennten Textlizenz wurde nicht übernommen. Der Dateiname bleibt für bestehende Links erhalten.
 
-## Vorschlag
-
-* Quellcode (`src/`, `beispiele/`, `tests/`, `experimente/skripte/`): **MIT-Lizenz** oder **Apache-2.0**. Beide sind
-  freizügig und passen zu „alles wird Open Source". Apache-2.0 enthält zusätzlich eine ausdrückliche Patentklausel;
-  MIT ist kürzer. Beides ist mit numpy (BSD-3) verträglich.
-* Dokumentation, Berichte, Ergebnisdaten (`docs/`, `experimente/berichte/`, `experimente/ergebnisse/`, `README.md`):
-  **CC BY 4.0**, damit Zitate und Nachnutzung mit Namensnennung möglich sind.
-* Urheber-/Namensnennung: „Christian Berrang, in Zusammenarbeit mit Ghost (KI-Agent) und Claude (Anthropic)".
-  Der Code wurde überwiegend von KI-Agenten unter Christians Leitung geschrieben; die Rechtslage zu KI-erzeugtem Code
-  unterscheidet sich nach Land. Eine Lizenz ist trotzdem sinnvoll, weil sie die Nutzungsbedingungen klärt, auch wenn
-  der Schutzumfang offen bleibt. Das sollte im LICENSE-Hinweis in einem Satz stehen.
+Urheberhinweis: Christian Berrang. Entwicklung mit Unterstützung der KI-Assistenten Ghost und Fable (Claude); siehe [README](../README.md). Drittbestandteile behalten ihre eigenen Lizenzbedingungen. Die folgende Herkunftsliste dokumentiert den bisherigen Projektstand und ersetzt keine Rechteprüfung neuer Fremdbeiträge.
 
 ## Geprüfte Bestandteile
 

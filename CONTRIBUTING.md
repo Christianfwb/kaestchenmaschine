@@ -1,6 +1,6 @@
 # Beiträge und Fehlerberichte
 
-Bitte vor einem Beitrag [Ergebnisse und Korrekturen](docs/EXPERIMENTE.md) und die [Lizenzentscheidung](docs/LIZENZ_VORSCHLAG.md) lesen. Die Lizenz ist noch offen; vor größeren Codeübernahmen die Bedingungen klären.
+Bitte vor einem Beitrag [Ergebnisse und Korrekturen](docs/EXPERIMENTE.md) und die [MIT-Lizenz](LICENSE) lesen. Beiträge sollen unter derselben Lizenz bereitgestellt werden; fremde Bestandteile müssen mit Herkunft und ihren Bedingungen gekennzeichnet sein.
 
 Ein hilfreicher Fehlerbericht nennt den Git-Commit, Python-Version, Betriebssystem, Befehl, Eingabefall und erwartetes/tatsächliches Ergebnis. Kleine reproduzierbare Beispiele sind besonders hilfreich. Keine Wallet-, RPC-Zugangsdaten oder privaten Vorlagen hochladen.
 

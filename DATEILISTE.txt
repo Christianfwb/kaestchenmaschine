@@ -2,6 +2,7 @@
 .github/workflows/tests.yml
 .gitignore
 CONTRIBUTING.md
+LICENSE
 README.md
 beispiele/01_reduzierte_runden.py
 beispiele/02_genesis_zeuge.py

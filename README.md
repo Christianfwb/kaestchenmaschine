@@ -6,7 +6,7 @@ Die Kästchenmaschine stellt eine Hashrechnung als Netz kleiner Rechenregeln dar
 
 Dieses Repository enthält **Forschungscode, Offline-Beispiele und Messdaten**. Der produktive GPU-Miner mit Node-Anbindung und Einreichung ist [nicht enthalten](miner/README.md). Kein Mining-Geschwindigkeitsvorteil und kein neu gefundener Bitcoin-Block sind nachgewiesen.
 
-**Stand:** 23. Oktober 2026 · öffentliches Forschungsrepository · [Prüfung und Änderungen](docs/REVIEW_20261023.md) · [Lizenzentscheidung noch offen](docs/LIZENZ_VORSCHLAG.md).
+**Stand:** 23. Oktober 2026 · öffentliches Forschungsrepository · [Prüfung und Änderungen](docs/REVIEW_20261023.md) · [MIT-Lizenz](LICENSE).
 
 [Schnellstart](#schnellstart) · [Ergebnisse](#was-ist-gemessen) · [Technik](docs/TECHNIK.md) · [Experimente und Korrekturen](docs/EXPERIMENTE.md) · [Nachrechnen](docs/REPRODUKTION.md) · [Offene Fragen](docs/OFFENE_FRAGEN.md)
 
@@ -79,14 +79,32 @@ Historische Resultate bleiben unverändert. Korrekturen am heutigen Code können
 
 17–63 Runden wurden in der Rundenkurve nicht untersucht; mehr freie Bits und andere Vorlagen ebenfalls nicht systematisch. Eine feste Ausgangsbedingung kann mehr innere Werte bestimmen, ohne eine Nonce herzuleiten. Das [Vorratsmodell](experimente/berichte/BERICHT_VORRAT_MODELL.txt) vergleicht unterschiedliche Spielräume und ist kein fairer abschließender Leistungsnachweis. Die [offenen Fragen](docs/OFFENE_FRAGEN.md) sind Forschungsfragen, keine versprochenen Verbesserungen.
 
+## Warum ich diese Forschung veröffentliche
+
+Ich habe sehr lange an der Kästchenmaschine gearbeitet: Ideen entwickelt, Versuche gemacht, Ergebnisse hinterfragt und immer wieder neu angesetzt. In diesem Projekt stecken viel Zeit, Ausdauer und persönliche Arbeit.
+
+Jetzt mache ich den Forschungsstand öffentlich zugänglich, damit andere ihn nachvollziehen, prüfen und darauf aufbauende Ideen diskutieren können. Dazu gehören auch die Grenzen, Fehler und negativen Ergebnisse. Ich veröffentliche den eigenen Code, die Dokumentation und die eigenen Ergebnisdateien unter der [MIT-Lizenz](LICENSE), damit andere sie nutzen und weiterentwickeln können.
+
+Wenn euch die Arbeit interessiert, freue ich mich über Rückmeldungen, unabhängige Nachprüfungen und Verbesserungsvorschläge. Wer meine bisherige Arbeit und mögliche weitere Forschung freiwillig finanziell unterstützen möchte, kann mir auch eine Bitcoin-Spende senden. Eine Spende ist ein Dankeschön für die Arbeit, kein Kauf und kein Versprechen auf Mining-Erträge oder bestimmte Forschungsergebnisse.
+
+**Freiwillige Bitcoin-Spenden (Bitcoin-Mainnet):**
+
+```text
+14oJK42G3zJBjfzJsfHwYTmgJxDzMwNMAy
+```
+
+Vielen Dank an alle, die das Projekt mit Ideen, Tests oder einer Spende unterstützen. Die Nutzung des Projekts ist nicht an eine Spende gebunden.
+
+— Christian Berrang
+
 ## Herkunft, Einordnung und Mitwirkung
 
 Projekt von Christian Berrang, entwickelt mit den KI-Assistenten Ghost und Fable (Claude). KI-Ausgaben wurden geprüft und mehrfach korrigiert; diese Zusammenarbeit ersetzt keine unabhängige Validierung. Rückmeldungen mit reproduzierbaren Beispielen sind über [Issues](https://github.com/Christianfwb/kaestchenmaschine/issues) willkommen. Hinweise für Beiträge stehen in [CONTRIBUTING.md](CONTRIBUTING.md).
 
 Wir beanspruchen keine Neuheit. Die Bausteine stammen aus der Constraint-Programmierung und booleschen Algebra. Die SHA-Rechnung orientiert sich an [NIST FIPS 180-4](https://doi.org/10.6028/NIST.FIPS.180-4); die Referenzprüfung nutzt [Python hashlib](https://docs.python.org/3/library/hashlib.html). E4 ist eine hier begrenzte Paarpropagation; die Versuche belegen keine allgemeine Vollständigkeit. Das Vorratsmodell ist nicht mit einem implementierten Hellman-Verfahren gleichzusetzen.
 
-Eine Lizenz wurde noch nicht gewählt; [Vorschlag und offene Entscheidung](docs/LIZENZ_VORSCHLAG.md). Dieses Repository erklärt sich deshalb derzeit nicht als fertig lizenziertes Open-Source-Release.
+Der eigene Code, die Dokumentation und die eigenen Ergebnisdateien stehen unter der [MIT-Lizenz](LICENSE). Hinweise zu Herkunft und Drittbestandteilen stehen in den [Lizenzhinweisen](docs/LIZENZ_VORSCHLAG.md).
 
 ## English summary
 
-This repository studies constraint propagation on Boolean and two-bit-digit representations of SHA256d. In five reduced-round control cases (4–16 rounds per compression, eight unknown nonce bits, a reachable exact output), bit propagation derives the nonce without enumerating candidates in the solver. Full-round experiments do not establish a mining speedup or a new valid block. Exact tables and NumPy vectors evaluate all selected candidates; they are separate baselines. Archived results, corrections and offline examples are included. The production miner is not included. Full historical experiment runners require Linux; the quick tests and first two examples are cross-platform. Licensing is pending.
+This repository studies constraint propagation on Boolean and two-bit-digit representations of SHA256d. In five reduced-round control cases (4–16 rounds per compression, eight unknown nonce bits, a reachable exact output), bit propagation derives the nonce without enumerating candidates in the solver. Full-round experiments do not establish a mining speedup or a new valid block. Exact tables and NumPy vectors evaluate all selected candidates; they are separate baselines. Archived results, corrections and offline examples are included. The production miner is not included. Full historical experiment runners require Linux; the quick tests and first two examples are cross-platform. The project’s own code, documentation and result files are available under the [MIT License](LICENSE). Voluntary Bitcoin donations can support Christian’s work; see the donation address above.
