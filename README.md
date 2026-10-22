@@ -16,6 +16,8 @@ Dieses Repository enthält **Forschungscode, Offline-Beispiele und Messdaten**. 
 
 **Beim vollständigen SHA256d steht dieser Nachweis noch aus.** Unsere verfügbare Rechenleistung und unsere Zeit begrenzen, welche größeren Versuche wir durchführen können. Die bisherigen vollständigen Läufe zeigen aber auch eine Grenze der getesteten Regeln: Selbst wenn sie bis zum Stillstand rechnen, bestimmen sie in diesen Fällen keine Noncebits. Deshalb ist bisher offen, ob mehr Rechenleistung allein genügt oder stärkere Ableitungsregeln nötig sind. Die kleinen Erfolge sind belegt; ein entsprechender Erfolg beim vollständigen Bitcoin-Verfahren ist noch nicht belegt.
 
+**Warum wir weiterforschen möchten:** Die nachgewiesenen Erfolge im kleinen Modell motivieren weitere Versuche mit stärkeren Verfahren und mehr Rechenleistung. Unsere Forschungshypothese ist, dass sich die gemeinsame Ableitung auch für anspruchsvollere Fälle nutzbar machen lässt. Ob und wie weit das bis zum vollständigen SHA256d gelingt, ist offen. Die kleinen Erfolge sind ein konkreter Ausgangspunkt für diese Untersuchung, kein Beleg dafür, dass allein mehr Hardware das Problem löst.
+
 Alle Aussagen gelten für die jeweils genannten Vorlagen, freien Bits und Regeln. Zeiten sind Einzelmessungen auf Fables CPU-Umgebung, keine Leistungsversprechen.
 
 | Versuch | Vorgabe | Ergebnis | Beleg |
@@ -90,6 +92,12 @@ Ich habe sehr lange an der Kästchenmaschine gearbeitet: Ideen entwickelt, Versu
 Jetzt mache ich den Forschungsstand öffentlich zugänglich, damit andere ihn nachvollziehen, prüfen und darauf aufbauende Ideen diskutieren können. Dazu gehören auch die Grenzen, Fehler und negativen Ergebnisse. Ich veröffentliche den eigenen Code, die Dokumentation und die eigenen Ergebnisdateien unter der [MIT-Lizenz](LICENSE), damit andere sie nutzen und weiterentwickeln können.
 
 Wenn euch die Arbeit interessiert, freue ich mich über Rückmeldungen, unabhängige Nachprüfungen und Verbesserungsvorschläge. Wer meine bisherige Arbeit und mögliche weitere Forschung freiwillig finanziell unterstützen möchte, kann mir auch eine Bitcoin-Spende senden. Eine Spende ist ein Dankeschön für die Arbeit, kein Kauf und kein Versprechen auf Mining-Erträge oder bestimmte Forschungsergebnisse.
+
+### Sponsoren und Forschungspartner gesucht
+
+Ich suche Unterstützer, die helfen möchten, diese offene Forschungsfrage gründlicher zu untersuchen. Willkommen sind **bereitgestellte Rechenzeit, geeignete Hardware, finanzielle Unterstützung und fachliche Zusammenarbeit**. Damit könnten wir größere, kontrollierte Versuche durchführen, aufwendigere Ableitungsverfahren untersuchen und die Ergebnisse unabhängig nachprüfen lassen.
+
+Die Unterstützung finanziert ergebnisoffene Forschung auf Grundlage der belegten kleinen Erfolge. Ein Mining-Vorteil oder ein gültiger neuer Bitcoin-Block kann daraus nicht zugesichert werden. Auch negative Ergebnisse und Grenzen sollen öffentlich dokumentiert werden. Wer eine Zusammenarbeit oder ein Sponsoring besprechen möchte, kann sich über die [GitHub-Issues](https://github.com/Christianfwb/kaestchenmaschine/issues) melden.
 
 **Freiwillige Bitcoin-Spenden (Bitcoin-Mainnet):**
 
