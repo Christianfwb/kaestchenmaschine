@@ -1,4 +1,4 @@
 __pycache__/
 *.pyc
-experimente/skripte/ERGEBNIS_*.json
+experimente/skripte/ERGEBNIS*.json
 experimente/skripte/LAUF_*.log

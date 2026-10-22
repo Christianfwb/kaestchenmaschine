@@ -6,11 +6,12 @@ Dreier (E4D F1, F2) nur bei bestandenem Gate (gueltiger F1-Beleg + neuer vollsta
 import json, sys, time, pathlib, platform, hashlib
 HERE = pathlib.Path(__file__).resolve().parent; sys.path.insert(0, str(HERE)); sys.path.insert(0, str(HERE.parent.parent / 'src' / 'kaestchen'))
 import lauf_wurzel2 as LW
+from referenz import referenz_datei
 def kind3(art, fall, aus):
     import subprocess
     return subprocess.Popen([sys.executable, '-I', str(HERE / 'wurzel_kind3.py'), art, fall, aus, str(LW.MAXP)], cwd=str(HERE))
 def f1_beleg():
-    p = HERE / 'ERGEBNIS2_E4_F1.json'; k = json.loads(p.read_text()); vor = json.loads((HERE / 'ERGEBNIS2_WURZEL.json').read_text())
+    p = referenz_datei('ERGEBNIS2_E4_F1.json'); k = json.loads(p.read_text(encoding='utf-8')); vor = json.loads(referenz_datei('ERGEBNIS2_WURZEL.json').read_text(encoding='utf-8'))
     e = next(a for a in vor['auswertungen'] if a['art'] == 'E4' and a['fall'] == 'F1')
     e = dict(e); e.update(wiederverwendet=True, herkunft=dict(datei='ERGEBNIS2_E4_F1.json', sha256=hashlib.sha256(p.read_bytes()).hexdigest(), lauf='lauf_wurzel2.py / wurzel_kind2.py, 2026-10-22',
              kind_status=k.get('status'), ergebnis_status=(k.get('ergebnis') or {}).get('status'), paare=(k.get('ergebnis') or {}).get('interne_einschraenkungen', {}).get('paare')))

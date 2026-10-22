@@ -62,6 +62,10 @@ F2 = next(f for f in FAELLE if f['name'].startswith('F2')); h76 = bytes.fromhex(
 g, inputs, _, out, root = SZ.baue_bitgraph(h76, B, list(range(8)), T)
 d = [3] * len(g.nodes); d[0] = 1; d[1] = 2; SZ.dom_schneiden(d, root, 2); st, sw = e1_lauf(g, d, max_sweeps=10 ** 6)
 tr = 2083236893; assert (tr & ~255) == B
-for i, x in enumerate(inputs): assert SZ.dom_von(d, x) & (1 << ((tr >> i) & 1))
+assert st == 'FIXPUNKT'
+values = g.values(tr)
+assert G.read(values, root)
+assert all(mask & (1 << int(value)) for mask, value in zip(d, values))
+assert int.from_bytes(hashlib.sha256(hashlib.sha256(h76 + tr.to_bytes(4, 'little')).digest()).digest(), 'little') <= T
 ok += 1; print('T5 Genesis-Treffer erhalten (E1 %s, %d Durchlaeufe): OK' % (st, sw))
 print('%d/5 Tests bestanden' % ok)

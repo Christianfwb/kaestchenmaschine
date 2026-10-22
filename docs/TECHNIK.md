@@ -27,7 +27,7 @@ Forschung wäre nichts weiter als ein Zahlenergebnis; nichts hier reicht etwas e
   `('and', a, b)` und `('xor', a, b)`. Ein negativer Index bedeutet Negation. `Graph.gate` vereinfacht beim Aufbau:
   Konstanten werden herausgerechnet, gleiche Gatter nur einmal angelegt (Hash-Consing), doppelte und negierte Eingänge
   zusammengefasst. Folge: Mit einem einzigen freien Bit kollabiert der Graph auf drei Knoten, weil jede Funktion
-  eines Bits eine Konstante, das Bit oder seine Negation ist. **Was beim Aufbau wegfällt, ist keine Ableitung** – deshalb
+  eines Bits eine Konstante, das Bit oder seine Negation ist. **Aufbau-Vereinfachung ist symbolische Ableitung, aber kein Gewinn durch nachgelagerte Propagationsregeln** – deshalb
   wird in allen Berichten Graphgröße und Art der Wurzel nach dem Aufbau mitgemessen.
 * `sha_ziffern.baue_bitgraph(header76, base, bits, target, runden=64, mit_ziel=True)`: Midstate des ersten Blocks als
   Konstante (nonce-frei), zweiter Block mit freiem Nonce-Wort (nur die angegebenen Bits sind Eingänge), zweite Anwendung
@@ -43,8 +43,9 @@ alle Gatter. Ergebnis `FIXPUNKT` (nichts mehr ändert sich), `WIDERSPRUCH` (eine
 (Durchlaufgrenze). Der Miner nutzt dieselbe Regel mit Grenze 12; in der Forschung wurde die Grenze zuletzt aufgehoben,
 weil sie Ergebnisse verfälscht hatte (Zielhash-Vergleich: Fixpunkt erst nach 41 Durchläufen).
 
-Eigenschaften: sound (nur Schnitte; jede echte Lösung bleibt), auf baumartigen Teilnetzen vollständig, auf dem
-SHA-Netz nicht – Information über *gemeinsame* Belegungen mehrerer Bits kann sie nicht halten.
+Die Regeln entfernen Werte ohne Unterstützung in der jeweiligen Gatterrelation. Soundness beruht auf der korrekten Relation und Projektion, nicht allein darauf, dass Mengen geschnitten werden. Einzelne Domänen speichern keine beliebigen gemeinsamen Belegungen. Ein Fixpunkt auf dem SHA-Netz ist keine vollständige Entscheidung.
+
+Seit der Repository-Prüfung werden auch bereits leere Domänen und widersprüchliche Konstanten vor dem ersten Gatter geprüft. Das betrifft insbesondere Graphen, deren Ziel beim Aufbau zu einer Konstanten vereinfacht wurde. Historische Messdaten werden deshalb nicht rückwirkend überschrieben.
 
 ## 4. Ziffernnetz (`ziffern.py`, `bausteine.py`, `ziffern_sha.py`, `sha_ziffern.py`)
 
@@ -64,7 +65,7 @@ SHA-Netz nicht – Information über *gemeinsame* Belegungen mehrerer Bits kann 
 * **E3** (`ziffern_sha.e3`): verallgemeinerte Bogenkonsistenz je Beziehung über einen Tupelindex – aus jeder Tabelle
   werden nur die Tupel betrachtet, deren Werte alle noch in den Domänen liegen; Projektion auf jede Variable.
 * **E4** (`ziffern_komp.e4`, `ziffern_array.e4`): zusätzlich Paarbeziehungen (Radius 1 = Paare, die eine gemeinsame
-  Beziehung oder einen gemeinsamen Nachbarn haben). Paarmasken über (vx·gy + vy); Komposition R(x,z) = R(x,y)∘R(y,z)
+  Beziehung oder einen gemeinsamen Nachbarn haben). Paarmasken über (vx·gy + vy); Einschränkung R(x,z) ← R(x,z) ∩ (R(x,y)∘R(y,z))
   über vorberechnete Zeilen-/Spalten-/Transpositionstabellen je Größenpaar. `ziffern_array.PaarSpeicher` hält alle
   Paare, die die Radius-1-Schließung je anlegen kann, **vorab gezählt** in Arrays (Schlüssel per numpy aufgebaut);
   liegt die Zahl über der Paargrenze, endet der Lauf vor jeder Anlage mit `OPEN`. `zeuge_ok` prüft streamend, ob eine
@@ -81,7 +82,7 @@ SHA-Netz nicht – Information über *gemeinsame* Belegungen mehrerer Bits kann 
 
 ## 6. Messdisziplin (gilt für alle Läufe)
 
-* Jeder Lauf ist ein Kindprozess; ein Elternprozess (`lauf_*.py`) überwacht Wandzeit und RSS alle 0,1 s und bricht bei
+* Die überwachten Experimentreihen verwenden Kindprozesse; die einfachen Beispiele und Schnelltests laufen direkt. Bei den Reihen gilt: ein Elternprozess (`lauf_*.py`) überwacht Wandzeit und RSS alle 0,1 s und bricht bei
   Überschreitung ab. Abbruch wird als `OFFEN` mit erreichtem Fortschritt berichtet, nie als Ergebnis gewertet.
 * Referenzwerte (hashlib, Integer-Referenz) werden **nie** in das Netz eingespeist; sie dienen nur der nachträglichen
   Kontrolle (Orakel über alle Kandidaten). Jeder Ausschluss wird gegen das Orakel geprüft; ein falscher Ausschluss

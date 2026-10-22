@@ -54,3 +54,7 @@ Containerpfade in den Kopfzeilen gekürzt; (4) ältere Fassungen gleichnamiger D
 "identisch" = derselbe Inhalt (gleicher SHA-256) liegt in diesem Paket, ggf. unter anderem Namen (Berichte wurden beim Ablegen
 nach Thema benannt). "nicht übernommen" betrifft Pakete vor dem SHA256d-Teil (Kompakt, W7, Wortregel, Rotationen, Miner-Audit,
 Patches, Diskussionsantworten) - siehe ENTSCHEIDUNGEN.md.
+
+## Nachtrag: öffentliche Repository-Prüfung
+
+Die Tabelle oben beschreibt die erste Paketfassung. Spätere Code- und Dokumentationskorrekturen sind in [REVIEW_20261023.md](REVIEW_20261023.md) und der Git-Historie nachvollziehbar. Historische Ergebnisse wurden nicht umgeschrieben. Aktuelle Dateiprüfsummen stehen in [SHA256SUMS.txt](../SHA256SUMS.txt).

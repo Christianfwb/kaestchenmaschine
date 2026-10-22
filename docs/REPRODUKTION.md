@@ -1,17 +1,18 @@
 # Reproduktion
 
-Voraussetzungen: Python 3.10 oder neuer (gemessen mit 3.13.16), für E4-Paarläufe und den Phasenvergleich `numpy`
-(gemessen mit 2.5.3). Linux empfohlen (die Elternprozesse lesen `/proc/<pid>/status` für den Speicherwächter; unter
-Windows/macOS laufen die Kindprozesse direkt, nur die Überwachung fehlt). Alles offline, CPU, kein Node, keine GPU.
+Voraussetzungen: Python 3.10 oder neuer. Die Schnelltests und Beispiele 1/2 laufen unter Windows, Linux und macOS ohne Zusatzpakete. Für E4-Paarläufe und Phasenvektoren wird NumPy benötigt; die archivierten Messungen nennen Python 3.13.16 und NumPy 2.5.3.
+
+**Die historischen vollständigen Experimentläufer benötigen Linux.** Elternprozesse lesen `/proc/<pid>/status`; Kindprozesse importieren `resource` und werten dessen Linux-Speichereinheiten aus. Unter Windows bitte WSL verwenden. Native Windows- und macOS-Ausführung dieser Reihen wird nicht unterstützt. Alles offline, CPU, kein Node, keine GPU.
 
 ```
 pip install numpy            # optional, siehe oben
 ```
 
-## Schnelltests (< 30 s)
+## Plattformunabhängige Schnelltests
 
 ```
-python3 -I tests/test_schnell.py
+python -B -I tests/test_schnell.py
+python -B -I tests/test_regression.py
 ```
 Erwartet: `5/5 Tests bestanden`. Geprüft wird: Referenz-SHA == hashlib (64 Runden, beide Fälle), Bitgraph == hashlib,
 Adapter-Rundreise, Nonceableitung bei 4 und 6 Runden == Orakel, Genesis-Treffer in allen E1-Domänen erhalten.
@@ -26,10 +27,14 @@ python3 -I beispiele/03_vorrat_modell.py           # ~70 s, 16-Bit-Labor
 
 ## Vollständige Experimentreihen
 
+**Diese historischen Reihen benötigen Linux.** Die Beispiele 1/2 und Schnelltests benötigen nur Python und laufen auch unter Windows.
+
 Alle Skripte liegen in `experimente/skripte/` und werden **aus diesem Verzeichnis** gestartet (sie finden die
 Bibliothek über `../../src/kaestchen` und schreiben ihre Ergebnisdateien neben sich). Die Referenzergebnisse liegen in
 `experimente/ergebnisse/`; ein neuer Lauf erzeugt neue Dateien mit gleichem Namen im Skriptverzeichnis, die sich dann
-vergleichen lassen (Zeiten und Peak-Speicher weichen rechnerbedingt ab, alle Zähler müssen gleich sein).
+vergleichen lassen (Zeiten und Peak-Speicher weichen rechnerbedingt ab). Zähler sind nur bei derselben Codefassung und denselben Einstellungen direkt vergleichbar; seit dem Erststand wurde die Erkennung bereits leerer Bitdomänen korrigiert. Siehe [Prüfbericht](REVIEW_20261023.md).
+
+`lauf_wurzel3.py` und `lauf_zielhash_fix.py` lesen ihre Vergleichsbelege explizit aus `experimente/ergebnisse/`. Eigene Ausgaben bleiben in `experimente/skripte/`; sie ersetzen nie stillschweigend diese Referenzen. Deshalb müssen keine historischen Läufe zur Vorbereitung wiederholt werden. Neue Läufe im Skriptordner überschreiben dort gleichnamige eigene Ergebnisse: diese bei Bedarf vorab separat sichern.
 
 | Reihe | Aufruf | Dauer / Spitze (gemessen) |
 |---|---|---|
@@ -60,4 +65,10 @@ Jede `ERGEBNIS_*.json` nennt Rechner, Python-Version, Zeiten je Schritt, Peak-RS
 
 ## Prüfsummen
 
-`SHA256SUMS.txt` im Paketstamm deckt jede Datei ab: `sha256sum -c SHA256SUMS.txt`.
+`SHA256SUMS.txt` deckt die gelisteten Veröffentlichungsdateien ab (nicht sich selbst, `.git/` oder neue lokale Ergebnisse):
+
+```sh
+python -B -I tools/manifest.py --check
+```
+
+Alternativ unter Linux: `sha256sum -c SHA256SUMS.txt`. `.gitattributes` legt LF-Zeilenenden fest, auch für Windows-Checkouts. Bei einem älteren Checkout mit CRLF neu klonen, bevor Prüfsummen verglichen werden. Die Prüfsummen belegen Dateiintegrität, nicht mathematische Korrektheit.

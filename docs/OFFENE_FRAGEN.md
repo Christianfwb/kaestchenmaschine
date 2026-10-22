@@ -5,7 +5,7 @@ Disziplin (Watchdog, Orakel erst danach, Vergleich an Messstellen, keine automat
 
 ## Offen (nicht gemessen)
 
-1. **Rundenkurve 17–63.** Gemessen: bis 16 Runden vollständige Ableitung durch E1; bei 64 Runden nichts. Wo endet sie,
+1. **Rundenkurve 17–63.** Gemessen: bis 16 Runden vollständige Ableitung durch E1; bei 64 Runden keine Noncebits in den getesteten Fällen. Wo endet sie,
    abrupt oder allmählich? Erster Verdacht (Vermutung): bis 16 Runden gibt es keine Nachrichtenerweiterung, die Nonce
    tritt nur über W3 in Runde 4 ein. Ein Lauf je Rundenzahl, Sekunden bis Minuten.
 2. **Zweiter Zielhash.** „Rückwärts bis Runde 57" beruht auf einem H*. Ob die Reichweite am Wert oder an der Struktur
@@ -28,13 +28,12 @@ Disziplin (Watchdog, Orakel erst danach, Vergleich an Messstellen, keine automat
   Die exakten Darstellungen (Wahrheitstabellen, Fallvektoren) halten alles – und sind genau das, was sie vermeiden
   sollten: alle Fälle rechnen.
 * Jede Aussage über das vollständige SHA256d muss am vollständigen SHA256d gemessen werden. Erfolge an reduzierten
-  Modellen übertragen sich nicht; das ist hier zweimal vorgeführt (16 Runden ja, 64 Runden nein).
+  Modellen sind kein Nachweis für vollständiges SHA256d; das ist hier zweimal vorgeführt (16 Runden ja, 64 Runden nein).
 * Referenzwerte nie in das Netz einspeisen. Bekannte Treffer müssen erhalten bleiben. Graphgröße nach dem Aufbau
-  mitmessen (Aufbau-Vereinfachung ist keine Ableitung).
+  mitmessen (Aufbau-Vereinfachung getrennt von Regelpropagation ausweisen).
 * Zeiten als Einzelmessungen mit Rechnerangabe. Keine Hochrechnung auf Hardware.
 
 ## Was wir nicht behaupten
 
 Weder dass die Kästchenmaschine das Mining beschleunigen kann, noch dass sie es nicht kann – beides ist nicht
-gezeigt. Gezeigt ist, dass die untersuchten Regelmengen am vollständigen SHA256d bei 8 freien Bits nichts ableiten,
-und dass dieselben Regeln bis 16 Runden alles ableiten.
+gezeigt. Gezeigt sind keine zusätzlichen Noncebits bei den untersuchten vollständigen SHA256d-Fällen mit acht freien Bits; innere Werte werden sehr wohl eingeschränkt. In den fünf reduzierten Kontrollfällen bis 16 Runden wurden alle acht Eingangsbits abgeleitet. Das ist keine Aussage über sämtliche Vorlagen oder Ziele.

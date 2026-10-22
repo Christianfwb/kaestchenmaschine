@@ -1,8 +1,6 @@
 # Abgrenzung: der Kästchenminer
 
-Der laufende Kästchenminer (Christians Windows-Rechner, GPU, Bitcoin-Node) ist **nicht** Teil dieses Pakets. Er wurde
-während der gesamten Forschung nicht angefasst: kein Stop, kein Neustart, keine Änderung, keine GPU-Last, keine
-Node-Abfragen, keine Einreichung. Alle Experimente liefen auf Kopien, offline, auf der CPU eines anderen Rechners.
+Der laufende Kästchenminer (Christians Windows-Rechner, GPU, Bitcoin-Node) ist **nicht** Teil dieses Pakets. Die hier dokumentierten isolierten Forschungsversuche griffen nicht in den Miner ein. Separate Arbeiten an dessen Betrieb und Trefferabsicherung sind nicht Bestandteil dieser Veröffentlichung.
 
 Was der Miner tut (nach Codeprüfung vom 22.10.2026, nicht veröffentlichter Code):
 * baut je Blockvorlage denselben Bitgraphen wie `src/kaestchen/gatter.py` (Midstate als Konstante, 32 Noncebits als
@@ -14,8 +12,7 @@ Was der Miner tut (nach Codeprüfung vom 22.10.2026, nicht veröffentlichter Cod
 * reicht Blöcke nur über eine gesonderte, abgesicherte Betriebsschicht ein (nicht enthalten).
 
 Was die Forschung für den Miner bedeutet (Stand 23.10.2026): Am vollständigen SHA256d schließt keine der untersuchten
-Regelerweiterungen zusätzliche Nonces aus; der Miner arbeitet damit faktisch als Prüfer von 256er-Gruppen, dessen
-Ausschlusswirkung bei 8 freien Bits null ist. Ein Suchvorteil gegenüber normalem Hashen ist nicht belegt. Ein gültiger
+Regelerweiterungen zusätzliche Nonces aus; der Miner arbeitet damit faktisch als Prüfer von 256er-Gruppen, für den in den getesteten Wurzelgruppen mit acht freien Bits kein früher Ausschluss gemessen wurde. Spätere Zweige und vollständige Kandidaten sind davon zu unterscheiden. Ein Suchvorteil gegenüber normalem Hashen ist nicht belegt. Ein gültiger
 Mainnet-Block wurde nicht gefunden. Die einzige Betriebsfrage, die aus der Forschung folgt (E1-Durchlaufgrenze 12 gegen
 Fixpunkt bei 41 im Zielhash-Fall), ist nicht gemessen und wird hier nur benannt.
 

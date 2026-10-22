@@ -15,5 +15,11 @@ fest = [(i, SZ.dom_von(d, n) >> 1) for i, n in enumerate(inputs) if SZ.dom_von(d
 gruppe = [BASIS | sum(((n >> i) & 1) << BITS[i] for i in range(8)) for n in range(256)]
 treffer = [n for n in gruppe if int.from_bytes(hashlib.sha256(hashlib.sha256(h76 + n.to_bytes(4, 'little')).digest()).digest(), 'little') <= T]
 ausgeschlossen = [n for n in gruppe if any(((n >> BITS[i]) & 1) != v for i, v in fest)]
+werte_erhalten = all(
+    all(mask & (1 << int(value)) for mask, value in zip(d, g.values(n)))
+    for n in treffer
+)
+assert 2083236893 in treffer and werte_erhalten
+assert all(n not in ausgeschlossen for n in treffer)
 print('Genesis, Gruppe %d..%d | Graph %d Knoten | E1 %s nach %d Durchlaeufen, %.1f s' % (gruppe[0], gruppe[-1], len(g.nodes), status, sweeps, time.perf_counter() - t))
-print('Noncebits abgeleitet: %d | ausgeschlossen: %d von 256 | Orakel-Treffer: %s | Treffer erhalten: %s' % (len(fest), len(ausgeschlossen), treffer, all(n not in ausgeschlossen for n in treffer)))
+print('Noncebits abgeleitet: %d | ausgeschlossen: %d von 256 | Orakel-Treffer: %s | Treffer erhalten: %s' % (len(fest), len(ausgeschlossen), treffer, werte_erhalten))

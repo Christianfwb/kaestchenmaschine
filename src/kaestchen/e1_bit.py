@@ -14,6 +14,15 @@ for opn in ('and', 'xor'):
                 TAB[(opn, A, B, Zm)] = (sa, sb, sz)
 def e1_lauf(g, d, max_sweeps=12):
     n = len(g.nodes)
+    if len(d) != n or any(m not in (0, 1, 2, 3) for m in d):
+        raise ValueError('Expected one Boolean domain mask per graph node')
+    if max_sweeps < 1:
+        raise ValueError('max_sweeps must be positive')
+    # Constants remain constants, including when a target contradicts them.
+    d[0] &= 1
+    d[1] &= 2
+    if 0 in d:
+        return 'WIDERSPRUCH', 0
     def get(x): return (((d[-x] & 1) << 1) | ((d[-x] & 2) >> 1)) if x < 0 else d[x]
     def assign(x, v):
         if x < 0: x = -x; v = ((v & 1) << 1) | ((v & 2) >> 1)

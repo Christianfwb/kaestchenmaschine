@@ -1,82 +1,92 @@
-# Kästchenmaschine – Propagation statt Suche auf SHA256d
+# Kästchenmaschine
 
-**Stand: Entwurf vom 2026-10-23. Gegenprüfung durch Ghost steht noch aus. Nicht veröffentlicht.**
+**Experimente zur Constraint-Propagation auf SHA256d.**
 
-Ein Forschungsprojekt von Christian Berrang (Idee, Richtung, Entscheidungen), „Ghost" (KI-Agent, Betrieb des Miners, Prüfung
-und Präzisierung der Aufträge) und „Fable" (Claude, Anthropic; Umsetzung der Experimente, Messungen, Berichte). Alle
-Entscheidungen wurden zu dritt getroffen; dieses Paket dokumentiert den Forschungsteil.
+Die Kästchenmaschine stellt eine Hashrechnung als Netz kleiner Rechenregeln dar. Für jedes Bit speichert ein „Kästchen“, ob 0, 1 oder noch beides möglich ist. Bekannte Eingaben und Bedingungen am Ausgang engen diese Möglichkeiten ein — vorwärts und rückwärts.
 
-## Worum es geht
+Dieses Repository enthält **Forschungscode, Offline-Beispiele und Messdaten**. Der produktive GPU-Miner mit Node-Anbindung und Einreichung ist [nicht enthalten](miner/README.md). Kein Mining-Geschwindigkeitsvorteil und kein neu gefundener Bitcoin-Block sind nachgewiesen.
 
-Ein Bitcoin-Block gilt, wenn der doppelte SHA-256-Hash seines Kopfes unter einer Zielzahl liegt. Üblich ist Raten: Nonce
-einsetzen, hashen, vergleichen, Milliarden Mal. Die Kästchenmaschine versucht das Gegenteil: Sie baut die gesamte Rechnung
-als Schaltnetz aus UND- und XOR-Gattern auf (rund 208 000 Gatter für ein echtes Template mit 8 freien Noncebits), gibt
-jedem Gatterausgang ein „Kästchen" mit den noch möglichen Werten ({0}, {1} oder {0,1}) und lässt Regeln von beiden Seiten
-her – vom bekannten Kopf vorwärts, vom Ziel rückwärts – die Kästchen enger machen. Ein leeres Kästchen bedeutet: diese
-Nonces sind ausgeschlossen. Ein vollständig bestimmter Eingang bedeutet: Nonce abgeleitet, ohne sie probiert zu haben.
+**Stand:** 23. Oktober 2026 · öffentliches Forschungsrepository · [Prüfung und Änderungen](docs/REVIEW_20261023.md) · [Lizenzentscheidung noch offen](docs/LIZENZ_VORSCHLAG.md).
 
-Die Frage der Forschung war: **Wie weit trägt das?** Und: **Lässt sich die Reichweite durch bessere Regeln vergrößern?**
+[Schnellstart](#schnellstart) · [Ergebnisse](#was-ist-gemessen) · [Technik](docs/TECHNIK.md) · [Experimente und Korrekturen](docs/EXPERIMENTE.md) · [Nachrechnen](docs/REPRODUKTION.md) · [Offene Fragen](docs/OFFENE_FRAGEN.md)
 
-## Die wichtigsten Ergebnisse (alle reproduzierbar, siehe `docs/REPRODUKTION.md`)
+## Was ist gemessen?
 
-1. **Reduzierte Modelle (4 bis 16 Runden je Kompression, sonst wie SHA256d):** Mit acht freien Noncebits und einem exakt
-   vorgegebenen Zielhash leitet die Maschine die Nonce **vollständig ab – ohne Kandidatensuche**, nur mit Bitregeln, in
-   Sekunden (4 Runden: 0,02 s; 16 Runden: 6,1 s). Das Ergebnis wurde jeweils unabhängig durch Auswertung aller 256 Kandidaten
-   bestätigt; der Lösungsnonce war der Maschine nicht bekannt. *Kein Geschwindigkeitsvorteil belegt* – 256 Hashes wären
-   ebenfalls in Millisekunden erledigt. Gezeigt ist, dass die Ableitung funktioniert, nicht, dass sie schneller ist.
-2. **Vollständiges SHA256d (64 Runden):** An einem echten Template (Höhe 972 527, 78 Zielnullbits) und am Genesis-Block
-   leitet keine der untersuchten Regelmengen ein einziges Noncebit ab und schließt keine Nonce aus. Bekannte Treffer bleiben
-   stets erhalten (kein falscher Ausschluss in allen Läufen). Gemessen wurde, wie weit Information trägt: vom Kopf vorwärts
-   bis Runde 4 der ersten Anwendung, vom Ziel rückwärts bis Runde 61 der zweiten Anwendung; mit vollständig vorgegebenem
-   Endhash bis Runde 57. Dazwischen liegen über 100 Runden ohne eine einzige Einschränkung.
-3. **Untersuchte Erweiterungen ohne zusätzlichen Nonceausschluss:** Ziffernnetz (2-Bit-Ziffern) mit Paarbeziehungen
-   (Radius 1, bis 1,9 Mio. Paare), Dreierbeziehungen, Auffrisch-Kästchen an Kettenenden, exakte Wahrheitstabellen und
-   Phasenvektoren bei zwei freien Bits, XOR-Gleichungssysteme über GF(2), Zielhash-Vorgabe, Vorratsdatenbank-Modell.
-4. **Korrekturen gehören dazu.** Mehrere Zwischenaussagen von Fable waren zu stark und wurden durch Ghosts Gegenprüfung
-   oder eigene Nachmessung zurückgenommen – zuletzt: Der scheinbare Vorsprung der Paare beim Zielhash-Vergleich war die
-   Durchlaufgrenze von 12; Bitregeln allein erreichen nach 41 Durchläufen dasselbe Registerbild. Alle Korrekturen sind in
-   `docs/EXPERIMENTE.md` sichtbar, die Originalberichte liegen unverändert in `experimente/berichte/`.
+Alle Aussagen gelten für die jeweils genannten Vorlagen, freien Bits und Regeln. Zeiten sind Einzelmessungen auf Fables CPU-Umgebung, keine Leistungsversprechen.
 
-**Kein neuer Block wurde gefunden. Kein Durchbruch, keine Unmöglichkeitsbehauptung, kein Hardwaregewinn.** Was vorliegt,
-ist eine funktionierende, geprüfte Maschine, eine saubere Messung ihrer Grenze am vollen SHA256d und eine Reihe ehrlich
-dokumentierter negativer Ergebnisse.
+| Versuch | Vorgabe | Ergebnis | Beleg |
+|---|---|---|---|
+| Reduziertes SHA256d: 4, 6, 8, 12 und 16 Runden **je Kompression** | Acht freie Noncebits; exakter, erreichbarer Zielhash | E1 bestimmt in allen fünf Kontrollfällen alle acht Bits ohne Kandidatensuche. 0,02–6,1 s reine E1-Zeit. | [Rundenkurve](experimente/ergebnisse/ERGEBNIS_RUNDEN.json), [Bericht](experimente/berichte/BERICHT_ABSCHLUSS_ZIELHASH_RUNDEN.txt) |
+| Vollständiges SHA256d: 64 Runden | Zwei gespeicherte Vorlagen, acht freie Bits, Hash ≤ Target | E1+E4 bestimmt an den untersuchten Wurzeln keine Noncebits; keine Nonces ausgeschlossen. Genesis-Zeuge bleibt erhalten. | [Basis und Dreier](experimente/ergebnisse/ERGEBNIS3_WURZEL.json) |
+| Vollständiges SHA256d mit genauem Endhash | Eine Vorlage, ein vorab festgelegter Zielhash, acht freie Bits | Mehr feste innere Werte, aber weiterhin keine Noncebits. E1 erreicht nach 41 Durchläufen dasselbe H2-Registerbild wie E1+E4; Paare bestimmen zusätzlich 70 innere Bitknoten. | [Korrigierter Vergleich](experimente/ergebnisse/ERGEBNIS_ZIELHASH_FIX.json) |
+| Exakte Tabellen und NumPy-Fallvektoren | Zwei freie Bits, also vier Kandidaten je Vorlage | Alle acht Digests und Zielentscheidungen stimmen mit hashlib überein. Diese Verfahren werten die Fälle gemeinsam aus; sie sind kein belegter Suchvorteil. | [Tabellen](experimente/ergebnisse/ERGEBNIS_TABELLEN4.json), [Vektoren](experimente/ergebnisse/ERGEBNIS_PHASEN.json) |
+| XOR-Gleichungen | Zwei oder acht freie Bits; UND-Ausgänge als freie Variablen | Die untersuchte Lockerung liefert keine neue Eingangsbeziehung und keinen Widerspruch. | [XOR-Auswertung](experimente/ergebnisse/ERGEBNIS_XORSHA.json) |
 
-## Aufbau des Pakets
+Die reduzierten Rechnungen sind **kein Bitcoin-SHA256d**. Für diese Kontrollfälle wird der Zielhash aus einer vorher gewählten Nonce erzeugt; der Löser erhält nur die Vorlage, freie Bits und diesen Hash. Eine getrennte Referenzauswertung aller 256 Kandidaten prüft anschließend das Ergebnis. Der Versuch belegt Ableitung in diesen Fällen, keine allgemeine Urbildlösung und keinen Zeitgewinn gegenüber 256 direkten Auswertungen.
 
-| Pfad | Inhalt |
-|---|---|
-| `src/kaestchen/` | Bibliothek: Bitgraph (`gatter.py`), Referenz-SHA (`pruefung.py`), Ziffernnetz und Regeln (`ziffern*.py`, `bausteine.py`), Anbindung an SHA256d (`sha_ziffern.py`), Bitregel E1 (`e1_bit.py`), Austausch Bit↔Ziffer (`austausch.py`), Auffrischer (`kette.py`), Mini-Netze (`mininetze.py`) |
-| `beispiele/` | Drei kleine, offline laufende Programme (Sekunden bis ~1 min) |
-| `tests/test_schnell.py` | Fünf Schnelltests gegen `hashlib` und das Orakel (< 30 s) |
-| `experimente/skripte/` | Alle Experimentskripte (Kindprozess + überwachender Elternprozess) und die zwei Datendateien |
-| `experimente/ergebnisse/` | Ergebnisdateien aller Läufe (JSON, mit Rechner, Python-Version, Zeiten, Speicher) |
-| `experimente/berichte/` | Originalberichte Fable→Ghost, unverändert, inklusive später korrigierter Aussagen |
-| `experimente/diffs/` | Änderungsnachweise zwischen Fassungen |
-| `docs/` | Technik, Experimentübersicht, Reproduktion, offene Fragen, Lizenzvorschlag, Entscheidungen |
-| `miner/` | Abgrenzung zum laufenden Kästchenminer (Code nicht enthalten) |
+**Nicht fest bestimmte Bits bedeuten nicht fehlende Beziehungen.** Aus Registerkarten lässt sich keine „Lücke ohne Information“ oder Unmöglichkeit eines stärkeren Verfahrens ableiten. Auch Paare und Dreier können Zusammenhänge bewahren. Wir dokumentieren ihre gemessene Wirkung statt einer allgemeinen Grenze der Mathematik.
 
 ## Schnellstart
 
+Python 3.10 oder neuer. Diese Befehle laufen offline auf Windows, Linux und macOS; für die ersten beiden Beispiele und Schnelltests sind keine Zusatzpakete nötig. Verwende gegebenenfalls `python3` statt `python`.
+
+```sh
+git clone https://github.com/Christianfwb/kaestchenmaschine.git
+cd kaestchenmaschine
+python -B -I tests/test_schnell.py
+python -B -I tests/test_regression.py
+python -B -I beispiele/01_reduzierte_runden.py 8
+python -B -I beispiele/02_genesis_zeuge.py
 ```
-python3 -I beispiele/01_reduzierte_runden.py 8      # Nonce aus Zielhash bei 8 Runden, < 1 s
-python3 -I beispiele/02_genesis_zeuge.py            # volles SHA256d, Genesis: 0 Noncebits, Treffer erhalten, ~2 s
-python3 -I tests/test_schnell.py                    # 5 Tests, < 30 s
+
+Erwartet: fünf bestandene Schnelltests; bestandene Regressionen; im 8-Runden-Beispiel eine vollständig abgeleitete Kontrollnonce; beim Genesis-Beispiel keine neuen Noncebits, aber Erhaltung des bekannten Treffers in allen Bitdomänen.
+
+Für E4 und NumPy-Experimente:
+
+```sh
+python -m pip install -r requirements.txt
 ```
-Benötigt Python 3.10+; `numpy` nur für die Paarspeicher-Läufe (E4) und den Phasenvergleich. Alles läuft offline auf der CPU.
-Es gibt keine Verbindung zu einem Bitcoin-Node, keine Einreichung, keine GPU.
 
-## Grenzen in einem Absatz
+Die archivierten vollständigen Experimentläufer benötigen **Linux** (`resource` und `/proc`); unter Windows bitte WSL verwenden. Sie sind keine plattformübergreifenden Minerprogramme. Siehe [Befehle, Voraussetzungen und Referenzpfade](docs/REPRODUKTION.md).
 
-Die Darstellung „je Kästchen eine Wertemenge" (auch mit Paaren oder Tripeln) kann nicht festhalten, *welche* Kombination
-der freien Bits zu welchem Zwischenwert gehört. Nach wenigen Runden Durchmischung ist in jedem Kästchen jeder Wert
-möglich, und die Bindung zwischen den Kästchen ist verloren. Beim vollen SHA256d ist das bei acht freien Bits ab Runde 5
-der Fall. Ob und wo zwischen 16 und 64 Runden die Ableitung endet, ist nicht gemessen (siehe `docs/OFFENE_FRAGEN.md`).
-Die Maschine ist stark, wo wenig unbekannt ist: Nachrechnen, Prüfen, reduzierte Rundenzahlen.
+## Wie funktioniert ein Kästchen?
 
-## Quellen und Einordnung
+Bei `x XOR y = 0` müssen x und y gleich sein. Einzelne Bitkästchen lassen trotzdem bei beiden 0 und 1 zu. Eine Paarbeziehung kann zusätzlich festhalten: **nur 00 oder 11**. E1 arbeitet auf Bitgattern; E3 auf kleinen Zifferntabellen; E4 hält zusätzlich ausgewählte Paarbeziehungen. Die Regeln werden wiederholt angewendet, bis nichts enger wird oder eine Grenze erreicht ist.
 
-Die Grundlagen sind Standard: Bogenkonsistenz (E1/E3) und Pfadkonsistenz (E4) aus der Constraint-Programmierung
-(Mackworth 1977, „Consistency in networks of relations"); SHA-256 nach FIPS 180-4; die Vorratsrechnung ist Hellmans
-Zeit-Speicher-Tausch (1980). Veröffentlichte Urbild-Angriffe auf rundenreduziertes SHA-256 werden hier bewusst nicht
-beziffert, weil wir sie nicht selbst geprüft haben; der Vergleich wäre ohnehin schief (andere Aufgabenstellung, andere
-Freiheitsgrade). Wir beanspruchen keine Neuheit.
+- **FIXPUNKT:** Diese Regeln ändern nichts mehr. Das beweist weder Lösbarkeit noch Unlösbarkeit.
+- **WIDERSPRUCH:** Eine notwendige Bedingung lässt keinen Wert mehr zu.
+- **OFFEN/OPEN:** Noch nicht entschieden oder durch eine Ressourcengrenze beendet; niemals als Ausschluss zählen.
+- **Treffer:** Eine abgeleitete Eingabe wird unabhängig nachgerechnet.
+
+Die Bitregeln brauchen auf zyklisch gekoppelten Netzen keine vollständige Entscheidung zu liefern. [Darstellung, Schnittstellen und Messdisziplin](docs/TECHNIK.md).
+
+## Code und Belege
+
+| Pfad | Inhalt |
+|---|---|
+| [src/kaestchen](src/kaestchen) | Bitgraph, Referenzrechnung, Bit-/Ziffernregeln, Paarverwaltung und Austausch |
+| [beispiele](beispiele) | Kleine Einstiege; das Vorratsmodell ist ausdrücklich illustrativ |
+| [tests](tests) | Schnelltests und Regressionen; [automatischer Testlauf](.github/workflows/tests.yml) |
+| [experimente/skripte](experimente/skripte) | Linux-Läufer und festgelegte Eingabedaten |
+| [experimente/ergebnisse](experimente/ergebnisse) | Archivierte Messungen einschließlich früherer Fehler/Abbrüche |
+| [experimente/berichte](experimente/berichte) | Historische Originalberichte; manche Aussagen wurden später korrigiert |
+| [docs/EXPERIMENTE.md](docs/EXPERIMENTE.md) | Heutige Einordnung und sichtbare Korrekturen der Originalberichte |
+| [docs/HERKUNFT.md](docs/HERKUNFT.md) | Herkunft der Dateien und Abweichungen zwischen Fassungen |
+
+Historische Resultate bleiben unverändert. Korrekturen am heutigen Code können Details eines erneuten Laufs ändern; sie sind im [Prüfbericht](docs/REVIEW_20261023.md) benannt. Dateiliste und [SHA256-Prüfsummen](SHA256SUMS.txt) lassen sich mit `python -B -I tools/manifest.py --check` prüfen.
+
+## Grenzen und nächste Fragen
+
+17–63 Runden wurden in der Rundenkurve nicht untersucht; mehr freie Bits und andere Vorlagen ebenfalls nicht systematisch. Eine feste Ausgangsbedingung kann mehr innere Werte bestimmen, ohne eine Nonce herzuleiten. Das [Vorratsmodell](experimente/berichte/BERICHT_VORRAT_MODELL.txt) vergleicht unterschiedliche Spielräume und ist kein fairer abschließender Leistungsnachweis. Die [offenen Fragen](docs/OFFENE_FRAGEN.md) sind Forschungsfragen, keine versprochenen Verbesserungen.
+
+## Herkunft, Einordnung und Mitwirkung
+
+Projekt von Christian Berrang, entwickelt mit den KI-Assistenten Ghost und Fable (Claude). KI-Ausgaben wurden geprüft und mehrfach korrigiert; diese Zusammenarbeit ersetzt keine unabhängige Validierung. Rückmeldungen mit reproduzierbaren Beispielen sind über [Issues](https://github.com/Christianfwb/kaestchenmaschine/issues) willkommen. Hinweise für Beiträge stehen in [CONTRIBUTING.md](CONTRIBUTING.md).
+
+Wir beanspruchen keine Neuheit. Die Bausteine stammen aus der Constraint-Programmierung und booleschen Algebra. Die SHA-Rechnung orientiert sich an [NIST FIPS 180-4](https://doi.org/10.6028/NIST.FIPS.180-4); die Referenzprüfung nutzt [Python hashlib](https://docs.python.org/3/library/hashlib.html). E4 ist eine hier begrenzte Paarpropagation; die Versuche belegen keine allgemeine Vollständigkeit. Das Vorratsmodell ist nicht mit einem implementierten Hellman-Verfahren gleichzusetzen.
+
+Eine Lizenz wurde noch nicht gewählt; [Vorschlag und offene Entscheidung](docs/LIZENZ_VORSCHLAG.md). Dieses Repository erklärt sich deshalb derzeit nicht als fertig lizenziertes Open-Source-Release.
+
+## English summary
+
+This repository studies constraint propagation on Boolean and two-bit-digit representations of SHA256d. In five reduced-round control cases (4–16 rounds per compression, eight unknown nonce bits, a reachable exact output), bit propagation derives the nonce without enumerating candidates in the solver. Full-round experiments do not establish a mining speedup or a new valid block. Exact tables and NumPy vectors evaluate all selected candidates; they are separate baselines. Archived results, corrections and offline examples are included. The production miner is not included. Full historical experiment runners require Linux; the quick tests and first two examples are cross-platform. Licensing is pending.
