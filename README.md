@@ -4,7 +4,9 @@
 
 Die Kästchenmaschine stellt eine Hashrechnung als Netz kleiner Rechenregeln dar. Für jedes Bit speichert ein „Kästchen“, ob 0, 1 oder noch beides möglich ist. Bekannte Eingaben und Bedingungen am Ausgang engen diese Möglichkeiten ein — vorwärts und rückwärts.
 
-Dieses Repository enthält **Forschungscode, Offline-Beispiele und Messdaten**. Der produktive GPU-Miner mit Node-Anbindung und Einreichung ist [nicht enthalten](miner/README.md). Kein Mining-Geschwindigkeitsvorteil und kein neu gefundener Bitcoin-Block sind nachgewiesen.
+So macht die Kästchenmaschine die **Topologie von SHA-256 greifbar**: Sie legt offen, wie Bits und Rechenschritte miteinander verbunden sind und entlang welcher Verbindungen sich Informationen ausbreiten können.
+
+Dieses Repository enthält **Forschungscode, Offline-Beispiele und Messdaten**. Der produktive GPU-Miner mit Node-Anbindung und Einreichung ist [nicht enthalten](miner/README.md).
 
 **Stand:** 23. Oktober 2026 · öffentliches Forschungsrepository · [Prüfung und Änderungen](docs/REVIEW_20261023.md) · [MIT-Lizenz](LICENSE).
 
