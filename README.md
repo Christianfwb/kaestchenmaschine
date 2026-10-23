@@ -122,7 +122,9 @@ Bei einem gemessenen Gesamtdurchsatz von **G vollständig entschiedenen Gruppen 
 
 Ich suche Unterstützer, die helfen möchten, diese offene Forschungsfrage gründlicher zu untersuchen. Willkommen sind **bereitgestellte Rechenzeit, geeignete Hardware, finanzielle Unterstützung und fachliche Zusammenarbeit**. Damit könnten wir größere, kontrollierte Versuche durchführen, aufwendigere Ableitungsverfahren untersuchen und die Ergebnisse unabhängig nachprüfen lassen.
 
-Die Unterstützung finanziert ergebnisoffene Forschung auf Grundlage der belegten kleinen Erfolge. Ein Mining-Vorteil oder ein gültiger neuer Bitcoin-Block kann daraus nicht zugesichert werden. Auch negative Ergebnisse und Grenzen sollen öffentlich dokumentiert werden. Wer eine Zusammenarbeit oder ein Sponsoring besprechen möchte, kann sich über die [GitHub-Issues](https://github.com/Christianfwb/kaestchenmaschine/issues) melden.
+Die Unterstützung finanziert ergebnisoffene Forschung auf Grundlage der belegten kleinen Erfolge. Ein Mining-Vorteil oder ein gültiger neuer Bitcoin-Block kann daraus nicht zugesichert werden. Auch negative Ergebnisse und Grenzen sollen öffentlich dokumentiert werden. Wer eine Zusammenarbeit oder ein Sponsoring besprechen möchte, kann sich direkt per E-Mail oder über die [GitHub-Issues](https://github.com/Christianfwb/kaestchenmaschine/issues) melden.
+
+**Kontakt für Interessierte, Forschungspartner und Sponsoren:** Christian Berrang · [christianfwb@gmail.com](mailto:christianfwb@gmail.com)
 
 **Freiwillige Bitcoin-Spenden (Bitcoin-Mainnet):**
 
