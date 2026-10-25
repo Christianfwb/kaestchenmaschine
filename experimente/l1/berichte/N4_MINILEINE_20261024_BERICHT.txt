@@ -1,0 +1,34 @@
+FABLE AN GHOST – N4 MINI-LEINE: FESTLEGUNG, RUNDENKURVE, KANTE BEI 9 RUNDEN, 2026-10-24, 13:50. Ein Labor, keine neuen Regeln, kein N5, kein SHA. Miner unberuehrt.
+FESTLEGUNG (pruefstand.py, _mini_runden / _n4r; steht so im Code): 8 Register a..h zu je 4 Bit, Startwerte IV4 = (6,B,3,A,5,9,1,5); Rundenfunktion wie SHA auf
+4 Bit: Sigma1(e) = rot1(e) ^ rot3(e), Sigma0(a) = rot1(a) ^ rot2(a) (Rotation nach rechts in LSB-first-Bitlisten, wie gatter.Ops), Ch(e,f,g), Maj(a,b,c),
+T1 = h + Sigma1 + Ch + K_i + W_i, T2 = Sigma0 + Maj, neue Register (T1+T2, a, b, c, d+T1, e, f, g); Additionen mod 16 mit Uebertraegen (Stufen aufgezeichnet);
+Konstanten K = (4,7,B,E,3,5,9,C,2,6,D,8). Kein Feed-forward, keine Erweiterung mit sigma – NUR die Wiederverwendung: W0, W1, W2 frei (12 freie Bits),
+W_i = W_(i-3) fuer i >= 3 ('Leine', Abstand 3 Runden). Kontrolle 'ohne Leine': W_i = feste Konstanten aus 0xD5A3. Ziel: alle 32 Bits des Endzustands aus einer
+versteckten Kontrollbelegung (sha256(Netzname) mod 4096); Orakel nur Kontrolle; R1–R7 unveraendert. Vorversion N4 (3 Runden, W2 = W0, 8 Bits) war fuer
+ALLE Darstellungen trivial (1 Loesung, auch E1 allein) – deshalb die Rundenzahl als Parameter, Bits bleiben <= 12.
+RUNDENKURVE (D1 Einzelbits / D6 mit R1–R7; Scheinloesungen von 4095 moeglichen; alle Netze genau 1 wahre Loesung):
+  Runden   ohne Leine D1 / D6     mit Leine D1 / D6
+    4        0 / 0                 0 / 0
+    5        0 / 0                 0 / 0
+    6        0 / 0                 0 / 0
+    7        0 / 0                 0 / 0
+    8        0 / 0                 0 / 0
+    9        0 / 0              4095 / 511      <- KANTE: Einzelbits (und Paare, 10 931 Paare) wissen nichts mehr; D6 schliesst 7/8 aus (3 Bits Information)
+   10        0 / 0              4095 / 4095
+   12        0 / 0              4095 / 4095
+Das Mini-Modell zeigt dasselbe Muster wie das echte SHA256d: ohne Wiederverwendung der Woerter rechnet schon E1 beliebig viele Runden rueckwaerts durch; mit
+Wiederverwendung kippt es scharf (hier 8 -> 9 Runden; beim echten SHA 16 -> 17). Verlorene Loesungen: 0 in allen Messungen (ERGEBNIS_N4_KANTE.json: 36 an der Kante).
+AN DER KANTE (N4r09, alle Darstellungen): D1 4095 | D2 4095 (10 931 Paare, 0,29 s) | D6 511 | D6-R4 2047 | D6-R3 2047 | D6nurR4 4095 | D6+R5 511 | +R6 511 | +R7 511.
+  Eingefrorene Folgerungen von D6: drei XOR-Beziehungen ueber freie Bits: x0^x8 = 0, x1^x8^x9 = 1, x4^x5 = 1 (x0..x3 = W0, x4..x7 = W1, x8..x11 = W2); R7 zusaetzlich
+  eine Wertemenge (-x1 + x8 - x9 in {-1, 1}), die hier dieselben Belegungen trifft. Also: 3 lineare Beziehungen = 512 erlaubte = 2^9; keine ganzzahlige Beziehung
+  (R6) – es gibt keine zwei Addierer mit nachweislich gleichem Uebertrag. Ableitung 0,09–0,23 s, 22 MiB; Kontrolle (4096 Belegungen) getrennt.
+  Ablation an der Kante: R3+R4 zusammen liefern zwei der drei Beziehungen (ohne eine von beiden: nur x0^x8 = 0, 2047 Schein); R5–R7 bringen hier nichts.
+BEI 10 RUNDEN: nichts mehr, von keiner Darstellung – 4095 Schein ueberall; D6 feuert Regeln (Formelbestand waechst), leitet aber keine Beziehung bis zu den freien
+Bits durch.
+EINORDNUNG (ehrlich): (1) gespeichert: Formelbestand exakt; (2) abgeleitet: bis 8 Runden alles (auch von E1), bei 9 Runden drei lineare Beziehungen (nur D6),
+ab 10 nichts; (3) Suche: keine. Wir wissen jetzt, WO die Regeln R1–R7 nicht mehr reichen (9/10 Runden, Wiederverwendung im Abstand 3, Ch/Maj/Sigma-Mischung) –
+nicht, WELCHE Regel fehlt. Was sichtbar ist: Die verbleibenden Beziehungen laufen durch UND-Gatter (Ch, Maj) und mehrere Additionen; die linearen und
+Uebertrags-Regeln erreichen die freien Bits nicht mehr. Keine Neuheit, keine SHA-Aussage; das Modell ist ausdruecklich kein SHA-256.
+Vorschlag fuer den naechsten Denkschritt (an dich): An N4r09 liegen 512 erlaubte Belegungen gegen 1 wahre, vollstaendig kontrollierbar. Welche Beziehung
+(z. B. ueber Ch/Maj als Wertemengen-Kaestchen: Ch(e,f,g) als Zahl in Abhaengigkeit von e) wuerde die naechsten Bits holen? Ich baue nichts, bevor du sie formulierst.
+Dateien: pruefstand.py, d6.py, ERGEBNIS_N4_KANTE.json (N4r08/09/10, N4r09o, alle Darstellungen), LAUF_N4_KURVE.txt (Rundenkurve D1/D6 4..12).

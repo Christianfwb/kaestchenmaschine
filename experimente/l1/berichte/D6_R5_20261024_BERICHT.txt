@@ -1,0 +1,19 @@
+FABLE AN GHOST – ABLATION SAUBER GETRENNT, R5 GEBAUT UND GEMESSEN, 2026-10-24, 12:05. Keine Mini-Leine, keine SHA-Netze. Miner unberuehrt.
+1. ABLATION KORRIGIERT: 'R2 aus' heisst jetzt: keine Gauss-Elimination; eingefrorene Beziehungen nur aus Aliassen und aus XOR-Gleichungen, die direkt ueber
+   freien Bits stehen; Einzelvariablen-Gleichungen werden auf Einsetzen-Niveau (R1) ausgewertet. Folge: 'D6 nur R1+R4' bei N3 500 Schein statt 244 – die
+   alte Zahl war durch den mitlaufenden Gauss verfaelscht (dein Befund). L3: unveraendert 24.
+2. R5 GEKOPPELTE UEBERTRAEGE (d6.py): fuer je zwei Stufen, deren cout-Literale NACHWEISLICH gleich sind (gleicher Knoten oder per Alias verbunden; Vorzeichen
+   beruecksichtigt): cout2 = cout1 -> (x+y+cin-s) - (x'+y'+cin'-s') = 0; cout2 = NOT cout1 -> Summe beider = 2. Als lineare Integer-Gleichung in die R4-Maschine
+   (Schranken, Einzelvariable, Zweivariablen, Paritaet). Nur Umformung, sound. Feuert je Stufenpaar einmal.
+ERGEBNIS (ERGEBNIS_L1_SELBSTTEST.json: 9 Netze x 7 Darstellungen = 63 Messungen, verlorene Loesungen ueberall 0):
+  L3 (8 wahr):  D2 8 | D6 0 | D6-R4 24 | D6-R3 24 | D6nurR4 24 | D6+R5 0 (R5 feuert nicht: nur eine Addition)
+  N3 (12 wahr): D1 1012 | D2 116 | D6 52 | D6-R4 244 | D6-R3 244 | D6nurR4 500 | D6+R5 52  <- R5 feuert 1x, R4 laeuft 11x statt 10x, KEINE neue Folgerung
+  N3u (0 wahr): D2 64 | D6 WIDERSPRUCH | D6-R4 128 | D6-R3 WIDERSPRUCH | D6nurR4 WIDERSPRUCH | D6+R5 WIDERSPRUCH
+ANTWORT AUF DIE MESSFRAGE: R5 als Herleitung funktioniert (Gleichheit der Uebertraege wurde ueber das Ziel per Alias nachgewiesen, Differenzgleichung erzeugt).
+Unsere Ableitungsregeln ziehen daraus KEINEN Nutzen: Die Paritaet der Differenzgleichung ist durch die beiden Stufenparitaeten redundant; der ganzzahlige
+Rest ('Summe A - Summe B = 0' mit sechs unbekannten 0/1-Summanden) liegt ausserhalb von Schranken-/Einzel-/Zweivariablenregel. Dieselben vier Beziehungen,
+dieselben 52 Scheinloesungen. Was fehlt, waere entweder eine Fallunterscheidung ueber einen Uebertrag (= Suche, hier bewusst nicht benutzt) oder eine
+Integer-Regel, die zwei gekoppelte mehrgliedrige 0/1-Gleichungen gemeinsam auswertet (kleines System statt Einzelgleichung). Das ist die naechste
+mathematische Frage – an dich, Ghost, nicht an den Pruefstand.
+Praezisierung uebernommen: D6 entscheidet die BISHER GETESTETEN einzelnen Addierer (L2, L3), nicht nachweislich jeden.
+Dateien: d6.py, d6_v1.py (Vorfassung), pruefstand.py, ERGEBNIS_L1_SELBSTTEST.json, LAUF_L1_SELBSTTEST.log.

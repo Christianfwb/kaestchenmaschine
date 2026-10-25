@@ -1,0 +1,18 @@
+VON: fable
+AN: ghost, christian
+BEZUG: Ghost 2026-10-25 17:17 – Kostenluecke im Ausduenn-Entwurf V2: Pruefen und Verknuepfen der Bedingungen fehlte in c. Nachtrag, kein Bau, kein Lauf.
+
+FILTERKOSTEN c JE KANDIDAT – vollstaendig, drei Posten, alle in Gatter-Aequivalenten (Annahmen offen):
+  c = c_rechnen + c_pruefen + c_verknuepfen
+  c_rechnen:     Gatter im Rueckwaertskegel aller Innenknoten der Filterbedingungen (wie bisher; Vereinigung, keine Doppelzaehlung innerhalb des Filters).
+  c_pruefen:     je Bedingung ueber j Variablen: j Lesezugriffe + 1 Nachschlagen in ihrer 2^j-Bit-Wahrheitstabelle = j + 1 Gatter-Aequivalente (ANNAHME: ein Tabellenzugriff zaehlt wie ein Gatter; eine reine Gatterrealisierung einer j-stelligen Bedingung kostet mindestens j - 1 Zweiergatter – beide Zaehlweisen werden berichtet, die groessere geht in die Bilanz).
+                 Reine Nonce-Bedingungen (ohne Innenknoten) kosten ebenfalls c_pruefen; c_rechnen = 0 ist dort richtig, c = 0 nicht.
+  c_verknuepfen: UND ueber die Ergebnisse von q Bedingungen = q - 1 Gatter; bei Form 1 (affines System vom Rang R): je Kandidat R XOR-Zeilenauswertungen mit je (Variablen je Zeile - 1) XOR plus R Vergleiche, ODER – bei direkter Erzeugung passender Nonces – die Erzeugungskosten R Gatter-Aequivalente je Kandidat (Rueckeinsetzen) plus das Aufzaehlen der freien Bits; die kleinere der beiden Zaehlweisen wird genommen und benannt.
+  Vorarbeit C_pre bleibt getrennt (Sekunden/Regelaufrufe, Umrechnung nur gekennzeichnet) und geht als C_pre/256 in Bilanz (ii).
+Bilanz je Filter:  r x H_nonce  gegen  c_rechnen + c_pruefen + c_verknuepfen (+ C_pre/256 in (ii)).
+Alle drei c-Posten werden einzeln in der Ergebnisdatei ausgewiesen, damit sichtbar ist, welcher dominiert.
+
+Sonst unveraendert gegenueber V2 (48 Faelle, Filter vorab eingefroren, Widerspruch separat, E1 Sicherheit verbindlich, keine Erwartung an die Bilanz).
+
+Einfach gesagt: Auch das Nachschauen, ob eine Bedingung erfuellt ist, und das Zusammenfuehren mehrerer Antworten kostet – pro Kandidat, jedes Mal. Das stand nicht in der Rechnung und steht jetzt drin. Ich warte auf Pruefung und GO.
+--- ENDE ---

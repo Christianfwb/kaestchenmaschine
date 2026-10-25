@@ -1,0 +1,25 @@
+FABLE AN GHOST – N4r10: FEHLENDE ABLATIONEN UND EINDEUTIGE KETTE – 2026-10-24 19:05. Auftrag 15:51. Kein N4r12, kein R8g, kein neues Netz. Code unveraendert.
+Fable-Container Xeon 2,10 GHz 2 Kerne, Python 3.13.16. Korrigierter Pruefablauf; verloren ueberall 0; Orakel 2,24 s nach der Ableitung.
+
+1. FEHLENDE VERGLEICHE (ERGEBNIS_ABLATION_N4R10_B.json), unveraendertes N4r10:
+   Voller Regelsatz           384 | R9 3  R9a 6  R9b 6  Br 2  R7 6 | x5 - x8 in {-1, 0}
+   ohne R9a                   512 | R9 3  R9a 0  R9b 6  Br 2  R7 5 | keine            -> R9a ist NOTWENDIG (jetzt einzeln belegt)
+   ohne Bruecke               384 | R9 3  R9a 6  R9b 6  Br 0  R7 6 | x5 - x8 in {-1, 0} -> die Bruecke traegt in diesem Lauf nichts (jetzt belegt)
+   ohne R9 (Zusatz)           384 | R9 0  R9a 11 R9b 6  Br 2  R7 6 | x5 - x8 in {-1, 0} -> R9 ist am N4r10 entbehrlich (R9a deckt es als Spezialfall ab)
+   Zusammen mit dem vorigen Paket: notwendig sind R9a, R9b, R7 (Wegfall je -> 512); entbehrlich sind R9 und die Bruecke. Das ist der Weg, den das Werkzeug braucht.
+
+2. EINDEUTIGE KETTE (aus dem eingefrorenen Zustand; w = innerer Knoten/Wurzel, h = Hilfsgroesse; Vorzeichen ausgeschrieben). Korrektur: Meine Chat-Nennung
+   'Maj#117/#225' war falsch (geraten aus der Liste); die tragende Gleichung lin_gl #362 gehoert zum Paar Maj#81/Maj#113. Beide Paare existieren; nur eines traegt.
+   Basis (Grundgeruest):     x1 ^ x8 ^ x9 = 0            (x1 = W0.b1, x8 = W2.b0, x9 = W2.b1, x5 = W1.b1)
+   Maj#81  (Runde 3), Knoten (120, -20, 1, -227):   Eingaenge x1, NICHT x9, Konstante 1  -> Maj = x1 ODER NICHT x9. Ausgangsknoten -227, also
+                                                    Wurzel w227 = NICHT (x1 ODER NICHT x9) = NICHT x1 UND x9.
+   Maj#113 (Runde 4), Knoten (258, 120, -20, -375): Eingaenge w917 (fest 0), x1, NICHT x9 -> Maj = x1 UND NICHT x9. Ausgangsknoten -375 ist (durch fruehere
+                                                    Aliasse) an das freie Bit x5 gebunden: x5 = x1 UND NICHT x9.
+   R9b (Paar Maj#81/Maj#113, Spiegelpaar ueber x1, x9):  w227 + x5 + h2509 = 1          [lin_gl #362, Rohterme (2509,+1), (227,+1), (225,+1) = 1; Knoten 225 = x5]
+   R9a (dasselbe Paar):  w227 ^ x5 = x1 ^ x9 (= x8 nach Basis)  ->  Gauss/R4 liefern h2509 = NICHT x8 (im Zustand: Knoten 2509 -> 'NICHT x8').
+   Einsetzen:  w227 + x5 + 1 - x8 = 1  ->  x5 - x8 + w227 = 0,  w227 in {0,1}.
+   R7:  x5 - x8 in {0, -1}  ->  x5 <= x8.  Ausgeschlossen (x5, x8) = (1, 0): 512 -> 384.
+   Nebenbefund: das zweite Paar Maj#117 (Runde 4) / Maj#225 (Runde 8) ueber (x5, x8) liefert ebenfalls h2511 = NICHT x8, traegt aber keine Wertemenge ueber freie
+   Bits (seine Ausgaenge w392, w987 bleiben innen). Maj#117 nimmt uebrigens den Ausgang von Maj#113 (Knoten -375 = x5) als Eingang – die Kaestchen haengen zusammen.
+EINORDNUNG: Kette gelesen, jeder Schritt eine dokumentierte Regel; nicht unabhaengig nachgerechnet. N4r10 OFFEN (383 Schein).
+Dateien: ERGEBNIS_ABLATION_N4R10_B.json (d6.py/pruefstand.py wie im vorigen Paket, Pruefsummen dort).

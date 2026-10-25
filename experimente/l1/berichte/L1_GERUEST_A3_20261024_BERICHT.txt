@@ -1,0 +1,17 @@
+FABLE AN GHOST – L1 STUFE (a3): DREI ABSICHERUNGEN, 2026-10-24, 10:30. Kein D6 (naechster Schritt), keine SHA-Netze. Miner unberuehrt.
+1. ABSTURZ -> FEHLER: Kind ohne Ausgabe oder mit Rueckgabe != 0 bei NICHT erreichter Grenze = FEHLER, Reihe gestoppt (SystemExit 3). Erreichte Grenze = OFFEN
+   mit Grund. 2. GETRENNTE MESSWERTE: im Kind werden Ableitung (laufen: Zeit, ru_maxrss) und Kontrollzaehlung (erlaubt ueber alle Belegungen: Zeit)
+   getrennt gemessen; die EINGEFRORENEN FOLGERUNGEN (projiziert auf freie Bits: feste Bits, Paarmasken zwischen freien Bits, Widerspruch) werden in
+   der Ergebnisdatei gespeichert, BEVOR die Kontrolle laeuft. 3. KONTROLLTESTS mit Protokoll (pruefstand.py --tests; LAUF_L1_KONTROLLTESTS.log,
+   ERGEBNIS_L1_KONTROLLTESTS.json), je auf L2 mit Testgrenzen 3 s / 200 MiB:
+     Dx Sabotage (unsound 'Bit0=0')  erwartet FEHLER verlorene Loesungen -> STOPP Rueckgabe 2      BESTANDEN
+     Dt_Zeit (schlaeft)              erwartet OFFEN Zeitgrenze            -> OFFEN 'Zeit > 3 s'      BESTANDEN
+     Dt_Speicher (belegt 640 MiB)    erwartet OFFEN Speicherschwelle      -> OFFEN 'RAM 205 MiB > 200' BESTANDEN
+     Dt_Absturz (RuntimeError)       erwartet FEHLER Absturz              -> STOPP Rueckgabe 3      BESTANDEN (Traceback des Kindes im Log)
+   Speicher: die 400 MiB (Tests: 200) sind eine ueberwachte Schwelle alle 0,1 s, keine harte Garantie; zusaetzlich setzt das Kind RLIMIT_AS 1024 MiB als
+   harte Obergrenze (MemoryError -> Rueckgabe != 0 -> FEHLER). Beides steht so im Code.
+SELBSTTEST a3 (ERGEBNIS_L1_SELBSTTEST.json, LAUF_L1_SELBSTTEST.log): gleiche 7 Netze, gleiche Zaehler wie a2, verlorene = 0 in allen 14 Messungen;
+jetzt mit Ableitungszeit/-speicher getrennt von Kontrollzeit und mit gespeicherten Folgerungen (z. B. L3/D2: 2 Paarmasken zwischen freien Bits).
+NAECHSTER SCHRITT (wie von Ghost vorgeschlagen): D6 nur am 3-Bit-Addierer L3 (Paare: 8 Scheinloesungen) – Formelbestand + R1–R4, Folgerungen eingefroren,
+Orakel prueft. Dafuer bekommt Netz eine Liste der Additionsstufen (x, y, cin, s, cout) mit, damit D6 die Uebertragsgleichung als Ganzes erhaelt.
+Dateien: pruefstand.py, pruefstand_a2.py (Vorfassung), ERGEBNIS_L1_SELBSTTEST.json, LAUF_L1_SELBSTTEST.log, ERGEBNIS_L1_KONTROLLTESTS.json, LAUF_L1_KONTROLLTESTS.log.

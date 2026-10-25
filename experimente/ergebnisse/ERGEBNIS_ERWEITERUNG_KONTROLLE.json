@@ -1,0 +1,117 @@
+{
+ "beschreibung": "KONTROLLE (Fable, 2026-10-23): Ist die Kante bei 16->17 Runden die Nachrichtenerweiterung oder die Tiefe?\nModell wie runden_kind, aber W[16..R-1] = KONSTANTE (0x5a5a5a5a + i) statt Erweiterung. Alles andere gleich (R Runden, Feed-forward, Padding).\nNur E1 bis Fixpunkt (E1 hat bis 16 Runden alle Faelle allein entschieden). Orakel ueber alle 256 danach. CPU, Kopien, Sekunden.",
+ "laeufe": [
+  {
+   "runden": 16,
+   "knoten": 32926,
+   "e1": "FIXPUNKT",
+   "sweeps": 132,
+   "s": 8.05,
+   "noncebits": 8,
+   "abgeleitet": 10,
+   "treffer": [
+    10
+   ],
+   "kontrolle": 10,
+   "ausgang": "TREFFER_ABGELEITET"
+  },
+  {
+   "runden": 17,
+   "knoten": 35529,
+   "e1": "FIXPUNKT",
+   "sweeps": 142,
+   "s": 10.74,
+   "noncebits": 8,
+   "abgeleitet": 232,
+   "treffer": [
+    232
+   ],
+   "kontrolle": 232,
+   "ausgang": "TREFFER_ABGELEITET"
+  },
+  {
+   "runden": 18,
+   "knoten": 38147,
+   "e1": "FIXPUNKT",
+   "sweeps": 155,
+   "s": 12.35,
+   "noncebits": 8,
+   "abgeleitet": 251,
+   "treffer": [
+    251
+   ],
+   "kontrolle": 251,
+   "ausgang": "TREFFER_ABGELEITET"
+  },
+  {
+   "runden": 20,
+   "knoten": 43294,
+   "e1": "FIXPUNKT",
+   "sweeps": 176,
+   "s": 15.92,
+   "noncebits": 8,
+   "abgeleitet": 235,
+   "treffer": [
+    235
+   ],
+   "kontrolle": 235,
+   "ausgang": "TREFFER_ABGELEITET"
+  },
+  {
+   "runden": 24,
+   "knoten": 53558,
+   "e1": "FIXPUNKT",
+   "sweeps": 225,
+   "s": 24.45,
+   "noncebits": 8,
+   "abgeleitet": 50,
+   "treffer": [
+    50
+   ],
+   "kontrolle": 50,
+   "ausgang": "TREFFER_ABGELEITET"
+  },
+  {
+   "runden": 32,
+   "knoten": 74212,
+   "e1": "FIXPUNKT",
+   "sweeps": 308,
+   "s": 47.12,
+   "noncebits": 8,
+   "abgeleitet": 120,
+   "treffer": [
+    120
+   ],
+   "kontrolle": 120,
+   "ausgang": "TREFFER_ABGELEITET"
+  },
+  {
+   "runden": 48,
+   "knoten": 115345,
+   "e1": "FIXPUNKT",
+   "sweeps": 482,
+   "s": 100.67,
+   "noncebits": 8,
+   "abgeleitet": 250,
+   "treffer": [
+    250
+   ],
+   "kontrolle": 250,
+   "ausgang": "TREFFER_ABGELEITET"
+  },
+  {
+   "runden": 64,
+   "knoten": 156490,
+   "e1": "FIXPUNKT",
+   "sweeps": 648,
+   "s": 179.95,
+   "noncebits": 8,
+   "abgeleitet": 181,
+   "treffer": [
+    181
+   ],
+   "kontrolle": 181,
+   "ausgang": "TREFFER_ABGELEITET"
+  }
+ ]
+}

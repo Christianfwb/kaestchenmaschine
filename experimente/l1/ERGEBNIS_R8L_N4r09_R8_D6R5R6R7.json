@@ -1,0 +1,464 @@
+{
+ "netz": "N4r09 Leine W_i=W_(i-3)",
+ "darstellung": "D6 + R5 + R6 + R7 (Wertemengen)",
+ "status_d6": "FIXPUNKT",
+ "erlaubt_vorher": null,
+ "kaestchen": [
+  {
+   "ch_index": 28,
+   "knoten": {
+    "e": -953,
+    "f": 773,
+    "g": 593,
+    "b": -982,
+    "cin": 0,
+    "z": 1007,
+    "s": -1017,
+    "cout": 1018
+   },
+   "kombinationen_gesamt": 256,
+   "A_d6_lokal_erlaubt": 4,
+   "C_ch_allein": 4,
+   "S_stufe_allein": 4,
+   "B_gemeinsames_kaestchen": 4,
+   "gewinn_ch_allein": 0,
+   "gewinn_gemeinsam_ueber_ch_hinaus": 0,
+   "d6_fest": {
+    "e": 1,
+    "f": 1,
+    "cin": 0,
+    "z": 1
+   },
+   "d6_aliasse": [
+    [
+     "b",
+     "s",
+     1
+    ],
+    [
+     "b",
+     "cout",
+     0
+    ],
+    [
+     "s",
+     "cout",
+     1
+    ]
+   ],
+   "d6_xor": [],
+   "d6_linear": [],
+   "neu_feste_anschluesse": {},
+   "neu_paare": [],
+   "neu_xor3": [],
+   "echte_loesung_erhalten": true,
+   "zeilen_rest": [
+    {
+     "e": 1,
+     "f": 1,
+     "g": 0,
+     "b": 0,
+     "cin": 0,
+     "z": 1,
+     "s": 1,
+     "cout": 0
+    },
+    {
+     "e": 1,
+     "f": 1,
+     "g": 0,
+     "b": 1,
+     "cin": 0,
+     "z": 1,
+     "s": 0,
+     "cout": 1
+    },
+    {
+     "e": 1,
+     "f": 1,
+     "g": 1,
+     "b": 0,
+     "cin": 0,
+     "z": 1,
+     "s": 1,
+     "cout": 0
+    },
+    {
+     "e": 1,
+     "f": 1,
+     "g": 1,
+     "b": 1,
+     "cin": 0,
+     "z": 1,
+     "s": 0,
+     "cout": 1
+    }
+   ]
+  },
+  {
+   "ch_index": 29,
+   "knoten": {
+    "e": 956,
+    "f": -776,
+    "g": -596,
+    "b": -985,
+    "cin": 1018,
+    "z": 1010,
+    "s": -1020,
+    "cout": -1025
+   },
+   "kombinationen_gesamt": 256,
+   "A_d6_lokal_erlaubt": 4,
+   "C_ch_allein": 4,
+   "S_stufe_allein": 4,
+   "B_gemeinsames_kaestchen": 4,
+   "gewinn_ch_allein": 0,
+   "gewinn_gemeinsam_ueber_ch_hinaus": 0,
+   "d6_fest": {
+    "e": 1,
+    "f": 0,
+    "b": 0,
+    "z": 0,
+    "cout": 0
+   },
+   "d6_aliasse": [
+    [
+     "cin",
+     "s",
+     0
+    ]
+   ],
+   "d6_xor": [],
+   "d6_linear": [],
+   "neu_feste_anschluesse": {},
+   "neu_paare": [],
+   "neu_xor3": [],
+   "echte_loesung_erhalten": true,
+   "zeilen_rest": [
+    {
+     "e": 1,
+     "f": 0,
+     "g": 0,
+     "b": 0,
+     "cin": 0,
+     "z": 0,
+     "s": 0,
+     "cout": 0
+    },
+    {
+     "e": 1,
+     "f": 0,
+     "g": 0,
+     "b": 0,
+     "cin": 1,
+     "z": 0,
+     "s": 1,
+     "cout": 0
+    },
+    {
+     "e": 1,
+     "f": 0,
+     "g": 1,
+     "b": 0,
+     "cin": 0,
+     "z": 0,
+     "s": 0,
+     "cout": 0
+    },
+    {
+     "e": 1,
+     "f": 0,
+     "g": 1,
+     "b": 0,
+     "cin": 1,
+     "z": 0,
+     "s": 1,
+     "cout": 0
+    }
+   ]
+  },
+  {
+   "ch_index": 30,
+   "knoten": {
+    "e": 963,
+    "f": 783,
+    "g": -603,
+    "b": -992,
+    "cin": -1025,
+    "z": 1013,
+    "s": 1027,
+    "cout": -1032
+   },
+   "kombinationen_gesamt": 256,
+   "A_d6_lokal_erlaubt": 8,
+   "C_ch_allein": 4,
+   "S_stufe_allein": 8,
+   "B_gemeinsames_kaestchen": 4,
+   "gewinn_ch_allein": 4,
+   "gewinn_gemeinsam_ueber_ch_hinaus": 0,
+   "d6_fest": {
+    "e": 0,
+    "f": 1,
+    "cin": 0
+   },
+   "d6_aliasse": [],
+   "d6_xor": [
+    [
+     [
+      "b",
+      "s",
+      "z"
+     ],
+     0
+    ]
+   ],
+   "d6_linear": [
+    [
+     {
+      "b": 1,
+      "z": 1,
+      "s": -1,
+      "cout": -2
+     },
+     0
+    ]
+   ],
+   "neu_feste_anschluesse": {},
+   "neu_paare": [
+    [
+     "g",
+     "z",
+     0
+    ]
+   ],
+   "neu_xor3": [
+    [
+     [
+      "e",
+      "g",
+      "z"
+     ],
+     0
+    ],
+    [
+     [
+      "f",
+      "g",
+      "z"
+     ],
+     1
+    ],
+    [
+     [
+      "g",
+      "b",
+      "s"
+     ],
+     0
+    ],
+    [
+     [
+      "g",
+      "cin",
+      "z"
+     ],
+     0
+    ]
+   ],
+   "echte_loesung_erhalten": true,
+   "zeilen_rest": [
+    {
+     "e": 0,
+     "f": 1,
+     "g": 0,
+     "b": 0,
+     "cin": 0,
+     "z": 0,
+     "s": 0,
+     "cout": 0
+    },
+    {
+     "e": 0,
+     "f": 1,
+     "g": 0,
+     "b": 1,
+     "cin": 0,
+     "z": 0,
+     "s": 1,
+     "cout": 0
+    },
+    {
+     "e": 0,
+     "f": 1,
+     "g": 1,
+     "b": 0,
+     "cin": 0,
+     "z": 1,
+     "s": 1,
+     "cout": 0
+    },
+    {
+     "e": 0,
+     "f": 1,
+     "g": 1,
+     "b": 1,
+     "cin": 0,
+     "z": 1,
+     "s": 0,
+     "cout": 1
+    }
+   ]
+  },
+  {
+   "ch_index": 31,
+   "knoten": {
+    "e": 970,
+    "f": -790,
+    "g": 610,
+    "b": 999,
+    "cin": -1032,
+    "z": 1016,
+    "s": -1034,
+    "cout": -1039
+   },
+   "kombinationen_gesamt": 256,
+   "A_d6_lokal_erlaubt": 16,
+   "C_ch_allein": 8,
+   "S_stufe_allein": 16,
+   "B_gemeinsames_kaestchen": 8,
+   "gewinn_ch_allein": 8,
+   "gewinn_gemeinsam_ueber_ch_hinaus": 0,
+   "d6_fest": {
+    "e": 0,
+    "f": 0
+   },
+   "d6_aliasse": [],
+   "d6_xor": [],
+   "d6_linear": [
+    [
+     {
+      "b": 1,
+      "z": 1,
+      "cin": 1,
+      "s": -1,
+      "cout": -2
+     },
+     0
+    ]
+   ],
+   "neu_feste_anschluesse": {},
+   "neu_paare": [
+    [
+     "g",
+     "z",
+     0
+    ]
+   ],
+   "neu_xor3": [
+    [
+     [
+      "e",
+      "g",
+      "z"
+     ],
+     0
+    ],
+    [
+     [
+      "f",
+      "g",
+      "z"
+     ],
+     0
+    ]
+   ],
+   "echte_loesung_erhalten": true,
+   "zeilen_rest": [
+    {
+     "e": 0,
+     "f": 0,
+     "g": 0,
+     "b": 0,
+     "cin": 0,
+     "z": 0,
+     "s": 0,
+     "cout": 0
+    },
+    {
+     "e": 0,
+     "f": 0,
+     "g": 0,
+     "b": 0,
+     "cin": 1,
+     "z": 0,
+     "s": 1,
+     "cout": 0
+    },
+    {
+     "e": 0,
+     "f": 0,
+     "g": 0,
+     "b": 1,
+     "cin": 0,
+     "z": 0,
+     "s": 1,
+     "cout": 0
+    },
+    {
+     "e": 0,
+     "f": 0,
+     "g": 0,
+     "b": 1,
+     "cin": 1,
+     "z": 0,
+     "s": 0,
+     "cout": 1
+    },
+    {
+     "e": 0,
+     "f": 0,
+     "g": 1,
+     "b": 0,
+     "cin": 0,
+     "z": 1,
+     "s": 1,
+     "cout": 0
+    },
+    {
+     "e": 0,
+     "f": 0,
+     "g": 1,
+     "b": 0,
+     "cin": 1,
+     "z": 1,
+     "s": 0,
+     "cout": 1
+    },
+    {
+     "e": 0,
+     "f": 0,
+     "g": 1,
+     "b": 1,
+     "cin": 0,
+     "z": 1,
+     "s": 0,
+     "cout": 1
+    },
+    {
+     "e": 0,
+     "f": 0,
+     "g": 1,
+     "b": 1,
+     "cin": 1,
+     "z": 1,
+     "s": 1,
+     "cout": 1
+    }
+   ]
+  }
+ ],
+ "runde": 8,
+ "s_gesamt": 0.239,
+ "ch_kaestchen_gesamt": 36,
+ "rechner": "Fable-Container Xeon 2,10 GHz 2 Kerne, Python 3.13.16"
+}

@@ -1,0 +1,30 @@
+FABLE AN GHOST – R8L AN DEN VIER LETZTEN CH-BITS, N4r09 – 2026-10-24 12:40. GO 12:25 (R8l ja, R8g nein). Nichts weitergegeben, kein weiterer Lauf.
+
+AUFBAU (wie abgestimmt): Ch-Bit z = Ch(e,f,g) + GENAU EINE Stufe z + b + cin = s + 2*cout. Tabelle 32 Zeilen ueber (e,f,g,b,cin). Geschnitten NUR mit
+D6-eigenen Herleitungen (Stand D6+R5+R6+R7 am N4r09, 512 erlaubt), die auf diese 8 Anschluesse anwendbar sind: feste Werte, Aliasse (gleiche Wurzel),
+XOR-Pivotzeilen und lineare Gleichungen, deren Variablen alle unter den Anschluessen liegen. Negierte/geteilte Anschluesse ueber Literal+Alias-Versatz beruecksichtigt.
+Tabelle bleibt erhalten (zeilen_rest im JSON). Keine Orakelwerte eingespeist; Kontrolle nachtraeglich: Zeile der echten Loesung in allen vier Tabellen erhalten.
+Technisch: d6.py gibt am Ende seinen inneren Zustand lesbar nach aussen (self._zustand), pruefstand.py zeichnet (e,f,g,z) je Ch-Bit auf (N.ch_kaestchen).
+Beides aendert keine Ableitung; Prueffstand-Ergebnisse unveraendert.
+
+ERGEBNIS (BELEGT, Einzelmessung, Fable-Container Xeon 2,10 GHz, Python 3.13.16, 0,29 s gesamt):
+Ch#32 (Bit 0, Stufe 0): D6 hatte e=0,f=1,g=1,z=1,cin=0 fest und b,s,cout ueber Aliasse verbunden -> Tabelle 32 -> 2 Zeilen schon durch D6.  Lokaler Gewinn: 0.
+Ch#33 (Bit 1):          D6 hatte e=0,f=1,g=0,z=0 fest + 1 XOR + 1 lineare Gleichung (die Stufengleichung) -> 32 -> 4 Zeilen.                 Lokaler Gewinn: 0.
+Ch#34 (Bit 2):          D6 hatte e=1,f=0,g=1,z=0 fest + Stufengleichung -> 32 -> 4 Zeilen.                                                    Lokaler Gewinn: 0.
+Ch#35 (Bit 3):          D6 hatte e=0,f=0,g=0,z=0 fest + Stufengleichung -> 32 -> 4 Zeilen.                                                    Lokaler Gewinn: 0.
+Korrektur zur Konsolenausgabe: 'neu_xor3 b^cin^s=0' bei Ch#34/#35 ist KEIN Gewinn – es ist die Stufengleichung mit z=0 in Paritaetsform, die D6 als lineare
+Gleichung bereits besitzt (R4 Paritaet liefert sie ebenfalls). Mein Neuheitsfilter verglich nur gegen XOR-Pivots, nicht gegen die linearen Gleichungen. Gewinn = 0.
+Zusammen: 4 Kaestchen, 4 x 32 Zeilen, Rest 2/4/4/4 Zeilen – alles durch D6 schon bestimmt. Die vier Ch-Kaestchen der letzten Runde sind von hinten komplett
+festgelegt (e,f,g,z fest); frei bleibt nur die Uebertragsfreiheit der Stufe (b, cin), und die betrifft Ch nicht.
+
+NACHSCHAU (nur Lesen des D6-Zustands, keine neue Regel): Festlegungsgrad der Ch-Anschluesse e f g z je Runde ('.' = offen):
+Runde 1: 1111 0000 1000 0100     Runde 4: 0... .... .... ....     Runde 7: 1... 0... 1... 0...
+Runde 2: .111 .000 .10. .01.     Runde 5: .0.. .... .... ....     Runde 8: 11.1 10.0 01.. 00..
+Runde 3: ..1. ..0. ..1. ..0.     Runde 6: ..0. .... .... ....     Runde 9: 0111 0100 1010 0000
+Von vorn (Runden 1–3) und von hinten (7–9) ist viel fest; Runden 4–6 sind der dunkle Mittelteil mit je nur einem festen e-Bit.
+
+EINORDNUNG: Dieses Ergebnis sagt nur: an den vier letzten Ch-Bits leitet das lokale Kaestchen nichts zusaetzlich ab, weil D6 dort schon alles hat.
+Es schliesst Ch nicht als Ursache aus (dein Hinweis). VERMUTUNG: Wenn das lokale Kaestchen etwas bringt, dann dort, wo e,f,g offen sind (Runden 4–8),
+und dort haengt es daran, ob die Anschluesse untereinander Beziehungen haben, die D6 kennt – in der Nachschau sind das wenige.
+OFFEN / VORSCHLAG (kein Start): dieselbe Messung R8l an den vier Ch-Bits der Runde 8 (teilweise fest) und der Runde 6 (fast offen), gleicher Stand, gleicher Code.
+Dateien: r8l.py, d6.py, pruefstand.py, ERGEBNIS_R8L_N4r09.json (mit zeilen_rest je Kaestchen).

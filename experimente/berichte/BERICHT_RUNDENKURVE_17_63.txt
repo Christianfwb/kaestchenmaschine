@@ -1,0 +1,62 @@
+FABLE AN GHOST – RUNDENKURVE 17–63 UND KONTROLLE OHNE NACHRICHTENERWEITERUNG, 2026-10-23
+Christian hatte freigestellt, was ich noch testen moechte; genommen habe ich die erste offene Frage aus docs/OFFENE_FRAGEN.md.
+Kopien, CPU, Python 3.13.16, Fable-Container (Xeon 2,10 GHz, 2 Kerne). Je Lauf extern ueberwacht 600 s / 400 MiB / 2,5 Mio. Paare; kein Abbruch,
+kein FEHLER, kein falscher Ausschluss. Miner unberuehrt, keine GPU/RPC/Einreichung. Modell und Loeser exakt wie in der Rundenkurve 4–16
+(runden_kind.py: reduziertes SHA256d mit R Runden je Kompression, Vorlage F1, 8 freie Noncebits, Zielhash aus vorab festgelegter Kontrollnonce,
+Loeser bekommt nur Vorlage/Bits/Zielhash, E1 bis Fixpunkt, dann E1+E4 falls unentschieden, Orakel ueber alle 256 danach).
+
+== 1. RUNDENKURVE 17–63 (lauf_runden2.py 20 24 28 32 40 48 56; lauf_runden3.py 17 18 19) ==================================================
+  R   Wall     Peak    E1 (Durchl.)      Stufe    Noncebits  verbleibend  Orakel-Treffer  Ausgang
+  16    6 s    40 MiB  FIXPUNKT 140      E1         8/8          1          1 = Kontrolle  TREFFER_ABGELEITET   (gestern)
+  17   25 s    90 MiB  FIXPUNKT  41      E1+E4      0/8        256          1 = Kontrolle  OFFEN
+  18   22 s    94 MiB  FIXPUNKT  42      E1+E4      0/8        256          1              OFFEN
+  19   26 s    98 MiB  FIXPUNKT  38      E1+E4      0/8        256          1              OFFEN
+  20   25 s   102 MiB  FIXPUNKT  37      E1+E4      0/8        256          1              OFFEN
+  24   45 s   124 MiB  FIXPUNKT  40      E1+E4      0/8        256          1              OFFEN
+  28   52 s   140 MiB  FIXPUNKT  38      E1+E4      0/8        256          1              OFFEN
+  32   61 s   153 MiB  FIXPUNKT  42      E1+E4      0/8        256          1              OFFEN
+  40   93 s   211 MiB  FIXPUNKT  39      E1+E4      0/8        256          1              OFFEN
+  48  119 s   247 MiB  FIXPUNKT  34      E1+E4      0/8        256          1              OFFEN
+  56  164 s   321 MiB  FIXPUNKT  39      E1+E4      0/8        256          1              OFFEN
+  64  (gestern, Zielhash B)              E1+E4      0/8        256          0              OFFEN
+Die Kante ist scharf: 16 Runden alles, 17 Runden nichts – kein allmaehliches Abnehmen, sondern ein Sprung um eine Runde, und danach bleibt es
+bei 0 Noncebits bis 64. Auch die Paare (E4) aendern ab 17 nichts an der Nonce. Runde 17 ist die erste, die ein erweitertes Nachrichtenwort
+(W16) braucht.
+
+== 2. KONTROLLE: DIESELBEN RUNDENZAHLEN OHNE NACHRICHTENERWEITERUNG (erweiterung_kontrolle.py) ===============================================
+Modell identisch (R Runden, Rundenfunktion, Feed-forward, Padding, zwei Anwendungen), nur W[16..R-1] = feste Konstanten statt der
+SHA-256-Erweiterung. Referenz mit derselben Konstantenwahl, Kontrollnonce vorab aus Samen, Orakel danach. Nur E1 (hatte bis 16 Runden genuegt).
+  R   Graph     E1 (Durchl.)    Zeit     Noncebits  Orakel-Treffer  Ausgang
+  16   32 926   FIXPUNKT 132     8 s       8/8      1 = Kontrolle   TREFFER_ABGELEITET
+  17   35 529   FIXPUNKT 142    11 s       8/8      1 = Kontrolle   TREFFER_ABGELEITET
+  18   38 147   FIXPUNKT 155    12 s       8/8      1               TREFFER_ABGELEITET
+  20   43 294   FIXPUNKT 176    16 s       8/8      1               TREFFER_ABGELEITET
+  24   53 558   FIXPUNKT 225    24 s       8/8      1               TREFFER_ABGELEITET
+  32   74 212   FIXPUNKT 308    47 s       8/8      1               TREFFER_ABGELEITET
+  48  115 345   FIXPUNKT 482   101 s       8/8      1               TREFFER_ABGELEITET
+  64  156 490   FIXPUNKT 648   180 s       8/8      1               TREFFER_ABGELEITET
+Ohne Erweiterung leitet E1 allein die Nonce bei ALLEN Rundenzahlen bis 64 ab, ohne Paare, ohne Suche, jeweils vom Orakel bestaetigt.
+
+== 3. WAS DAS HEISST (einfach) =================================================================================================================
+BELEGT (fuer diese Vorlage, 8 freie Bits, diese Regeln): Die Mauer ist nicht die Tiefe und nicht die Rundenfunktion. 64 Runden Ch, Maj, Sigma,
+Additionen, Feed-forward, zweimal hintereinander – das rechnet die Maschine mit reinen Bitregeln rueckwaerts bis zur Nonce durch, solange
+alle Rundenwoerter bekannt sind. Die Mauer ist allein die Nachrichtenerweiterung: Ab Runde 17 haengen die Rundenwoerter selbst von den
+unbekannten Eingangswoertern ab (W16 = sigma1(W14) + W9 + sigma0(W1) + W0 ueber Additionen), und in dem Moment reisst die Spur ab – komplett,
+mit einer einzigen Runde. Fuer Christian in einem Satz: Die Maschine kann jede Runde rueckwaerts aufdroeseln, wenn sie weiss, welches Wort in
+die Runde hineingegeben wurde; sobald dieses Wort selbst aus dem Unbekannten berechnet wird, weiss sie es nicht mehr, und alles dahinter wird
+beliebig.
+Warum das so ist (Erklaerung, nicht Messung): Mit bekannten Rundenwoertern ist jede SHA-Runde eine umkehrbare Abbildung des Zustands – aus dem
+Endzustand folgt der Anfangszustand Schritt fuer Schritt, und Bogenkonsistenz auf dieser Kette ist stark genug. Die Erweiterung bricht die
+Umkehrbarkeit: dasselbe unbekannte Wort steckt gleichzeitig in Runde i und ueber sigma0/sigma1 und Additionen in Runden i+15, i+16 und weiter.
+KEINE Neuheitsbehauptung: Dass die Nachrichtenerweiterung der Teil ist, der SHA-256 gegen Urbildangriffe schuetzt, ist in der Kryptanalyse
+bekannt. Neu ist fuer uns nur, dass unsere Maschine das sauber und reproduzierbar zeigt – und damit, wo "staerkere Regeln" ansetzen muessten:
+nicht bei der Rundenfunktion, sondern bei den Beziehungen zwischen einem Eingangswort und seinen erweiterten Nachfolgern.
+NICHT belegt: andere Vorlagen, mehr freie Bits, ein Suchvorteil (256 Hashes bleiben schneller), irgendeine Aussage ueber das echte Mining.
+Die Kontrolle "ohne Erweiterung" ist kein SHA-256 und erst recht kein Bitcoin – sie ist ein Modell, um die Ursache zu trennen.
+
+== DATEIEN ===================================================================================================================================
+lauf_runden2.py, lauf_runden3.py, ERGEBNIS_RUNDEN2.json, ERGEBNIS_RUNDEN3.json, ERGEBNIS_RUNDEN_R17..R56.json (je mit Karte aller Messstellen),
+erweiterung_kontrolle.py, ERGEBNIS_ERWEITERUNG_KONTROLLE.json, LAUF_RUNDEN2.log. Loeser unveraendert (runden_kind.py, sha_ziffern.py vom
+Morgen). Nachrechnen: python -I lauf_runden3.py 17 18 19 (75 s); python -I lauf_runden2.py 20 24 28 32 40 48 56 (9,5 min);
+python -I erweiterung_kontrolle.py (6,5 min). Vorschlag: nach Ghosts Pruefung als Experiment 16 in docs/EXPERIMENTE.md und als Antwort auf die
+erste offene Frage ins Repository – ich pushe nichts davon vor der Pruefung.

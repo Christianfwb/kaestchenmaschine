@@ -1,0 +1,31 @@
+FABLE AN GHOST – KARTE N4r09, ENDSTAND D6+R5+R6+R7+R1b+R8c+R8m – 2026-10-24 14:55. Auftrag 13:46. NUR DOKUMENTATION: keine neue Regel, keine Fallunterscheidung,
+keine Weitergabe. karte.py liest den eingefrorenen Zustand; pruefstand.py nur um eine Rundenbeschriftung je Kaestchen ergaenzt (aendert keine Ableitung).
+Deine Praezisierung uebernommen: 'es fehlen genau die nichtlinearen Faelle' ist nicht bewiesen; die Karte zeigt auch, was an Kombination fehlt (unten, Punkt 4).
+
+1. BESTAND: 324 Kaestchen (36 Ch, 288 Maj – davon 252 Uebertraege der Addierer). Fest (alle vier Anschluesse bekannt): 110. Offen: 214 (Ch 28, Maj 186).
+   Von den offenen sind 94 'vollstaendig ausgedrueckt': die Kombinationen, die D6 ueber Werte/Gleichheiten/XOR an diesen Anschluessen zulaesst (L), sind genau
+   die der exakten Relation (R). 120 haben einen REST: L > R, D6 laesst lokal Kombinationen zu, die das Kaestchen ausschliesst.
+   Je Runde offen/mit Rest: R1 12/7, R2 36/24, R3 33/20, R4 34/18, R5 24/15, R6 20/14, R7 19/9, R8 20/3, R9 16/10.
+2. FORM DES RESTS (alle 120): Maj 4 von 8 Zeilen (61x), Maj 8 von 16 (37x), Maj 8 von 8 mit Rest 4 (9x), Ch 4 von 8 (7x), Ch 8 von 16 (6x).
+   In keinem einzigen Fall liess sich der Rest als Wert, Paar oder XOR dreier Anschluesse schreiben ('beschreibbar' leer, bis auf Ch#21 e^g=0, das D6 schon hat).
+   Typische Gestalt: zwei offene Eingaenge + Ausgang, dritter Eingang fest -> Ausgang = UND bzw. ODER der beiden (Ch mit g fest: z = e UND f bzw. e ODER ... ; Maj mit
+   c fest: m = a UND b bzw. a ODER b). Das ist der Rest, den R8c/R8m sicher, aber unvollstaendig lassen. BELEGT fuer diesen Endstand, nicht allgemein.
+3. ANSCHLUESSE AN FREIEN BITS: 116 Wurzeln werden von mehreren offenen Kaestchen geteilt, 8 davon sind freie Bits. Verteilung (Kaestchen je freies Bit):
+   W2.b0: 69 Kaestchen (R1–R9) | W2.b1: 33 (R2–R9) | W0.b1: 13 | W0.b2: 8 | W0.b3, W1.b3, W2.b2, W2.b3: je 3 (je einmal pro Wiederverwendung: R3/R6/R9 bzw. R1/R4/R7).
+   Die uebrigen vier freien Bits (W0.b0, W1.b0, W1.b1, W1.b2) haengen an keinem offenen Kaestchen mehr – sie sind ueber die fuenf XOR-Beziehungen gebunden.
+   Die 2^7 = 128 passen dazu: 12 Bits minus 5 Beziehungen.
+4. DAS KONKRETE KAESTCHENPAAR (gelesen aus der Karte, nicht abgeleitet): Kaestchen, deren offene Eingaenge NUR freie Bits sind, haben einen Ausgang, der eine feste
+   Funktion dieser Bits ist. Fuenf solche gibt es; und dreimal rechnen MEHRERE Kaestchen in VERSCHIEDENEN RUNDEN DIESELBE Funktion derselben Bits:
+     (a) Ausgang = W2.b0 UND W2.b1 :  Ch#21 (R6, e=g=W2.b1, f=W2.b0 -> z = e UND f),  Maj#197 (R7, c fest 0 -> m = a UND b),  Maj#261 (R9).
+     (b) Ausgang = W0.b1 UND W2.b0 :  Maj#25 (R1),  Maj#201 (R7).
+     (c) Ausgang = W0.b1 UND W0.b2 :  Maj#14 (R1) – allein.   (d) Maj#205 (R7): Maj(W2.b1, W0.b1, W2.b0), allein.
+   Folgerung, die D6 NICHT zieht: die Ausgaenge von Ch#21, Maj#197, Maj#261 sind GLEICH (drei innere Knoten, Runden 6/7/9); ebenso Maj#25 = Maj#201 (Runden 1/7).
+   Das sind Aliasse zwischen inneren Knoten, die keine lineare Regel sieht, weil das Produkt selbst nicht linear ist – die GLEICHHEIT der Produkte aber ist ein Alias.
+   Genau das ist die Verbindung zum wiederverwendeten Wort: W2 steht in Runde 3, 6, 9, W0 in 1, 4, 7, und dieselben Bitpaare werden dort erneut multipliziert.
+   Der Graph faengt das nicht per Hash-Consing, weil die Kaestchen strukturell verschieden gebaut sind (Maj mit drittem Eingang, der erst durch Ableitung fest wird).
+   Deine Praezisierung bestaetigt sich hier: Es fehlt nicht nur Nichtlineares – es fehlt die KOMBINATION zweier vorhandener lokaler Relationen (gleiche Funktion).
+5. VORSCHLAG fuer den naechsten begrenzten Versuch (kein Start): Regel 'gleiche Funktion' (R9): fuer jedes offene Kaestchen, dessen offene Eingaenge auf freie Bits
+   (oder gemeinsame Wurzeln) zeigen, den Ausgang als normierte Funktionstafel ueber diesen Wurzeln ablegen; zwei Kaestchen mit gleicher Tafel -> Ausgaenge Alias
+   (R3-Form); komplementaere Tafel -> negierter Alias. Sound (Funktionsgleichheit), kein Kandidat, keine Fallwahl. Zuerst nur an den fuenf Paaren oben, Gegenproben,
+   dann Weitergabe getrennt, dann 128 -> ? Ob die zwei Aliasse bis zu den Eingaengen tragen, weiss ich nicht.
+Dateien: karte.py, pruefstand.py, KARTE_N4r09.json (alle 324 Kaestchen mit Relation, L, Rest, Anschluessen), KARTE_N4r09.txt (Konsolenausgabe).

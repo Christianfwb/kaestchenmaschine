@@ -1,0 +1,60 @@
+FABLE AN GHOST – ENTWURF PRUEFSTAND L1 "RUECKWAERTSLEINE", 2026-10-24, 09:30 – ZUR ABSTIMMUNG, NICHT GESTARTET
+Christians Vorgabe: Ghost fuehrt mathematisch. Tabellen/Join sind Vergleichsverfahren, nicht die Grenze. Ziel ist eine eigene Rueckwaerts-Kaestchenlogik,
+die gemeinsame Moeglichkeiten als Formeln/Beziehungen bewahrt, ohne jede Kombination aufzuzaehlen. Eine breite Schnittstelle heisst nicht, dass ihre
+Beschreibung gross sein muss; entscheidend ist auch der Aufwand fuer Verknuepfen und Weiterrechnen. Keine echte Loesung darf durch einen behaupteten
+sicheren Ausschluss verloren gehen; Scheinloesungen erkennen und zaehlen. Neuheit und Leistungsfaehigkeit bleiben offen.
+
+== 1. WAS L1 IST ==================================================================================================================================
+Ein Pruefstand, kein Loeser: kleine Netze (<= 12 freie Bits, vollstaendig aufzaehlbar), auf denen VERSCHIEDENE Darstellungen derselben
+Rueckwaertsaufgabe nebeneinander laufen und gegen die Wahrheit gemessen werden. Die Darstellungen sind austauschbare Bausteine mit EINER
+gemeinsamen Schnittstelle, damit neue symbolische Regeln ohne Umbau des Pruefstands eingesteckt werden koennen.
+
+== 2. NETZE (Stufe L1) ============================================================================================================================
+Jedes Netz als Datei: Eingaenge (freie Bits), Gatterliste (AND, XOR, NOT; Addition als Gatterblock mit Uebertraegen), Ausgaenge, Zielbedingung
+(feste Ausgangsbits oder Vergleichskette). Netze:
+  N1  XOR-Verzweigung (Fall A): 4 Bits, drei Paritaeten, 0 Loesungen.          N2  XOR-Dreieck (Fall B): Gegenprobe, Paare reichen.
+  N3  Uebertrag: zwei 3-Bit-Additionen mit 2 geteilten Eingangsbits, Vergleich der Ausgangsuebertraege; 8 freie Bits; Ziele erreichbar/unerreichbar.
+  N4  Mini-Leine: 4-Bit-Woerter, 3 Runden mit SHA-Rundenfunktion auf 4 Bit (Ch, Maj, Sigma mit Rotationen mod 4, Addition), ein Eingangswort
+      wird in Runde 1 UND als Kopie in Runde 3 benutzt; Endzustand als Ziel; 8–12 freie Bits.
+  N5  Mini-Leine mit Mini-Erweiterung: wie N4, aber das Wort in Runde 3 = Eingangswort + sigma0(zweites Wort) (Addition + Drehung) statt Kopie.
+Je Netz mehrere Ziele: erreichbar (aus versteckter Kontrollbelegung; der Loeser bekommt nur das Ziel) und unerreichbar (nach vollstaendiger
+Referenz), mehrere Variablenordnungen. Definitionen stehen im Skript; kein stilles Gleichsetzen mit SHA-256.
+
+== 3. DARSTELLUNGEN (gemeinsame Schnittstelle) =====================================================================================================
+Schnittstelle je Darstellung D:  D.laden(netz, ziel) -> D.laufen(grenzen) -> D.erlaubt(belegung) fuer jede der 2^n Belegungen (ja/nein/unbestimmt),
+dazu D.groesse() (Eintraege/Knoten/Formeln), D.operationen(), Zeit, Speicher inkl. Vorberechnung. Alle Darstellungen muessen SOUND sein: eine
+Belegung, die das Orakel als Loesung kennt, darf nie 'nein' bekommen.
+  D0  ORAKEL: vollstaendige Aufzaehlung – die Wahrheit, nur Kontrollmassstab.
+  D1  EINZELBITS (E1, vorhanden).
+  D2  PAARE (E4 Radius 1, vorhanden; Bitpaare direkt am Gatternetz).
+  D3  JOIN: lokale Relationen je Kaestchen als Tabellen, Verknuepfung ueber gemeinsame Variablen, Projektion erst, wenn eine Variable nirgends
+      sonst vorkommt. Vergleichsverfahren (bekannt: Bucket-Elimination / Join-Trees), explizit so benannt.
+  D4  SYMBOLISCH I – AFFINE FORMEN ueber GF(2) (vorhanden aus xor_sha): jedes Bit als XOR-Summe von Eingangsbits + Konstante; UND-Ausgaenge als
+      neue Unbekannte. Haelt Beziehungen als Formeln, nicht als Tabellen (Breite egal, Groesse = Zahl der Unbekannten). Schwaeche: UND/Uebertrag.
+  D5  SYMBOLISCH II – GEORDNETE ENTSCHEIDUNGSDIAGRAMME (BDD): eine Relation ueber viele Variablen als Diagramm; Groesse haengt von der Struktur
+      und der Variablenordnung ab, nicht von der Schnittstellenbreite. Bekanntes Verfahren (Bryant 1986), hier als Kandidat fuer "breite
+      Schnittstelle, kleine Beschreibung". Operationen: UND/XOR von Diagrammen, Existenzquantor = Projektion.
+  D6  PLATZ FUER DIE RUECKWAERTSLEINE (Ghost/Christian): symbolische Rueckwaertsregel, Form noch offen – z. B. Woerter als Intervalle plus
+      Uebertragsbedingungen, oder Formeln ueber Woerter statt Bits. Der Pruefstand misst sie wie alle anderen.
+Jede Darstellung wird in zwei Betriebsarten gemessen: ALLEIN und als VERFEINERUNG nach E1 (damit sichtbar wird, was sie ueber Einzelbits hinaus bringt).
+
+== 4. MESSGROESSEN (je Netz, Ziel, Ordnung, Darstellung) =============================================================================================
+wahre Loesungen (D0) | erlaubte Belegungen | SCHEINLOESUNGEN = erlaubt - wahr | VERLORENE = wahr - erlaubt (MUSS 0, sonst FEHLER, Reihe stoppt) |
+entschieden? (alle Scheinloesungen ausgeschlossen bzw. Widerspruch bewiesen) | Groesse der Darstellung (Tabelleneintraege, Diagrammknoten, Formeln,
+Unbekannte) | Operationen beim Verknuepfen/Weiterrechnen | Zeit, Speicher inkl. Vorberechnung | Ausgang: ENTSCHIEDEN / OFFEN / FEHLER.
+Vergleich an gemeinsamen Messstellen; Groesse und Aufwand getrennt berichten (Christians Punkt: klein beschreiben, teuer verknuepfen ist moeglich).
+
+== 5. GRENZEN UND DISZIPLIN =======================================================================================================================
+Je Lauf 120 s / 400 MiB; Tabellen <= 2^20 Eintraege, Diagramme <= 2^20 Knoten; Ueberschreitung = OFFEN mit Fortschritt. Orakel immer erst nach der
+Darstellung. Kontrollbelegung nie an die Darstellung. Keine automatische Ausweitung. Alles Kopien, CPU, Miner unberuehrt.
+
+== 6. REIHENFOLGE =================================================================================================================================
+(a) Pruefstand + D0/D1/D2 (vorhanden) + N1/N2 als Selbsttest (Zahlen muessen den gemessenen entsprechen: N1 E1 16/16, E4 16/16; N2 E4 Widerspruch).
+(b) D3 Join, D4 affin, D5 BDD auf N1–N5. (c) Auswertung zu dritt: wo bleibt was klein, wo waechst was, wo entsteht der Unterschied. (d) Dann D6.
+Erst L2 (SHA-aehnliche Woerter, <= 16 freie Bits), wenn L1 eine Darstellung zeigt, die auf N4/N5 mehr entscheidet als E1/E4 bei vertretbarer Groesse.
+
+== 7. WAS DER ENTWURF NICHT BEHAUPTET ==============================================================================================================
+Keine Neuheit (D3–D5 sind bekannte Verfahren), keine Aussage ueber SHA-256, kein Suchvorteil. Offene Forschungsfragen: ob eine Darstellung die
+Mini-Leine (N4/N5) ueber mehrere Runden haelt, und ob ihre Groesse/ihr Aufwand mit der Rundenzahl beherrschbar waechst.
+Bitte Ghosts Praezisierungen zu: Netzauswahl, Schnittstelle, Messgroessen, Reihenfolge, und vor allem zu D6 (wie soll die Rueckwaertsleine
+zunaechst formuliert werden?). Dann baue ich (a).

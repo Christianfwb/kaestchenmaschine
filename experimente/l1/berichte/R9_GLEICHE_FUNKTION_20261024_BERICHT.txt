@@ -1,0 +1,31 @@
+FABLE AN GHOST – R9 'GLEICHE FUNKTION' AN DEN FUENF KAESTCHEN, N4r09 – 2026-10-24 15:25. Auftrag 13:55. Kein R8g, keine Suche nach groesseren Tafeln.
+Fable-Container Xeon 2,10 GHz 2 Kerne, Python 3.13.16. Pruefstand-Budgets wie bisher.
+
+0. KORREKTUR MEINER KARTE (wichtig, zuerst): Deine Mahnung 'saemtliche Negationen normieren' traf meine Karte von 14:55. Deren Funktionstafeln ignorierten die
+   Vorzeichen der Anschluesse. Richtig normiert (Wurzeln sortiert, Vorzeichen der Eingaenge UND des Ausgangs) gilt:
+     Ch#21 (R6)  = x10 UND NICHT x11      Maj#197 (R7) = x10 UND NICHT x11      -> GLEICH (einzige echte Gleichheit, verschiedene Ausgangswurzeln 650/841)
+     Maj#261 (R9) = NICHT x10 UND x11     -> NICHT gleich, sondern das Spiegelbild.
+     Maj#25 (R1)  = NICHT x3 UND x10      Maj#201 (R7) = x3 UND NICHT x10        -> NICHT gleich, ebenfalls Spiegelbild.
+   (x3 = W0.b1, x10 = W2.b0, x11 = W2.b1.) Die 'Gruppe von drei' und das 'Paar' aus meinem Karten-Bericht waren also EINE Gleichheit und ZWEI Spiegelpaare.
+   karte.py gibt die Tafeln jetzt normiert aus (Feld funktionen_ueber_freien_bits_normiert); KARTE_N4r09.json neu erzeugt. R9 selbst war von Anfang an normiert
+   und hat deshalb richtig nur eine Gleichsetzung gemacht – der Fehler lag allein in der Lesekarte.
+1. REGEL R9 (d6.py): fuer jedes ausgewaehlte Kaestchen mit offenem Ausgang: Eingaenge auf Wurzeln+Vorzeichen, Konstanten eingesetzt; Tafel ueber die sortierten
+   Wurzeln ausgewertet; Ausgang auf seine Wurzel mit Vorzeichen bezogen. Gleiche (Wurzelmenge, Tafel) -> Ausgangswurzeln Alias; komplementaere Tafel -> negierter
+   Alias (verbinde, R3-Form). Nur identische Wurzelmengen werden verglichen. Begrenzung: R9_AUSWAHL = {Ch:[21], Maj:[197,261,25,201]}. Protokoll jeder Gleichsetzung.
+2. GEGENPROBEN (gegenproben_r9.py, 13 Netze, alle Belegungen gegen Orakel, ohne/mit; verloren ueberall 0):
+   feuert richtig: a&b vs Maj(~a,~b,1)=~(a&b) (16 -> 8 erlaubt = wahr), Maj(a,b,c) vs Maj(c,a,b) permutiert (32 -> 16; die 8 wahren bleiben, der Rest ist
+   die Maj-Funktion selbst, die ohne Kandidaten nicht weiter ausgedrueckt wird), Maj vs Maj(~a,~b,~c) negiert gleich (32 -> 16), gleiche Funktion ueber
+   Alias-Wurzeln b=e (16 -> 8 = wahr).
+   feuert richtig NICHT: a&b vs a|b, a&b vs ~a&b, a&b vs a&c (andere Bits), Maj(a,b,c) vs Maj(~a,b,c), Ch(a,b,c) vs Ch(a,c,b).
+   In vier Faellen (Ch(a,b,0) vs Maj(b,a,0); Ch(a,b,c) vs Ch(~a,c,b); drittes Bit per Ziel fest) hatte der Graph die Knoten schon per Hash-Consing bzw. R1b
+   zusammengelegt – 'ohne' war bereits exakt, R9 hatte nichts zu tun. Soundness: 0 verlorene in allen 26 Laeufen.
+3. N4r09, Pruefstand (ERGEBNIS_R9_5.json): D6+R1b+R8c+R8m 128 | D6+R9(5) 128. R9 feuert 1x (Maj#197 = Ch#21, Wurzeln [10, 11]). Aliasse 366 -> 367, sonst
+   identisch; Beziehungen ueber freie Bits unveraendert (5 XOR); verloren 0; 0,29 s. Aufwand R9: fuenf Tafeln a <= 8 Zeilen, vernachlaessigbar.
+BEFUND (BELEGT): Die einzige echte Gleichheit unter den fuenf Kaestchen wird gesetzt und weitergegeben; sie erreicht die Eingaenge nicht. 128 -> 128.
+BEOBACHTUNG (nur gelesen, VERMUTUNG was sie bringt): Die Spiegelpaare sind selbst eine Beziehung. Fuer p = a UND NICHT b und q = NICHT a UND b gilt EXAKT
+   p XOR q = a XOR b  und  p UND q = 0. Also: Maj#197 ^ Maj#261 = x10 ^ x11 und Maj#25 ^ Maj#201 = x3 ^ x10 – lineare Gleichungen zwischen zwei inneren Knoten
+   und zwei freien Bits, die D6 nicht hat. Das waere eine natuerliche Verallgemeinerung von R9: zwei Tafeln ueber denselben Wurzeln vergleichen; ist ihre XOR-Summe
+   eine LINEARE Funktion der Wurzeln, entsteht eine XOR-Gleichung (R9 ist der Spezialfall XOR-Summe = 0 bzw. = 1). Sound, kein Kandidat, keine Fallwahl.
+   Ob diese zwei Gleichungen bis zu den Eingaengen tragen, weiss ich nicht – sie enthalten die Eingaenge x3, x10, x11 immerhin direkt.
+OFFEN (nicht gestartet): R9-Erweiterung 'lineare Differenz' an genau diesen zwei Spiegelpaaren; R9 an allen Kaestchen (Klasse angelegt, nicht gemessen).
+Dateien: d6.py, pruefstand.py, karte.py (korrigiert), gegenproben_r9.py, ERGEBNIS_GEGENPROBEN_R9.json, ERGEBNIS_R9_5.json, KARTE_N4r09.json (neu).

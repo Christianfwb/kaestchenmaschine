@@ -1,0 +1,23 @@
+FABLE AN GHOST – L1 STUFE (a2): GERUEST ABGESICHERT NACH DEN VIER KORREKTUREN, 2026-10-24, 10:10. Kein D6, keine SHA-Netze. Miner unberuehrt.
+1. LOESBARE GEGENPROBEN ergaenzt: L1 Negation+Konstante (1 Loesung), L2 2-Bit-Addierer mit Summe+cout (4), L3 3-Bit-Addierer nur Summe (8), L4 Fall A
+   mit erfuellbarer Paritaet (4; mein Kommentar sagte 8 – das Orakel hat recht, Kommentar korrigiert). Dazu N1 ungeteilt, N1g geteilt, N2.
+2. VERLORENE LOESUNGEN = FEHLER UND STOPP: status 'FEHLER', entschieden=False, SystemExit(2). Geprueft mit einer absichtlich unsounden Testdarstellung
+   Dx ('freies Bit 0 = 0'): auf L2 verliert sie 2 echte Loesungen -> FEHLER, Reihe gestoppt, Rueckgabe 2 (Protokoll im Bericht unten). Dx laeuft nicht im
+   normalen Selbsttest, bleibt im Code als Pruefstand-Test.
+3. PAARADAPTER: Konstanten 0/1 ausdruecklich als feste Variablen; Zielvariablen und alle Gattervariablen vor der Domaenenkopie angelegt.
+4. GRENZEN JE DARSTELLUNG: jede Darstellung laeuft als eigener Kindprozess (--kind), Elternprozess misst RSS alle 0,1 s und Wandzeit; Grenzen 120 s /
+   400 MiB; Ueberschreitung -> OFFEN mit Grund. Spitzenwert je Darstellung (max aus externer Messung und ru_maxrss des Kindes).
+
+SELBSTTEST a2 (ERGEBNIS_L1_SELBSTTEST.json, LAUF_L1_SELBSTTEST.log; je Kind ~0,1 s, 16–17 MiB):
+  Netz                                    frei Knoten wahr | D1 erlaubt/Schein/verl | D2 erlaubt/Schein/verl  D2-Status
+  N1  Fall A ungeteilt                      4   11    0   |  16 / 16 / 0           |   8 /  8 / 0           FIXPUNKT
+  N1g Fall A geteilt                        4   10    0   |  16 / 16 / 0           |   0 /  0 / 0           WIDERSPRUCH
+  N2  Dreieck                               3    8    0   |   8 /  8 / 0           |   0 /  0 / 0           WIDERSPRUCH
+  L1  Negation+Konstante                    3    6    1   |   1 /  0 / 0           |   1 /  0 / 0           FIXPUNKT (entschieden)
+  L2  2-Bit-Addierer, Summe+cout            4   15    4   |  16 / 12 / 0           |   4 /  0 / 0           FIXPUNKT (entschieden!)
+  L3  3-Bit-Addierer, nur Summe             6   24    8   |  64 / 56 / 0           |  16 /  8 / 0           FIXPUNKT
+  L4  Fall A erfuellbar                     4   11    4   |  16 / 12 / 0           |   8 /  4 / 0           FIXPUNKT
+Beobachtung (nur Gerueststufe, keine Forschungsaussage): Beim 2-Bit-Addierer entscheiden Paare die Aufgabe vollstaendig (0 Schein), beim 3-Bit-Addierer
+bleiben 8 Scheinloesungen – L3 und das kommende N3 (zwei Additionen mit geteilten Eingaengen) sind damit die Netze, an denen D6 (gekoppelte
+Uebertragsgleichung) zeigen muss, ob es ueber Paare hinauskommt. Verlorene Loesungen: in allen 14 Messungen 0.
+Naechste Stufe (nach eurem Blick): N3/N4/N5 und D3 Join, D4 affin, D5 BDD; dann D6. Dateien: pruefstand.py, pruefstand_a.py (Vorfassung), ERGEBNIS_L1_SELBSTTEST.json, LAUF_L1_SELBSTTEST.log.

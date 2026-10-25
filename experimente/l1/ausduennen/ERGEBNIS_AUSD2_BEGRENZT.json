@@ -1,0 +1,635 @@
+{
+ "grenzen": {
+  "zeit_s": 120.0,
+  "rss_mib": 400.0
+ },
+ "python": "3.13.16",
+ "laeufe": [
+  {
+   "r": 6,
+   "k": 2,
+   "F": 1,
+   "status": "OK",
+   "wall_s": 0.45,
+   "peak_rss_mib": 19.5,
+   "zeile": "r6 k2 F1(13) | FIXPUNKT    | Loes  54 | Rang 0 | Kand 51 A_filter 0 | H_nonce 702 | beste Bilanz mit C_pre -182661 | Beob: 3/130 Bed. schliessen aus, kleinster Kegel mit Ausschluss 419, beste allein -15112 | sicher True | BESTANDEN"
+  },
+  {
+   "r": 6,
+   "k": 2,
+   "F": 2,
+   "status": "OK",
+   "wall_s": 0.51,
+   "peak_rss_mib": 19.6,
+   "zeile": "r6 k2 F2( 9) | FIXPUNKT    | Loes  53 | Rang 0 | Kand 59 A_filter 0 | H_nonce 702 | beste Bilanz mit C_pre -233434 | Beob: 3/136 Bed. schliessen aus, kleinster Kegel mit Ausschluss 419, beste allein -12304 | sicher True | BESTANDEN"
+  },
+  {
+   "r": 6,
+   "k": 2,
+   "F": 3,
+   "status": "OK",
+   "wall_s": 0.56,
+   "peak_rss_mib": 19.1,
+   "zeile": "r6 k2 F3( 7) | FIXPUNKT    | Loes  73 | Rang 0 | Kand 51 A_filter 0 | H_nonce 702 | beste Bilanz mit C_pre -194100 | Beob: 3/107 Bed. schliessen aus, kleinster Kegel mit Ausschluss 419, beste allein -20026 | sicher True | BESTANDEN"
+  },
+  {
+   "r": 6,
+   "k": 2,
+   "F": 4,
+   "status": "OK",
+   "wall_s": 0.56,
+   "peak_rss_mib": 19.4,
+   "zeile": "r6 k2 F4( 2) | FIXPUNKT    | Loes  61 | Rang 0 | Kand 54 A_filter 0 | H_nonce 702 | beste Bilanz mit C_pre -196518 | Beob: 3/122 Bed. schliessen aus, kleinster Kegel mit Ausschluss 419, beste allein -17506 | sicher True | BESTANDEN"
+  },
+  {
+   "r": 6,
+   "k": 2,
+   "F": 5,
+   "status": "OK",
+   "wall_s": 0.56,
+   "peak_rss_mib": 19.5,
+   "zeile": "r6 k2 F5(15) | FIXPUNKT    | Loes  51 | Rang 0 | Kand 67 A_filter 0 | H_nonce 702 | beste Bilanz mit C_pre -192886 | Beob: 3/136 Bed. schliessen aus, kleinster Kegel mit Ausschluss 419, beste allein -10198 | sicher True | BESTANDEN"
+  },
+  {
+   "r": 6,
+   "k": 2,
+   "F": 6,
+   "status": "OK",
+   "wall_s": 0.66,
+   "peak_rss_mib": 19.3,
+   "zeile": "r6 k2 F6( 6) | FIXPUNKT    | Loes  70 | Rang 0 | Kand 52 A_filter 0 | H_nonce 702 | beste Bilanz mit C_pre -203628 | Beob: 3/111 Bed. schliessen aus, kleinster Kegel mit Ausschluss 419, beste allein -29440 | sicher True | BESTANDEN"
+  },
+  {
+   "r": 6,
+   "k": 2,
+   "F": 7,
+   "status": "OK",
+   "wall_s": 0.56,
+   "peak_rss_mib": 19.4,
+   "zeile": "r6 k2 F7( 6) | FIXPUNKT    | Loes  70 | Rang 0 | Kand 52 A_filter 0 | H_nonce 702 | beste Bilanz mit C_pre -326284 | Beob: 3/111 Bed. schliessen aus, kleinster Kegel mit Ausschluss 419, beste allein -29440 | sicher True | BESTANDEN"
+  },
+  {
+   "r": 6,
+   "k": 2,
+   "F": 8,
+   "status": "OK",
+   "wall_s": 0.61,
+   "peak_rss_mib": 19.5,
+   "zeile": "r6 k2 F8(11) | FIXPUNKT    | Loes  60 | Rang 0 | Kand 46 A_filter 0 | H_nonce 702 | beste Bilanz mit C_pre -129521 | Beob: 3/112 Bed. schliessen aus, kleinster Kegel mit Ausschluss 419, beste allein -11602 | sicher True | BESTANDEN"
+  },
+  {
+   "r": 6,
+   "k": 3,
+   "F": 1,
+   "status": "OK",
+   "wall_s": 0.5,
+   "peak_rss_mib": 19.4,
+   "zeile": "r6 k3 F1(13) | FIXPUNKT    | Loes  25 | Rang 0 | Kand 51 A_filter 0 | H_nonce 702 | beste Bilanz mit C_pre -192256 | Beob: 5/132 Bed. schliessen aus, kleinster Kegel mit Ausschluss 419, beste allein -15112 | sicher True | BESTANDEN"
+  },
+  {
+   "r": 6,
+   "k": 3,
+   "F": 2,
+   "status": "OK",
+   "wall_s": 0.51,
+   "peak_rss_mib": 19.6,
+   "zeile": "r6 k3 F2( 9) | FIXPUNKT    | Loes  23 | Rang 0 | Kand 59 A_filter 0 | H_nonce 702 | beste Bilanz mit C_pre -194042 | Beob: 5/138 Bed. schliessen aus, kleinster Kegel mit Ausschluss 419, beste allein -12304 | sicher True | BESTANDEN"
+  },
+  {
+   "r": 6,
+   "k": 3,
+   "F": 3,
+   "status": "OK",
+   "wall_s": 0.51,
+   "peak_rss_mib": 19.5,
+   "zeile": "r6 k3 F3( 7) | FIXPUNKT    | Loes  35 | Rang 0 | Kand 51 A_filter 0 | H_nonce 702 | beste Bilanz mit C_pre -184951 | Beob: 5/109 Bed. schliessen aus, kleinster Kegel mit Ausschluss 419, beste allein -20026 | sicher True | BESTANDEN"
+  },
+  {
+   "r": 6,
+   "k": 3,
+   "F": 4,
+   "status": "OK",
+   "wall_s": 0.4,
+   "peak_rss_mib": 19.4,
+   "zeile": "r6 k3 F4( 2) | FIXPUNKT    | Loes  34 | Rang 0 | Kand 54 A_filter 0 | H_nonce 702 | beste Bilanz mit C_pre -193796 | Beob: 5/124 Bed. schliessen aus, kleinster Kegel mit Ausschluss 419, beste allein -17506 | sicher True | BESTANDEN"
+  },
+  {
+   "r": 6,
+   "k": 3,
+   "F": 5,
+   "status": "OK",
+   "wall_s": 0.51,
+   "peak_rss_mib": 19.5,
+   "zeile": "r6 k3 F5(15) | FIXPUNKT    | Loes  30 | Rang 0 | Kand 67 A_filter 0 | H_nonce 702 | beste Bilanz mit C_pre -206613 | Beob: 5/138 Bed. schliessen aus, kleinster Kegel mit Ausschluss 419, beste allein -10198 | sicher True | BESTANDEN"
+  },
+  {
+   "r": 6,
+   "k": 3,
+   "F": 6,
+   "status": "OK",
+   "wall_s": 0.5,
+   "peak_rss_mib": 19.5,
+   "zeile": "r6 k3 F6( 6) | FIXPUNKT    | Loes  26 | Rang 0 | Kand 52 A_filter 0 | H_nonce 702 | beste Bilanz mit C_pre -238168 | Beob: 5/113 Bed. schliessen aus, kleinster Kegel mit Ausschluss 419, beste allein -29440 | sicher True | BESTANDEN"
+  },
+  {
+   "r": 6,
+   "k": 3,
+   "F": 7,
+   "status": "OK",
+   "wall_s": 0.5,
+   "peak_rss_mib": 19.4,
+   "zeile": "r6 k3 F7( 6) | FIXPUNKT    | Loes  26 | Rang 0 | Kand 52 A_filter 0 | H_nonce 702 | beste Bilanz mit C_pre -240416 | Beob: 5/113 Bed. schliessen aus, kleinster Kegel mit Ausschluss 419, beste allein -29440 | sicher True | BESTANDEN"
+  },
+  {
+   "r": 6,
+   "k": 3,
+   "F": 8,
+   "status": "OK",
+   "wall_s": 0.5,
+   "peak_rss_mib": 19.4,
+   "zeile": "r6 k3 F8(11) | FIXPUNKT    | Loes  36 | Rang 0 | Kand 46 A_filter 0 | H_nonce 702 | beste Bilanz mit C_pre -198319 | Beob: 5/114 Bed. schliessen aus, kleinster Kegel mit Ausschluss 419, beste allein -11602 | sicher True | BESTANDEN"
+  },
+  {
+   "r": 6,
+   "k": 4,
+   "F": 1,
+   "status": "OK",
+   "wall_s": 0.46,
+   "peak_rss_mib": 19.5,
+   "zeile": "r6 k4 F1(13) | FIXPUNKT    | Loes  14 | Rang 0 | Kand 51 A_filter 0 | H_nonce 702 | beste Bilanz mit C_pre -271837 | Beob: 7/134 Bed. schliessen aus, kleinster Kegel mit Ausschluss 419, beste allein -15112 | sicher True | BESTANDEN"
+  },
+  {
+   "r": 6,
+   "k": 4,
+   "F": 2,
+   "status": "OK",
+   "wall_s": 0.42,
+   "peak_rss_mib": 19.6,
+   "zeile": "r6 k4 F2( 9) | FIXPUNKT    | Loes  10 | Rang 0 | Kand 59 A_filter 0 | H_nonce 702 | beste Bilanz mit C_pre -208135 | Beob: 7/140 Bed. schliessen aus, kleinster Kegel mit Ausschluss 419, beste allein -12304 | sicher True | BESTANDEN"
+  },
+  {
+   "r": 6,
+   "k": 4,
+   "F": 3,
+   "status": "OK",
+   "wall_s": 0.61,
+   "peak_rss_mib": 19.1,
+   "zeile": "r6 k4 F3( 7) | FIXPUNKT    | Loes  16 | Rang 0 | Kand 51 A_filter 0 | H_nonce 702 | beste Bilanz mit C_pre -126347 | Beob: 7/111 Bed. schliessen aus, kleinster Kegel mit Ausschluss 419, beste allein -20026 | sicher True | BESTANDEN"
+  },
+  {
+   "r": 6,
+   "k": 4,
+   "F": 4,
+   "status": "OK",
+   "wall_s": 0.56,
+   "peak_rss_mib": 19.4,
+   "zeile": "r6 k4 F4( 2) | FIXPUNKT    | Loes  17 | Rang 0 | Kand 54 A_filter 0 | H_nonce 702 | beste Bilanz mit C_pre -153466 | Beob: 7/126 Bed. schliessen aus, kleinster Kegel mit Ausschluss 419, beste allein -17506 | sicher True | BESTANDEN"
+  },
+  {
+   "r": 6,
+   "k": 4,
+   "F": 5,
+   "status": "OK",
+   "wall_s": 0.45,
+   "peak_rss_mib": 19.6,
+   "zeile": "r6 k4 F5(15) | FIXPUNKT    | Loes  12 | Rang 0 | Kand 67 A_filter 0 | H_nonce 702 | beste Bilanz mit C_pre -231703 | Beob: 7/140 Bed. schliessen aus, kleinster Kegel mit Ausschluss 419, beste allein -10198 | sicher True | BESTANDEN"
+  },
+  {
+   "r": 6,
+   "k": 4,
+   "F": 6,
+   "status": "OK",
+   "wall_s": 0.41,
+   "peak_rss_mib": 19.3,
+   "zeile": "r6 k4 F6( 6) | FIXPUNKT    | Loes  13 | Rang 0 | Kand 52 A_filter 0 | H_nonce 702 | beste Bilanz mit C_pre -225084 | Beob: 7/115 Bed. schliessen aus, kleinster Kegel mit Ausschluss 419, beste allein -29440 | sicher True | BESTANDEN"
+  },
+  {
+   "r": 6,
+   "k": 4,
+   "F": 7,
+   "status": "OK",
+   "wall_s": 0.56,
+   "peak_rss_mib": 19.1,
+   "zeile": "r6 k4 F7( 6) | FIXPUNKT    | Loes  13 | Rang 0 | Kand 52 A_filter 0 | H_nonce 702 | beste Bilanz mit C_pre -244749 | Beob: 7/115 Bed. schliessen aus, kleinster Kegel mit Ausschluss 419, beste allein -29440 | sicher True | BESTANDEN"
+  },
+  {
+   "r": 6,
+   "k": 4,
+   "F": 8,
+   "status": "OK",
+   "wall_s": 0.51,
+   "peak_rss_mib": 19.4,
+   "zeile": "r6 k4 F8(11) | FIXPUNKT    | Loes  23 | Rang 0 | Kand 46 A_filter 0 | H_nonce 702 | beste Bilanz mit C_pre -213646 | Beob: 7/116 Bed. schliessen aus, kleinster Kegel mit Ausschluss 419, beste allein -11602 | sicher True | BESTANDEN"
+  },
+  {
+   "r": 9,
+   "k": 2,
+   "F": 1,
+   "status": "OK",
+   "wall_s": 0.71,
+   "peak_rss_mib": 21.1,
+   "zeile": "r9 k2 F1(13) | FIXPUNKT    | Loes  62 | Rang 0 | Kand 51 A_filter 0 | H_nonce 1234 | beste Bilanz mit C_pre -415780 | Beob: 5/143 Bed. schliessen aus, kleinster Kegel mit Ausschluss 858, beste allein -57272 | sicher True | BESTANDEN"
+  },
+  {
+   "r": 9,
+   "k": 2,
+   "F": 2,
+   "status": "OK",
+   "wall_s": 0.71,
+   "peak_rss_mib": 21.2,
+   "zeile": "r9 k2 F2( 9) | FIXPUNKT    | Loes  62 | Rang 0 | Kand 59 A_filter 0 | H_nonce 1234 | beste Bilanz mit C_pre -406726 | Beob: 5/151 Bed. schliessen aus, kleinster Kegel mit Ausschluss 858, beste allein -63600 | sicher True | BESTANDEN"
+  },
+  {
+   "r": 9,
+   "k": 2,
+   "F": 3,
+   "status": "OK",
+   "wall_s": 0.71,
+   "peak_rss_mib": 21.3,
+   "zeile": "r9 k2 F3( 7) | FIXPUNKT    | Loes  68 | Rang 0 | Kand 51 A_filter 0 | H_nonce 1234 | beste Bilanz mit C_pre -547272 | Beob: 5/121 Bed. schliessen aus, kleinster Kegel mit Ausschluss 858, beste allein -63442 | sicher True | BESTANDEN"
+  },
+  {
+   "r": 9,
+   "k": 2,
+   "F": 4,
+   "status": "OK",
+   "wall_s": 0.81,
+   "peak_rss_mib": 21.2,
+   "zeile": "r9 k2 F4( 2) | FIXPUNKT    | Loes  65 | Rang 0 | Kand 53 A_filter 0 | H_nonce 1234 | beste Bilanz mit C_pre -602892 | Beob: 5/138 Bed. schliessen aus, kleinster Kegel mit Ausschluss 858, beste allein -64676 | sicher True | BESTANDEN"
+  },
+  {
+   "r": 9,
+   "k": 2,
+   "F": 5,
+   "status": "OK",
+   "wall_s": 0.91,
+   "peak_rss_mib": 21.2,
+   "zeile": "r9 k2 F5(15) | FIXPUNKT    | Loes  65 | Rang 0 | Kand 67 A_filter 0 | H_nonce 1234 | beste Bilanz mit C_pre -364043 | Beob: 5/148 Bed. schliessen aus, kleinster Kegel mit Ausschluss 858, beste allein -60974 | sicher True | BESTANDEN"
+  },
+  {
+   "r": 9,
+   "k": 2,
+   "F": 6,
+   "status": "OK",
+   "wall_s": 0.83,
+   "peak_rss_mib": 21.3,
+   "zeile": "r9 k2 F6( 6) | FIXPUNKT    | Loes  61 | Rang 0 | Kand 51 A_filter 0 | H_nonce 1234 | beste Bilanz mit C_pre -622463 | Beob: 5/125 Bed. schliessen aus, kleinster Kegel mit Ausschluss 858, beste allein -54804 | sicher True | BESTANDEN"
+  },
+  {
+   "r": 9,
+   "k": 2,
+   "F": 7,
+   "status": "OK",
+   "wall_s": 0.91,
+   "peak_rss_mib": 21.2,
+   "zeile": "r9 k2 F7( 6) | FIXPUNKT    | Loes  61 | Rang 0 | Kand 51 A_filter 0 | H_nonce 1234 | beste Bilanz mit C_pre -551576 | Beob: 5/125 Bed. schliessen aus, kleinster Kegel mit Ausschluss 858, beste allein -54804 | sicher True | BESTANDEN"
+  },
+  {
+   "r": 9,
+   "k": 2,
+   "F": 8,
+   "status": "OK",
+   "wall_s": 0.81,
+   "peak_rss_mib": 21.2,
+   "zeile": "r9 k2 F8(11) | FIXPUNKT    | Loes  68 | Rang 0 | Kand 46 A_filter 0 | H_nonce 1234 | beste Bilanz mit C_pre -440021 | Beob: 5/126 Bed. schliessen aus, kleinster Kegel mit Ausschluss 858, beste allein -61854 | sicher True | BESTANDEN"
+  },
+  {
+   "r": 9,
+   "k": 3,
+   "F": 1,
+   "status": "OK",
+   "wall_s": 0.81,
+   "peak_rss_mib": 21.1,
+   "zeile": "r9 k3 F1(13) | FIXPUNKT    | Loes  29 | Rang 0 | Kand 51 A_filter 0 | H_nonce 1234 | beste Bilanz mit C_pre -453351 | Beob: 7/145 Bed. schliessen aus, kleinster Kegel mit Ausschluss 858, beste allein -57272 | sicher True | BESTANDEN"
+  },
+  {
+   "r": 9,
+   "k": 3,
+   "F": 2,
+   "status": "OK",
+   "wall_s": 0.96,
+   "peak_rss_mib": 21.2,
+   "zeile": "r9 k3 F2( 9) | FIXPUNKT    | Loes  19 | Rang 0 | Kand 59 A_filter 0 | H_nonce 1234 | beste Bilanz mit C_pre -315413 | Beob: 7/153 Bed. schliessen aus, kleinster Kegel mit Ausschluss 858, beste allein -63600 | sicher True | BESTANDEN"
+  },
+  {
+   "r": 9,
+   "k": 3,
+   "F": 3,
+   "status": "OK",
+   "wall_s": 0.81,
+   "peak_rss_mib": 21.2,
+   "zeile": "r9 k3 F3( 7) | FIXPUNKT    | Loes  29 | Rang 0 | Kand 51 A_filter 0 | H_nonce 1234 | beste Bilanz mit C_pre -351821 | Beob: 7/123 Bed. schliessen aus, kleinster Kegel mit Ausschluss 858, beste allein -63442 | sicher True | BESTANDEN"
+  },
+  {
+   "r": 9,
+   "k": 3,
+   "F": 4,
+   "status": "OK",
+   "wall_s": 0.81,
+   "peak_rss_mib": 21.2,
+   "zeile": "r9 k3 F4( 2) | FIXPUNKT    | Loes  38 | Rang 0 | Kand 53 A_filter 0 | H_nonce 1234 | beste Bilanz mit C_pre -447347 | Beob: 7/140 Bed. schliessen aus, kleinster Kegel mit Ausschluss 858, beste allein -64676 | sicher True | BESTANDEN"
+  },
+  {
+   "r": 9,
+   "k": 3,
+   "F": 5,
+   "status": "OK",
+   "wall_s": 0.86,
+   "peak_rss_mib": 21.3,
+   "zeile": "r9 k3 F5(15) | FIXPUNKT    | Loes  33 | Rang 0 | Kand 67 A_filter 0 | H_nonce 1234 | beste Bilanz mit C_pre -439004 | Beob: 7/150 Bed. schliessen aus, kleinster Kegel mit Ausschluss 858, beste allein -60974 | sicher True | BESTANDEN"
+  },
+  {
+   "r": 9,
+   "k": 3,
+   "F": 6,
+   "status": "OK",
+   "wall_s": 0.81,
+   "peak_rss_mib": 21.2,
+   "zeile": "r9 k3 F6( 6) | FIXPUNKT    | Loes  18 | Rang 0 | Kand 51 A_filter 0 | H_nonce 1234 | beste Bilanz mit C_pre -483867 | Beob: 7/127 Bed. schliessen aus, kleinster Kegel mit Ausschluss 858, beste allein -54804 | sicher True | BESTANDEN"
+  },
+  {
+   "r": 9,
+   "k": 3,
+   "F": 7,
+   "status": "OK",
+   "wall_s": 0.86,
+   "peak_rss_mib": 21.3,
+   "zeile": "r9 k3 F7( 6) | FIXPUNKT    | Loes  18 | Rang 0 | Kand 51 A_filter 0 | H_nonce 1234 | beste Bilanz mit C_pre -555863 | Beob: 7/127 Bed. schliessen aus, kleinster Kegel mit Ausschluss 858, beste allein -54804 | sicher True | BESTANDEN"
+  },
+  {
+   "r": 9,
+   "k": 3,
+   "F": 8,
+   "status": "OK",
+   "wall_s": 0.66,
+   "peak_rss_mib": 21.3,
+   "zeile": "r9 k3 F8(11) | FIXPUNKT    | Loes  32 | Rang 0 | Kand 46 A_filter 0 | H_nonce 1234 | beste Bilanz mit C_pre -413543 | Beob: 7/128 Bed. schliessen aus, kleinster Kegel mit Ausschluss 858, beste allein -61854 | sicher True | BESTANDEN"
+  },
+  {
+   "r": 9,
+   "k": 4,
+   "F": 1,
+   "status": "OK",
+   "wall_s": 0.81,
+   "peak_rss_mib": 21.2,
+   "zeile": "r9 k4 F1(13) | FIXPUNKT    | Loes  17 | Rang 0 | Kand 51 A_filter 0 | H_nonce 1234 | beste Bilanz mit C_pre -441612 | Beob: 9/147 Bed. schliessen aus, kleinster Kegel mit Ausschluss 858, beste allein -57272 | sicher True | BESTANDEN"
+  },
+  {
+   "r": 9,
+   "k": 4,
+   "F": 2,
+   "status": "OK",
+   "wall_s": 0.81,
+   "peak_rss_mib": 21.1,
+   "zeile": "r9 k4 F2( 9) | FIXPUNKT    | Loes   8 | Rang 0 | Kand 59 A_filter 0 | H_nonce 1234 | beste Bilanz mit C_pre -420965 | Beob: 9/155 Bed. schliessen aus, kleinster Kegel mit Ausschluss 858, beste allein -63600 | sicher True | BESTANDEN"
+  },
+  {
+   "r": 9,
+   "k": 4,
+   "F": 3,
+   "status": "OK",
+   "wall_s": 0.76,
+   "peak_rss_mib": 21.3,
+   "zeile": "r9 k4 F3( 7) | FIXPUNKT    | Loes  15 | Rang 0 | Kand 51 A_filter 0 | H_nonce 1234 | beste Bilanz mit C_pre -469136 | Beob: 9/125 Bed. schliessen aus, kleinster Kegel mit Ausschluss 858, beste allein -63442 | sicher True | BESTANDEN"
+  },
+  {
+   "r": 9,
+   "k": 4,
+   "F": 4,
+   "status": "OK",
+   "wall_s": 0.81,
+   "peak_rss_mib": 21.1,
+   "zeile": "r9 k4 F4( 2) | FIXPUNKT    | Loes  19 | Rang 0 | Kand 53 A_filter 0 | H_nonce 1234 | beste Bilanz mit C_pre -455889 | Beob: 9/142 Bed. schliessen aus, kleinster Kegel mit Ausschluss 858, beste allein -64676 | sicher True | BESTANDEN"
+  },
+  {
+   "r": 9,
+   "k": 4,
+   "F": 5,
+   "status": "OK",
+   "wall_s": 0.71,
+   "peak_rss_mib": 21.2,
+   "zeile": "r9 k4 F5(15) | FIXPUNKT    | Loes  18 | Rang 0 | Kand 67 A_filter 0 | H_nonce 1234 | beste Bilanz mit C_pre -430672 | Beob: 9/152 Bed. schliessen aus, kleinster Kegel mit Ausschluss 858, beste allein -60974 | sicher True | BESTANDEN"
+  },
+  {
+   "r": 9,
+   "k": 4,
+   "F": 6,
+   "status": "OK",
+   "wall_s": 0.71,
+   "peak_rss_mib": 21.3,
+   "zeile": "r9 k4 F6( 6) | FIXPUNKT    | Loes   9 | Rang 0 | Kand 51 A_filter 0 | H_nonce 1234 | beste Bilanz mit C_pre -514435 | Beob: 9/129 Bed. schliessen aus, kleinster Kegel mit Ausschluss 858, beste allein -54804 | sicher True | BESTANDEN"
+  },
+  {
+   "r": 9,
+   "k": 4,
+   "F": 7,
+   "status": "OK",
+   "wall_s": 0.71,
+   "peak_rss_mib": 21.1,
+   "zeile": "r9 k4 F7( 6) | FIXPUNKT    | Loes   9 | Rang 0 | Kand 51 A_filter 0 | H_nonce 1234 | beste Bilanz mit C_pre -517421 | Beob: 9/129 Bed. schliessen aus, kleinster Kegel mit Ausschluss 858, beste allein -54804 | sicher True | BESTANDEN"
+  },
+  {
+   "r": 9,
+   "k": 4,
+   "F": 8,
+   "status": "OK",
+   "wall_s": 0.81,
+   "peak_rss_mib": 21.3,
+   "zeile": "r9 k4 F8(11) | FIXPUNKT    | Loes  17 | Rang 0 | Kand 46 A_filter 0 | H_nonce 1234 | beste Bilanz mit C_pre -484011 | Beob: 9/130 Bed. schliessen aus, kleinster Kegel mit Ausschluss 858, beste allein -61854 | sicher True | BESTANDEN"
+  }
+ ],
+ "dateien": {
+  "ausduennen.py": "06c5589a2066cc28501e2ec64ab2ab8b88e5572c6ce89e10c966dc6a48352298",
+  "ausduennen_lauf.py": "8d975c266cc604034490298c0f98acaf0f1148503f55b09719320cc0e6f52ea4"
+ },
+ "zusammenfassung": {
+  "r6_k2": {
+   "faelle": 8,
+   "widerspruch": 0,
+   "loesungen": {
+    "min": 51,
+    "max": 73,
+    "mittel": 61.5
+   },
+   "rang": {
+    "min": 0,
+    "max": 0,
+    "mittel": 0
+   },
+   "kandidaten": {
+    "min": 46,
+    "max": 67,
+    "mittel": 54
+   },
+   "beste_ersparnis_mit": {
+    "min": -326284,
+    "max": -129521,
+    "mittel": -207379
+   },
+   "beste_ersparnis_ohne": {
+    "min": -256,
+    "max": -256,
+    "mittel": -256
+   },
+   "sicher": true,
+   "nulloesung_ohne_widerspruch": 0
+  },
+  "r6_k3": {
+   "faelle": 8,
+   "widerspruch": 0,
+   "loesungen": {
+    "min": 23,
+    "max": 36,
+    "mittel": 29.38
+   },
+   "rang": {
+    "min": 0,
+    "max": 0,
+    "mittel": 0
+   },
+   "kandidaten": {
+    "min": 46,
+    "max": 67,
+    "mittel": 54
+   },
+   "beste_ersparnis_mit": {
+    "min": -240416,
+    "max": -184951,
+    "mittel": -206070.12
+   },
+   "beste_ersparnis_ohne": {
+    "min": -256,
+    "max": -256,
+    "mittel": -256
+   },
+   "sicher": true,
+   "nulloesung_ohne_widerspruch": 0
+  },
+  "r6_k4": {
+   "faelle": 8,
+   "widerspruch": 0,
+   "loesungen": {
+    "min": 10,
+    "max": 23,
+    "mittel": 14.75
+   },
+   "rang": {
+    "min": 0,
+    "max": 0,
+    "mittel": 0
+   },
+   "kandidaten": {
+    "min": 46,
+    "max": 67,
+    "mittel": 54
+   },
+   "beste_ersparnis_mit": {
+    "min": -271837,
+    "max": -126347,
+    "mittel": -209370.88
+   },
+   "beste_ersparnis_ohne": {
+    "min": -256,
+    "max": -256,
+    "mittel": -256
+   },
+   "sicher": true,
+   "nulloesung_ohne_widerspruch": 0
+  },
+  "r9_k2": {
+   "faelle": 8,
+   "widerspruch": 0,
+   "loesungen": {
+    "min": 61,
+    "max": 68,
+    "mittel": 64
+   },
+   "rang": {
+    "min": 0,
+    "max": 0,
+    "mittel": 0
+   },
+   "kandidaten": {
+    "min": 46,
+    "max": 67,
+    "mittel": 53.62
+   },
+   "beste_ersparnis_mit": {
+    "min": -622463,
+    "max": -364043,
+    "mittel": -493846.62
+   },
+   "beste_ersparnis_ohne": {
+    "min": -256,
+    "max": -256,
+    "mittel": -256
+   },
+   "sicher": true,
+   "nulloesung_ohne_widerspruch": 0
+  },
+  "r9_k3": {
+   "faelle": 8,
+   "widerspruch": 0,
+   "loesungen": {
+    "min": 18,
+    "max": 38,
+    "mittel": 27
+   },
+   "rang": {
+    "min": 0,
+    "max": 0,
+    "mittel": 0
+   },
+   "kandidaten": {
+    "min": 46,
+    "max": 67,
+    "mittel": 53.62
+   },
+   "beste_ersparnis_mit": {
+    "min": -555863,
+    "max": -315413,
+    "mittel": -432526.12
+   },
+   "beste_ersparnis_ohne": {
+    "min": -256,
+    "max": -256,
+    "mittel": -256
+   },
+   "sicher": true,
+   "nulloesung_ohne_widerspruch": 0
+  },
+  "r9_k4": {
+   "faelle": 8,
+   "widerspruch": 0,
+   "loesungen": {
+    "min": 8,
+    "max": 19,
+    "mittel": 14
+   },
+   "rang": {
+    "min": 0,
+    "max": 0,
+    "mittel": 0
+   },
+   "kandidaten": {
+    "min": 46,
+    "max": 67,
+    "mittel": 53.62
+   },
+   "beste_ersparnis_mit": {
+    "min": -517421,
+    "max": -420965,
+    "mittel": -466767.62
+   },
+   "beste_ersparnis_ohne": {
+    "min": -256,
+    "max": -256,
+    "mittel": -256
+   },
+   "sicher": true,
+   "nulloesung_ohne_widerspruch": 0
+  }
+ },
+ "alle_ok": true,
+ "wall_gesamt_s": 31.4
+}

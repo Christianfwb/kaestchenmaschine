@@ -1,0 +1,27 @@
+VON: fable
+AN: ghost (Kopie christian)
+BEZUG: GO 2026-10-24 21:34 – N4r09 strukturell, dieselbe Min-Fill-Reihenfolge, hoechstens 9 Variablen je Gruppe
+KURZ: Passt wieder NICHT. Stopp bei Schritt 980 von 1326: Variable v0322 verlangt eine Gruppe mit 10 Variablen. Wieder nur "diese Reihenfolge passt nicht in 9", keine Unmoeglichkeitsaussage.
+
+AENDERUNG GEGENUEBER DEM 8er-LAUF (nur Parameter, keine Regelaenderung)
+- strukt_n4.py liest MAX_VARS aus der Umgebung (STRUKT_MAX_VARS=9) und schreibt in eine eigene Datei (ERGEBNIS_STRUKTUR_N4R09_MAX9.json). Die 8er-Ergebnisse sind unveraendert erhalten.
+- Min-Fill-Regel, Gleichstandsregel, Kaestchen (jedes Gatter, 1314 + 32 Zielbits), Variablennamen: identisch. Da die Regel deterministisch ist und sich nur die Stoppschwelle unterscheidet, sind die Schritte 1–879 dieselben wie im 8er-Lauf (gespeichert und verglichen sind davon die ersten 40 Variablen der Ordnung: gleich).
+
+BEFUND
+- Schritte 1–979: alle Gruppen hoechstens 9 Variablen (groesste bisher 9; der 8er-Stopp bei Schritt 880/v0109 wird mit 9 passiert).
+- Schritt 980: Variable v0322 (UND-Gatter, Eingaenge Knoten 318 negiert und 321) haette Gruppe {v0322, v0288, v0289, v0304, v0307, v0310, v0313, v0317, v0337, v0341} = 10 Variablen > 9. STOPP. 979 Variablen eliminiert, 347 verbleiben.
+  Einordnung (nur Lesbarkeit, aus dem Netzaufbau): alle neun Nachbarn sind XOR-Knoten der Additionsstufen 84–99, also Zwischenknoten eines zusammenhaengenden Rundenabschnitts (nicht die Leine wie beim 8er-Stopp). Der Bucket ist hier eine Kette von Stufenausgaengen, die durch frueher eliminierte Zwischenvariablen zu einer Clique verbunden wurden.
+- Baum, Abdeckung, Running Intersection: nicht geprueft (Zerlegung passt nicht; struktur = null).
+
+MESSUNG (Einzelmessung; Fable-Container, Xeon 2,10 GHz, 2 Kerne, Python 3.13.16)
+- Min-Fill bis Stopp 3,1 s; Wand 3,22 s; Spitze RSS 17,8 MiB (ru_maxrss) / 17,7 MiB abgetastet; Waechter 120 s / 400 MiB; RLIMIT_AS unbegrenzt (keine harte Grenze, nur Ueberwachung). Ein Lauf.
+- Keine Loesungstabellen, keine Rueckwaertsrechnung, keine Kontrollbelegung.
+
+ABHAENGIGKEITEN wie im 8er-Paket (pruefstand, gatter, gruppen, stern; e1_bit und d6 werden von pruefstand mitgeladen, nichts daraus ausgefuehrt); Pfade + SHA256 in der Ergebnisdatei.
+
+BELEGT: Min-Fill mit dieser Gleichstandsregel braucht bei N4r09 (Gatter-Kaestchen) spaetestens im Schritt 980 eine Gruppe mit 10 Variablen; mit Grenze 8 bereits im Schritt 880.
+VERMUTUNG (als solche gekennzeichnet, nicht geprueft): Die Stoppstellen wandern mit steigender Grenze nach hinten (880 -> 980), aber die Buckets werden ueber Stufenketten groesser; ob eine Grenze unter 2^8 = 256 Zeilen je Relation (also hoechstens 8 Variablen) mit einer anderen Reihenfolge oder groeberen Kaestchen erreichbar ist, ist offen.
+OFFEN: andere Gleichstandsregel / Min-Degree / Additionsstufen als Kaestchen – nicht versucht, nicht freigegeben. Keine Aussage ueber Loesbarkeit, N5, SHA-256.
+
+DATEIEN: kastenmaschine/l1/stern_n4/strukt_n4.py (parametrisiert), strukt_n4_lauf.py, ERGEBNIS_STRUKTUR_N4R09_MAX9.json, ERGEBNIS_STRUKTUR_N4R09_MAX9_BEGRENZT.json. Stopp.
+--- ENDE ---

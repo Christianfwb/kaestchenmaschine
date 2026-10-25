@@ -1,0 +1,207 @@
+{
+ "alle_erkannt": true,
+ "proben": {
+  "S-A": {
+   "erkannt": true,
+   "exit": 3,
+   "hinweis": "FEHLER erkannt, SystemExit 3",
+   "protokoll": {
+    "alle_bestanden": false,
+    "abgebrochen_bei": "SABOTAGE A: F1 Erwartung absichtlich FIXPUNKT",
+    "fall": {
+     "fall": "SABOTAGE A: F1 Erwartung absichtlich FIXPUNKT",
+     "erwartung": {
+      "loesungen": 0,
+      "status": "FIXPUNKT"
+     },
+     "ableitung": {
+      "status": "WIDERSPRUCH",
+      "ordnung": [
+       "a",
+       "b"
+      ],
+      "gruppen": [
+       {
+        "name": "G_a",
+        "variablen": [
+         "a",
+         "b"
+        ],
+        "kaestchen": [
+         "K1",
+         "K2"
+        ],
+        "zeilen_initial": 0,
+        "zeilen": 0
+       },
+       {
+        "name": "G_b",
+        "variablen": [
+         "b"
+        ],
+        "kaestchen": [],
+        "zeilen_initial": 2,
+        "zeilen": 2
+       }
+      ],
+      "kanten": [
+       [
+        "G_a",
+        "G_b",
+        [
+         "b"
+        ]
+       ]
+      ],
+      "takte": 0,
+      "kantenrelationen": {},
+      "protokoll": [
+       {
+        "ereignis": "WIDERSPRUCH: Gruppe beim Initialisieren leer",
+        "gruppen": [
+         "G_a"
+        ]
+       }
+      ],
+      "groesste_gruppe_vars": 2,
+      "groesste_gruppe_zeilen": 2,
+      "groesste_gruppe_zeilen_initial": 2,
+      "summe_zeilen_initial": 2,
+      "summe_zeilen_ende": 2,
+      "zwischenstand_je_takt": [],
+      "aufwand_betrachtete_zeilen": 0,
+      "zeit_s": 9e-05
+     },
+     "global_konsistent": null,
+     "global_konsistent_je_gruppe": null,
+     "kontrolle": {
+      "loesungen": 0,
+      "zeit_s": 1e-05
+     },
+     "speicherung": {
+      "original": 0,
+      "gespeichert": 0,
+      "verloren": 0,
+      "hinzugefuegt": 0
+     },
+     "pruefung": {
+      "status": false,
+      "kontrolle": true,
+      "speicherung": true,
+      "kein_strukturfehler": true,
+      "keine_scheinentscheidung": true,
+      "global_konsistent": true
+     },
+     "bestanden": false
+    }
+   }
+  },
+  "S-B": {
+   "erkannt": true,
+   "exit": 3,
+   "hinweis": "FEHLER erkannt, SystemExit 3",
+   "protokoll": {
+    "alle_bestanden": false,
+    "abgebrochen_bei": "SABOTAGE B: F2 ohne Austausch",
+    "fall": {
+     "fall": "SABOTAGE B: F2 ohne Austausch",
+     "erwartung": {
+      "loesungen": 1,
+      "status": "FIXPUNKT"
+     },
+     "ableitung": {
+      "status": "FIXPUNKT",
+      "ordnung": [
+       "a",
+       "b"
+      ],
+      "gruppen": [
+       {
+        "name": "G_a",
+        "variablen": [
+         "a",
+         "b"
+        ],
+        "kaestchen": [
+         "K1",
+         "K2"
+        ],
+        "zeilen_initial": 1,
+        "zeilen": 1
+       },
+       {
+        "name": "G_b",
+        "variablen": [
+         "b"
+        ],
+        "kaestchen": [],
+        "zeilen_initial": 2,
+        "zeilen": 2
+       }
+      ],
+      "kanten": [
+       [
+        "G_a",
+        "G_b",
+        [
+         "b"
+        ]
+       ]
+      ],
+      "takte": 0,
+      "kantenrelationen": {},
+      "protokoll": [],
+      "groesste_gruppe_vars": 2,
+      "groesste_gruppe_zeilen": 2,
+      "groesste_gruppe_zeilen_initial": 2,
+      "summe_zeilen_initial": 3,
+      "summe_zeilen_ende": 3,
+      "zwischenstand_je_takt": [],
+      "aufwand_betrachtete_zeilen": 0,
+      "zeit_s": 6e-05
+     },
+     "global_konsistent": false,
+     "global_konsistent_je_gruppe": {
+      "G_a": {
+       "gleich": true,
+       "zeilen": 1,
+       "projektion": 1,
+       "zu_viel": 0,
+       "fehlend": 0
+      },
+      "G_b": {
+       "gleich": false,
+       "zeilen": 2,
+       "projektion": 1,
+       "zu_viel": 1,
+       "fehlend": 0
+      }
+     },
+     "kontrolle": {
+      "loesungen": 1,
+      "zeit_s": 1e-05
+     },
+     "speicherung": {
+      "original": 1,
+      "gespeichert": 1,
+      "verloren": 0,
+      "hinzugefuegt": 0
+     },
+     "pruefung": {
+      "status": true,
+      "kontrolle": true,
+      "speicherung": true,
+      "kein_strukturfehler": true,
+      "keine_scheinentscheidung": true,
+      "global_konsistent": false
+     },
+     "bestanden": false
+    }
+   }
+  },
+  "S-C": {
+   "erkannt": true,
+   "hinweis": "Strukturfehler: Kreis im Gruppengraphen bei g3-g2"
+  }
+ }
+}

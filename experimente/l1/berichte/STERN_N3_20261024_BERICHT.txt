@@ -1,0 +1,34 @@
+FABLE AN GHOST – STERN AN N3: NUR AUSTAUSCH GEGEN VORAB FESTGELEGTE JOIN-GRUPPEN + AUSTAUSCH – 2026-10-25 03:30. GO GHOST_AN_FABLE_GO_STERN_N3. Danach Stopp.
+Eigener Ordner l1/stern_n3/; importiert nur stern.py (Stern-Pruefstand, Pruefsumme im Paket); keine D6-/Pruefstand-/N5-Module, keine D6-Ableitung. Bestehende Dateien
+unveraendert. Fable-Container Xeon 2,10 GHz, Python 3.13.16. Waechter 120 s / 400 MiB: Wand 1,2 s, Spitze abgetastet 12,6 MiB, laut Kern (ru_maxrss) 14,8 MiB.
+
+1. NETZ (statisch nachgebildet, vor dem Lauf dokumentiert im Kopf von stern_n3.py): A = (x0,x1,x2)+(x3,x4,x5) = 5, B = (x0,x1,x6)+(x7,x8,x9) = 6, cA = cB; Ripple-Stufen
+   x_i + y_i + cin_i = s_i + 2 cout_i mit Summenbits als feste Zielwerte; 7 Kaestchen (A0,A1,A2,B0,B1,B2,KOP), 10 freie Bits, 6 Hilfsvariablen (a1,a2,cA,b1,b2,cB).
+   Kontrolle (nachher, 65536 Belegungen am Original): 12 echte Loesungen auf x0..x9 – Erwartung E4 bestaetigt, die Definition stimmt mit der frueheren ueberein.
+2. JOIN-GRUPPEN, vorab nach Struktur: G1 = {A0,B0} (teilen x0) 5 Variablen; G2 = {A1,B1} (teilen x1) 7 Variablen; G3 = {A2,B2,KOP} (gekoppelte Uebertraege) 8 Variablen
+   (= Grenze, eingehalten). Reihenfolge G1, G2, G3. Nach den Joins teilen G1–G2 (a1,b1) und G2–G3 (a2,b2): Kette.
+3. ERGEBNISSE, getrennt (ERGEBNIS_STERN_N3.json):
+   SPEICHERUNG: ohne Join 12/12, verloren 0, hinzugefuegt 0; mit Joins 12/12, 0/0. (Hilfsvariablen existenziell ausgeblendet.)
+   ABLEITUNG ohne Join: 2 Takte; Schnittmengen nur Einzelvariablen {a1},{a2},{b1},{b2},{cA},{cB},{x0},{x1}; einziges Ergebnis a1 = 0 (A0: x0+x3 = 1 erzwingt keinen
+     Uebertrag); Kaestchen-Zeilen 2/2/4/2/4/4/2; an den Eingaengen nichts. Zugelassen laut Mitte: 1024 von 1024.
+   ABLEITUNG mit Joins: Joins G1 2 Zeilen (aus 4 Kandidaten), G2 8 Zeilen (16), G3 10 Zeilen (48 ueber zwei Schritte); Kandidaten gesamt 68. Austausch danach: 2 Takte,
+     streicht in G2 4 Zeilen (ueber M_{a1,b1} = {00,01}) und in G3 2 Zeilen (ueber M_{a2,b2} = {00,10,11}). Endstand: G1 2, G2 4, G3 8 Zeilen; groesste Relation 8 Variablen,
+     8 Zeilen. An den Eingaengen (aus den Gruppenrelationen abgelesen, nicht gezaehlt):
+       G1: (x0,x3,x7) in {010, 101}  ->  x3 = NICHT x0, x7 = x0
+       G2: (x1,x4,x8) in {000, 001, 110, 111}  ->  x4 = x1, x8 frei
+       G3: (x2,x5,x6,x9): 8 von 16 Kombinationen (Tafel im JSON/KONSISTENZ_N3.txt)
+   KONTROLLZAEHLUNGEN (keine Ableitungsleistung): 'zugelassen laut Mitte', gruppenweise projiziert: 64 (= 2*4*8: die Gruppen einzeln auf ihre Eingaenge projiziert,
+     die Kopplung ueber die Uebertraege dabei verloren); existenziell ueber die Hilfsvariablen: 12. ACHTUNG: da alle Kaestchen in Gruppen aufgegangen sind, ist die zweite
+     Zahl eine Vollzaehlung der Mitte als Ganzes – sie beweist nichts ueber den Austausch. Ich weise sie aus, zaehle sie aber nicht als Erkenntnis.
+   WAS DER AUSTAUSCH TATSAECHLICH ERKANNT HAT (nachtraeglich geprueft, KONSISTENZ_N3.txt): nach Join + Austausch ist jede gespeicherte Zeile jeder Gruppe Teil einer
+     echten Loesung, und keine Loesungszeile fehlt – alle drei Gruppen sind exakt die Projektionen der 12 Loesungen (G1 2, G2 4, G3 8 Zeilen). Der Austausch hat dafuer
+     6 Zeilen gestrichen (G2: 8 -> 4, G3: 10 -> 8). Das ist globale Konsistenz entlang der Kette – wie es der Join-Baum-Satz fuer Running Intersection verspricht –
+     und es wurde abgeleitet, nicht abgezaehlt.
+4. VERGLEICH mit den frueheren Darstellungen an N3 (gleiche Messstelle 'erlaubt auf x0..x9', fruehere Messungen): D1 1012, D2 116, D6 (R1–R4) 52, D6+R5+R6 10, D6+R5+R6+R7 12 (= entschieden). Der Stern mit drei vorab gesetzten Gruppen erreicht ohne eine der Sonderregeln R5/R6/R7 den global konsistenten Stand;
+   um daraus die Zahl 12 an den Eingaengen auszusprechen, muss man die Kette ueber die Hilfsvariablen zusammenziehen (eine Projektion, keine Suche) – in D6 war dafuer
+   die Kette R5 -> R6 -> R7 noetig. Die Darstellung tauscht Regeln gegen Tabellengroesse: 3 Gruppen, hoechstens 8 Variablen und 10 Zeilen (Zwischenstand), 68 Kandidaten.
+BEFUND (BELEGT, N3): Nur Austausch erkennt an N3 fast nichts (a1 = 0). Mit drei strukturell gewaehlten Gruppen und Austausch werden alle Gruppenrelationen global
+konsistent; die Kopplung der Addierer ueber x0, x1 und die Uebertraege bleibt als Relation erhalten. Grenzen eingehalten, Speicherung exakt, keine Grenze erreicht.
+GRENZEN DER AUSSAGE: Gruppen von Hand gesetzt (strukturell, aber von Hand); N3 ist klein; 'gruppenweise 64' zeigt, dass die Projektion auf Eingaenge die Hilfs-
+variablen mitfuehren muss. Keine Aussage ueber N4/N5/SHA.
+Dateien: BERICHT.txt, ERGEBNIS_STERN_N3.json, KONSISTENZ_N3.txt, kastenmaschine/l1/stern_n3/{stern_n3.py, stern_n3_lauf.py, ERGEBNIS_*.json, KONSISTENZ_N3.txt}, kastenmaschine/l1/stern/stern.py.

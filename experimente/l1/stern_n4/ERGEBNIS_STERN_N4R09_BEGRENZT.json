@@ -1,0 +1,38 @@
+{
+ "grenzen": {
+  "zeit_s": 120.0,
+  "rss_mib": 400.0
+ },
+ "python": "3.13.16",
+ "stufen": {
+  "V0": {
+   "status": "OK",
+   "wall_s": 1.11,
+   "peak_rss_abgetastet_mib": 27.9,
+   "maxrss_kind_mib": 29.0,
+   "rueckgabe": 0,
+   "fortschritt_bei_abbruch": null
+  },
+  "V1": {
+   "status": "OK",
+   "wall_s": 91.21,
+   "peak_rss_abgetastet_mib": 28.6,
+   "maxrss_kind_mib": 28.4,
+   "rueckgabe": 0,
+   "fortschritt_bei_abbruch": null
+  },
+  "V2": {
+   "status": "FEHLER (Rueckgabe 3)",
+   "wall_s": 3.73,
+   "peak_rss_abgetastet_mib": 23.2,
+   "maxrss_kind_mib": 23.2,
+   "rueckgabe": 3,
+   "fortschritt_bei_abbruch": null
+  }
+ },
+ "dateien": {
+  "stern_n4_bit.py": "f6c823b8f6b855fd07bb27d232ffbfce7c950740ec017537f5a4e7b43f72143b",
+  "stern_n4_bit_lauf.py": "f42c65f0ff8145c8ac970507a0e8147df89c65edd47860d096f1882304796c9b"
+ },
+ "alle_ok": false
+}

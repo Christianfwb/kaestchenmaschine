@@ -1,0 +1,28 @@
+VON: fable
+AN: ghost, christian
+BEZUG: GO Christian 2026-10-25 14:28 – N4r10 vorbereiten, Platzbedarf bestimmen, kein Stern-Austausch
+KURZ: OFFEN. Gleichwertigkeit nachgewiesen (1492 Gatter = 753 + 728 + 11, 32 Zielbits, 0 Widersprueche, 764 Kaestchen, 723 offene Variablen). Min-Fill verlangt bei Schritt 657 von 723 eine Gruppe mit 19 Variablen (Grenze 18) -> Stopp mit Stoppstelle, keine Grenzerhoehung. Deshalb keine Strukturpruefung, keine Speicherzahlen fuer einen vollstaendigen Baum. Keine Tabellen, keine Masken aufgebaut.
+
+AUSGANGSSTAND (nicht vermischt)
+D6-Grundgeruest D6+R1b+R8c+R8m, kein R9/R9a/R9b: FIXPUNKT, 0,26 s; 465 Werte, 316 Aliase (N4r09: 468 / 366). Fruehere Zaehlung mit diesem Stand: 512 zugelassene Eingaben. Die 384 stammten vom erweiterten Regelsatz (R9a/R9b/R7) und spielen hier keine Rolle.
+Freie Eingaenge: alle 12 offen (keiner fest); zwei aliasiert: v0002 = v0010, v0006 = v0010 (bei N4r09 waren es vier). 10 Eingangswurzeln bleiben im Netz.
+
+GLEICHWERTIGKEIT (E2, bestanden, Status je Originalbedingung)
+1492 Originalgatter = (a) 753 erhalten als Kaestchen (747 Dreier, 6 Zweier) + (b) 728 erfuellt durch den Zustand + (c) 11 zu neuer Folgerung gefaltet (Restbedingungen, 11 Kaestchen) = 1492. 32 Zielbits fest im Zustand. 0 Widersprueche. Kaestchen gesamt 764 ueber 723 offene Variablen (N4r09: 531 ueber 492). Nicht aufgenommene D6-Folgerungen getrennt gezaehlt (lin_gl/xor_gl in der Ergebnisdatei).
+
+MIN-FILL MIT STOPP (Grenze 18)
+Schritte 1–656: alle Gruppen hoechstens 17 Variablen. Schritt 657: Variable v0810 (UND-Gatter, Stufen 169/170) verlangt Gruppe mit 19 Variablen: {v0810, v0004, v0005, v0007, v0010, v0011, v0201, v0278, v0282, v0284, v0811, v0819, v0841, v0991, v0998, v1168, v1175, v1379, v1386}. 656 eliminiert, 67 verbleiben.
+Einordnung (aus dem Netzaufbau, keine Ableitung): In dieser Gruppe liegen FUENF Eingangswurzeln (v0004, v0005, v0007, v0010, v0011 – letztere steht fuer drei Eingaenge) zusammen mit XOR-Knoten aus den Stufen 68–83 (Runde 2/3), 169–175 (Runde 5), 226–231 (Runde 7) und 258–263 (Runde 8). Das ist die Leine: Dieselben Eingangsbits werden ueber W_i = W_(i-3) in den Runden 1, 4, 7 und 10 wieder gelesen, und mit der zehnten Runde kommt eine weitere Wiederholung dazu, die bei N4r09 fehlte. Die Rundenkopplung haelt mehr Eingaenge gleichzeitig lebendig – deshalb 19 statt 18. Das ist eine Lesart der Stoppstelle, kein Beweis; ob eine andere Reihenfolge unter 18 bleibt, ist unbekannt (nicht versucht, nicht freigegeben).
+Zeit: Ableitung 0,26 s, Umbau 0,01 s, Min-Fill bis Stopp 1,04 s; RSS 18,7 MiB. Waechter OK (Rueckgabe 2 = OFFEN; den Waechter habe ich dafuer um die Rueckgabe 2 ergaenzt und den identischen 1,3-s-Strukturlauf einmal wiederholt – gleiche Stoppstelle).
+
+PLATZBEDARF – nur, was ohne vollstaendigen Baum sagbar ist (gerechnet, nichts aufgebaut)
+- Eine Gruppe mit 19 Variablen waere als Bitmenge 2^19 Bit = 64 KiB (Objektbytes ~69 952), ihre 38 schlanken Variablenmasken ~2,6 MB; Nachrichten ueber eine 18er-Schnittstelle 2^18 Bit = 32 KiB. Allein ist das im Budget – die Grenze 18 ist eine von uns gesetzte Grenze, keine physische.
+- Der Austausch-Aufwand waechst mit 2^s x (s-1) je Projektion; bei N4r09 (groesste Schnittstelle 17) brauchte der Austausch 62 s von 120. Eine 18er-Schnittstelle kostet je Projektion das Doppelte, und es ist unbekannt, wie viele weitere grosse Gruppen die restlichen 67 Variablen noch bringen. Ohne vollstaendige Ordnung kann ich Summe und Hoechststand nicht seriös angeben – deshalb hier KEINE Gesamtzahl.
+- Was sich sagen laesst: Bis Schritt 656 ist die Struktur N4r09-aehnlich (groesste 17). Das Problem sitzt in den letzten 67 Variablen (Eingaenge + Leinenknoten), wie bei N4r09 der letzte Abschnitt der Eliminationsordnung.
+
+BELEGT: Gleichwertigkeit; Stoppstelle 657/v0810/19 fuer diese Min-Fill-Reihenfolge mit Grenze 18. VERMUTUNG (als solche): die zusaetzliche Rundenwiederholung treibt die Breite. OFFEN: ob eine andere Eliminationsheuristik (Min-Degree, andere Gleichstandsregel) unter 18 bleibt; ob 19 oder 20 als Grenze reichen wuerden (nicht erhoeht); ob sich das vollstaendige Grundgeruest-Netz mit Bitmengen rechnen liesse. Keine Aussage ueber Loesbarkeit, N5, SHA-256.
+
+MOEGLICHE NAECHSTE KLEINE SCHRITTE (nur Vorschlaege, kein GO): (1) Strukturlauf OHNE Stopp an N4r10 (Sekunden), um die wahre groesste Gruppe dieser Ordnung und die Gesamt-Platzrechnung zu sehen – reine Zaehlung; (2) zwei bis drei andere Eliminationsheuristiken strukturell vergleichen (ebenfalls Sekunden); (3) erst danach entscheiden, ob eine Grenze von 19/20 fuer einen Stern-Lauf sinnvoll waere.
+
+DATEIEN (kastenmaschine/l1/stern_n4/): n4r10_struktur.py, n4r10_struktur_lauf.py, ERGEBNIS_N4R10_STRUKTUR.json (mit Restbedingungen, Eingangsstatus, Stoppstelle), ERGEBNIS_N4R10_STRUKTUR_BEGRENZT.json. Abhaengigkeiten (pruefstand, d6, gatter, e1_bit, gruppen, stern) mit Pfad + SHA256. Bestehende Dateien unveraendert. Stopp.
+--- ENDE ---

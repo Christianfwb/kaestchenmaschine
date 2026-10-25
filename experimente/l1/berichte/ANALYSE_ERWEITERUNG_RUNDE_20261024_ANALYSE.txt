@@ -1,0 +1,58 @@
+FABLE AN GHOST – ANALYSE: ERWEITERUNG UND RUNDENADDITION MIT GEMEINSAMER ZWISCHENGROESSE (N5 V3 r09) – 2026-10-24 22:50. Auftrag 17:18.
+Nur Algebra und Lesen des eingefrorenen Standes (voller Regelsatz, Fixpunkt). Keine Implementierung, keine Eingaben probiert, kein Orakelwissen, kein Lauf.
+
+0. DIE KLEINSTE VERBINDUNG. Im Netz ist die Erweiterung als zwei verkettete Addierer gebaut, die Rundenaddition als Kette von vier:
+   Erweiterung:   U  = s1(W2) + W0          (mod 16; Uebertrag c_U faellt weg)          [Wortgleichung: s1(W2) + W0 = U + 16 c_U]
+                  W3 = U + s0(W1)           (mod 16; c_W faellt weg)                     [U + s0(W1) = W3 + 16 c_W]
+   Runde 4:       A1 = h + Sigma1(e),  A2 = A1 + Ch,  A3 = A2 + K3,  T1 = A3 + W3   (je mod 16)  [A3 + W3 = T1 + 16 c_T]
+   W3 ist die gemeinsame Zwischengroesse: Ausgang der Erweiterung, Eingang der Runde. Dasselbe gilt bitweise fuer U (Ausgang des ersten, Eingang des zweiten Addierers).
+   Bitweise, LSB zuerst, mit Uebertraegen u_i (Addierer U), v_i (Addierer W3), t_i (Addierer T1), alle Eingangsuebertraege bei Bit 0 gleich 0:
+     U_i  = s1_i ^ W0_i ^ u_i          u_(i+1) = Maj(s1_i, W0_i, u_i)
+     W3_i = U_i ^ s0_i ^ v_i           v_(i+1) = Maj(U_i, s0_i, v_i)
+     T1_i = A3_i ^ W3_i ^ t_i          t_(i+1) = Maj(A3_i, W3_i, t_i)
+   wobei s1_i, s0_i selbst XOR dreier Bits von W2 bzw. W1 sind (Drehung/Schiebung, linear).
+
+1. WAS GEMEINSAM FOLGT (Elimination der Zwischengroessen, exakt, modulo 16 mit allen Uebertraegen):
+   (a) Wortebene: Addition der drei Wortgleichungen eliminiert U und W3:
+         s1(W2) + W0 + s0(W1) + A3 = T1 + 16 (c_U + c_W + c_T).
+       Das ist eine ganzzahlige lineare Gleichung zwischen Eingabewoertern (W0; s0(W1), s1(W2) als XOR-Knoten), dem Rundenzwischenwert A3 und T1 – mit DREI
+       weggefallenen Uebertraegen als Summe. Modulo 16 heisst das T1 = A3 + s1(W2) + W0 + s0(W1) mod 16: die Erweiterung ist in die Runde 'hineingerechnet'.
+   (b) Bitebene (Stufensummen): Addition der Stufengleichungen i von U und W3 eliminiert U_i:
+         s1_i + W0_i + s0_i + u_i + v_i  =  W3_i + 2 (u_(i+1) + v_(i+1))          [Carry-Save-Form der Drei-Operanden-Addition]
+       und mit der T1-Stufe weiter W3_i eliminiert:
+         s1_i + W0_i + s0_i + A3_i + u_i + v_i + t_i  =  T1_i + 2 (u_(i+1) + v_(i+1) + t_(i+1)).
+   (c) Bit 0 besonders (u_0 = v_0 = t_0 = 0): U_0 = s1_0 ^ W0_0; u_1 = s1_0 UND W0_0; v_1 = (s1_0 ^ W0_0) UND s0_0.
+       u_1 und v_1 SCHLIESSEN SICH AUS (nie beide 1) und u_1 + v_1 = Maj(s1_0, W0_0, s0_0) als Zahl. (Fuer i >= 1 gilt der Ausschluss NICHT mehr: mit u_i = 1
+       koennen beide Uebertraege 1 sein – das habe ich geprueft, bevor ich es behaupte.)
+   (d) Paritaet (mod 2) aller drei Gleichungen: T1_0 = A3_0 ^ s1_0 ^ W0_0 ^ s0_0 und allgemein die XOR-Summen ohne Uebertraege bei Bit 0.
+
+2. WAS UNSERE REGELN DAVON SCHON FESTHALTEN (gelesen am Code, nicht vermutet):
+   - Jede einzelne Stufengleichung (R4, ganzzahlig) und jede einzelne Wortgleichung (R6) – ja. Deren Paritaeten – ja (R4 Paritaet, R2 Gauss ueber GF(2)).
+   - Die XOR-Folgerungen (d) – ja: Gauss kombiniert XOR-Gleichungen frei, U_i und W3_i werden dort eliminiert.
+   - Die Uebertraege als Maj-Kaestchen – ja (R8m exakt), aber nur, soweit Werte/Aliasse ihrer Anschluesse bekannt sind.
+   - NICHT festgehalten: die ganzzahligen SUMMEN (a) und (b). D6 addiert ganzzahlige Gleichungen nie miteinander; es gibt nur R5 (Differenz zweier Stufen mit
+     nachweislich gleichem cout) und R6b (Differenz zweier Addierer mit gleichem cout). Eine allgemeine ganzzahlige Elimination einer Zwischengroesse, die in genau
+     zwei Gleichungen vorkommt, fehlt.
+   - NICHT festgehalten: der Ausschluss (c) u_1 / v_1. R9b vergleicht nur Kaestchen mit IDENTISCHER Wurzelmenge; u_1 = Maj(s1_0, W0_0, 0) hat Wurzeln {s1_0, W0_0},
+     v_1 = Maj(U_0, s0_0, 0) hat Wurzeln {U_0, s0_0} – verschieden, weil U_0 ein eigener Knoten ist. Der Ausschluss ist nur sichtbar, wenn man U_0 = s1_0 ^ W0_0 einsetzt.
+
+3. GIBT ES EINE KONKRETE ZUSAETZLICHE BEZIEHUNG – UND NUETZT SIE AM VORHANDENEN STAND? (Lesecheck am Fixpunkt des vollen Regelsatzes, V3 r09, k = 2855)
+   Kandidat A 'Stufensumme' (b): 196 verkettete Stufenpaare (Summenbit -> Eingang der naechsten Stufe) im Netz. Fuer jedes Paar die Summengleichung mit dem
+     eingefrorenen Stand reduziert und gefragt, ob R4 daraus einen festen Wert oder Alias zoege, den die Einzelgleichungen nicht liefern: 0 von 196.
+     Auch in R7-Form (genau eine versteckte Groesse, freie Bits enthalten) entsteht durch die Summe keine neue Wertemenge: 0.
+     ERGEBNIS: Am Fixpunkt dieses Falls bringt die Stufensumme NICHTS Zusaetzliches. Genau das berichte ich. (Die Wortsumme (a) ist die Summe dieser Stufensummen
+     plus Uebertragsterme; ich habe sie nicht gesondert geprueft, weil schon ihre Bausteine leer ausgehen – das ist eine Luecke in meiner Pruefung, keine Aussage.)
+   Kandidat B 'Bit-0-Ausschluss' (c): 69 Bit-0-Paare verketteter Addierer im Netz; bei 27 davon sind beide Uebertraege am Fixpunkt noch offen. Ob 'u_1 + v_1 <= 1'
+     dort etwas bewegt, habe ich NICHT geprueft (das waere schon eine Regel samt Weitergabe). Es ist eine echte, bisher unsichtbare Beziehung – ob sie traegt, offen.
+
+4. REGELVORSCHLAG (begruendet, nicht gebaut): R10 'Zwischengroessen-Elimination ganzzahlig'.
+   Fuer jede Hilfsgroesse, die in GENAU ZWEI ganzzahligen Gleichungen (lin_gl) vorkommt und frei ist (kein Wert, kein Alias auf ein freies Bit), die passende
+   ganzzahlige Linearkombination bilden, die sie eliminiert, und als weitere Gleichung aufnehmen (sound: Linearkombination). Danach R4/R7 wie gewohnt.
+   Das ist die ganzzahlige Entsprechung dessen, was Gauss ueber GF(2) laengst tut, und es erfasst (a), (b) und R5/R6b als Spezialfaelle.
+   Begruendung FUER: es ist die kleinste Regel, die 'verbundene Kaestchen wissen gemeinsam mehr' ganzzahlig ausdrueckt; Aufwand linear in der Zahl der Gleichungen.
+   Begruendung GEGEN / ehrlich: am vorliegenden Fixpunkt von V3 r09 haette sie (laut Lesecheck fuer die Stufensummen) nichts bewegt. Ihr Wert laege, wenn ueberhaupt,
+   frueher im Ablauf (bevor der Fixpunkt erreicht ist) oder an anderen Netzen – das ist OFFEN, nicht belegt.
+   Alternative R10b 'Carry-Save-Erkennung': verkettete Addierer X+Y, +Z an Bit 0 als Drei-Operanden-Stufe behandeln: u_1 + v_1 = Maj(X_0,Y_0,Z_0), u_1 * v_1 = 0.
+   Kleiner, gezielter, 27 offene Stellen am V3 r09 – ob sie tragen, offen.
+EMPFEHLUNG: Wenn ueberhaupt bauen, dann zuerst R10b an den 27 Stellen (klein, pruefbar, Gegenproben einfach), danach R10 allgemein – beides nur mit GO.
+Keine Aussage ueber SHA-256; keine weiteren Rundenzahlen, Belegungen oder Laeufe.

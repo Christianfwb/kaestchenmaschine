@@ -1,0 +1,673 @@
+{
+ "status": "OK",
+ "wall_s": 0.8,
+ "peak_rss_mib": 12.8,
+ "grenzen": {
+  "zeit_s": 120.0,
+  "rss_mib": 400.0
+ },
+ "rueckgabe": 0,
+ "python": "3.13.16",
+ "dateien": {
+  "stern_n3.py": "0029d711e9e0e46a9e8313fabcdb8121a28e272b46b2f7a1cca215f1b20b54cb",
+  "stern_n3_lauf.py": "6efa50b57217a9b016f6a9f94999217094e583ec16c12b580c131380aba62101"
+ },
+ "ergebnis": {
+  "netz": "N3 (statisch nachgebildet)",
+  "kaestchen": {
+   "A0": {
+    "variablen": [
+     "x0",
+     "x3",
+     "a1"
+    ],
+    "zeilen": [
+     [
+      0,
+      1,
+      0
+     ],
+     [
+      1,
+      0,
+      0
+     ]
+    ]
+   },
+   "A1": {
+    "variablen": [
+     "x1",
+     "x4",
+     "a1",
+     "a2"
+    ],
+    "zeilen": [
+     [
+      0,
+      0,
+      0,
+      0
+     ],
+     [
+      0,
+      1,
+      1,
+      1
+     ],
+     [
+      1,
+      0,
+      1,
+      1
+     ],
+     [
+      1,
+      1,
+      0,
+      1
+     ]
+    ]
+   },
+   "A2": {
+    "variablen": [
+     "x2",
+     "x5",
+     "a2",
+     "cA"
+    ],
+    "zeilen": [
+     [
+      0,
+      0,
+      1,
+      0
+     ],
+     [
+      0,
+      1,
+      0,
+      0
+     ],
+     [
+      1,
+      0,
+      0,
+      0
+     ],
+     [
+      1,
+      1,
+      1,
+      1
+     ]
+    ]
+   },
+   "B0": {
+    "variablen": [
+     "x0",
+     "x7",
+     "b1"
+    ],
+    "zeilen": [
+     [
+      0,
+      0,
+      0
+     ],
+     [
+      1,
+      1,
+      1
+     ]
+    ]
+   },
+   "B1": {
+    "variablen": [
+     "x1",
+     "x8",
+     "b1",
+     "b2"
+    ],
+    "zeilen": [
+     [
+      0,
+      0,
+      1,
+      0
+     ],
+     [
+      0,
+      1,
+      0,
+      0
+     ],
+     [
+      1,
+      0,
+      0,
+      0
+     ],
+     [
+      1,
+      1,
+      1,
+      1
+     ]
+    ]
+   },
+   "B2": {
+    "variablen": [
+     "x6",
+     "x9",
+     "b2",
+     "cB"
+    ],
+    "zeilen": [
+     [
+      0,
+      0,
+      1,
+      0
+     ],
+     [
+      0,
+      1,
+      0,
+      0
+     ],
+     [
+      1,
+      0,
+      0,
+      0
+     ],
+     [
+      1,
+      1,
+      1,
+      1
+     ]
+    ]
+   },
+   "KOP": {
+    "variablen": [
+     "cA",
+     "cB"
+    ],
+    "zeilen": [
+     [
+      0,
+      0
+     ],
+     [
+      1,
+      1
+     ]
+    ]
+   }
+  },
+  "joins_vorab": [
+   [
+    [
+     "A0",
+     "B0"
+    ],
+    "JOIN_G1"
+   ],
+   [
+    [
+     "A1",
+     "B1"
+    ],
+    "JOIN_G2"
+   ],
+   [
+    [
+     "A2",
+     "B2",
+     "KOP"
+    ],
+    "JOIN_G3"
+   ]
+  ],
+  "grenzen": {
+   "max_vars": 8,
+   "max_zeilen": 256
+  },
+  "ableitung_ohne_join": {
+   "takte": 2,
+   "widerspruch": false,
+   "protokoll": [
+    {
+     "takt": 1,
+     "schnittmenge": [
+      "a1"
+     ],
+     "kaestchen": "A1",
+     "gestrichen": 2,
+     "verbleibend": 2
+    }
+   ],
+   "schnittmengen": [
+    [
+     "a1"
+    ],
+    [
+     "a2"
+    ],
+    [
+     "b1"
+    ],
+    [
+     "b2"
+    ],
+    [
+     "cA"
+    ],
+    [
+     "cB"
+    ],
+    [
+     "x0"
+    ],
+    [
+     "x1"
+    ]
+   ],
+   "mitte_relationen": {
+    "('a1',)": [
+     [
+      0
+     ]
+    ],
+    "('a2',)": [
+     [
+      0
+     ],
+     [
+      1
+     ]
+    ],
+    "('b1',)": [
+     [
+      0
+     ],
+     [
+      1
+     ]
+    ],
+    "('b2',)": [
+     [
+      0
+     ],
+     [
+      1
+     ]
+    ],
+    "('cA',)": [
+     [
+      0
+     ],
+     [
+      1
+     ]
+    ],
+    "('cB',)": [
+     [
+      0
+     ],
+     [
+      1
+     ]
+    ],
+    "('x0',)": [
+     [
+      0
+     ],
+     [
+      1
+     ]
+    ],
+    "('x1',)": [
+     [
+      0
+     ],
+     [
+      1
+     ]
+    ]
+   },
+   "feste": {
+    "a1": 0
+   },
+   "kaestchen_zeilen": {
+    "A0": 2,
+    "A1": 2,
+    "A2": 4,
+    "B0": 2,
+    "B1": 4,
+    "B2": 4,
+    "KOP": 2
+   },
+   "zeit_s": 0.00021
+  },
+  "ableitung_mit_join": {
+   "status": "FIXPUNKT",
+   "takte": 2,
+   "protokoll": [
+    {
+     "ereignis": "JOIN",
+     "name": "JOIN_G1",
+     "aus": [
+      "A0",
+      "B0"
+     ],
+     "variablen": [
+      "x0",
+      "x3",
+      "a1",
+      "x7",
+      "b1"
+     ],
+     "zeilen": 2,
+     "zwischenrelationen": [
+      {
+       "variablen": 5,
+       "zeilen": 2,
+       "kandidaten": 4
+      }
+     ]
+    },
+    {
+     "ereignis": "JOIN",
+     "name": "JOIN_G2",
+     "aus": [
+      "A1",
+      "B1"
+     ],
+     "variablen": [
+      "x1",
+      "x4",
+      "a1",
+      "a2",
+      "x8",
+      "b1",
+      "b2"
+     ],
+     "zeilen": 8,
+     "zwischenrelationen": [
+      {
+       "variablen": 7,
+       "zeilen": 8,
+       "kandidaten": 16
+      }
+     ]
+    },
+    {
+     "ereignis": "JOIN",
+     "name": "JOIN_G3",
+     "aus": [
+      "A2",
+      "B2",
+      "KOP"
+     ],
+     "variablen": [
+      "x2",
+      "x5",
+      "a2",
+      "cA",
+      "x6",
+      "x9",
+      "b2",
+      "cB"
+     ],
+     "zeilen": 10,
+     "zwischenrelationen": [
+      {
+       "variablen": 8,
+       "zeilen": 16,
+       "kandidaten": 16
+      },
+      {
+       "variablen": 8,
+       "zeilen": 10,
+       "kandidaten": 32
+      }
+     ]
+    },
+    {
+     "takt": 1,
+     "schnittmenge": [
+      "a1",
+      "b1"
+     ],
+     "kaestchen": "JOIN_G2",
+     "gestrichen": 4,
+     "verbleibend": 4
+    },
+    {
+     "takt": 1,
+     "schnittmenge": [
+      "a2",
+      "b2"
+     ],
+     "kaestchen": "JOIN_G3",
+     "gestrichen": 2,
+     "verbleibend": 8
+    }
+   ],
+   "joins": [
+    {
+     "name": "JOIN_G1",
+     "aus": [
+      "A0",
+      "B0"
+     ],
+     "variablen": [
+      "x0",
+      "x3",
+      "a1",
+      "x7",
+      "b1"
+     ],
+     "zeilen": 2,
+     "zwischen": [
+      {
+       "variablen": 5,
+       "zeilen": 2,
+       "kandidaten": 4
+      }
+     ],
+     "kandidaten_gesamt": 4
+    },
+    {
+     "name": "JOIN_G2",
+     "aus": [
+      "A1",
+      "B1"
+     ],
+     "variablen": [
+      "x1",
+      "x4",
+      "a1",
+      "a2",
+      "x8",
+      "b1",
+      "b2"
+     ],
+     "zeilen": 8,
+     "zwischen": [
+      {
+       "variablen": 7,
+       "zeilen": 8,
+       "kandidaten": 16
+      }
+     ],
+     "kandidaten_gesamt": 16
+    },
+    {
+     "name": "JOIN_G3",
+     "aus": [
+      "A2",
+      "B2",
+      "KOP"
+     ],
+     "variablen": [
+      "x2",
+      "x5",
+      "a2",
+      "cA",
+      "x6",
+      "x9",
+      "b2",
+      "cB"
+     ],
+     "zeilen": 10,
+     "zwischen": [
+      {
+       "variablen": 8,
+       "zeilen": 16,
+       "kandidaten": 16
+      },
+      {
+       "variablen": 8,
+       "zeilen": 10,
+       "kandidaten": 32
+      }
+     ],
+     "kandidaten_gesamt": 48
+    }
+   ],
+   "schnittmengen_nach_join": [
+    [
+     "a1",
+     "b1"
+    ],
+    [
+     "a2",
+     "b2"
+    ]
+   ],
+   "mitte_relationen": {
+    "('a1', 'b1')": [
+     [
+      0,
+      0
+     ],
+     [
+      0,
+      1
+     ]
+    ],
+    "('a2', 'b2')": [
+     [
+      0,
+      0
+     ],
+     [
+      1,
+      0
+     ],
+     [
+      1,
+      1
+     ]
+    ]
+   },
+   "feste": {
+    "a1": 0
+   },
+   "gruppen": {
+    "JOIN_G1": {
+     "variablen": [
+      "x0",
+      "x3",
+      "a1",
+      "x7",
+      "b1"
+     ],
+     "zeilen": 2
+    },
+    "JOIN_G2": {
+     "variablen": [
+      "x1",
+      "x4",
+      "a1",
+      "a2",
+      "x8",
+      "b1",
+      "b2"
+     ],
+     "zeilen": 4
+    },
+    "JOIN_G3": {
+     "variablen": [
+      "x2",
+      "x5",
+      "a2",
+      "cA",
+      "x6",
+      "x9",
+      "b2",
+      "cB"
+     ],
+     "zeilen": 8
+    }
+   },
+   "zeit_s": 0.00022,
+   "groesste_relation": {
+    "variablen": 8,
+    "zeilen": 8
+   },
+   "kandidaten_gesamt": 68
+  },
+  "zugelassen_laut_mitte": {
+   "gruppenweise_projiziert": {
+    "ohne_join": 1024,
+    "mit_join": 64
+   },
+   "existenziell_ueber_hilfsvariablen": {
+    "ohne_join": 1024,
+    "mit_join": 12
+   },
+   "zeit_s": 0.32023
+  },
+  "kontrolle": {
+   "echte_loesungen_x0_bis_x9": 12,
+   "belegungen_geprueft": 65536,
+   "zeit_s": 0.1267
+  },
+  "speicherung": {
+   "original": 12,
+   "ohne_join": {
+    "gespeichert": 12,
+    "verloren": 0,
+    "hinzugefuegt": 0
+   },
+   "mit_join": {
+    "gespeichert": 12,
+    "verloren": 0,
+    "hinzugefuegt": 0
+   },
+   "zeit_s": 0.2443
+  },
+  "erwartungen": {
+   "E1_speicherung_ohne": true,
+   "E1_speicherung_mit": true,
+   "E2_sound_ohne": true,
+   "E2_sound_mit": true,
+   "E3_status_plausibel": true,
+   "E4_kontrolle_erwartet": true,
+   "E5_keine_scheinentscheidung": true,
+   "E2_sound_ohne_ex": true,
+   "E2_sound_mit_ex": true
+  },
+  "hypothese": {
+   "H_kette_exakt_gruppenweise": false,
+   "H_kette_exakt_existenziell": true
+  },
+  "alle_erwartungen_bestanden": true,
+  "maxrss_mib_kind": 14.5,
+  "zeit_gesamt_s": 0.692
+ }
+}

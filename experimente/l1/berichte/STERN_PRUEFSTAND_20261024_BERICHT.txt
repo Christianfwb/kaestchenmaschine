@@ -1,0 +1,34 @@
+FABLE AN GHOST – STERN-PRUEFSTAND (EIGENSTAENDIG, OFFLINE): FUENF FAELLE, DREI ERGEBNISSE GETRENNT – 2026-10-25 02:10. Auftrag 18:56. Danach Stopp.
+Neue Dateien nur in l1/stern/ (stern.py, stern_lauf.py); keine Importe aus d6/pruefstand/n5, keine Aenderung bestehender Artefakte. Fable-Container Xeon 2,10 GHz, Python 3.13.16.
+Waechter: 120 s / 400 MiB ueberwacht; gemessen Wand 0,10 s, Spitze RSS unter Messschwelle (zu kurz fuer /proc-Abtastung bei 0,1 s). Grenzen je Relation: 8 Variablen,
+256 Zeilen (Ueberschreitung -> OFFEN; nicht erreicht). Erwartungen vorab festgelegt und automatisch geprueft; falsch -> FEHLER/Exit 3 (nicht ausgeloest).
+
+WAS GEBAUT IST: Kaestchen = (Variablen, Zeilenmenge). Mitte = Schnittmengen aller Kaestchenpaare, je Schnittmenge S die Relation M_S = Durchschnitt der Projektionen;
+Takt = Projektion -> Durchschnitt -> Semijoin (Zeilen streichen) bis Fixpunkt; leerer Durchschnitt = WIDERSPRUCH. Join nur VORAB festgelegt (keine Kreissuche):
+Relationen vereinigen, Kandidaten- und Zwischenrelationen gezaehlt. 'Zugelassen laut Mitte' = Belegungen der Originalvariablen, vereinbar mit Domaenen, M_S und
+Join-Gruppen – NICHT mit den Kaestchen selbst (das misst die Ableitung, nicht das Orakel). Kontrolle = vollstaendige Zaehlung am unveraenderten Original, nachher,
+nichts fliesst zurueck. Speicherung = Loesungsmenge der gespeicherten Kaestchen ueber den Originalvariablen gegen das Original (verloren / hinzugefuegt).
+
+ERGEBNISSE (ERGEBNIS_STERN.json; je Fall: SPEICHERUNG | ABLEITUNG | KONTROLLE):
+F1 gleich(a,b) gegen ungleich(a,b):  Speicherung verloren 0 / hinzu 0 | Ableitung: Takt 1, Schnittmenge {a,b}: Durchschnitt leer -> WIDERSPRUCH; zugelassen laut Mitte 0
+                                     | Kontrolle: 0 Loesungen.                                                                                   BESTANDEN
+F2 gleich(a,b) + a = 0:              Speicherung 0/0 | Ableitung: Takt 1, Schnittmenge {a}: M_a = {0}, K1 von 2 auf 1 Zeile ({00}); feste a = 0, b = 0; zugelassen 1
+                                     | Kontrolle: 1 Loesung (00).                                                                                 BESTANDEN
+F3 Kette gleich, gleich, ungleich:   Speicherung 0/0 | Ableitung: Schnittmengen {b}, {c}, M = {0,1}; Fixpunkt ohne Streichung; zugelassen laut Mitte 16 (Mitte haelt ohne
+                                     Join nur Domaenen – die Paarbeziehungen stehen in den Kaestchen, nicht in der Mitte) | Kontrolle: 2 Loesungen.   BESTANDEN
+                                     Lesart: konsistenter Baum, nichts zu erkennen, nichts verloren; die 16 zeigen ehrlich, dass die Mitte allein fuer eine Projektion auf
+                                     Eingaenge zu arm ist – dafuer braucht sie die Gruppenrelationen (siehe unten).
+F4 Dreieck ungleich x3:              Speicherung 0/0 (ohne und mit Join) | Ableitung OHNE Join: Schnittmengen {a},{b},{c}, M = {0,1}, Fixpunkt ohne Streichung, OFFEN,
+                                     zugelassen 8. MIT Join (vorab: K1,K2,K3 -> JOIN_Dreieck): Zwischenrelation (a,b,c) 2 Zeilen aus 4 Kandidaten, dann 0 Zeilen aus 4
+                                     Kandidaten -> WIDERSPRUCH; zugelassen 0 | Kontrolle: 0 Loesungen.                                            BESTANDEN
+                                     Sauber formuliert: Aufgabe vollstaendig gespeichert; Widerspruch ohne Join nicht erkannt; mit Join erkannt. Groesste Relation 3 Variablen.
+F5 Spiegelpaar p = a&~b, q = ~a&b:   Speicherung 0/0 (ohne und mit) | Ableitung OHNE Join: Schnittmenge {a,b}, M = alle 4, nichts gestrichen, zugelassen 16. MIT Join
+                                     (Kp,Kq -> JOIN_Spiegel): Relation (a,b,p,q) mit 4 Zeilen {0000, 0101, 1010, 1100} aus 16 Kandidaten; zugelassen 4 | Kontrolle: 4.  BESTANDEN
+                                     Die gemeinsame Relation enthaelt p*q = 0, p^q = a^b, p <= a, q <= b ohne Sonderregel.
+GROESSE/AUFWAND: 2–4 Variablen je Relation, hoechstens 4 Zeilen; Joins: Dreieck 2 Schritte (Kandidaten 4 + 4), Spiegel 1 Schritt (16 Kandidaten); Gesamtzeit aller Faelle 0,01 s.
+
+BEFUND (BELEGT, Kleinstnetze): Speicherung in allen fuenf Faellen exakt (nie verloren, nie hinzugefuegt). Ableitung: Austausch erkennt F1 und F2; F3 nichts (korrekt,
+nichts zu erkennen); F4 und F5 erst mit vorab festgelegtem Join. Kontrolle unabhaengig und unberuehrt.
+OFFEN (nicht gestartet): automatische Kreis-/Gruppenerkennung; Gruppenrelationen als Teil der Mitte fuer die Projektion auf Eingaenge; Anbindung an die L1-Netze
+(N1 ungeteilt/geteilt, L1–L4, N3) als Vergleich D1/D2/D6/Stern an gemeinsamen Messstellen – alles nur mit GO. Keine Aussage ueber N4/N5/SHA.
+Dateien: BERICHT.txt, ERGEBNIS_STERN.json, kastenmaschine/l1/stern/{stern.py, stern_lauf.py, ERGEBNIS_STERN.json, ERGEBNIS_STERN_BEGRENZT.json}.

@@ -1,0 +1,10258 @@
+{
+ "netz": "N5 V3 r09 (Erweiterung Addition+Drehung)",
+ "darstellung": "D6+R5+R6+R7+R1b+R8c+R8m (Ch und Maj exakt)",
+ "status": "FIXPUNKT",
+ "erlaubt_bez": [],
+ "boxen": [
+  {
+   "typ": "Ch",
+   "index": 0,
+   "runde": 1,
+   "status": "fest"
+  },
+  {
+   "typ": "Ch",
+   "index": 1,
+   "runde": 1,
+   "status": "fest"
+  },
+  {
+   "typ": "Ch",
+   "index": 2,
+   "runde": 1,
+   "status": "fest"
+  },
+  {
+   "typ": "Ch",
+   "index": 3,
+   "runde": 1,
+   "status": "fest"
+  },
+  {
+   "typ": "Ch",
+   "index": 4,
+   "runde": 2,
+   "status": "offen",
+   "offene_anschluesse": [
+    "e"
+   ],
+   "wurzeln": [
+    2
+   ],
+   "frei_anschluesse": {
+    "e": "W0.b0"
+   },
+   "relation_zeilen": 2,
+   "linear_zugelassen": 2,
+   "rest_verloren": 0,
+   "beschreibbar": [],
+   "relation": [
+    "0111",
+    "1111"
+   ],
+   "verlorene_kombinationen": []
+  },
+  {
+   "typ": "Ch",
+   "index": 5,
+   "runde": 2,
+   "status": "offen",
+   "offene_anschluesse": [
+    "e"
+   ],
+   "wurzeln": [
+    3
+   ],
+   "frei_anschluesse": {
+    "e": "W0.b1"
+   },
+   "relation_zeilen": 2,
+   "linear_zugelassen": 2,
+   "rest_verloren": 0,
+   "beschreibbar": [],
+   "relation": [
+    "0000",
+    "1000"
+   ],
+   "verlorene_kombinationen": []
+  },
+  {
+   "typ": "Ch",
+   "index": 6,
+   "runde": 2,
+   "status": "offen",
+   "offene_anschluesse": [
+    "e",
+    "z"
+   ],
+   "wurzeln": [
+    4
+   ],
+   "frei_anschluesse": {
+    "e": "W0.b2",
+    "z": "W0.b2"
+   },
+   "relation_zeilen": 2,
+   "linear_zugelassen": 2,
+   "rest_verloren": 0,
+   "beschreibbar": [
+    "e^z=0"
+   ],
+   "relation": [
+    "0100",
+    "1101"
+   ],
+   "verlorene_kombinationen": []
+  },
+  {
+   "typ": "Ch",
+   "index": 7,
+   "runde": 2,
+   "status": "offen",
+   "offene_anschluesse": [
+    "e",
+    "z"
+   ],
+   "wurzeln": [
+    374
+   ],
+   "frei_anschluesse": {},
+   "relation_zeilen": 2,
+   "linear_zugelassen": 2,
+   "rest_verloren": 0,
+   "beschreibbar": [
+    "e^z=1"
+   ],
+   "relation": [
+    "0011",
+    "1010"
+   ],
+   "verlorene_kombinationen": []
+  },
+  {
+   "typ": "Ch",
+   "index": 8,
+   "runde": 3,
+   "status": "offen",
+   "offene_anschluesse": [
+    "e",
+    "f",
+    "z"
+   ],
+   "wurzeln": [
+    2,
+    416,
+    505
+   ],
+   "frei_anschluesse": {
+    "f": "W0.b0"
+   },
+   "relation_zeilen": 4,
+   "linear_zugelassen": 8,
+   "rest_verloren": 4,
+   "beschreibbar": [],
+   "relation": [
+    "0011",
+    "0111",
+    "1010",
+    "1111"
+   ],
+   "verlorene_kombinationen": [
+    "001",
+    "010",
+    "101",
+    "111"
+   ]
+  },
+  {
+   "typ": "Ch",
+   "index": 9,
+   "runde": 3,
+   "status": "offen",
+   "offene_anschluesse": [
+    "e",
+    "f",
+    "z"
+   ],
+   "wurzeln": [
+    3,
+    506,
+    812
+   ],
+   "frei_anschluesse": {
+    "f": "W0.b1"
+   },
+   "relation_zeilen": 4,
+   "linear_zugelassen": 8,
+   "rest_verloren": 4,
+   "beschreibbar": [],
+   "relation": [
+    "0000",
+    "0100",
+    "1000",
+    "1101"
+   ],
+   "verlorene_kombinationen": [
+    "010",
+    "011",
+    "101",
+    "110"
+   ]
+  },
+  {
+   "typ": "Ch",
+   "index": 10,
+   "runde": 3,
+   "status": "offen",
+   "offene_anschluesse": [
+    "e",
+    "f",
+    "z"
+   ],
+   "wurzeln": [
+    4,
+    508,
+    815
+   ],
+   "frei_anschluesse": {
+    "f": "W0.b2"
+   },
+   "relation_zeilen": 4,
+   "linear_zugelassen": 8,
+   "rest_verloren": 4,
+   "beschreibbar": [],
+   "relation": [
+    "0011",
+    "0111",
+    "1010",
+    "1111"
+   ],
+   "verlorene_kombinationen": [
+    "000",
+    "001",
+    "100",
+    "111"
+   ]
+  },
+  {
+   "typ": "Ch",
+   "index": 11,
+   "runde": 3,
+   "status": "offen",
+   "offene_anschluesse": [
+    "e",
+    "f",
+    "z"
+   ],
+   "wurzeln": [
+    374,
+    488,
+    509
+   ],
+   "frei_anschluesse": {},
+   "relation_zeilen": 4,
+   "linear_zugelassen": 8,
+   "rest_verloren": 4,
+   "beschreibbar": [],
+   "relation": [
+    "0000",
+    "0100",
+    "1000",
+    "1101"
+   ],
+   "verlorene_kombinationen": [
+    "001",
+    "011",
+    "100",
+    "111"
+   ]
+  },
+  {
+   "typ": "Ch",
+   "index": 12,
+   "runde": 4,
+   "status": "offen",
+   "offene_anschluesse": [
+    "e",
+    "f",
+    "g",
+    "z"
+   ],
+   "wurzeln": [
+    2,
+    416,
+    646
+   ],
+   "frei_anschluesse": {
+    "e": "W0.b0",
+    "g": "W0.b0"
+   },
+   "relation_zeilen": 4,
+   "linear_zugelassen": 8,
+   "rest_verloren": 4,
+   "beschreibbar": [
+    "e^g=1"
+   ],
+   "relation": [
+    "0011",
+    "0111",
+    "1000",
+    "1101"
+   ],
+   "verlorene_kombinationen": [
+    "001",
+    "010",
+    "100",
+    "110"
+   ]
+  },
+  {
+   "typ": "Ch",
+   "index": 13,
+   "runde": 4,
+   "status": "offen",
+   "offene_anschluesse": [
+    "e",
+    "f",
+    "g",
+    "z"
+   ],
+   "wurzeln": [
+    2,
+    3,
+    649,
+    812
+   ],
+   "frei_anschluesse": {
+    "e": "W0.b0",
+    "g": "W0.b1"
+   },
+   "relation_zeilen": 8,
+   "linear_zugelassen": 16,
+   "rest_verloren": 8,
+   "beschreibbar": [],
+   "relation": [
+    "0000",
+    "0011",
+    "0100",
+    "0111",
+    "1000",
+    "1010",
+    "1101",
+    "1111"
+   ],
+   "verlorene_kombinationen": [
+    "0001",
+    "0010",
+    "0101",
+    "0110",
+    "1010",
+    "1011",
+    "1100",
+    "1101"
+   ]
+  },
+  {
+   "typ": "Ch",
+   "index": 14,
+   "runde": 4,
+   "status": "offen",
+   "offene_anschluesse": [
+    "e",
+    "f",
+    "g",
+    "z"
+   ],
+   "wurzeln": [
+    2,
+    4,
+    665,
+    815
+   ],
+   "frei_anschluesse": {
+    "e": "W0.b0",
+    "g": "W0.b2"
+   },
+   "relation_zeilen": 8,
+   "linear_zugelassen": 16,
+   "rest_verloren": 8,
+   "beschreibbar": [],
+   "relation": [
+    "0000",
+    "0011",
+    "0100",
+    "0111",
+    "1000",
+    "1010",
+    "1101",
+    "1111"
+   ],
+   "verlorene_kombinationen": [
+    "0000",
+    "0001",
+    "0110",
+    "0111",
+    "1001",
+    "1010",
+    "1101",
+    "1110"
+   ]
+  },
+  {
+   "typ": "Ch",
+   "index": 15,
+   "runde": 4,
+   "status": "offen",
+   "offene_anschluesse": [
+    "e",
+    "f",
+    "g",
+    "z"
+   ],
+   "wurzeln": [
+    374,
+    488,
+    655,
+    1196
+   ],
+   "frei_anschluesse": {},
+   "relation_zeilen": 8,
+   "linear_zugelassen": 16,
+   "rest_verloren": 8,
+   "beschreibbar": [],
+   "relation": [
+    "0000",
+    "0011",
+    "0100",
+    "0111",
+    "1000",
+    "1010",
+    "1101",
+    "1111"
+   ],
+   "verlorene_kombinationen": [
+    "0001",
+    "0010",
+    "0110",
+    "0111",
+    "1000",
+    "1001",
+    "1100",
+    "1111"
+   ]
+  },
+  {
+   "typ": "Ch",
+   "index": 16,
+   "runde": 5,
+   "status": "offen",
+   "offene_anschluesse": [
+    "f",
+    "g",
+    "z"
+   ],
+   "wurzeln": [
+    2,
+    416
+   ],
+   "frei_anschluesse": {
+    "f": "W0.b0",
+    "z": "W0.b0"
+   },
+   "relation_zeilen": 4,
+   "linear_zugelassen": 4,
+   "rest_verloren": 0,
+   "beschreibbar": [
+    "f^z=0"
+   ],
+   "relation": [
+    "1000",
+    "1010",
+    "1101",
+    "1111"
+   ],
+   "verlorene_kombinationen": []
+  },
+  {
+   "typ": "Ch",
+   "index": 17,
+   "runde": 5,
+   "status": "offen",
+   "offene_anschluesse": [
+    "f",
+    "g",
+    "z"
+   ],
+   "wurzeln": [
+    2,
+    812
+   ],
+   "frei_anschluesse": {
+    "f": "W0.b0"
+   },
+   "relation_zeilen": 4,
+   "linear_zugelassen": 4,
+   "rest_verloren": 0,
+   "beschreibbar": [
+    "g^z=0"
+   ],
+   "relation": [
+    "0000",
+    "0011",
+    "0100",
+    "0111"
+   ],
+   "verlorene_kombinationen": []
+  },
+  {
+   "typ": "Ch",
+   "index": 18,
+   "runde": 5,
+   "status": "offen",
+   "offene_anschluesse": [
+    "f",
+    "g",
+    "z"
+   ],
+   "wurzeln": [
+    2,
+    815
+   ],
+   "frei_anschluesse": {
+    "f": "W0.b0"
+   },
+   "relation_zeilen": 4,
+   "linear_zugelassen": 4,
+   "rest_verloren": 0,
+   "beschreibbar": [
+    "g^z=0"
+   ],
+   "relation": [
+    "0000",
+    "0011",
+    "0100",
+    "0111"
+   ],
+   "verlorene_kombinationen": []
+  },
+  {
+   "typ": "Ch",
+   "index": 19,
+   "runde": 5,
+   "status": "offen",
+   "offene_anschluesse": [
+    "f",
+    "g",
+    "z"
+   ],
+   "wurzeln": [
+    488,
+    1196
+   ],
+   "frei_anschluesse": {},
+   "relation_zeilen": 4,
+   "linear_zugelassen": 4,
+   "rest_verloren": 0,
+   "beschreibbar": [
+    "f^z=0"
+   ],
+   "relation": [
+    "1000",
+    "1010",
+    "1101",
+    "1111"
+   ],
+   "verlorene_kombinationen": []
+  },
+  {
+   "typ": "Ch",
+   "index": 20,
+   "runde": 6,
+   "status": "offen",
+   "offene_anschluesse": [
+    "e",
+    "g",
+    "z"
+   ],
+   "wurzeln": [
+    2
+   ],
+   "frei_anschluesse": {
+    "e": "W0.b0",
+    "g": "W0.b0",
+    "z": "W0.b0"
+   },
+   "relation_zeilen": 2,
+   "linear_zugelassen": 2,
+   "rest_verloren": 0,
+   "beschreibbar": [
+    "e^g=0",
+    "e^z=0",
+    "g^z=0"
+   ],
+   "relation": [
+    "0100",
+    "1111"
+   ],
+   "verlorene_kombinationen": []
+  },
+  {
+   "typ": "Ch",
+   "index": 21,
+   "runde": 6,
+   "status": "offen",
+   "offene_anschluesse": [
+    "e",
+    "g",
+    "z"
+   ],
+   "wurzeln": [
+    2,
+    992,
+    1390
+   ],
+   "frei_anschluesse": {
+    "g": "W0.b0"
+   },
+   "relation_zeilen": 4,
+   "linear_zugelassen": 8,
+   "rest_verloren": 4,
+   "beschreibbar": [],
+   "relation": [
+    "0000",
+    "0011",
+    "1000",
+    "1010"
+   ],
+   "verlorene_kombinationen": [
+    "001",
+    "010",
+    "110",
+    "111"
+   ]
+  },
+  {
+   "typ": "Ch",
+   "index": 22,
+   "runde": 6,
+   "status": "offen",
+   "offene_anschluesse": [
+    "e",
+    "g",
+    "z"
+   ],
+   "wurzeln": [
+    2,
+    995,
+    1509
+   ],
+   "frei_anschluesse": {
+    "g": "W0.b0"
+   },
+   "relation_zeilen": 4,
+   "linear_zugelassen": 8,
+   "rest_verloren": 4,
+   "beschreibbar": [],
+   "relation": [
+    "0000",
+    "0011",
+    "1000",
+    "1010"
+   ],
+   "verlorene_kombinationen": [
+    "010",
+    "011",
+    "100",
+    "111"
+   ]
+  },
+  {
+   "typ": "Ch",
+   "index": 23,
+   "runde": 6,
+   "status": "offen",
+   "offene_anschluesse": [
+    "e",
+    "g",
+    "z"
+   ],
+   "wurzeln": [
+    998,
+    1196,
+    1516
+   ],
+   "frei_anschluesse": {},
+   "relation_zeilen": 4,
+   "linear_zugelassen": 8,
+   "rest_verloren": 4,
+   "beschreibbar": [],
+   "relation": [
+    "0100",
+    "0111",
+    "1101",
+    "1111"
+   ],
+   "verlorene_kombinationen": [
+    "001",
+    "010",
+    "011",
+    "100"
+   ]
+  },
+  {
+   "typ": "Ch",
+   "index": 24,
+   "runde": 7,
+   "status": "offen",
+   "offene_anschluesse": [
+    "f"
+   ],
+   "wurzeln": [
+    2
+   ],
+   "frei_anschluesse": {
+    "f": "W0.b0"
+   },
+   "relation_zeilen": 2,
+   "linear_zugelassen": 2,
+   "rest_verloren": 0,
+   "beschreibbar": [],
+   "relation": [
+    "0011",
+    "0111"
+   ],
+   "verlorene_kombinationen": []
+  },
+  {
+   "typ": "Ch",
+   "index": 25,
+   "runde": 7,
+   "status": "offen",
+   "offene_anschluesse": [
+    "f",
+    "z"
+   ],
+   "wurzeln": [
+    1390
+   ],
+   "frei_anschluesse": {},
+   "relation_zeilen": 2,
+   "linear_zugelassen": 2,
+   "rest_verloren": 0,
+   "beschreibbar": [
+    "f^z=0"
+   ],
+   "relation": [
+    "1000",
+    "1101"
+   ],
+   "verlorene_kombinationen": []
+  },
+  {
+   "typ": "Ch",
+   "index": 26,
+   "runde": 7,
+   "status": "offen",
+   "offene_anschluesse": [
+    "f"
+   ],
+   "wurzeln": [
+    1509
+   ],
+   "frei_anschluesse": {},
+   "relation_zeilen": 2,
+   "linear_zugelassen": 2,
+   "rest_verloren": 0,
+   "beschreibbar": [],
+   "relation": [
+    "0000",
+    "0100"
+   ],
+   "verlorene_kombinationen": []
+  },
+  {
+   "typ": "Ch",
+   "index": 27,
+   "runde": 7,
+   "status": "offen",
+   "offene_anschluesse": [
+    "f"
+   ],
+   "wurzeln": [
+    1516
+   ],
+   "frei_anschluesse": {},
+   "relation_zeilen": 2,
+   "linear_zugelassen": 2,
+   "rest_verloren": 0,
+   "beschreibbar": [],
+   "relation": [
+    "0011",
+    "0111"
+   ],
+   "verlorene_kombinationen": []
+  },
+  {
+   "typ": "Ch",
+   "index": 28,
+   "runde": 8,
+   "status": "offen",
+   "offene_anschluesse": [
+    "g",
+    "z"
+   ],
+   "wurzeln": [
+    2
+   ],
+   "frei_anschluesse": {
+    "g": "W0.b0",
+    "z": "W0.b0"
+   },
+   "relation_zeilen": 2,
+   "linear_zugelassen": 2,
+   "rest_verloren": 0,
+   "beschreibbar": [
+    "g^z=0"
+   ],
+   "relation": [
+    "0000",
+    "0011"
+   ],
+   "verlorene_kombinationen": []
+  },
+  {
+   "typ": "Ch",
+   "index": 29,
+   "runde": 8,
+   "status": "offen",
+   "offene_anschluesse": [
+    "g",
+    "z"
+   ],
+   "wurzeln": [
+    1390
+   ],
+   "frei_anschluesse": {},
+   "relation_zeilen": 2,
+   "linear_zugelassen": 2,
+   "rest_verloren": 0,
+   "beschreibbar": [
+    "g^z=0"
+   ],
+   "relation": [
+    "0100",
+    "0111"
+   ],
+   "verlorene_kombinationen": []
+  },
+  {
+   "typ": "Ch",
+   "index": 30,
+   "runde": 8,
+   "status": "offen",
+   "offene_anschluesse": [
+    "g",
+    "z"
+   ],
+   "wurzeln": [
+    1509
+   ],
+   "frei_anschluesse": {},
+   "relation_zeilen": 2,
+   "linear_zugelassen": 2,
+   "rest_verloren": 0,
+   "beschreibbar": [
+    "g^z=0"
+   ],
+   "relation": [
+    "0000",
+    "0011"
+   ],
+   "verlorene_kombinationen": []
+  },
+  {
+   "typ": "Ch",
+   "index": 31,
+   "runde": 8,
+   "status": "offen",
+   "offene_anschluesse": [
+    "g"
+   ],
+   "wurzeln": [
+    1516
+   ],
+   "frei_anschluesse": {},
+   "relation_zeilen": 2,
+   "linear_zugelassen": 2,
+   "rest_verloren": 0,
+   "beschreibbar": [],
+   "relation": [
+    "1000",
+    "1010"
+   ],
+   "verlorene_kombinationen": []
+  },
+  {
+   "typ": "Ch",
+   "index": 32,
+   "runde": 9,
+   "status": "fest"
+  },
+  {
+   "typ": "Ch",
+   "index": 33,
+   "runde": 9,
+   "status": "fest"
+  },
+  {
+   "typ": "Ch",
+   "index": 34,
+   "runde": 9,
+   "status": "fest"
+  },
+  {
+   "typ": "Ch",
+   "index": 35,
+   "runde": 9,
+   "status": "fest"
+  },
+  {
+   "typ": "Maj",
+   "index": 0,
+   "runde": null,
+   "status": "offen",
+   "offene_anschluesse": [
+    "a",
+    "b",
+    "m"
+   ],
+   "wurzeln": [
+    2,
+    13,
+    21
+   ],
+   "frei_anschluesse": {
+    "a": "W2.b3",
+    "b": "W0.b0"
+   },
+   "relation_zeilen": 4,
+   "linear_zugelassen": 8,
+   "rest_verloren": 4,
+   "beschreibbar": [],
+   "relation": [
+    "0000",
+    "0100",
+    "1000",
+    "1101"
+   ],
+   "verlorene_kombinationen": [
+    "001",
+    "011",
+    "101",
+    "110"
+   ]
+  },
+  {
+   "typ": "Maj",
+   "index": 1,
+   "runde": null,
+   "status": "offen",
+   "offene_anschluesse": [
+    "a",
+    "b",
+    "c",
+    "m"
+   ],
+   "wurzeln": [
+    3,
+    10,
+    21,
+    28
+   ],
+   "frei_anschluesse": {
+    "a": "W2.b0",
+    "b": "W0.b1"
+   },
+   "relation_zeilen": 8,
+   "linear_zugelassen": 16,
+   "rest_verloren": 8,
+   "beschreibbar": [],
+   "relation": [
+    "0000",
+    "0010",
+    "0100",
+    "0111",
+    "1000",
+    "1011",
+    "1101",
+    "1111"
+   ],
+   "verlorene_kombinationen": [
+    "0000",
+    "0010",
+    "0100",
+    "0111",
+    "1000",
+    "1011",
+    "1101",
+    "1111"
+   ]
+  },
+  {
+   "typ": "Maj",
+   "index": 2,
+   "runde": null,
+   "status": "offen",
+   "offene_anschluesse": [
+    "a",
+    "b",
+    "c",
+    "m"
+   ],
+   "wurzeln": [
+    4,
+    18,
+    28,
+    35
+   ],
+   "frei_anschluesse": {
+    "b": "W0.b2"
+   },
+   "relation_zeilen": 8,
+   "linear_zugelassen": 16,
+   "rest_verloren": 8,
+   "beschreibbar": [],
+   "relation": [
+    "0000",
+    "0010",
+    "0100",
+    "0111",
+    "1000",
+    "1011",
+    "1101",
+    "1111"
+   ],
+   "verlorene_kombinationen": [
+    "0000",
+    "0010",
+    "0101",
+    "0110",
+    "1001",
+    "1010",
+    "1101",
+    "1111"
+   ]
+  },
+  {
+   "typ": "Maj",
+   "index": 3,
+   "runde": null,
+   "status": "offen",
+   "offene_anschluesse": [
+    "a",
+    "b",
+    "c",
+    "m"
+   ],
+   "wurzeln": [
+    5,
+    19,
+    35,
+    42
+   ],
+   "frei_anschluesse": {
+    "b": "W0.b3"
+   },
+   "relation_zeilen": 8,
+   "linear_zugelassen": 16,
+   "rest_verloren": 8,
+   "beschreibbar": [],
+   "relation": [
+    "0000",
+    "0010",
+    "0100",
+    "0111",
+    "1000",
+    "1011",
+    "1101",
+    "1111"
+   ],
+   "verlorene_kombinationen": [
+    "0000",
+    "0010",
+    "0101",
+    "0110",
+    "1001",
+    "1010",
+    "1101",
+    "1111"
+   ]
+  },
+  {
+   "typ": "Maj",
+   "index": 4,
+   "runde": null,
+   "status": "offen",
+   "offene_anschluesse": [
+    "a",
+    "b",
+    "m"
+   ],
+   "wurzeln": [
+    9,
+    20,
+    49
+   ],
+   "frei_anschluesse": {
+    "b": "W1.b3"
+   },
+   "relation_zeilen": 4,
+   "linear_zugelassen": 8,
+   "rest_verloren": 4,
+   "beschreibbar": [],
+   "relation": [
+    "0000",
+    "0100",
+    "1000",
+    "1101"
+   ],
+   "verlorene_kombinationen": [
+    "001",
+    "011",
+    "101",
+    "110"
+   ]
+  },
+  {
+   "typ": "Maj",
+   "index": 5,
+   "runde": null,
+   "status": "offen",
+   "offene_anschluesse": [
+    "a",
+    "b",
+    "c",
+    "m"
+   ],
+   "wurzeln": [
+    6,
+    23,
+    49,
+    56
+   ],
+   "frei_anschluesse": {
+    "b": "W1.b0"
+   },
+   "relation_zeilen": 8,
+   "linear_zugelassen": 16,
+   "rest_verloren": 8,
+   "beschreibbar": [],
+   "relation": [
+    "0000",
+    "0010",
+    "0100",
+    "0111",
+    "1000",
+    "1011",
+    "1101",
+    "1111"
+   ],
+   "verlorene_kombinationen": [
+    "0000",
+    "0010",
+    "0100",
+    "0111",
+    "1000",
+    "1011",
+    "1101",
+    "1111"
+   ]
+  },
+  {
+   "typ": "Maj",
+   "index": 6,
+   "runde": null,
+   "status": "offen",
+   "offene_anschluesse": [
+    "a",
+    "b",
+    "c",
+    "m"
+   ],
+   "wurzeln": [
+    7,
+    30,
+    56,
+    63
+   ],
+   "frei_anschluesse": {
+    "b": "W1.b1"
+   },
+   "relation_zeilen": 8,
+   "linear_zugelassen": 16,
+   "rest_verloren": 8,
+   "beschreibbar": [],
+   "relation": [
+    "0000",
+    "0010",
+    "0100",
+    "0111",
+    "1000",
+    "1011",
+    "1101",
+    "1111"
+   ],
+   "verlorene_kombinationen": [
+    "0001",
+    "0010",
+    "0100",
+    "0110",
+    "1001",
+    "1011",
+    "1101",
+    "1110"
+   ]
+  },
+  {
+   "typ": "Maj",
+   "index": 7,
+   "runde": null,
+   "status": "offen",
+   "offene_anschluesse": [
+    "a",
+    "b",
+    "c",
+    "m"
+   ],
+   "wurzeln": [
+    37,
+    45,
+    63,
+    70
+   ],
+   "frei_anschluesse": {},
+   "relation_zeilen": 8,
+   "linear_zugelassen": 16,
+   "rest_verloren": 8,
+   "beschreibbar": [],
+   "relation": [
+    "0000",
+    "0010",
+    "0100",
+    "0111",
+    "1000",
+    "1011",
+    "1101",
+    "1111"
+   ],
+   "verlorene_kombinationen": [
+    "0001",
+    "0010",
+    "0101",
+    "0111",
+    "1000",
+    "1010",
+    "1101",
+    "1110"
+   ]
+  },
+  {
+   "typ": "Maj",
+   "index": 8,
+   "runde": null,
+   "status": "offen",
+   "offene_anschluesse": [
+    "a",
+    "b",
+    "m"
+   ],
+   "wurzeln": [
+    6,
+    72,
+    78
+   ],
+   "frei_anschluesse": {
+    "b": "W1.b0"
+   },
+   "relation_zeilen": 4,
+   "linear_zugelassen": 8,
+   "rest_verloren": 4,
+   "beschreibbar": [],
+   "relation": [
+    "0000",
+    "0100",
+    "1000",
+    "1101"
+   ],
+   "verlorene_kombinationen": [
+    "001",
+    "011",
+    "101",
+    "110"
+   ]
+  },
+  {
+   "typ": "Maj",
+   "index": 9,
+   "runde": null,
+   "status": "offen",
+   "offene_anschluesse": [
+    "a",
+    "b",
+    "c",
+    "m"
+   ],
+   "wurzeln": [
+    7,
+    74,
+    78,
+    85
+   ],
+   "frei_anschluesse": {
+    "b": "W1.b1"
+   },
+   "relation_zeilen": 8,
+   "linear_zugelassen": 16,
+   "rest_verloren": 8,
+   "beschreibbar": [],
+   "relation": [
+    "0000",
+    "0010",
+    "0100",
+    "0111",
+    "1000",
+    "1011",
+    "1101",
+    "1111"
+   ],
+   "verlorene_kombinationen": [
+    "0000",
+    "0010",
+    "0100",
+    "0111",
+    "1000",
+    "1011",
+    "1101",
+    "1111"
+   ]
+  },
+  {
+   "typ": "Maj",
+   "index": 10,
+   "runde": null,
+   "status": "offen",
+   "offene_anschluesse": [
+    "a",
+    "b",
+    "c",
+    "m"
+   ],
+   "wurzeln": [
+    8,
+    75,
+    85,
+    92
+   ],
+   "frei_anschluesse": {
+    "b": "W1.b2"
+   },
+   "relation_zeilen": 8,
+   "linear_zugelassen": 16,
+   "rest_verloren": 8,
+   "beschreibbar": [],
+   "relation": [
+    "0000",
+    "0010",
+    "0100",
+    "0111",
+    "1000",
+    "1011",
+    "1101",
+    "1111"
+   ],
+   "verlorene_kombinationen": [
+    "0000",
+    "0010",
+    "0101",
+    "0110",
+    "1001",
+    "1010",
+    "1101",
+    "1111"
+   ]
+  },
+  {
+   "typ": "Maj",
+   "index": 11,
+   "runde": null,
+   "status": "offen",
+   "offene_anschluesse": [
+    "a",
+    "b",
+    "c",
+    "m"
+   ],
+   "wurzeln": [
+    9,
+    76,
+    92,
+    99
+   ],
+   "frei_anschluesse": {
+    "b": "W1.b3"
+   },
+   "relation_zeilen": 8,
+   "linear_zugelassen": 16,
+   "rest_verloren": 8,
+   "beschreibbar": [],
+   "relation": [
+    "0000",
+    "0010",
+    "0100",
+    "0111",
+    "1000",
+    "1011",
+    "1101",
+    "1111"
+   ],
+   "verlorene_kombinationen": [
+    "0000",
+    "0010",
+    "0101",
+    "0110",
+    "1001",
+    "1010",
+    "1101",
+    "1111"
+   ]
+  },
+  {
+   "typ": "Maj",
+   "index": 12,
+   "runde": null,
+   "status": "offen",
+   "offene_anschluesse": [
+    "a",
+    "b"
+   ],
+   "wurzeln": [
+    13
+   ],
+   "frei_anschluesse": {
+    "a": "W2.b3",
+    "b": "W2.b3"
+   },
+   "relation_zeilen": 2,
+   "linear_zugelassen": 2,
+   "rest_verloren": 0,
+   "beschreibbar": [
+    "a^b=1"
+   ],
+   "relation": [
+    "0100",
+    "1000"
+   ],
+   "verlorene_kombinationen": []
+  },
+  {
+   "typ": "Maj",
+   "index": 13,
+   "runde": null,
+   "status": "offen",
+   "offene_anschluesse": [
+    "a",
+    "b",
+    "m"
+   ],
+   "wurzeln": [
+    10,
+    80,
+    109
+   ],
+   "frei_anschluesse": {
+    "b": "W2.b0"
+   },
+   "relation_zeilen": 4,
+   "linear_zugelassen": 8,
+   "rest_verloren": 4,
+   "beschreibbar": [],
+   "relation": [
+    "0000",
+    "0100",
+    "1000",
+    "1101"
+   ],
+   "verlorene_kombinationen": [
+    "001",
+    "011",
+    "101",
+    "110"
+   ]
+  },
+  {
+   "typ": "Maj",
+   "index": 14,
+   "runde": null,
+   "status": "offen",
+   "offene_anschluesse": [
+    "a",
+    "b",
+    "c",
+    "m"
+   ],
+   "wurzeln": [
+    11,
+    87,
+    109,
+    120
+   ],
+   "frei_anschluesse": {
+    "b": "W2.b1"
+   },
+   "relation_zeilen": 8,
+   "linear_zugelassen": 16,
+   "rest_verloren": 8,
+   "beschreibbar": [],
+   "relation": [
+    "0000",
+    "0010",
+    "0100",
+    "0111",
+    "1000",
+    "1011",
+    "1101",
+    "1111"
+   ],
+   "verlorene_kombinationen": [
+    "0000",
+    "0011",
+    "0100",
+    "0110",
+    "1001",
+    "1011",
+    "1100",
+    "1111"
+   ]
+  },
+  {
+   "typ": "Maj",
+   "index": 15,
+   "runde": null,
+   "status": "offen",
+   "offene_anschluesse": [
+    "a",
+    "b",
+    "c",
+    "m"
+   ],
+   "wurzeln": [
+    94,
+    102,
+    120,
+    127
+   ],
+   "frei_anschluesse": {},
+   "relation_zeilen": 8,
+   "linear_zugelassen": 16,
+   "rest_verloren": 8,
+   "beschreibbar": [],
+   "relation": [
+    "0000",
+    "0010",
+    "0100",
+    "0111",
+    "1000",
+    "1011",
+    "1101",
+    "1111"
+   ],
+   "verlorene_kombinationen": [
+    "0001",
+    "0010",
+    "0101",
+    "0111",
+    "1000",
+    "1010",
+    "1101",
+    "1110"
+   ]
+  },
+  {
+   "typ": "Maj",
+   "index": 16,
+   "runde": null,
+   "status": "offen",
+   "offene_anschluesse": [
+    "a",
+    "b",
+    "m"
+   ],
+   "wurzeln": [
+    10,
+    129,
+    135
+   ],
+   "frei_anschluesse": {
+    "b": "W2.b0"
+   },
+   "relation_zeilen": 4,
+   "linear_zugelassen": 8,
+   "rest_verloren": 4,
+   "beschreibbar": [],
+   "relation": [
+    "0000",
+    "0100",
+    "1000",
+    "1101"
+   ],
+   "verlorene_kombinationen": [
+    "001",
+    "011",
+    "101",
+    "110"
+   ]
+  },
+  {
+   "typ": "Maj",
+   "index": 17,
+   "runde": null,
+   "status": "offen",
+   "offene_anschluesse": [
+    "b",
+    "c",
+    "m"
+   ],
+   "wurzeln": [
+    11,
+    135,
+    142
+   ],
+   "frei_anschluesse": {
+    "b": "W2.b1"
+   },
+   "relation_zeilen": 4,
+   "linear_zugelassen": 8,
+   "rest_verloren": 4,
+   "beschreibbar": [],
+   "relation": [
+    "1000",
+    "1011",
+    "1101",
+    "1111"
+   ],
+   "verlorene_kombinationen": [
+    "000",
+    "011",
+    "101",
+    "111"
+   ]
+  },
+  {
+   "typ": "Maj",
+   "index": 18,
+   "runde": null,
+   "status": "offen",
+   "offene_anschluesse": [
+    "a",
+    "b",
+    "c",
+    "m"
+   ],
+   "wurzeln": [
+    12,
+    142,
+    149,
+    859
+   ],
+   "frei_anschluesse": {
+    "b": "W2.b2"
+   },
+   "relation_zeilen": 8,
+   "linear_zugelassen": 16,
+   "rest_verloren": 8,
+   "beschreibbar": [],
+   "relation": [
+    "0000",
+    "0010",
+    "0100",
+    "0111",
+    "1000",
+    "1011",
+    "1101",
+    "1111"
+   ],
+   "verlorene_kombinationen": [
+    "0001",
+    "0010",
+    "0100",
+    "0101",
+    "1010",
+    "1011",
+    "1101",
+    "1110"
+   ]
+  },
+  {
+   "typ": "Maj",
+   "index": 19,
+   "runde": null,
+   "status": "offen",
+   "offene_anschluesse": [
+    "a",
+    "b",
+    "c",
+    "m"
+   ],
+   "wurzeln": [
+    13,
+    149,
+    156,
+    846
+   ],
+   "frei_anschluesse": {
+    "b": "W2.b3"
+   },
+   "relation_zeilen": 8,
+   "linear_zugelassen": 16,
+   "rest_verloren": 8,
+   "beschreibbar": [],
+   "relation": [
+    "0000",
+    "0010",
+    "0100",
+    "0111",
+    "1000",
+    "1011",
+    "1101",
+    "1111"
+   ],
+   "verlorene_kombinationen": [
+    "0000",
+    "0011",
+    "0100",
+    "0101",
+    "1010",
+    "1011",
+    "1100",
+    "1111"
+   ]
+  },
+  {
+   "typ": "Maj",
+   "index": 20,
+   "runde": null,
+   "status": "offen",
+   "offene_anschluesse": [
+    "a",
+    "b",
+    "m"
+   ],
+   "wurzeln": [
+    134,
+    158,
+    163
+   ],
+   "frei_anschluesse": {},
+   "relation_zeilen": 4,
+   "linear_zugelassen": 8,
+   "rest_verloren": 4,
+   "beschreibbar": [],
+   "relation": [
+    "0000",
+    "0100",
+    "1000",
+    "1101"
+   ],
+   "verlorene_kombinationen": [
+    "001",
+    "011",
+    "101",
+    "110"
+   ]
+  },
+  {
+   "typ": "Maj",
+   "index": 21,
+   "runde": null,
+   "status": "offen",
+   "offene_anschluesse": [
+    "a",
+    "b",
+    "c",
+    "m"
+   ],
+   "wurzeln": [
+    137,
+    160,
+    163,
+    170
+   ],
+   "frei_anschluesse": {},
+   "relation_zeilen": 8,
+   "linear_zugelassen": 16,
+   "rest_verloren": 8,
+   "beschreibbar": [],
+   "relation": [
+    "0000",
+    "0010",
+    "0100",
+    "0111",
+    "1000",
+    "1011",
+    "1101",
+    "1111"
+   ],
+   "verlorene_kombinationen": [
+    "0000",
+    "0010",
+    "0100",
+    "0111",
+    "1000",
+    "1011",
+    "1101",
+    "1111"
+   ]
+  },
+  {
+   "typ": "Maj",
+   "index": 22,
+   "runde": null,
+   "status": "offen",
+   "offene_anschluesse": [
+    "a",
+    "b",
+    "c",
+    "m"
+   ],
+   "wurzeln": [
+    144,
+    161,
+    170,
+    177
+   ],
+   "frei_anschluesse": {},
+   "relation_zeilen": 8,
+   "linear_zugelassen": 16,
+   "rest_verloren": 8,
+   "beschreibbar": [],
+   "relation": [
+    "0000",
+    "0010",
+    "0100",
+    "0111",
+    "1000",
+    "1011",
+    "1101",
+    "1111"
+   ],
+   "verlorene_kombinationen": [
+    "0001",
+    "0010",
+    "0101",
+    "0111",
+    "1000",
+    "1010",
+    "1101",
+    "1110"
+   ]
+  },
+  {
+   "typ": "Maj",
+   "index": 23,
+   "runde": null,
+   "status": "offen",
+   "offene_anschluesse": [
+    "a",
+    "b",
+    "c",
+    "m"
+   ],
+   "wurzeln": [
+    151,
+    159,
+    177,
+    184
+   ],
+   "frei_anschluesse": {},
+   "relation_zeilen": 8,
+   "linear_zugelassen": 16,
+   "rest_verloren": 8,
+   "beschreibbar": [],
+   "relation": [
+    "0000",
+    "0010",
+    "0100",
+    "0111",
+    "1000",
+    "1011",
+    "1101",
+    "1111"
+   ],
+   "verlorene_kombinationen": [
+    "0001",
+    "0010",
+    "0101",
+    "0111",
+    "1000",
+    "1010",
+    "1101",
+    "1110"
+   ]
+  },
+  {
+   "typ": "Maj",
+   "index": 24,
+   "runde": null,
+   "status": "offen",
+   "offene_anschluesse": [
+    "a",
+    "b",
+    "m"
+   ],
+   "wurzeln": [
+    48,
+    186,
+    192
+   ],
+   "frei_anschluesse": {},
+   "relation_zeilen": 4,
+   "linear_zugelassen": 8,
+   "rest_verloren": 4,
+   "beschreibbar": [],
+   "relation": [
+    "0000",
+    "0100",
+    "1000",
+    "1101"
+   ],
+   "verlorene_kombinationen": [
+    "001",
+    "011",
+    "101",
+    "110"
+   ]
+  },
+  {
+   "typ": "Maj",
+   "index": 25,
+   "runde": null,
+   "status": "offen",
+   "offene_anschluesse": [
+    "a",
+    "b",
+    "c",
+    "m"
+   ],
+   "wurzeln": [
+    51,
+    188,
+    192,
+    199
+   ],
+   "frei_anschluesse": {},
+   "relation_zeilen": 8,
+   "linear_zugelassen": 16,
+   "rest_verloren": 8,
+   "beschreibbar": [],
+   "relation": [
+    "0000",
+    "0010",
+    "0100",
+    "0111",
+    "1000",
+    "1011",
+    "1101",
+    "1111"
+   ],
+   "verlorene_kombinationen": [
+    "0000",
+    "0010",
+    "0100",
+    "0111",
+    "1000",
+    "1011",
+    "1101",
+    "1111"
+   ]
+  },
+  {
+   "typ": "Maj",
+   "index": 26,
+   "runde": null,
+   "status": "offen",
+   "offene_anschluesse": [
+    "a",
+    "b",
+    "c",
+    "m"
+   ],
+   "wurzeln": [
+    58,
+    189,
+    199,
+    206
+   ],
+   "frei_anschluesse": {},
+   "relation_zeilen": 8,
+   "linear_zugelassen": 16,
+   "rest_verloren": 8,
+   "beschreibbar": [],
+   "relation": [
+    "0000",
+    "0010",
+    "0100",
+    "0111",
+    "1000",
+    "1011",
+    "1101",
+    "1111"
+   ],
+   "verlorene_kombinationen": [
+    "0000",
+    "0010",
+    "0101",
+    "0110",
+    "1001",
+    "1010",
+    "1101",
+    "1111"
+   ]
+  },
+  {
+   "typ": "Maj",
+   "index": 27,
+   "runde": null,
+   "status": "offen",
+   "offene_anschluesse": [
+    "a",
+    "b",
+    "c",
+    "m"
+   ],
+   "wurzeln": [
+    65,
+    190,
+    206,
+    213
+   ],
+   "frei_anschluesse": {},
+   "relation_zeilen": 8,
+   "linear_zugelassen": 16,
+   "rest_verloren": 8,
+   "beschreibbar": [],
+   "relation": [
+    "0000",
+    "0010",
+    "0100",
+    "0111",
+    "1000",
+    "1011",
+    "1101",
+    "1111"
+   ],
+   "verlorene_kombinationen": [
+    "0000",
+    "0010",
+    "0101",
+    "0110",
+    "1001",
+    "1010",
+    "1101",
+    "1111"
+   ]
+  },
+  {
+   "typ": "Maj",
+   "index": 28,
+   "runde": null,
+   "status": "offen",
+   "offene_anschluesse": [
+    "a",
+    "b",
+    "m"
+   ],
+   "wurzeln": [
+    191,
+    215,
+    220
+   ],
+   "frei_anschluesse": {},
+   "relation_zeilen": 4,
+   "linear_zugelassen": 8,
+   "rest_verloren": 4,
+   "beschreibbar": [],
+   "relation": [
+    "0000",
+    "0100",
+    "1000",
+    "1101"
+   ],
+   "verlorene_kombinationen": [
+    "001",
+    "011",
+    "101",
+    "110"
+   ]
+  },
+  {
+   "typ": "Maj",
+   "index": 29,
+   "runde": null,
+   "status": "offen",
+   "offene_anschluesse": [
+    "a",
+    "c",
+    "m"
+   ],
+   "wurzeln": [
+    220,
+    221,
+    227
+   ],
+   "frei_anschluesse": {},
+   "relation_zeilen": 4,
+   "linear_zugelassen": 8,
+   "rest_verloren": 4,
+   "beschreibbar": [],
+   "relation": [
+    "0100",
+    "0111",
+    "1101",
+    "1111"
+   ],
+   "verlorene_kombinationen": [
+    "001",
+    "010",
+    "101",
+    "111"
+   ]
+  },
+  {
+   "typ": "Maj",
+   "index": 30,
+   "runde": null,
+   "status": "offen",
+   "offene_anschluesse": [
+    "a",
+    "b",
+    "c",
+    "m"
+   ],
+   "wurzeln": [
+    201,
+    227,
+    234,
+    859
+   ],
+   "frei_anschluesse": {},
+   "relation_zeilen": 8,
+   "linear_zugelassen": 16,
+   "rest_verloren": 8,
+   "beschreibbar": [],
+   "relation": [
+    "0000",
+    "0010",
+    "0100",
+    "0111",
+    "1000",
+    "1011",
+    "1101",
+    "1111"
+   ],
+   "verlorene_kombinationen": [
+    "0010",
+    "0011",
+    "0100",
+    "0111",
+    "1000",
+    "1011",
+    "1100",
+    "1101"
+   ]
+  },
+  {
+   "typ": "Maj",
+   "index": 31,
+   "runde": null,
+   "status": "offen",
+   "offene_anschluesse": [
+    "a",
+    "b",
+    "c",
+    "m"
+   ],
+   "wurzeln": [
+    208,
+    216,
+    234,
+    241
+   ],
+   "frei_anschluesse": {},
+   "relation_zeilen": 8,
+   "linear_zugelassen": 16,
+   "rest_verloren": 8,
+   "beschreibbar": [],
+   "relation": [
+    "0000",
+    "0010",
+    "0100",
+    "0111",
+    "1000",
+    "1011",
+    "1101",
+    "1111"
+   ],
+   "verlorene_kombinationen": [
+    "0001",
+    "0010",
+    "0101",
+    "0111",
+    "1000",
+    "1010",
+    "1101",
+    "1110"
+   ]
+  },
+  {
+   "typ": "Maj",
+   "index": 32,
+   "runde": null,
+   "status": "offen",
+   "offene_anschluesse": [
+    "a",
+    "m"
+   ],
+   "wurzeln": [
+    248
+   ],
+   "frei_anschluesse": {},
+   "relation_zeilen": 2,
+   "linear_zugelassen": 2,
+   "rest_verloren": 0,
+   "beschreibbar": [
+    "a^m=0"
+   ],
+   "relation": [
+    "0100",
+    "1101"
+   ],
+   "verlorene_kombinationen": []
+  },
+  {
+   "typ": "Maj",
+   "index": 33,
+   "runde": null,
+   "status": "offen",
+   "offene_anschluesse": [
+    "a",
+    "b",
+    "c",
+    "m"
+   ],
+   "wurzeln": [
+    2,
+    248,
+    256,
+    859
+   ],
+   "frei_anschluesse": {
+    "a": "W0.b0"
+   },
+   "relation_zeilen": 8,
+   "linear_zugelassen": 16,
+   "rest_verloren": 8,
+   "beschreibbar": [],
+   "relation": [
+    "0000",
+    "0010",
+    "0100",
+    "0111",
+    "1000",
+    "1011",
+    "1101",
+    "1111"
+   ],
+   "verlorene_kombinationen": [
+    "0010",
+    "0011",
+    "0100",
+    "0111",
+    "1000",
+    "1011",
+    "1100",
+    "1101"
+   ]
+  },
+  {
+   "typ": "Maj",
+   "index": 34,
+   "runde": null,
+   "status": "offen",
+   "offene_anschluesse": [
+    "a",
+    "b",
+    "c",
+    "m"
+   ],
+   "wurzeln": [
+    3,
+    115,
+    256,
+    263
+   ],
+   "frei_anschluesse": {
+    "a": "W0.b1"
+   },
+   "relation_zeilen": 8,
+   "linear_zugelassen": 16,
+   "rest_verloren": 8,
+   "beschreibbar": [],
+   "relation": [
+    "0000",
+    "0010",
+    "0100",
+    "0111",
+    "1000",
+    "1011",
+    "1101",
+    "1111"
+   ],
+   "verlorene_kombinationen": [
+    "0000",
+    "0010",
+    "0101",
+    "0110",
+    "1001",
+    "1010",
+    "1101",
+    "1111"
+   ]
+  },
+  {
+   "typ": "Maj",
+   "index": 35,
+   "runde": null,
+   "status": "offen",
+   "offene_anschluesse": [
+    "a",
+    "b",
+    "c",
+    "m"
+   ],
+   "wurzeln": [
+    122,
+    247,
+    263,
+    270
+   ],
+   "frei_anschluesse": {},
+   "relation_zeilen": 8,
+   "linear_zugelassen": 16,
+   "rest_verloren": 8,
+   "beschreibbar": [],
+   "relation": [
+    "0000",
+    "0010",
+    "0100",
+    "0111",
+    "1000",
+    "1011",
+    "1101",
+    "1111"
+   ],
+   "verlorene_kombinationen": [
+    "0000",
+    "0010",
+    "0101",
+    "0110",
+    "1001",
+    "1010",
+    "1101",
+    "1111"
+   ]
+  },
+  {
+   "typ": "Maj",
+   "index": 36,
+   "runde": null,
+   "status": "offen",
+   "offene_anschluesse": [
+    "a",
+    "b",
+    "m"
+   ],
+   "wurzeln": [
+    248,
+    272,
+    277
+   ],
+   "frei_anschluesse": {},
+   "relation_zeilen": 4,
+   "linear_zugelassen": 8,
+   "rest_verloren": 4,
+   "beschreibbar": [],
+   "relation": [
+    "0000",
+    "0100",
+    "1000",
+    "1101"
+   ],
+   "verlorene_kombinationen": [
+    "001",
+    "011",
+    "101",
+    "110"
+   ]
+  },
+  {
+   "typ": "Maj",
+   "index": 37,
+   "runde": null,
+   "status": "offen",
+   "offene_anschluesse": [
+    "a",
+    "b",
+    "c",
+    "m"
+   ],
+   "wurzeln": [
+    251,
+    274,
+    277,
+    284
+   ],
+   "frei_anschluesse": {},
+   "relation_zeilen": 8,
+   "linear_zugelassen": 16,
+   "rest_verloren": 8,
+   "beschreibbar": [],
+   "relation": [
+    "0000",
+    "0010",
+    "0100",
+    "0111",
+    "1000",
+    "1011",
+    "1101",
+    "1111"
+   ],
+   "verlorene_kombinationen": [
+    "0000",
+    "0010",
+    "0100",
+    "0111",
+    "1000",
+    "1011",
+    "1101",
+    "1111"
+   ]
+  },
+  {
+   "typ": "Maj",
+   "index": 38,
+   "runde": null,
+   "status": "offen",
+   "offene_anschluesse": [
+    "a",
+    "b",
+    "c",
+    "m"
+   ],
+   "wurzeln": [
+    258,
+    275,
+    284,
+    291
+   ],
+   "frei_anschluesse": {},
+   "relation_zeilen": 8,
+   "linear_zugelassen": 16,
+   "rest_verloren": 8,
+   "beschreibbar": [],
+   "relation": [
+    "0000",
+    "0010",
+    "0100",
+    "0111",
+    "1000",
+    "1011",
+    "1101",
+    "1111"
+   ],
+   "verlorene_kombinationen": [
+    "0001",
+    "0010",
+    "0101",
+    "0111",
+    "1000",
+    "1010",
+    "1101",
+    "1110"
+   ]
+  },
+  {
+   "typ": "Maj",
+   "index": 39,
+   "runde": null,
+   "status": "offen",
+   "offene_anschluesse": [
+    "a",
+    "b",
+    "c",
+    "m"
+   ],
+   "wurzeln": [
+    265,
+    273,
+    291,
+    298
+   ],
+   "frei_anschluesse": {},
+   "relation_zeilen": 8,
+   "linear_zugelassen": 16,
+   "rest_verloren": 8,
+   "beschreibbar": [],
+   "relation": [
+    "0000",
+    "0010",
+    "0100",
+    "0111",
+    "1000",
+    "1011",
+    "1101",
+    "1111"
+   ],
+   "verlorene_kombinationen": [
+    "0001",
+    "0010",
+    "0101",
+    "0111",
+    "1000",
+    "1010",
+    "1101",
+    "1110"
+   ]
+  },
+  {
+   "typ": "Maj",
+   "index": 40,
+   "runde": null,
+   "status": "offen",
+   "offene_anschluesse": [
+    "a",
+    "b",
+    "m"
+   ],
+   "wurzeln": [
+    162,
+    300,
+    306
+   ],
+   "frei_anschluesse": {},
+   "relation_zeilen": 4,
+   "linear_zugelassen": 8,
+   "rest_verloren": 4,
+   "beschreibbar": [],
+   "relation": [
+    "0000",
+    "0100",
+    "1000",
+    "1101"
+   ],
+   "verlorene_kombinationen": [
+    "001",
+    "011",
+    "101",
+    "110"
+   ]
+  },
+  {
+   "typ": "Maj",
+   "index": 41,
+   "runde": null,
+   "status": "offen",
+   "offene_anschluesse": [
+    "a",
+    "b",
+    "c",
+    "m"
+   ],
+   "wurzeln": [
+    2,
+    165,
+    306,
+    313
+   ],
+   "frei_anschluesse": {
+    "a": "W0.b0"
+   },
+   "relation_zeilen": 8,
+   "linear_zugelassen": 16,
+   "rest_verloren": 8,
+   "beschreibbar": [],
+   "relation": [
+    "0000",
+    "0010",
+    "0100",
+    "0111",
+    "1000",
+    "1011",
+    "1101",
+    "1111"
+   ],
+   "verlorene_kombinationen": [
+    "0000",
+    "0010",
+    "0100",
+    "0111",
+    "1000",
+    "1011",
+    "1101",
+    "1111"
+   ]
+  },
+  {
+   "typ": "Maj",
+   "index": 42,
+   "runde": null,
+   "status": "offen",
+   "offene_anschluesse": [
+    "a",
+    "b",
+    "c",
+    "m"
+   ],
+   "wurzeln": [
+    3,
+    172,
+    313,
+    320
+   ],
+   "frei_anschluesse": {
+    "a": "W0.b1"
+   },
+   "relation_zeilen": 8,
+   "linear_zugelassen": 16,
+   "rest_verloren": 8,
+   "beschreibbar": [],
+   "relation": [
+    "0000",
+    "0010",
+    "0100",
+    "0111",
+    "1000",
+    "1011",
+    "1101",
+    "1111"
+   ],
+   "verlorene_kombinationen": [
+    "0001",
+    "0010",
+    "0101",
+    "0111",
+    "1000",
+    "1010",
+    "1101",
+    "1110"
+   ]
+  },
+  {
+   "typ": "Maj",
+   "index": 43,
+   "runde": null,
+   "status": "offen",
+   "offene_anschluesse": [
+    "a",
+    "b",
+    "c",
+    "m"
+   ],
+   "wurzeln": [
+    179,
+    304,
+    320,
+    327
+   ],
+   "frei_anschluesse": {},
+   "relation_zeilen": 8,
+   "linear_zugelassen": 16,
+   "rest_verloren": 8,
+   "beschreibbar": [],
+   "relation": [
+    "0000",
+    "0010",
+    "0100",
+    "0111",
+    "1000",
+    "1011",
+    "1101",
+    "1111"
+   ],
+   "verlorene_kombinationen": [
+    "0000",
+    "0010",
+    "0101",
+    "0110",
+    "1001",
+    "1010",
+    "1101",
+    "1111"
+   ]
+  },
+  {
+   "typ": "Maj",
+   "index": 44,
+   "runde": null,
+   "status": "offen",
+   "offene_anschluesse": [
+    "a",
+    "b",
+    "m"
+   ],
+   "wurzeln": [
+    305,
+    329,
+    334
+   ],
+   "frei_anschluesse": {},
+   "relation_zeilen": 4,
+   "linear_zugelassen": 8,
+   "rest_verloren": 4,
+   "beschreibbar": [],
+   "relation": [
+    "0000",
+    "0100",
+    "1000",
+    "1101"
+   ],
+   "verlorene_kombinationen": [
+    "001",
+    "011",
+    "101",
+    "110"
+   ]
+  },
+  {
+   "typ": "Maj",
+   "index": 45,
+   "runde": null,
+   "status": "offen",
+   "offene_anschluesse": [
+    "a",
+    "b",
+    "c",
+    "m"
+   ],
+   "wurzeln": [
+    2,
+    308,
+    334,
+    341
+   ],
+   "frei_anschluesse": {
+    "b": "W0.b0"
+   },
+   "relation_zeilen": 8,
+   "linear_zugelassen": 16,
+   "rest_verloren": 8,
+   "beschreibbar": [],
+   "relation": [
+    "0000",
+    "0010",
+    "0100",
+    "0111",
+    "1000",
+    "1011",
+    "1101",
+    "1111"
+   ],
+   "verlorene_kombinationen": [
+    "0000",
+    "0011",
+    "0101",
+    "0111",
+    "1000",
+    "1010",
+    "1100",
+    "1111"
+   ]
+  },
+  {
+   "typ": "Maj",
+   "index": 46,
+   "runde": null,
+   "status": "offen",
+   "offene_anschluesse": [
+    "a",
+    "b",
+    "c",
+    "m"
+   ],
+   "wurzeln": [
+    315,
+    332,
+    341,
+    348
+   ],
+   "frei_anschluesse": {},
+   "relation_zeilen": 8,
+   "linear_zugelassen": 16,
+   "rest_verloren": 8,
+   "beschreibbar": [],
+   "relation": [
+    "0000",
+    "0010",
+    "0100",
+    "0111",
+    "1000",
+    "1011",
+    "1101",
+    "1111"
+   ],
+   "verlorene_kombinationen": [
+    "0001",
+    "0010",
+    "0101",
+    "0111",
+    "1000",
+    "1010",
+    "1101",
+    "1110"
+   ]
+  },
+  {
+   "typ": "Maj",
+   "index": 47,
+   "runde": null,
+   "status": "offen",
+   "offene_anschluesse": [
+    "a",
+    "b",
+    "c",
+    "m"
+   ],
+   "wurzeln": [
+    322,
+    330,
+    348,
+    355
+   ],
+   "frei_anschluesse": {},
+   "relation_zeilen": 8,
+   "linear_zugelassen": 16,
+   "rest_verloren": 8,
+   "beschreibbar": [],
+   "relation": [
+    "0000",
+    "0010",
+    "0100",
+    "0111",
+    "1000",
+    "1011",
+    "1101",
+    "1111"
+   ],
+   "verlorene_kombinationen": [
+    "0001",
+    "0010",
+    "0101",
+    "0111",
+    "1000",
+    "1010",
+    "1101",
+    "1110"
+   ]
+  },
+  {
+   "typ": "Maj",
+   "index": 48,
+   "runde": 1,
+   "status": "fest"
+  },
+  {
+   "typ": "Maj",
+   "index": 49,
+   "runde": 1,
+   "status": "fest"
+  },
+  {
+   "typ": "Maj",
+   "index": 50,
+   "runde": 1,
+   "status": "fest"
+  },
+  {
+   "typ": "Maj",
+   "index": 51,
+   "runde": 1,
+   "status": "fest"
+  },
+  {
+   "typ": "Maj",
+   "index": 52,
+   "runde": 1,
+   "status": "fest"
+  },
+  {
+   "typ": "Maj",
+   "index": 53,
+   "runde": 1,
+   "status": "fest"
+  },
+  {
+   "typ": "Maj",
+   "index": 54,
+   "runde": 1,
+   "status": "fest"
+  },
+  {
+   "typ": "Maj",
+   "index": 55,
+   "runde": 1,
+   "status": "fest"
+  },
+  {
+   "typ": "Maj",
+   "index": 56,
+   "runde": 1,
+   "status": "fest"
+  },
+  {
+   "typ": "Maj",
+   "index": 57,
+   "runde": 1,
+   "status": "fest"
+  },
+  {
+   "typ": "Maj",
+   "index": 58,
+   "runde": 1,
+   "status": "fest"
+  },
+  {
+   "typ": "Maj",
+   "index": 59,
+   "runde": 1,
+   "status": "fest"
+  },
+  {
+   "typ": "Maj",
+   "index": 60,
+   "runde": 1,
+   "status": "offen",
+   "offene_anschluesse": [
+    "b"
+   ],
+   "wurzeln": [
+    2
+   ],
+   "frei_anschluesse": {
+    "b": "W0.b0"
+   },
+   "relation_zeilen": 2,
+   "linear_zugelassen": 2,
+   "rest_verloren": 0,
+   "beschreibbar": [],
+   "relation": [
+    "0000",
+    "0100"
+   ],
+   "verlorene_kombinationen": []
+  },
+  {
+   "typ": "Maj",
+   "index": 61,
+   "runde": 1,
+   "status": "offen",
+   "offene_anschluesse": [
+    "b",
+    "m"
+   ],
+   "wurzeln": [
+    3
+   ],
+   "frei_anschluesse": {
+    "b": "W0.b1",
+    "m": "W0.b1"
+   },
+   "relation_zeilen": 2,
+   "linear_zugelassen": 2,
+   "rest_verloren": 0,
+   "beschreibbar": [
+    "b^m=0"
+   ],
+   "relation": [
+    "1000",
+    "1101"
+   ],
+   "verlorene_kombinationen": []
+  },
+  {
+   "typ": "Maj",
+   "index": 62,
+   "runde": 1,
+   "status": "offen",
+   "offene_anschluesse": [
+    "b",
+    "c",
+    "m"
+   ],
+   "wurzeln": [
+    3,
+    4,
+    357
+   ],
+   "frei_anschluesse": {
+    "b": "W0.b2",
+    "c": "W0.b1"
+   },
+   "relation_zeilen": 4,
+   "linear_zugelassen": 8,
+   "rest_verloren": 4,
+   "beschreibbar": [],
+   "relation": [
+    "0000",
+    "0010",
+    "0100",
+    "0111"
+   ],
+   "verlorene_kombinationen": [
+    "001",
+    "011",
+    "101",
+    "110"
+   ]
+  },
+  {
+   "typ": "Maj",
+   "index": 63,
+   "runde": 1,
+   "status": "offen",
+   "offene_anschluesse": [
+    "b",
+    "c",
+    "m"
+   ],
+   "wurzeln": [
+    5,
+    357,
+    361
+   ],
+   "frei_anschluesse": {
+    "b": "W0.b3"
+   },
+   "relation_zeilen": 4,
+   "linear_zugelassen": 8,
+   "rest_verloren": 4,
+   "beschreibbar": [],
+   "relation": [
+    "1000",
+    "1011",
+    "1101",
+    "1111"
+   ],
+   "verlorene_kombinationen": [
+    "000",
+    "011",
+    "101",
+    "111"
+   ]
+  },
+  {
+   "typ": "Maj",
+   "index": 64,
+   "runde": 1,
+   "status": "fest"
+  },
+  {
+   "typ": "Maj",
+   "index": 65,
+   "runde": 1,
+   "status": "fest"
+  },
+  {
+   "typ": "Maj",
+   "index": 66,
+   "runde": 1,
+   "status": "fest"
+  },
+  {
+   "typ": "Maj",
+   "index": 67,
+   "runde": 1,
+   "status": "fest"
+  },
+  {
+   "typ": "Maj",
+   "index": 68,
+   "runde": 1,
+   "status": "fest"
+  },
+  {
+   "typ": "Maj",
+   "index": 69,
+   "runde": 1,
+   "status": "fest"
+  },
+  {
+   "typ": "Maj",
+   "index": 70,
+   "runde": 1,
+   "status": "fest"
+  },
+  {
+   "typ": "Maj",
+   "index": 71,
+   "runde": 1,
+   "status": "fest"
+  },
+  {
+   "typ": "Maj",
+   "index": 72,
+   "runde": 1,
+   "status": "offen",
+   "offene_anschluesse": [
+    "a",
+    "m"
+   ],
+   "wurzeln": [
+    2
+   ],
+   "frei_anschluesse": {
+    "a": "W0.b0",
+    "m": "W0.b0"
+   },
+   "relation_zeilen": 2,
+   "linear_zugelassen": 2,
+   "rest_verloren": 0,
+   "beschreibbar": [
+    "a^m=0"
+   ],
+   "relation": [
+    "0100",
+    "1101"
+   ],
+   "verlorene_kombinationen": []
+  },
+  {
+   "typ": "Maj",
+   "index": 73,
+   "runde": 1,
+   "status": "offen",
+   "offene_anschluesse": [
+    "a",
+    "c",
+    "m"
+   ],
+   "wurzeln": [
+    2,
+    3,
+    363
+   ],
+   "frei_anschluesse": {
+    "a": "W0.b1",
+    "c": "W0.b0"
+   },
+   "relation_zeilen": 4,
+   "linear_zugelassen": 8,
+   "rest_verloren": 4,
+   "beschreibbar": [],
+   "relation": [
+    "0000",
+    "0010",
+    "1000",
+    "1011"
+   ],
+   "verlorene_kombinationen": [
+    "001",
+    "011",
+    "100",
+    "111"
+   ]
+  },
+  {
+   "typ": "Maj",
+   "index": 74,
+   "runde": 1,
+   "status": "offen",
+   "offene_anschluesse": [
+    "a",
+    "c",
+    "m"
+   ],
+   "wurzeln": [
+    356,
+    363,
+    367
+   ],
+   "frei_anschluesse": {},
+   "relation_zeilen": 4,
+   "linear_zugelassen": 8,
+   "rest_verloren": 4,
+   "beschreibbar": [],
+   "relation": [
+    "0100",
+    "0111",
+    "1101",
+    "1111"
+   ],
+   "verlorene_kombinationen": [
+    "000",
+    "011",
+    "101",
+    "111"
+   ]
+  },
+  {
+   "typ": "Maj",
+   "index": 75,
+   "runde": 1,
+   "status": "offen",
+   "offene_anschluesse": [
+    "a",
+    "c",
+    "m"
+   ],
+   "wurzeln": [
+    358,
+    367,
+    371
+   ],
+   "frei_anschluesse": {},
+   "relation_zeilen": 4,
+   "linear_zugelassen": 8,
+   "rest_verloren": 4,
+   "beschreibbar": [],
+   "relation": [
+    "0100",
+    "0111",
+    "1101",
+    "1111"
+   ],
+   "verlorene_kombinationen": [
+    "001",
+    "011",
+    "101",
+    "110"
+   ]
+  },
+  {
+   "typ": "Maj",
+   "index": 76,
+   "runde": 1,
+   "status": "offen",
+   "offene_anschluesse": [
+    "b"
+   ],
+   "wurzeln": [
+    2
+   ],
+   "frei_anschluesse": {
+    "b": "W0.b0"
+   },
+   "relation_zeilen": 2,
+   "linear_zugelassen": 2,
+   "rest_verloren": 0,
+   "beschreibbar": [],
+   "relation": [
+    "0000",
+    "0100"
+   ],
+   "verlorene_kombinationen": []
+  },
+  {
+   "typ": "Maj",
+   "index": 77,
+   "runde": 1,
+   "status": "offen",
+   "offene_anschluesse": [
+    "b",
+    "m"
+   ],
+   "wurzeln": [
+    3
+   ],
+   "frei_anschluesse": {
+    "b": "W0.b1",
+    "m": "W0.b1"
+   },
+   "relation_zeilen": 2,
+   "linear_zugelassen": 2,
+   "rest_verloren": 0,
+   "beschreibbar": [
+    "b^m=0"
+   ],
+   "relation": [
+    "1000",
+    "1101"
+   ],
+   "verlorene_kombinationen": []
+  },
+  {
+   "typ": "Maj",
+   "index": 78,
+   "runde": 1,
+   "status": "offen",
+   "offene_anschluesse": [
+    "b",
+    "c",
+    "m"
+   ],
+   "wurzeln": [
+    3,
+    356,
+    373
+   ],
+   "frei_anschluesse": {
+    "c": "W0.b1"
+   },
+   "relation_zeilen": 4,
+   "linear_zugelassen": 8,
+   "rest_verloren": 4,
+   "beschreibbar": [],
+   "relation": [
+    "0000",
+    "0010",
+    "0100",
+    "0111"
+   ],
+   "verlorene_kombinationen": [
+    "001",
+    "010",
+    "101",
+    "111"
+   ]
+  },
+  {
+   "typ": "Maj",
+   "index": 79,
+   "runde": 1,
+   "status": "offen",
+   "offene_anschluesse": [
+    "b",
+    "c",
+    "m"
+   ],
+   "wurzeln": [
+    358,
+    373,
+    377
+   ],
+   "frei_anschluesse": {},
+   "relation_zeilen": 4,
+   "linear_zugelassen": 8,
+   "rest_verloren": 4,
+   "beschreibbar": [],
+   "relation": [
+    "1000",
+    "1011",
+    "1101",
+    "1111"
+   ],
+   "verlorene_kombinationen": [
+    "001",
+    "011",
+    "100",
+    "111"
+   ]
+  },
+  {
+   "typ": "Maj",
+   "index": 80,
+   "runde": 2,
+   "status": "offen",
+   "offene_anschluesse": [
+    "b",
+    "m"
+   ],
+   "wurzeln": [
+    378
+   ],
+   "frei_anschluesse": {},
+   "relation_zeilen": 2,
+   "linear_zugelassen": 2,
+   "rest_verloren": 0,
+   "beschreibbar": [
+    "b^m=0"
+   ],
+   "relation": [
+    "1000",
+    "1101"
+   ],
+   "verlorene_kombinationen": []
+  },
+  {
+   "typ": "Maj",
+   "index": 81,
+   "runde": 2,
+   "status": "offen",
+   "offene_anschluesse": [
+    "b",
+    "c",
+    "m"
+   ],
+   "wurzeln": [
+    378,
+    379,
+    385
+   ],
+   "frei_anschluesse": {},
+   "relation_zeilen": 4,
+   "linear_zugelassen": 8,
+   "rest_verloren": 4,
+   "beschreibbar": [],
+   "relation": [
+    "0000",
+    "0010",
+    "0100",
+    "0111"
+   ],
+   "verlorene_kombinationen": [
+    "001",
+    "011",
+    "100",
+    "111"
+   ]
+  },
+  {
+   "typ": "Maj",
+   "index": 82,
+   "runde": 2,
+   "status": "offen",
+   "offene_anschluesse": [
+    "b",
+    "c",
+    "m"
+   ],
+   "wurzeln": [
+    378,
+    385,
+    387
+   ],
+   "frei_anschluesse": {},
+   "relation_zeilen": 4,
+   "linear_zugelassen": 8,
+   "rest_verloren": 4,
+   "beschreibbar": [],
+   "relation": [
+    "0000",
+    "0010",
+    "0100",
+    "0111"
+   ],
+   "verlorene_kombinationen": [
+    "001",
+    "011",
+    "101",
+    "110"
+   ]
+  },
+  {
+   "typ": "Maj",
+   "index": 83,
+   "runde": 2,
+   "status": "offen",
+   "offene_anschluesse": [
+    "b",
+    "c",
+    "m"
+   ],
+   "wurzeln": [
+    379,
+    387,
+    389
+   ],
+   "frei_anschluesse": {},
+   "relation_zeilen": 4,
+   "linear_zugelassen": 8,
+   "rest_verloren": 4,
+   "beschreibbar": [],
+   "relation": [
+    "0000",
+    "0010",
+    "0100",
+    "0111"
+   ],
+   "verlorene_kombinationen": [
+    "001",
+    "010",
+    "101",
+    "111"
+   ]
+  },
+  {
+   "typ": "Maj",
+   "index": 84,
+   "runde": 2,
+   "status": "offen",
+   "offene_anschluesse": [
+    "a",
+    "m"
+   ],
+   "wurzeln": [
+    378
+   ],
+   "frei_anschluesse": {},
+   "relation_zeilen": 2,
+   "linear_zugelassen": 2,
+   "rest_verloren": 0,
+   "beschreibbar": [
+    "a^m=0"
+   ],
+   "relation": [
+    "0100",
+    "1101"
+   ],
+   "verlorene_kombinationen": []
+  },
+  {
+   "typ": "Maj",
+   "index": 85,
+   "runde": 2,
+   "status": "offen",
+   "offene_anschluesse": [
+    "a",
+    "c",
+    "m"
+   ],
+   "wurzeln": [
+    378,
+    384,
+    391
+   ],
+   "frei_anschluesse": {},
+   "relation_zeilen": 4,
+   "linear_zugelassen": 8,
+   "rest_verloren": 4,
+   "beschreibbar": [],
+   "relation": [
+    "0000",
+    "0010",
+    "1000",
+    "1011"
+   ],
+   "verlorene_kombinationen": [
+    "000",
+    "011",
+    "101",
+    "111"
+   ]
+  },
+  {
+   "typ": "Maj",
+   "index": 86,
+   "runde": 2,
+   "status": "offen",
+   "offene_anschluesse": [
+    "a",
+    "b",
+    "c",
+    "m"
+   ],
+   "wurzeln": [
+    4,
+    386,
+    391,
+    398
+   ],
+   "frei_anschluesse": {
+    "b": "W0.b2"
+   },
+   "relation_zeilen": 8,
+   "linear_zugelassen": 16,
+   "rest_verloren": 8,
+   "beschreibbar": [],
+   "relation": [
+    "0000",
+    "0010",
+    "0100",
+    "0111",
+    "1000",
+    "1011",
+    "1101",
+    "1111"
+   ],
+   "verlorene_kombinationen": [
+    "0000",
+    "0011",
+    "0101",
+    "0111",
+    "1000",
+    "1010",
+    "1100",
+    "1111"
+   ]
+  },
+  {
+   "typ": "Maj",
+   "index": 87,
+   "runde": 2,
+   "status": "offen",
+   "offene_anschluesse": [
+    "a",
+    "b",
+    "c",
+    "m"
+   ],
+   "wurzeln": [
+    374,
+    388,
+    398,
+    405
+   ],
+   "frei_anschluesse": {},
+   "relation_zeilen": 8,
+   "linear_zugelassen": 16,
+   "rest_verloren": 8,
+   "beschreibbar": [],
+   "relation": [
+    "0000",
+    "0010",
+    "0100",
+    "0111",
+    "1000",
+    "1011",
+    "1101",
+    "1111"
+   ],
+   "verlorene_kombinationen": [
+    "0001",
+    "0011",
+    "0101",
+    "0110",
+    "1001",
+    "1010",
+    "1100",
+    "1110"
+   ]
+  },
+  {
+   "typ": "Maj",
+   "index": 88,
+   "runde": 2,
+   "status": "offen",
+   "offene_anschluesse": [
+    "a",
+    "m"
+   ],
+   "wurzeln": [
+    378
+   ],
+   "frei_anschluesse": {},
+   "relation_zeilen": 2,
+   "linear_zugelassen": 2,
+   "rest_verloren": 0,
+   "beschreibbar": [
+    "a^m=0"
+   ],
+   "relation": [
+    "0100",
+    "1101"
+   ],
+   "verlorene_kombinationen": []
+  },
+  {
+   "typ": "Maj",
+   "index": 89,
+   "runde": 2,
+   "status": "offen",
+   "offene_anschluesse": [
+    "a",
+    "c",
+    "m"
+   ],
+   "wurzeln": [
+    378,
+    390,
+    409
+   ],
+   "frei_anschluesse": {},
+   "relation_zeilen": 4,
+   "linear_zugelassen": 8,
+   "rest_verloren": 4,
+   "beschreibbar": [],
+   "relation": [
+    "0100",
+    "0111",
+    "1101",
+    "1111"
+   ],
+   "verlorene_kombinationen": [
+    "000",
+    "011",
+    "101",
+    "111"
+   ]
+  },
+  {
+   "typ": "Maj",
+   "index": 90,
+   "runde": 2,
+   "status": "offen",
+   "offene_anschluesse": [
+    "a",
+    "c",
+    "m"
+   ],
+   "wurzeln": [
+    393,
+    409,
+    413
+   ],
+   "frei_anschluesse": {},
+   "relation_zeilen": 4,
+   "linear_zugelassen": 8,
+   "rest_verloren": 4,
+   "beschreibbar": [],
+   "relation": [
+    "0100",
+    "0111",
+    "1101",
+    "1111"
+   ],
+   "verlorene_kombinationen": [
+    "001",
+    "011",
+    "101",
+    "110"
+   ]
+  },
+  {
+   "typ": "Maj",
+   "index": 91,
+   "runde": 2,
+   "status": "offen",
+   "offene_anschluesse": [
+    "a",
+    "c",
+    "m"
+   ],
+   "wurzeln": [
+    400,
+    413,
+    415
+   ],
+   "frei_anschluesse": {},
+   "relation_zeilen": 4,
+   "linear_zugelassen": 8,
+   "rest_verloren": 4,
+   "beschreibbar": [],
+   "relation": [
+    "0000",
+    "0010",
+    "1000",
+    "1011"
+   ],
+   "verlorene_kombinationen": [
+    "000",
+    "011",
+    "101",
+    "111"
+   ]
+  },
+  {
+   "typ": "Maj",
+   "index": 92,
+   "runde": 2,
+   "status": "offen",
+   "offene_anschluesse": [
+    "a",
+    "b",
+    "m"
+   ],
+   "wurzeln": [
+    6,
+    378,
+    417
+   ],
+   "frei_anschluesse": {
+    "b": "W1.b0"
+   },
+   "relation_zeilen": 4,
+   "linear_zugelassen": 8,
+   "rest_verloren": 4,
+   "beschreibbar": [],
+   "relation": [
+    "0000",
+    "0100",
+    "1000",
+    "1101"
+   ],
+   "verlorene_kombinationen": [
+    "001",
+    "011",
+    "100",
+    "111"
+   ]
+  },
+  {
+   "typ": "Maj",
+   "index": 93,
+   "runde": 2,
+   "status": "offen",
+   "offene_anschluesse": [
+    "a",
+    "b",
+    "c",
+    "m"
+   ],
+   "wurzeln": [
+    7,
+    406,
+    417,
+    424
+   ],
+   "frei_anschluesse": {
+    "b": "W1.b1"
+   },
+   "relation_zeilen": 8,
+   "linear_zugelassen": 16,
+   "rest_verloren": 8,
+   "beschreibbar": [],
+   "relation": [
+    "0000",
+    "0010",
+    "0100",
+    "0111",
+    "1000",
+    "1011",
+    "1101",
+    "1111"
+   ],
+   "verlorene_kombinationen": [
+    "0000",
+    "0011",
+    "0100",
+    "0110",
+    "1001",
+    "1011",
+    "1100",
+    "1111"
+   ]
+  },
+  {
+   "typ": "Maj",
+   "index": 94,
+   "runde": 2,
+   "status": "offen",
+   "offene_anschluesse": [
+    "a",
+    "b",
+    "c",
+    "m"
+   ],
+   "wurzeln": [
+    8,
+    410,
+    424,
+    431
+   ],
+   "frei_anschluesse": {
+    "b": "W1.b2"
+   },
+   "relation_zeilen": 8,
+   "linear_zugelassen": 16,
+   "rest_verloren": 8,
+   "beschreibbar": [],
+   "relation": [
+    "0000",
+    "0010",
+    "0100",
+    "0111",
+    "1000",
+    "1011",
+    "1101",
+    "1111"
+   ],
+   "verlorene_kombinationen": [
+    "0001",
+    "0010",
+    "0100",
+    "0110",
+    "1001",
+    "1011",
+    "1101",
+    "1110"
+   ]
+  },
+  {
+   "typ": "Maj",
+   "index": 95,
+   "runde": 2,
+   "status": "offen",
+   "offene_anschluesse": [
+    "a",
+    "b",
+    "c",
+    "m"
+   ],
+   "wurzeln": [
+    9,
+    414,
+    431,
+    438
+   ],
+   "frei_anschluesse": {
+    "b": "W1.b3"
+   },
+   "relation_zeilen": 8,
+   "linear_zugelassen": 16,
+   "rest_verloren": 8,
+   "beschreibbar": [],
+   "relation": [
+    "0000",
+    "0010",
+    "0100",
+    "0111",
+    "1000",
+    "1011",
+    "1101",
+    "1111"
+   ],
+   "verlorene_kombinationen": [
+    "0000",
+    "0010",
+    "0101",
+    "0110",
+    "1001",
+    "1010",
+    "1101",
+    "1111"
+   ]
+  },
+  {
+   "typ": "Maj",
+   "index": 96,
+   "runde": 2,
+   "status": "offen",
+   "offene_anschluesse": [
+    "a",
+    "m"
+   ],
+   "wurzeln": [
+    2
+   ],
+   "frei_anschluesse": {
+    "a": "W0.b0",
+    "m": "W0.b0"
+   },
+   "relation_zeilen": 2,
+   "linear_zugelassen": 2,
+   "rest_verloren": 0,
+   "beschreibbar": [
+    "a^m=0"
+   ],
+   "relation": [
+    "0010",
+    "1011"
+   ],
+   "verlorene_kombinationen": []
+  },
+  {
+   "typ": "Maj",
+   "index": 97,
+   "runde": 2,
+   "status": "offen",
+   "offene_anschluesse": [
+    "a"
+   ],
+   "wurzeln": [
+    1390
+   ],
+   "frei_anschluesse": {},
+   "relation_zeilen": 2,
+   "linear_zugelassen": 2,
+   "rest_verloren": 0,
+   "beschreibbar": [],
+   "relation": [
+    "0111",
+    "1111"
+   ],
+   "verlorene_kombinationen": []
+  },
+  {
+   "typ": "Maj",
+   "index": 98,
+   "runde": 2,
+   "status": "offen",
+   "offene_anschluesse": [
+    "a",
+    "m"
+   ],
+   "wurzeln": [
+    364
+   ],
+   "frei_anschluesse": {},
+   "relation_zeilen": 2,
+   "linear_zugelassen": 2,
+   "rest_verloren": 0,
+   "beschreibbar": [
+    "a^m=0"
+   ],
+   "relation": [
+    "0100",
+    "1101"
+   ],
+   "verlorene_kombinationen": []
+  },
+  {
+   "typ": "Maj",
+   "index": 99,
+   "runde": 2,
+   "status": "offen",
+   "offene_anschluesse": [
+    "a",
+    "m"
+   ],
+   "wurzeln": [
+    1196
+   ],
+   "frei_anschluesse": {},
+   "relation_zeilen": 2,
+   "linear_zugelassen": 2,
+   "rest_verloren": 0,
+   "beschreibbar": [
+    "a^m=0"
+   ],
+   "relation": [
+    "0010",
+    "1011"
+   ],
+   "verlorene_kombinationen": []
+  },
+  {
+   "typ": "Maj",
+   "index": 100,
+   "runde": 2,
+   "status": "offen",
+   "offene_anschluesse": [
+    "a",
+    "b",
+    "m"
+   ],
+   "wurzeln": [
+    2,
+    440,
+    1509
+   ],
+   "frei_anschluesse": {
+    "b": "W0.b0"
+   },
+   "relation_zeilen": 4,
+   "linear_zugelassen": 8,
+   "rest_verloren": 4,
+   "beschreibbar": [],
+   "relation": [
+    "0000",
+    "0100",
+    "1000",
+    "1101"
+   ],
+   "verlorene_kombinationen": [
+    "001",
+    "010",
+    "110",
+    "111"
+   ]
+  },
+  {
+   "typ": "Maj",
+   "index": 101,
+   "runde": 2,
+   "status": "offen",
+   "offene_anschluesse": [
+    "a",
+    "c",
+    "m"
+   ],
+   "wurzeln": [
+    381,
+    440,
+    444
+   ],
+   "frei_anschluesse": {},
+   "relation_zeilen": 4,
+   "linear_zugelassen": 8,
+   "rest_verloren": 4,
+   "beschreibbar": [],
+   "relation": [
+    "0100",
+    "0111",
+    "1101",
+    "1111"
+   ],
+   "verlorene_kombinationen": [
+    "000",
+    "011",
+    "101",
+    "111"
+   ]
+  },
+  {
+   "typ": "Maj",
+   "index": 102,
+   "runde": 2,
+   "status": "offen",
+   "offene_anschluesse": [
+    "a",
+    "b",
+    "c",
+    "m"
+   ],
+   "wurzeln": [
+    364,
+    382,
+    444,
+    451
+   ],
+   "frei_anschluesse": {},
+   "relation_zeilen": 8,
+   "linear_zugelassen": 16,
+   "rest_verloren": 8,
+   "beschreibbar": [],
+   "relation": [
+    "0000",
+    "0010",
+    "0100",
+    "0111",
+    "1000",
+    "1011",
+    "1101",
+    "1111"
+   ],
+   "verlorene_kombinationen": [
+    "0001",
+    "0010",
+    "0101",
+    "0111",
+    "1000",
+    "1010",
+    "1101",
+    "1110"
+   ]
+  },
+  {
+   "typ": "Maj",
+   "index": 103,
+   "runde": 2,
+   "status": "offen",
+   "offene_anschluesse": [
+    "a",
+    "b",
+    "c",
+    "m"
+   ],
+   "wurzeln": [
+    3,
+    451,
+    458,
+    1196
+   ],
+   "frei_anschluesse": {
+    "a": "W0.b1"
+   },
+   "relation_zeilen": 8,
+   "linear_zugelassen": 16,
+   "rest_verloren": 8,
+   "beschreibbar": [],
+   "relation": [
+    "0000",
+    "0010",
+    "0100",
+    "0111",
+    "1000",
+    "1011",
+    "1101",
+    "1111"
+   ],
+   "verlorene_kombinationen": [
+    "0000",
+    "0011",
+    "0100",
+    "0101",
+    "1010",
+    "1011",
+    "1100",
+    "1111"
+   ]
+  },
+  {
+   "typ": "Maj",
+   "index": 104,
+   "runde": 2,
+   "status": "offen",
+   "offene_anschluesse": [
+    "a",
+    "b",
+    "m"
+   ],
+   "wurzeln": [
+    416,
+    439,
+    461
+   ],
+   "frei_anschluesse": {},
+   "relation_zeilen": 4,
+   "linear_zugelassen": 8,
+   "rest_verloren": 4,
+   "beschreibbar": [],
+   "relation": [
+    "0000",
+    "0100",
+    "1000",
+    "1101"
+   ],
+   "verlorene_kombinationen": [
+    "001",
+    "010",
+    "100",
+    "110"
+   ]
+  },
+  {
+   "typ": "Maj",
+   "index": 105,
+   "runde": 2,
+   "status": "offen",
+   "offene_anschluesse": [
+    "a",
+    "b",
+    "c",
+    "m"
+   ],
+   "wurzeln": [
+    441,
+    461,
+    468,
+    966
+   ],
+   "frei_anschluesse": {},
+   "relation_zeilen": 8,
+   "linear_zugelassen": 8,
+   "rest_verloren": 4,
+   "beschreibbar": [],
+   "relation": [
+    "0000",
+    "0010",
+    "0100",
+    "0111",
+    "1000",
+    "1011",
+    "1101",
+    "1111"
+   ],
+   "verlorene_kombinationen": [
+    "0011",
+    "0100",
+    "1000",
+    "1101"
+   ]
+  },
+  {
+   "typ": "Maj",
+   "index": 106,
+   "runde": 2,
+   "status": "offen",
+   "offene_anschluesse": [
+    "a",
+    "b",
+    "c",
+    "m"
+   ],
+   "wurzeln": [
+    426,
+    446,
+    468,
+    475
+   ],
+   "frei_anschluesse": {},
+   "relation_zeilen": 8,
+   "linear_zugelassen": 16,
+   "rest_verloren": 8,
+   "beschreibbar": [],
+   "relation": [
+    "0000",
+    "0010",
+    "0100",
+    "0111",
+    "1000",
+    "1011",
+    "1101",
+    "1111"
+   ],
+   "verlorene_kombinationen": [
+    "0001",
+    "0011",
+    "0100",
+    "0111",
+    "1000",
+    "1011",
+    "1100",
+    "1110"
+   ]
+  },
+  {
+   "typ": "Maj",
+   "index": 107,
+   "runde": 2,
+   "status": "offen",
+   "offene_anschluesse": [
+    "a",
+    "b",
+    "c",
+    "m"
+   ],
+   "wurzeln": [
+    433,
+    453,
+    475,
+    481
+   ],
+   "frei_anschluesse": {},
+   "relation_zeilen": 8,
+   "linear_zugelassen": 16,
+   "rest_verloren": 8,
+   "beschreibbar": [],
+   "relation": [
+    "0000",
+    "0010",
+    "0100",
+    "0111",
+    "1000",
+    "1011",
+    "1101",
+    "1111"
+   ],
+   "verlorene_kombinationen": [
+    "0000",
+    "0011",
+    "0101",
+    "0111",
+    "1000",
+    "1010",
+    "1100",
+    "1111"
+   ]
+  },
+  {
+   "typ": "Maj",
+   "index": 108,
+   "runde": 2,
+   "status": "offen",
+   "offene_anschluesse": [
+    "b",
+    "m"
+   ],
+   "wurzeln": [
+    416
+   ],
+   "frei_anschluesse": {},
+   "relation_zeilen": 2,
+   "linear_zugelassen": 2,
+   "rest_verloren": 0,
+   "beschreibbar": [
+    "b^m=0"
+   ],
+   "relation": [
+    "1000",
+    "1101"
+   ],
+   "verlorene_kombinationen": []
+  },
+  {
+   "typ": "Maj",
+   "index": 109,
+   "runde": 2,
+   "status": "offen",
+   "offene_anschluesse": [
+    "b",
+    "c",
+    "m"
+   ],
+   "wurzeln": [
+    416,
+    485,
+    966
+   ],
+   "frei_anschluesse": {},
+   "relation_zeilen": 4,
+   "linear_zugelassen": 8,
+   "rest_verloren": 4,
+   "beschreibbar": [],
+   "relation": [
+    "1000",
+    "1011",
+    "1101",
+    "1111"
+   ],
+   "verlorene_kombinationen": [
+    "010",
+    "011",
+    "100",
+    "111"
+   ]
+  },
+  {
+   "typ": "Maj",
+   "index": 110,
+   "runde": 2,
+   "status": "offen",
+   "offene_anschluesse": [
+    "b",
+    "c",
+    "m"
+   ],
+   "wurzeln": [
+    426,
+    485,
+    487
+   ],
+   "frei_anschluesse": {},
+   "relation_zeilen": 4,
+   "linear_zugelassen": 8,
+   "rest_verloren": 4,
+   "beschreibbar": [],
+   "relation": [
+    "0000",
+    "0010",
+    "0100",
+    "0111"
+   ],
+   "verlorene_kombinationen": [
+    "001",
+    "011",
+    "100",
+    "111"
+   ]
+  },
+  {
+   "typ": "Maj",
+   "index": 111,
+   "runde": 2,
+   "status": "offen",
+   "offene_anschluesse": [
+    "b",
+    "c",
+    "m"
+   ],
+   "wurzeln": [
+    433,
+    487,
+    489
+   ],
+   "frei_anschluesse": {},
+   "relation_zeilen": 4,
+   "linear_zugelassen": 8,
+   "rest_verloren": 4,
+   "beschreibbar": [],
+   "relation": [
+    "0000",
+    "0010",
+    "0100",
+    "0111"
+   ],
+   "verlorene_kombinationen": [
+    "001",
+    "010",
+    "101",
+    "111"
+   ]
+  },
+  {
+   "typ": "Maj",
+   "index": 112,
+   "runde": 3,
+   "status": "offen",
+   "offene_anschluesse": [
+    "b",
+    "m"
+   ],
+   "wurzeln": [
+    490
+   ],
+   "frei_anschluesse": {},
+   "relation_zeilen": 2,
+   "linear_zugelassen": 2,
+   "rest_verloren": 0,
+   "beschreibbar": [
+    "b^m=0"
+   ],
+   "relation": [
+    "1000",
+    "1101"
+   ],
+   "verlorene_kombinationen": []
+  },
+  {
+   "typ": "Maj",
+   "index": 113,
+   "runde": 3,
+   "status": "offen",
+   "offene_anschluesse": [
+    "b",
+    "c",
+    "m"
+   ],
+   "wurzeln": [
+    490,
+    491,
+    497
+   ],
+   "frei_anschluesse": {},
+   "relation_zeilen": 4,
+   "linear_zugelassen": 8,
+   "rest_verloren": 4,
+   "beschreibbar": [],
+   "relation": [
+    "0000",
+    "0010",
+    "0100",
+    "0111"
+   ],
+   "verlorene_kombinationen": [
+    "001",
+    "011",
+    "100",
+    "111"
+   ]
+  },
+  {
+   "typ": "Maj",
+   "index": 114,
+   "runde": 3,
+   "status": "offen",
+   "offene_anschluesse": [
+    "b",
+    "c",
+    "m"
+   ],
+   "wurzeln": [
+    490,
+    497,
+    499
+   ],
+   "frei_anschluesse": {},
+   "relation_zeilen": 4,
+   "linear_zugelassen": 8,
+   "rest_verloren": 4,
+   "beschreibbar": [],
+   "relation": [
+    "0000",
+    "0010",
+    "0100",
+    "0111"
+   ],
+   "verlorene_kombinationen": [
+    "001",
+    "011",
+    "101",
+    "110"
+   ]
+  },
+  {
+   "typ": "Maj",
+   "index": 115,
+   "runde": 3,
+   "status": "offen",
+   "offene_anschluesse": [
+    "b",
+    "c",
+    "m"
+   ],
+   "wurzeln": [
+    491,
+    499,
+    503
+   ],
+   "frei_anschluesse": {},
+   "relation_zeilen": 4,
+   "linear_zugelassen": 8,
+   "rest_verloren": 4,
+   "beschreibbar": [],
+   "relation": [
+    "1000",
+    "1011",
+    "1101",
+    "1111"
+   ],
+   "verlorene_kombinationen": [
+    "001",
+    "011",
+    "100",
+    "111"
+   ]
+  },
+  {
+   "typ": "Maj",
+   "index": 116,
+   "runde": 3,
+   "status": "offen",
+   "offene_anschluesse": [
+    "a",
+    "b",
+    "m"
+   ],
+   "wurzeln": [
+    490,
+    505,
+    511
+   ],
+   "frei_anschluesse": {},
+   "relation_zeilen": 4,
+   "linear_zugelassen": 8,
+   "rest_verloren": 4,
+   "beschreibbar": [],
+   "relation": [
+    "0000",
+    "0100",
+    "1000",
+    "1101"
+   ],
+   "verlorene_kombinationen": [
+    "000",
+    "011",
+    "101",
+    "111"
+   ]
+  },
+  {
+   "typ": "Maj",
+   "index": 117,
+   "runde": 3,
+   "status": "offen",
+   "offene_anschluesse": [
+    "a",
+    "b",
+    "c",
+    "m"
+   ],
+   "wurzeln": [
+    496,
+    506,
+    511,
+    518
+   ],
+   "frei_anschluesse": {},
+   "relation_zeilen": 8,
+   "linear_zugelassen": 16,
+   "rest_verloren": 8,
+   "beschreibbar": [],
+   "relation": [
+    "0000",
+    "0010",
+    "0100",
+    "0111",
+    "1000",
+    "1011",
+    "1101",
+    "1111"
+   ],
+   "verlorene_kombinationen": [
+    "0000",
+    "0011",
+    "0101",
+    "0111",
+    "1000",
+    "1010",
+    "1100",
+    "1111"
+   ]
+  },
+  {
+   "typ": "Maj",
+   "index": 118,
+   "runde": 3,
+   "status": "offen",
+   "offene_anschluesse": [
+    "a",
+    "b",
+    "c",
+    "m"
+   ],
+   "wurzeln": [
+    498,
+    508,
+    518,
+    525
+   ],
+   "frei_anschluesse": {},
+   "relation_zeilen": 8,
+   "linear_zugelassen": 16,
+   "rest_verloren": 8,
+   "beschreibbar": [],
+   "relation": [
+    "0000",
+    "0010",
+    "0100",
+    "0111",
+    "1000",
+    "1011",
+    "1101",
+    "1111"
+   ],
+   "verlorene_kombinationen": [
+    "0000",
+    "0010",
+    "0101",
+    "0110",
+    "1001",
+    "1010",
+    "1101",
+    "1111"
+   ]
+  },
+  {
+   "typ": "Maj",
+   "index": 119,
+   "runde": 3,
+   "status": "offen",
+   "offene_anschluesse": [
+    "a",
+    "b",
+    "c",
+    "m"
+   ],
+   "wurzeln": [
+    500,
+    509,
+    525,
+    532
+   ],
+   "frei_anschluesse": {},
+   "relation_zeilen": 8,
+   "linear_zugelassen": 16,
+   "rest_verloren": 8,
+   "beschreibbar": [],
+   "relation": [
+    "0000",
+    "0010",
+    "0100",
+    "0111",
+    "1000",
+    "1011",
+    "1101",
+    "1111"
+   ],
+   "verlorene_kombinationen": [
+    "0000",
+    "0010",
+    "0101",
+    "0110",
+    "1001",
+    "1010",
+    "1101",
+    "1111"
+   ]
+  },
+  {
+   "typ": "Maj",
+   "index": 120,
+   "runde": 3,
+   "status": "offen",
+   "offene_anschluesse": [
+    "a",
+    "m"
+   ],
+   "wurzeln": [
+    510
+   ],
+   "frei_anschluesse": {},
+   "relation_zeilen": 2,
+   "linear_zugelassen": 2,
+   "rest_verloren": 0,
+   "beschreibbar": [
+    "a^m=0"
+   ],
+   "relation": [
+    "0100",
+    "1101"
+   ],
+   "verlorene_kombinationen": []
+  },
+  {
+   "typ": "Maj",
+   "index": 121,
+   "runde": 3,
+   "status": "offen",
+   "offene_anschluesse": [
+    "a",
+    "c",
+    "m"
+   ],
+   "wurzeln": [
+    510,
+    513,
+    536
+   ],
+   "frei_anschluesse": {},
+   "relation_zeilen": 4,
+   "linear_zugelassen": 8,
+   "rest_verloren": 4,
+   "beschreibbar": [],
+   "relation": [
+    "0100",
+    "0111",
+    "1101",
+    "1111"
+   ],
+   "verlorene_kombinationen": [
+    "001",
+    "010",
+    "101",
+    "111"
+   ]
+  },
+  {
+   "typ": "Maj",
+   "index": 122,
+   "runde": 3,
+   "status": "offen",
+   "offene_anschluesse": [
+    "a",
+    "c",
+    "m"
+   ],
+   "wurzeln": [
+    520,
+    536,
+    538
+   ],
+   "frei_anschluesse": {},
+   "relation_zeilen": 4,
+   "linear_zugelassen": 8,
+   "rest_verloren": 4,
+   "beschreibbar": [],
+   "relation": [
+    "0000",
+    "0010",
+    "1000",
+    "1011"
+   ],
+   "verlorene_kombinationen": [
+    "000",
+    "011",
+    "101",
+    "111"
+   ]
+  },
+  {
+   "typ": "Maj",
+   "index": 123,
+   "runde": 3,
+   "status": "offen",
+   "offene_anschluesse": [
+    "a",
+    "c",
+    "m"
+   ],
+   "wurzeln": [
+    527,
+    538,
+    542
+   ],
+   "frei_anschluesse": {},
+   "relation_zeilen": 4,
+   "linear_zugelassen": 8,
+   "rest_verloren": 4,
+   "beschreibbar": [],
+   "relation": [
+    "0100",
+    "0111",
+    "1101",
+    "1111"
+   ],
+   "verlorene_kombinationen": [
+    "001",
+    "011",
+    "100",
+    "111"
+   ]
+  },
+  {
+   "typ": "Maj",
+   "index": 124,
+   "runde": 3,
+   "status": "offen",
+   "offene_anschluesse": [
+    "a",
+    "b",
+    "m"
+   ],
+   "wurzeln": [
+    10,
+    510,
+    545
+   ],
+   "frei_anschluesse": {
+    "b": "W2.b0"
+   },
+   "relation_zeilen": 4,
+   "linear_zugelassen": 8,
+   "rest_verloren": 4,
+   "beschreibbar": [],
+   "relation": [
+    "0000",
+    "0100",
+    "1000",
+    "1101"
+   ],
+   "verlorene_kombinationen": [
+    "001",
+    "011",
+    "100",
+    "111"
+   ]
+  },
+  {
+   "typ": "Maj",
+   "index": 125,
+   "runde": 3,
+   "status": "offen",
+   "offene_anschluesse": [
+    "a",
+    "b",
+    "c",
+    "m"
+   ],
+   "wurzeln": [
+    11,
+    533,
+    545,
+    552
+   ],
+   "frei_anschluesse": {
+    "b": "W2.b1"
+   },
+   "relation_zeilen": 8,
+   "linear_zugelassen": 8,
+   "rest_verloren": 4,
+   "beschreibbar": [],
+   "relation": [
+    "0000",
+    "0010",
+    "0100",
+    "0111",
+    "1000",
+    "1011",
+    "1101",
+    "1111"
+   ],
+   "verlorene_kombinationen": [
+    "0001",
+    "0110",
+    "1010",
+    "1100"
+   ]
+  },
+  {
+   "typ": "Maj",
+   "index": 126,
+   "runde": 3,
+   "status": "offen",
+   "offene_anschluesse": [
+    "a",
+    "b",
+    "c",
+    "m"
+   ],
+   "wurzeln": [
+    12,
+    537,
+    552,
+    558
+   ],
+   "frei_anschluesse": {
+    "b": "W2.b2"
+   },
+   "relation_zeilen": 8,
+   "linear_zugelassen": 8,
+   "rest_verloren": 4,
+   "beschreibbar": [],
+   "relation": [
+    "0000",
+    "0010",
+    "0100",
+    "0111",
+    "1000",
+    "1011",
+    "1101",
+    "1111"
+   ],
+   "verlorene_kombinationen": [
+    "0000",
+    "0111",
+    "1011",
+    "1101"
+   ]
+  },
+  {
+   "typ": "Maj",
+   "index": 127,
+   "runde": 3,
+   "status": "offen",
+   "offene_anschluesse": [
+    "a",
+    "b",
+    "c",
+    "m"
+   ],
+   "wurzeln": [
+    13,
+    539,
+    558,
+    565
+   ],
+   "frei_anschluesse": {
+    "b": "W2.b3"
+   },
+   "relation_zeilen": 8,
+   "linear_zugelassen": 16,
+   "rest_verloren": 8,
+   "beschreibbar": [],
+   "relation": [
+    "0000",
+    "0010",
+    "0100",
+    "0111",
+    "1000",
+    "1011",
+    "1101",
+    "1111"
+   ],
+   "verlorene_kombinationen": [
+    "0000",
+    "0010",
+    "0101",
+    "0110",
+    "1001",
+    "1010",
+    "1101",
+    "1111"
+   ]
+  },
+  {
+   "typ": "Maj",
+   "index": 128,
+   "runde": 3,
+   "status": "offen",
+   "offene_anschluesse": [
+    "b",
+    "m"
+   ],
+   "wurzeln": [
+    2
+   ],
+   "frei_anschluesse": {
+    "b": "W0.b0",
+    "m": "W0.b0"
+   },
+   "relation_zeilen": 2,
+   "linear_zugelassen": 2,
+   "rest_verloren": 0,
+   "beschreibbar": [
+    "b^m=0"
+   ],
+   "relation": [
+    "1000",
+    "1101"
+   ],
+   "verlorene_kombinationen": []
+  },
+  {
+   "typ": "Maj",
+   "index": 129,
+   "runde": 3,
+   "status": "offen",
+   "offene_anschluesse": [
+    "b"
+   ],
+   "wurzeln": [
+    1390
+   ],
+   "frei_anschluesse": {},
+   "relation_zeilen": 2,
+   "linear_zugelassen": 2,
+   "rest_verloren": 0,
+   "beschreibbar": [],
+   "relation": [
+    "1011",
+    "1111"
+   ],
+   "verlorene_kombinationen": []
+  },
+  {
+   "typ": "Maj",
+   "index": 130,
+   "runde": 3,
+   "status": "offen",
+   "offene_anschluesse": [
+    "b"
+   ],
+   "wurzeln": [
+    364
+   ],
+   "frei_anschluesse": {},
+   "relation_zeilen": 2,
+   "linear_zugelassen": 2,
+   "rest_verloren": 0,
+   "beschreibbar": [],
+   "relation": [
+    "1011",
+    "1111"
+   ],
+   "verlorene_kombinationen": []
+  },
+  {
+   "typ": "Maj",
+   "index": 131,
+   "runde": 3,
+   "status": "offen",
+   "offene_anschluesse": [
+    "b",
+    "m"
+   ],
+   "wurzeln": [
+    1196
+   ],
+   "frei_anschluesse": {},
+   "relation_zeilen": 2,
+   "linear_zugelassen": 2,
+   "rest_verloren": 0,
+   "beschreibbar": [
+    "b^m=0"
+   ],
+   "relation": [
+    "1000",
+    "1101"
+   ],
+   "verlorene_kombinationen": []
+  },
+  {
+   "typ": "Maj",
+   "index": 132,
+   "runde": 3,
+   "status": "offen",
+   "offene_anschluesse": [
+    "b"
+   ],
+   "wurzeln": [
+    2
+   ],
+   "frei_anschluesse": {
+    "b": "W0.b0"
+   },
+   "relation_zeilen": 2,
+   "linear_zugelassen": 2,
+   "rest_verloren": 0,
+   "beschreibbar": [],
+   "relation": [
+    "0000",
+    "0100"
+   ],
+   "verlorene_kombinationen": []
+  },
+  {
+   "typ": "Maj",
+   "index": 133,
+   "runde": 3,
+   "status": "fest"
+  },
+  {
+   "typ": "Maj",
+   "index": 134,
+   "runde": 3,
+   "status": "fest"
+  },
+  {
+   "typ": "Maj",
+   "index": 135,
+   "runde": 3,
+   "status": "offen",
+   "offene_anschluesse": [
+    "b"
+   ],
+   "wurzeln": [
+    1196
+   ],
+   "frei_anschluesse": {},
+   "relation_zeilen": 2,
+   "linear_zugelassen": 2,
+   "rest_verloren": 0,
+   "beschreibbar": [],
+   "relation": [
+    "0000",
+    "0100"
+   ],
+   "verlorene_kombinationen": []
+  },
+  {
+   "typ": "Maj",
+   "index": 136,
+   "runde": 3,
+   "status": "offen",
+   "offene_anschluesse": [
+    "a",
+    "b"
+   ],
+   "wurzeln": [
+    2
+   ],
+   "frei_anschluesse": {
+    "a": "W0.b0",
+    "b": "W0.b0"
+   },
+   "relation_zeilen": 2,
+   "linear_zugelassen": 2,
+   "rest_verloren": 0,
+   "beschreibbar": [
+    "a^b=1"
+   ],
+   "relation": [
+    "0100",
+    "1000"
+   ],
+   "verlorene_kombinationen": []
+  },
+  {
+   "typ": "Maj",
+   "index": 137,
+   "runde": 3,
+   "status": "fest"
+  },
+  {
+   "typ": "Maj",
+   "index": 138,
+   "runde": 3,
+   "status": "fest"
+  },
+  {
+   "typ": "Maj",
+   "index": 139,
+   "runde": 3,
+   "status": "offen",
+   "offene_anschluesse": [
+    "a",
+    "b"
+   ],
+   "wurzeln": [
+    1196
+   ],
+   "frei_anschluesse": {},
+   "relation_zeilen": 2,
+   "linear_zugelassen": 2,
+   "rest_verloren": 0,
+   "beschreibbar": [
+    "a^b=1"
+   ],
+   "relation": [
+    "0100",
+    "1000"
+   ],
+   "verlorene_kombinationen": []
+  },
+  {
+   "typ": "Maj",
+   "index": 140,
+   "runde": 3,
+   "status": "offen",
+   "offene_anschluesse": [
+    "b",
+    "m"
+   ],
+   "wurzeln": [
+    2
+   ],
+   "frei_anschluesse": {
+    "b": "W0.b0",
+    "m": "W0.b0"
+   },
+   "relation_zeilen": 2,
+   "linear_zugelassen": 2,
+   "rest_verloren": 0,
+   "beschreibbar": [
+    "b^m=0"
+   ],
+   "relation": [
+    "1000",
+    "1101"
+   ],
+   "verlorene_kombinationen": []
+  },
+  {
+   "typ": "Maj",
+   "index": 141,
+   "runde": 3,
+   "status": "offen",
+   "offene_anschluesse": [
+    "c",
+    "m"
+   ],
+   "wurzeln": [
+    2
+   ],
+   "frei_anschluesse": {
+    "c": "W0.b0",
+    "m": "W0.b0"
+   },
+   "relation_zeilen": 2,
+   "linear_zugelassen": 2,
+   "rest_verloren": 0,
+   "beschreibbar": [
+    "c^m=0"
+   ],
+   "relation": [
+    "1000",
+    "1011"
+   ],
+   "verlorene_kombinationen": []
+  },
+  {
+   "typ": "Maj",
+   "index": 142,
+   "runde": 3,
+   "status": "offen",
+   "offene_anschluesse": [
+    "c"
+   ],
+   "wurzeln": [
+    2
+   ],
+   "frei_anschluesse": {
+    "c": "W0.b0"
+   },
+   "relation_zeilen": 2,
+   "linear_zugelassen": 2,
+   "rest_verloren": 0,
+   "beschreibbar": [],
+   "relation": [
+    "0000",
+    "0010"
+   ],
+   "verlorene_kombinationen": []
+  },
+  {
+   "typ": "Maj",
+   "index": 143,
+   "runde": 3,
+   "status": "offen",
+   "offene_anschluesse": [
+    "b",
+    "m"
+   ],
+   "wurzeln": [
+    1196
+   ],
+   "frei_anschluesse": {},
+   "relation_zeilen": 2,
+   "linear_zugelassen": 2,
+   "rest_verloren": 0,
+   "beschreibbar": [
+    "b^m=0"
+   ],
+   "relation": [
+    "1000",
+    "1101"
+   ],
+   "verlorene_kombinationen": []
+  },
+  {
+   "typ": "Maj",
+   "index": 144,
+   "runde": 4,
+   "status": "offen",
+   "offene_anschluesse": [
+    "b",
+    "m"
+   ],
+   "wurzeln": [
+    642
+   ],
+   "frei_anschluesse": {},
+   "relation_zeilen": 2,
+   "linear_zugelassen": 2,
+   "rest_verloren": 0,
+   "beschreibbar": [
+    "b^m=0"
+   ],
+   "relation": [
+    "1000",
+    "1101"
+   ],
+   "verlorene_kombinationen": []
+  },
+  {
+   "typ": "Maj",
+   "index": 145,
+   "runde": 4,
+   "status": "offen",
+   "offene_anschluesse": [
+    "c",
+    "m"
+   ],
+   "wurzeln": [
+    642
+   ],
+   "frei_anschluesse": {},
+   "relation_zeilen": 2,
+   "linear_zugelassen": 2,
+   "rest_verloren": 0,
+   "beschreibbar": [
+    "c^m=0"
+   ],
+   "relation": [
+    "0100",
+    "0111"
+   ],
+   "verlorene_kombinationen": []
+  },
+  {
+   "typ": "Maj",
+   "index": 146,
+   "runde": 4,
+   "status": "offen",
+   "offene_anschluesse": [
+    "b",
+    "c",
+    "m"
+   ],
+   "wurzeln": [
+    642
+   ],
+   "frei_anschluesse": {},
+   "relation_zeilen": 2,
+   "linear_zugelassen": 2,
+   "rest_verloren": 0,
+   "beschreibbar": [
+    "b^c=0",
+    "b^m=0",
+    "c^m=0"
+   ],
+   "relation": [
+    "1000",
+    "1111"
+   ],
+   "verlorene_kombinationen": []
+  },
+  {
+   "typ": "Maj",
+   "index": 147,
+   "runde": 4,
+   "status": "offen",
+   "offene_anschluesse": [
+    "c",
+    "m"
+   ],
+   "wurzeln": [
+    642
+   ],
+   "frei_anschluesse": {},
+   "relation_zeilen": 2,
+   "linear_zugelassen": 2,
+   "rest_verloren": 0,
+   "beschreibbar": [
+    "c^m=0"
+   ],
+   "relation": [
+    "0100",
+    "0111"
+   ],
+   "verlorene_kombinationen": []
+  },
+  {
+   "typ": "Maj",
+   "index": 148,
+   "runde": 4,
+   "status": "offen",
+   "offene_anschluesse": [
+    "a",
+    "b",
+    "m"
+   ],
+   "wurzeln": [
+    642,
+    646,
+    657
+   ],
+   "frei_anschluesse": {},
+   "relation_zeilen": 4,
+   "linear_zugelassen": 8,
+   "rest_verloren": 4,
+   "beschreibbar": [],
+   "relation": [
+    "0000",
+    "0100",
+    "1000",
+    "1101"
+   ],
+   "verlorene_kombinationen": [
+    "001",
+    "010",
+    "101",
+    "111"
+   ]
+  },
+  {
+   "typ": "Maj",
+   "index": 149,
+   "runde": 4,
+   "status": "offen",
+   "offene_anschluesse": [
+    "a",
+    "b",
+    "c",
+    "m"
+   ],
+   "wurzeln": [
+    642,
+    649,
+    657,
+    664
+   ],
+   "frei_anschluesse": {},
+   "relation_zeilen": 8,
+   "linear_zugelassen": 16,
+   "rest_verloren": 8,
+   "beschreibbar": [],
+   "relation": [
+    "0000",
+    "0010",
+    "0100",
+    "0111",
+    "1000",
+    "1011",
+    "1101",
+    "1111"
+   ],
+   "verlorene_kombinationen": [
+    "0000",
+    "0011",
+    "0101",
+    "0111",
+    "1000",
+    "1010",
+    "1100",
+    "1111"
+   ]
+  },
+  {
+   "typ": "Maj",
+   "index": 150,
+   "runde": 4,
+   "status": "offen",
+   "offene_anschluesse": [
+    "b",
+    "c",
+    "m"
+   ],
+   "wurzeln": [
+    664,
+    665,
+    671
+   ],
+   "frei_anschluesse": {},
+   "relation_zeilen": 4,
+   "linear_zugelassen": 8,
+   "rest_verloren": 4,
+   "beschreibbar": [],
+   "relation": [
+    "1000",
+    "1011",
+    "1101",
+    "1111"
+   ],
+   "verlorene_kombinationen": [
+    "001",
+    "011",
+    "100",
+    "111"
+   ]
+  },
+  {
+   "typ": "Maj",
+   "index": 151,
+   "runde": 4,
+   "status": "offen",
+   "offene_anschluesse": [
+    "a",
+    "b",
+    "c",
+    "m"
+   ],
+   "wurzeln": [
+    642,
+    655,
+    671,
+    678
+   ],
+   "frei_anschluesse": {},
+   "relation_zeilen": 8,
+   "linear_zugelassen": 16,
+   "rest_verloren": 8,
+   "beschreibbar": [],
+   "relation": [
+    "0000",
+    "0010",
+    "0100",
+    "0111",
+    "1000",
+    "1011",
+    "1101",
+    "1111"
+   ],
+   "verlorene_kombinationen": [
+    "0001",
+    "0010",
+    "0101",
+    "0111",
+    "1000",
+    "1010",
+    "1101",
+    "1110"
+   ]
+  },
+  {
+   "typ": "Maj",
+   "index": 152,
+   "runde": 4,
+   "status": "offen",
+   "offene_anschluesse": [
+    "a"
+   ],
+   "wurzeln": [
+    656
+   ],
+   "frei_anschluesse": {},
+   "relation_zeilen": 2,
+   "linear_zugelassen": 2,
+   "rest_verloren": 0,
+   "beschreibbar": [],
+   "relation": [
+    "0000",
+    "1000"
+   ],
+   "verlorene_kombinationen": []
+  },
+  {
+   "typ": "Maj",
+   "index": 153,
+   "runde": 4,
+   "status": "offen",
+   "offene_anschluesse": [
+    "a",
+    "m"
+   ],
+   "wurzeln": [
+    659
+   ],
+   "frei_anschluesse": {},
+   "relation_zeilen": 2,
+   "linear_zugelassen": 2,
+   "rest_verloren": 0,
+   "beschreibbar": [
+    "a^m=0"
+   ],
+   "relation": [
+    "0100",
+    "1101"
+   ],
+   "verlorene_kombinationen": []
+  },
+  {
+   "typ": "Maj",
+   "index": 154,
+   "runde": 4,
+   "status": "offen",
+   "offene_anschluesse": [
+    "a",
+    "c",
+    "m"
+   ],
+   "wurzeln": [
+    659,
+    666,
+    682
+   ],
+   "frei_anschluesse": {},
+   "relation_zeilen": 4,
+   "linear_zugelassen": 8,
+   "rest_verloren": 4,
+   "beschreibbar": [],
+   "relation": [
+    "0100",
+    "0111",
+    "1101",
+    "1111"
+   ],
+   "verlorene_kombinationen": [
+    "000",
+    "011",
+    "101",
+    "111"
+   ]
+  },
+  {
+   "typ": "Maj",
+   "index": 155,
+   "runde": 4,
+   "status": "offen",
+   "offene_anschluesse": [
+    "a",
+    "c",
+    "m"
+   ],
+   "wurzeln": [
+    673,
+    682,
+    686
+   ],
+   "frei_anschluesse": {},
+   "relation_zeilen": 4,
+   "linear_zugelassen": 8,
+   "rest_verloren": 4,
+   "beschreibbar": [],
+   "relation": [
+    "0100",
+    "0111",
+    "1101",
+    "1111"
+   ],
+   "verlorene_kombinationen": [
+    "001",
+    "010",
+    "101",
+    "111"
+   ]
+  },
+  {
+   "typ": "Maj",
+   "index": 156,
+   "runde": 4,
+   "status": "offen",
+   "offene_anschluesse": [
+    "a",
+    "b",
+    "m"
+   ],
+   "wurzeln": [
+    48,
+    656,
+    689
+   ],
+   "frei_anschluesse": {},
+   "relation_zeilen": 4,
+   "linear_zugelassen": 8,
+   "rest_verloren": 4,
+   "beschreibbar": [],
+   "relation": [
+    "0000",
+    "0100",
+    "1000",
+    "1101"
+   ],
+   "verlorene_kombinationen": [
+    "001",
+    "011",
+    "100",
+    "111"
+   ]
+  },
+  {
+   "typ": "Maj",
+   "index": 157,
+   "runde": 4,
+   "status": "offen",
+   "offene_anschluesse": [
+    "a",
+    "b",
+    "c",
+    "m"
+   ],
+   "wurzeln": [
+    51,
+    659,
+    689,
+    696
+   ],
+   "frei_anschluesse": {},
+   "relation_zeilen": 8,
+   "linear_zugelassen": 16,
+   "rest_verloren": 8,
+   "beschreibbar": [],
+   "relation": [
+    "0000",
+    "0010",
+    "0100",
+    "0111",
+    "1000",
+    "1011",
+    "1101",
+    "1111"
+   ],
+   "verlorene_kombinationen": [
+    "0000",
+    "0011",
+    "0100",
+    "0110",
+    "1001",
+    "1011",
+    "1100",
+    "1111"
+   ]
+  },
+  {
+   "typ": "Maj",
+   "index": 158,
+   "runde": 4,
+   "status": "offen",
+   "offene_anschluesse": [
+    "a",
+    "b",
+    "c",
+    "m"
+   ],
+   "wurzeln": [
+    58,
+    679,
+    696,
+    703
+   ],
+   "frei_anschluesse": {},
+   "relation_zeilen": 8,
+   "linear_zugelassen": 8,
+   "rest_verloren": 4,
+   "beschreibbar": [],
+   "relation": [
+    "0000",
+    "0010",
+    "0100",
+    "0111",
+    "1000",
+    "1011",
+    "1101",
+    "1111"
+   ],
+   "verlorene_kombinationen": [
+    "0000",
+    "0111",
+    "1010",
+    "1100"
+   ]
+  },
+  {
+   "typ": "Maj",
+   "index": 159,
+   "runde": 4,
+   "status": "offen",
+   "offene_anschluesse": [
+    "a",
+    "b",
+    "c",
+    "m"
+   ],
+   "wurzeln": [
+    65,
+    683,
+    703,
+    709
+   ],
+   "frei_anschluesse": {},
+   "relation_zeilen": 8,
+   "linear_zugelassen": 16,
+   "rest_verloren": 8,
+   "beschreibbar": [],
+   "relation": [
+    "0000",
+    "0010",
+    "0100",
+    "0111",
+    "1000",
+    "1011",
+    "1101",
+    "1111"
+   ],
+   "verlorene_kombinationen": [
+    "0000",
+    "0010",
+    "0100",
+    "0111",
+    "1000",
+    "1011",
+    "1101",
+    "1111"
+   ]
+  },
+  {
+   "typ": "Maj",
+   "index": 160,
+   "runde": 4,
+   "status": "offen",
+   "offene_anschluesse": [
+    "c"
+   ],
+   "wurzeln": [
+    2
+   ],
+   "frei_anschluesse": {
+    "c": "W0.b0"
+   },
+   "relation_zeilen": 2,
+   "linear_zugelassen": 2,
+   "rest_verloren": 0,
+   "beschreibbar": [],
+   "relation": [
+    "1101",
+    "1111"
+   ],
+   "verlorene_kombinationen": []
+  },
+  {
+   "typ": "Maj",
+   "index": 161,
+   "runde": 4,
+   "status": "offen",
+   "offene_anschluesse": [
+    "c"
+   ],
+   "wurzeln": [
+    1390
+   ],
+   "frei_anschluesse": {},
+   "relation_zeilen": 2,
+   "linear_zugelassen": 2,
+   "rest_verloren": 0,
+   "beschreibbar": [],
+   "relation": [
+    "1101",
+    "1111"
+   ],
+   "verlorene_kombinationen": []
+  },
+  {
+   "typ": "Maj",
+   "index": 162,
+   "runde": 4,
+   "status": "offen",
+   "offene_anschluesse": [
+    "c"
+   ],
+   "wurzeln": [
+    364
+   ],
+   "frei_anschluesse": {},
+   "relation_zeilen": 2,
+   "linear_zugelassen": 2,
+   "rest_verloren": 0,
+   "beschreibbar": [],
+   "relation": [
+    "1101",
+    "1111"
+   ],
+   "verlorene_kombinationen": []
+  },
+  {
+   "typ": "Maj",
+   "index": 163,
+   "runde": 4,
+   "status": "offen",
+   "offene_anschluesse": [
+    "c"
+   ],
+   "wurzeln": [
+    1196
+   ],
+   "frei_anschluesse": {},
+   "relation_zeilen": 2,
+   "linear_zugelassen": 2,
+   "rest_verloren": 0,
+   "beschreibbar": [],
+   "relation": [
+    "1101",
+    "1111"
+   ],
+   "verlorene_kombinationen": []
+  },
+  {
+   "typ": "Maj",
+   "index": 164,
+   "runde": 4,
+   "status": "fest"
+  },
+  {
+   "typ": "Maj",
+   "index": 165,
+   "runde": 4,
+   "status": "fest"
+  },
+  {
+   "typ": "Maj",
+   "index": 166,
+   "runde": 4,
+   "status": "fest"
+  },
+  {
+   "typ": "Maj",
+   "index": 167,
+   "runde": 4,
+   "status": "fest"
+  },
+  {
+   "typ": "Maj",
+   "index": 168,
+   "runde": 4,
+   "status": "fest"
+  },
+  {
+   "typ": "Maj",
+   "index": 169,
+   "runde": 4,
+   "status": "fest"
+  },
+  {
+   "typ": "Maj",
+   "index": 170,
+   "runde": 4,
+   "status": "fest"
+  },
+  {
+   "typ": "Maj",
+   "index": 171,
+   "runde": 4,
+   "status": "fest"
+  },
+  {
+   "typ": "Maj",
+   "index": 172,
+   "runde": 4,
+   "status": "fest"
+  },
+  {
+   "typ": "Maj",
+   "index": 173,
+   "runde": 4,
+   "status": "fest"
+  },
+  {
+   "typ": "Maj",
+   "index": 174,
+   "runde": 4,
+   "status": "fest"
+  },
+  {
+   "typ": "Maj",
+   "index": 175,
+   "runde": 4,
+   "status": "fest"
+  },
+  {
+   "typ": "Maj",
+   "index": 176,
+   "runde": 5,
+   "status": "offen",
+   "offene_anschluesse": [
+    "a",
+    "m"
+   ],
+   "wurzeln": [
+    2
+   ],
+   "frei_anschluesse": {
+    "a": "W0.b0",
+    "m": "W0.b0"
+   },
+   "relation_zeilen": 2,
+   "linear_zugelassen": 2,
+   "rest_verloren": 0,
+   "beschreibbar": [
+    "a^m=0"
+   ],
+   "relation": [
+    "0100",
+    "1101"
+   ],
+   "verlorene_kombinationen": []
+  },
+  {
+   "typ": "Maj",
+   "index": 177,
+   "runde": 5,
+   "status": "offen",
+   "offene_anschluesse": [
+    "a",
+    "c",
+    "m"
+   ],
+   "wurzeln": [
+    2,
+    3,
+    792
+   ],
+   "frei_anschluesse": {
+    "a": "W0.b1",
+    "c": "W0.b0"
+   },
+   "relation_zeilen": 4,
+   "linear_zugelassen": 8,
+   "rest_verloren": 4,
+   "beschreibbar": [],
+   "relation": [
+    "0100",
+    "0111",
+    "1101",
+    "1111"
+   ],
+   "verlorene_kombinationen": [
+    "000",
+    "011",
+    "101",
+    "111"
+   ]
+  },
+  {
+   "typ": "Maj",
+   "index": 178,
+   "runde": 5,
+   "status": "offen",
+   "offene_anschluesse": [
+    "a",
+    "c",
+    "m"
+   ],
+   "wurzeln": [
+    4,
+    792,
+    799
+   ],
+   "frei_anschluesse": {
+    "a": "W0.b2"
+   },
+   "relation_zeilen": 4,
+   "linear_zugelassen": 8,
+   "rest_verloren": 4,
+   "beschreibbar": [],
+   "relation": [
+    "0100",
+    "0111",
+    "1101",
+    "1111"
+   ],
+   "verlorene_kombinationen": [
+    "001",
+    "011",
+    "101",
+    "110"
+   ]
+  },
+  {
+   "typ": "Maj",
+   "index": 179,
+   "runde": 5,
+   "status": "offen",
+   "offene_anschluesse": [
+    "a",
+    "c",
+    "m"
+   ],
+   "wurzeln": [
+    374,
+    799,
+    806
+   ],
+   "frei_anschluesse": {},
+   "relation_zeilen": 4,
+   "linear_zugelassen": 8,
+   "rest_verloren": 4,
+   "beschreibbar": [],
+   "relation": [
+    "0100",
+    "0111",
+    "1101",
+    "1111"
+   ],
+   "verlorene_kombinationen": [
+    "001",
+    "010",
+    "101",
+    "111"
+   ]
+  },
+  {
+   "typ": "Maj",
+   "index": 180,
+   "runde": 5,
+   "status": "offen",
+   "offene_anschluesse": [
+    "a",
+    "b",
+    "m"
+   ],
+   "wurzeln": [
+    2
+   ],
+   "frei_anschluesse": {
+    "a": "W0.b0",
+    "b": "W0.b0",
+    "m": "W0.b0"
+   },
+   "relation_zeilen": 2,
+   "linear_zugelassen": 2,
+   "rest_verloren": 0,
+   "beschreibbar": [
+    "a^b=0",
+    "a^m=0",
+    "b^m=0"
+   ],
+   "relation": [
+    "0000",
+    "1101"
+   ],
+   "verlorene_kombinationen": []
+  },
+  {
+   "typ": "Maj",
+   "index": 181,
+   "runde": 5,
+   "status": "offen",
+   "offene_anschluesse": [
+    "a",
+    "b",
+    "c",
+    "m"
+   ],
+   "wurzeln": [
+    2,
+    787,
+    812,
+    827
+   ],
+   "frei_anschluesse": {
+    "c": "W0.b0"
+   },
+   "relation_zeilen": 8,
+   "linear_zugelassen": 16,
+   "rest_verloren": 8,
+   "beschreibbar": [],
+   "relation": [
+    "0000",
+    "0010",
+    "0100",
+    "0111",
+    "1000",
+    "1011",
+    "1101",
+    "1111"
+   ],
+   "verlorene_kombinationen": [
+    "0001",
+    "0011",
+    "0100",
+    "0111",
+    "1000",
+    "1011",
+    "1100",
+    "1110"
+   ]
+  },
+  {
+   "typ": "Maj",
+   "index": 182,
+   "runde": 5,
+   "status": "offen",
+   "offene_anschluesse": [
+    "a",
+    "b",
+    "c",
+    "m"
+   ],
+   "wurzeln": [
+    794,
+    815,
+    827,
+    834
+   ],
+   "frei_anschluesse": {},
+   "relation_zeilen": 8,
+   "linear_zugelassen": 16,
+   "rest_verloren": 8,
+   "beschreibbar": [],
+   "relation": [
+    "0000",
+    "0010",
+    "0100",
+    "0111",
+    "1000",
+    "1011",
+    "1101",
+    "1111"
+   ],
+   "verlorene_kombinationen": [
+    "0000",
+    "0010",
+    "0101",
+    "0110",
+    "1001",
+    "1010",
+    "1101",
+    "1111"
+   ]
+  },
+  {
+   "typ": "Maj",
+   "index": 183,
+   "runde": 5,
+   "status": "offen",
+   "offene_anschluesse": [
+    "a",
+    "b",
+    "c",
+    "m"
+   ],
+   "wurzeln": [
+    801,
+    834,
+    841,
+    1196
+   ],
+   "frei_anschluesse": {},
+   "relation_zeilen": 8,
+   "linear_zugelassen": 16,
+   "rest_verloren": 8,
+   "beschreibbar": [],
+   "relation": [
+    "0000",
+    "0010",
+    "0100",
+    "0111",
+    "1000",
+    "1011",
+    "1101",
+    "1111"
+   ],
+   "verlorene_kombinationen": [
+    "0000",
+    "0011",
+    "0100",
+    "0101",
+    "1010",
+    "1011",
+    "1100",
+    "1111"
+   ]
+  },
+  {
+   "typ": "Maj",
+   "index": 184,
+   "runde": 5,
+   "status": "fest"
+  },
+  {
+   "typ": "Maj",
+   "index": 185,
+   "runde": 5,
+   "status": "offen",
+   "offene_anschluesse": [
+    "a",
+    "m"
+   ],
+   "wurzeln": [
+    859
+   ],
+   "frei_anschluesse": {},
+   "relation_zeilen": 2,
+   "linear_zugelassen": 2,
+   "rest_verloren": 0,
+   "beschreibbar": [
+    "a^m=0"
+   ],
+   "relation": [
+    "0100",
+    "1101"
+   ],
+   "verlorene_kombinationen": []
+  },
+  {
+   "typ": "Maj",
+   "index": 186,
+   "runde": 5,
+   "status": "offen",
+   "offene_anschluesse": [
+    "a",
+    "c",
+    "m"
+   ],
+   "wurzeln": [
+    829,
+    847,
+    859
+   ],
+   "frei_anschluesse": {},
+   "relation_zeilen": 4,
+   "linear_zugelassen": 8,
+   "rest_verloren": 4,
+   "beschreibbar": [],
+   "relation": [
+    "0000",
+    "0010",
+    "1000",
+    "1011"
+   ],
+   "verlorene_kombinationen": [
+    "000",
+    "011",
+    "110",
+    "111"
+   ]
+  },
+  {
+   "typ": "Maj",
+   "index": 187,
+   "runde": 5,
+   "status": "offen",
+   "offene_anschluesse": [
+    "a",
+    "c",
+    "m"
+   ],
+   "wurzeln": [
+    836,
+    847,
+    849
+   ],
+   "frei_anschluesse": {},
+   "relation_zeilen": 4,
+   "linear_zugelassen": 8,
+   "rest_verloren": 4,
+   "beschreibbar": [],
+   "relation": [
+    "0000",
+    "0010",
+    "1000",
+    "1011"
+   ],
+   "verlorene_kombinationen": [
+    "001",
+    "010",
+    "101",
+    "111"
+   ]
+  },
+  {
+   "typ": "Maj",
+   "index": 188,
+   "runde": 5,
+   "status": "fest"
+  },
+  {
+   "typ": "Maj",
+   "index": 189,
+   "runde": 5,
+   "status": "offen",
+   "offene_anschluesse": [
+    "a",
+    "b",
+    "m"
+   ],
+   "wurzeln": [
+    859
+   ],
+   "frei_anschluesse": {},
+   "relation_zeilen": 2,
+   "linear_zugelassen": 2,
+   "rest_verloren": 0,
+   "beschreibbar": [
+    "a^b=0",
+    "a^m=0",
+    "b^m=0"
+   ],
+   "relation": [
+    "0010",
+    "1111"
+   ],
+   "verlorene_kombinationen": []
+  },
+  {
+   "typ": "Maj",
+   "index": 190,
+   "runde": 5,
+   "status": "offen",
+   "offene_anschluesse": [
+    "a",
+    "b",
+    "c",
+    "m"
+   ],
+   "wurzeln": [
+    115,
+    846,
+    859,
+    866
+   ],
+   "frei_anschluesse": {},
+   "relation_zeilen": 8,
+   "linear_zugelassen": 16,
+   "rest_verloren": 8,
+   "beschreibbar": [],
+   "relation": [
+    "0000",
+    "0010",
+    "0100",
+    "0111",
+    "1000",
+    "1011",
+    "1101",
+    "1111"
+   ],
+   "verlorene_kombinationen": [
+    "0001",
+    "0011",
+    "0101",
+    "0110",
+    "1001",
+    "1010",
+    "1100",
+    "1110"
+   ]
+  },
+  {
+   "typ": "Maj",
+   "index": 191,
+   "runde": 5,
+   "status": "offen",
+   "offene_anschluesse": [
+    "a",
+    "b",
+    "c",
+    "m"
+   ],
+   "wurzeln": [
+    122,
+    848,
+    866,
+    872
+   ],
+   "frei_anschluesse": {},
+   "relation_zeilen": 8,
+   "linear_zugelassen": 16,
+   "rest_verloren": 8,
+   "beschreibbar": [],
+   "relation": [
+    "0000",
+    "0010",
+    "0100",
+    "0111",
+    "1000",
+    "1011",
+    "1101",
+    "1111"
+   ],
+   "verlorene_kombinationen": [
+    "0000",
+    "0011",
+    "0100",
+    "0110",
+    "1001",
+    "1011",
+    "1100",
+    "1111"
+   ]
+  },
+  {
+   "typ": "Maj",
+   "index": 192,
+   "runde": 5,
+   "status": "fest"
+  },
+  {
+   "typ": "Maj",
+   "index": 193,
+   "runde": 5,
+   "status": "fest"
+  },
+  {
+   "typ": "Maj",
+   "index": 194,
+   "runde": 5,
+   "status": "fest"
+  },
+  {
+   "typ": "Maj",
+   "index": 195,
+   "runde": 5,
+   "status": "fest"
+  },
+  {
+   "typ": "Maj",
+   "index": 196,
+   "runde": 5,
+   "status": "fest"
+  },
+  {
+   "typ": "Maj",
+   "index": 197,
+   "runde": 5,
+   "status": "fest"
+  },
+  {
+   "typ": "Maj",
+   "index": 198,
+   "runde": 5,
+   "status": "fest"
+  },
+  {
+   "typ": "Maj",
+   "index": 199,
+   "runde": 5,
+   "status": "fest"
+  },
+  {
+   "typ": "Maj",
+   "index": 200,
+   "runde": 5,
+   "status": "fest"
+  },
+  {
+   "typ": "Maj",
+   "index": 201,
+   "runde": 5,
+   "status": "fest"
+  },
+  {
+   "typ": "Maj",
+   "index": 202,
+   "runde": 5,
+   "status": "fest"
+  },
+  {
+   "typ": "Maj",
+   "index": 203,
+   "runde": 5,
+   "status": "fest"
+  },
+  {
+   "typ": "Maj",
+   "index": 204,
+   "runde": 5,
+   "status": "offen",
+   "offene_anschluesse": [
+    "a"
+   ],
+   "wurzeln": [
+    2
+   ],
+   "frei_anschluesse": {
+    "a": "W0.b0"
+   },
+   "relation_zeilen": 2,
+   "linear_zugelassen": 2,
+   "rest_verloren": 0,
+   "beschreibbar": [],
+   "relation": [
+    "0000",
+    "1000"
+   ],
+   "verlorene_kombinationen": []
+  },
+  {
+   "typ": "Maj",
+   "index": 205,
+   "runde": 5,
+   "status": "offen",
+   "offene_anschluesse": [
+    "a",
+    "m"
+   ],
+   "wurzeln": [
+    1390
+   ],
+   "frei_anschluesse": {},
+   "relation_zeilen": 2,
+   "linear_zugelassen": 2,
+   "rest_verloren": 0,
+   "beschreibbar": [
+    "a^m=0"
+   ],
+   "relation": [
+    "0100",
+    "1101"
+   ],
+   "verlorene_kombinationen": []
+  },
+  {
+   "typ": "Maj",
+   "index": 206,
+   "runde": 5,
+   "status": "offen",
+   "offene_anschluesse": [
+    "a",
+    "c",
+    "m"
+   ],
+   "wurzeln": [
+    364,
+    947,
+    1390
+   ],
+   "frei_anschluesse": {},
+   "relation_zeilen": 4,
+   "linear_zugelassen": 8,
+   "rest_verloren": 4,
+   "beschreibbar": [],
+   "relation": [
+    "0000",
+    "0010",
+    "1000",
+    "1011"
+   ],
+   "verlorene_kombinationen": [
+    "001",
+    "010",
+    "110",
+    "111"
+   ]
+  },
+  {
+   "typ": "Maj",
+   "index": 207,
+   "runde": 5,
+   "status": "offen",
+   "offene_anschluesse": [
+    "a",
+    "c",
+    "m"
+   ],
+   "wurzeln": [
+    947,
+    957,
+    1196
+   ],
+   "frei_anschluesse": {},
+   "relation_zeilen": 4,
+   "linear_zugelassen": 8,
+   "rest_verloren": 4,
+   "beschreibbar": [],
+   "relation": [
+    "0100",
+    "0111",
+    "1101",
+    "1111"
+   ],
+   "verlorene_kombinationen": [
+    "000",
+    "011",
+    "110",
+    "111"
+   ]
+  },
+  {
+   "typ": "Maj",
+   "index": 208,
+   "runde": 6,
+   "status": "offen",
+   "offene_anschluesse": [
+    "a",
+    "b",
+    "m"
+   ],
+   "wurzeln": [
+    416,
+    958,
+    965
+   ],
+   "frei_anschluesse": {},
+   "relation_zeilen": 4,
+   "linear_zugelassen": 8,
+   "rest_verloren": 4,
+   "beschreibbar": [],
+   "relation": [
+    "0000",
+    "0100",
+    "1000",
+    "1101"
+   ],
+   "verlorene_kombinationen": [
+    "001",
+    "011",
+    "100",
+    "111"
+   ]
+  },
+  {
+   "typ": "Maj",
+   "index": 209,
+   "runde": 6,
+   "status": "offen",
+   "offene_anschluesse": [
+    "a",
+    "b",
+    "c",
+    "m"
+   ],
+   "wurzeln": [
+    812,
+    959,
+    965,
+    972
+   ],
+   "frei_anschluesse": {},
+   "relation_zeilen": 8,
+   "linear_zugelassen": 16,
+   "rest_verloren": 8,
+   "beschreibbar": [],
+   "relation": [
+    "0000",
+    "0010",
+    "0100",
+    "0111",
+    "1000",
+    "1011",
+    "1101",
+    "1111"
+   ],
+   "verlorene_kombinationen": [
+    "0000",
+    "0011",
+    "0100",
+    "0110",
+    "1001",
+    "1011",
+    "1100",
+    "1111"
+   ]
+  },
+  {
+   "typ": "Maj",
+   "index": 210,
+   "runde": 6,
+   "status": "offen",
+   "offene_anschluesse": [
+    "a",
+    "b",
+    "c",
+    "m"
+   ],
+   "wurzeln": [
+    815,
+    958,
+    972,
+    979
+   ],
+   "frei_anschluesse": {},
+   "relation_zeilen": 8,
+   "linear_zugelassen": 16,
+   "rest_verloren": 8,
+   "beschreibbar": [],
+   "relation": [
+    "0000",
+    "0010",
+    "0100",
+    "0111",
+    "1000",
+    "1011",
+    "1101",
+    "1111"
+   ],
+   "verlorene_kombinationen": [
+    "0001",
+    "0010",
+    "0100",
+    "0110",
+    "1001",
+    "1011",
+    "1101",
+    "1110"
+   ]
+  },
+  {
+   "typ": "Maj",
+   "index": 211,
+   "runde": 6,
+   "status": "offen",
+   "offene_anschluesse": [
+    "a",
+    "b",
+    "c",
+    "m"
+   ],
+   "wurzeln": [
+    488,
+    959,
+    979,
+    986
+   ],
+   "frei_anschluesse": {},
+   "relation_zeilen": 8,
+   "linear_zugelassen": 16,
+   "rest_verloren": 8,
+   "beschreibbar": [],
+   "relation": [
+    "0000",
+    "0010",
+    "0100",
+    "0111",
+    "1000",
+    "1011",
+    "1101",
+    "1111"
+   ],
+   "verlorene_kombinationen": [
+    "0001",
+    "0011",
+    "0101",
+    "0110",
+    "1001",
+    "1010",
+    "1100",
+    "1110"
+   ]
+  },
+  {
+   "typ": "Maj",
+   "index": 212,
+   "runde": 6,
+   "status": "offen",
+   "offene_anschluesse": [
+    "a",
+    "b",
+    "m"
+   ],
+   "wurzeln": [
+    2,
+    964,
+    1000
+   ],
+   "frei_anschluesse": {
+    "b": "W0.b0"
+   },
+   "relation_zeilen": 4,
+   "linear_zugelassen": 8,
+   "rest_verloren": 4,
+   "beschreibbar": [],
+   "relation": [
+    "0000",
+    "0100",
+    "1000",
+    "1101"
+   ],
+   "verlorene_kombinationen": [
+    "000",
+    "011",
+    "101",
+    "111"
+   ]
+  },
+  {
+   "typ": "Maj",
+   "index": 213,
+   "runde": 6,
+   "status": "offen",
+   "offene_anschluesse": [
+    "a",
+    "b",
+    "c",
+    "m"
+   ],
+   "wurzeln": [
+    967,
+    992,
+    1000,
+    1007
+   ],
+   "frei_anschluesse": {},
+   "relation_zeilen": 8,
+   "linear_zugelassen": 16,
+   "rest_verloren": 8,
+   "beschreibbar": [],
+   "relation": [
+    "0000",
+    "0010",
+    "0100",
+    "0111",
+    "1000",
+    "1011",
+    "1101",
+    "1111"
+   ],
+   "verlorene_kombinationen": [
+    "0000",
+    "0010",
+    "0100",
+    "0111",
+    "1000",
+    "1011",
+    "1101",
+    "1111"
+   ]
+  },
+  {
+   "typ": "Maj",
+   "index": 214,
+   "runde": 6,
+   "status": "offen",
+   "offene_anschluesse": [
+    "a",
+    "b",
+    "c",
+    "m"
+   ],
+   "wurzeln": [
+    974,
+    995,
+    1007,
+    1014
+   ],
+   "frei_anschluesse": {},
+   "relation_zeilen": 8,
+   "linear_zugelassen": 16,
+   "rest_verloren": 8,
+   "beschreibbar": [],
+   "relation": [
+    "0000",
+    "0010",
+    "0100",
+    "0111",
+    "1000",
+    "1011",
+    "1101",
+    "1111"
+   ],
+   "verlorene_kombinationen": [
+    "0001",
+    "0010",
+    "0101",
+    "0111",
+    "1000",
+    "1010",
+    "1101",
+    "1110"
+   ]
+  },
+  {
+   "typ": "Maj",
+   "index": 215,
+   "runde": 6,
+   "status": "offen",
+   "offene_anschluesse": [
+    "a",
+    "b",
+    "c",
+    "m"
+   ],
+   "wurzeln": [
+    981,
+    998,
+    1014,
+    1021
+   ],
+   "frei_anschluesse": {},
+   "relation_zeilen": 8,
+   "linear_zugelassen": 16,
+   "rest_verloren": 8,
+   "beschreibbar": [],
+   "relation": [
+    "0000",
+    "0010",
+    "0100",
+    "0111",
+    "1000",
+    "1011",
+    "1101",
+    "1111"
+   ],
+   "verlorene_kombinationen": [
+    "0001",
+    "0010",
+    "0101",
+    "0111",
+    "1000",
+    "1010",
+    "1101",
+    "1110"
+   ]
+  },
+  {
+   "typ": "Maj",
+   "index": 216,
+   "runde": 6,
+   "status": "offen",
+   "offene_anschluesse": [
+    "a",
+    "m"
+   ],
+   "wurzeln": [
+    999
+   ],
+   "frei_anschluesse": {},
+   "relation_zeilen": 2,
+   "linear_zugelassen": 2,
+   "rest_verloren": 0,
+   "beschreibbar": [
+    "a^m=0"
+   ],
+   "relation": [
+    "0100",
+    "1101"
+   ],
+   "verlorene_kombinationen": []
+  },
+  {
+   "typ": "Maj",
+   "index": 217,
+   "runde": 6,
+   "status": "offen",
+   "offene_anschluesse": [
+    "a",
+    "c",
+    "m"
+   ],
+   "wurzeln": [
+    999,
+    1002,
+    1023
+   ],
+   "frei_anschluesse": {},
+   "relation_zeilen": 4,
+   "linear_zugelassen": 8,
+   "rest_verloren": 4,
+   "beschreibbar": [],
+   "relation": [
+    "0000",
+    "0010",
+    "1000",
+    "1011"
+   ],
+   "verlorene_kombinationen": [
+    "001",
+    "010",
+    "101",
+    "111"
+   ]
+  },
+  {
+   "typ": "Maj",
+   "index": 218,
+   "runde": 6,
+   "status": "offen",
+   "offene_anschluesse": [
+    "a",
+    "c",
+    "m"
+   ],
+   "wurzeln": [
+    1009,
+    1023,
+    1027
+   ],
+   "frei_anschluesse": {},
+   "relation_zeilen": 4,
+   "linear_zugelassen": 8,
+   "rest_verloren": 4,
+   "beschreibbar": [],
+   "relation": [
+    "0100",
+    "0111",
+    "1101",
+    "1111"
+   ],
+   "verlorene_kombinationen": [
+    "000",
+    "011",
+    "101",
+    "111"
+   ]
+  },
+  {
+   "typ": "Maj",
+   "index": 219,
+   "runde": 6,
+   "status": "offen",
+   "offene_anschluesse": [
+    "a",
+    "c",
+    "m"
+   ],
+   "wurzeln": [
+    1016,
+    1027,
+    1029
+   ],
+   "frei_anschluesse": {},
+   "relation_zeilen": 4,
+   "linear_zugelassen": 8,
+   "rest_verloren": 4,
+   "beschreibbar": [],
+   "relation": [
+    "0000",
+    "0010",
+    "1000",
+    "1011"
+   ],
+   "verlorene_kombinationen": [
+    "001",
+    "011",
+    "100",
+    "111"
+   ]
+  },
+  {
+   "typ": "Maj",
+   "index": 220,
+   "runde": 6,
+   "status": "offen",
+   "offene_anschluesse": [
+    "a",
+    "b",
+    "m"
+   ],
+   "wurzeln": [
+    162,
+    999,
+    1032
+   ],
+   "frei_anschluesse": {},
+   "relation_zeilen": 4,
+   "linear_zugelassen": 8,
+   "rest_verloren": 4,
+   "beschreibbar": [],
+   "relation": [
+    "0000",
+    "0100",
+    "1000",
+    "1101"
+   ],
+   "verlorene_kombinationen": [
+    "001",
+    "011",
+    "101",
+    "110"
+   ]
+  },
+  {
+   "typ": "Maj",
+   "index": 221,
+   "runde": 6,
+   "status": "offen",
+   "offene_anschluesse": [
+    "a",
+    "b",
+    "c",
+    "m"
+   ],
+   "wurzeln": [
+    165,
+    1022,
+    1032,
+    1039
+   ],
+   "frei_anschluesse": {},
+   "relation_zeilen": 8,
+   "linear_zugelassen": 8,
+   "rest_verloren": 4,
+   "beschreibbar": [],
+   "relation": [
+    "0000",
+    "0010",
+    "0100",
+    "0111",
+    "1000",
+    "1011",
+    "1101",
+    "1111"
+   ],
+   "verlorene_kombinationen": [
+    "0000",
+    "0110",
+    "1011",
+    "1100"
+   ]
+  },
+  {
+   "typ": "Maj",
+   "index": 222,
+   "runde": 6,
+   "status": "offen",
+   "offene_anschluesse": [
+    "a",
+    "b",
+    "c",
+    "m"
+   ],
+   "wurzeln": [
+    172,
+    1024,
+    1039,
+    1046
+   ],
+   "frei_anschluesse": {},
+   "relation_zeilen": 8,
+   "linear_zugelassen": 8,
+   "rest_verloren": 4,
+   "beschreibbar": [],
+   "relation": [
+    "0000",
+    "0010",
+    "0100",
+    "0111",
+    "1000",
+    "1011",
+    "1101",
+    "1111"
+   ],
+   "verlorene_kombinationen": [
+    "0001",
+    "0110",
+    "1011",
+    "1101"
+   ]
+  },
+  {
+   "typ": "Maj",
+   "index": 223,
+   "runde": 6,
+   "status": "offen",
+   "offene_anschluesse": [
+    "a",
+    "b",
+    "c",
+    "m"
+   ],
+   "wurzeln": [
+    179,
+    1028,
+    1046,
+    1052
+   ],
+   "frei_anschluesse": {},
+   "relation_zeilen": 8,
+   "linear_zugelassen": 16,
+   "rest_verloren": 8,
+   "beschreibbar": [],
+   "relation": [
+    "0000",
+    "0010",
+    "0100",
+    "0111",
+    "1000",
+    "1011",
+    "1101",
+    "1111"
+   ],
+   "verlorene_kombinationen": [
+    "0001",
+    "0010",
+    "0100",
+    "0110",
+    "1001",
+    "1011",
+    "1101",
+    "1110"
+   ]
+  },
+  {
+   "typ": "Maj",
+   "index": 224,
+   "runde": 6,
+   "status": "fest"
+  },
+  {
+   "typ": "Maj",
+   "index": 225,
+   "runde": 6,
+   "status": "fest"
+  },
+  {
+   "typ": "Maj",
+   "index": 226,
+   "runde": 6,
+   "status": "fest"
+  },
+  {
+   "typ": "Maj",
+   "index": 227,
+   "runde": 6,
+   "status": "fest"
+  },
+  {
+   "typ": "Maj",
+   "index": 228,
+   "runde": 6,
+   "status": "fest"
+  },
+  {
+   "typ": "Maj",
+   "index": 229,
+   "runde": 6,
+   "status": "fest"
+  },
+  {
+   "typ": "Maj",
+   "index": 230,
+   "runde": 6,
+   "status": "fest"
+  },
+  {
+   "typ": "Maj",
+   "index": 231,
+   "runde": 6,
+   "status": "fest"
+  },
+  {
+   "typ": "Maj",
+   "index": 232,
+   "runde": 6,
+   "status": "fest"
+  },
+  {
+   "typ": "Maj",
+   "index": 233,
+   "runde": 6,
+   "status": "fest"
+  },
+  {
+   "typ": "Maj",
+   "index": 234,
+   "runde": 6,
+   "status": "fest"
+  },
+  {
+   "typ": "Maj",
+   "index": 235,
+   "runde": 6,
+   "status": "fest"
+  },
+  {
+   "typ": "Maj",
+   "index": 236,
+   "runde": 6,
+   "status": "fest"
+  },
+  {
+   "typ": "Maj",
+   "index": 237,
+   "runde": 6,
+   "status": "fest"
+  },
+  {
+   "typ": "Maj",
+   "index": 238,
+   "runde": 6,
+   "status": "fest"
+  },
+  {
+   "typ": "Maj",
+   "index": 239,
+   "runde": 6,
+   "status": "fest"
+  },
+  {
+   "typ": "Maj",
+   "index": 240,
+   "runde": 7,
+   "status": "offen",
+   "offene_anschluesse": [
+    "a",
+    "m"
+   ],
+   "wurzeln": [
+    2
+   ],
+   "frei_anschluesse": {
+    "a": "W0.b0",
+    "m": "W0.b0"
+   },
+   "relation_zeilen": 2,
+   "linear_zugelassen": 2,
+   "rest_verloren": 0,
+   "beschreibbar": [
+    "a^m=0"
+   ],
+   "relation": [
+    "0100",
+    "1101"
+   ],
+   "verlorene_kombinationen": []
+  },
+  {
+   "typ": "Maj",
+   "index": 241,
+   "runde": 7,
+   "status": "offen",
+   "offene_anschluesse": [
+    "a",
+    "c",
+    "m"
+   ],
+   "wurzeln": [
+    2
+   ],
+   "frei_anschluesse": {
+    "a": "W0.b0",
+    "c": "W0.b0",
+    "m": "W0.b0"
+   },
+   "relation_zeilen": 2,
+   "linear_zugelassen": 2,
+   "rest_verloren": 0,
+   "beschreibbar": [
+    "a^c=0",
+    "a^m=0",
+    "c^m=0"
+   ],
+   "relation": [
+    "0000",
+    "1011"
+   ],
+   "verlorene_kombinationen": []
+  },
+  {
+   "typ": "Maj",
+   "index": 242,
+   "runde": 7,
+   "status": "offen",
+   "offene_anschluesse": [
+    "a",
+    "c"
+   ],
+   "wurzeln": [
+    2
+   ],
+   "frei_anschluesse": {
+    "a": "W0.b0",
+    "c": "W0.b0"
+   },
+   "relation_zeilen": 2,
+   "linear_zugelassen": 2,
+   "rest_verloren": 0,
+   "beschreibbar": [
+    "a^c=1"
+   ],
+   "relation": [
+    "0111",
+    "1101"
+   ],
+   "verlorene_kombinationen": []
+  },
+  {
+   "typ": "Maj",
+   "index": 243,
+   "runde": 7,
+   "status": "offen",
+   "offene_anschluesse": [
+    "a",
+    "m"
+   ],
+   "wurzeln": [
+    1196
+   ],
+   "frei_anschluesse": {},
+   "relation_zeilen": 2,
+   "linear_zugelassen": 2,
+   "rest_verloren": 0,
+   "beschreibbar": [
+    "a^m=0"
+   ],
+   "relation": [
+    "0010",
+    "1011"
+   ],
+   "verlorene_kombinationen": []
+  },
+  {
+   "typ": "Maj",
+   "index": 244,
+   "runde": 7,
+   "status": "offen",
+   "offene_anschluesse": [
+    "a",
+    "m"
+   ],
+   "wurzeln": [
+    2
+   ],
+   "frei_anschluesse": {
+    "a": "W0.b0",
+    "m": "W0.b0"
+   },
+   "relation_zeilen": 2,
+   "linear_zugelassen": 2,
+   "rest_verloren": 0,
+   "beschreibbar": [
+    "a^m=0"
+   ],
+   "relation": [
+    "0100",
+    "1101"
+   ],
+   "verlorene_kombinationen": []
+  },
+  {
+   "typ": "Maj",
+   "index": 245,
+   "runde": 7,
+   "status": "offen",
+   "offene_anschluesse": [
+    "b",
+    "c",
+    "m"
+   ],
+   "wurzeln": [
+    2,
+    1189,
+    1390
+   ],
+   "frei_anschluesse": {
+    "c": "W0.b0"
+   },
+   "relation_zeilen": 4,
+   "linear_zugelassen": 8,
+   "rest_verloren": 4,
+   "beschreibbar": [],
+   "relation": [
+    "0000",
+    "0010",
+    "0100",
+    "0111"
+   ],
+   "verlorene_kombinationen": [
+    "010",
+    "011",
+    "100",
+    "111"
+   ]
+  },
+  {
+   "typ": "Maj",
+   "index": 246,
+   "runde": 7,
+   "status": "offen",
+   "offene_anschluesse": [
+    "c"
+   ],
+   "wurzeln": [
+    1189
+   ],
+   "frei_anschluesse": {},
+   "relation_zeilen": 2,
+   "linear_zugelassen": 2,
+   "rest_verloren": 0,
+   "beschreibbar": [],
+   "relation": [
+    "0000",
+    "0010"
+   ],
+   "verlorene_kombinationen": []
+  },
+  {
+   "typ": "Maj",
+   "index": 247,
+   "runde": 7,
+   "status": "offen",
+   "offene_anschluesse": [
+    "a",
+    "m"
+   ],
+   "wurzeln": [
+    1196
+   ],
+   "frei_anschluesse": {},
+   "relation_zeilen": 2,
+   "linear_zugelassen": 2,
+   "rest_verloren": 0,
+   "beschreibbar": [
+    "a^m=0"
+   ],
+   "relation": [
+    "0100",
+    "1101"
+   ],
+   "verlorene_kombinationen": []
+  },
+  {
+   "typ": "Maj",
+   "index": 248,
+   "runde": 7,
+   "status": "offen",
+   "offene_anschluesse": [
+    "a",
+    "m"
+   ],
+   "wurzeln": [
+    2
+   ],
+   "frei_anschluesse": {
+    "a": "W0.b0",
+    "m": "W0.b0"
+   },
+   "relation_zeilen": 2,
+   "linear_zugelassen": 2,
+   "rest_verloren": 0,
+   "beschreibbar": [
+    "a^m=0"
+   ],
+   "relation": [
+    "0100",
+    "1101"
+   ],
+   "verlorene_kombinationen": []
+  },
+  {
+   "typ": "Maj",
+   "index": 249,
+   "runde": 7,
+   "status": "offen",
+   "offene_anschluesse": [
+    "a",
+    "c",
+    "m"
+   ],
+   "wurzeln": [
+    2,
+    3,
+    1203
+   ],
+   "frei_anschluesse": {
+    "a": "W0.b1",
+    "c": "W0.b0"
+   },
+   "relation_zeilen": 4,
+   "linear_zugelassen": 8,
+   "rest_verloren": 4,
+   "beschreibbar": [],
+   "relation": [
+    "0000",
+    "0010",
+    "1000",
+    "1011"
+   ],
+   "verlorene_kombinationen": [
+    "001",
+    "010",
+    "101",
+    "111"
+   ]
+  },
+  {
+   "typ": "Maj",
+   "index": 250,
+   "runde": 7,
+   "status": "offen",
+   "offene_anschluesse": [
+    "a",
+    "c",
+    "m"
+   ],
+   "wurzeln": [
+    1189,
+    1203,
+    1205
+   ],
+   "frei_anschluesse": {},
+   "relation_zeilen": 4,
+   "linear_zugelassen": 8,
+   "rest_verloren": 4,
+   "beschreibbar": [],
+   "relation": [
+    "0000",
+    "0010",
+    "1000",
+    "1011"
+   ],
+   "verlorene_kombinationen": [
+    "001",
+    "011",
+    "101",
+    "110"
+   ]
+  },
+  {
+   "typ": "Maj",
+   "index": 251,
+   "runde": 7,
+   "status": "offen",
+   "offene_anschluesse": [
+    "a",
+    "c",
+    "m"
+   ],
+   "wurzeln": [
+    1196,
+    1205,
+    1209
+   ],
+   "frei_anschluesse": {},
+   "relation_zeilen": 4,
+   "linear_zugelassen": 8,
+   "rest_verloren": 4,
+   "beschreibbar": [],
+   "relation": [
+    "0100",
+    "0111",
+    "1101",
+    "1111"
+   ],
+   "verlorene_kombinationen": [
+    "000",
+    "011",
+    "101",
+    "111"
+   ]
+  },
+  {
+   "typ": "Maj",
+   "index": 252,
+   "runde": 7,
+   "status": "offen",
+   "offene_anschluesse": [
+    "a",
+    "b"
+   ],
+   "wurzeln": [
+    2
+   ],
+   "frei_anschluesse": {
+    "a": "W0.b0",
+    "b": "W0.b0"
+   },
+   "relation_zeilen": 2,
+   "linear_zugelassen": 2,
+   "rest_verloren": 0,
+   "beschreibbar": [
+    "a^b=1"
+   ],
+   "relation": [
+    "0100",
+    "1000"
+   ],
+   "verlorene_kombinationen": []
+  },
+  {
+   "typ": "Maj",
+   "index": 253,
+   "runde": 7,
+   "status": "offen",
+   "offene_anschluesse": [
+    "a",
+    "b",
+    "m"
+   ],
+   "wurzeln": [
+    222,
+    1202,
+    1214
+   ],
+   "frei_anschluesse": {},
+   "relation_zeilen": 4,
+   "linear_zugelassen": 8,
+   "rest_verloren": 4,
+   "beschreibbar": [],
+   "relation": [
+    "0000",
+    "0100",
+    "1000",
+    "1101"
+   ],
+   "verlorene_kombinationen": [
+    "001",
+    "011",
+    "101",
+    "110"
+   ]
+  },
+  {
+   "typ": "Maj",
+   "index": 254,
+   "runde": 7,
+   "status": "offen",
+   "offene_anschluesse": [
+    "a",
+    "b",
+    "c",
+    "m"
+   ],
+   "wurzeln": [
+    229,
+    1204,
+    1214,
+    1226
+   ],
+   "frei_anschluesse": {},
+   "relation_zeilen": 8,
+   "linear_zugelassen": 8,
+   "rest_verloren": 4,
+   "beschreibbar": [],
+   "relation": [
+    "0000",
+    "0010",
+    "0100",
+    "0111",
+    "1000",
+    "1011",
+    "1101",
+    "1111"
+   ],
+   "verlorene_kombinationen": [
+    "0001",
+    "0110",
+    "1010",
+    "1100"
+   ]
+  },
+  {
+   "typ": "Maj",
+   "index": 255,
+   "runde": 7,
+   "status": "offen",
+   "offene_anschluesse": [
+    "a",
+    "b",
+    "c",
+    "m"
+   ],
+   "wurzeln": [
+    236,
+    1206,
+    1226,
+    1232
+   ],
+   "frei_anschluesse": {},
+   "relation_zeilen": 8,
+   "linear_zugelassen": 16,
+   "rest_verloren": 8,
+   "beschreibbar": [],
+   "relation": [
+    "0000",
+    "0010",
+    "0100",
+    "0111",
+    "1000",
+    "1011",
+    "1101",
+    "1111"
+   ],
+   "verlorene_kombinationen": [
+    "0000",
+    "0011",
+    "0100",
+    "0110",
+    "1001",
+    "1011",
+    "1100",
+    "1111"
+   ]
+  },
+  {
+   "typ": "Maj",
+   "index": 256,
+   "runde": 7,
+   "status": "fest"
+  },
+  {
+   "typ": "Maj",
+   "index": 257,
+   "runde": 7,
+   "status": "fest"
+  },
+  {
+   "typ": "Maj",
+   "index": 258,
+   "runde": 7,
+   "status": "fest"
+  },
+  {
+   "typ": "Maj",
+   "index": 259,
+   "runde": 7,
+   "status": "fest"
+  },
+  {
+   "typ": "Maj",
+   "index": 260,
+   "runde": 7,
+   "status": "fest"
+  },
+  {
+   "typ": "Maj",
+   "index": 261,
+   "runde": 7,
+   "status": "fest"
+  },
+  {
+   "typ": "Maj",
+   "index": 262,
+   "runde": 7,
+   "status": "fest"
+  },
+  {
+   "typ": "Maj",
+   "index": 263,
+   "runde": 7,
+   "status": "fest"
+  },
+  {
+   "typ": "Maj",
+   "index": 264,
+   "runde": 7,
+   "status": "fest"
+  },
+  {
+   "typ": "Maj",
+   "index": 265,
+   "runde": 7,
+   "status": "fest"
+  },
+  {
+   "typ": "Maj",
+   "index": 266,
+   "runde": 7,
+   "status": "fest"
+  },
+  {
+   "typ": "Maj",
+   "index": 267,
+   "runde": 7,
+   "status": "fest"
+  },
+  {
+   "typ": "Maj",
+   "index": 268,
+   "runde": 7,
+   "status": "fest"
+  },
+  {
+   "typ": "Maj",
+   "index": 269,
+   "runde": 7,
+   "status": "fest"
+  },
+  {
+   "typ": "Maj",
+   "index": 270,
+   "runde": 7,
+   "status": "fest"
+  },
+  {
+   "typ": "Maj",
+   "index": 271,
+   "runde": 7,
+   "status": "fest"
+  },
+  {
+   "typ": "Maj",
+   "index": 272,
+   "runde": 8,
+   "status": "fest"
+  },
+  {
+   "typ": "Maj",
+   "index": 273,
+   "runde": 8,
+   "status": "fest"
+  },
+  {
+   "typ": "Maj",
+   "index": 274,
+   "runde": 8,
+   "status": "fest"
+  },
+  {
+   "typ": "Maj",
+   "index": 275,
+   "runde": 8,
+   "status": "fest"
+  },
+  {
+   "typ": "Maj",
+   "index": 276,
+   "runde": 8,
+   "status": "offen",
+   "offene_anschluesse": [
+    "b"
+   ],
+   "wurzeln": [
+    2
+   ],
+   "frei_anschluesse": {
+    "b": "W0.b0"
+   },
+   "relation_zeilen": 2,
+   "linear_zugelassen": 2,
+   "rest_verloren": 0,
+   "beschreibbar": [],
+   "relation": [
+    "0000",
+    "0100"
+   ],
+   "verlorene_kombinationen": []
+  },
+  {
+   "typ": "Maj",
+   "index": 277,
+   "runde": 8,
+   "status": "offen",
+   "offene_anschluesse": [
+    "b",
+    "m"
+   ],
+   "wurzeln": [
+    1390
+   ],
+   "frei_anschluesse": {},
+   "relation_zeilen": 2,
+   "linear_zugelassen": 2,
+   "rest_verloren": 0,
+   "beschreibbar": [
+    "b^m=0"
+   ],
+   "relation": [
+    "1000",
+    "1101"
+   ],
+   "verlorene_kombinationen": []
+  },
+  {
+   "typ": "Maj",
+   "index": 278,
+   "runde": 8,
+   "status": "offen",
+   "offene_anschluesse": [
+    "b",
+    "c",
+    "m"
+   ],
+   "wurzeln": [
+    1376,
+    1390,
+    1509
+   ],
+   "frei_anschluesse": {},
+   "relation_zeilen": 4,
+   "linear_zugelassen": 8,
+   "rest_verloren": 4,
+   "beschreibbar": [],
+   "relation": [
+    "1000",
+    "1011",
+    "1101",
+    "1111"
+   ],
+   "verlorene_kombinationen": [
+    "000",
+    "001",
+    "011",
+    "110"
+   ]
+  },
+  {
+   "typ": "Maj",
+   "index": 279,
+   "runde": 8,
+   "status": "offen",
+   "offene_anschluesse": [
+    "c",
+    "m"
+   ],
+   "wurzeln": [
+    1376
+   ],
+   "frei_anschluesse": {},
+   "relation_zeilen": 2,
+   "linear_zugelassen": 2,
+   "rest_verloren": 0,
+   "beschreibbar": [
+    "c^m=0"
+   ],
+   "relation": [
+    "1000",
+    "1011"
+   ],
+   "verlorene_kombinationen": []
+  },
+  {
+   "typ": "Maj",
+   "index": 280,
+   "runde": 8,
+   "status": "offen",
+   "offene_anschluesse": [
+    "a"
+   ],
+   "wurzeln": [
+    2
+   ],
+   "frei_anschluesse": {
+    "a": "W0.b0"
+   },
+   "relation_zeilen": 2,
+   "linear_zugelassen": 2,
+   "rest_verloren": 0,
+   "beschreibbar": [],
+   "relation": [
+    "0000",
+    "1000"
+   ],
+   "verlorene_kombinationen": []
+  },
+  {
+   "typ": "Maj",
+   "index": 281,
+   "runde": 8,
+   "status": "offen",
+   "offene_anschluesse": [
+    "a"
+   ],
+   "wurzeln": [
+    1390
+   ],
+   "frei_anschluesse": {},
+   "relation_zeilen": 2,
+   "linear_zugelassen": 2,
+   "rest_verloren": 0,
+   "beschreibbar": [],
+   "relation": [
+    "0000",
+    "1000"
+   ],
+   "verlorene_kombinationen": []
+  },
+  {
+   "typ": "Maj",
+   "index": 282,
+   "runde": 8,
+   "status": "offen",
+   "offene_anschluesse": [
+    "a",
+    "m"
+   ],
+   "wurzeln": [
+    1369
+   ],
+   "frei_anschluesse": {},
+   "relation_zeilen": 2,
+   "linear_zugelassen": 2,
+   "rest_verloren": 0,
+   "beschreibbar": [
+    "a^m=0"
+   ],
+   "relation": [
+    "0100",
+    "1101"
+   ],
+   "verlorene_kombinationen": []
+  },
+  {
+   "typ": "Maj",
+   "index": 283,
+   "runde": 8,
+   "status": "offen",
+   "offene_anschluesse": [
+    "a",
+    "c",
+    "m"
+   ],
+   "wurzeln": [
+    1369,
+    1376,
+    1385
+   ],
+   "frei_anschluesse": {},
+   "relation_zeilen": 4,
+   "linear_zugelassen": 8,
+   "rest_verloren": 4,
+   "beschreibbar": [],
+   "relation": [
+    "0100",
+    "0111",
+    "1101",
+    "1111"
+   ],
+   "verlorene_kombinationen": [
+    "001",
+    "010",
+    "101",
+    "111"
+   ]
+  },
+  {
+   "typ": "Maj",
+   "index": 284,
+   "runde": 8,
+   "status": "offen",
+   "offene_anschluesse": [
+    "a",
+    "b"
+   ],
+   "wurzeln": [
+    2
+   ],
+   "frei_anschluesse": {
+    "a": "W0.b0",
+    "b": "W0.b0"
+   },
+   "relation_zeilen": 2,
+   "linear_zugelassen": 2,
+   "rest_verloren": 0,
+   "beschreibbar": [
+    "a^b=1"
+   ],
+   "relation": [
+    "0100",
+    "1000"
+   ],
+   "verlorene_kombinationen": []
+  },
+  {
+   "typ": "Maj",
+   "index": 285,
+   "runde": 8,
+   "status": "offen",
+   "offene_anschluesse": [
+    "a",
+    "b",
+    "m"
+   ],
+   "wurzeln": [
+    1390
+   ],
+   "frei_anschluesse": {},
+   "relation_zeilen": 2,
+   "linear_zugelassen": 2,
+   "rest_verloren": 0,
+   "beschreibbar": [
+    "a^b=0",
+    "a^m=0",
+    "b^m=0"
+   ],
+   "relation": [
+    "0000",
+    "1101"
+   ],
+   "verlorene_kombinationen": []
+  },
+  {
+   "typ": "Maj",
+   "index": 286,
+   "runde": 8,
+   "status": "offen",
+   "offene_anschluesse": [
+    "a",
+    "b",
+    "c",
+    "m"
+   ],
+   "wurzeln": [
+    1369,
+    1390,
+    1402,
+    1509
+   ],
+   "frei_anschluesse": {},
+   "relation_zeilen": 8,
+   "linear_zugelassen": 16,
+   "rest_verloren": 8,
+   "beschreibbar": [],
+   "relation": [
+    "0000",
+    "0010",
+    "0100",
+    "0111",
+    "1000",
+    "1011",
+    "1101",
+    "1111"
+   ],
+   "verlorene_kombinationen": [
+    "0001",
+    "0010",
+    "0100",
+    "0101",
+    "1010",
+    "1011",
+    "1101",
+    "1110"
+   ]
+  },
+  {
+   "typ": "Maj",
+   "index": 287,
+   "runde": 8,
+   "status": "offen",
+   "offene_anschluesse": [
+    "a",
+    "b",
+    "c",
+    "m"
+   ],
+   "wurzeln": [
+    293,
+    1382,
+    1402,
+    1408
+   ],
+   "frei_anschluesse": {},
+   "relation_zeilen": 8,
+   "linear_zugelassen": 16,
+   "rest_verloren": 8,
+   "beschreibbar": [],
+   "relation": [
+    "0000",
+    "0010",
+    "0100",
+    "0111",
+    "1000",
+    "1011",
+    "1101",
+    "1111"
+   ],
+   "verlorene_kombinationen": [
+    "0000",
+    "0010",
+    "0100",
+    "0111",
+    "1000",
+    "1011",
+    "1101",
+    "1111"
+   ]
+  },
+  {
+   "typ": "Maj",
+   "index": 288,
+   "runde": 8,
+   "status": "fest"
+  },
+  {
+   "typ": "Maj",
+   "index": 289,
+   "runde": 8,
+   "status": "fest"
+  },
+  {
+   "typ": "Maj",
+   "index": 290,
+   "runde": 8,
+   "status": "fest"
+  },
+  {
+   "typ": "Maj",
+   "index": 291,
+   "runde": 8,
+   "status": "fest"
+  },
+  {
+   "typ": "Maj",
+   "index": 292,
+   "runde": 8,
+   "status": "fest"
+  },
+  {
+   "typ": "Maj",
+   "index": 293,
+   "runde": 8,
+   "status": "fest"
+  },
+  {
+   "typ": "Maj",
+   "index": 294,
+   "runde": 8,
+   "status": "fest"
+  },
+  {
+   "typ": "Maj",
+   "index": 295,
+   "runde": 8,
+   "status": "fest"
+  },
+  {
+   "typ": "Maj",
+   "index": 296,
+   "runde": 8,
+   "status": "fest"
+  },
+  {
+   "typ": "Maj",
+   "index": 297,
+   "runde": 8,
+   "status": "fest"
+  },
+  {
+   "typ": "Maj",
+   "index": 298,
+   "runde": 8,
+   "status": "fest"
+  },
+  {
+   "typ": "Maj",
+   "index": 299,
+   "runde": 8,
+   "status": "fest"
+  },
+  {
+   "typ": "Maj",
+   "index": 300,
+   "runde": 8,
+   "status": "fest"
+  },
+  {
+   "typ": "Maj",
+   "index": 301,
+   "runde": 8,
+   "status": "fest"
+  },
+  {
+   "typ": "Maj",
+   "index": 302,
+   "runde": 8,
+   "status": "fest"
+  },
+  {
+   "typ": "Maj",
+   "index": 303,
+   "runde": 8,
+   "status": "fest"
+  },
+  {
+   "typ": "Maj",
+   "index": 304,
+   "runde": 9,
+   "status": "offen",
+   "offene_anschluesse": [
+    "a",
+    "m"
+   ],
+   "wurzeln": [
+    2
+   ],
+   "frei_anschluesse": {
+    "a": "W0.b0",
+    "m": "W0.b0"
+   },
+   "relation_zeilen": 2,
+   "linear_zugelassen": 2,
+   "rest_verloren": 0,
+   "beschreibbar": [
+    "a^m=0"
+   ],
+   "relation": [
+    "0100",
+    "1101"
+   ],
+   "verlorene_kombinationen": []
+  },
+  {
+   "typ": "Maj",
+   "index": 305,
+   "runde": 9,
+   "status": "offen",
+   "offene_anschluesse": [
+    "a",
+    "c",
+    "m"
+   ],
+   "wurzeln": [
+    2,
+    1390,
+    1505
+   ],
+   "frei_anschluesse": {
+    "c": "W0.b0"
+   },
+   "relation_zeilen": 4,
+   "linear_zugelassen": 8,
+   "rest_verloren": 4,
+   "beschreibbar": [],
+   "relation": [
+    "0000",
+    "0010",
+    "1000",
+    "1011"
+   ],
+   "verlorene_kombinationen": [
+    "000",
+    "011",
+    "101",
+    "111"
+   ]
+  },
+  {
+   "typ": "Maj",
+   "index": 306,
+   "runde": 9,
+   "status": "offen",
+   "offene_anschluesse": [
+    "a",
+    "c",
+    "m"
+   ],
+   "wurzeln": [
+    1505,
+    1509,
+    1515
+   ],
+   "frei_anschluesse": {},
+   "relation_zeilen": 4,
+   "linear_zugelassen": 8,
+   "rest_verloren": 4,
+   "beschreibbar": [],
+   "relation": [
+    "0100",
+    "0111",
+    "1101",
+    "1111"
+   ],
+   "verlorene_kombinationen": [
+    "000",
+    "011",
+    "101",
+    "111"
+   ]
+  },
+  {
+   "typ": "Maj",
+   "index": 307,
+   "runde": 9,
+   "status": "offen",
+   "offene_anschluesse": [
+    "a",
+    "c",
+    "m"
+   ],
+   "wurzeln": [
+    1515,
+    1516,
+    1519
+   ],
+   "frei_anschluesse": {},
+   "relation_zeilen": 4,
+   "linear_zugelassen": 8,
+   "rest_verloren": 4,
+   "beschreibbar": [],
+   "relation": [
+    "0000",
+    "0010",
+    "1000",
+    "1011"
+   ],
+   "verlorene_kombinationen": [
+    "001",
+    "010",
+    "101",
+    "111"
+   ]
+  },
+  {
+   "typ": "Maj",
+   "index": 308,
+   "runde": 9,
+   "status": "offen",
+   "offene_anschluesse": [
+    "a"
+   ],
+   "wurzeln": [
+    2
+   ],
+   "frei_anschluesse": {
+    "a": "W0.b0"
+   },
+   "relation_zeilen": 2,
+   "linear_zugelassen": 2,
+   "rest_verloren": 0,
+   "beschreibbar": [],
+   "relation": [
+    "0000",
+    "1000"
+   ],
+   "verlorene_kombinationen": []
+  },
+  {
+   "typ": "Maj",
+   "index": 309,
+   "runde": 9,
+   "status": "offen",
+   "offene_anschluesse": [
+    "a"
+   ],
+   "wurzeln": [
+    3
+   ],
+   "frei_anschluesse": {
+    "a": "W0.b1"
+   },
+   "relation_zeilen": 2,
+   "linear_zugelassen": 2,
+   "rest_verloren": 0,
+   "beschreibbar": [],
+   "relation": [
+    "0000",
+    "1000"
+   ],
+   "verlorene_kombinationen": []
+  },
+  {
+   "typ": "Maj",
+   "index": 310,
+   "runde": 9,
+   "status": "offen",
+   "offene_anschluesse": [
+    "a"
+   ],
+   "wurzeln": [
+    1545
+   ],
+   "frei_anschluesse": {},
+   "relation_zeilen": 2,
+   "linear_zugelassen": 2,
+   "rest_verloren": 0,
+   "beschreibbar": [],
+   "relation": [
+    "0000",
+    "1000"
+   ],
+   "verlorene_kombinationen": []
+  },
+  {
+   "typ": "Maj",
+   "index": 311,
+   "runde": 9,
+   "status": "offen",
+   "offene_anschluesse": [
+    "a"
+   ],
+   "wurzeln": [
+    1552
+   ],
+   "frei_anschluesse": {},
+   "relation_zeilen": 2,
+   "linear_zugelassen": 2,
+   "rest_verloren": 0,
+   "beschreibbar": [],
+   "relation": [
+    "0000",
+    "1000"
+   ],
+   "verlorene_kombinationen": []
+  },
+  {
+   "typ": "Maj",
+   "index": 312,
+   "runde": 9,
+   "status": "offen",
+   "offene_anschluesse": [
+    "a"
+   ],
+   "wurzeln": [
+    2
+   ],
+   "frei_anschluesse": {
+    "a": "W0.b0"
+   },
+   "relation_zeilen": 2,
+   "linear_zugelassen": 2,
+   "rest_verloren": 0,
+   "beschreibbar": [],
+   "relation": [
+    "0000",
+    "1000"
+   ],
+   "verlorene_kombinationen": []
+  },
+  {
+   "typ": "Maj",
+   "index": 313,
+   "runde": 9,
+   "status": "offen",
+   "offene_anschluesse": [
+    "a",
+    "m"
+   ],
+   "wurzeln": [
+    3
+   ],
+   "frei_anschluesse": {
+    "a": "W0.b1",
+    "m": "W0.b1"
+   },
+   "relation_zeilen": 2,
+   "linear_zugelassen": 2,
+   "rest_verloren": 0,
+   "beschreibbar": [
+    "a^m=0"
+   ],
+   "relation": [
+    "0100",
+    "1101"
+   ],
+   "verlorene_kombinationen": []
+  },
+  {
+   "typ": "Maj",
+   "index": 314,
+   "runde": 9,
+   "status": "offen",
+   "offene_anschluesse": [
+    "a",
+    "c",
+    "m"
+   ],
+   "wurzeln": [
+    3,
+    1545,
+    1559
+   ],
+   "frei_anschluesse": {
+    "c": "W0.b1"
+   },
+   "relation_zeilen": 4,
+   "linear_zugelassen": 8,
+   "rest_verloren": 4,
+   "beschreibbar": [],
+   "relation": [
+    "0000",
+    "0010",
+    "1000",
+    "1011"
+   ],
+   "verlorene_kombinationen": [
+    "000",
+    "011",
+    "101",
+    "111"
+   ]
+  },
+  {
+   "typ": "Maj",
+   "index": 315,
+   "runde": 9,
+   "status": "offen",
+   "offene_anschluesse": [
+    "a",
+    "c",
+    "m"
+   ],
+   "wurzeln": [
+    1552,
+    1559,
+    1561
+   ],
+   "frei_anschluesse": {},
+   "relation_zeilen": 4,
+   "linear_zugelassen": 8,
+   "rest_verloren": 4,
+   "beschreibbar": [],
+   "relation": [
+    "0000",
+    "0010",
+    "1000",
+    "1011"
+   ],
+   "verlorene_kombinationen": [
+    "001",
+    "011",
+    "101",
+    "110"
+   ]
+  },
+  {
+   "typ": "Maj",
+   "index": 316,
+   "runde": 9,
+   "status": "offen",
+   "offene_anschluesse": [
+    "a",
+    "b"
+   ],
+   "wurzeln": [
+    2
+   ],
+   "frei_anschluesse": {
+    "a": "W0.b0",
+    "b": "W0.b0"
+   },
+   "relation_zeilen": 2,
+   "linear_zugelassen": 2,
+   "rest_verloren": 0,
+   "beschreibbar": [
+    "a^b=1"
+   ],
+   "relation": [
+    "0100",
+    "1000"
+   ],
+   "verlorene_kombinationen": []
+  },
+  {
+   "typ": "Maj",
+   "index": 317,
+   "runde": 9,
+   "status": "offen",
+   "offene_anschluesse": [
+    "a",
+    "b"
+   ],
+   "wurzeln": [
+    3
+   ],
+   "frei_anschluesse": {
+    "a": "W0.b1",
+    "b": "W0.b1"
+   },
+   "relation_zeilen": 2,
+   "linear_zugelassen": 2,
+   "rest_verloren": 0,
+   "beschreibbar": [
+    "a^b=1"
+   ],
+   "relation": [
+    "0100",
+    "1000"
+   ],
+   "verlorene_kombinationen": []
+  },
+  {
+   "typ": "Maj",
+   "index": 318,
+   "runde": 9,
+   "status": "offen",
+   "offene_anschluesse": [
+    "a",
+    "b",
+    "m"
+   ],
+   "wurzeln": [
+    1573
+   ],
+   "frei_anschluesse": {},
+   "relation_zeilen": 2,
+   "linear_zugelassen": 2,
+   "rest_verloren": 0,
+   "beschreibbar": [
+    "a^b=0",
+    "a^m=0",
+    "b^m=0"
+   ],
+   "relation": [
+    "0000",
+    "1101"
+   ],
+   "verlorene_kombinationen": []
+  },
+  {
+   "typ": "Maj",
+   "index": 319,
+   "runde": 9,
+   "status": "offen",
+   "offene_anschluesse": [
+    "a",
+    "b",
+    "c",
+    "m"
+   ],
+   "wurzeln": [
+    350,
+    1560,
+    1573,
+    1584
+   ],
+   "frei_anschluesse": {},
+   "relation_zeilen": 8,
+   "linear_zugelassen": 8,
+   "rest_verloren": 4,
+   "beschreibbar": [],
+   "relation": [
+    "0000",
+    "0010",
+    "0100",
+    "0111",
+    "1000",
+    "1011",
+    "1101",
+    "1111"
+   ],
+   "verlorene_kombinationen": [
+    "0010",
+    "0100",
+    "1000",
+    "1111"
+   ]
+  },
+  {
+   "typ": "Maj",
+   "index": 320,
+   "runde": 9,
+   "status": "fest"
+  },
+  {
+   "typ": "Maj",
+   "index": 321,
+   "runde": 9,
+   "status": "fest"
+  },
+  {
+   "typ": "Maj",
+   "index": 322,
+   "runde": 9,
+   "status": "fest"
+  },
+  {
+   "typ": "Maj",
+   "index": 323,
+   "runde": 9,
+   "status": "fest"
+  },
+  {
+   "typ": "Maj",
+   "index": 324,
+   "runde": 9,
+   "status": "fest"
+  },
+  {
+   "typ": "Maj",
+   "index": 325,
+   "runde": 9,
+   "status": "fest"
+  },
+  {
+   "typ": "Maj",
+   "index": 326,
+   "runde": 9,
+   "status": "fest"
+  },
+  {
+   "typ": "Maj",
+   "index": 327,
+   "runde": 9,
+   "status": "fest"
+  },
+  {
+   "typ": "Maj",
+   "index": 328,
+   "runde": 9,
+   "status": "fest"
+  },
+  {
+   "typ": "Maj",
+   "index": 329,
+   "runde": 9,
+   "status": "fest"
+  },
+  {
+   "typ": "Maj",
+   "index": 330,
+   "runde": 9,
+   "status": "fest"
+  },
+  {
+   "typ": "Maj",
+   "index": 331,
+   "runde": 9,
+   "status": "fest"
+  },
+  {
+   "typ": "Maj",
+   "index": 332,
+   "runde": 9,
+   "status": "fest"
+  },
+  {
+   "typ": "Maj",
+   "index": 333,
+   "runde": 9,
+   "status": "fest"
+  },
+  {
+   "typ": "Maj",
+   "index": 334,
+   "runde": 9,
+   "status": "fest"
+  },
+  {
+   "typ": "Maj",
+   "index": 335,
+   "runde": 9,
+   "status": "fest"
+  }
+ ],
+ "gemeinsame_wurzeln": {
+  "2": [
+   "Ch#4(R2)",
+   "Ch#8(R3)",
+   "Ch#12(R4)",
+   "Ch#13(R4)",
+   "Ch#14(R4)",
+   "Ch#16(R5)",
+   "Ch#17(R5)",
+   "Ch#18(R5)",
+   "Ch#20(R6)",
+   "Ch#21(R6)",
+   "Ch#22(R6)",
+   "Ch#24(R7)",
+   "Ch#28(R8)",
+   "Maj#0(RNone)",
+   "Maj#33(RNone)",
+   "Maj#41(RNone)",
+   "Maj#45(RNone)",
+   "Maj#60(R1)",
+   "Maj#72(R1)",
+   "Maj#73(R1)",
+   "Maj#76(R1)",
+   "Maj#96(R2)",
+   "Maj#100(R2)",
+   "Maj#128(R3)",
+   "Maj#132(R3)",
+   "Maj#136(R3)",
+   "Maj#140(R3)",
+   "Maj#141(R3)",
+   "Maj#142(R3)",
+   "Maj#160(R4)",
+   "Maj#176(R5)",
+   "Maj#177(R5)",
+   "Maj#180(R5)",
+   "Maj#181(R5)",
+   "Maj#204(R5)",
+   "Maj#212(R6)",
+   "Maj#240(R7)",
+   "Maj#241(R7)",
+   "Maj#242(R7)",
+   "Maj#244(R7)",
+   "Maj#245(R7)",
+   "Maj#248(R7)",
+   "Maj#249(R7)",
+   "Maj#252(R7)",
+   "Maj#276(R8)",
+   "Maj#280(R8)",
+   "Maj#284(R8)",
+   "Maj#304(R9)",
+   "Maj#305(R9)",
+   "Maj#308(R9)",
+   "Maj#312(R9)",
+   "Maj#316(R9)"
+  ],
+  "3": [
+   "Ch#5(R2)",
+   "Ch#9(R3)",
+   "Ch#13(R4)",
+   "Maj#1(RNone)",
+   "Maj#34(RNone)",
+   "Maj#42(RNone)",
+   "Maj#61(R1)",
+   "Maj#62(R1)",
+   "Maj#73(R1)",
+   "Maj#77(R1)",
+   "Maj#78(R1)",
+   "Maj#103(R2)",
+   "Maj#177(R5)",
+   "Maj#249(R7)",
+   "Maj#309(R9)",
+   "Maj#313(R9)",
+   "Maj#314(R9)",
+   "Maj#317(R9)"
+  ],
+  "4": [
+   "Ch#6(R2)",
+   "Ch#10(R3)",
+   "Ch#14(R4)",
+   "Maj#2(RNone)",
+   "Maj#62(R1)",
+   "Maj#86(R2)",
+   "Maj#178(R5)"
+  ],
+  "374": [
+   "Ch#7(R2)",
+   "Ch#11(R3)",
+   "Ch#15(R4)",
+   "Maj#87(R2)",
+   "Maj#179(R5)"
+  ],
+  "416": [
+   "Ch#8(R3)",
+   "Ch#12(R4)",
+   "Ch#16(R5)",
+   "Maj#104(R2)",
+   "Maj#108(R2)",
+   "Maj#109(R2)",
+   "Maj#208(R6)"
+  ],
+  "505": [
+   "Ch#8(R3)",
+   "Maj#116(R3)"
+  ],
+  "506": [
+   "Ch#9(R3)",
+   "Maj#117(R3)"
+  ],
+  "812": [
+   "Ch#9(R3)",
+   "Ch#13(R4)",
+   "Ch#17(R5)",
+   "Maj#181(R5)",
+   "Maj#209(R6)"
+  ],
+  "508": [
+   "Ch#10(R3)",
+   "Maj#118(R3)"
+  ],
+  "815": [
+   "Ch#10(R3)",
+   "Ch#14(R4)",
+   "Ch#18(R5)",
+   "Maj#182(R5)",
+   "Maj#210(R6)"
+  ],
+  "488": [
+   "Ch#11(R3)",
+   "Ch#15(R4)",
+   "Ch#19(R5)",
+   "Maj#211(R6)"
+  ],
+  "509": [
+   "Ch#11(R3)",
+   "Maj#119(R3)"
+  ],
+  "646": [
+   "Ch#12(R4)",
+   "Maj#148(R4)"
+  ],
+  "649": [
+   "Ch#13(R4)",
+   "Maj#149(R4)"
+  ],
+  "665": [
+   "Ch#14(R4)",
+   "Maj#150(R4)"
+  ],
+  "655": [
+   "Ch#15(R4)",
+   "Maj#151(R4)"
+  ],
+  "1196": [
+   "Ch#15(R4)",
+   "Ch#19(R5)",
+   "Ch#23(R6)",
+   "Maj#99(R2)",
+   "Maj#103(R2)",
+   "Maj#131(R3)",
+   "Maj#135(R3)",
+   "Maj#139(R3)",
+   "Maj#143(R3)",
+   "Maj#163(R4)",
+   "Maj#183(R5)",
+   "Maj#207(R5)",
+   "Maj#243(R7)",
+   "Maj#247(R7)",
+   "Maj#251(R7)"
+  ],
+  "992": [
+   "Ch#21(R6)",
+   "Maj#213(R6)"
+  ],
+  "1390": [
+   "Ch#21(R6)",
+   "Ch#25(R7)",
+   "Ch#29(R8)",
+   "Maj#97(R2)",
+   "Maj#129(R3)",
+   "Maj#161(R4)",
+   "Maj#205(R5)",
+   "Maj#206(R5)",
+   "Maj#245(R7)",
+   "Maj#277(R8)",
+   "Maj#278(R8)",
+   "Maj#281(R8)",
+   "Maj#285(R8)",
+   "Maj#286(R8)",
+   "Maj#305(R9)"
+  ],
+  "995": [
+   "Ch#22(R6)",
+   "Maj#214(R6)"
+  ],
+  "1509": [
+   "Ch#22(R6)",
+   "Ch#26(R7)",
+   "Ch#30(R8)",
+   "Maj#100(R2)",
+   "Maj#278(R8)",
+   "Maj#286(R8)",
+   "Maj#306(R9)"
+  ],
+  "998": [
+   "Ch#23(R6)",
+   "Maj#215(R6)"
+  ],
+  "1516": [
+   "Ch#23(R6)",
+   "Ch#27(R7)",
+   "Ch#31(R8)",
+   "Maj#307(R9)"
+  ],
+  "13": [
+   "Maj#0(RNone)",
+   "Maj#12(RNone)",
+   "Maj#19(RNone)",
+   "Maj#127(R3)"
+  ],
+  "21": [
+   "Maj#0(RNone)",
+   "Maj#1(RNone)"
+  ],
+  "10": [
+   "Maj#1(RNone)",
+   "Maj#13(RNone)",
+   "Maj#16(RNone)",
+   "Maj#124(R3)"
+  ],
+  "28": [
+   "Maj#1(RNone)",
+   "Maj#2(RNone)"
+  ],
+  "35": [
+   "Maj#2(RNone)",
+   "Maj#3(RNone)"
+  ],
+  "5": [
+   "Maj#3(RNone)",
+   "Maj#63(R1)"
+  ],
+  "9": [
+   "Maj#4(RNone)",
+   "Maj#11(RNone)",
+   "Maj#95(R2)"
+  ],
+  "49": [
+   "Maj#4(RNone)",
+   "Maj#5(RNone)"
+  ],
+  "6": [
+   "Maj#5(RNone)",
+   "Maj#8(RNone)",
+   "Maj#92(R2)"
+  ],
+  "56": [
+   "Maj#5(RNone)",
+   "Maj#6(RNone)"
+  ],
+  "7": [
+   "Maj#6(RNone)",
+   "Maj#9(RNone)",
+   "Maj#93(R2)"
+  ],
+  "63": [
+   "Maj#6(RNone)",
+   "Maj#7(RNone)"
+  ],
+  "78": [
+   "Maj#8(RNone)",
+   "Maj#9(RNone)"
+  ],
+  "85": [
+   "Maj#9(RNone)",
+   "Maj#10(RNone)"
+  ],
+  "8": [
+   "Maj#10(RNone)",
+   "Maj#94(R2)"
+  ],
+  "92": [
+   "Maj#10(RNone)",
+   "Maj#11(RNone)"
+  ],
+  "109": [
+   "Maj#13(RNone)",
+   "Maj#14(RNone)"
+  ],
+  "11": [
+   "Maj#14(RNone)",
+   "Maj#17(RNone)",
+   "Maj#125(R3)"
+  ],
+  "120": [
+   "Maj#14(RNone)",
+   "Maj#15(RNone)"
+  ],
+  "135": [
+   "Maj#16(RNone)",
+   "Maj#17(RNone)"
+  ],
+  "142": [
+   "Maj#17(RNone)",
+   "Maj#18(RNone)"
+  ],
+  "12": [
+   "Maj#18(RNone)",
+   "Maj#126(R3)"
+  ],
+  "149": [
+   "Maj#18(RNone)",
+   "Maj#19(RNone)"
+  ],
+  "859": [
+   "Maj#18(RNone)",
+   "Maj#30(RNone)",
+   "Maj#33(RNone)",
+   "Maj#185(R5)",
+   "Maj#186(R5)",
+   "Maj#189(R5)",
+   "Maj#190(R5)"
+  ],
+  "846": [
+   "Maj#19(RNone)",
+   "Maj#190(R5)"
+  ],
+  "163": [
+   "Maj#20(RNone)",
+   "Maj#21(RNone)"
+  ],
+  "170": [
+   "Maj#21(RNone)",
+   "Maj#22(RNone)"
+  ],
+  "177": [
+   "Maj#22(RNone)",
+   "Maj#23(RNone)"
+  ],
+  "48": [
+   "Maj#24(RNone)",
+   "Maj#156(R4)"
+  ],
+  "192": [
+   "Maj#24(RNone)",
+   "Maj#25(RNone)"
+  ],
+  "51": [
+   "Maj#25(RNone)",
+   "Maj#157(R4)"
+  ],
+  "199": [
+   "Maj#25(RNone)",
+   "Maj#26(RNone)"
+  ],
+  "58": [
+   "Maj#26(RNone)",
+   "Maj#158(R4)"
+  ],
+  "206": [
+   "Maj#26(RNone)",
+   "Maj#27(RNone)"
+  ],
+  "65": [
+   "Maj#27(RNone)",
+   "Maj#159(R4)"
+  ],
+  "220": [
+   "Maj#28(RNone)",
+   "Maj#29(RNone)"
+  ],
+  "227": [
+   "Maj#29(RNone)",
+   "Maj#30(RNone)"
+  ],
+  "234": [
+   "Maj#30(RNone)",
+   "Maj#31(RNone)"
+  ],
+  "248": [
+   "Maj#32(RNone)",
+   "Maj#33(RNone)",
+   "Maj#36(RNone)"
+  ],
+  "256": [
+   "Maj#33(RNone)",
+   "Maj#34(RNone)"
+  ],
+  "115": [
+   "Maj#34(RNone)",
+   "Maj#190(R5)"
+  ],
+  "263": [
+   "Maj#34(RNone)",
+   "Maj#35(RNone)"
+  ],
+  "122": [
+   "Maj#35(RNone)",
+   "Maj#191(R5)"
+  ],
+  "277": [
+   "Maj#36(RNone)",
+   "Maj#37(RNone)"
+  ],
+  "284": [
+   "Maj#37(RNone)",
+   "Maj#38(RNone)"
+  ],
+  "291": [
+   "Maj#38(RNone)",
+   "Maj#39(RNone)"
+  ],
+  "162": [
+   "Maj#40(RNone)",
+   "Maj#220(R6)"
+  ],
+  "306": [
+   "Maj#40(RNone)",
+   "Maj#41(RNone)"
+  ],
+  "165": [
+   "Maj#41(RNone)",
+   "Maj#221(R6)"
+  ],
+  "313": [
+   "Maj#41(RNone)",
+   "Maj#42(RNone)"
+  ],
+  "172": [
+   "Maj#42(RNone)",
+   "Maj#222(R6)"
+  ],
+  "320": [
+   "Maj#42(RNone)",
+   "Maj#43(RNone)"
+  ],
+  "179": [
+   "Maj#43(RNone)",
+   "Maj#223(R6)"
+  ],
+  "334": [
+   "Maj#44(RNone)",
+   "Maj#45(RNone)"
+  ],
+  "341": [
+   "Maj#45(RNone)",
+   "Maj#46(RNone)"
+  ],
+  "348": [
+   "Maj#46(RNone)",
+   "Maj#47(RNone)"
+  ],
+  "357": [
+   "Maj#62(R1)",
+   "Maj#63(R1)"
+  ],
+  "363": [
+   "Maj#73(R1)",
+   "Maj#74(R1)"
+  ],
+  "356": [
+   "Maj#74(R1)",
+   "Maj#78(R1)"
+  ],
+  "367": [
+   "Maj#74(R1)",
+   "Maj#75(R1)"
+  ],
+  "358": [
+   "Maj#75(R1)",
+   "Maj#79(R1)"
+  ],
+  "373": [
+   "Maj#78(R1)",
+   "Maj#79(R1)"
+  ],
+  "378": [
+   "Maj#80(R2)",
+   "Maj#81(R2)",
+   "Maj#82(R2)",
+   "Maj#84(R2)",
+   "Maj#85(R2)",
+   "Maj#88(R2)",
+   "Maj#89(R2)",
+   "Maj#92(R2)"
+  ],
+  "379": [
+   "Maj#81(R2)",
+   "Maj#83(R2)"
+  ],
+  "385": [
+   "Maj#81(R2)",
+   "Maj#82(R2)"
+  ],
+  "387": [
+   "Maj#82(R2)",
+   "Maj#83(R2)"
+  ],
+  "391": [
+   "Maj#85(R2)",
+   "Maj#86(R2)"
+  ],
+  "398": [
+   "Maj#86(R2)",
+   "Maj#87(R2)"
+  ],
+  "409": [
+   "Maj#89(R2)",
+   "Maj#90(R2)"
+  ],
+  "413": [
+   "Maj#90(R2)",
+   "Maj#91(R2)"
+  ],
+  "417": [
+   "Maj#92(R2)",
+   "Maj#93(R2)"
+  ],
+  "424": [
+   "Maj#93(R2)",
+   "Maj#94(R2)"
+  ],
+  "431": [
+   "Maj#94(R2)",
+   "Maj#95(R2)"
+  ],
+  "364": [
+   "Maj#98(R2)",
+   "Maj#102(R2)",
+   "Maj#130(R3)",
+   "Maj#162(R4)",
+   "Maj#206(R5)"
+  ],
+  "440": [
+   "Maj#100(R2)",
+   "Maj#101(R2)"
+  ],
+  "444": [
+   "Maj#101(R2)",
+   "Maj#102(R2)"
+  ],
+  "451": [
+   "Maj#102(R2)",
+   "Maj#103(R2)"
+  ],
+  "461": [
+   "Maj#104(R2)",
+   "Maj#105(R2)"
+  ],
+  "468": [
+   "Maj#105(R2)",
+   "Maj#106(R2)"
+  ],
+  "966": [
+   "Maj#105(R2)",
+   "Maj#109(R2)"
+  ],
+  "426": [
+   "Maj#106(R2)",
+   "Maj#110(R2)"
+  ],
+  "475": [
+   "Maj#106(R2)",
+   "Maj#107(R2)"
+  ],
+  "433": [
+   "Maj#107(R2)",
+   "Maj#111(R2)"
+  ],
+  "485": [
+   "Maj#109(R2)",
+   "Maj#110(R2)"
+  ],
+  "487": [
+   "Maj#110(R2)",
+   "Maj#111(R2)"
+  ],
+  "490": [
+   "Maj#112(R3)",
+   "Maj#113(R3)",
+   "Maj#114(R3)",
+   "Maj#116(R3)"
+  ],
+  "491": [
+   "Maj#113(R3)",
+   "Maj#115(R3)"
+  ],
+  "497": [
+   "Maj#113(R3)",
+   "Maj#114(R3)"
+  ],
+  "499": [
+   "Maj#114(R3)",
+   "Maj#115(R3)"
+  ],
+  "511": [
+   "Maj#116(R3)",
+   "Maj#117(R3)"
+  ],
+  "518": [
+   "Maj#117(R3)",
+   "Maj#118(R3)"
+  ],
+  "525": [
+   "Maj#118(R3)",
+   "Maj#119(R3)"
+  ],
+  "510": [
+   "Maj#120(R3)",
+   "Maj#121(R3)",
+   "Maj#124(R3)"
+  ],
+  "536": [
+   "Maj#121(R3)",
+   "Maj#122(R3)"
+  ],
+  "538": [
+   "Maj#122(R3)",
+   "Maj#123(R3)"
+  ],
+  "545": [
+   "Maj#124(R3)",
+   "Maj#125(R3)"
+  ],
+  "552": [
+   "Maj#125(R3)",
+   "Maj#126(R3)"
+  ],
+  "558": [
+   "Maj#126(R3)",
+   "Maj#127(R3)"
+  ],
+  "642": [
+   "Maj#144(R4)",
+   "Maj#145(R4)",
+   "Maj#146(R4)",
+   "Maj#147(R4)",
+   "Maj#148(R4)",
+   "Maj#149(R4)",
+   "Maj#151(R4)"
+  ],
+  "657": [
+   "Maj#148(R4)",
+   "Maj#149(R4)"
+  ],
+  "664": [
+   "Maj#149(R4)",
+   "Maj#150(R4)"
+  ],
+  "671": [
+   "Maj#150(R4)",
+   "Maj#151(R4)"
+  ],
+  "656": [
+   "Maj#152(R4)",
+   "Maj#156(R4)"
+  ],
+  "659": [
+   "Maj#153(R4)",
+   "Maj#154(R4)",
+   "Maj#157(R4)"
+  ],
+  "682": [
+   "Maj#154(R4)",
+   "Maj#155(R4)"
+  ],
+  "689": [
+   "Maj#156(R4)",
+   "Maj#157(R4)"
+  ],
+  "696": [
+   "Maj#157(R4)",
+   "Maj#158(R4)"
+  ],
+  "703": [
+   "Maj#158(R4)",
+   "Maj#159(R4)"
+  ],
+  "792": [
+   "Maj#177(R5)",
+   "Maj#178(R5)"
+  ],
+  "799": [
+   "Maj#178(R5)",
+   "Maj#179(R5)"
+  ],
+  "827": [
+   "Maj#181(R5)",
+   "Maj#182(R5)"
+  ],
+  "834": [
+   "Maj#182(R5)",
+   "Maj#183(R5)"
+  ],
+  "847": [
+   "Maj#186(R5)",
+   "Maj#187(R5)"
+  ],
+  "866": [
+   "Maj#190(R5)",
+   "Maj#191(R5)"
+  ],
+  "947": [
+   "Maj#206(R5)",
+   "Maj#207(R5)"
+  ],
+  "958": [
+   "Maj#208(R6)",
+   "Maj#210(R6)"
+  ],
+  "965": [
+   "Maj#208(R6)",
+   "Maj#209(R6)"
+  ],
+  "959": [
+   "Maj#209(R6)",
+   "Maj#211(R6)"
+  ],
+  "972": [
+   "Maj#209(R6)",
+   "Maj#210(R6)"
+  ],
+  "979": [
+   "Maj#210(R6)",
+   "Maj#211(R6)"
+  ],
+  "1000": [
+   "Maj#212(R6)",
+   "Maj#213(R6)"
+  ],
+  "1007": [
+   "Maj#213(R6)",
+   "Maj#214(R6)"
+  ],
+  "1014": [
+   "Maj#214(R6)",
+   "Maj#215(R6)"
+  ],
+  "999": [
+   "Maj#216(R6)",
+   "Maj#217(R6)",
+   "Maj#220(R6)"
+  ],
+  "1023": [
+   "Maj#217(R6)",
+   "Maj#218(R6)"
+  ],
+  "1027": [
+   "Maj#218(R6)",
+   "Maj#219(R6)"
+  ],
+  "1032": [
+   "Maj#220(R6)",
+   "Maj#221(R6)"
+  ],
+  "1039": [
+   "Maj#221(R6)",
+   "Maj#222(R6)"
+  ],
+  "1046": [
+   "Maj#222(R6)",
+   "Maj#223(R6)"
+  ],
+  "1189": [
+   "Maj#245(R7)",
+   "Maj#246(R7)",
+   "Maj#250(R7)"
+  ],
+  "1203": [
+   "Maj#249(R7)",
+   "Maj#250(R7)"
+  ],
+  "1205": [
+   "Maj#250(R7)",
+   "Maj#251(R7)"
+  ],
+  "1214": [
+   "Maj#253(R7)",
+   "Maj#254(R7)"
+  ],
+  "1226": [
+   "Maj#254(R7)",
+   "Maj#255(R7)"
+  ],
+  "1376": [
+   "Maj#278(R8)",
+   "Maj#279(R8)",
+   "Maj#283(R8)"
+  ],
+  "1369": [
+   "Maj#282(R8)",
+   "Maj#283(R8)",
+   "Maj#286(R8)"
+  ],
+  "1402": [
+   "Maj#286(R8)",
+   "Maj#287(R8)"
+  ],
+  "1505": [
+   "Maj#305(R9)",
+   "Maj#306(R9)"
+  ],
+  "1515": [
+   "Maj#306(R9)",
+   "Maj#307(R9)"
+  ],
+  "1545": [
+   "Maj#310(R9)",
+   "Maj#314(R9)"
+  ],
+  "1552": [
+   "Maj#311(R9)",
+   "Maj#315(R9)"
+  ],
+  "1559": [
+   "Maj#314(R9)",
+   "Maj#315(R9)"
+  ],
+  "1573": [
+   "Maj#318(R9)",
+   "Maj#319(R9)"
+  ]
+ },
+ "freie_bits_an_kaestchen": {
+  "2": {
+   "bit": "W0.b0",
+   "kaestchen": [
+    "Ch#4(R2)",
+    "Ch#8(R3)",
+    "Ch#12(R4)",
+    "Ch#13(R4)",
+    "Ch#14(R4)",
+    "Ch#16(R5)",
+    "Ch#17(R5)",
+    "Ch#18(R5)",
+    "Ch#20(R6)",
+    "Ch#21(R6)",
+    "Ch#22(R6)",
+    "Ch#24(R7)",
+    "Ch#28(R8)",
+    "Maj#0(RNone)",
+    "Maj#33(RNone)",
+    "Maj#41(RNone)",
+    "Maj#45(RNone)",
+    "Maj#60(R1)",
+    "Maj#72(R1)",
+    "Maj#73(R1)",
+    "Maj#76(R1)",
+    "Maj#96(R2)",
+    "Maj#100(R2)",
+    "Maj#128(R3)",
+    "Maj#132(R3)",
+    "Maj#136(R3)",
+    "Maj#140(R3)",
+    "Maj#141(R3)",
+    "Maj#142(R3)",
+    "Maj#160(R4)",
+    "Maj#176(R5)",
+    "Maj#177(R5)",
+    "Maj#180(R5)",
+    "Maj#181(R5)",
+    "Maj#204(R5)",
+    "Maj#212(R6)",
+    "Maj#240(R7)",
+    "Maj#241(R7)",
+    "Maj#242(R7)",
+    "Maj#244(R7)",
+    "Maj#245(R7)",
+    "Maj#248(R7)",
+    "Maj#249(R7)",
+    "Maj#252(R7)",
+    "Maj#276(R8)",
+    "Maj#280(R8)",
+    "Maj#284(R8)",
+    "Maj#304(R9)",
+    "Maj#305(R9)",
+    "Maj#308(R9)",
+    "Maj#312(R9)",
+    "Maj#316(R9)"
+   ]
+  },
+  "3": {
+   "bit": "W0.b1",
+   "kaestchen": [
+    "Ch#5(R2)",
+    "Ch#9(R3)",
+    "Ch#13(R4)",
+    "Maj#1(RNone)",
+    "Maj#34(RNone)",
+    "Maj#42(RNone)",
+    "Maj#61(R1)",
+    "Maj#62(R1)",
+    "Maj#73(R1)",
+    "Maj#77(R1)",
+    "Maj#78(R1)",
+    "Maj#103(R2)",
+    "Maj#177(R5)",
+    "Maj#249(R7)",
+    "Maj#309(R9)",
+    "Maj#313(R9)",
+    "Maj#314(R9)",
+    "Maj#317(R9)"
+   ]
+  },
+  "4": {
+   "bit": "W0.b2",
+   "kaestchen": [
+    "Ch#6(R2)",
+    "Ch#10(R3)",
+    "Ch#14(R4)",
+    "Maj#2(RNone)",
+    "Maj#62(R1)",
+    "Maj#86(R2)",
+    "Maj#178(R5)"
+   ]
+  },
+  "13": {
+   "bit": "W2.b3",
+   "kaestchen": [
+    "Maj#0(RNone)",
+    "Maj#12(RNone)",
+    "Maj#19(RNone)",
+    "Maj#127(R3)"
+   ]
+  },
+  "10": {
+   "bit": "W2.b0",
+   "kaestchen": [
+    "Maj#1(RNone)",
+    "Maj#13(RNone)",
+    "Maj#16(RNone)",
+    "Maj#124(R3)"
+   ]
+  },
+  "5": {
+   "bit": "W0.b3",
+   "kaestchen": [
+    "Maj#3(RNone)",
+    "Maj#63(R1)"
+   ]
+  },
+  "9": {
+   "bit": "W1.b3",
+   "kaestchen": [
+    "Maj#4(RNone)",
+    "Maj#11(RNone)",
+    "Maj#95(R2)"
+   ]
+  },
+  "6": {
+   "bit": "W1.b0",
+   "kaestchen": [
+    "Maj#5(RNone)",
+    "Maj#8(RNone)",
+    "Maj#92(R2)"
+   ]
+  },
+  "7": {
+   "bit": "W1.b1",
+   "kaestchen": [
+    "Maj#6(RNone)",
+    "Maj#9(RNone)",
+    "Maj#93(R2)"
+   ]
+  },
+  "8": {
+   "bit": "W1.b2",
+   "kaestchen": [
+    "Maj#10(RNone)",
+    "Maj#94(R2)"
+   ]
+  },
+  "11": {
+   "bit": "W2.b1",
+   "kaestchen": [
+    "Maj#14(RNone)",
+    "Maj#17(RNone)",
+    "Maj#125(R3)"
+   ]
+  },
+  "12": {
+   "bit": "W2.b2",
+   "kaestchen": [
+    "Maj#18(RNone)",
+    "Maj#126(R3)"
+   ]
+  }
+ },
+ "funktionen_ueber_freien_bits_normiert": {
+  "(('W0.b2',), (0, 1))": [
+   "Ch#6(R2) Ausgangswurzel 4"
+  ],
+  "(('W0.b0',), (0, 1))": [
+   "Ch#20(R6) Ausgangswurzel 2",
+   "Ch#28(R8) Ausgangswurzel 2",
+   "Maj#72(R1) Ausgangswurzel 2",
+   "Maj#96(R2) Ausgangswurzel 2",
+   "Maj#128(R3) Ausgangswurzel 2",
+   "Maj#140(R3) Ausgangswurzel 2",
+   "Maj#141(R3) Ausgangswurzel 2",
+   "Maj#176(R5) Ausgangswurzel 2",
+   "Maj#180(R5) Ausgangswurzel 2",
+   "Maj#240(R7) Ausgangswurzel 2",
+   "Maj#241(R7) Ausgangswurzel 2",
+   "Maj#244(R7) Ausgangswurzel 2",
+   "Maj#248(R7) Ausgangswurzel 2",
+   "Maj#304(R9) Ausgangswurzel 2"
+  ],
+  "(('W0.b0', 'W2.b3'), (0, 0, 0, 1))": [
+   "Maj#0(RNone) Ausgangswurzel 21"
+  ],
+  "(('W0.b1',), (0, 1))": [
+   "Maj#61(R1) Ausgangswurzel 3",
+   "Maj#77(R1) Ausgangswurzel 3",
+   "Maj#313(R9) Ausgangswurzel 3"
+  ],
+  "(('W0.b1', 'W0.b2'), (0, 0, 0, 1))": [
+   "Maj#62(R1) Ausgangswurzel 357"
+  ],
+  "(('W0.b0', 'W0.b1'), (0, 0, 1, 0))": [
+   "Maj#73(R1) Ausgangswurzel 363"
+  ],
+  "(('W0.b0', 'W0.b1'), (1, 0, 0, 0))": [
+   "Maj#177(R5) Ausgangswurzel 792"
+  ],
+  "(('W0.b0', 'W0.b1'), (0, 1, 0, 0))": [
+   "Maj#249(R7) Ausgangswurzel 1203"
+  ]
+ },
+ "gleiche_funktion_normiert": {
+  "(('W0.b0',), (0, 1))": [
+   "Ch#20(R6) Ausgangswurzel 2",
+   "Ch#28(R8) Ausgangswurzel 2",
+   "Maj#72(R1) Ausgangswurzel 2",
+   "Maj#96(R2) Ausgangswurzel 2",
+   "Maj#128(R3) Ausgangswurzel 2",
+   "Maj#140(R3) Ausgangswurzel 2",
+   "Maj#141(R3) Ausgangswurzel 2",
+   "Maj#176(R5) Ausgangswurzel 2",
+   "Maj#180(R5) Ausgangswurzel 2",
+   "Maj#240(R7) Ausgangswurzel 2",
+   "Maj#241(R7) Ausgangswurzel 2",
+   "Maj#244(R7) Ausgangswurzel 2",
+   "Maj#248(R7) Ausgangswurzel 2",
+   "Maj#304(R9) Ausgangswurzel 2"
+  ],
+  "(('W0.b1',), (0, 1))": [
+   "Maj#61(R1) Ausgangswurzel 3",
+   "Maj#77(R1) Ausgangswurzel 3",
+   "Maj#313(R9) Ausgangswurzel 3"
+  ]
+ },
+ "tafeln_ueber_allen_wurzeln": {
+  "kaestchen_mit_tafel": 209,
+  "wurzelmengen": 173,
+  "wurzelmengen_mit_mehreren": 11,
+  "paare": 134,
+  "nach_art": {
+   "affin": 8,
+   "nie_beide_1": 8,
+   "nicht affin": 2,
+   "gleiche_ausgangswurzel": 124
+  },
+  "wurzelmengen_nur_freie_bits": 6,
+  "wurzelmengen_mit_inneren": 167
+ },
+ "paare_ueber_allen_wurzeln": [
+  {
+   "paar": [
+    "Ch#8(R3)",
+    "Ch#12(R4)"
+   ],
+   "wurzeln": [
+    "x0",
+    "w416"
+   ],
+   "art": "affin",
+   "nie_beide_1": false
+  },
+  {
+   "paar": [
+    "Ch#8(R3)",
+    "Ch#16(R5)"
+   ],
+   "wurzeln": [
+    "x0",
+    "w416"
+   ],
+   "art": "nicht affin",
+   "nie_beide_1": true
+  },
+  {
+   "paar": [
+    "Ch#12(R4)",
+    "Ch#16(R5)"
+   ],
+   "wurzeln": [
+    "x0",
+    "w416"
+   ],
+   "art": "nicht affin",
+   "nie_beide_1": false
+  },
+  {
+   "paar": [
+    "Ch#21(R6)",
+    "Maj#245(R7)"
+   ],
+   "wurzeln": [
+    "x0",
+    "w1390"
+   ],
+   "art": "affin",
+   "nie_beide_1": true
+  },
+  {
+   "paar": [
+    "Ch#21(R6)",
+    "Maj#305(R9)"
+   ],
+   "wurzeln": [
+    "x0",
+    "w1390"
+   ],
+   "art": "affin",
+   "nie_beide_1": true
+  },
+  {
+   "paar": [
+    "Maj#245(R7)",
+    "Maj#305(R9)"
+   ],
+   "wurzeln": [
+    "x0",
+    "w1390"
+   ],
+   "art": "affin",
+   "nie_beide_1": true
+  },
+  {
+   "paar": [
+    "Ch#22(R6)",
+    "Maj#100(R2)"
+   ],
+   "wurzeln": [
+    "x0",
+    "w1509"
+   ],
+   "art": "affin",
+   "nie_beide_1": true
+  },
+  {
+   "paar": [
+    "Maj#73(R1)",
+    "Maj#177(R5)"
+   ],
+   "wurzeln": [
+    "x0",
+    "x1"
+   ],
+   "art": "affin",
+   "nie_beide_1": true
+  },
+  {
+   "paar": [
+    "Maj#73(R1)",
+    "Maj#249(R7)"
+   ],
+   "wurzeln": [
+    "x0",
+    "x1"
+   ],
+   "art": "affin",
+   "nie_beide_1": true
+  },
+  {
+   "paar": [
+    "Maj#177(R5)",
+    "Maj#249(R7)"
+   ],
+   "wurzeln": [
+    "x0",
+    "x1"
+   ],
+   "art": "affin",
+   "nie_beide_1": true
+  }
+ ]
+}

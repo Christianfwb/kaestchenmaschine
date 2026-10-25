@@ -1,0 +1,127 @@
+{
+ "fall": "DU",
+ "beschreibung": "Dreieck DU",
+ "block_m": 12,
+ "gruppen": 3,
+ "kanten": 2,
+ "groesste_gruppe": 3,
+ "status": "WIDERSPRUCH",
+ "zaehler": {
+  "entnahmen": 2,
+  "projektionen": 1,
+  "nachrichten_gesendet": 1,
+  "gestrichen": 2,
+  "semijoins_direkt": 1
+ },
+ "ops": {
+  "und": 21,
+  "oder": 2,
+  "bloecke": 2,
+  "nullbloecke": 0,
+  "masken_tabellen": 2,
+  "masken_tabellen_bytes_max": 128,
+  "semijoins": 1,
+  "projektionen": 1
+ },
+ "feste_variablen": 0,
+ "endrelationen_pruefsumme": "018016524904f206da20ce547e72aed4fa05845b7bffe5fd75df33318eb198ea",
+ "messreihe": [
+  {
+   "nr": 0,
+   "punkt": "M0 nach Aufbau",
+   "zeit_s": 0.0,
+   "entnahmen": 0,
+   "semijoins": 0,
+   "zeilen_gesamt": 6,
+   "tabellen_bytes": 3,
+   "nachrichten_bytes": 0,
+   "nachrichten": 0,
+   "indextabellen_bytes": 0,
+   "maskentabelle_max_bytes": 0,
+   "schlange": 3,
+   "rss_mib": 15.2
+  },
+  {
+   "nr": 1,
+   "punkt": "ME Ende",
+   "zeit_s": 0.0,
+   "entnahmen": 2,
+   "semijoins": 1,
+   "zeilen_gesamt": 4,
+   "tabellen_bytes": 3,
+   "nachrichten_bytes": 1,
+   "nachrichten": 1,
+   "indextabellen_bytes": 240,
+   "maskentabelle_max_bytes": 128,
+   "schlange": 1,
+   "rss_mib": 15.2
+  }
+ ],
+ "hoechststand_beobachtet": {
+  "nr": 1,
+  "punkt": "ME Ende",
+  "zeit_s": 0.0,
+  "entnahmen": 2,
+  "semijoins": 1,
+  "zeilen_gesamt": 4,
+  "tabellen_bytes": 3,
+  "nachrichten_bytes": 1,
+  "nachrichten": 1,
+  "indextabellen_bytes": 240,
+  "maskentabelle_max_bytes": 128,
+  "schlange": 1,
+  "rss_mib": 15.2
+ },
+ "pruefung": {
+  "E_init_gleich": true,
+  "E_status_gleich": true,
+  "E_endrelationen_gleich": true,
+  "E_zaehler_gleich": true,
+  "E_kanten": true,
+  "E_fest_gleich": true
+ },
+ "bestanden": true,
+ "zeiten_s": {
+  "gruppierung": 0.001,
+  "initialisierung": 0.0,
+  "austausch": 0.0,
+  "kantenpruefung_und_fest": 0.0,
+  "gesamt": 0.001
+ },
+ "maxrss_mib": 15.2,
+ "rlimit_as": [
+  -1,
+  -1
+ ],
+ "python": "3.13.16",
+ "abhaengigkeiten": {
+  "gruppen": {
+   "pfad": "/home/claude/kastenmaschine/l1/stern/gruppen.py",
+   "sha256": "4c8f4546ee3cd00c82029c24226e06eacab9be5890fbf6314f53495943a40878"
+  },
+  "stern": {
+   "pfad": "/home/claude/kastenmaschine/l1/stern/stern.py",
+   "sha256": "da8d10bbe24deb7264d4abc66640c002d7379d037cf1a6c8b869589f8c536bfb"
+  },
+  "ereignis_mess": {
+   "pfad": "/home/claude/kastenmaschine/l1/stern/ereignis_mess.py",
+   "sha256": "f5065efcf807d8d72b23bfa9b6f259c07571d608ded9ec97adbfa30d240066f3"
+  },
+  "blockweise": {
+   "pfad": "/home/claude/kastenmaschine/l1/stern/blockweise.py",
+   "sha256": "afa30ed88bf3ba0541a0c0164cf7a985eeffd1957b02fa70506e1d170e3eade0"
+  },
+  "bitmenge": {
+   "pfad": "/home/claude/kastenmaschine/l1/stern/bitmenge.py",
+   "sha256": "23f952c483cb1e5e2a896ca6d266151674507f0e4a6bec8e9b1e25a8a3bec3b4"
+  },
+  "bitmenge_schlank": {
+   "pfad": "/home/claude/kastenmaschine/l1/stern/bitmenge_schlank.py",
+   "sha256": "9a68041d426075d912369635f7c4f452ee442b99669aaf2cc0e54793c1ef08d9"
+  },
+  "begrenzt": {
+   "pfad": "/home/claude/kastenmaschine/l1/stern/begrenzt.py",
+   "sha256": "08ffa959894148bdff5f302947100621f557129ae31e418afe6723762c0fae50"
+  }
+ }
+}

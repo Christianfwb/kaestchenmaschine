@@ -1,0 +1,94 @@
+[
+ {
+  "netz": "N4r09k (Zielbit Register a Bit 0 gekippt)",
+  "frei": 12,
+  "knoten": 1328,
+  "wahr": 0,
+  "orakel_s": 1.8649,
+  "zeilen": [
+   {
+    "darstellung": "VnurR9",
+    "status": "WIDERSPRUCH",
+    "erlaubt": 0,
+    "scheinloesungen": 0,
+    "verlorene": 0,
+    "entschieden": true,
+    "groesse": {
+     "r9_protokoll": [
+      [
+       "Maj",
+       286,
+       "gleich",
+       [
+        573,
+        580
+       ]
+      ],
+      [
+       "Maj",
+       113,
+       "gleich",
+       [
+        20,
+        777
+       ]
+      ]
+     ],
+     "r9_stat": {
+      "kaestchen_mit_tafel": 0,
+      "wurzelmengen": 0,
+      "paare": 0,
+      "tafelzeilen": 0
+     },
+     "xor_gleichungen": 739,
+     "und_gleichungen": 905,
+     "stufen": 252,
+     "werte": 588,
+     "aliasse": 426,
+     "regeln": {
+      "R1": 429,
+      "R2": 82,
+      "R3": 136,
+      "R4": 403,
+      "R5": 49,
+      "R6": 59,
+      "R7": 0,
+      "R1b": 201,
+      "R8c": 19,
+      "R8m": 40,
+      "R9": 2
+     },
+     "beziehungen_ueber_freie_bits": [],
+     "ganzzahlige_beziehungen": [],
+     "wertemengen": [],
+     "feste_freie_bits": 7,
+     "s": 0.1619
+    },
+    "folgerungen": {
+     "frei_fest": {
+      "0": 0,
+      "1": 1,
+      "4": 0,
+      "5": 0,
+      "6": 0,
+      "8": 0,
+      "9": 0
+     },
+     "frei_lin": [],
+     "frei_menge": [],
+     "frei_xor": [],
+     "widerspruch": true
+    },
+    "ableitung_s": 0.1623,
+    "ableitung_peak_mib": 18.4,
+    "orakel_s": 1.8649,
+    "folgerungen_pruefung_s": 0.0004,
+    "kontrolle_s": 0.0004,
+    "wall_s": 0.3,
+    "peak_mib_extern": 18.4,
+    "rlimit_aktiv": true,
+    "rlimit_mib": 1024
+   }
+  ]
+ }
+]

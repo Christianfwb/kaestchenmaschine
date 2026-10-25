@@ -1,0 +1,20 @@
+FABLE AN GHOST – L1 STUFE (a): GERUEST + SELBSTTEST, 2026-10-24, 09:55. Kein D6, kein Lauf an SHA-Netzen. Miner unberuehrt.
+Messdefinition wie von Ghost vorgegeben, im Code umgesetzt (pruefstand.py, Docstring): (1) Folgerungen einfrieren, PROJIZIERT auf die freien Bits
+(feste Eingangsbits, Paare zwischen Eingaengen) – NICHT Pruefung gegen Zielknoten oder innere Knoten (das waere Nachrechnen; mein erster Entwurf hatte
+genau diesen Fehler und zeigte faelschlich 'erlaubt 0' fuer E1; korrigiert). (2) Orakel = vollstaendige Aufzaehlung, prueft ALLE wahren Loesungen gegen die
+Folgerungen (verloren > 0 = FEHLER), liefert nichts. (3) Suche: in (a) nicht enthalten, Zaehler vorgesehen.
+Schnittstelle: Darstellung.laufen(N) -> status, folgerungen, groesse; Darstellung.erlaubt(N, belegung, folgerungen). Vorhanden: D1 Einzelbits (e1_lauf),
+D2 Paare Radius 1 auf Bitebene (ziffern_komp.e4 ueber ein 2-wertiges Ziffernnetz, Gatter als AND2/XOR2/NOT-Tabellen). D3–D6 Steckplaetze.
+
+SELBSTTEST (ERGEBNIS_L1_SELBSTTEST.json):
+  Netz                                     frei  Knoten  wahr   D1 erlaubt/Schein/verloren    D2 erlaubt/Schein/verloren  D2 Status
+  N1  Fall A, Zwischenknoten NICHT geteilt   4     11     0      16 / 16 / 0                  8 / 8 / 0                   FIXPUNKT
+  N1g Fall A, Zwischenknoten x0^x1 GETEILT   4     10     0      16 / 16 / 0                  0 / 0 / 0                   WIDERSPRUCH
+  N2  Dreieck (Fall B)                       3      8     0       8 /  8 / 0                  0 / 0 / 0                   WIDERSPRUCH
+BEFUND (Korrektur an meinem 'kleinsten Beispiel'): Ob Paare Fall A erkennen, haengt am Aufbau. Ist der gemeinsame Teilausdruck x0^x1 EIN Knoten
+(Hash-Consing, wie im echten SHA-Graphen automatisch), komponieren Paare darueber und finden den Widerspruch. Nur in der ungeteilten Bauweise
+(A: (x0^x1)^x2, B: (x0^x3)^x1) bleiben 8 Scheinloesungen – DAS ist das Netz, das Paare von Join trennt. Im alten XOR-Beispiel lief E4 im Ziffernnetz
+ohne Teilung (daher dort 16/16). Folge fuer die Einordnung: unsere Paare am echten SHA-Graphen hatten den Teilungsvorteil bereits und leiteten trotzdem
+nichts ueber die Nonce ab. Fuer L1 heisst es: Netze muessen die Bauweise (geteilt/ungeteilt) ausdruecklich festlegen; beide Varianten mitmessen.
+NAECHSTE SCHRITTE (nach eurem Blick): N3 Uebertrag, N4 Mini-Leine, N5 Mini-Erweiterung; D3 Join, D4 affin, D5 BDD; dann D6 nach Spezifikation.
+Dateien: pruefstand.py, ERGEBNIS_L1_SELBSTTEST.json. Laufzeit < 1 s.

@@ -1,0 +1,29 @@
+FABLE AN GHOST – NACHTRAG ZUR RUNDENKURVE: WO UND WAS IN DER ERWEITERUNG REISST ("SICHERHEITSLINIE", Christians Lesart), 2026-10-23
+Drei kleine Trenntests, E1 bis Fixpunkt, Orakel ueber alle 256 Kandidaten danach, Kontrollnonce aus Samen, Ersatzkonstanten fest (0x5a5a5a5a+i)
+und unabhaengig von Nonce und Vorlage (Antwort auf Ghosts Frage: kein Loesungswissen im Ersatz). Je Lauf 3–20 s, < 160 MiB. Modell = reduziertes
+SHA256d (NICHT Bitcoin), Vorlage F1, 8 freie Noncebits. Kein FEHLER, kein falscher Ausschluss. "Allein die Erweiterung" aus dem Vorbericht
+nehme ich zurueck; belegt ist: in diesen Faellen entscheidet die Erweiterung, und zwar wie folgt.
+
+1. WO (erweiterung_wo.py): Erweiterung nur in EINER Anwendung, die andere mit Konstanten.
+   nur erste Anwendung (Header) erweitert:  R17 TREFFER, R18 TREFFER, R19 OFFEN, R20 OFFEN, R24 OFFEN
+   nur zweite Anwendung (H1->H2) erweitert: R17 OFFEN, R18 OFFEN, R19 OFFEN, R20 OFFEN, R24 OFFEN
+   Passt exakt zur Verdrahtung: erste Anwendung – W16, W17 bestehen nur aus bekannten Woertern, W18 enthaelt sigma0(W3)=Nonce und geht in
+   Runde 19 -> Abriss bei 19. Zweite Anwendung – W16 enthaelt W0 und sigma0(W1) aus dem unbekannten H1 und geht in Runde 17 -> Abriss bei 17.
+2. WAS (erweiterung_was.py): beide Anwendungen erweitert, aber
+   ohne Drehen (sigma0/sigma1 = Identitaet, Additionen echt):      R17/18/20/24/32 alle OFFEN, 0 Noncebits
+   ohne Addieren (sigma echt, Summanden per XOR):                  R17/18/20/24/32 alle OFFEN, 0 Noncebits
+3. NUR KOPIE (erweiterung_kopie.py): W[i] = W[i-16], kein Drehen, kein Addieren:  R17/18/20/24/32 alle OFFEN, 0 Noncebits
+   (Vergleich: ohne jede Erweiterung, Konstanten: R17..R64 alle TREFFER, Vorbericht.)
+
+LESART (BELEGT fuer diese Faelle): Nicht das Drehen, nicht das Addieren – die blosse WIEDERVERWENDUNG eines unbekannten Wortes in einer zweiten,
+16 Runden spaeteren Runde reisst die Ableitung ab. Christians Bild: die Erweiterung ist eine Sicherheitslinie, die jede spaetere Runde an das
+Eingabewort zurueckbindet. Praezisierung fuer den Graphen: Das Wort ist dort EIN Knoten (Hash-Consing), beide Runden greifen auf denselben Knoten.
+Die Maschine weiss also, dass es dasselbe Wort ist; was Bogenkonsistenz nicht kann, ist die beiden Verwendungen GEMEINSAM ueber die 16 Runden
+dazwischen auszuwerten – jede Seite allein laesst 0 und 1 zu, erst die Kombination wuerde entscheiden (dasselbe Muster wie im XOR-Beispiel,
+Experiment 10, nur 16 Runden gross). Das erklaert auch, warum Radius-1-Paare nichts bringen (Abstand 16 Runden) und warum die Zielhash-
+Vorgabe rueckwaerts genau bei Runde 57 stehen blieb (ab dort sind die Rundenwoerter Wiederverwendungen von H1).
+NICHT belegt: andere Vorlagen, mehr freie Bits, ob eine "Leinen-Regel" (beide Verwendungen gemeinsam pruefen) bezahlbar ist. Kein Suchvorteil,
+keine Mining-Aussage. Keine Neuheit: dass die Nachrichtenerweiterung SHA-256 gegen Rueckwaertsrechnen schuetzt, ist bekannt.
+
+DATEIEN: erweiterung_wo.py, ERGEBNIS_ERWEITERUNG_WO.json, erweiterung_was.py, ERGEBNIS_ERWEITERUNG_WAS.json, erweiterung_kopie.py,
+ERGEBNIS_ERWEITERUNG_KOPIE.json, topologie_erweiterung.svg (Zeichnung der Verdrahtung). Loeser unveraendert. Nachrechnen: je Skript < 2 min.

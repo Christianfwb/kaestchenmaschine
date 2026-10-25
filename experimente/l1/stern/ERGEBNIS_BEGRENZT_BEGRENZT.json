@@ -1,0 +1,45 @@
+{
+ "grenzen": {
+  "zeit_s": 120.0,
+  "rss_mib": 400.0
+ },
+ "python": "3.13.16",
+ "laeufe": {
+  "DU_exakt": {
+   "status": "OK",
+   "wall_s": 0.1,
+   "peak_rss_abgetastet_mib": 0.0,
+   "maxrss_kind_mib": 16.3
+  },
+  "DU_i3": {
+   "status": "OK",
+   "wall_s": 0.1,
+   "peak_rss_abgetastet_mib": 0.0,
+   "maxrss_kind_mib": 15.2
+  },
+  "DU_i2": {
+   "status": "OK",
+   "wall_s": 0.1,
+   "peak_rss_abgetastet_mib": 0.0,
+   "maxrss_kind_mib": 15.2
+  },
+  "DL_exakt": {
+   "status": "OK",
+   "wall_s": 0.1,
+   "peak_rss_abgetastet_mib": 0.0,
+   "maxrss_kind_mib": 15.2
+  },
+  "DL_i2": {
+   "status": "OK",
+   "wall_s": 0.1,
+   "peak_rss_abgetastet_mib": 0.0,
+   "maxrss_kind_mib": 15.2
+  }
+ },
+ "dateien": {
+  "begrenzt.py": "08ffa959894148bdff5f302947100621f557129ae31e418afe6723762c0fae50",
+  "begrenzt_lauf.py": "95f2b9bf26ffa32d12a5160bf3778e00d5c57392bc968f6bd8e6e71e94abca91"
+ },
+ "E1_i3_gleich_exakt_DU": true,
+ "alle_ok": true
+}

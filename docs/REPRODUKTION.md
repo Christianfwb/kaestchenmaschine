@@ -72,3 +72,14 @@ python -B -I tools/manifest.py --check
 ```
 
 Alternativ unter Linux: `sha256sum -c SHA256SUMS.txt`. `.gitattributes` legt LF-Zeilenenden fest, auch für Windows-Checkouts. Bei einem älteren Checkout mit CRLF neu klonen, bevor Prüfsummen verglichen werden. Die Prüfsummen belegen Dateiintegrität, nicht mathematische Korrektheit.
+
+## Labor L1 (24./25. Oktober 2026, Linux)
+
+```sh
+python -B -I tests/test_stern.py            # ~20 s: Gruppenfindung, Arbeitsliste, Dreieck, Selbsttests, ein Ausduenn-Fall
+python -B -I experimente/l1/stern_n4/stern_n4_bit_lauf.py   # N4r09 exakter Stern: V0/V1/V2, ~95 s (V2 meldet den dokumentierten E7-Formfehler, siehe Bericht)
+python -B -I experimente/l1/stern/blockweise_lauf.py       # blockweiser Abgleich inkl. N4r09 in 3,5 s (liest experimente/l1/stern_n4/UEBERGABE_V0.json)
+python -B -I experimente/l1/ausduennen/ausduennen_lauf.py  # 48 Ausduenn-Faelle, ~30 s
+```
+
+Die Skripte unter `experimente/skripte` für Rundenkurve 17–63 und Sicherheitslinie: `lauf_runden3.py 17 18 19`, `lauf_runden2.py 20 24 28 32 40 48 56` (Minuten), `erweiterung_kontrolle.py`, `erweiterung_wo.py`, `erweiterung_was.py`, `erweiterung_kopie.py`.

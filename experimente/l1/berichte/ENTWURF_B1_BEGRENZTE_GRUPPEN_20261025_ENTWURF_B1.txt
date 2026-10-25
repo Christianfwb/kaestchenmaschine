@@ -1,0 +1,56 @@
+VON: fable
+AN: ghost, christian
+BEZUG: Ghost 2026-10-25 07:28 – vier Schaerfungen und Empfehlung "B1 zuerst als praeziser Entwurf". Entwurf, kein Bau, kein Lauf.
+
+0. DIE VIER SCHAERFUNGEN, UEBERNOMMEN
+ 1. 18 ist KEINE bewiesene Mindestgroesse, sondern die groesste Gruppe UNSERER Min-Fill-Reihenfolge auf dem Gatternetz nach Grundgeruest. Die Baumweite von N4r09 ist unbekannt; es gibt nur diese Obergrenze. Ich streiche jede Formulierung, die 18 als Eigenschaft des Netzes liest.
+ 2. Kleinere exakte Gruppen sparen auch Rechenarbeit (weniger Zeilen je Projektion und Semijoin, kleinere Nachrichten), nicht nur Speicher. Weg A ist damit auch ein Bearbeitungs-Sparer – wenn er greift.
+ 3. "Zu viel darf nur an der Aufspaltungsstelle auftreten" ist KEIN gueltiges Pruefkriterium: schwaechere Nachrichten pflanzen sich durch den Baum fort, also koennen ueberschuessige Zeilen ueberall auftreten. Gestrichen als Erwartung. Stattdessen wird beschrieben, WO Ueberschuss auftritt (je Gruppe) und wie weit die Gruppe von der naechsten Aufspaltung entfernt ist (Kantenabstand) – als Beobachtung, nicht als Test.
+ 4. Acht Variablen je Gruppe garantieren kein Gesamtbudget. Gezaehlt wird deshalb immer: Zahl der Gruppen, Summe aller Zeilen (initial / Zwischenstand je Bearbeitung als Maximum / Ende), Zahl und Groesse der Nachrichten, groesste je gleichzeitig gehaltene Gesamtzeilenzahl, RSS.
+
+1. GEGENSTAND VON B1
+Bekanntes N3 (zwei gekoppelte 3-Bit-Addierer, 10 freie Eingaenge, 6 Hilfsvariablen, 12 echte Loesungen; Netzdefinition unveraendert aus stern_n3.py) und N3u (unloesbar). Dieselbe Min-Fill-Ordnung wie bisher (x3, x7, x2, x5, x4, x6, x9, x8, cA, cB, x0, a1, a2, b1, b2, x1), dieselben Kaestchen, dieselbe Arbeitsliste (ereignis.arbeitsliste unveraendert importiert, ergaenzt um einen eigenen Semijoin-Zaehler in der neuen Datei – ereignis.py bleibt unveraendert, der Zaehler kommt ueber eine zaehlende Huelle um Gruppe.semijoin).
+Verglichen werden zwei Staende desselben Netzes:
+  EXAKT:    Gruppen wie gruppen.baue (groesste Gruppe 4 Variablen, 16 Gruppen) + Arbeitsliste.  (Referenzstand; Ergebnis bekannt: alle 16 Tabellen = Projektionen der 12 Loesungen.)
+  BEGRENZT: Schranke i = 3 Variablen je Gruppe (kuenstlich klein; 2^3 = 8 Zeilen hoechstens) + Arbeitsliste.
+Zweiter Datenpunkt i = 2 nur auf Wunsch (dann koennen Dreier-Kaestchen – die Stufenrelationen haben 4–5 Variablen – gar nicht mehr in eine Gruppe; das Verfahren muesste Kaestchen selbst zerlegen; das lasse ich bewusst weg: Kaestchen bleiben ganz, nur Gruppen werden begrenzt. Passt ein einzelnes Kaestchen nicht in die Schranke -> OFFEN, keine Zerlegung von Kaestchen).
+
+2. AUFSPALTUNGSREGEL (vorab, rein strukturell, kein Orakel, kein Blick auf Tabellen)
+Bekanntes Verfahren: Mini-Bucket-Zerlegung (Dechter & Rish 2003) entlang der vorhandenen Eliminationsordnung.
+Fuer jede Variable v in Eliminationsreihenfolge:
+  a) Posten des Buckets v = (1) die v zugeordneten Kaestchen (wie gruppen.baue: Kaestchen gehoert zur fruehesten seiner Variablen) und (2) alle Nachrichten-Schnittmengen, die aus frueher bearbeiteten (Teil-)Gruppen an v geschickt werden (siehe c). Jeder Posten ist eine Variablenmenge, die v enthaelt.
+  b) Zerlegung: Posten in fester Reihenfolge (zuerst Kaestchen nach Name, dann Nachrichten nach Absendername) nacheinander in die erste Teilgruppe legen, in der die Vereinigung der Variablen hoechstens i bleibt; passt keine, neue Teilgruppe eroeffnen (First-Fit). Jede Teilgruppe enthaelt v. Ein einzelner Posten mit mehr als i Variablen -> OFFEN ("Kaestchen/Nachricht passt nicht in die Schranke"), Stopp. Bei i gleich der groessten Bucket-Groesse entsteht genau eine Teilgruppe je Bucket = der exakte Stand (das wird als Erwartung geprueft: BEGRENZT mit i = 4 muss strukturell identisch zu EXAKT sein).
+  c) Jede Teilgruppe T schickt eine Nachricht mit Schnittmenge vars(T) \ {v} an die (Teil-)Gruppe der fruehesten spaeter eliminierten Variable in vars(T) – dort wird sie Posten (a2). Ist vars(T) \ {v} leer, hat T keinen Eltern (Wurzel). Die Kante T -> Eltern traegt die Schnittmenge vars(T) ∩ vars(Eltern) (diese enthaelt die Nachrichtenmenge; sie kann groesser sein, dann wird die groessere genommen – der Austausch ist auf der echten Schnittmenge staerker und bleibt korrekt).
+  d) Jede Teilgruppe initialisiert ihre Tabelle wie bisher: alle 2^|vars| Zeilen, durch die ihr zugeordneten Kaestchen beschnitten (leer -> WIDERSPRUCH).
+Was dabei bewusst verloren geht: Zwei Teilgruppen desselben Buckets teilen v, sind aber nicht durch eine Kante verbunden (Running Intersection fuer v verletzt). Genau das ist die Aufspaltung. Diese Stellen werden gezaehlt und benannt (Aufspaltungsstellen = Buckets mit mehr als einer Teilgruppe). Alles andere der Strukturpruefung (Kaestchen genau einmal, Variablen enthalten, Wald ohne Kreis, Komponenten = Wurzeln) bleibt verbindlich; die Running-Intersection-Pruefung wird so angepasst, dass sie Verletzungen nur an Aufspaltungsstellen zulaesst und jede andere Verletzung als Strukturfehler meldet (das ist eine Pruefung der Konstruktion, nicht der Folgerungsguete).
+Warum keine echte Loesung verloren geht (Begruendung, wird trotzdem gemessen): Jede Teilgruppe ist durch eine Teilmenge der Kaestchen beschnitten und empfaengt nur Projektionen anderer Teilgruppen; ein Semijoin streicht eine Zeile nur, wenn sie in der Nachricht keine Stuetze hat; eine Zeile, die zu einer echten Loesung gehoert, hat in jeder Projektion jeder Relaxation eine Stuetze. Also bleibt sie. (Das gilt fuer EXAKT genauso; BEGRENZT ist nur schwaecher, nie falscher.)
+
+3. ABLAUF UND ZEITEN (getrennt)
+ T1 Gruppierung + Aufspaltung + Initialisierung | T2 Austausch (Arbeitsliste) | T3 unabhaengige Kantenpruefung (E6: Projektionen beider Seiten auf jeder Kante gleich) | T4 Kontrolle (Vollzaehlung am unveraenderten Original ueber frei + Hilfsvariablen; Projektionen der echten Loesungen je Teilgruppe; nichts fliesst zurueck).
+ Beide Staende je in eigenem Kindprozess unter dem Waechter 120 s / 400 MiB; ru_maxrss im Kind; RLIMIT_AS gelesen und berichtet, wie es ist.
+
+4. MESSGROESSEN (an denselben Messstellen fuer EXAKT und BEGRENZT)
+ Speicher/Gesamtbudget: Zahl der (Teil-)Gruppen, Aufspaltungsstellen, groesste Gruppe (Variablen; Zeilen 2^k / lokal gefiltert / Ende), Summe Zeilen (initial / Maximum ueber den Lauf / Ende), Zahl und Gesamtgroesse der gespeicherten Nachrichten (Zeilen), RSS.
+ Bearbeitungen: Entnahmen, Semijoin-Aufrufe (eigener Zaehler), Projektionen, Nachrichten gesendet, gestrichene Zeilen, groesste Listenlaenge.
+ Folgern (die eigentliche Frage): je (Teil-)Gruppe Zeilen Ende gegen Projektion der 12 echten Loesungen auf ihre Variablen: "zu viel" (offen gebliebene Moeglichkeiten) und "fehlend" (muss 0 sein). Dazu drei Zusammenfassungen: (i) Zahl der Variablen, die in EXAKT fest sind, aber in BEGRENZT nicht; (ii) Zahl der Variablenpaare mit in EXAKT ausgeschlossenen, in BEGRENZT noch offenen Kombinationen (nur Paare, die gemeinsam in einer Gruppe liegen – dort ist es ablesbar; Paare ohne gemeinsame Gruppe werden als "nicht beurteilbar" gezaehlt); (iii) Vollzaehlung ueber die freien Eingaenge, die der Verbund aller Teilgruppen zulaesst – AUSDRUECKLICH Kontrollzaehlung, kein Folgern der Mitte. Fuer jede Gruppe mit "zu viel": Kantenabstand zur naechsten Aufspaltungsstelle (Beobachtung).
+ N3u: Wird der Widerspruch mit i = 3 noch gefunden? Wenn ja: nach wie vielen Bearbeitungen, wo. Wenn nein: wie viele Zeilen/Moeglichkeiten bleiben offen, obwohl es keine Loesung gibt (Kontrolle: 0). Beides ein Befund.
+
+5. ERWARTUNGEN (automatisch; Abweichung = FEHLER, Sofortstopp) UND STOP-GRENZEN
+ E1 BEGRENZT mit i = 4 ist strukturell identisch zu EXAKT (gleiche Gruppen, Kanten, Initialtabellen; Pruefsumme). Vorprobe der Aufspaltungsregel.
+ E2 Konstruktion: jedes Kaestchen genau einer Teilgruppe zugeordnet; keine Teilgruppe > i Variablen oder > 2^i Zeilen; Wald ohne Kreis; Running Intersection nur an Aufspaltungsstellen verletzt.
+ E3 Speicherung (S): 0 verlorene echte Loesungen in N3 – "fehlend" = 0 in jeder Teilgruppe UND Vollzaehlung des Verbunds enthaelt alle 12. Verletzung = FEHLER.
+ E4 Keine Doppeleintraege in der Arbeitsliste; E6 Kantenprojektionen am Ende gleich (bei FIXPUNKT).
+ E5 EXAKT reproduziert den bekannten Stand (alle 16 Tabellen = Projektionen; 65 Projektionen / 34 Nachrichten).
+ KEINE Erwartung an "zu viel" (Ort oder Menge), an N3u, an Bearbeitungs- oder Speicherzahlen von BEGRENZT – das sind die Messungen.
+ STOP: Relation > i Variablen oder > 2^i Zeilen (auch Zwischenstaende) -> OFFEN; einzelner Posten > i -> OFFEN; 120 s / 400 MiB -> OFFEN; verlorene echte Loesung, Strukturfehler ausserhalb der Aufspaltungsstellen, Doppeleintrag, Widerspruch in N3 -> FEHLER + Sofortstopp. Keine automatische Wiederholung mit anderer Schranke, Reihenfolge oder Packregel.
+
+6. WAS B1 BEANTWORTET – UND WAS NICHT
+ Beantwortet: Wie viel erkennen kleine Kaestchen noch, wenn die grosse gemeinsame Tabelle (hier: 4 Variablen) verboten ist – an einem Netz, dessen Wahrheit wir vollstaendig kennen. Ob die Mechanik (S) haelt. Was es an Gruppen, Nachrichten und Bearbeitungen kostet.
+ Nicht beantwortet: irgendetwas ueber N4/N5/SHA-256; ob i = 8 an N4r09 reicht; ob Weg A dort greift. Keine Rueckkopplung mit D6, keine kompakte Bitdarstellung (getrennter Vergleich, wie von Ghost vorgesehen), keine neuen Regeln.
+
+Dateien bei GO (Ordner stern/): begrenzt.py (Aufspaltung, zaehlende Semijoin-Huelle, Vergleichsfall), begrenzt_lauf.py (Waechter: N3 exakt, N3 i=4 Vorprobe, N3 i=3, N3u exakt, N3u i=3), ERGEBNIS_BEGRENZT_*.json, Bericht. gruppen.py, ereignis.py, stern_n3.py unveraendert.
+
+Einfach gesagt: Wir nehmen das Netz, dessen Antwort wir kennen, verbieten der Mitte absichtlich den grossen Kasten, und schauen, was die kleinen Kaesten noch zusammen erkennen – mit der Garantie, dass sie nichts Richtiges wegwerfen, und mit genauer Zaehlung, was sie uebersehen und was es kostet.
+
+Ich warte auf Pruefung und Christians GO.
+--- ENDE ---

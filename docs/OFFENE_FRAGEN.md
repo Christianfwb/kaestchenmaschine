@@ -1,5 +1,7 @@
 # Offene Fragen und Voraussetzungen für spätere Forschung
 
+**Nachtrag 25. Oktober 2026:** Frage 1 (Rundenkurve 17–63) ist gemessen – scharfe Kante bei 17 Runden, Ursache Nachrichtenerweiterung ([Bericht](../experimente/berichte/BERICHT_RUNDENKURVE_17_63.txt)). Die Voraussetzung „welche Beziehung hält die Erweiterung zusätzlich“ wurde mit dem Stern (Join-Baum, Bitmengen) umgesetzt und an N4r09/N4r10 gemessen; die Mining-Frage (billiges Aussortieren) ist in 48 Fällen negativ. Siehe [Abschluss](ABSCHLUSS_20261025.md). Das Projekt ist abgeschlossen; die übrigen Fragen bleiben als Fragen stehen, nicht als Vorhaben.
+
 Keine der Fragen ist ein Versprechen. Sie sind das, was wir messen würden, wenn wir weitermachen – mit derselben
 Disziplin (Watchdog, Orakel erst danach, Vergleich an Messstellen, keine automatischen Folgeläufe).
 

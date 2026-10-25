@@ -1,0 +1,135 @@
+{
+ "beschreibung": "WO reisst es? Erweiterung nur in H1 (Header-Anwendung) oder nur in H2 (Digest-Anwendung), sonst Konstanten. E1 bis Fixpunkt, Orakel danach.",
+ "laeufe": [
+  {
+   "variante": "nur H1 erweitert",
+   "runden": 17,
+   "e1": "FIXPUNKT",
+   "sweeps": 156,
+   "s": 10.2,
+   "noncebits": 8,
+   "abgeleitet": 84,
+   "treffer": [
+    84
+   ],
+   "ausgang": "TREFFER_ABGELEITET"
+  },
+  {
+   "variante": "nur H1 erweitert",
+   "runden": 18,
+   "e1": "FIXPUNKT",
+   "sweeps": 159,
+   "s": 10.9,
+   "noncebits": 8,
+   "abgeleitet": 82,
+   "treffer": [
+    82
+   ],
+   "ausgang": "TREFFER_ABGELEITET"
+  },
+  {
+   "variante": "nur H1 erweitert",
+   "runden": 19,
+   "e1": "FIXPUNKT",
+   "sweeps": 156,
+   "s": 11.2,
+   "noncebits": 0,
+   "abgeleitet": null,
+   "treffer": [
+    141
+   ],
+   "ausgang": "OFFEN"
+  },
+  {
+   "variante": "nur H1 erweitert",
+   "runden": 20,
+   "e1": "FIXPUNKT",
+   "sweeps": 157,
+   "s": 12.6,
+   "noncebits": 0,
+   "abgeleitet": null,
+   "treffer": [
+    160
+   ],
+   "ausgang": "OFFEN"
+  },
+  {
+   "variante": "nur H1 erweitert",
+   "runden": 24,
+   "e1": "FIXPUNKT",
+   "sweeps": 178,
+   "s": 18.3,
+   "noncebits": 0,
+   "abgeleitet": null,
+   "treffer": [
+    220
+   ],
+   "ausgang": "OFFEN"
+  },
+  {
+   "variante": "nur H2 erweitert",
+   "runden": 17,
+   "e1": "FIXPUNKT",
+   "sweeps": 41,
+   "s": 2.8,
+   "noncebits": 0,
+   "abgeleitet": null,
+   "treffer": [
+    46
+   ],
+   "ausgang": "OFFEN"
+  },
+  {
+   "variante": "nur H2 erweitert",
+   "runden": 18,
+   "e1": "FIXPUNKT",
+   "sweeps": 37,
+   "s": 2.8,
+   "noncebits": 0,
+   "abgeleitet": null,
+   "treffer": [
+    198
+   ],
+   "ausgang": "OFFEN"
+  },
+  {
+   "variante": "nur H2 erweitert",
+   "runden": 19,
+   "e1": "FIXPUNKT",
+   "sweeps": 38,
+   "s": 2.8,
+   "noncebits": 0,
+   "abgeleitet": null,
+   "treffer": [
+    144
+   ],
+   "ausgang": "OFFEN"
+  },
+  {
+   "variante": "nur H2 erweitert",
+   "runden": 20,
+   "e1": "FIXPUNKT",
+   "sweeps": 39,
+   "s": 3.3,
+   "noncebits": 0,
+   "abgeleitet": null,
+   "treffer": [
+    208
+   ],
+   "ausgang": "OFFEN"
+  },
+  {
+   "variante": "nur H2 erweitert",
+   "runden": 24,
+   "e1": "FIXPUNKT",
+   "sweeps": 38,
+   "s": 4.5,
+   "noncebits": 0,
+   "abgeleitet": null,
+   "treffer": [
+    90
+   ],
+   "ausgang": "OFFEN"
+  }
+ ]
+}

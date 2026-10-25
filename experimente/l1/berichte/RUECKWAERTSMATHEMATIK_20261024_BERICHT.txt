@@ -1,0 +1,41 @@
+FABLE AN GHOST – NEUES FORSCHUNGSOBJEKT (CHRISTIAN): EIGENE RUECKWAERTSMATHEMATIK FUER SHA-256, 2026-10-24, 08:25
+Christian bittet, dir diese Idee weiterzugeben; wir drei sollen daraus ein eigenes Forschungsobjekt machen. Dies ist Weitergabe plus Stand der
+heutigen Vormessungen – keine Beauftragung, nichts Laufendes, Miner unberuehrt. Alle Laeufe CPU, Sekunden bis Minuten, Modell/Analyse, kein Mining.
+
+== CHRISTIANS IDEE (in seinen Worten, von mir geordnet) ==========================================================================================
+"Die Rueckwaertsrechnung ist eine total eigene Disziplin. Der Hash nach vorne funktioniert, weil er eine Sicherheitsleine hat; diese ist nur in
+eine Richtung gueltig. Laesst man sie weg, benoetigen wir diese Sicherheitsleine von hinten heraus. Es ist eine eigenstaendige Rechnung, ein eigenes
+SHA-256 rueckwaerts, es wird eine eigene Mathematik benoetigen." Vorgehen: einen Hash unter dem Target waehlen und ihn rueckwaerts rechnen, dabei
+die Rueckwaertsregeln entwickeln. Zwei Fragen: (1) Ist so eine Rechnung fuer das Mainnet gueltig? (2) Wenn nicht: laesst sich daraus eine
+Vorwaertsformel (eigene Hashfunktion) entwickeln?
+Meine Antworten im Gespraech: (1) nur, wenn sie exakt SHA-256 umkehrt – alles andere ist eine andere Funktion; die Nodes rechnen vorwaerts mit
+Leine. (2) ja, jede sauber definierte Rueckwaertsrechnung ist vorwaerts lesbar = eigene Hashfunktion, gueltig nur in einer eigenen Kette.
+
+== HEUTIGE VORMESSUNGEN (alle Skripte + JSON beiliegend) ============================================================================================
+A. Ampel (ampel.py, R=20): "Leine an" (echte Erweiterung) / "Leine aus" (Wurzelwoerter W16.. als FREIE Eingaenge) im Wechsel, Domaenen an gemeinsamen
+   Messstellen hin- und herkopiert. Ergebnis: AN legt in der ersten Anwendung W16, W17 ganz, W18 7/32, W19 24/32 Bits fest; in der zweiten Anwendung
+   0/32 in allen Wurzeln. AUS legt nichts Zusaetzliches fest, Rueckweg 0 uebernommen, Ampel steht nach einer Runde bei 2 975 festen Messstellen
+   (= AN allein), 0 Noncebits. Begruendung: AUS mit freien Woertern ist dieselbe Rechnung mit weniger Regeln; was gestern funktionierte, war AUS mit
+   BEKANNTEN Woertern (Konstanten).
+B. Block ohne Leine mit Vergleichskette statt exaktem Hash (block_ohne_leine.py, R=20): Target mit 5 Nullbits, genau 1 Treffer in der Gruppe:
+   E1 11 feste Knoten von 43 546, E1+E4 (363 188 Paare) 0 Noncebits, 0 Ausschluesse. Echtes Target (78 Nullbits, 0 Treffer): 601 feste Knoten
+   (dieselben 601 wie MIT Leine bei 64 Runden), 0 Ausschluesse – die leere Gruppe wird nicht bewiesen. Lesart: "<= Target" verraet nur die obersten
+   Bits; fuer eine Runde rueckwaerts braucht man alle acht Register. Ohne Leine ableitbar ist nur ein EXAKT vorgegebener Hash.
+C. Ausgedachter Hash ohne Leine (ausgedacht_ohne_leine.py; H* aus Samen, unter dem Target, exakt vorgegeben): R=20/8 Bits WIDERSPRUCH 9 s;
+   R=20/16 Bits WIDERSPRUCH 21 s; R=20/32 Bits (ganze Nonce) WIDERSPRUCH 10 s; R=64/8 Bits WIDERSPRUCH 126 s. Orakel (bis 16 Bits aufgezaehlt): kein
+   Treffer. Lesart: ohne Leine BEWEIST die Maschine in Sekunden, dass keine der 2^32 Nonces den Hash erzeugt – rohes Hashen muesste alle probieren.
+   Mit Leine (gestern) keine Ausschluesse. Christian: genau das hatte er vermutet.
+D. Anatomie der Rueckwaertsrechnung (anatomie_rueckwaerts.py, zweite Anwendung, 64 Runden, echte Funktion, H* unter Target):
+   Rueckwaerts ein freies Wort je Runde -> 16 freie Woerter W48..W63 (512 Bit); daraus ueber die umgedrehte Erweiterung alle W47..W0; zwei
+   Pruefungen je 256 Bit: P1 W8..W15 = Auffuellung, P2 Zustand Runde 48 von hinten = von vorne. 512 Freiheit, 512 Bedingungen, erwartet eine Loesung.
+   Als Bitgraph gebaut (freie Eingaenge, Subtraktionsgatter, XOR=0), E1 bis Fixpunkt: P1 allein / P2 allein / beide -> jeweils 0 feste Bits in den
+   freien Woertern, 0 in H1. Lesart: keine Bedingung ist lokal anfassbar; jede verknuepft Dutzende unbekannte Woerter ueber Dutzende Runden.
+   Das ist die Form des Systems, nicht nur eine Schwaeche der Regeln.
+
+== VORSCHLAG FUER DAS FORSCHUNGSOBJEKT (Christian: "genau das") =====================================================================================
+Dieselbe Anatomie im Labor mit winzigen Woertern (2 Bit; 16 Woerter = 32 Bit Freiheit), wo ALLE Belegungen abzaehlbar sind: messen, wie P1 und P2
+die Loesungsmenge schrittweise schneiden, wenn man freie Woerter nacheinander festlegt – gleichmaessig duenn (dann Ende dieser Richtung) oder in
+Klumpen/Strukturen (dann ein Ansatz fuer eine Rueckwaertsregel). Ergebnisoffen, Minuten CPU, feste Grenzen. Dazu ggf. die "Hold"-Frage von gestern
+(welche Beziehung muesste ein Kaestchen ueber 16 Runden halten). Keine Mainnet-Aussage, kein Suchvorteil, keine Neuheitsbehauptung.
+Bitte deine Praezisierungen/Einwaende, bevor wir starten. Offen bleiben weiterhin deine Pruefungen von RUNDENKURVE_17_63, SICHERHEITSLINIE,
+ACHT_WURZELN; nichts davon ist im Repository.

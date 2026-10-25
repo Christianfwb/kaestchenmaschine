@@ -1,0 +1,52 @@
+VON: fable
+AN: ghost, christian
+BEZUG: GO Christian 2026-10-25 08:43 – B2: begrenzte Gruppen an N3/N3u auf Gatterebene (Entwurf B2)
+KURZ: Acht Laeufe, alle Erwartungen bestanden. N3 (loesbar): alle 12 echten Loesungen in jedem Stand erhalten; exakt erkennt alle 5 ableitbaren festen Innenknoten, begrenzt (i=4 und i=3) nur 3 davon – es fehlen zwei UND-Gatter (v018=0, v019=1); 47 bzw. 58 Zeilen bleiben zu viel. N3u (unloesbar): exakt WIDERSPRUCH nach 29 Entnahmen; i=4 und i=3 FIXPUNKT – der Widerspruch wird NICHT erkannt. Kosten: begrenzt braucht MEHR Semijoins (109/120 statt 105) bei kleineren Tabellen (groesste 16/8 statt 32 Zeilen).
+
+AUFBAU
+Netz: pruefstand.NETZE N3 / N3u, unveraendert. Kaestchen = 33 Gatter (XOR/UND, 3 Variablen, echte Wahrheitstabellen aus dem Gatter) + Zielbits (N3: 7, N3u: 9) als einstellige Kaestchen. 43 Variablen (Knoten 2..44), davon 10 freie Eingaenge. Min-Fill-Ordnung (Fill, Grad, Name) beginnt v012, v005, v015, v022, v028, ... – gleich fuer alle Staende. Staende: exakt (gruppen.baue), i5 (Vorprobe, strukturell identisch zu exakt: bestanden fuer N3 und N3u), i4, i3. Aufspaltung (Mini-Bucket, First-Fit) und Strukturpruefung aus begrenzt.py, Arbeitsliste aus ereignis.py – unveraendert importiert. Kontrolle danach: 1024 Eingabebelegungen vorwaerts, Zielbits geprueft -> volle Belegungen aller 43 Variablen; nichts zurueck. (Verbundzaehlung ueber 43 Variablen ist nicht durchfuehrbar; Erhalt wird je Gruppe als "fehlend" geprueft.)
+Hinweis zur Ausgabe: Die Waechterzeile druckt "E1 i3==exakt" – das Etikett ist falsch uebernommen, geprueft und im JSON benannt ist E1_i5_gleich_exakt (Vorprobe i=5). Kein erneuter Lauf dafuer.
+
+ZAHLEN
+N3 (12 echte Loesungen)       | exakt        | i=4          | i=3
+Status                        | FIXPUNKT     | FIXPUNKT     | FIXPUNKT
+Gruppen / Aufspaltungsstellen | 43 / 0       | 51 / 8       | 60 / 17
+groesste Gruppe Var / Zeilen init | 5 / 32   | 4 / 16       | 3 / 8
+Summe Zeilen init -> Ende     | 476 -> 130   | 340 -> 190   | 262 -> 212
+gestrichene Zeilen            | 346          | 150          | 50
+Entnahmen / Semijoins / Projektionen / Nachrichten | 98 / 105 / 195 / 105 | 105 / 109 / 205 / 109 | 120 / 120 / 232 / 120
+Projektionszeilen gesamt      | 634          | 660          | 655
+SPEICHERUNG: fehlend je Gruppe| 0 ueberall   | 0 ueberall   | 0 ueberall
+FOLGERUNGEN: feste Variablen  | 12 (7 Zielbits + 5 abgeleitet: v013, v014, v017, v018, v019) | 10 (7 Zielbits + 3: v013, v014, v017) | 10 (dieselben)
+  Paare mit Ausschluss in gemeinsamen Gruppen | 234 | 145 | 93
+KONTROLLE: zu viel (Zeilen / Gruppen) | 0 / 0 | 47 / 20 | 58 / 25
+  fehlende feste Variablen    | –            | v018 (UND) = 0, v019 (UND) = 1 | dieselben zwei
+Wichtig zur Lesart "12 fest": 7 davon sind die vorgegebenen Zielbits (keine Ableitung). Abgeleitet sind 5 Innenknoten; exakt findet 5/5, begrenzt 3/5. Kein freier Eingang ist in der echten Loesungsmenge fest; es gibt also nichts an Eingaengen zu erkennen.
+
+N3u (0 echte Loesungen)       | exakt        | i=4          | i=3
+Status                        | WIDERSPRUCH (Entnahme 29, G_v008 leer) | FIXPUNKT | FIXPUNKT
+Gruppen / Aufspaltungsstellen | 43 / 0       | 53 / 10      | 59 / 16
+gestrichene Zeilen            | 126 (bis Abbruch) | 122     | 49
+Entnahmen / Semijoins / Projektionen / Nachrichten | 29 / 25 / 51 / 51 | 109 / 112 / 213 / 112 | 119 / 120 / 231 / 120
+feste Variablen (9 Zielbits + abgeleitet) | – | 12 (9 + v013, v014, v017) | 12 (dieselben)
+Summe Zeilen Ende             | –            | 212          | 209
+Der Widerspruch wird von beiden begrenzten Staenden uebersehen; alle Tabellen bleiben nicht leer, obwohl die Kontrolle 0 Loesungen zeigt. ("zu viel" ist bei 0 echten Loesungen formal die gesamte Restzeilenzahl: 212 bzw. 209; berichtet, nicht als Mass gedeutet.)
+Zeiten: alle Phasen unter 20 ms (T2 Austausch 1–4 ms); RSS 16,8–17,9 MiB je Kind; Waechter 120 s / 400 MiB alle OK; RLIMIT_AS unbegrenzt. Zeiten nicht aussagekraeftig, Zaehler sind das Mass.
+
+WAS FEHLT DEM BEGRENZTEN AUSTAUSCH KONKRET
+- v018 und v019 sind UND-Gatter (Uebertragsbildung eines Volladdierer-Bits). Ihr fester Wert folgt nur aus dem Zusammenspiel von x, y, cin und dem festen Summenbit – fuenf Variablen. In einer 4er- oder 3er-Gruppe liegt dieses Zusammenspiel nie vollstaendig vor; die Nachrichten (Projektionen auf hoechstens 3 bzw. 2 gemeinsame Variablen) tragen es nicht hinueber.
+- N3u: Der Widerspruch entsteht erst, wenn beide Additionspfade ueber die geteilten Eingaenge und die Zielbits zusammengefuehrt werden (exakt: Gruppe G_v008 leer nach 29 Entnahmen). Begrenzt bleibt jeder Pfad fuer sich zufrieden – dieselbe Gestalt wie beim Dreieck, nur groesser.
+- Meine Vorhersage aus dem Entwurf war teilweise falsch: Ich hatte erwartet, dass bei i=3 "viele Innenknoten offen bleiben"; tatsaechlich findet i=3 genauso viel wie i=4 (3 von 5), und der Unterschied zwischen i=3 und i=4 liegt nur in den "zu viel"-Zeilen (58 gegen 47), nicht in den festen Variablen. Die Vorhersage zu N3u (nicht erkannt) traf zu.
+
+KOSTEN, EHRLICH
+Begrenzt spart hier KEINE Bearbeitungen: 109 bzw. 120 Semijoins gegen 105, mehr Projektionen (205/232 gegen 195), mehr Gruppen (51/60 gegen 43). Gespart wird nur die groesste Tabelle (16 bzw. 8 statt 32 Zeilen) – und am Ende halten die begrenzten Staende sogar MEHR Zeilen insgesamt (190/212 gegen 130), weil sie weniger streichen koennen. Bei dieser Netzgroesse ist Begrenzung also teurer und schwaecher; ihr einziger Vorteil ist die garantierte Obergrenze je Tabelle, die hier gar nicht noetig war.
+
+ERWARTUNGEN: E1 i5 == exakt (beide Netze): bestanden. E2 Konstruktion: bestanden (Running Intersection nur an den Aufspaltungsstellen verletzt). E3 Speicherung: N3 fehlend 0 in jeder Gruppe in allen Staenden; keine "feste" Variable widerspricht der Kontrolle: bestanden. E4 exakt reproduziert (N3 FIXPUNKT, alle Gruppen = Projektionen; N3u WIDERSPRUCH; Kontrolle 12/0): bestanden. E5/E6: bestanden.
+
+EINFACH GESAGT
+Die zwei gekoppelten Addierer, in einzelne Gatter geschnitten: Mit Fuenferkaesten (ein ganzes Addierer-Bit) sieht die Mitte alles – alle fuenf ableitbaren Leitungen fest, und den Widerspruch in der unloesbaren Variante. Mit Vierer- oder Dreierkaesten behaelt sie jede echte Loesung, aber zwei Uebertragsleitungen bleiben offen, und den Widerspruch merkt sie nicht. Und billiger ist es auch nicht: mehr Kaesten, mehr Nachrichten, am Ende mehr Zeilen. Kleine Kaesten kosten hier Erkennung UND Arbeit, und sparen nur die Groesse des einzelnen Kastens.
+
+BELEGT: alles oben, fuer N3/N3u auf Gatterebene mit dieser Ordnung und Aufspaltung. VERMUTUNG: keine. OFFEN: ob eine andere Aufspaltungsregel (z. B. Posten nach gemeinsamen Variablen statt nach Name packen) die zwei fehlenden UND-Gatter rettet; wie sich das Verhaeltnis bei Netzen verhaelt, wo der exakte Baum NICHT ins Budget passt (dort ist Begrenzung keine Wahl, sondern die einzige Moeglichkeit) – nicht untersucht, nicht freigegeben. Keine Aussage ueber N4/N5/SHA-256.
+
+DATEIEN (kastenmaschine/l1/stern/): begrenzt_n3.py, begrenzt_n3_lauf.py, ERGEBNIS_B2_{N3,N3u}_{exakt,i5,i4,i3}.json, ERGEBNIS_B2_BEGRENZT.json. Abhaengigkeiten (gruppen, ereignis, begrenzt, stern, pruefstand, gatter; d6/e1_bit nur von pruefstand mitgeladen, nichts ausgefuehrt) mit Pfad + SHA256 in jeder Ergebnisdatei. Bestehende Dateien und Ergebnisse unveraendert. Stopp.
+--- ENDE ---

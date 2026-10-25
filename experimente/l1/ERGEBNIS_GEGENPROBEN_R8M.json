@@ -1,0 +1,354 @@
+[
+ {
+  "name": "Maj(a,a,c)=a  (h=out)",
+  "ohne": {
+   "status": "FIXPUNKT",
+   "wahr": 4,
+   "erlaubt": 8,
+   "verloren": 0,
+   "R8m": 0,
+   "bez": [
+    "x0^x1=0"
+   ]
+  },
+  "mit": {
+   "status": "FIXPUNKT",
+   "wahr": 4,
+   "erlaubt": 4,
+   "verloren": 0,
+   "R8m": 1,
+   "bez": [
+    "x0^x3=0",
+    "x1^x3=0"
+   ]
+  }
+ },
+ {
+  "name": "Maj(a,~a,c)=c",
+  "ohne": {
+   "status": "FIXPUNKT",
+   "wahr": 4,
+   "erlaubt": 8,
+   "verloren": 0,
+   "R8m": 0,
+   "bez": [
+    "x0^x1=1"
+   ]
+  },
+  "mit": {
+   "status": "FIXPUNKT",
+   "wahr": 4,
+   "erlaubt": 4,
+   "verloren": 0,
+   "R8m": 1,
+   "bez": [
+    "x0^x1=1",
+    "x2^x3=0"
+   ]
+  }
+ },
+ {
+  "name": "Maj(a,b,~a)=b",
+  "ohne": {
+   "status": "FIXPUNKT",
+   "wahr": 4,
+   "erlaubt": 8,
+   "verloren": 0,
+   "R8m": 0,
+   "bez": [
+    "x0^x2=1"
+   ]
+  },
+  "mit": {
+   "status": "FIXPUNKT",
+   "wahr": 4,
+   "erlaubt": 4,
+   "verloren": 0,
+   "R8m": 1,
+   "bez": [
+    "x0^x2=1",
+    "x1^x3=0"
+   ]
+  }
+ },
+ {
+  "name": "Maj(a,b,b)=b",
+  "ohne": {
+   "status": "FIXPUNKT",
+   "wahr": 4,
+   "erlaubt": 8,
+   "verloren": 0,
+   "R8m": 0,
+   "bez": [
+    "x1^x2=0"
+   ]
+  },
+  "mit": {
+   "status": "FIXPUNKT",
+   "wahr": 4,
+   "erlaubt": 4,
+   "verloren": 0,
+   "R8m": 1,
+   "bez": [
+    "x1^x3=0",
+    "x2^x3=0"
+   ]
+  }
+ },
+ {
+  "name": "Maj(~a,a,c) negierte Eingaenge=c",
+  "ohne": {
+   "status": "FIXPUNKT",
+   "wahr": 4,
+   "erlaubt": 8,
+   "verloren": 0,
+   "R8m": 0,
+   "bez": [
+    "x0^x1=0"
+   ]
+  },
+  "mit": {
+   "status": "FIXPUNKT",
+   "wahr": 4,
+   "erlaubt": 4,
+   "verloren": 0,
+   "R8m": 1,
+   "bez": [
+    "x0^x1=0",
+    "x2^x3=0"
+   ]
+  }
+ },
+ {
+  "name": "Maj(~a,~b,~c)=~Maj -> out negativ, a=b",
+  "ohne": {
+   "status": "FIXPUNKT",
+   "wahr": 4,
+   "erlaubt": 8,
+   "verloren": 0,
+   "R8m": 0,
+   "bez": [
+    "x0^x1=0"
+   ]
+  },
+  "mit": {
+   "status": "FIXPUNKT",
+   "wahr": 4,
+   "erlaubt": 4,
+   "verloren": 0,
+   "R8m": 1,
+   "bez": [
+    "x0^x3=1",
+    "x1^x3=1"
+   ]
+  }
+ },
+ {
+  "name": "b=1: Maj=a OR c (nicht linear)",
+  "ohne": {
+   "status": "FIXPUNKT",
+   "wahr": 4,
+   "erlaubt": 8,
+   "verloren": 0,
+   "R8m": 0,
+   "bez": []
+  },
+  "mit": {
+   "status": "FIXPUNKT",
+   "wahr": 4,
+   "erlaubt": 8,
+   "verloren": 0,
+   "R8m": 0,
+   "bez": []
+  }
+ },
+ {
+  "name": "b=0: Maj=a AND c (nicht linear)",
+  "ohne": {
+   "status": "FIXPUNKT",
+   "wahr": 4,
+   "erlaubt": 8,
+   "verloren": 0,
+   "R8m": 0,
+   "bez": []
+  },
+  "mit": {
+   "status": "FIXPUNKT",
+   "wahr": 4,
+   "erlaubt": 8,
+   "verloren": 0,
+   "R8m": 0,
+   "bez": []
+  }
+ },
+ {
+  "name": "out=1, a=0 -> b=c=1",
+  "ohne": {
+   "status": "FIXPUNKT",
+   "wahr": 1,
+   "erlaubt": 1,
+   "verloren": 0,
+   "R8m": 0,
+   "bez": []
+  },
+  "mit": {
+   "status": "FIXPUNKT",
+   "wahr": 1,
+   "erlaubt": 1,
+   "verloren": 0,
+   "R8m": 2,
+   "bez": []
+  }
+ },
+ {
+  "name": "out=0, a=1 -> b=c=0",
+  "ohne": {
+   "status": "FIXPUNKT",
+   "wahr": 1,
+   "erlaubt": 1,
+   "verloren": 0,
+   "R8m": 0,
+   "bez": []
+  },
+  "mit": {
+   "status": "FIXPUNKT",
+   "wahr": 1,
+   "erlaubt": 1,
+   "verloren": 0,
+   "R8m": 1,
+   "bez": []
+  }
+ },
+ {
+  "name": "out=~a vorgegeben -> b=c=~a",
+  "ohne": {
+   "status": "FIXPUNKT",
+   "wahr": 2,
+   "erlaubt": 8,
+   "verloren": 0,
+   "R8m": 0,
+   "bez": [
+    "x1^x3=0"
+   ]
+  },
+  "mit": {
+   "status": "FIXPUNKT",
+   "wahr": 2,
+   "erlaubt": 2,
+   "verloren": 0,
+   "R8m": 2,
+   "bez": [
+    "x0^x2=1",
+    "x1^x2=0",
+    "x2^x3=0"
+   ]
+  }
+ },
+ {
+  "name": "out=a vorgegeben (nicht linear)",
+  "ohne": {
+   "status": "FIXPUNKT",
+   "wahr": 6,
+   "erlaubt": 8,
+   "verloren": 0,
+   "R8m": 0,
+   "bez": [
+    "x1^x3=0"
+   ]
+  },
+  "mit": {
+   "status": "FIXPUNKT",
+   "wahr": 6,
+   "erlaubt": 8,
+   "verloren": 0,
+   "R8m": 0,
+   "bez": [
+    "x1^x3=0"
+   ]
+  }
+ },
+ {
+  "name": "nichts bekannt",
+  "ohne": {
+   "status": "FIXPUNKT",
+   "wahr": 8,
+   "erlaubt": 16,
+   "verloren": 0,
+   "R8m": 0,
+   "bez": []
+  },
+  "mit": {
+   "status": "FIXPUNKT",
+   "wahr": 8,
+   "erlaubt": 16,
+   "verloren": 0,
+   "R8m": 0,
+   "bez": []
+  }
+ },
+ {
+  "name": "unerfuellbar: a=b, out=~a",
+  "ohne": {
+   "status": "FIXPUNKT",
+   "wahr": 0,
+   "erlaubt": 4,
+   "verloren": 0,
+   "R8m": 0,
+   "bez": [
+    "x0^x1=0"
+   ]
+  },
+  "mit": {
+   "status": "WIDERSPRUCH",
+   "wahr": 0,
+   "erlaubt": 0,
+   "verloren": 0,
+   "R8m": 0,
+   "bez": []
+  }
+ },
+ {
+  "name": "unerfuellbar: a=~b, out=~c",
+  "ohne": {
+   "status": "FIXPUNKT",
+   "wahr": 0,
+   "erlaubt": 4,
+   "verloren": 0,
+   "R8m": 0,
+   "bez": [
+    "x0^x1=1"
+   ]
+  },
+  "mit": {
+   "status": "WIDERSPRUCH",
+   "wahr": 0,
+   "erlaubt": 0,
+   "verloren": 0,
+   "R8m": 0,
+   "bez": []
+  }
+ },
+ {
+  "name": "Uebertrag im Addierer: a=b -> cout=a (2-Bit, Summe frei)",
+  "ohne": {
+   "status": "FIXPUNKT",
+   "wahr": 8,
+   "erlaubt": 8,
+   "verloren": 0,
+   "R8m": 0,
+   "bez": [
+    "x0^x1=0"
+   ]
+  },
+  "mit": {
+   "status": "FIXPUNKT",
+   "wahr": 8,
+   "erlaubt": 8,
+   "verloren": 0,
+   "R8m": 1,
+   "bez": [
+    "x0^x1=0"
+   ]
+  }
+ }
+]

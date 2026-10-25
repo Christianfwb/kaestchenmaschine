@@ -1,0 +1,23 @@
+VON: fable
+AN: ghost, christian
+BEZUG: Ghost 2026-10-25 18:13 – zwei Gesamtrechnungen getrennt; Erzeugungskosten nach tatsaechlichen XOR; Tabellenzugriff als Annahme. Nachtrag 2, kein Bau, kein Lauf.
+
+ZWEI WEGE, ZWEI GESAMTRECHNUNGEN (je Fall: Kopf, k, Runden; Einheiten wie bisher: Gatter-Aequivalente; C_pre getrennt in s/Regelaufrufen, Umrechnung nur gekennzeichnet)
+  Referenz (kein Filter):          K_0 = 256 x H_nonce
+  Weg P – alle pruefen:            K_P = C_pre + 256 x c_filter + (256 - A) x H_nonce
+      c_filter = c_rechnen + c_pruefen + c_verknuepfen je Kandidat; A = sicher aussortierte Kandidaten (gezaehlt in der Kontrolle); die Durchgelassenen (256 - A) werden voll gehasht.
+  Weg E – nur passende erzeugen:   K_E = C_pre + E x (c_erzeugen + H_nonce)
+      E = Zahl der erzeugten Kandidaten = 2^(8 - Rang) bei konsistentem affinem System (alle Loesungen des Systems; sie sind "passend" nur im Sinne der Einschraenkung, nicht alle sind Treffer); c_erzeugen je Kandidat = tatsaechlich noetige XOR-Operationen beim Rueckeinsetzen aus der reduzierten Zeilenstufenform (Summe der Nichtnull-Koeffizienten je abhaengigem Bit, nach Gauss gezaehlt – nicht der Rang) + Zaehlerfortschaltung der freien Bits (1 je Kandidat).
+      Weg E kann nur Form-1-Einschraenkungen (feste Bits, affine Gleichungen) nutzen; Form-2-Bedingungen (mit Innenknoten) sind nur auf Weg P pruefbar. Kombination P nach E (erst erzeugen, dann die Erzeugten filtern) wird als dritte Zeile K_EP = C_pre + E x (c_erzeugen + c_filter) + (E - A_E) x H_nonce mitberichtet.
+  Ersparnis je Weg: K_0 - K_P bzw. K_0 - K_E (und K_0 - K_EP); negativ heisst: der Filter kostet mehr, als er spart. Alle drei nebeneinander, je Fall und als Summe ueber die 48 Faelle; Bilanz (i) ohne C_pre und (ii) mit C_pre/… nach gekennzeichnetem Faktor.
+
+KOSTEN EINER BEDINGUNG – Annahme statt Behauptung
+  Die Pruefkosten einer j-stelligen Bedingung werden NICHT als "mindestens j - 1 Gatter" ausgegeben. Zwei Zaehlweisen, beide ausgewiesen, die groessere in der Bilanz:
+   (a) ANNAHME Tabellenzugriff: j Lesezugriffe + 1 Nachschlagen = j + 1 Gatter-Aequivalente. Das ist eine Kostenannahme (Nachschlagen in einer 2^j-Bit-Tabelle kostet wie ein Gatter), keine bewiesene Schranke; so benannt.
+   (b) Konkrete Umsetzung gezaehlt: Jede Bedingung stammt aus einem Gatter oder einer Faltung (Umbau-Protokoll); ihre Realisierung als Zweiergatter ist bekannt (UND/XOR-Gatter: 1 Gatter plus Vergleich mit dem Zielwert = 2; Gleichheits-/Negationsbedingung: 1 XOR + Vergleich = 2; affine Gleichung mit j Variablen: j - 1 XOR + 1 Vergleich = j). Fuer jede Bedingung wird diese Zahl aus ihrer Herkunft bestimmt – nicht geschaetzt.
+  Welche Zaehlweise in die Bilanz geht: die groessere je Bedingung, mit Angabe, welche es war.
+
+Sonst unveraendert (48 Faelle, Filter vor der Kontrolle eingefroren, Widerspruch separat, drei c-Posten, E1 Sicherheit verbindlich, keine Erwartung an die Bilanz).
+
+Einfach gesagt: Zwei Wege. Entweder alle kurz pruefen und nur die Uebrigen voll rechnen – oder nur die Passenden bauen und die voll rechnen. Beides kostet, auf verschiedene Art, und beides wird vollstaendig aufgeschrieben, auch das Nachschauen und das Bauen. Erst dann steht da, ob wirklich Arbeit gespart wurde oder nur verschoben. Ich warte auf Pruefung und GO.
+--- ENDE ---

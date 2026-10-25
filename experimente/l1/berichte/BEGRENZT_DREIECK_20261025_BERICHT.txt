@@ -1,0 +1,37 @@
+VON: fable
+AN: ghost, christian
+BEZUG: GO Christian 2026-10-25 08:25 – Dreiecks-Pruefstand fuer begrenzte Gruppen (Entwurf B1 V2, Ghosts Deutung 08:16)
+KURZ: Alle fuenf Laeufe bestanden. D-U (unloesbar): exakt WIDERSPRUCH; mit Schranke i = 2 FIXPUNKT – der begrenzte Austausch erkennt den Widerspruch NICHT, obwohl Variablenidentitaet und alle drei Originalbedingungen gespeichert bleiben. D-L (loesbar): beide echten Loesungen in allen Staenden erhalten, kein Ueberschuss in irgendeiner Gruppentabelle. Die Vorhersage aus dem Entwurf trifft in allen Punkten zu.
+
+AUFBAU (wie Entwurf): Min-Fill-Ordnung a, b, c. EXAKT = gruppen.baue (G_a {a,b,c} mit K_ab, K_ac; G_b {b,c} mit K_bc; G_c {c}). BEGRENZT = Mini-Bucket-Aufspaltung entlang derselben Ordnung, First-Fit nach Name, Kaestchen bleiben ganz; Austausch = Arbeitsliste (ereignis.py unveraendert), eigener Semijoin-Zaehler. Vorprobe E1: i = 3 ist strukturell identisch zu EXAKT (Pruefsumme gleich).
+Struktur bei i = 2: G_a_1 {a,b} (K_ab), G_a_2 {a,c} (K_ac), G_b {b,c} (K_bc), G_c {c}; Kanten G_a_1–G_b ueber {b}, G_a_2–G_c ueber {c}, G_b–G_c ueber {c}. Aufspaltungsstelle: Bucket a (zwei Teilgruppen; Running Intersection fuer a in 2 Teilen – genau dort, sonst nirgends; Strukturpruefung bestanden). Groesste Relation 2 Variablen, 4 Zeilen.
+
+ERGEBNISSE – DREI GETRENNTE AUSWEISE
+                     | D-U exakt (i=3) | D-U i=2        | D-L exakt (i=3) | D-L i=2
+ERKANNTE FOLGERUNGEN (vor der Kontrolle festgehalten)
+  Status             | WIDERSPRUCH     | FIXPUNKT       | FIXPUNKT        | FIXPUNKT
+  gestrichene Zeilen | 2 (G_b leer nach Nachricht von G_a) | 0 | 0           | 0
+  feste Variablen    | –               | keine          | keine           | keine
+  Entnahmen / Semijoins / Projektionen / Nachrichten | 2 / 1 / 1 / 1 | 7 / 6 / 10 / 6 | 5 / 4 / 7 / 4 | 7 / 6 / 10 / 6
+SPEICHERUNG (Kontrolle am Original, danach)
+  echte Loesungen    | 0               | 0              | 2               | 2
+  Verbundzaehlung    | 0               | 0 (Kontrolle, keine Leistung der Mitte) | 2 | 2
+  fehlend            | 0               | 0              | 0               | 0
+KONTROLLZAEHLUNG je Gruppe (zu viel / fehlend gegen Projektion der echten Loesungen)
+                     | bei WIDERSPRUCH nicht sinnvoll (Projektion leer, verbleibende Zeilen zaehlen formal als "zu viel": 4) | alle 4 Gruppen: 2 Zeilen, Projektion leer -> formal 8 "zu viel" | alle 3 Gruppen 0 / 0 | alle 4 Gruppen 0 / 0
+Kosten: Gruppen 3 / 4 / 3 / 4; Summe Zeilen Ende 4 / 8 / 6 / 8; RSS 15,0–16,3 MiB (Interpreter); Zeiten im Mikrosekundenbereich (T1 0,3 ms, T2 0,08 ms bei i=2), nicht aussagekraeftig. Waechter 120 s / 400 MiB alle OK; RLIMIT_AS unbegrenzt.
+
+DEUTUNG (nach Ghosts Praezisierung)
+D-U: Gespeichert bleibt alles – die drei Bedingungen a≠b, b≠c, a≠c stehen vollstaendig in G_a_1, G_b, G_a_2, und a ist in G_a_1 und G_a_2 dieselbe Variable. Was der begrenzte Austausch nicht leistet, ist die ERKENNUNG: Jede Nachricht ist eine Projektion auf eine einzelne Variable und lautet {0,1}; kein Semijoin streicht etwas; die Arbeitsliste laeuft nach 7 Entnahmen leer. Das ist unvollstaendiges Schlussfolgern, keine verlorene Speicherung. Die Verbundzaehlung ueber alle vier Tabellen liefert danach 0 – sie "weiss" den Widerspruch, aber als Kontrolle, nicht als Leistung der Mitte. Ohne den gemeinsamen Dreierkasten (oder eine Kante zwischen G_a_1 und G_a_2 ueber {a} – die der Mini-Bucket-Zerlegung absichtlich fehlt) ist der Rundschluss nicht sichtbar.
+D-L: Beide echten Loesungen erhalten; jede Gruppentabelle ist exakt die Projektion der echten Loesungen (0 zu viel). Kein Schlussfolgerungsverlust nachgewiesen; es gibt in diesem Fall keine konkrete fehlende Folgerung (keine Variable ist in der exakten Loesungsmenge fest, kein Paar ist ueber die Gruppen hinaus einschraenkbar). Exakte Gruppentabellen ohne ausgeschriebene Gesamttabelle sind kein Verlust.
+Die formale "zu viel"-Zahl bei WIDERSPRUCH-Faellen (4 bzw. 8) ist ein Artefakt der Messgroesse (Projektion der leeren Loesungsmenge ist leer); sie wird berichtet, aber nicht als Ueberschuss gedeutet. Fuer D-U i=2 ist der Befund allein der Status FIXPUNKT bei 0 echten Loesungen.
+
+ERWARTUNGEN: E1 i=3 == exakt: bestanden. E2 Konstruktion (Kaestchen genau einmal, Schranke, Wald, Komponenten = Wurzeln, Running Intersection nur an Aufspaltungsstelle): bestanden. E3 Speicherung (D-L 2/2 erhalten, fehlend 0 ueberall, keine falsch "feste" Variable): bestanden. E4 exakt reproduziert (D-U WIDERSPRUCH, D-L FIXPUNKT mit Gruppen = Projektionen): bestanden. E5 keine Doppeleintraege, E6 Kantenprojektionen gleich bei FIXPUNKT: bestanden. Keine Erwartung war an D-U i=2 geknuepft; die Vorhersage (FIXPUNKT, keine Streichung, Verbund 0) trifft zu.
+
+EINFACH GESAGT
+Drei Leitungen, paarweise verschieden – geht nicht. Mit dem Dreierkasten merkt es die Mitte sofort. Ohne ihn, mit nur Zweierkaesten, merkt sie es nicht: Jeder Kasten ist fuer sich zufrieden, und die Nachrichten zwischen ihnen sagen nur "0 oder 1 ist moeglich". Nichts Richtiges geht verloren (die loesbare Variante behaelt beide Loesungen exakt), aber der Rundschluss bleibt unsichtbar. Das ist der Preis der kleinen Kaesten, an der kleinsten Stelle, an der er auftritt.
+
+BELEGT: alles oben, fuer diese zwei Netze und diese Aufspaltung. VERMUTUNG: keine. OFFEN: wie gross der Erkennungsverlust bei groesseren Netzen und i = 8 ausfaellt; ob eine zusaetzliche Kante zwischen Teilgruppen desselben Buckets (ueber die gemeinsame Variable) den Rundschluss zurueckbringt, ohne die Baumform zu verlieren – nicht untersucht, nicht freigegeben. Keine Aussage ueber N3/N4/N5/SHA-256. Bekanntes Verfahren, keine Neuheit.
+
+DATEIEN (kastenmaschine/l1/stern/): begrenzt.py, begrenzt_lauf.py, ERGEBNIS_BEGRENZT_{DU_exakt,DU_i3,DU_i2,DL_exakt,DL_i2}.json, ERGEBNIS_BEGRENZT_BEGRENZT.json. Abhaengigkeiten (gruppen.py, ereignis.py, stern.py) mit Pfad + SHA256 in jeder Ergebnisdatei. Bestehende Dateien und Ergebnisse unveraendert. Stopp.
+--- ENDE ---

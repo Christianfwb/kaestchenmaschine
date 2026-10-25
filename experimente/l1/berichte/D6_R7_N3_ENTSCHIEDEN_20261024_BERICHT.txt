@@ -1,0 +1,29 @@
+FABLE AN GHOST – R7 GEBAUT, N3 ENTSCHIEDEN, 2026-10-24, 13:05. Nur L1-Netze. Miner unberuehrt.
+R7 (d6.py, AKTIV 'R7'), allgemein aus der Gleichung: jede lineare Integer-Gleichung des Bestands wird nach Einsetzen/Aliassen normalisiert; enthaelt sie ueber
+freien Bits GENAU EINE unbekannte 0/1-Hilfsgroesse h mit Koeffizient m, also E(x) + m*h = k, dann wird eingefroren: E(x) in {k, k-m}. Vorzeichen bleiben (m kann
+negativ sein; Menge sortiert). Nichts fuer N3 einprogrammiert. Kontrolle prueft Zugehoerigkeit; Ableitung (0,9 ms) und Kontrollzaehlung (1,3 ms) getrennt
+gemessen; Momentaufnahme vor der Kontrolle wie bisher.
+ERGEBNIS N3 (12 wahr): D6+R5+R6 erlaubt 22 / Schein 10  ->  D6+R5+R6+R7 erlaubt 12 / Schein 0 / verloren 0 = ENTSCHIEDEN (exakte Beschreibung der 12 Loesungen,
+kein Suchalgorithmus). Eingefrorene Folgerungen: 4 XOR-Beziehungen (wie bisher), 1 ganzzahlige Beziehung (R6-Differenz, A - B = -1 nach Aliassen),
+4 Wertemengen (R7): '+1*x1 +1*x4 in {0,2}', '+1*x1 +1*x7 +1*x8 in {1,3}' (Stufenebene), '+2*x1 +4*x2 +2*x4 +4*x5 in {4,12}' (= A in {5,13} nach Einsetzen von
+x0 = x7, x3 = NOT x7, Konstanten), '+2*x1 +4*x6 +2*x7 +2*x8 +4*x9 in {6,14}' (= B in {6,14}). Die Kopplung ueber den gemeinsamen Uebertrag bleibt durch die
+R6-Beziehung A - B = -1 erhalten, daher ist (A,B) = (5,14) ausgeschlossen – genau dein Hinweis.
+ALLE NETZE (ERGEBNIS_L1_SELBSTTEST.json, 9 Netze x 9 Darstellungen = 81 Messungen, verlorene Loesungen ueberall 0, kein FEHLER); Scheinloesungen:
+  Netz (wahr)                        D1    D2    D6    +R5+R6  +R7
+  N1 Fall A ungeteilt (0)            16     8     W      W      W
+  N1g Fall A geteilt (0)             16     W     W      W      W
+  N2 Dreieck (0)                      8     W     W      W      W
+  L1 Negation+Konstante (1)           0     0     0      0      0
+  L2 2-Bit-Addierer (4)              12     0     0      0      0
+  L3 3-Bit-Addierer (8)              56     8     0      0      0
+  L4 Fall A erfuellbar (4)           12     4     0      0      0
+  N3 gekoppelte Additionen (12)    1012   116    52     10      0
+  N3u Variante (0)                 1024    64     W      W      W
+EINORDNUNG: (1) gespeichert: Formelbestand + ganzzahlige Beziehungen/Wertemengen als Ganzes; (2) abgeleitet: alle neun L1-Netze vollstaendig, ohne Kandidaten,
+ohne Suche, je < 2 ms; (3) Suche: nirgends. Die Rueckwaertsleine besteht jetzt aus R1–R7 (Einsetzen, Gauss, Aliasse, gekoppelte Uebertragsgleichung, gleiche
+Uebertraege, gewichtete Elimination, Wertemengen). Grenze dieser Aussage: Netze aus XOR und Additionen (plus Negation/Konstanten/ein AND). Ch, Maj, Sigma
+(N4/N5 Mini-Leine) sind nicht gemessen – dort dominieren UND-Gleichungen, fuer die R1 nur Einsetzen-Niveau hat. Keine Neuheitsbehauptung (lineare Integer-
+Relaxation mit Wertebereichen ist bekannt), keine SHA-Aussage.
+VORSCHLAG (nicht gestartet): N4 Mini-Leine (4-Bit-Woerter, 3 Runden mit Ch/Maj/Sigma, ein Wort zweimal benutzt) – dort entscheidet sich, ob die Leine
+ueber Addierer hinaus traegt; Erwartung: UND-Terme bleiben stehen, D6 bleibt offen, und wir sehen genau, welche Beziehung fehlt.
+Dateien: d6.py, d6_v3.py (vor R7), pruefstand.py, ERGEBNIS_L1_SELBSTTEST.json, LAUF_L1_SELBSTTEST.log.

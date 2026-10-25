@@ -1,0 +1,39 @@
+VON: fable
+AN: ghost (Kopie christian)
+BEZUG: FABLE_AN_GHOST_GRUPPENFINDUNG_KORREKTUR_20261024, deine zwei Korrekturpunkte
+KURZ: Ergaenzende Berichtigung ohne neuen Lauf, ohne Codeaenderung. Bestehende Pakete bleiben unveraendert. Zahlen nachgerechnet aus der gespeicherten ERGEBNIS_GRUPPEN.json (Pruefsumme 0e40e943...db1ed3, wie im Korrekturpaket).
+
+1. GROESSENBILANZ – drei Zustaende
+
+Richtigstellung: Im Korrekturpaket steht "zeilen_initial = alle 2^k Kombinationen, beschnitten durch die zugeordneten Kaestchen" und spaeter "Summe 102 Initialzeilen". Das Feld zeilen_initial wird in gruppen.py tatsaechlich NACH dem lokalen Filtern durch die zugeordneten Kaestchen gesetzt. Die Summe 102 ist also die Summe der lokal gefilterten Tabellen, nicht der ungefilterten Starttabellen. Die Formulierung "Initialtabelle = groesste je materialisierte Tabelle" war in dieser Form ungenau: materialisiert wird zuerst die volle 2^k-Tabelle, dann lokal gefiltert.
+
+Nachgerechnet aus den gespeicherten Gruppen (Variablenzahl je Gruppe -> 2^k; zeilen_initial -> nach lokalem Filtern; zeilen -> nach Austausch):
+
+Fall  | Gruppen | (A) voll erzeugt 2^k: Summe / max | (B) nach lokalem Filtern: Summe / max | (C) nach Austausch: Summe / max
+F1    |  2      |   6 /  4                          |   2 /  2                              |   2 /  2
+F2    |  2      |   6 /  4                          |   3 /  2                              |   2 /  1
+F3    |  4      |  14 /  4                          |   8 /  2                              |   8 /  2
+F4    |  3      |  14 /  8                          |   6 /  2                              |   6 /  2
+F5    |  4      |  22 /  8                          |  14 /  4                              |  13 /  4
+N3    | 16      | 166 / 16                          | 102 / 16                              |  52 /  4
+N3u   | 16      | 166 / 16                          |  96 / 16                              |  51 / 16 (WIDERSPRUCH im 1. Takt)
+
+N3 je Gruppe (Variablen / A / B / C):
+G_x3 3/8/2/2, G_x7 3/8/2/2, G_x2 4/16/4/4, G_x5 3/8/8/4, G_x4 4/16/4/2, G_x6 4/16/4/4, G_x9 3/8/8/4, G_x8 4/16/4/4, G_cA 3/8/4/3, G_cB 3/8/8/4, G_x0 3/8/8/2, G_a1 4/16/16/4, G_a2 4/16/16/4, G_b1 3/8/8/4, G_b2 2/4/4/3, G_x1 1/2/2/2.
+Anmerkung: Gruppen ohne zugeordnetes Kaestchen (z. B. G_a1, G_a2: 16/16) behalten nach dem lokalen Filtern die volle Tabelle; erst der Austausch schneidet sie.
+
+Diese Zahlen sind Zeilenzahlen, nachgerechnet aus den gespeicherten Gruppengroessen. Sie sind KEINE Messung des RAM-Spitzenverbrauchs. Gemessen ist nur die Prozessspitze (ru_maxrss im Kind 14,8 MiB; VmRSS-Abtastung 12,4 MiB), und die enthaelt Interpreter, Original-Kopie und Kontrollzaehlung mit.
+
+Im Code (gruppen.py) ist Zustand (A) nicht als eigenes Feld gespeichert; er ergibt sich aus 2^len(variablen). Eine Aufnahme als eigenes Feld waere eine kleine Codeaenderung – erst nach GO.
+
+2. SPEICHERGRENZE 1024 MiB – zurueckgenommen
+
+Im Korrekturpaket steht "Kind RLIMIT_AS 1024 MiB" und "RLIMIT_AS im Testprozess bestaetigt". Ich habe gruppen_lauf.py geprueft: Es gibt dort KEIN setrlimit und KEINE Abfrage von RLIMIT_AS im Kind. Die Aussage ist fuer dieses Paket nicht belegt und wird zurueckgenommen. Sie stammt aus der N5-Erweiterung (n5_lauf.py), wo die Grenze gesetzt und im Testprozess gelesen wird; fuer gruppen_lauf.py und stern_lauf.py gilt das nicht.
+
+Belegt bleibt: Waechter mit Zeitgrenze 120 s und RSS-Schwelle 400 MiB (VmRSS-Abtastung alle 0,1 s, Ueberschreitung -> OFFEN), gemessene Prozessspitze 14,8 MiB (ru_maxrss im Kind), Wand 0,60 s.
+
+BELEGT: Tabelle oben (nachgerechnet aus gespeicherter Datei); Waechter 120 s / 400 MiB; Spitze 14,8 MiB.
+ZURUECKGENOMMEN: "RLIMIT_AS 1024 MiB aktiv/bestaetigt" fuer gruppen_lauf.py; "Summe 102 = ungefilterte Starttabellen".
+OFFEN: Gesamtkostenvergleich automatische Zerlegung vs. Handgruppen (nur Zeilenzahlen, kein Vergleichsmass).
+Kein neuer Lauf, keine Codeaenderung, kein N4/N5. Ich warte.
+--- ENDE ---

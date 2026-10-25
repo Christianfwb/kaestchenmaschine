@@ -1,0 +1,39 @@
+VON: fable
+AN: ghost, christian
+BEZUG: GO Christian 2026-10-25 12:50 – schlankere Hilfsmasken der Bitmengen, begrenzter Vergleich an N3/N3u exakt (bisherige Bitmengen gegen schlanke Masken)
+KURZ: Rechnerisch identisch (Selbsttest 4784 Faelle 0 Fehler; Endrelationen, feste Werte, Status, Zaehler, direkte Semijoins gleich). Maskenspeicher sinkt von 41 183 auf 16 816 Objektbytes (N3) bzw. 37 942 auf 15 736 (N3u); der beobachtete Hoechststand sinkt von 95 016 auf 75 812 (N3, -20 %) und von 83 727 auf 66 627 (N3u). Preis: 3,7-mal so viele UND-Operationen (2 067 -> 7 631 bei N3), weil die Schnittmengenmasken je Aufruf neu berechnet werden.
+
+1. NEUE DARSTELLUNG (bitmenge_schlank.py; Bitpositionen, Nachrichtenformat, Arbeitsliste, Gruppierung unveraendert)
+Bisher: je (Gruppe, Schnittmenge S) 2^s gespeicherte Masken zu 2^k Bits (maske_c = alle Gruppenbelegungen mit S-Teil c).
+Schlank: je Gruppe nur VARIABLENMASKEN, unabhaengig von S, gemeinsam fuer alle Kanten: EINS[j] = Positionen mit v_j = 1, NULL[j] = Positionen mit v_j = 0 -> 2k Masken zu 2^k Bits. Die Schnittmengenmaske fuer eine Belegung c von S wird bei Bedarf berechnet: maske_c = UND ueber i von (EINS[idx_i] bzw. NULL[idx_i]) – m-1 UND, kurzlebig, nicht gespeichert. Projektion und Semijoin wie bisher, nur mit berechneter statt gespeicherter maske_c. S = () -> maske = ALLE. Vertauschte Reihenfolge in S ueber idx_i; leere Relation -> alle Projektionen 0.
+Maskenbedarf: bisher Summe ueber Kanten 2 * 2^s * 2^k Bits; schlank je Gruppe 2k * 2^k Bits. Bei k = 8, s = 7: bisher 128 Masken je Kante und Richtung, schlank 16 je Gruppe (gerechnet, nicht gemessen).
+
+2. VERBINDLICHE PRUEFUNGEN – alle bestanden
+Selbsttest gegen bisherige Bitmengen UND Tupelmengen: alle Relationen k = 1, 2, 3 erschoepfend (leer, vollstaendig, Einzelzeile, S = (), jede Permutation von S), 600 Stichproben k = 4, 5 mit vertauschter Reihenfolge; proj, semijoin und Endrelation verglichen: 4784 Faelle, 0 Abweichungen.
+E0 instrumentierte Arbeitsliste == Original (beide Formen, beide Netze). E1 Struktur gleich (== B2 exakt). E2 Status (N3 FIXPUNKT, N3u WIDERSPRUCH), Endrelationen je Gruppe, feste Variablen gleich. E3 Zaehler identisch: Entnahmen 98/29, Semijoins direkt 105/25, Projektionen 195/51, Nachrichten 105/51, gestrichen 346/126. E4 Kontrolle (1024 Belegungen, danach): fehlend 0, keine falsch feste Variable, N3 zu viel 0. E5 Kantenprojektionen gleich.
+
+3. SPEICHER (rekursiv gezaehlte Objektbytes, Identitaet je Messpunkt einmal, Zuordnung Tabellen | Masken | Nachrichten | Arbeitsstrukturen; Messpunkte M0 / Ma / Mb / ME wie im Messkorrektur-Lauf, N3: 205, N3u: 55)
+                 | N3 bisher               | N3 schlank              | N3u bisher              | N3u schlank
+Masken (M0)      | 41 183                  | 16 760                  | 38 026                  | 15 736
+Hoechststand (Nr 85 bzw. 51, Mb) | Tab 1 048 Masken 41 183 Nachr 19 292 Arbeit 33 493 = 95 016 | Tab 1 048 Masken 16 816 Nachr 19 292 Arbeit 38 656 = 75 812 | Tab 1 008 Masken 37 942 Nachr 11 268 Arbeit 33 509 = 83 727 | Tab 1 008 Masken 15 736 Nachr 11 296 Arbeit 38 587 = 66 627
+Ende             | 94 320                  | 75 116                  | 83 727                  | 66 627
+Maskenaufbau     | 788 Masken, 19 260 Bits, 1,26 ms | 338 Masken, 7 108 Bits, 0,46 ms | 708 / 16 540 Bits / 0,84 ms | 328 / 6 484 Bits / 0,19 ms
+Hinweis zur Zuordnung: Die Arbeitsstrukturen erscheinen bei "schlank" um ~5 KB groesser (38 656 gegen 33 493). Das ist kein Mehrbedarf: Bei "bisher" liegen die Schnittmengen-Tupel S als Schluessel im Maskenwoerterbuch und werden dort zuerst gezaehlt; bei "schlank" gibt es dieses Woerterbuch nicht, dieselben Tupel werden erst bei den Arbeitsstrukturen (nachbarn/N) gezaehlt. Die Summe ist davon unberuehrt. Deshalb ist der Hoechststand (Summe) die belastbare Vergleichszahl: -19 204 (N3) bzw. -17 100 Bytes (N3u).
+Nachrichten: identische Zahlen bis auf 28 Bytes (geteilte kleine Ganzzahlen).
+Zwischenobjekte / Messluecke: Bei "schlank" entstehen je Aufruf kurzlebig eine berechnete maske_c (2^k Bit) und der Akkumulator "erlaubt" (2^k Bit), dazu Projektionszahl, 1-Tupel, Huelle – gerechnet 356 Bytes je Aufruf; beobachtetes Maximum einer einzelnen Zwischen-Ganzzahl 32 Bytes (k <= 5). Das ist ein beobachteter Wert zwischen den Messpunkten, KEINE garantierte Obergrenze; Python-interne Zwischenobjekte (Indexlisten, Generatoren) sind nicht erfasst. Bei "bisher" entsprechend 324 Bytes gerechnet.
+
+4. AUFWAND (verschiedene Einheiten, getrennt vom Speicher)
+                 | N3 bisher | N3 schlank | N3u bisher | N3u schlank
+UND auf 2^k-Bit-Zahlen | 2 067 | 7 631 | 427 | 1 272
+ODER             | 350       | 350        | 76         | 76
+Bitzaehlungen    | 253       | 253        | 93         | 93
+maske_c berechnet| 0 (gespeichert) | 2 272 | 0 | 436
+Lesart: Jede Projektion auf s Variablen kostet schlank zusaetzlich 2^s * (s-1) UND fuer die Masken; bei s <= 4 sind das bis zu 48 UND je Projektion. Der Austausch rechnet also knapp viermal so viele Elementaroperationen auf gleich breiten Zahlen – dafuer sind zwei Fuenftel des Maskenspeichers weg. Keine Zeitaussage (instrumentierte Millisekundenlaeufe: T1 schlank 8,9 ms gegen 8,0 ms bei N3 – nicht belastbar).
+
+5. EINFACH GESAGT
+Statt fuer jede Verbindung einen eigenen Schablonensatz aufzuheben (bisher 788 Schablonen), merkt sich jeder Kasten nur noch, welche seiner Leitungen Null oder Eins ist (338 Schablonen), und baut die Verbindungsschablone bei Bedarf aus zwei bis drei dieser Grundschablonen zusammen. Ergebnis bitgenau gleich, Schablonenlager auf zwei Fuenftel, Gesamt-Hoechststand um ein Fuenftel kleiner – aber knapp viermal so viele Rechenschritte beim Abgleich. Das ist der klassische Tausch Platz gegen Arbeit; welcher Weg bei grossen Kaesten mit breiten Verbindungen besser ist, haben wir hier nicht gemessen.
+
+BELEGT: Gleichheit und Zahlen oben, fuer N3/N3u an den Messpunkten. VERMUTUNG: keine. OFFEN: Zwischenweg (Schnittmengenmasken je Kante einmal berechnen und nur fuer die aktuelle Entnahme halten – noch nicht gebaut, waere eine weitere Optimierung, nicht in diesem GO); Verhalten bei k = 8 / s = 7; Nachrichtenhuelle und Arbeitsstrukturen weiterhin die groessten Posten neben den Masken. Kein groesseres Netz, keine automatische Grenzerhoehung.
+
+DATEIEN (kastenmaschine/l1/stern/): bitmenge_schlank.py, bitmenge_schlank_mess.py (Kopie von bitmenge_mess.py mit dritter Form, Original unveraendert), bitmenge_schlank_lauf.py, ERGEBNIS_SCHLANK_SELBSTTEST.json, ERGEBNIS_SCHLANK_{N3,N3u}_{BIT,SCHLANK}.json (volle Messreihen), ERGEBNIS_SCHLANK_BEGRENZT.json. Abhaengigkeiten mit Pfad + SHA256 in jeder Ergebnisdatei. Bestehende Dateien und Ergebnisse unveraendert. Waechter 120 s / 400 MiB alle OK. Stopp.
+--- ENDE ---

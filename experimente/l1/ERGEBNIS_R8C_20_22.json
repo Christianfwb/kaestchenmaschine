@@ -1,0 +1,293 @@
+{
+ "netz": "N4r09 Leine W_i=W_(i-3)",
+ "frei": 12,
+ "knoten": 1328,
+ "wahr": 1,
+ "zeilen": [
+  {
+   "darstellung": "D6+R5+R6+R7+R1b",
+   "status": "FIXPUNKT",
+   "erlaubt": 128,
+   "scheinloesungen": 127,
+   "verlorene": 0,
+   "entschieden": false,
+   "groesse": {
+    "xor_gleichungen": 715,
+    "und_gleichungen": 905,
+    "stufen": 252,
+    "werte": 479,
+    "aliasse": 348,
+    "regeln": {
+     "R1": 342,
+     "R2": 75,
+     "R3": 149,
+     "R4": 363,
+     "R5": 171,
+     "R6": 59,
+     "R7": 4,
+     "R1b": 172
+    },
+    "beziehungen_ueber_freie_bits": [
+     "x0^x8=0",
+     "x1^x8^x9=1",
+     "x4^x8=0",
+     "x5^x8=1",
+     "x6^x9=1"
+    ],
+    "ganzzahlige_beziehungen": [],
+    "wertemengen": [
+     "-1*x1 +1*x8 -1*x9 in [-1, 1]",
+     "+1*x1 -1*x8 -1*x9 in [-1, 1]",
+     "+1*x1 +1*x8 +1*x9 in [1, 3]"
+    ],
+    "feste_freie_bits": 0,
+    "s": 0.3057
+   },
+   "folgerungen": {
+    "frei_fest": {},
+    "frei_lin": [],
+    "frei_menge": [
+     [
+      [
+       [
+        1,
+        -1
+       ],
+       [
+        8,
+        1
+       ],
+       [
+        9,
+        -1
+       ]
+      ],
+      [
+       -1,
+       1
+      ]
+     ],
+     [
+      [
+       [
+        1,
+        1
+       ],
+       [
+        8,
+        -1
+       ],
+       [
+        9,
+        -1
+       ]
+      ],
+      [
+       -1,
+       1
+      ]
+     ],
+     [
+      [
+       [
+        1,
+        1
+       ],
+       [
+        8,
+        1
+       ],
+       [
+        9,
+        1
+       ]
+      ],
+      [
+       1,
+       3
+      ]
+     ]
+    ],
+    "frei_xor": [
+     [
+      0,
+      8,
+      0
+     ],
+     [
+      1,
+      8,
+      9,
+      1
+     ],
+     [
+      4,
+      8,
+      0
+     ],
+     [
+      5,
+      8,
+      1
+     ],
+     [
+      6,
+      9,
+      1
+     ]
+    ],
+    "widerspruch": false
+   },
+   "ableitung_s": 0.3058,
+   "ableitung_peak_mib": 19.9,
+   "kontrolle_s": 0.0059,
+   "wall_s": 0.4,
+   "peak_mib_extern": 18.0,
+   "rlimit_aktiv": true,
+   "rlimit_mib": 1024
+  },
+  {
+   "darstellung": "D6+R1b+R8c(20,22)",
+   "status": "FIXPUNKT",
+   "erlaubt": 128,
+   "scheinloesungen": 127,
+   "verlorene": 0,
+   "entschieden": false,
+   "groesse": {
+    "xor_gleichungen": 724,
+    "und_gleichungen": 905,
+    "stufen": 252,
+    "werte": 480,
+    "aliasse": 354,
+    "regeln": {
+     "R1": 342,
+     "R2": 76,
+     "R3": 152,
+     "R4": 372,
+     "R5": 188,
+     "R6": 59,
+     "R7": 4,
+     "R1b": 173,
+     "R8c": 2
+    },
+    "beziehungen_ueber_freie_bits": [
+     "x0^x8=0",
+     "x1^x8^x9=1",
+     "x4^x8=0",
+     "x5^x8=1",
+     "x6^x9=1"
+    ],
+    "ganzzahlige_beziehungen": [],
+    "wertemengen": [
+     "-1*x1 +1*x8 -1*x9 in [-1, 1]",
+     "+1*x1 -1*x8 -1*x9 in [-1, 1]",
+     "+1*x1 +1*x8 +1*x9 in [1, 3]"
+    ],
+    "feste_freie_bits": 0,
+    "s": 0.2655
+   },
+   "folgerungen": {
+    "frei_fest": {},
+    "frei_lin": [],
+    "frei_menge": [
+     [
+      [
+       [
+        1,
+        -1
+       ],
+       [
+        8,
+        1
+       ],
+       [
+        9,
+        -1
+       ]
+      ],
+      [
+       -1,
+       1
+      ]
+     ],
+     [
+      [
+       [
+        1,
+        1
+       ],
+       [
+        8,
+        -1
+       ],
+       [
+        9,
+        -1
+       ]
+      ],
+      [
+       -1,
+       1
+      ]
+     ],
+     [
+      [
+       [
+        1,
+        1
+       ],
+       [
+        8,
+        1
+       ],
+       [
+        9,
+        1
+       ]
+      ],
+      [
+       1,
+       3
+      ]
+     ]
+    ],
+    "frei_xor": [
+     [
+      0,
+      8,
+      0
+     ],
+     [
+      1,
+      8,
+      9,
+      1
+     ],
+     [
+      4,
+      8,
+      0
+     ],
+     [
+      5,
+      8,
+      1
+     ],
+     [
+      6,
+      9,
+      1
+     ]
+    ],
+    "widerspruch": false
+   },
+   "ableitung_s": 0.2656,
+   "ableitung_peak_mib": 20.1,
+   "kontrolle_s": 0.0062,
+   "wall_s": 0.4,
+   "peak_mib_extern": 18.0,
+   "rlimit_aktiv": true,
+   "rlimit_mib": 1024
+  }
+ ]
+}

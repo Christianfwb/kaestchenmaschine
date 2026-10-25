@@ -1,0 +1,33 @@
+FABLE AN GHOST – ABLATION AM N4r10 UND HERLEITUNG VON x5 <= x8 – 2026-10-24 18:45. Auftrag 15:31. Kein N4r12, kein R8g.
+Fable-Container Xeon 2,10 GHz 2 Kerne, Python 3.13.16. Korrigierter Pruefablauf, Grenzen wie bisher. Zwei neue Ablationsklassen (ohne R7; nur R9b ohne Bruecke).
+Uebernommen: Der N4r09-Befund (R9 allein reicht DORT) bleibt bestehen; am N4r10 reicht R9 zusaetzlich nicht.
+
+1. ABLATION N4r10 (ERGEBNIS_ABLATION_N4R10.json; 1 wahre Loesung, Orakel 2,18 s nach der Ableitung; verloren ueberall 0):
+   Voller Regelsatz                         384 | R9 3 R9a 6 R9b 6 Br 2 R7 6 | Wertemenge x5 - x8 in {-1, 0}
+   ohne R9b (und Bruecke)                   512 | R9 3 R9a 6 R9b 0 Br 0 R7 5 | keine
+   ohne R7                                  512 | R9 3 R9a 6 R9b 6 Br 2 R7 0 | keine
+   Grundgeruest + R9b, OHNE Bruecke         512 | R9 0 R9a 0 R9b 6 Br 0 R7 5 | keine
+   Grundgeruest + R9b, MIT Bruecke          512 | R9 0 R9a 0 R9b 6 Br 2 R7 5 | keine
+   BEFUND: R9b und R7 sind beide NOTWENDIG (Wegfall je -> 512), aber NICHT HINREICHEND: R9b allein (mit/ohne Bruecke) bleibt bei 512. R9/R9a schaffen die
+   Voraussetzung – genau dein Einwand. Die Bruecke traegt auch hier nichts.
+
+2. HERLEITUNG VON x5 <= x8 (aus dem eingefrorenen Zustand gelesen; lin_gl #362; x1 = W0.b1, x5 = W1.b1, x8 = W2.b0, x9 = W2.b1):
+   (a) Vorhanden im Grundgeruest: XOR-Beziehung ueber freie Bits  x1 ^ x8 ^ x9 = 0,  also  x8 = x1 ^ x9.
+   (b) Maj#113 (Runde 4): Eingaenge (innerer Knoten, fest 0; x1; NICHT x9) -> Maj(0, x1, ~x9) = x1 UND NICHT x9. Sein Ausgang ist durch fruehere Aliasse (R3/R8m/R9)
+       an das freie Bit x5 gebunden: also  x5 = x1 UND NICHT x9  (eine nichtlineare Bindung eines Eingangsbits an zwei andere – D6 haelt sie nur als Alias auf den Knoten).
+   (c) Maj#81 (Runde 3): Eingaenge (x1; NICHT x9; Konstante 1) -> Maj(x1, ~x9, 1) = x1 ODER NICHT x9; Ausgangswurzel 227 ist das NEGIERTE Literal:
+       Wurzel 227 = NICHT x1 UND x9.  (b) und (c) sind ein SPIEGELPAAR ueber (x1, x9), Runden 3 und 4.
+   (d) R9b: 'nie beide 1' fuer (c) und (b):  w227 + x5 + h2509 = 1  (h2509 frische Hilfsgroesse).
+   (e) R9a (affine Differenz desselben Paares): w227 ^ x5 = x1 ^ x9; mit (a): w227 ^ x5 = x8. Aus (d)+(e) folgt ueber Gauss/R4: h2509 = NICHT x8
+       (D6 hat h2509 tatsaechlich auf 'NICHT x8' aliasiert – im Rohzustand steht Knoten 2509 -> Wurzel NICHT x8).
+   (f) Einsetzen in (d):  w227 + x5 + (1 - x8) = 1   =>   x5 - x8 + w227 = 0  mit w227 in {0,1}.
+   (g) R7 (Wertemenge mit EINER versteckten Hilfsgroesse):  x5 - x8 in {0, -1}   =>   x5 <= x8.   Das schliesst (x5, x8) = (1, 0) aus: 512 -> 384.
+   Beteiligt sind also: die Basis-XOR-Beziehung (Grundgeruest), die Alias-Bindung x5 = x1&~x9 (Grundgeruest/R8m), das Spiegelpaar Maj#81/Maj#113 (R9b UND R9a),
+   Gauss/R4 (h = ~x8) und R7. Weder R9b noch R7 allein; R9a wird zusaetzlich gebraucht, obwohl sein Wegfall oben nicht einzeln gemessen wurde (im 'nur R9b'-Lauf
+   fehlt es, und dort bleibt es bei 512 – konsistent mit der Kette).
+   Inhaltlich: x5 = x1 & ~x9 (Wort W1 Bit 1 ist Produkt zweier Bits aus W0 und W2) und x8 = x1 ^ x9 (W2 Bit 0 ist deren XOR) – x5 <= x8 ist dann die
+   Tatsache, dass 'a UND NICHT b' nie groesser ist als 'a XOR b'. Zwei nichtlineare Bindungen der Eingaenge, und ihre Vergleichbarkeit ist linear fassbar.
+EINORDNUNG: N4r10 bleibt OFFEN (383 Schein). Die Kette ist aus dem Zustand gelesen, nicht unabhaengig Schritt fuer Schritt nachgerechnet; jeder Schritt ist eine
+der dokumentierten Regeln. Keine Aussage ueber SHA-256.
+OFFEN (nicht gestartet): N4r12 mit vollem Regelsatz; R8g; ob die Bindung x5 = x1 & ~x9 am N4r10 weitere Spiegel-/Vergleichspartner hat (Karte fuer N4r10).
+Dateien: d6.py, pruefstand.py, ERGEBNIS_ABLATION_N4R10.json.

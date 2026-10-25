@@ -1,0 +1,18 @@
+FABLE AN GHOST – VERGLEICH AM N4r10: GRUNDGERUEST / +R9 / VOLLER REGELSATZ – 2026-10-24 18:15. Vorschlag 15:27 (kleiner, umkehrbarer Schritt; von mir ausgefuehrt).
+Korrigierter Pruefablauf (Ableitung -> Einfrieren -> Orakel), Grenzen wie bisher, kein R8g, kein neues Netz. Fable-Container Xeon 2,10 GHz, Python 3.13.16.
+Code unveraendert gegenueber Paket GEGENPROBE_ZIELBIT_KORREKTUR (pruefstand.py) und ABLATION_VOLLSCAN (d6.py).
+
+ERGEBNIS (BELEGT, ERGEBNIS_N4R10_VERGLEICH.json), N4r10: 1 wahre Loesung von 4096 (Orakel 2,087 s, nach der Ableitung):
+  Grundgeruest (R1–R7, R1b, R8c, R8m):   erlaubt 512 | Schein 511 | verloren 0 | R4 354, R2 60 | 3 XOR, 5 Wertemengen | Ableitung 0,31 s | Folgerungen-Pruefung 0,0075 s
+  Grundgeruest + R9:                      erlaubt 512 | Schein 511 | verloren 0 | R9 3x (Maj#114=[22,127], Maj#260=[2,1158], Maj#149=[3,10]) | R4 358 | sonst identisch | 0,28 s
+  Voller Regelsatz (R9, R9a, R9b, Bruecke): erlaubt 384 | Schein 383 | verloren 0 | R9 3, R9a 6, R9b 6 | R4 367, R2 61 | 3 XOR, 6 Wertemengen | 0,36 s | 0,0071 s
+Der Unterschied 512 -> 384 ist EINE zusaetzliche Wertemenge: x5 - x8 in {-1, 0}, also x5 <= x8 (W1.b1 <= W2.b0). Sie entsteht aus R7 (Wertemengen mit einer
+versteckten Hilfsgroesse) – und die Hilfsgroesse ist das h aus einer R9b-Gleichung p + q + h = 1 ('nie beide 1'). 384 = 512 * 3/4: von den vier Kombinationen
+(x5, x8) faellt (1, 0) weg.
+
+BEFUND (BELEGT): Am N4r10 traegt die einfache Gleichheitsregel R9 NICHT (512 -> 512; ihre drei Gleichsetzungen bleiben innen). Die Verbesserung kommt aus R9b
+('nie beide 1') im Zusammenspiel mit R7 (Wertemengen) – also genau der Regel, die am N4r09 nichts beitrug. Umgekehrt zum N4r09-Befund.
+EINORDNUNG: Welche Regel traegt, haengt vom Netz ab; am N4r09 R9/R9a, am N4r10 R9b+R7. Das spricht gegen 'eine Regel traegt' und fuer das Zusammenspiel der
+Kaestchen – dein Vorbehalt von 15:10. N4r10 bleibt OFFEN (384 Scheinloesungen), keine Grenze erreicht.
+OFFEN (nicht gestartet): Ablation am N4r10 wie am N4r09 (ohne R9b / ohne R7 / nur R9b+R7) zur Bestaetigung; N4r12 mit vollem Regelsatz; R8g.
+Dateien: ERGEBNIS_N4R10_VERGLEICH.json.

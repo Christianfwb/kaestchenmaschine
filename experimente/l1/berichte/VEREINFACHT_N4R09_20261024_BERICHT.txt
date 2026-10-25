@@ -1,0 +1,39 @@
+VON: fable
+AN: ghost (Kopie christian)
+BEZUG: GO 2026-10-24 22:00 – "erst vereinfachen, dann gruppieren" an N4r09, Stufen 0 / A / B / C1 / C2 nach Entwurf V2 + Ergaenzung (Restbedingungen bleiben; Variablen sind die Min-Fill-Knoten)
+KURZ: Nach dem D6-Grundgeruest (Stufe B) schrumpft die groesste Gruppe von 64 auf 18 Variablen, die Zahl offener Variablen von 1326 auf 492. Die Zielwerte allein (Stufe A) bringen 64 -> 49. Nach Grundgeruest + R9 (C1) hat D6 bereits ALLE 1326 Knoten fest oder aliasiert; es bleibt kein Gatter uebrig, die Vorwaertsvereinfachung (C2) findet nichts mehr. Alle Erwartungen bestanden, kein Widerspruch zum Zustand.
+
+WAS GEMESSEN WURDE
+Die Struktur der VERBLEIBENDEN GATTER nach Einsetzen von Werten und Aliasen aus dem jeweiligen Zustand. Nicht aufgenommene D6-Beziehungen (lin_gl, xor_gl) sind NICHT im Gruppenbaum; sie wurden nur gezaehlt. Neue Folgerungen beim Umbau wurden NICHT eingesetzt, sondern als Restbedingung (Kaestchen mit 1 bzw. 2 Variablen) behalten und protokolliert (Gatter, Operation, Eingaenge, Folgerung). Kaestchen mit gleicher Variablenmenge bleiben einzeln mit Herkunft erhalten; fuer Min-Fill erzeugen sie dieselben Verbindungen. Keine Tabellen, kein Austausch, kein Orakel, keine Kontrollbelegung. N4r09 unveraendert.
+
+ERGEBNISTABELLE (je Stufe ein eigener Waechterlauf; Zeiten Einzelmessungen, Fable-Container Xeon 2,10 GHz 2 Kerne, Python 3.13.16)
+Stufe | Quelle der Werte/Aliase            | offen | fest | alias | Kaestchen (1/2/3 Var) | Rest neu Wert/Gleich | groesste Gruppe | Gruppen >8 / >16 | Baum | Zeit Ableitung | Umbau | Min-Fill+Struktur | RSS
+0     | keine (Original)                   | 1326  |    0 |     0 | 1346 (32/0/1314)      | 0/0                  | 64              | 323 / 208         | ja   | –              | 0,004 | 5,93 s            | 20,4 MiB
+A     | nur 32 Zielwerte, keine Weitergabe | 1294  |   32 |     0 | 1314 (52/46/1216)     | 52/14                | 49              | 270 / 125         | ja   | –              | 0,004 | 4,32 s            | 20,4 MiB
+B     | D6 Grundgeruest (R1–R8m)           |  492  |  468 |   366 |  531 (3/15/513)       | 3/8                  | 18              |  64 / 6           | ja   | 0,25 s         | 0,003 | 0,63 s            | 17,8 MiB
+C1    | Grundgeruest + R9, so wie er ist   |    0  |  797 |   529 |    0                  | 0/0                  | –               | –                 | –    | 0,39 s         | 0,002 | –                 | 18,3 MiB
+C2    | C1 + Vorwaertsvereinfachung        |    0  |  797 |   529 |    0                  | 0/0                  | –               | –                 | –    | 0,35 s         | 0,002 | –                 | 18,3 MiB
+(offen/fest/alias zaehlen ueber alle 1326 Knoten ab Nr. 2; "fest" = Wurzel mit Wert; "alias" = Knoten, dessen find() eine andere Wurzel ist. Stufe 0: die 32 Zielbit-Kaestchen sind die 32 Einser.)
+
+Stufe B im Einzelnen (die eigentliche Frage):
+- Groesste Gruppe 18; Histogramm: 1:1, 2:5, 3:56, 4:81, 5:216, 6:15, 7:32, 8:22, 9:10, 10:13, 11:9, 12:8, 13:6, 14:6, 15:2, 16:4, 17:4, 18:2. Also 428 von 492 Gruppen mit hoechstens 8 Variablen; 64 darueber, 6 ueber 16.
+- "erstmals": 1->2, 2->3, 49->4, 121->5, 347->6, 358->7, 359->8, 391->9, 422->10, 423->11, 428->12, 446->13, 447->14, 457->15, 459->16, 464->18.
+- 519 verschiedene Variablenmengen, 8 davon mehrfach belegt (Bedingungen einzeln erhalten). Keine offene Variable ohne Kaestchen.
+- Rechnerische Obergrenze Volltabellen Summe 2^k: 1,6e6 (Stufe 0: 4,6e19; Stufe A: 2,9e15). Nur Zahl; nichts gebaut; keine Aussage ueber erlaubte Zeilen.
+- Nicht aufgenommen: 499 lin_gl (Terme je Gleichung: 252x5, 188x8, 57x14, 1x26, 1x50) und 734 xor_gl (558x3, 137x4, 33x2, 6x1). Diese Beziehungen haelt D6, der Gruppenbaum nicht.
+
+Restbedingungen (neue Folgerungen beim Umbau, NICHT eingesetzt, als Kaestchen erhalten):
+- Stufe A: 52 neue Werte, 14 neue Gleichheiten – erwartbar, denn Stufe A setzt nur ein und gibt nichts weiter; das sind die lokalen Folgen der Zielwerte (z. B. XOR mit festem Ausgang und festem Eingang -> anderer Eingang fest).
+- Stufe B: 3 neue Werte und 8 neue Gleichheiten, die D6s Zustand NICHT enthaelt. Beispiele: Gatter 501 = UND(¬480, 477) faltet nach Einsetzen zu 0, aber wert[501] war nicht gesetzt; Gatter 317 = XOR(315, 316) faltet zu 316 (315 fest), aber kein Alias 317=316 im Zustand. Kein Widerspruch – aber ein Hinweis, dass das Grundgeruest einzelne Vorwaertsfaltungen nicht zieht (vermutlich weil die Regeln rueckwaerts/zielgetrieben arbeiten). Als Befund fuer D6 notiert, nicht bewertet; keine Regel daraus. Vollstaendige Liste in ERGEBNIS_VEREINFACHT_B.json unter restbedingungen.
+- Stufe C1/C2: keine (es bleibt kein Gatter).
+
+Erwartungen: E1 Reproduktion Stufe 0 (1326 / 1314 / 64 / Baum) bestanden. E2 offen monoton 1326 ≥ 1294 ≥ 492 ≥ 0 ≥ 0 bestanden. E3 Strukturpruefung (Tiefensuche, Komponenten, Running Intersection) in 0, A, B bestanden (je ein Baum, eine Wurzel). E4 kein Widerspruch zum Zustand in allen Stufen. E5 C2: 0 offen bestanden – und zwar schon in C1: D6_R9 selbst hat 797 Knoten fest und 529 aliasiert = alle 1326; die Vorwaertsvereinfachung fand 0 zusaetzliche (1 Runde). Ghosts Vorbehalt "alle Eingaenge fest heisst nicht alle Innenknoten fest" war berechtigt zu pruefen; bei diesem Netz und diesem Zustand trifft es nicht zu.
+Waechter 120 s / 400 MiB je Stufe, alle OK; RLIMIT_AS unbegrenzt (keine harte Grenze). Berichtigung zum Volllauf-Bericht: dort stand "1002 Gruppen mit hoechstens 8"; richtig sind 1003 (323 ueber 8).
+
+EINFACH GESAGT
+Der Anschlusskasten wird deutlich kleiner, wenn man vorher die festgeklemmten und nachweislich gleichen Leitungen wegnimmt: von 64 auf 18 Leitungen in der groessten Gruppe, und statt 1326 nur noch 492 offene Leitungen. Aber 18 ist immer noch mehr als unsere 8, und 64 Gruppen liegen darueber. Die Zielwerte allein helfen wenig (64 -> 49); den grossen Schritt macht die Regelmaschine. Und was D6 zusaetzlich als Gleichungen ueber viele Variablen weiss (bis zu 50 Terme), ist in diesem Baum gar nicht drin.
+
+BELEGT: Zahlen oben. VERMUTUNG: keine. OFFEN: ob eine andere Eliminationsreihenfolge oder groebere Kaestchen (Stufen) in Stufe B unter 8 kommen; ob die nicht aufgenommenen Gleichungen in kleine Gruppen passen (die mit 2–5 Termen vielleicht, die mit 14/26/50 nicht); wie die groesste Gruppe mit R9a/R9b-Zustand (384-Stand bei N4r10) aussieht – alles nicht versucht. Keine Aussage ueber Loesbarkeit, N5, SHA-256.
+
+DATEIEN (kastenmaschine/l1/stern_n4/): strukt_n4_vereinfacht.py, strukt_n4_vereinfacht_lauf.py, ERGEBNIS_VEREINFACHT_{0,A,B,C1,C2}.json, ERGEBNIS_VEREINFACHT_BEGRENZT.json. Abhaengigkeiten (Pfad + SHA256) in jeder Ergebnisdatei: pruefstand, gatter, d6, gruppen, stern, e1_bit. Bestehende Dateien unveraendert. Stopp.
+--- ENDE ---

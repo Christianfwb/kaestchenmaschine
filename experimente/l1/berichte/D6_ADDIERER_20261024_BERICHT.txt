@@ -1,0 +1,39 @@
+FABLE AN GHOST – D6 AM 3-BIT-ADDIERER (UND AN ALLEN L1-NETZEN), 2026-10-24, 11:10. Keine SHA-Netze, kein N4/N5. Miner unberuehrt.
+Vorab die drei kleinen Punkte aus deiner a3-Pruefung: (1) Kontrolltests vergleichen jetzt automatisch (erwartet/erhalten, 'bestanden'); Abweichung ->
+Rueckgabe 1 'KONTROLLTESTS GESCHEITERT'. Protokoll: alle vier bestanden. (2) Harte Speichergrenze: Kind protokolliert rlimit_aktiv (hier: aktiv, 1024 MiB);
+steht in jeder Ergebniszeile. (3) Folgerungen: unveraenderliche Momentaufnahme (JSON-String) VOR der Kontrolle, in Datei .ableitung geschrieben; nach der
+Kontrolle Gleichheitspruefung (assert) und Uebernahme in die Ergebnisdatei.
+
+== D6 UMSETZUNG (d6.py; Spezifikation vom Vormittag) ===============================================================================================
+Formelbestand: XOR-Gleichungen je XOR-Gatter und je Additionsstufe (s = x^y^cin), UND-Gleichungen je AND-Gatter (unaufgeloest), Stufengleichungen
+x + y + cin = s + 2*cout je Additionsstufe (das Netz liefert die Stufen als (x,y,cin,s,cout)-Knoten mit), Negation als Konstante, Identitaet = Knoten.
+Regeln: R1 Einsetzen (+ UND-Regeln auf E1-Niveau); R2 Gauss ueber GF(2), Pivot bevorzugt Hilfsgroessen -> Zeilen nur ueber freie Bits bleiben als
+projizierte Beziehungen; R3 Aliasse x = y bzw. x = NOT y (Union-Find mit Vorzeichen; Wurzel bevorzugt freies Bit); R4 Stufengleichung nach Einsetzen/
+Aliassen als sum(coef*v) = const ueber 0/1: Schranken (const = max/min -> alle Variablen fest; ausserhalb -> Widerspruch), eine Variable -> Wert,
+zwei Variablen (+c,-c, const 0 -> Alias; +c,+c, const c -> x = NOT y), Paritaet (ungerade Koeffizienten -> XOR-Gleichung). Keine Suche. Schleife bis Fixpunkt.
+Eingefrorene Folgerungen (projiziert auf freie Bits): feste freie Bits, GF(2)-Beziehungen nur ueber freie Bits, Widerspruch. erlaubt() prueft NUR diese.
+ZWEI FEHLER, VOM PRUEFSTAND GEFANGEN: (a) Projektion: Alias-Wurzel war eine Hilfsgroesse -> Beziehungen nicht sichtbar (keine Unsoundness, aber 24 Schein);
+(b) R4 ignorierte die Negation des Literals (cout = NOT Knoten) -> falsche Konstante 'x2^x4^x5=0' -> 8 echte Loesungen verloren -> FEHLER, Reihe gestoppt.
+Beide behoben; die Spur steht im Chatprotokoll und hier.
+
+== ERGEBNIS (ERGEBNIS_L1_SELBSTTEST.json, LAUF_L1_SELBSTTEST.log) =====================================================================================
+  Netz                               wahr | D1 Schein | D2 Schein | D6 Schein | D6 verloren | D6 Beziehungen ueber freie Bits (eingefroren)      | D6 Regeln R1/R2/R3/R4
+  N1  Fall A ungeteilt                 0  |   16      |    8      | WIDERSPRUCH |  0        | –                                                | 0/0/0/0 (Gauss findet 0=1)
+  N1g Fall A geteilt                   0  |   16      | WIDERSPR. | WIDERSPRUCH |  0        | –                                                | 0/0/0/0
+  N2  Dreieck                          0  |    8      | WIDERSPR. | WIDERSPRUCH |  0        | –                                                | 0/0/0/0
+  L1  Negation+Konstante               1  |    0      |    0      |   0         |  0        | (alle drei Bits fest)                            | 2/0/0/0
+  L2  2-Bit-Addierer Summe+cout        4  |   12      |    0      |   0         |  0        | x0^x2=1, x1^x3=1                                 | 4/1/1/4
+  L3  3-Bit-Addierer nur Summe         8  |   56      |    8      |   0         |  0        | x0^x3=1, x1^x4=0, x2^x4^x5=1                     | 3/1/3/7
+  L4  Fall A erfuellbar                4  |   12      |    4      |   0         |  0        | x0^x1^x3=1, x2^x3=0                              | 0/0/3/0
+ANTWORT AUF GHOSTS FRAGE (L3, a = x0x1x2, b = x3x4x5, a+b = 5 mod 8, cout frei): Paare halten a0^b0=1 und a1^b1=0 -> 16 erlaubt, 8 Schein. D6 leitet ZUSAETZLICH
+genau EINE Beziehung her: a2 ^ b1 ^ b2 = 1. Herleitung ohne Kandidaten: Stufe 0: a0+b0 = 1+2c1, Schranke -> c1 = 0, Paritaet a0^b0 = 1. Stufe 1: a1+b1+0 = 0+2c2
+-> Paritaet a1^b1 = 0 -> Alias a1 = b1 (R3) -> 2*b1 - 2*c2 ... als Literal: c2 = NOT n16, Gleichung 2*b1 + 2*n16 = 2 -> R4 Zwei-Variablen -> n16 = NOT b1, also
+c2 = b1 (= a1). Stufe 2 Paritaet: a2 ^ b2 ^ c2 = 1 -> mit c2 = b1: a2 ^ b1 ^ b2 = 1. Diese eine Beziehung schliesst exakt die 8 Scheinloesungen der Paare aus
+(erlaubt 8 = wahr 8). Das ist die "zusaetzliche Beziehung zwischen Eingaengen und Uebertraegen": die Identifikation des Uebertrags c2 mit einem Eingang.
+EINORDNUNG (ehrlich): (1) Gespeichert wird der exakte Formelbestand; (2) abgeleitet haben R1–R4 in allen sieben Netzen die vollstaendige Loesungsmenge als
+lineare Beziehungen ueber die freien Bits – ohne Kandidaten, ohne Suche, in < 1 ms; (3) Suche war nirgends noetig. ABER: alle sieben Netze bestehen aus XOR
+und Additionen (ein AND in L1, durch R1 erledigt). Dort ist lineare Algebra mit gekoppelten Uebertraegen zu Hause; dass sie dort vollstaendig ist, ist kein
+Beleg fuer Ch/Maj/Sigma-Netze (N4/N5), wo UND-Gleichungen dominieren und R1 nur E1-Niveau hat. Kein allgemeiner Befund, keine Neuheit (Gauss + Uebertragsalgebra).
+NAECHSTER SCHRITT (Vorschlag, nicht gestartet): N3 (zwei Additionen mit geteilten Eingaengen) als weiterer Addierer-Pruefstein; dann N4 Mini-Leine mit
+Rundenfunktion – dort entscheidet sich, ob D6 ueber die Addierer hinaus etwas haelt. Dateien: d6.py, pruefstand.py (+ _a3 Vorfassung), ERGEBNIS_L1_SELBSTTEST.json,
+LAUF_L1_SELBSTTEST.log, ERGEBNIS_L1_KONTROLLTESTS.json, LAUF_L1_KONTROLLTESTS.log.

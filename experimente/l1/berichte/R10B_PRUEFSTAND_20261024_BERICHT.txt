@@ -1,0 +1,25 @@
+FABLE AN GHOST – R10b 'CARRY-SAVE AN BIT 0': KLEINER PRUEFSTAND, GEGENPROBEN – 2026-10-24 23:20. Vorschlag 17:25. Nur Regel + Kleinstnetze. KEINE Anwendung im N5-Netz,
+keine allgemeine R10-Elimination, kein R8g. Neue Datei nur im Offline-Labor (l1/n5/r10b.py, Unterklasse von D6_Vollscan); d6.py, pruefstand.py, n5.py unveraendert.
+Fable-Container Xeon 2,10 GHz 2 Kerne, Python 3.13.16. Kleinstnetze 3–6 freie Bits, alle Belegungen gegen Orakel; verlorene Loesung -> FEHLER/Stopp (nicht ausgeloest).
+
+1. BEHAUPTUNGEN VOLLSTAENDIG GEPRUEFT (Wahrheitstafel, alle 8 Belegungen von a, b, c; ohne D6): u*v = 0 und u + v = Maj(a,b,c) – BESTAETIGT.
+2. REGEL (r10b.py): Anwendungsbedingungen werden am Formelbestand geprueft, nicht aus Bitnummern abgeleitet:
+   - Stufe 2 hat als Eingang GENAU das Summenliteral s von Stufe 1 (derselbe Knoten; ein negierter Link −s zaehlt NICHT, dort gilt der Ausschluss nicht),
+   - cin1 und cin2 sind nachweislich 0: Konstante 0 oder durch die Ableitung fester Wert 0 (kein Orakel),
+   - u und v noch offen.
+   Was die Regel einspeist (alles Folgerungen, keine Fallwahl): Stufe (i) a + b + c = t + 2m mit m = u ^ v (= u + v wegen u*v = 0); Stufe (ii) u + v + keiner = 1 mit
+   keiner = ~u & ~v (ganzzahliger Ausschluss, von R4/R7 lesbar); und u & v = 0 als Zielwert (Bruecke zu R1). Umsetzung ohne Aenderung an d6.py: erster Lauf bis zum
+   Fixpunkt (liefert die Nachweise cin = 0), dann Bedingungen pruefen, Zusatzgleichungen eintragen, zweiter Lauf bis zum Fixpunkt. Jede Anwendung protokolliert.
+3. GEGENPROBEN (ERGEBNIS_R10B_GEGENPROBEN.json; ohne = Vollscan, mit = Vollscan + R10b; 'erlaubt/wahr' ueber alle Belegungen; verloren ueberall 0):
+   greift (R10b 1x):  Kette ohne cin, u = h, v = d (h, d frei): ohne 16/8 -> mit 14/8. Dasselbe mit negiertem a bzw. negiertem c: 16/8 -> 14/8.
+                      cin2 = freies Bit e mit Ziel e = 0 (Nachweis 0 durch Ableitung): 16/8 -> 14/8.
+   greift richtig NICHT (R10b 0x): negierter Link (t = ~s ^ c): 16/8 bleibt (u, v koennen dort beide 1 sein); cin1 = freies Bit e ohne Nachweis: 32/16; cin2 = e ohne
+                      Nachweis: 32/16; cin1 = e mit Ziel e = 1: 16/8; zwei unverkettete Additionen: 16/16; Alias a = b (Ziel) – schon ohne exakt 4/4, u, v nicht mehr offen.
+   Unerfuellbar (h = d = 1 erzwungen): 0 wahr, 0 erlaubt schon ohne (R1 findet es), R10b nicht mehr noetig.
+   LESART DER 14/8: Die Regel bewahrt den AUSSCHLUSS (h + d <= 1 ueber freie Bits: 16 -> 14), nicht die ganze Gleichheit h + d = Maj(a,b,c) – die ist in a, b, c
+   nichtlinear und bleibt als Rest (genauso wie bei einem einzelnen Addierer u = a & b nicht linear ausgedrueckt wird). Die Stufe (i) ist gehalten, erreicht die
+   Projektion aber nur ueber t und m (innere Knoten). Das ist der erwartete, ehrliche Umfang von R10b.
+4. OFFEN (nicht gestartet): Anwendung an den 27 Stellen des N5 V3 r09 (dort stehen a, b, c fuer s1_0, W0_0, s0_0 bzw. Rundenwerte); allgemeines R10; ob 'keiner'
+   als zusaetzliche Hilfsgroesse R7-Wertemengen ueber freie Bits erzeugt, haengt vom Netz ab.
+Dateien: BERICHT.txt, ERGEBNIS_R10B_GEGENPROBEN.json, kastenmaschine/l1/n5/r10b.py. Abhaengigkeiten wie Paket M1_BEGRENZT_V2 (unveraendert, Pruefsummen dort; d6.py/pruefstand.py
+wie Paket M3_V3R09).

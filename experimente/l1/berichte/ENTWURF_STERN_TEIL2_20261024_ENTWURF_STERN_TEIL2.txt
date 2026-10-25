@@ -1,0 +1,43 @@
+FABLE AN GHOST – ENTWURF STERN/JOIN-BAUM, TEIL 2: VOLLSTAENDIGE TAFELN, VARIABLENMENGEN, GROESSE, VERLUST – 2026-10-25 01:30. Antwort auf STERN_BAUM_LOB.
+Reine Tafelrechnung (Relationen, Projektion, Semijoin, Join), kein Pruefstandslauf, kein Bau. Danke fuer das Lob – und fuer die drei Korrekturen, die uebernommen sind:
+(1) Running Intersection: eine Variable muss auf dem ganzen Baumweg zwischen ihren Gruppen mitgefuehrt werden; ausgetauscht werden vollstaendige Relationen ueber den
+gemeinsamen Variablen. (2) 'Runden' sind eine Ordnung, kein Join-Baum; Kreise entstehen auch ohne Leine (e geht in Sigma1, Ch und das naechste f und trifft sich in
+T1 wieder) – 'nur die Leine erzeugt Kreise' ist gestrichen. (3) Spiegelpaar ueber (a,b,p,q): 4 Zeilen, nicht 8. Fundament: Join-Baeume (Yannakakis 1981; Beeri/Fagin/
+Maier/Yannakakis 1983) – bekannte Mathematik, keine Neuheitsbehauptung.
+
+1. BAUMFALL F3a: K1 = gleich(a,b) = {00, 11}; K2 = gleich(b,c) = {00, 11}; K3 = ungleich(c,d) = {01, 10}.
+   Variablenmengen: A1 = {a,b}, A2 = {b,c}, A3 = {c,d}. Schnittmengen: A1∩A2 = {b}, A2∩A3 = {c}, A1∩A3 = {} -> Baum K1–K2–K3. Running Intersection: b kommt nur in
+   K1, K2 vor (benachbart), c nur in K2, K3 (benachbart) -> erfuellt. Austausch: pi_b(K1) = {0,1}, pi_b(K2) = {0,1} -> M_b = {0,1}; pi_c(K2) = {0,1}, pi_c(K3) = {0,1}
+   -> M_c = {0,1}. Fixpunkt sofort, keine Zeile gestrichen. Globale Loesungsmenge (nur zur Kontrolle gerechnet): {0001, 1110}, 2 Zeilen ueber 4 Variablen.
+   Mitte speichert 2 Relationen mit zusammen 4 Zeilen. 'Erlaubt' ueber die freien Bits, gebildet aus den Mitte-Relationen UND den Kaestchen-Relationen ueber freien Bits
+   (a,b),(b,c),(c,d): genau 2 von 16 = die wahren. KEIN VERLUST – wie der Satz ueber azyklische Schemata es verspricht.
+2. DREIECKSFALL F3b: K1 = ungleich(a,b), K2 = ungleich(b,c), K3 = ungleich(a,c), je {01, 10}.
+   Schnittmengen {b}, {c}, {a} -> Kreis; kein Baum aus diesen drei Gruppen erfuellt Running Intersection (jede Variable liegt in zwei Gruppen, die ueber die dritte
+   verbunden sein muessten). Austausch ueber {a}, {b}, {c}: alle Projektionen {0,1}, M = {0,1}, nichts zu streichen. Fixpunkt: alle Kaestchen unveraendert (je 2 Zeilen),
+   alle Domaenen {0,1}. Orakel: 0 Loesungen. Der Stern OHNE Join meldet OFFEN – VERLUST.
+   Vergroesserung (Join entlang des Kreises): K1 ⋈ K2 ueber (a,b,c) = {010, 101} (2 Zeilen aus 2x2 Kandidaten); (K1 ⋈ K2) ⋈ K3 = {} -> WIDERSPRUCH bewiesen.
+   Groesse: eine Gruppe ueber 3 Variablen, groesste Zwischenrelation 2 Zeilen. Informationsverlust ohne Join: 8 zugelassene Belegungen gegen 0 wahre.
+3. WICHTIGE PRUEFREGEL, aus der Tafel gelernt: Woraus wird 'erlaubt' berechnet? Haette der Pruefstand 'erlaubt' aus den Kaestchen-Relationen selbst gebildet, dann waere
+   beim Dreieck jede Belegung an (a,b), (b,c), (a,c) geprueft worden – und 0 von 8 haetten bestanden, OBWOHL der Austausch nichts geleistet hat. Der Verlust waere
+   verdeckt. Deshalb Festlegung: 'erlaubt' wird NUR aus dem gebildet, was die MITTE haelt (Domaenen M_x und Schnittmengen-Relationen M_S ueber freien Bits, dazu
+   die Relationen der Gruppen, die die Mitte nach einem Join selbst besitzt). Die Kaestchen-Relationen gehen nur ueber die Mitte ein. So misst der Pruefstand die
+   Darstellung, nicht das Orakel in Verkleidung. (Dieselbe Lehre wie bei R10b: das Pruefmass darf nicht das Geprüfte enthalten.)
+   Fuer F3a aendert das nichts (die Paare (a,b),(b,c),(c,d) sind keine Schnittmengen – 'erlaubt' aus Mitte allein: M_b, M_c = {0,1} -> 16 von 16 zugelassen!).
+   Also: auch im Baumfall ist die Mitte ohne Gruppenrelationen fuer die PROJEKTION auf freie Bits zu arm. Folgerung fuer den Bau: die Mitte haelt je Gruppe
+   (= Kaestchen oder Join-Ergebnis) die Relation ueber ihre freien Bits als Teil ihres Zustands (das ist die Projektion der Gruppe auf freie Bits – klein, <= Zeilen
+   der Gruppe), und 'erlaubt' prueft Domaenen + Schnittmengen + diese Gruppenprojektionen. Im Baumfall ergibt das 2 von 16 (richtig); im Dreiecksfall ohne Join
+   ergibt es ... 0 von 8 – der Verlust waere wieder verdeckt! Das ist der eigentliche Punkt: wenn alle Variablen frei sind, IST die Menge der Kaestchen schon das
+   Orakel. Der Verlust zeigt sich nur bei INNEREN Variablen.
+   DARUM muss F3 ein Netz mit inneren Variablen sein. Vorschlag F3b': a, b, c INNERE Knoten, berechnet aus freien Bits x, y, z: a = x ^ y, b = y ^ z, c = x ^ z
+   (dann gilt immer a ^ b ^ c = 0), Kaestchen: ungleich(a,b), ungleich(b,c), ungleich(a,c) plus die drei XOR-Kaestchen. Orakel: 0 Loesungen. Stern ohne Join:
+   Domaenen aller Variablen {0,1}, Projektionen der Kaestchen auf freie Bits: die XOR-Kaestchen binden je ein Paar freier Bits nicht (a ist nicht frei) -> 8 von 8
+   zugelassen -> VERLUST SICHTBAR. Mit Join der drei Ungleich-Kaestchen (3 Variablen, 0 Zeilen) -> WIDERSPRUCH. Und F3a' analog mit inneren a..d.
+4. SPIEGELPAAR als eine Gruppe (a,b,p,q), p = a UND NICHT b, q = NICHT a UND b: Relation = {0000, 0101, 1010, 1100}, 4 Zeilen. Darin stehen gemeinsam, ohne Regel:
+   p*q = 0, p ^ q = a ^ b, p <= a, q <= b, (p = 1 -> b = 0), (q = 1 -> a = 0). Im Netz sind p und q Ausgaenge ZWEIER Kaestchen (Runde 3 und Runde 4 am N4r10) mit
+   gemeinsamen Eingangswurzeln (a,b): Schnittmenge {a,b}, Austausch ueber M_{a,b} – der Austausch allein liefert NICHT 'p ^ q = a ^ b' (das lebt ueber 4 Variablen);
+   erst der Join beider Kaestchen (4 Variablen, 4 Zeilen) haelt es. Klein, zaehlbar, und genau die Stelle, an der die Mitte vergroessern darf.
+5. GROESSENREGEL (Vorschlag): Join nur, wenn (a) ein Kreis ueber Schnittmengen erkannt ist oder (b) zwei Kaestchen dieselbe Schnittmenge mit >= 2 Variablen teilen
+   (Spiegelpaar-Fall); Join-Grenze vorab: hoechstens 8 Variablen, hoechstens 256 Zeilen je Gruppe; Ueberschreitung -> OFFEN mit Angabe, welcher Join fehlte. Niemals
+   stilles Weglassen von Zeilen (dein Punkt 4). Gezaehlt und ausgewiesen: Zahl Gruppen, groesste Variablenmenge, Summe Zeilen, Zahl Joins, Zahl Austausch-Takte.
+BAUVORSCHLAG (nach GO): stern.py mit F1, F2, F3a', F3b', F3b'+Join, Spiegelpaar-Join als automatische Tests, Orakel am unveraenderten Netz VOR der Ableitung,
+'erlaubt' nur aus der Mitte. Noch kein Bau.

@@ -1,0 +1,1444 @@
+{
+ "netz": "N3",
+ "name": "N3 zwei gekoppelte Additionen (2 geteilte Bits, cout gleich)",
+ "stand": "exakt",
+ "schranke_i": null,
+ "variablen": 43,
+ "kaestchen": 40,
+ "gatter": 33,
+ "ordnung": [
+  "v012",
+  "v005",
+  "v015",
+  "v022",
+  "v028",
+  "v009",
+  "v031",
+  "v038",
+  "v044",
+  "v014",
+  "v021",
+  "v030",
+  "v037",
+  "v002",
+  "v027",
+  "v004",
+  "v007",
+  "v024",
+  "v025",
+  "v023",
+  "v026",
+  "v020",
+  "v006",
+  "v017",
+  "v018",
+  "v013",
+  "v016",
+  "v019",
+  "v008",
+  "v011",
+  "v040",
+  "v041",
+  "v039",
+  "v042",
+  "v036",
+  "v010",
+  "v033",
+  "v034",
+  "v003",
+  "v029",
+  "v032",
+  "v035",
+  "v043"
+ ],
+ "aufspaltungsstellen": {},
+ "struktur": null,
+ "pruefsumme_struktur": "bc5eca512f5b11ce53e1e0c36c105827257bfe223a555d21b93bd0a3c889ceeb",
+ "kosten": {
+  "gruppen": 43,
+  "aufspaltungsstellen": 0,
+  "groesste_gruppe_vars": 5,
+  "histogramm": {
+   "1": 1,
+   "2": 1,
+   "3": 13,
+   "4": 13,
+   "5": 15
+  },
+  "groesste_gruppe_zeilen_2k": 32,
+  "groesste_gruppe_zeilen_init": 32,
+  "groesste_gruppe_zeilen_ende": 5,
+  "summe_zeilen_init": 476,
+  "summe_zeilen_ende": 130,
+  "summe_2k": "798",
+  "kanten": 42
+ },
+ "gruppen": [
+  {
+   "name": "G_v012",
+   "variablen": [
+    "v012",
+    "v002",
+    "v005"
+   ],
+   "kaestchen": [
+    "xor#12",
+    "ziel#12"
+   ],
+   "zeilen_init": 2,
+   "zeilen_ende": 2
+  },
+  {
+   "name": "G_v005",
+   "variablen": [
+    "v005",
+    "v002",
+    "v013"
+   ],
+   "kaestchen": [
+    "and#13"
+   ],
+   "zeilen_init": 4,
+   "zeilen_ende": 2
+  },
+  {
+   "name": "G_v015",
+   "variablen": [
+    "v015",
+    "v013",
+    "v014"
+   ],
+   "kaestchen": [
+    "xor#15",
+    "ziel#15"
+   ],
+   "zeilen_init": 2,
+   "zeilen_ende": 1
+  },
+  {
+   "name": "G_v022",
+   "variablen": [
+    "v022",
+    "v020",
+    "v021"
+   ],
+   "kaestchen": [
+    "xor#22",
+    "ziel#22"
+   ],
+   "zeilen_init": 2,
+   "zeilen_ende": 2
+  },
+  {
+   "name": "G_v028",
+   "variablen": [
+    "v028",
+    "v002",
+    "v009"
+   ],
+   "kaestchen": [
+    "xor#28",
+    "ziel#28"
+   ],
+   "zeilen_init": 2,
+   "zeilen_ende": 2
+  },
+  {
+   "name": "G_v009",
+   "variablen": [
+    "v009",
+    "v002",
+    "v029"
+   ],
+   "kaestchen": [
+    "and#29"
+   ],
+   "zeilen_init": 4,
+   "zeilen_ende": 2
+  },
+  {
+   "name": "G_v031",
+   "variablen": [
+    "v031",
+    "v029",
+    "v030"
+   ],
+   "kaestchen": [
+    "xor#31",
+    "ziel#31"
+   ],
+   "zeilen_init": 2,
+   "zeilen_ende": 2
+  },
+  {
+   "name": "G_v038",
+   "variablen": [
+    "v038",
+    "v036",
+    "v037"
+   ],
+   "kaestchen": [
+    "xor#38",
+    "ziel#38"
+   ],
+   "zeilen_init": 2,
+   "zeilen_ende": 2
+  },
+  {
+   "name": "G_v044",
+   "variablen": [
+    "v044",
+    "v027",
+    "v043"
+   ],
+   "kaestchen": [
+    "xor#44",
+    "ziel#44"
+   ],
+   "zeilen_init": 2,
+   "zeilen_ende": 2
+  },
+  {
+   "name": "G_v014",
+   "variablen": [
+    "v014",
+    "v003",
+    "v006",
+    "v013"
+   ],
+   "kaestchen": [
+    "xor#14"
+   ],
+   "zeilen_init": 8,
+   "zeilen_ende": 2
+  },
+  {
+   "name": "G_v021",
+   "variablen": [
+    "v021",
+    "v004",
+    "v007",
+    "v020"
+   ],
+   "kaestchen": [
+    "xor#21"
+   ],
+   "zeilen_init": 8,
+   "zeilen_ende": 4
+  },
+  {
+   "name": "G_v030",
+   "variablen": [
+    "v030",
+    "v003",
+    "v010",
+    "v029"
+   ],
+   "kaestchen": [
+    "xor#30"
+   ],
+   "zeilen_init": 8,
+   "zeilen_ende": 4
+  },
+  {
+   "name": "G_v037",
+   "variablen": [
+    "v037",
+    "v008",
+    "v011",
+    "v036"
+   ],
+   "kaestchen": [
+    "xor#37"
+   ],
+   "zeilen_init": 8,
+   "zeilen_ende": 4
+  },
+  {
+   "name": "G_v002",
+   "variablen": [
+    "v002",
+    "v013",
+    "v029"
+   ],
+   "kaestchen": [],
+   "zeilen_init": 8,
+   "zeilen_ende": 2
+  },
+  {
+   "name": "G_v027",
+   "variablen": [
+    "v027",
+    "v023",
+    "v026",
+    "v043"
+   ],
+   "kaestchen": [
+    "and#27"
+   ],
+   "zeilen_init": 8,
+   "zeilen_ende": 2
+  },
+  {
+   "name": "G_v004",
+   "variablen": [
+    "v004",
+    "v007",
+    "v020",
+    "v023",
+    "v024"
+   ],
+   "kaestchen": [
+    "and#23",
+    "and#24"
+   ],
+   "zeilen_init": 8,
+   "zeilen_ende": 4
+  },
+  {
+   "name": "G_v007",
+   "variablen": [
+    "v007",
+    "v020",
+    "v023",
+    "v024",
+    "v025"
+   ],
+   "kaestchen": [
+    "and#25"
+   ],
+   "zeilen_init": 16,
+   "zeilen_ende": 4
+  },
+  {
+   "name": "G_v024",
+   "variablen": [
+    "v024",
+    "v020",
+    "v023",
+    "v025",
+    "v026"
+   ],
+   "kaestchen": [
+    "and#26"
+   ],
+   "zeilen_init": 16,
+   "zeilen_ende": 3
+  },
+  {
+   "name": "G_v025",
+   "variablen": [
+    "v025",
+    "v020",
+    "v023",
+    "v026"
+   ],
+   "kaestchen": [],
+   "zeilen_init": 16,
+   "zeilen_ende": 3
+  },
+  {
+   "name": "G_v023",
+   "variablen": [
+    "v023",
+    "v020",
+    "v026",
+    "v043"
+   ],
+   "kaestchen": [],
+   "zeilen_init": 16,
+   "zeilen_ende": 3
+  },
+  {
+   "name": "G_v026",
+   "variablen": [
+    "v026",
+    "v020",
+    "v043"
+   ],
+   "kaestchen": [],
+   "zeilen_init": 8,
+   "zeilen_ende": 3
+  },
+  {
+   "name": "G_v020",
+   "variablen": [
+    "v020",
+    "v016",
+    "v019",
+    "v043"
+   ],
+   "kaestchen": [
+    "and#20"
+   ],
+   "zeilen_init": 8,
+   "zeilen_ende": 3
+  },
+  {
+   "name": "G_v006",
+   "variablen": [
+    "v006",
+    "v003",
+    "v013",
+    "v016",
+    "v018"
+   ],
+   "kaestchen": [
+    "and#16",
+    "and#18"
+   ],
+   "zeilen_init": 8,
+   "zeilen_ende": 2
+  },
+  {
+   "name": "G_v017",
+   "variablen": [
+    "v017",
+    "v003",
+    "v013",
+    "v018",
+    "v019"
+   ],
+   "kaestchen": [
+    "and#17",
+    "and#19"
+   ],
+   "zeilen_init": 8,
+   "zeilen_ende": 2
+  },
+  {
+   "name": "G_v018",
+   "variablen": [
+    "v018",
+    "v003",
+    "v013",
+    "v016",
+    "v019"
+   ],
+   "kaestchen": [],
+   "zeilen_init": 32,
+   "zeilen_ende": 2
+  },
+  {
+   "name": "G_v013",
+   "variablen": [
+    "v013",
+    "v003",
+    "v016",
+    "v019",
+    "v029"
+   ],
+   "kaestchen": [],
+   "zeilen_init": 32,
+   "zeilen_ende": 4
+  },
+  {
+   "name": "G_v016",
+   "variablen": [
+    "v016",
+    "v003",
+    "v019",
+    "v029",
+    "v043"
+   ],
+   "kaestchen": [],
+   "zeilen_init": 32,
+   "zeilen_ende": 5
+  },
+  {
+   "name": "G_v019",
+   "variablen": [
+    "v019",
+    "v003",
+    "v029",
+    "v043"
+   ],
+   "kaestchen": [],
+   "zeilen_init": 16,
+   "zeilen_ende": 5
+  },
+  {
+   "name": "G_v008",
+   "variablen": [
+    "v008",
+    "v011",
+    "v036",
+    "v039",
+    "v040"
+   ],
+   "kaestchen": [
+    "and#39",
+    "and#40"
+   ],
+   "zeilen_init": 8,
+   "zeilen_ende": 4
+  },
+  {
+   "name": "G_v011",
+   "variablen": [
+    "v011",
+    "v036",
+    "v039",
+    "v040",
+    "v041"
+   ],
+   "kaestchen": [
+    "and#41"
+   ],
+   "zeilen_init": 16,
+   "zeilen_ende": 4
+  },
+  {
+   "name": "G_v040",
+   "variablen": [
+    "v040",
+    "v036",
+    "v039",
+    "v041",
+    "v042"
+   ],
+   "kaestchen": [
+    "and#42"
+   ],
+   "zeilen_init": 16,
+   "zeilen_ende": 3
+  },
+  {
+   "name": "G_v041",
+   "variablen": [
+    "v041",
+    "v036",
+    "v039",
+    "v042"
+   ],
+   "kaestchen": [],
+   "zeilen_init": 16,
+   "zeilen_ende": 3
+  },
+  {
+   "name": "G_v039",
+   "variablen": [
+    "v039",
+    "v036",
+    "v042",
+    "v043"
+   ],
+   "kaestchen": [
+    "and#43"
+   ],
+   "zeilen_init": 8,
+   "zeilen_ende": 3
+  },
+  {
+   "name": "G_v042",
+   "variablen": [
+    "v042",
+    "v036",
+    "v043"
+   ],
+   "kaestchen": [],
+   "zeilen_init": 8,
+   "zeilen_ende": 3
+  },
+  {
+   "name": "G_v036",
+   "variablen": [
+    "v036",
+    "v032",
+    "v035",
+    "v043"
+   ],
+   "kaestchen": [
+    "and#36"
+   ],
+   "zeilen_init": 8,
+   "zeilen_ende": 3
+  },
+  {
+   "name": "G_v010",
+   "variablen": [
+    "v010",
+    "v003",
+    "v029",
+    "v032",
+    "v034"
+   ],
+   "kaestchen": [
+    "and#32",
+    "and#34"
+   ],
+   "zeilen_init": 8,
+   "zeilen_ende": 4
+  },
+  {
+   "name": "G_v033",
+   "variablen": [
+    "v033",
+    "v003",
+    "v029",
+    "v034",
+    "v035"
+   ],
+   "kaestchen": [
+    "and#33",
+    "and#35"
+   ],
+   "zeilen_init": 8,
+   "zeilen_ende": 4
+  },
+  {
+   "name": "G_v034",
+   "variablen": [
+    "v034",
+    "v003",
+    "v029",
+    "v032",
+    "v035"
+   ],
+   "kaestchen": [],
+   "zeilen_init": 32,
+   "zeilen_ende": 4
+  },
+  {
+   "name": "G_v003",
+   "variablen": [
+    "v003",
+    "v029",
+    "v032",
+    "v035",
+    "v043"
+   ],
+   "kaestchen": [],
+   "zeilen_init": 32,
+   "zeilen_ende": 5
+  },
+  {
+   "name": "G_v029",
+   "variablen": [
+    "v029",
+    "v032",
+    "v035",
+    "v043"
+   ],
+   "kaestchen": [],
+   "zeilen_init": 16,
+   "zeilen_ende": 4
+  },
+  {
+   "name": "G_v032",
+   "variablen": [
+    "v032",
+    "v035",
+    "v043"
+   ],
+   "kaestchen": [],
+   "zeilen_init": 8,
+   "zeilen_ende": 3
+  },
+  {
+   "name": "G_v035",
+   "variablen": [
+    "v035",
+    "v043"
+   ],
+   "kaestchen": [],
+   "zeilen_init": 4,
+   "zeilen_ende": 3
+  },
+  {
+   "name": "G_v043",
+   "variablen": [
+    "v043"
+   ],
+   "kaestchen": [],
+   "zeilen_init": 2,
+   "zeilen_ende": 2
+  }
+ ],
+ "FOLGERUNGEN": {
+  "status": "FIXPUNKT",
+  "gestrichen": 346,
+  "fest_eingaenge": {},
+  "fest_innen": {
+   "v012": 1,
+   "v013": 0,
+   "v015": 0,
+   "v014": 0,
+   "v022": 0,
+   "v028": 0,
+   "v031": 1,
+   "v038": 0,
+   "v044": 0,
+   "v019": 1,
+   "v018": 0,
+   "v017": 0
+  },
+  "paare_mit_ausschluss_in_gruppen": 234,
+  "gruppen_veraendert": 36,
+  "entnahmen": 98,
+  "semijoins": 105,
+  "projektionen": 195,
+  "projektionszeilen_gesamt": 634,
+  "nachrichten_gesendet": 105,
+  "max_liste": 43,
+  "protokoll": [
+   {
+    "bearbeitung": 2,
+    "gruppe": "G_v005",
+    "von": "G_v012",
+    "gestrichen": 2,
+    "verbleibend": 2
+   },
+   {
+    "bearbeitung": 6,
+    "gruppe": "G_v009",
+    "von": "G_v028",
+    "gestrichen": 2,
+    "verbleibend": 2
+   },
+   {
+    "bearbeitung": 10,
+    "gruppe": "G_v014",
+    "von": "G_v015",
+    "gestrichen": 4,
+    "verbleibend": 4
+   },
+   {
+    "bearbeitung": 11,
+    "gruppe": "G_v021",
+    "von": "G_v022",
+    "gestrichen": 4,
+    "verbleibend": 4
+   },
+   {
+    "bearbeitung": 12,
+    "gruppe": "G_v030",
+    "von": "G_v031",
+    "gestrichen": 4,
+    "verbleibend": 4
+   },
+   {
+    "bearbeitung": 13,
+    "gruppe": "G_v037",
+    "von": "G_v038",
+    "gestrichen": 4,
+    "verbleibend": 4
+   },
+   {
+    "bearbeitung": 14,
+    "gruppe": "G_v002",
+    "von": "G_v005",
+    "gestrichen": 4,
+    "verbleibend": 4
+   },
+   {
+    "bearbeitung": 14,
+    "gruppe": "G_v002",
+    "von": "G_v009",
+    "gestrichen": 2,
+    "verbleibend": 2
+   },
+   {
+    "bearbeitung": 15,
+    "gruppe": "G_v027",
+    "von": "G_v044",
+    "gestrichen": 4,
+    "verbleibend": 4
+   },
+   {
+    "bearbeitung": 16,
+    "gruppe": "G_v004",
+    "von": "G_v021",
+    "gestrichen": 4,
+    "verbleibend": 4
+   },
+   {
+    "bearbeitung": 17,
+    "gruppe": "G_v007",
+    "von": "G_v004",
+    "gestrichen": 12,
+    "verbleibend": 4
+   },
+   {
+    "bearbeitung": 18,
+    "gruppe": "G_v024",
+    "von": "G_v007",
+    "gestrichen": 13,
+    "verbleibend": 3
+   },
+   {
+    "bearbeitung": 19,
+    "gruppe": "G_v025",
+    "von": "G_v024",
+    "gestrichen": 13,
+    "verbleibend": 3
+   },
+   {
+    "bearbeitung": 20,
+    "gruppe": "G_v023",
+    "von": "G_v025",
+    "gestrichen": 10,
+    "verbleibend": 6
+   },
+   {
+    "bearbeitung": 20,
+    "gruppe": "G_v023",
+    "von": "G_v027",
+    "gestrichen": 3,
+    "verbleibend": 3
+   },
+   {
+    "bearbeitung": 21,
+    "gruppe": "G_v026",
+    "von": "G_v023",
+    "gestrichen": 5,
+    "verbleibend": 3
+   },
+   {
+    "bearbeitung": 22,
+    "gruppe": "G_v020",
+    "von": "G_v026",
+    "gestrichen": 1,
+    "verbleibend": 7
+   },
+   {
+    "bearbeitung": 23,
+    "gruppe": "G_v006",
+    "von": "G_v014",
+    "gestrichen": 4,
+    "verbleibend": 4
+   },
+   {
+    "bearbeitung": 25,
+    "gruppe": "G_v018",
+    "von": "G_v006",
+    "gestrichen": 24,
+    "verbleibend": 8
+   },
+   {
+    "bearbeitung": 25,
+    "gruppe": "G_v018",
+    "von": "G_v017",
+    "gestrichen": 4,
+    "verbleibend": 4
+   },
+   {
+    "bearbeitung": 26,
+    "gruppe": "G_v013",
+    "von": "G_v002",
+    "gestrichen": 16,
+    "verbleibend": 16
+   },
+   {
+    "bearbeitung": 26,
+    "gruppe": "G_v013",
+    "von": "G_v018",
+    "gestrichen": 12,
+    "verbleibend": 4
+   },
+   {
+    "bearbeitung": 27,
+    "gruppe": "G_v016",
+    "von": "G_v013",
+    "gestrichen": 24,
+    "verbleibend": 8
+   },
+   {
+    "bearbeitung": 27,
+    "gruppe": "G_v016",
+    "von": "G_v020",
+    "gestrichen": 2,
+    "verbleibend": 6
+   },
+   {
+    "bearbeitung": 28,
+    "gruppe": "G_v019",
+    "von": "G_v016",
+    "gestrichen": 10,
+    "verbleibend": 6
+   },
+   {
+    "bearbeitung": 29,
+    "gruppe": "G_v008",
+    "von": "G_v037",
+    "gestrichen": 4,
+    "verbleibend": 4
+   },
+   {
+    "bearbeitung": 30,
+    "gruppe": "G_v011",
+    "von": "G_v008",
+    "gestrichen": 12,
+    "verbleibend": 4
+   },
+   {
+    "bearbeitung": 31,
+    "gruppe": "G_v040",
+    "von": "G_v011",
+    "gestrichen": 13,
+    "verbleibend": 3
+   },
+   {
+    "bearbeitung": 32,
+    "gruppe": "G_v041",
+    "von": "G_v040",
+    "gestrichen": 13,
+    "verbleibend": 3
+   },
+   {
+    "bearbeitung": 33,
+    "gruppe": "G_v039",
+    "von": "G_v041",
+    "gestrichen": 5,
+    "verbleibend": 3
+   },
+   {
+    "bearbeitung": 34,
+    "gruppe": "G_v042",
+    "von": "G_v039",
+    "gestrichen": 5,
+    "verbleibend": 3
+   },
+   {
+    "bearbeitung": 35,
+    "gruppe": "G_v036",
+    "von": "G_v042",
+    "gestrichen": 1,
+    "verbleibend": 7
+   },
+   {
+    "bearbeitung": 36,
+    "gruppe": "G_v010",
+    "von": "G_v030",
+    "gestrichen": 4,
+    "verbleibend": 4
+   },
+   {
+    "bearbeitung": 38,
+    "gruppe": "G_v034",
+    "von": "G_v010",
+    "gestrichen": 24,
+    "verbleibend": 8
+   },
+   {
+    "bearbeitung": 38,
+    "gruppe": "G_v034",
+    "von": "G_v033",
+    "gestrichen": 4,
+    "verbleibend": 4
+   },
+   {
+    "bearbeitung": 39,
+    "gruppe": "G_v003",
+    "von": "G_v019",
+    "gestrichen": 8,
+    "verbleibend": 24
+   },
+   {
+    "bearbeitung": 39,
+    "gruppe": "G_v003",
+    "von": "G_v034",
+    "gestrichen": 18,
+    "verbleibend": 6
+   },
+   {
+    "bearbeitung": 40,
+    "gruppe": "G_v029",
+    "von": "G_v003",
+    "gestrichen": 11,
+    "verbleibend": 5
+   },
+   {
+    "bearbeitung": 41,
+    "gruppe": "G_v032",
+    "von": "G_v029",
+    "gestrichen": 4,
+    "verbleibend": 4
+   },
+   {
+    "bearbeitung": 41,
+    "gruppe": "G_v032",
+    "von": "G_v036",
+    "gestrichen": 1,
+    "verbleibend": 3
+   },
+   {
+    "bearbeitung": 42,
+    "gruppe": "G_v035",
+    "von": "G_v032",
+    "gestrichen": 1,
+    "verbleibend": 3
+   },
+   {
+    "bearbeitung": 57,
+    "gruppe": "G_v027",
+    "von": "G_v023",
+    "gestrichen": 2,
+    "verbleibend": 2
+   },
+   {
+    "bearbeitung": 63,
+    "gruppe": "G_v017",
+    "von": "G_v018",
+    "gestrichen": 4,
+    "verbleibend": 4
+   },
+   {
+    "bearbeitung": 65,
+    "gruppe": "G_v018",
+    "von": "G_v013",
+    "gestrichen": 2,
+    "verbleibend": 2
+   },
+   {
+    "bearbeitung": 66,
+    "gruppe": "G_v020",
+    "von": "G_v016",
+    "gestrichen": 4,
+    "verbleibend": 3
+   },
+   {
+    "bearbeitung": 78,
+    "gruppe": "G_v033",
+    "von": "G_v034",
+    "gestrichen": 4,
+    "verbleibend": 4
+   },
+   {
+    "bearbeitung": 82,
+    "gruppe": "G_v036",
+    "von": "G_v032",
+    "gestrichen": 4,
+    "verbleibend": 3
+   },
+   {
+    "bearbeitung": 83,
+    "gruppe": "G_v029",
+    "von": "G_v032",
+    "gestrichen": 1,
+    "verbleibend": 4
+   },
+   {
+    "bearbeitung": 86,
+    "gruppe": "G_v006",
+    "von": "G_v018",
+    "gestrichen": 2,
+    "verbleibend": 2
+   },
+   {
+    "bearbeitung": 87,
+    "gruppe": "G_v017",
+    "von": "G_v018",
+    "gestrichen": 2,
+    "verbleibend": 2
+   },
+   {
+    "bearbeitung": 88,
+    "gruppe": "G_v003",
+    "von": "G_v029",
+    "gestrichen": 1,
+    "verbleibend": 5
+   },
+   {
+    "bearbeitung": 89,
+    "gruppe": "G_v014",
+    "von": "G_v006",
+    "gestrichen": 2,
+    "verbleibend": 2
+   },
+   {
+    "bearbeitung": 91,
+    "gruppe": "G_v019",
+    "von": "G_v003",
+    "gestrichen": 1,
+    "verbleibend": 5
+   },
+   {
+    "bearbeitung": 93,
+    "gruppe": "G_v015",
+    "von": "G_v014",
+    "gestrichen": 1,
+    "verbleibend": 1
+   },
+   {
+    "bearbeitung": 95,
+    "gruppe": "G_v016",
+    "von": "G_v019",
+    "gestrichen": 1,
+    "verbleibend": 5
+   }
+  ]
+ },
+ "kanten_projektionen_gleich": {
+  "G_v012-G_v005": true,
+  "G_v005-G_v002": true,
+  "G_v015-G_v014": true,
+  "G_v022-G_v021": true,
+  "G_v028-G_v009": true,
+  "G_v009-G_v002": true,
+  "G_v031-G_v030": true,
+  "G_v038-G_v037": true,
+  "G_v044-G_v027": true,
+  "G_v014-G_v006": true,
+  "G_v021-G_v004": true,
+  "G_v030-G_v010": true,
+  "G_v037-G_v008": true,
+  "G_v002-G_v013": true,
+  "G_v027-G_v023": true,
+  "G_v004-G_v007": true,
+  "G_v007-G_v024": true,
+  "G_v024-G_v025": true,
+  "G_v025-G_v023": true,
+  "G_v023-G_v026": true,
+  "G_v026-G_v020": true,
+  "G_v020-G_v016": true,
+  "G_v006-G_v018": true,
+  "G_v017-G_v018": true,
+  "G_v018-G_v013": true,
+  "G_v013-G_v016": true,
+  "G_v016-G_v019": true,
+  "G_v019-G_v003": true,
+  "G_v008-G_v011": true,
+  "G_v011-G_v040": true,
+  "G_v040-G_v041": true,
+  "G_v041-G_v039": true,
+  "G_v039-G_v042": true,
+  "G_v042-G_v036": true,
+  "G_v036-G_v032": true,
+  "G_v010-G_v034": true,
+  "G_v033-G_v034": true,
+  "G_v034-G_v003": true,
+  "G_v003-G_v029": true,
+  "G_v029-G_v032": true,
+  "G_v032-G_v035": true,
+  "G_v035-G_v043": true
+ },
+ "SPEICHERUNG": {
+  "echte_loesungen": 12,
+  "fehlend_in_gruppen": 0,
+  "verbund_hinweis": "Vollzaehlung ueber alle 43 Variablen (2^43) nicht durchfuehrbar; Erhalt wird je Gruppe (fehlend) geprueft"
+ },
+ "KONTROLLE": {
+  "je_gruppe": {
+   "G_v012": {
+    "zeilen": 2,
+    "projektion_echt": 2,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v005": {
+    "zeilen": 2,
+    "projektion_echt": 2,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v015": {
+    "zeilen": 1,
+    "projektion_echt": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v022": {
+    "zeilen": 2,
+    "projektion_echt": 2,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v028": {
+    "zeilen": 2,
+    "projektion_echt": 2,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v009": {
+    "zeilen": 2,
+    "projektion_echt": 2,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v031": {
+    "zeilen": 2,
+    "projektion_echt": 2,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v038": {
+    "zeilen": 2,
+    "projektion_echt": 2,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v044": {
+    "zeilen": 2,
+    "projektion_echt": 2,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v014": {
+    "zeilen": 2,
+    "projektion_echt": 2,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v021": {
+    "zeilen": 4,
+    "projektion_echt": 4,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v030": {
+    "zeilen": 4,
+    "projektion_echt": 4,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v037": {
+    "zeilen": 4,
+    "projektion_echt": 4,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v002": {
+    "zeilen": 2,
+    "projektion_echt": 2,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v027": {
+    "zeilen": 2,
+    "projektion_echt": 2,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v004": {
+    "zeilen": 4,
+    "projektion_echt": 4,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v007": {
+    "zeilen": 4,
+    "projektion_echt": 4,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v024": {
+    "zeilen": 3,
+    "projektion_echt": 3,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v025": {
+    "zeilen": 3,
+    "projektion_echt": 3,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v023": {
+    "zeilen": 3,
+    "projektion_echt": 3,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v026": {
+    "zeilen": 3,
+    "projektion_echt": 3,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v020": {
+    "zeilen": 3,
+    "projektion_echt": 3,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v006": {
+    "zeilen": 2,
+    "projektion_echt": 2,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v017": {
+    "zeilen": 2,
+    "projektion_echt": 2,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v018": {
+    "zeilen": 2,
+    "projektion_echt": 2,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v013": {
+    "zeilen": 4,
+    "projektion_echt": 4,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v016": {
+    "zeilen": 5,
+    "projektion_echt": 5,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v019": {
+    "zeilen": 5,
+    "projektion_echt": 5,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v008": {
+    "zeilen": 4,
+    "projektion_echt": 4,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v011": {
+    "zeilen": 4,
+    "projektion_echt": 4,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v040": {
+    "zeilen": 3,
+    "projektion_echt": 3,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v041": {
+    "zeilen": 3,
+    "projektion_echt": 3,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v039": {
+    "zeilen": 3,
+    "projektion_echt": 3,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v042": {
+    "zeilen": 3,
+    "projektion_echt": 3,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v036": {
+    "zeilen": 3,
+    "projektion_echt": 3,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v010": {
+    "zeilen": 4,
+    "projektion_echt": 4,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v033": {
+    "zeilen": 4,
+    "projektion_echt": 4,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v034": {
+    "zeilen": 4,
+    "projektion_echt": 4,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v003": {
+    "zeilen": 5,
+    "projektion_echt": 5,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v029": {
+    "zeilen": 4,
+    "projektion_echt": 4,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v032": {
+    "zeilen": 3,
+    "projektion_echt": 3,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v035": {
+    "zeilen": 3,
+    "projektion_echt": 3,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v043": {
+    "zeilen": 2,
+    "projektion_echt": 2,
+    "zu_viel": 0,
+    "fehlend": 0
+   }
+  },
+  "zu_viel_gesamt": 0,
+  "gruppen_mit_zu_viel": 0,
+  "fest_widerspricht_kontrolle": {},
+  "fest_laut_kontrolle": 12,
+  "fest_erkannt": 12,
+  "fehlende_feste_variablen": []
+ },
+ "pruefung": {
+  "E2_konstruktion": true,
+  "E3_speicherung": true,
+  "E5_keine_doppeleintraege": true,
+  "E6_kanten": true,
+  "kontrolle_erwartet": true,
+  "E4_exakt": true
+ },
+ "bestanden": true,
+ "zeiten_s": {
+  "T1_gruppierung_aufspaltung_init": 0.00536,
+  "T2_austausch": 0.00369,
+  "T3_kantenpruefung": 0.00091,
+  "T4_kontrolle": 0.01949
+ },
+ "maxrss_mib": 17.9,
+ "rlimit_as": [
+  -1,
+  -1
+ ],
+ "python": "3.13.16",
+ "abhaengigkeiten": {
+  "gruppen": {
+   "pfad": "/home/claude/kastenmaschine/l1/stern/gruppen.py",
+   "sha256": "4c8f4546ee3cd00c82029c24226e06eacab9be5890fbf6314f53495943a40878"
+  },
+  "ereignis": {
+   "pfad": "/home/claude/kastenmaschine/l1/stern/ereignis.py",
+   "sha256": "8c65044347d8f37d67a7a0d82055856dd1c4839cd13bc762ef1ac5abaf49f9f6"
+  },
+  "begrenzt": {
+   "pfad": "/home/claude/kastenmaschine/l1/stern/begrenzt.py",
+   "sha256": "08ffa959894148bdff5f302947100621f557129ae31e418afe6723762c0fae50"
+  },
+  "stern": {
+   "pfad": "/home/claude/kastenmaschine/l1/stern/stern.py",
+   "sha256": "da8d10bbe24deb7264d4abc66640c002d7379d037cf1a6c8b869589f8c536bfb"
+  },
+  "pruefstand": {
+   "pfad": "/home/claude/kastenmaschine/l1/pruefstand.py",
+   "sha256": "0ae511450470ca91c32a7a25a8d75f83985d06d6f217c27f16e317ab2ac1d910"
+  },
+  "gatter": {
+   "pfad": "/home/claude/kastenmaschine/miner_pruefung/sha256d/gatter.py",
+   "sha256": "75611ddf49d31dc933fe81ee56fe3a4e10cd1f1a3a571bf25fe6108b485f8f4f"
+  },
+  "d6": {
+   "pfad": "/home/claude/kastenmaschine/l1/d6.py",
+   "sha256": "91ec11fc4d1d1bcf0045b0dc73a3525f0fadfd116c939101e87160bb77f6c794"
+  },
+  "e1_bit": {
+   "pfad": "/home/claude/kastenmaschine/miner_pruefung/sha256d/e1_bit.py",
+   "sha256": "cfa14b5181eda91e8b92bc4d1baded6137d39ba325c3cf524ea4d8a6f4a23248"
+  }
+ }
+}

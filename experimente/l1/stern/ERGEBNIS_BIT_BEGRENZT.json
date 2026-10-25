@@ -1,0 +1,94 @@
+{
+ "grenzen": {
+  "zeit_s": 120.0,
+  "rss_mib": 400.0
+ },
+ "python": "3.13.16",
+ "laeufe": {
+  "N3_TUPEL": {
+   "status": "OK",
+   "wall_s": 0.1,
+   "peak_rss_abgetastet_mib": 0.0,
+   "maxrss_kind_mib": 17.9
+  },
+  "N3_BIT": {
+   "status": "OK",
+   "wall_s": 0.1,
+   "peak_rss_abgetastet_mib": 0.0,
+   "maxrss_kind_mib": 17.1
+  },
+  "N3u_TUPEL": {
+   "status": "OK",
+   "wall_s": 0.1,
+   "peak_rss_abgetastet_mib": 0.0,
+   "maxrss_kind_mib": 16.9
+  },
+  "N3u_BIT": {
+   "status": "OK",
+   "wall_s": 0.1,
+   "peak_rss_abgetastet_mib": 0.0,
+   "maxrss_kind_mib": 16.9
+  }
+ },
+ "dateien": {
+  "bitmenge.py": "23f952c483cb1e5e2a896ca6d266151674507f0e4a6bec8e9b1e25a8a3bec3b4",
+  "bitmenge_n3.py": "b506aa262ed670ad9382668aba90aba86e6153d4dbcabc2f0c88cedbb09250e4",
+  "bitmenge_lauf.py": "a87d56ff44d3b7548771d948493a134d8faa7acd8baed1d3e83aba553788b917"
+ },
+ "selbsttest": {
+  "status": "OK",
+  "wall_s": 0.2,
+  "faelle": 4784,
+  "fehler": 0
+ },
+ "vergleich": {
+  "N3": {
+   "E1_struktur_gleich": true,
+   "E1_gleich_B2_exakt": true,
+   "E2_status_gleich": true,
+   "E2_endrelationen_gleich": true,
+   "E2_fest_gleich": true,
+   "E3_zaehler_gleich": true,
+   "zaehler_tupel": {
+    "entnahmen": 98,
+    "projektionen": 195,
+    "nachrichten_gesendet": 105,
+    "gestrichen": 346
+   },
+   "zaehler_bit": {
+    "entnahmen": 98,
+    "projektionen": 195,
+    "nachrichten_gesendet": 105,
+    "gestrichen": 346
+   },
+   "untersuchungsfall": false,
+   "speicher_tupel": 55568,
+   "speicher_bit": 61355
+  },
+  "N3u": {
+   "E1_struktur_gleich": true,
+   "E1_gleich_B2_exakt": true,
+   "E2_status_gleich": true,
+   "E2_endrelationen_gleich": true,
+   "E2_fest_gleich": true,
+   "E3_zaehler_gleich": true,
+   "zaehler_tupel": {
+    "entnahmen": 29,
+    "projektionen": 51,
+    "nachrichten_gesendet": 51,
+    "gestrichen": 126
+   },
+   "zaehler_bit": {
+    "entnahmen": 29,
+    "projektionen": 51,
+    "nachrichten_gesendet": 51,
+    "gestrichen": 126
+   },
+   "untersuchungsfall": false,
+   "speicher_tupel": 120656,
+   "speicher_bit": 57878
+  }
+ },
+ "untersuchungsfaelle": [],
+ "alle_ok": true
+}

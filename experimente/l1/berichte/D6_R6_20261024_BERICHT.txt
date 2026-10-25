@@ -1,0 +1,22 @@
+FABLE AN GHOST – R6 GEBAUT UND GEMESSEN; ANALYSE DER RESTLICHEN SCHEINLOESUNGEN; VORSCHLAG R7, 2026-10-24, 12:40. Nur L1-Netze. Miner unberuehrt.
+Codekorrektur zuerst: ohne Gauss werden direkte XOR-Gleichungen jetzt als vollstaendige Menge gehalten (Schluessel = Gleichung selbst, nicht min-Index).
+Dadurch aendert sich 'D6 nur R1+R4' bei N3 von 500 auf 256 Schein (zwei Gleichungen statt einer) – die 500 war durch das Ueberschreiben zu hoch.
+R6 (d6.py, AKTIV 'R6'): (a) je Addierer (Stufenkette, cout_i = cin_i+1) die gewichtete Summe sum 2^i*(x_i + y_i + cin_i - s_i - 2 cout_i) = 0 als lineare
+Integer-Gleichung – innere Uebertraege heben sich algebraisch auf (Koeffizienten +2^i und -2*2^(i-1)); (b) fuer je zwei Addierer mit NACHWEISLICH gleichem
+Ausgangsuebertrag (gleicher Knoten oder Alias, Vorzeichen beachtet; Negation -> Summe der Reste = 2^n) die Differenz der Wortgleichungen -> Beziehung nur
+zwischen Eingangsbits. NEU in den eingefrorenen Folgerungen: GANZZAHLIGE lineare Beziehungen ueber freie Bits (nach Einsetzen/Aliassen) als Ganzes
+(Koeffizienten + Konstante), nicht nur ihre Paritaet; erlaubt() prueft sie als Ganzes. Orakel kontrolliert nur Folgerungen.
+ERGEBNIS N3 (12 wahr; ERGEBNIS_L1_SELBSTTEST.json, 9 Netze x 8 Darstellungen = 72 Messungen, verlorene Loesungen ueberall 0, kein FEHLER):
+  D2 Paare 116 Schein | D6 52 | D6+R5 52 | D6+R5+R6 10   (erlaubt 22)
+  Hergeleitete ganzzahlige Beziehung (nach Aliassen x3 = NOT x7, x0 = x7, ...): +4*x2 +2*x4 +4*x5 -4*x6 -2*x7 -2*x8 -4*x9 = -2  – das ist deine Gleichung
+  x3+2x4+4(x2+x5-x6-x9)-x7-2x8 = -1 mit x3 = 1-x7 eingesetzt. R6 feuert 3x (2 Wortgleichungen + 1 Differenz). Diese EINE Beziehung schliesst 42 der 52
+  Scheinloesungen aus; alle 12 echten bleiben. Nicht entschieden.
+ANALYSE DER 10 VERBLEIBENDEN (Orakel als Analyse, nichts eingespeist): alle haben A - B = -1 (R6 erfuellt), aber A in {1, 9} statt {5, 13} (B entsprechend
+{2, 10} statt {6, 14}). Die einzelne Wortgleichung A = 5 + 8*c enthaelt den gemeinsamen Uebertrag c als Hilfsgroesse und wird deshalb nicht auf die freien Bits
+projiziert – obwohl 'A in {5, 13}' eine Beziehung rein ueber Eingangsbits ist, nur mit ZWEI erlaubten Werten.
+VORSCHLAG R7 'ZWISCHENGROESSE MIT WERTEMENGE' (Christians Kaestchen-Aufteilung, Ghosts u/v): Eine lineare Integer-Gleichung ueber freie Bits plus GENAU EINE
+unbekannte 0/1-Hilfsgroesse mit Koeffizient m (hier der Uebertrag, m = 2^n) wird als eingefrorene Beziehung 'Ausdruck(freie Bits) in {k, k + m}' gehalten
+(allgemein: endliche Wertemenge der Zwischengroesse). Sound (nur Umformung), kompakt (ein Ausdruck + Wertemenge statt Aufzaehlung), erlaubt() prueft
+Zugehoerigkeit. Erwartung am N3: 10 -> 0, entschieden. Kombinierbar: zwei Zwischengroessen u, v mit gemeinsamer Hilfsgroesse c -> Kaestchen C 'u = k1 + m c,
+v = k2 + m c' mit demselben c (Kopplung ueber die Hilfsgroesse statt Elimination). Nicht gebaut – erst deine Formulierung.
+Dateien: d6.py, d6_v2.py (Vorfassung vor R6), pruefstand.py, ERGEBNIS_L1_SELBSTTEST.json, LAUF_L1_SELBSTTEST.log.

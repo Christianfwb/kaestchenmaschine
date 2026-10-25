@@ -1,0 +1,36 @@
+VON: fable
+AN: ghost, christian
+BEZUG: GO Christian 2026-10-25 08:52 – Bitmengen-Speicherung an N3/N3u exakt (Gatterebene), Entwurf + Ghosts vier Ergaenzungen
+KURZ: Bitgleich. Selbsttest 4784 Faelle ohne Abweichung; N3 und N3u liefern mit Bitmengen dieselben Endrelationen, dieselben festen Variablen, denselben Status und identische Ablaufzaehler wie mit Tupelmengen. Speicher: Die TABELLEN werden 20- bis 50-mal kleiner (N3: 1 048 statt 20 352 Objektbytes), aber die MASKEN kosten mehr, als die Tabellen sparen: bei N3 ist der Bit-Stand insgesamt groesser (61 355 gegen 55 568 Objektbytes), bei N3u kleiner (57 878 gegen 120 656). Bei 5-Variablen-Gruppen lohnt es sich also nicht eindeutig; die Hochrechnung fuer 8 Variablen / 256 Zeilen zeigt, wo es kippt.
+
+FESTLEGUNG (Ghost 1)
+Bitposition b = Summe_j wert(v_j) << j ueber die Gruppenreihenfolge (v_0 = niedrigstes Bit); Nachricht ueber S = (s_0..s_{m-1}) in Kantenreihenfolge, Position c = Summe_i wert(s_i) << i. Masken je (Gruppe, S): 2^s Masken zu je 2^k Bits (Ghost 4). Projektion auf S = () : eine Maske, Bit 0 <=> Relation nicht leer. Die Arbeitsliste (unveraendert) huellt Nachrichten in frozenset(...); proj() liefert deshalb ein 1-Tupel (zahl,) – dokumentiert in bitmenge.py.
+SELBSTTEST gegen Tupelmengen (vorab, eigener Kindlauf): alle Relationen mit k = 1, 2, 3 erschoepfend (jede Teilmenge der 2^k Belegungen, jede Schnittmenge in jeder Reihenfolge, einschliesslich leer, vollstaendig, Einzelzeile, S = ()), dazu je 300 Stichproben mit k = 4 und 5 und vertauschter Variablenreihenfolge; proj und semijoin verglichen: 4784 Faelle, 0 Abweichungen.
+
+VERGLEICH (je Netz zwei Kinder: TUPEL = begrenzt.GruppeZ wie in B2, BIT = bitmenge.BitGruppe; gleiche Kaestchen, gleiche 43 Gruppen, gleiche Kanten, gleiche Arbeitsliste)
+E1 Struktur: Pruefsumme TUPEL == BIT == B2-exakt (beide Netze): bestanden.
+E2 Ergebnis: Status gleich (N3 FIXPUNKT, N3u WIDERSPRUCH), Endrelationen je Gruppe gleich (BIT zurueckuebersetzt), feste Variablen gleich, gestrichene Zeilen gleich (346 / 126): bestanden.
+E3 Zaehler (Ghost 2: nur Untersuchungsfall bei Abweichung): Entnahmen 98/29, Projektionen 195/51, Nachrichten 105/51 – identisch; kein Untersuchungsfall.
+E4 Speicherung/Kontrolle (1024 Belegungen vorwaerts): fehlend 0 je Gruppe, keine falsch feste Variable, N3 zu viel 0: bestanden. E5 Kantenprojektionen gleich: bestanden.
+
+SPEICHER (Ghost 3: "rekursiv gezaehlte Objektbytes", jedes Objekt per Identitaet einmal – NICHT der RAM-Verbrauch; RSS 16,9–17,9 MiB in allen vier Laeufen, vom Interpreter dominiert, sagt nichts)
+                     | N3 TUPEL | N3 BIT  | N3u TUPEL | N3u BIT
+Tabellen (43 Gruppen)| 20 352   |  1 048  | 50 136    |  1 008
+Nachrichten (84 gerichtete Kanten, am Ende rekonstruiert) | 35 216 | 19 180 | 70 520 | 19 012
+Masken               |      0   | 41 127  |      0    | 37 858
+SUMME                | 55 568   | 61 355  | 120 656   | 57 878
+theoretische Bits Tabellen / Nachrichten / Masken | 798 / 796 / 0 | 798 / 796 / 19 260 | 742 / 740 / 0 | 742 / 740 / 16 540
+Masken: Anzahl 788 (N3) / 708 (N3u), Aufbau 1,2 ms / 1,1 ms (in T1 enthalten).
+Lesart: (i) Die Tabellen selbst schrumpfen auf etwa 1/20 bis 1/50 – eine 5-Variablen-Relation ist eine 32-Bit-Zahl (28–32 Objektbytes) statt bis zu 32 Tupeln. (ii) Die Nachrichten schrumpfen nur auf etwa die Haelfte, weil jede Nachricht noch in einer frozenset-Huelle steckt (ca. 216 Bytes je Nachricht) – das ist die Arbeitsliste, nicht die Bitmenge; ohne Huelle waeren es ~28 Bytes je Nachricht. (iii) Die Masken dominieren: 2^s Ganzzahlen je (Gruppe, Kante). Bei N3 kosten sie mehr, als Tabellen und Nachrichten zusammen sparen; bei N3u (groessere Resttabellen, 320 Zeilen) ueberwiegt die Ersparnis.
+Operationen (verschiedene Einheiten, nebeneinander): TUPEL prueft 634 (N3) / 135 (N3u) Tupel in Projektionen und streicht per Mengenfilter; BIT fuehrt 2 067 / 427 UND, 350 / 76 ODER und 253 / 93 Bitzaehlungen auf 2^k-Bit-Zahlen aus. Zeiten T2 Austausch: 1,4 ms gegen 1,0 ms (N3), 0,45 gegen 0,33 ms (N3u) – Einzelmessungen, Millisekunden, nicht belastbar.
+
+HOCHRECHNUNG (reine Rechnung, keine Messung; Zahlen aus sys.getsizeof auf diesem Python)
+Eine Gruppe mit k = 8 Variablen und 256 erlaubten Zeilen: als Tupelmenge 35 088 Objektbytes, als Bitmenge 60 Bytes (eine 256-Bit-Zahl). Masken je (Gruppe, Kante): s = 7 -> 128 Masken, 32 768 Bits, 8 760 Bytes; s = 4 -> 16 Masken, 1 144 Bytes. Das heisst: Sobald Tabellen gross und Schnittstellen schmal sind, gewinnt die Bitmenge deutlich; bei kleinen Tabellen und breiten Schnittstellen fressen die Masken den Gewinn. Bei N3 (k <= 5, s <= 4) liegen wir genau an der Grenze – deshalb das gemischte Bild. Ob das fuer ein konkretes groesseres Netz gilt, ist damit nicht gemessen.
+
+EINFACH GESAGT
+Die Reihen aus Nullen und Einsen funktionieren: Jeder Kasten kommt bitgenau auf dasselbe Ergebnis wie mit den Kaertchen, und die Kaesten selbst werden winzig. Aber die Schablonen (Masken), die man zum Abgleich braucht, sind bei kleinen Kaesten groesser als die Ersparnis. Bei grossen Kaesten mit schmalen Verbindungen kippt das deutlich zugunsten der Bitmengen – das ist gerechnet, nicht gemessen.
+
+BELEGT: Gleichheit (E1–E5) und die Byte-/Bit-Zahlen fuer N3/N3u. VERMUTUNG: keine. OFFEN: Masken schlanker halten (z. B. nur eine Maske je Schnittstellenvariable und Projektion per Faltung – anderes Verfahren, nicht gebaut); Nachrichten ohne frozenset-Huelle (betrifft die Arbeitsliste); Messung an einem Netz mit 8-Variablen-Gruppen. Kein N4/N5, keine Regeln, keine Begrenzung.
+
+DATEIEN (kastenmaschine/l1/stern/): bitmenge.py, bitmenge_n3.py, bitmenge_lauf.py, ERGEBNIS_BIT_SELBSTTEST.json, ERGEBNIS_BIT_{N3,N3u}_{TUPEL,BIT}.json, ERGEBNIS_BIT_BEGRENZT.json. Abhaengigkeiten mit Pfad + SHA256 in jeder Ergebnisdatei. Bestehende Dateien und Ergebnisse unveraendert. Stopp.
+--- ENDE ---

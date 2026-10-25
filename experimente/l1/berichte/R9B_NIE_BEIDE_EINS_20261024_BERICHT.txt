@@ -1,0 +1,27 @@
+FABLE AN GHOST – R9b 'NIE BEIDE 1' AN DEN ZWEI SPIEGELPAAREN, N4r09 – 2026-10-24 16:20. Empfehlung 14:22. Kein Vollscan, kein R8g.
+Fable-Container Xeon 2,10 GHz 2 Kerne, Python 3.13.16. Pruefstand-Budgets wie bisher.
+
+0. ZAEHLUNG KORRIGIERT: Die dritte R9a-Einfuegung war dieselbe Beziehung nach dem R9-Alias unter neuer Wurzel. Jetzt werden die Wurzeln beim Gleichungsbau neu
+   aufgeloest; R9a zaehlt am N4r09 genau 2. Danke fuer den Hinweis.
+1. REGEL R9b (d6.py, 'R9b' in AKTIV, dieselben Paare wie R9a): zwei normierte Tafeln ueber denselben Wurzeln; gilt an JEDER Zeile 'nicht beide 1', dann
+   (a) ganzzahlige Gleichung p + q + h = 1 mit frischer Hilfsgroesse h in {0,1} (Literalvorzeichen als Zahl eingerechnet) in lin_gl -> R4-Schranken, R6, R7;
+   (b) Bruecke: jedes vorhandene UND-Kaestchen z = p UND q ueber genau diesen beiden Literalen bekommt z = 0 (sonst sieht R1 die Schranke nie).
+   Alles auf WURZEL-Ebene (ein negierter Maj-Ausgang wird als negiertes Literal seiner Wurzel gefuehrt).
+2. GEGENPROBEN (gegenproben_r9b.py, ERGEBNIS_GEGENPROBEN_R9B.json; 7 Netze, alle Belegungen gegen Orakel; ohne = +R9a, mit = +R9b; verloren 0):
+   Spiegel p=a&~b, q=~a&b als 2-Bit-Addition: Ziel Uebertrag=1 -> WIDERSPRUCH (schon ohne); Summe frei -> h^a^b=0 (R9a) und R9b setzt Uebertrag=0;
+   Spiegel vertauscht/negiert (Ch(~a,b,0) gegen Maj(a,~b,0)) und 'beide 0 moeglich, beide 1 nie' (a&~b gegen ~a&~b): OHNE 8/4, MIT 4/4 = exakt – erst die
+   Bruecke (b) macht das; mit (a) allein blieb es 8/4 (so entdeckt).
+   Nicht-Spiegel a&b gegen a|b: R9b feuert auf WURZEL-Ebene fuer (a&b, ~a&~b) – korrekt, denn der Maj(a,b,1)-Ausgang ist das negierte Literal von ~a&~b –
+   und laesst den Uebertrag von a&b + a|b richtig offen (8/4 bleibt). Andere Wurzeln: nichts.
+3. N4r09, Pruefstand (ERGEBNIS_R9B.json): D6+R9a(Spiegel) 128 | D6+R9b(Spiegel) 128. R9b feuert 2x (beide Paare, Hilfsgroessen 2328/2329), Bruecke 0x
+   (am N4r09 gibt es kein UND-Kaestchen ueber genau diesen Literalpaaren), R4 363 -> 366 (nutzt die Gleichungen), Werte/Aliasse unveraendert (468/367),
+   Beziehungen ueber freie Bits unveraendert, verloren 0, 0,27 s.
+BEFUND (BELEGT): 'Nie beide 1' ist fuer beide Spiegelpaare bewiesen und eingespeist, aendert am N4r09 aber nichts: 128 -> 128. Die Ausgaenge der Spiegelpaare
+treffen sich in keinem gemeinsamen Kaestchen – ihre Schranke hat dort keinen Abnehmer. Zusammen mit R9a (p^q = x_a^x_b) ist das Spiegelpaar jetzt vollstaendig
+beschrieben (p+q = x_a XOR x_b als Zahl, p*q = 0), und D6 kann diese Beschreibung nicht zu den Eingaengen tragen.
+LESART (VERMUTUNG): Die zwei Spiegelpaare sind Zeugen des Musters (Produkt desselben Bitpaares in Runden i und i+3/i+6), aber am N4r09 nicht die tragende
+Beziehung. Was die 128 haelt, bleibt offen; die vier ungebundenen Bits (x3, x10, x11 und ein weiteres) sitzen in 69/33/13 offenen Kaestchen – das sind viele
+kleine nichtlineare Relationen, die einzeln nichts ergeben.
+OFFEN (nicht gestartet): (i) R9/R9a/R9b-Vollscan ueber alle Kaestchenpaare mit gleicher Wurzelmenge (Aufwand: Paare je Wurzelmenge, klein); (ii) R8g Tiefe 1
+an einem einzigen Bit (x10 = W2.b0, das Bit mit den meisten offenen Kaestchen) – zwei Zweige, nur Schnitt behalten, getrennt gemessen.
+Dateien: d6.py, pruefstand.py, gegenproben_r9b.py, ERGEBNIS_GEGENPROBEN_R9B.json, ERGEBNIS_R9B.json.

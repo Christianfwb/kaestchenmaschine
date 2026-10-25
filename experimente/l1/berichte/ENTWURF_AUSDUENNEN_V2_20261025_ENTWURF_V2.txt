@@ -1,0 +1,27 @@
+VON: fable
+AN: ghost, christian
+BEZUG: Ghost 2026-10-25 17:10 – vier Punkte zum Ausduenn-Entwurf. Bereinigter Entwurf V2, kein Bau, kein Lauf.
+
+1. LAUFZAHL: 8 Koepfe x 3 Zielstaerken (k = 2, 3, 4) x 2 Rundenzahlen (6, 9) = 48 Faelle. Die 72 waren ein Rechenfehler von mir (ich hatte "3 Rundenzahlen" geschrieben; es sind zwei). Keine weiteren Varianten; R9 ausdruecklich nicht (nur auf gesonderten Wunsch als eigener, spaeterer Satz).
+
+2. VORARBEIT MITZAEHLEN – getrennte Einheiten, nicht vermischt
+Die Bilanz lautet weiterhin  r x H_nonce  >  c + C_pre / 256.  Drei Posten in drei Einheiten, nebeneinander berichtet, nie addiert ohne Umrechnungshinweis:
+  - H_nonce und c: GATTERZAEHLUNG aus dem Netz (Gatter, die vom Nonce abhaengen; Gatter im Rueckwaertskegel der Filterbedingung). Exakt, einheitenfrei vergleichbar.
+  - C_pre: TATSAECHLICHER AUFWAND der Ableitung in dieser Python-Umgebung – Zeit (s) und Regelaufrufe (Zaehler aus D6). Nicht in Gatter umgerechnet, ausser ausdruecklich als gekennzeichnete Grobabschaetzung mit angegebenem Umrechnungsfaktor (Zeit einer Gatterauswertung in derselben Umgebung, selbst gemessen und mitgeliefert).
+  - Die Ungleichung wird deshalb zweimal ausgewertet: (i) nur Filterkosten gegen Ersparnis (c gegen r x H_nonce) in Gattern; (ii) mit C_pre/256 nach dem gekennzeichneten Umrechnungsfaktor. Beide Zahlen stehen nebeneinander; eine positive Bilanz nur in (i) ist keine positive Bilanz.
+Benennung: "H_mid" ersetze ich durch H_nonce = Zahl der nonceabhaengigen Gatter des Mini-Netzes. Das ist eine Mini-Modell-Baseline (Gatter, die ein Vorwaertsrechner nach Festlegen des Kopfes noch rechnen muss) und nicht das technische Midstate eines echten Miners; das steht so im Bericht.
+
+3. FILTER VOR DER KONTROLLE FESTLEGEN – eingefroren, ohne Kenntnis der Treffer
+Regel, vorab: Nach der Ableitung (Phase A) werden ALLE Bedingungen gesammelt, die (a) mindestens ein Nonce-Bit enthalten und (b) deren Innenknoten hoechstens d Gatter tief vom Nonce/Kopf liegen (d = 1, 2, 3 getrennt). Als FILTER gilt deterministisch: fuer jede Tiefe d die Menge ALLER dieser Bedingungen (kein Auswaehlen), mit Gesamtkosten c_d = Gatter der Vereinigung ihrer Rueckwaertskegel. Zusaetzlich die drei Bedingungen mit den kleinsten Einzelkosten (Reihenfolge: Kosten, dann Gatternummer – rein strukturell). Diese Festlegung wird VOR der Kontrolle als Datei mit Pruefsumme geschrieben; die Kontrolle liest sie nur. Kein Filter wird nach Sicht der Treffer gewaehlt; sollte ich im Bericht eine andere Teilmenge diskutieren wollen, wird sie ausdruecklich als nachtraegliche Beobachtung gekennzeichnet und nicht in die Bilanz genommen.
+Form 1 (feste Bits / affines System) ist ebenfalls vollstaendig vorab bestimmt (alle Nonce-Einschraenkungen, Rang per Gauss) – keine Auswahl.
+
+4. WIDERSPRUCH SEPARAT
+Ergibt die Ableitung WIDERSPRUCH (kein Treffer moeglich fuer diesen Kopf und dieses k), ist das ein eigener Befund "Block unloesbar erkannt": r = 1, c = 0, ohne Rangformel (die gilt nur fuer konsistente Systeme). Die Kontrolle muss dann 0 Loesungen zeigen (sonst FEHLER – unsicherer Ausschluss). Solche Faelle werden getrennt gezaehlt und gehen nicht in Mittelwerte von r_1/r_2 ein. Ebenso getrennt: Faelle, in denen die Kontrolle 0 Loesungen zeigt, die Ableitung aber keinen Widerspruch fand (Mass fuer das, was das Grundgeruest uebersieht).
+
+5. UNVERAENDERT (Kurz)
+Netz pruefstand._n4r(Runden, Leine), W0 = Kopf (8 Werte aus sha256('AUSDUENNEN F i'), i = 1..8, vorab erzeugt und protokolliert), W1+W2 = Nonce (256), Ziel: erste k Bits von Register a = 0. Phase A: D6-Grundgeruest nur mit Kopf und Ziel; Zustand eingefroren (Pruefsumme). Phase B: Speicherung (alle Einschraenkungen mit Herkunft). Phase C: Kontrolle ueber alle 256 Nonces vorwaerts, Loesungszahl, Sicherheitspruefung jeder Einschraenkung gegen jede Loesung (Verletzung = FEHLER + Stopp), Auszaehlen von r_1, r_2 je Filter, Bilanz (i) und (ii). E1 Sicherheit verbindlich; E2 Rang unabhaengig (Loesungs-Nonces liegen im affinen Raum, Dimension <= 8 - Rang); E3 Kostenrechnung nachvollziehbar; E4 Dreiteilung, nichts zurueck. Keine Erwartung an r, c, Bilanz. 48 Kinder, je 120 s / 400 MiB; neue Dateien in l1/ausduennen/. Keine SHA-/Miner-/Hardware-Aussage; ein positiver Mini-Befund ist kein Miningvorteil.
+
+Einfach gesagt: 48 kleine Blockkoepfe, jeweils: Was weiss die Regelmaschine ueber den Nonce, bevor sie hasht? Der Filter wird festgelegt, BEVOR wir die Treffer kennen – sonst waehlen wir uns den Filter schoen. Kosten in Gattern, Vorarbeit in Sekunden, beides getrennt. Wenn die Maschine beweist "hier gibt es keinen Treffer", ist das ein eigener Punkt, kein Rang.
+
+Ich warte auf Ghosts Pruefung und Christians GO.
+--- ENDE ---

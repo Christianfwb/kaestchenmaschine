@@ -1,0 +1,3726 @@
+{
+ "netz": "N3",
+ "form": "BIT",
+ "gruppen": 43,
+ "kanten": 42,
+ "pruefsumme_struktur": "bc5eca512f5b11ce53e1e0c36c105827257bfe223a555d21b93bd0a3c889ceeb",
+ "status": "FIXPUNKT",
+ "endrelationen": {
+  "G_v012": [
+   [
+    1,
+    0,
+    1
+   ],
+   [
+    1,
+    1,
+    0
+   ]
+  ],
+  "G_v005": [
+   [
+    0,
+    1,
+    0
+   ],
+   [
+    1,
+    0,
+    0
+   ]
+  ],
+  "G_v015": [
+   [
+    0,
+    0,
+    0
+   ]
+  ],
+  "G_v022": [
+   [
+    0,
+    0,
+    0
+   ],
+   [
+    0,
+    1,
+    1
+   ]
+  ],
+  "G_v028": [
+   [
+    0,
+    0,
+    0
+   ],
+   [
+    0,
+    1,
+    1
+   ]
+  ],
+  "G_v009": [
+   [
+    0,
+    0,
+    0
+   ],
+   [
+    1,
+    1,
+    1
+   ]
+  ],
+  "G_v031": [
+   [
+    1,
+    0,
+    1
+   ],
+   [
+    1,
+    1,
+    0
+   ]
+  ],
+  "G_v038": [
+   [
+    0,
+    0,
+    0
+   ],
+   [
+    0,
+    1,
+    1
+   ]
+  ],
+  "G_v044": [
+   [
+    0,
+    0,
+    0
+   ],
+   [
+    0,
+    1,
+    1
+   ]
+  ],
+  "G_v014": [
+   [
+    0,
+    0,
+    0,
+    0
+   ],
+   [
+    0,
+    1,
+    1,
+    0
+   ]
+  ],
+  "G_v021": [
+   [
+    0,
+    0,
+    0,
+    0
+   ],
+   [
+    0,
+    1,
+    1,
+    0
+   ],
+   [
+    1,
+    0,
+    1,
+    1
+   ],
+   [
+    1,
+    1,
+    0,
+    1
+   ]
+  ],
+  "G_v030": [
+   [
+    0,
+    0,
+    0,
+    1
+   ],
+   [
+    0,
+    1,
+    1,
+    1
+   ],
+   [
+    1,
+    0,
+    1,
+    0
+   ],
+   [
+    1,
+    1,
+    0,
+    0
+   ]
+  ],
+  "G_v037": [
+   [
+    0,
+    0,
+    0,
+    0
+   ],
+   [
+    0,
+    1,
+    1,
+    0
+   ],
+   [
+    1,
+    0,
+    1,
+    1
+   ],
+   [
+    1,
+    1,
+    0,
+    1
+   ]
+  ],
+  "G_v002": [
+   [
+    0,
+    0,
+    0
+   ],
+   [
+    1,
+    0,
+    1
+   ]
+  ],
+  "G_v027": [
+   [
+    0,
+    1,
+    0,
+    0
+   ],
+   [
+    1,
+    0,
+    1,
+    1
+   ]
+  ],
+  "G_v004": [
+   [
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   [
+    0,
+    1,
+    1,
+    0,
+    0
+   ],
+   [
+    1,
+    0,
+    1,
+    0,
+    0
+   ],
+   [
+    1,
+    1,
+    0,
+    1,
+    1
+   ]
+  ],
+  "G_v007": [
+   [
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   [
+    0,
+    1,
+    0,
+    0,
+    0
+   ],
+   [
+    1,
+    0,
+    1,
+    1,
+    1
+   ],
+   [
+    1,
+    1,
+    0,
+    0,
+    0
+   ]
+  ],
+  "G_v024": [
+   [
+    0,
+    0,
+    0,
+    0,
+    1
+   ],
+   [
+    0,
+    1,
+    0,
+    0,
+    1
+   ],
+   [
+    1,
+    0,
+    1,
+    1,
+    0
+   ]
+  ],
+  "G_v025": [
+   [
+    0,
+    0,
+    0,
+    1
+   ],
+   [
+    0,
+    1,
+    0,
+    1
+   ],
+   [
+    1,
+    0,
+    1,
+    0
+   ]
+  ],
+  "G_v023": [
+   [
+    0,
+    0,
+    1,
+    1
+   ],
+   [
+    0,
+    1,
+    1,
+    1
+   ],
+   [
+    1,
+    0,
+    0,
+    0
+   ]
+  ],
+  "G_v026": [
+   [
+    0,
+    0,
+    0
+   ],
+   [
+    1,
+    0,
+    1
+   ],
+   [
+    1,
+    1,
+    1
+   ]
+  ],
+  "G_v020": [
+   [
+    0,
+    1,
+    1,
+    0
+   ],
+   [
+    0,
+    1,
+    1,
+    1
+   ],
+   [
+    1,
+    0,
+    1,
+    1
+   ]
+  ],
+  "G_v006": [
+   [
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   [
+    1,
+    1,
+    0,
+    1,
+    0
+   ]
+  ],
+  "G_v017": [
+   [
+    0,
+    0,
+    0,
+    0,
+    1
+   ],
+   [
+    0,
+    1,
+    0,
+    0,
+    1
+   ]
+  ],
+  "G_v018": [
+   [
+    0,
+    0,
+    0,
+    0,
+    1
+   ],
+   [
+    0,
+    1,
+    0,
+    1,
+    1
+   ]
+  ],
+  "G_v013": [
+   [
+    0,
+    0,
+    0,
+    1,
+    0
+   ],
+   [
+    0,
+    0,
+    0,
+    1,
+    1
+   ],
+   [
+    0,
+    1,
+    1,
+    1,
+    0
+   ],
+   [
+    0,
+    1,
+    1,
+    1,
+    1
+   ]
+  ],
+  "G_v016": [
+   [
+    0,
+    0,
+    1,
+    0,
+    1
+   ],
+   [
+    0,
+    0,
+    1,
+    1,
+    1
+   ],
+   [
+    1,
+    1,
+    1,
+    0,
+    1
+   ],
+   [
+    1,
+    1,
+    1,
+    1,
+    0
+   ],
+   [
+    1,
+    1,
+    1,
+    1,
+    1
+   ]
+  ],
+  "G_v019": [
+   [
+    1,
+    0,
+    0,
+    1
+   ],
+   [
+    1,
+    0,
+    1,
+    1
+   ],
+   [
+    1,
+    1,
+    0,
+    1
+   ],
+   [
+    1,
+    1,
+    1,
+    0
+   ],
+   [
+    1,
+    1,
+    1,
+    1
+   ]
+  ],
+  "G_v008": [
+   [
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   [
+    0,
+    1,
+    1,
+    0,
+    0
+   ],
+   [
+    1,
+    0,
+    1,
+    0,
+    0
+   ],
+   [
+    1,
+    1,
+    0,
+    1,
+    1
+   ]
+  ],
+  "G_v011": [
+   [
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   [
+    0,
+    1,
+    0,
+    0,
+    0
+   ],
+   [
+    1,
+    0,
+    1,
+    1,
+    1
+   ],
+   [
+    1,
+    1,
+    0,
+    0,
+    0
+   ]
+  ],
+  "G_v040": [
+   [
+    0,
+    0,
+    0,
+    0,
+    1
+   ],
+   [
+    0,
+    1,
+    0,
+    0,
+    1
+   ],
+   [
+    1,
+    0,
+    1,
+    1,
+    0
+   ]
+  ],
+  "G_v041": [
+   [
+    0,
+    0,
+    0,
+    1
+   ],
+   [
+    0,
+    1,
+    0,
+    1
+   ],
+   [
+    1,
+    0,
+    1,
+    0
+   ]
+  ],
+  "G_v039": [
+   [
+    0,
+    0,
+    1,
+    1
+   ],
+   [
+    0,
+    1,
+    1,
+    1
+   ],
+   [
+    1,
+    0,
+    0,
+    0
+   ]
+  ],
+  "G_v042": [
+   [
+    0,
+    0,
+    0
+   ],
+   [
+    1,
+    0,
+    1
+   ],
+   [
+    1,
+    1,
+    1
+   ]
+  ],
+  "G_v036": [
+   [
+    0,
+    1,
+    0,
+    0
+   ],
+   [
+    0,
+    1,
+    0,
+    1
+   ],
+   [
+    1,
+    0,
+    1,
+    1
+   ]
+  ],
+  "G_v010": [
+   [
+    0,
+    0,
+    1,
+    0,
+    0
+   ],
+   [
+    0,
+    1,
+    0,
+    0,
+    0
+   ],
+   [
+    1,
+    0,
+    0,
+    0,
+    0
+   ],
+   [
+    1,
+    1,
+    1,
+    1,
+    1
+   ]
+  ],
+  "G_v033": [
+   [
+    0,
+    0,
+    0,
+    0,
+    1
+   ],
+   [
+    0,
+    0,
+    1,
+    0,
+    1
+   ],
+   [
+    0,
+    1,
+    0,
+    0,
+    1
+   ],
+   [
+    1,
+    1,
+    1,
+    1,
+    0
+   ]
+  ],
+  "G_v034": [
+   [
+    0,
+    0,
+    0,
+    0,
+    1
+   ],
+   [
+    0,
+    0,
+    1,
+    0,
+    1
+   ],
+   [
+    0,
+    1,
+    0,
+    0,
+    1
+   ],
+   [
+    1,
+    1,
+    1,
+    1,
+    0
+   ]
+  ],
+  "G_v003": [
+   [
+    0,
+    0,
+    0,
+    1,
+    1
+   ],
+   [
+    0,
+    1,
+    0,
+    1,
+    1
+   ],
+   [
+    1,
+    0,
+    0,
+    1,
+    1
+   ],
+   [
+    1,
+    1,
+    1,
+    0,
+    0
+   ],
+   [
+    1,
+    1,
+    1,
+    0,
+    1
+   ]
+  ],
+  "G_v029": [
+   [
+    0,
+    0,
+    1,
+    1
+   ],
+   [
+    1,
+    0,
+    1,
+    1
+   ],
+   [
+    1,
+    1,
+    0,
+    0
+   ],
+   [
+    1,
+    1,
+    0,
+    1
+   ]
+  ],
+  "G_v032": [
+   [
+    0,
+    1,
+    1
+   ],
+   [
+    1,
+    0,
+    0
+   ],
+   [
+    1,
+    0,
+    1
+   ]
+  ],
+  "G_v035": [
+   [
+    0,
+    0
+   ],
+   [
+    0,
+    1
+   ],
+   [
+    1,
+    1
+   ]
+  ],
+  "G_v043": [
+   [
+    0
+   ],
+   [
+    1
+   ]
+  ]
+ },
+ "fest": {
+  "v012": 1,
+  "v013": 0,
+  "v015": 0,
+  "v014": 0,
+  "v022": 0,
+  "v028": 0,
+  "v031": 1,
+  "v038": 0,
+  "v044": 0,
+  "v019": 1,
+  "v018": 0,
+  "v017": 0
+ },
+ "zaehler": {
+  "entnahmen": 98,
+  "semijoin_aufrufe_direkt": 105,
+  "projektionen": 195,
+  "nachrichten_gesendet": 105,
+  "gestrichen": 346,
+  "max_schlange": 43,
+  "elementaroperationen": {
+   "und": 2067,
+   "oder": 350,
+   "popcount": 253,
+   "masken_gebaut": 788,
+   "masken_bits": 19260,
+   "masken_bau_s": 0.0010743309997849337
+  }
+ },
+ "messpunkte": {
+  "definition": [
+   "M0 nach Aufbau der Arbeitsstrukturen (vor der ersten Entnahme)",
+   "Ma nach jedem Empfang (Semijoin)",
+   "Mb nach jeder Entnahme (nach dem Senden)",
+   "ME Ende"
+  ],
+  "anzahl": 205,
+  "zuordnungsreihenfolge": [
+   "tabellen",
+   "masken",
+   "nachrichten",
+   "arbeitsstrukturen"
+  ],
+  "einheit": "rekursiv gezaehlte Objektbytes, Identitaet je Messpunkt einmal \u2013 NICHT RAM"
+ },
+ "hoechststand_beobachtet": {
+  "nr": 85,
+  "punkt": "Mb nach Entnahme",
+  "semijoins_bisher": 42,
+  "tabellen": 1048,
+  "masken": 41183,
+  "nachrichten": 19292,
+  "nachrichten_anzahl": 84,
+  "arbeitsstrukturen": 33493,
+  "summe": 95016,
+  "schlange": 42,
+  "zeilen_gesamt": 161
+ },
+ "endstand": {
+  "nr": 204,
+  "punkt": "ME Ende",
+  "semijoins_bisher": 105,
+  "tabellen": 1048,
+  "masken": 41155,
+  "nachrichten": 19152,
+  "nachrichten_anzahl": 84,
+  "arbeitsstrukturen": 32965,
+  "summe": 94320,
+  "schlange": 0,
+  "zeilen_gesamt": 130
+ },
+ "anfangsstand": {
+  "nr": 0,
+  "punkt": "M0 nach Aufbau",
+  "semijoins_bisher": 0,
+  "tabellen": 980,
+  "masken": 41183,
+  "nachrichten": 0,
+  "nachrichten_anzahl": 0,
+  "arbeitsstrukturen": 32981,
+  "summe": 75144,
+  "schlange": 43,
+  "zeilen_gesamt": 476
+ },
+ "messreihe": [
+  {
+   "nr": 0,
+   "punkt": "M0 nach Aufbau",
+   "semijoins_bisher": 0,
+   "tabellen": 980,
+   "masken": 41183,
+   "nachrichten": 0,
+   "nachrichten_anzahl": 0,
+   "arbeitsstrukturen": 32981,
+   "summe": 75144,
+   "schlange": 43,
+   "zeilen_gesamt": 476
+  },
+  {
+   "nr": 1,
+   "punkt": "Mb nach Entnahme",
+   "semijoins_bisher": 0,
+   "tabellen": 980,
+   "masken": 41183,
+   "nachrichten": 244,
+   "nachrichten_anzahl": 1,
+   "arbeitsstrukturen": 32981,
+   "summe": 75388,
+   "schlange": 42,
+   "zeilen_gesamt": 476
+  },
+  {
+   "nr": 2,
+   "punkt": "Ma nach Empfang",
+   "semijoins_bisher": 1,
+   "tabellen": 1008,
+   "masken": 41183,
+   "nachrichten": 216,
+   "nachrichten_anzahl": 1,
+   "arbeitsstrukturen": 32981,
+   "summe": 75388,
+   "schlange": 41,
+   "zeilen_gesamt": 474
+  },
+  {
+   "nr": 3,
+   "punkt": "Mb nach Entnahme",
+   "semijoins_bisher": 1,
+   "tabellen": 1008,
+   "masken": 41183,
+   "nachrichten": 648,
+   "nachrichten_anzahl": 3,
+   "arbeitsstrukturen": 32981,
+   "summe": 75820,
+   "schlange": 42,
+   "zeilen_gesamt": 474
+  },
+  {
+   "nr": 4,
+   "punkt": "Mb nach Entnahme",
+   "semijoins_bisher": 1,
+   "tabellen": 1008,
+   "masken": 41183,
+   "nachrichten": 892,
+   "nachrichten_anzahl": 4,
+   "arbeitsstrukturen": 32981,
+   "summe": 76064,
+   "schlange": 41,
+   "zeilen_gesamt": 474
+  },
+  {
+   "nr": 5,
+   "punkt": "Mb nach Entnahme",
+   "semijoins_bisher": 1,
+   "tabellen": 1008,
+   "masken": 41183,
+   "nachrichten": 1108,
+   "nachrichten_anzahl": 5,
+   "arbeitsstrukturen": 32981,
+   "summe": 76280,
+   "schlange": 40,
+   "zeilen_gesamt": 474
+  },
+  {
+   "nr": 6,
+   "punkt": "Mb nach Entnahme",
+   "semijoins_bisher": 1,
+   "tabellen": 1008,
+   "masken": 41183,
+   "nachrichten": 1324,
+   "nachrichten_anzahl": 6,
+   "arbeitsstrukturen": 32981,
+   "summe": 76496,
+   "schlange": 39,
+   "zeilen_gesamt": 474
+  },
+  {
+   "nr": 7,
+   "punkt": "Ma nach Empfang",
+   "semijoins_bisher": 2,
+   "tabellen": 1008,
+   "masken": 41183,
+   "nachrichten": 1324,
+   "nachrichten_anzahl": 6,
+   "arbeitsstrukturen": 32981,
+   "summe": 76496,
+   "schlange": 38,
+   "zeilen_gesamt": 472
+  },
+  {
+   "nr": 8,
+   "punkt": "Mb nach Entnahme",
+   "semijoins_bisher": 2,
+   "tabellen": 1008,
+   "masken": 41183,
+   "nachrichten": 1756,
+   "nachrichten_anzahl": 8,
+   "arbeitsstrukturen": 32981,
+   "summe": 76928,
+   "schlange": 39,
+   "zeilen_gesamt": 472
+  },
+  {
+   "nr": 9,
+   "punkt": "Mb nach Entnahme",
+   "semijoins_bisher": 2,
+   "tabellen": 1008,
+   "masken": 41183,
+   "nachrichten": 1972,
+   "nachrichten_anzahl": 9,
+   "arbeitsstrukturen": 32981,
+   "summe": 77144,
+   "schlange": 38,
+   "zeilen_gesamt": 472
+  },
+  {
+   "nr": 10,
+   "punkt": "Mb nach Entnahme",
+   "semijoins_bisher": 2,
+   "tabellen": 1008,
+   "masken": 41183,
+   "nachrichten": 2188,
+   "nachrichten_anzahl": 10,
+   "arbeitsstrukturen": 32981,
+   "summe": 77360,
+   "schlange": 37,
+   "zeilen_gesamt": 472
+  },
+  {
+   "nr": 11,
+   "punkt": "Mb nach Entnahme",
+   "semijoins_bisher": 2,
+   "tabellen": 1008,
+   "masken": 41183,
+   "nachrichten": 2404,
+   "nachrichten_anzahl": 11,
+   "arbeitsstrukturen": 32981,
+   "summe": 77576,
+   "schlange": 36,
+   "zeilen_gesamt": 472
+  },
+  {
+   "nr": 12,
+   "punkt": "Ma nach Empfang",
+   "semijoins_bisher": 3,
+   "tabellen": 1008,
+   "masken": 41183,
+   "nachrichten": 2404,
+   "nachrichten_anzahl": 11,
+   "arbeitsstrukturen": 32981,
+   "summe": 77576,
+   "schlange": 35,
+   "zeilen_gesamt": 468
+  },
+  {
+   "nr": 13,
+   "punkt": "Mb nach Entnahme",
+   "semijoins_bisher": 3,
+   "tabellen": 1008,
+   "masken": 41183,
+   "nachrichten": 2864,
+   "nachrichten_anzahl": 13,
+   "arbeitsstrukturen": 32981,
+   "summe": 78036,
+   "schlange": 36,
+   "zeilen_gesamt": 468
+  },
+  {
+   "nr": 14,
+   "punkt": "Ma nach Empfang",
+   "semijoins_bisher": 4,
+   "tabellen": 1008,
+   "masken": 41183,
+   "nachrichten": 2864,
+   "nachrichten_anzahl": 13,
+   "arbeitsstrukturen": 32981,
+   "summe": 78036,
+   "schlange": 35,
+   "zeilen_gesamt": 464
+  },
+  {
+   "nr": 15,
+   "punkt": "Mb nach Entnahme",
+   "semijoins_bisher": 4,
+   "tabellen": 1008,
+   "masken": 41183,
+   "nachrichten": 3296,
+   "nachrichten_anzahl": 15,
+   "arbeitsstrukturen": 32981,
+   "summe": 78468,
+   "schlange": 36,
+   "zeilen_gesamt": 464
+  },
+  {
+   "nr": 16,
+   "punkt": "Ma nach Empfang",
+   "semijoins_bisher": 5,
+   "tabellen": 1008,
+   "masken": 41183,
+   "nachrichten": 3296,
+   "nachrichten_anzahl": 15,
+   "arbeitsstrukturen": 32981,
+   "summe": 78468,
+   "schlange": 35,
+   "zeilen_gesamt": 460
+  },
+  {
+   "nr": 17,
+   "punkt": "Mb nach Entnahme",
+   "semijoins_bisher": 5,
+   "tabellen": 1008,
+   "masken": 41183,
+   "nachrichten": 3756,
+   "nachrichten_anzahl": 17,
+   "arbeitsstrukturen": 32981,
+   "summe": 78928,
+   "schlange": 36,
+   "zeilen_gesamt": 460
+  },
+  {
+   "nr": 18,
+   "punkt": "Ma nach Empfang",
+   "semijoins_bisher": 6,
+   "tabellen": 1008,
+   "masken": 41183,
+   "nachrichten": 3756,
+   "nachrichten_anzahl": 17,
+   "arbeitsstrukturen": 32981,
+   "summe": 78928,
+   "schlange": 35,
+   "zeilen_gesamt": 456
+  },
+  {
+   "nr": 19,
+   "punkt": "Mb nach Entnahme",
+   "semijoins_bisher": 6,
+   "tabellen": 1008,
+   "masken": 41183,
+   "nachrichten": 4188,
+   "nachrichten_anzahl": 19,
+   "arbeitsstrukturen": 32981,
+   "summe": 79360,
+   "schlange": 36,
+   "zeilen_gesamt": 456
+  },
+  {
+   "nr": 20,
+   "punkt": "Ma nach Empfang",
+   "semijoins_bisher": 7,
+   "tabellen": 1036,
+   "masken": 41183,
+   "nachrichten": 4188,
+   "nachrichten_anzahl": 19,
+   "arbeitsstrukturen": 32981,
+   "summe": 79388,
+   "schlange": 35,
+   "zeilen_gesamt": 452
+  },
+  {
+   "nr": 21,
+   "punkt": "Ma nach Empfang",
+   "semijoins_bisher": 8,
+   "tabellen": 1036,
+   "masken": 41183,
+   "nachrichten": 4188,
+   "nachrichten_anzahl": 19,
+   "arbeitsstrukturen": 32981,
+   "summe": 79388,
+   "schlange": 35,
+   "zeilen_gesamt": 450
+  },
+  {
+   "nr": 22,
+   "punkt": "Mb nach Entnahme",
+   "semijoins_bisher": 8,
+   "tabellen": 1036,
+   "masken": 41183,
+   "nachrichten": 4836,
+   "nachrichten_anzahl": 22,
+   "arbeitsstrukturen": 32981,
+   "summe": 80036,
+   "schlange": 37,
+   "zeilen_gesamt": 450
+  },
+  {
+   "nr": 23,
+   "punkt": "Ma nach Empfang",
+   "semijoins_bisher": 9,
+   "tabellen": 1036,
+   "masken": 41183,
+   "nachrichten": 4836,
+   "nachrichten_anzahl": 22,
+   "arbeitsstrukturen": 32981,
+   "summe": 80036,
+   "schlange": 36,
+   "zeilen_gesamt": 446
+  },
+  {
+   "nr": 24,
+   "punkt": "Mb nach Entnahme",
+   "semijoins_bisher": 9,
+   "tabellen": 1036,
+   "masken": 41183,
+   "nachrichten": 5296,
+   "nachrichten_anzahl": 24,
+   "arbeitsstrukturen": 32981,
+   "summe": 80496,
+   "schlange": 37,
+   "zeilen_gesamt": 446
+  },
+  {
+   "nr": 25,
+   "punkt": "Ma nach Empfang",
+   "semijoins_bisher": 10,
+   "tabellen": 1036,
+   "masken": 41183,
+   "nachrichten": 5296,
+   "nachrichten_anzahl": 24,
+   "arbeitsstrukturen": 32981,
+   "summe": 80496,
+   "schlange": 36,
+   "zeilen_gesamt": 442
+  },
+  {
+   "nr": 26,
+   "punkt": "Mb nach Entnahme",
+   "semijoins_bisher": 10,
+   "tabellen": 1036,
+   "masken": 41183,
+   "nachrichten": 5756,
+   "nachrichten_anzahl": 26,
+   "arbeitsstrukturen": 32981,
+   "summe": 80956,
+   "schlange": 37,
+   "zeilen_gesamt": 442
+  },
+  {
+   "nr": 27,
+   "punkt": "Ma nach Empfang",
+   "semijoins_bisher": 11,
+   "tabellen": 1036,
+   "masken": 41183,
+   "nachrichten": 5756,
+   "nachrichten_anzahl": 26,
+   "arbeitsstrukturen": 32981,
+   "summe": 80956,
+   "schlange": 36,
+   "zeilen_gesamt": 430
+  },
+  {
+   "nr": 28,
+   "punkt": "Mb nach Entnahme",
+   "semijoins_bisher": 11,
+   "tabellen": 1036,
+   "masken": 41183,
+   "nachrichten": 6244,
+   "nachrichten_anzahl": 28,
+   "arbeitsstrukturen": 32981,
+   "summe": 81444,
+   "schlange": 37,
+   "zeilen_gesamt": 430
+  },
+  {
+   "nr": 29,
+   "punkt": "Ma nach Empfang",
+   "semijoins_bisher": 12,
+   "tabellen": 1036,
+   "masken": 41183,
+   "nachrichten": 6244,
+   "nachrichten_anzahl": 28,
+   "arbeitsstrukturen": 32981,
+   "summe": 81444,
+   "schlange": 36,
+   "zeilen_gesamt": 417
+  },
+  {
+   "nr": 30,
+   "punkt": "Mb nach Entnahme",
+   "semijoins_bisher": 12,
+   "tabellen": 1036,
+   "masken": 41183,
+   "nachrichten": 6732,
+   "nachrichten_anzahl": 30,
+   "arbeitsstrukturen": 32981,
+   "summe": 81932,
+   "schlange": 37,
+   "zeilen_gesamt": 417
+  },
+  {
+   "nr": 31,
+   "punkt": "Ma nach Empfang",
+   "semijoins_bisher": 13,
+   "tabellen": 1036,
+   "masken": 41183,
+   "nachrichten": 6732,
+   "nachrichten_anzahl": 30,
+   "arbeitsstrukturen": 32981,
+   "summe": 81932,
+   "schlange": 36,
+   "zeilen_gesamt": 404
+  },
+  {
+   "nr": 32,
+   "punkt": "Mb nach Entnahme",
+   "semijoins_bisher": 13,
+   "tabellen": 1036,
+   "masken": 41183,
+   "nachrichten": 7220,
+   "nachrichten_anzahl": 32,
+   "arbeitsstrukturen": 32981,
+   "summe": 82420,
+   "schlange": 37,
+   "zeilen_gesamt": 404
+  },
+  {
+   "nr": 33,
+   "punkt": "Ma nach Empfang",
+   "semijoins_bisher": 14,
+   "tabellen": 1036,
+   "masken": 41183,
+   "nachrichten": 7220,
+   "nachrichten_anzahl": 32,
+   "arbeitsstrukturen": 32981,
+   "summe": 82420,
+   "schlange": 36,
+   "zeilen_gesamt": 394
+  },
+  {
+   "nr": 34,
+   "punkt": "Ma nach Empfang",
+   "semijoins_bisher": 15,
+   "tabellen": 1036,
+   "masken": 41183,
+   "nachrichten": 7220,
+   "nachrichten_anzahl": 32,
+   "arbeitsstrukturen": 32981,
+   "summe": 82420,
+   "schlange": 36,
+   "zeilen_gesamt": 391
+  },
+  {
+   "nr": 35,
+   "punkt": "Mb nach Entnahme",
+   "semijoins_bisher": 15,
+   "tabellen": 1036,
+   "masken": 41183,
+   "nachrichten": 7924,
+   "nachrichten_anzahl": 35,
+   "arbeitsstrukturen": 32981,
+   "summe": 83124,
+   "schlange": 38,
+   "zeilen_gesamt": 391
+  },
+  {
+   "nr": 36,
+   "punkt": "Ma nach Empfang",
+   "semijoins_bisher": 16,
+   "tabellen": 1064,
+   "masken": 41183,
+   "nachrichten": 7924,
+   "nachrichten_anzahl": 35,
+   "arbeitsstrukturen": 32981,
+   "summe": 83152,
+   "schlange": 37,
+   "zeilen_gesamt": 386
+  },
+  {
+   "nr": 37,
+   "punkt": "Mb nach Entnahme",
+   "semijoins_bisher": 16,
+   "tabellen": 1064,
+   "masken": 41183,
+   "nachrichten": 8384,
+   "nachrichten_anzahl": 37,
+   "arbeitsstrukturen": 32981,
+   "summe": 83612,
+   "schlange": 38,
+   "zeilen_gesamt": 386
+  },
+  {
+   "nr": 38,
+   "punkt": "Ma nach Empfang",
+   "semijoins_bisher": 17,
+   "tabellen": 1064,
+   "masken": 41183,
+   "nachrichten": 8384,
+   "nachrichten_anzahl": 37,
+   "arbeitsstrukturen": 32981,
+   "summe": 83612,
+   "schlange": 37,
+   "zeilen_gesamt": 385
+  },
+  {
+   "nr": 39,
+   "punkt": "Mb nach Entnahme",
+   "semijoins_bisher": 17,
+   "tabellen": 1064,
+   "masken": 41183,
+   "nachrichten": 8844,
+   "nachrichten_anzahl": 39,
+   "arbeitsstrukturen": 32981,
+   "summe": 84072,
+   "schlange": 38,
+   "zeilen_gesamt": 385
+  },
+  {
+   "nr": 40,
+   "punkt": "Ma nach Empfang",
+   "semijoins_bisher": 18,
+   "tabellen": 1060,
+   "masken": 41183,
+   "nachrichten": 8844,
+   "nachrichten_anzahl": 39,
+   "arbeitsstrukturen": 32981,
+   "summe": 84068,
+   "schlange": 37,
+   "zeilen_gesamt": 381
+  },
+  {
+   "nr": 41,
+   "punkt": "Mb nach Entnahme",
+   "semijoins_bisher": 18,
+   "tabellen": 1060,
+   "masken": 41183,
+   "nachrichten": 9304,
+   "nachrichten_anzahl": 41,
+   "arbeitsstrukturen": 32981,
+   "summe": 84528,
+   "schlange": 38,
+   "zeilen_gesamt": 381
+  },
+  {
+   "nr": 42,
+   "punkt": "Mb nach Entnahme",
+   "semijoins_bisher": 18,
+   "tabellen": 1060,
+   "masken": 41183,
+   "nachrichten": 9548,
+   "nachrichten_anzahl": 42,
+   "arbeitsstrukturen": 32981,
+   "summe": 84772,
+   "schlange": 37,
+   "zeilen_gesamt": 381
+  },
+  {
+   "nr": 43,
+   "punkt": "Ma nach Empfang",
+   "semijoins_bisher": 19,
+   "tabellen": 1056,
+   "masken": 41183,
+   "nachrichten": 9548,
+   "nachrichten_anzahl": 42,
+   "arbeitsstrukturen": 32981,
+   "summe": 84768,
+   "schlange": 36,
+   "zeilen_gesamt": 357
+  },
+  {
+   "nr": 44,
+   "punkt": "Ma nach Empfang",
+   "semijoins_bisher": 20,
+   "tabellen": 1056,
+   "masken": 41183,
+   "nachrichten": 9548,
+   "nachrichten_anzahl": 42,
+   "arbeitsstrukturen": 32981,
+   "summe": 84768,
+   "schlange": 36,
+   "zeilen_gesamt": 353
+  },
+  {
+   "nr": 45,
+   "punkt": "Mb nach Entnahme",
+   "semijoins_bisher": 20,
+   "tabellen": 1056,
+   "masken": 41183,
+   "nachrichten": 10280,
+   "nachrichten_anzahl": 45,
+   "arbeitsstrukturen": 32981,
+   "summe": 85500,
+   "schlange": 38,
+   "zeilen_gesamt": 353
+  },
+  {
+   "nr": 46,
+   "punkt": "Ma nach Empfang",
+   "semijoins_bisher": 21,
+   "tabellen": 1056,
+   "masken": 41183,
+   "nachrichten": 10280,
+   "nachrichten_anzahl": 45,
+   "arbeitsstrukturen": 32981,
+   "summe": 85500,
+   "schlange": 37,
+   "zeilen_gesamt": 337
+  },
+  {
+   "nr": 47,
+   "punkt": "Ma nach Empfang",
+   "semijoins_bisher": 22,
+   "tabellen": 1056,
+   "masken": 41183,
+   "nachrichten": 10280,
+   "nachrichten_anzahl": 45,
+   "arbeitsstrukturen": 32981,
+   "summe": 85500,
+   "schlange": 37,
+   "zeilen_gesamt": 325
+  },
+  {
+   "nr": 48,
+   "punkt": "Mb nach Entnahme",
+   "semijoins_bisher": 22,
+   "tabellen": 1056,
+   "masken": 41183,
+   "nachrichten": 10984,
+   "nachrichten_anzahl": 48,
+   "arbeitsstrukturen": 33509,
+   "summe": 86732,
+   "schlange": 39,
+   "zeilen_gesamt": 325
+  },
+  {
+   "nr": 49,
+   "punkt": "Ma nach Empfang",
+   "semijoins_bisher": 23,
+   "tabellen": 1056,
+   "masken": 41183,
+   "nachrichten": 10984,
+   "nachrichten_anzahl": 48,
+   "arbeitsstrukturen": 33509,
+   "summe": 86732,
+   "schlange": 38,
+   "zeilen_gesamt": 301
+  },
+  {
+   "nr": 50,
+   "punkt": "Ma nach Empfang",
+   "semijoins_bisher": 24,
+   "tabellen": 1056,
+   "masken": 41183,
+   "nachrichten": 10984,
+   "nachrichten_anzahl": 48,
+   "arbeitsstrukturen": 33509,
+   "summe": 86732,
+   "schlange": 38,
+   "zeilen_gesamt": 299
+  },
+  {
+   "nr": 51,
+   "punkt": "Mb nach Entnahme",
+   "semijoins_bisher": 24,
+   "tabellen": 1056,
+   "masken": 41183,
+   "nachrichten": 11716,
+   "nachrichten_anzahl": 51,
+   "arbeitsstrukturen": 33509,
+   "summe": 87464,
+   "schlange": 40,
+   "zeilen_gesamt": 299
+  },
+  {
+   "nr": 52,
+   "punkt": "Ma nach Empfang",
+   "semijoins_bisher": 25,
+   "tabellen": 1056,
+   "masken": 41183,
+   "nachrichten": 11716,
+   "nachrichten_anzahl": 51,
+   "arbeitsstrukturen": 33509,
+   "summe": 87464,
+   "schlange": 39,
+   "zeilen_gesamt": 289
+  },
+  {
+   "nr": 53,
+   "punkt": "Mb nach Entnahme",
+   "semijoins_bisher": 25,
+   "tabellen": 1056,
+   "masken": 41183,
+   "nachrichten": 12204,
+   "nachrichten_anzahl": 53,
+   "arbeitsstrukturen": 33509,
+   "summe": 87952,
+   "schlange": 40,
+   "zeilen_gesamt": 289
+  },
+  {
+   "nr": 54,
+   "punkt": "Ma nach Empfang",
+   "semijoins_bisher": 26,
+   "tabellen": 1056,
+   "masken": 41183,
+   "nachrichten": 12204,
+   "nachrichten_anzahl": 53,
+   "arbeitsstrukturen": 33509,
+   "summe": 87952,
+   "schlange": 39,
+   "zeilen_gesamt": 285
+  },
+  {
+   "nr": 55,
+   "punkt": "Mb nach Entnahme",
+   "semijoins_bisher": 26,
+   "tabellen": 1056,
+   "masken": 41183,
+   "nachrichten": 12664,
+   "nachrichten_anzahl": 55,
+   "arbeitsstrukturen": 33509,
+   "summe": 88412,
+   "schlange": 40,
+   "zeilen_gesamt": 285
+  },
+  {
+   "nr": 56,
+   "punkt": "Ma nach Empfang",
+   "semijoins_bisher": 27,
+   "tabellen": 1056,
+   "masken": 41183,
+   "nachrichten": 12664,
+   "nachrichten_anzahl": 55,
+   "arbeitsstrukturen": 33509,
+   "summe": 88412,
+   "schlange": 39,
+   "zeilen_gesamt": 273
+  },
+  {
+   "nr": 57,
+   "punkt": "Mb nach Entnahme",
+   "semijoins_bisher": 27,
+   "tabellen": 1056,
+   "masken": 41183,
+   "nachrichten": 13152,
+   "nachrichten_anzahl": 57,
+   "arbeitsstrukturen": 33509,
+   "summe": 88900,
+   "schlange": 40,
+   "zeilen_gesamt": 273
+  },
+  {
+   "nr": 58,
+   "punkt": "Ma nach Empfang",
+   "semijoins_bisher": 28,
+   "tabellen": 1056,
+   "masken": 41183,
+   "nachrichten": 13152,
+   "nachrichten_anzahl": 57,
+   "arbeitsstrukturen": 33509,
+   "summe": 88900,
+   "schlange": 39,
+   "zeilen_gesamt": 260
+  },
+  {
+   "nr": 59,
+   "punkt": "Mb nach Entnahme",
+   "semijoins_bisher": 28,
+   "tabellen": 1056,
+   "masken": 41183,
+   "nachrichten": 13640,
+   "nachrichten_anzahl": 59,
+   "arbeitsstrukturen": 33509,
+   "summe": 89388,
+   "schlange": 40,
+   "zeilen_gesamt": 260
+  },
+  {
+   "nr": 60,
+   "punkt": "Ma nach Empfang",
+   "semijoins_bisher": 29,
+   "tabellen": 1056,
+   "masken": 41183,
+   "nachrichten": 13640,
+   "nachrichten_anzahl": 59,
+   "arbeitsstrukturen": 33509,
+   "summe": 89388,
+   "schlange": 39,
+   "zeilen_gesamt": 247
+  },
+  {
+   "nr": 61,
+   "punkt": "Mb nach Entnahme",
+   "semijoins_bisher": 29,
+   "tabellen": 1056,
+   "masken": 41183,
+   "nachrichten": 14100,
+   "nachrichten_anzahl": 61,
+   "arbeitsstrukturen": 33509,
+   "summe": 89848,
+   "schlange": 40,
+   "zeilen_gesamt": 247
+  },
+  {
+   "nr": 62,
+   "punkt": "Ma nach Empfang",
+   "semijoins_bisher": 30,
+   "tabellen": 1056,
+   "masken": 41183,
+   "nachrichten": 14100,
+   "nachrichten_anzahl": 61,
+   "arbeitsstrukturen": 33509,
+   "summe": 89848,
+   "schlange": 39,
+   "zeilen_gesamt": 242
+  },
+  {
+   "nr": 63,
+   "punkt": "Mb nach Entnahme",
+   "semijoins_bisher": 30,
+   "tabellen": 1056,
+   "masken": 41183,
+   "nachrichten": 14532,
+   "nachrichten_anzahl": 63,
+   "arbeitsstrukturen": 33509,
+   "summe": 90280,
+   "schlange": 40,
+   "zeilen_gesamt": 242
+  },
+  {
+   "nr": 64,
+   "punkt": "Ma nach Empfang",
+   "semijoins_bisher": 31,
+   "tabellen": 1056,
+   "masken": 41183,
+   "nachrichten": 14532,
+   "nachrichten_anzahl": 63,
+   "arbeitsstrukturen": 33509,
+   "summe": 90280,
+   "schlange": 39,
+   "zeilen_gesamt": 237
+  },
+  {
+   "nr": 65,
+   "punkt": "Mb nach Entnahme",
+   "semijoins_bisher": 31,
+   "tabellen": 1056,
+   "masken": 41183,
+   "nachrichten": 14964,
+   "nachrichten_anzahl": 65,
+   "arbeitsstrukturen": 33509,
+   "summe": 90712,
+   "schlange": 40,
+   "zeilen_gesamt": 237
+  },
+  {
+   "nr": 66,
+   "punkt": "Ma nach Empfang",
+   "semijoins_bisher": 32,
+   "tabellen": 1056,
+   "masken": 41183,
+   "nachrichten": 14964,
+   "nachrichten_anzahl": 65,
+   "arbeitsstrukturen": 33509,
+   "summe": 90712,
+   "schlange": 39,
+   "zeilen_gesamt": 236
+  },
+  {
+   "nr": 67,
+   "punkt": "Mb nach Entnahme",
+   "semijoins_bisher": 32,
+   "tabellen": 1056,
+   "masken": 41183,
+   "nachrichten": 15396,
+   "nachrichten_anzahl": 67,
+   "arbeitsstrukturen": 33509,
+   "summe": 91144,
+   "schlange": 40,
+   "zeilen_gesamt": 236
+  },
+  {
+   "nr": 68,
+   "punkt": "Ma nach Empfang",
+   "semijoins_bisher": 33,
+   "tabellen": 1056,
+   "masken": 41183,
+   "nachrichten": 15396,
+   "nachrichten_anzahl": 67,
+   "arbeitsstrukturen": 33509,
+   "summe": 91144,
+   "schlange": 39,
+   "zeilen_gesamt": 232
+  },
+  {
+   "nr": 69,
+   "punkt": "Mb nach Entnahme",
+   "semijoins_bisher": 33,
+   "tabellen": 1056,
+   "masken": 41183,
+   "nachrichten": 15856,
+   "nachrichten_anzahl": 69,
+   "arbeitsstrukturen": 33509,
+   "summe": 91604,
+   "schlange": 40,
+   "zeilen_gesamt": 232
+  },
+  {
+   "nr": 70,
+   "punkt": "Mb nach Entnahme",
+   "semijoins_bisher": 33,
+   "tabellen": 1056,
+   "masken": 41183,
+   "nachrichten": 16100,
+   "nachrichten_anzahl": 70,
+   "arbeitsstrukturen": 33509,
+   "summe": 91848,
+   "schlange": 39,
+   "zeilen_gesamt": 232
+  },
+  {
+   "nr": 71,
+   "punkt": "Ma nach Empfang",
+   "semijoins_bisher": 34,
+   "tabellen": 1056,
+   "masken": 41183,
+   "nachrichten": 16100,
+   "nachrichten_anzahl": 70,
+   "arbeitsstrukturen": 33509,
+   "summe": 91848,
+   "schlange": 38,
+   "zeilen_gesamt": 208
+  },
+  {
+   "nr": 72,
+   "punkt": "Ma nach Empfang",
+   "semijoins_bisher": 35,
+   "tabellen": 1052,
+   "masken": 41183,
+   "nachrichten": 16100,
+   "nachrichten_anzahl": 70,
+   "arbeitsstrukturen": 33509,
+   "summe": 91844,
+   "schlange": 38,
+   "zeilen_gesamt": 204
+  },
+  {
+   "nr": 73,
+   "punkt": "Mb nach Entnahme",
+   "semijoins_bisher": 35,
+   "tabellen": 1052,
+   "masken": 41183,
+   "nachrichten": 16832,
+   "nachrichten_anzahl": 73,
+   "arbeitsstrukturen": 33509,
+   "summe": 92576,
+   "schlange": 40,
+   "zeilen_gesamt": 204
+  },
+  {
+   "nr": 74,
+   "punkt": "Ma nach Empfang",
+   "semijoins_bisher": 36,
+   "tabellen": 1052,
+   "masken": 41183,
+   "nachrichten": 16832,
+   "nachrichten_anzahl": 73,
+   "arbeitsstrukturen": 33509,
+   "summe": 92576,
+   "schlange": 39,
+   "zeilen_gesamt": 196
+  },
+  {
+   "nr": 75,
+   "punkt": "Ma nach Empfang",
+   "semijoins_bisher": 37,
+   "tabellen": 1048,
+   "masken": 41183,
+   "nachrichten": 16832,
+   "nachrichten_anzahl": 73,
+   "arbeitsstrukturen": 33509,
+   "summe": 92572,
+   "schlange": 39,
+   "zeilen_gesamt": 178
+  },
+  {
+   "nr": 76,
+   "punkt": "Mb nach Entnahme",
+   "semijoins_bisher": 37,
+   "tabellen": 1048,
+   "masken": 41183,
+   "nachrichten": 17536,
+   "nachrichten_anzahl": 76,
+   "arbeitsstrukturen": 33509,
+   "summe": 93276,
+   "schlange": 41,
+   "zeilen_gesamt": 178
+  },
+  {
+   "nr": 77,
+   "punkt": "Ma nach Empfang",
+   "semijoins_bisher": 38,
+   "tabellen": 1048,
+   "masken": 41183,
+   "nachrichten": 17536,
+   "nachrichten_anzahl": 76,
+   "arbeitsstrukturen": 33509,
+   "summe": 93276,
+   "schlange": 40,
+   "zeilen_gesamt": 167
+  },
+  {
+   "nr": 78,
+   "punkt": "Mb nach Entnahme",
+   "semijoins_bisher": 38,
+   "tabellen": 1048,
+   "masken": 41183,
+   "nachrichten": 18024,
+   "nachrichten_anzahl": 78,
+   "arbeitsstrukturen": 33509,
+   "summe": 93764,
+   "schlange": 41,
+   "zeilen_gesamt": 167
+  },
+  {
+   "nr": 79,
+   "punkt": "Ma nach Empfang",
+   "semijoins_bisher": 39,
+   "tabellen": 1048,
+   "masken": 41183,
+   "nachrichten": 17996,
+   "nachrichten_anzahl": 78,
+   "arbeitsstrukturen": 33509,
+   "summe": 93736,
+   "schlange": 40,
+   "zeilen_gesamt": 163
+  },
+  {
+   "nr": 80,
+   "punkt": "Ma nach Empfang",
+   "semijoins_bisher": 40,
+   "tabellen": 1048,
+   "masken": 41183,
+   "nachrichten": 18024,
+   "nachrichten_anzahl": 78,
+   "arbeitsstrukturen": 33509,
+   "summe": 93764,
+   "schlange": 40,
+   "zeilen_gesamt": 162
+  },
+  {
+   "nr": 81,
+   "punkt": "Mb nach Entnahme",
+   "semijoins_bisher": 40,
+   "tabellen": 1048,
+   "masken": 41183,
+   "nachrichten": 18672,
+   "nachrichten_anzahl": 81,
+   "arbeitsstrukturen": 33509,
+   "summe": 94412,
+   "schlange": 42,
+   "zeilen_gesamt": 162
+  },
+  {
+   "nr": 82,
+   "punkt": "Ma nach Empfang",
+   "semijoins_bisher": 41,
+   "tabellen": 1048,
+   "masken": 41183,
+   "nachrichten": 18644,
+   "nachrichten_anzahl": 81,
+   "arbeitsstrukturen": 33509,
+   "summe": 94384,
+   "schlange": 41,
+   "zeilen_gesamt": 161
+  },
+  {
+   "nr": 83,
+   "punkt": "Mb nach Entnahme",
+   "semijoins_bisher": 41,
+   "tabellen": 1048,
+   "masken": 41183,
+   "nachrichten": 19076,
+   "nachrichten_anzahl": 83,
+   "arbeitsstrukturen": 33509,
+   "summe": 94816,
+   "schlange": 42,
+   "zeilen_gesamt": 161
+  },
+  {
+   "nr": 84,
+   "punkt": "Ma nach Empfang",
+   "semijoins_bisher": 42,
+   "tabellen": 1048,
+   "masken": 41183,
+   "nachrichten": 19076,
+   "nachrichten_anzahl": 83,
+   "arbeitsstrukturen": 33509,
+   "summe": 94816,
+   "schlange": 41,
+   "zeilen_gesamt": 161
+  },
+  {
+   "nr": 85,
+   "punkt": "Mb nach Entnahme",
+   "semijoins_bisher": 42,
+   "tabellen": 1048,
+   "masken": 41183,
+   "nachrichten": 19292,
+   "nachrichten_anzahl": 84,
+   "arbeitsstrukturen": 33493,
+   "summe": 95016,
+   "schlange": 42,
+   "zeilen_gesamt": 161
+  },
+  {
+   "nr": 86,
+   "punkt": "Ma nach Empfang",
+   "semijoins_bisher": 43,
+   "tabellen": 1048,
+   "masken": 41183,
+   "nachrichten": 19292,
+   "nachrichten_anzahl": 84,
+   "arbeitsstrukturen": 33493,
+   "summe": 95016,
+   "schlange": 41,
+   "zeilen_gesamt": 161
+  },
+  {
+   "nr": 87,
+   "punkt": "Mb nach Entnahme",
+   "semijoins_bisher": 43,
+   "tabellen": 1048,
+   "masken": 41183,
+   "nachrichten": 19292,
+   "nachrichten_anzahl": 84,
+   "arbeitsstrukturen": 33493,
+   "summe": 95016,
+   "schlange": 41,
+   "zeilen_gesamt": 161
+  },
+  {
+   "nr": 88,
+   "punkt": "Ma nach Empfang",
+   "semijoins_bisher": 44,
+   "tabellen": 1048,
+   "masken": 41183,
+   "nachrichten": 19292,
+   "nachrichten_anzahl": 84,
+   "arbeitsstrukturen": 33493,
+   "summe": 95016,
+   "schlange": 40,
+   "zeilen_gesamt": 161
+  },
+  {
+   "nr": 89,
+   "punkt": "Mb nach Entnahme",
+   "semijoins_bisher": 44,
+   "tabellen": 1048,
+   "masken": 41183,
+   "nachrichten": 19292,
+   "nachrichten_anzahl": 84,
+   "arbeitsstrukturen": 33493,
+   "summe": 95016,
+   "schlange": 40,
+   "zeilen_gesamt": 161
+  },
+  {
+   "nr": 90,
+   "punkt": "Ma nach Empfang",
+   "semijoins_bisher": 45,
+   "tabellen": 1048,
+   "masken": 41183,
+   "nachrichten": 19292,
+   "nachrichten_anzahl": 84,
+   "arbeitsstrukturen": 33493,
+   "summe": 95016,
+   "schlange": 39,
+   "zeilen_gesamt": 161
+  },
+  {
+   "nr": 91,
+   "punkt": "Mb nach Entnahme",
+   "semijoins_bisher": 45,
+   "tabellen": 1048,
+   "masken": 41183,
+   "nachrichten": 19292,
+   "nachrichten_anzahl": 84,
+   "arbeitsstrukturen": 33493,
+   "summe": 95016,
+   "schlange": 39,
+   "zeilen_gesamt": 161
+  },
+  {
+   "nr": 92,
+   "punkt": "Ma nach Empfang",
+   "semijoins_bisher": 46,
+   "tabellen": 1048,
+   "masken": 41183,
+   "nachrichten": 19292,
+   "nachrichten_anzahl": 84,
+   "arbeitsstrukturen": 33493,
+   "summe": 95016,
+   "schlange": 38,
+   "zeilen_gesamt": 161
+  },
+  {
+   "nr": 93,
+   "punkt": "Mb nach Entnahme",
+   "semijoins_bisher": 46,
+   "tabellen": 1048,
+   "masken": 41183,
+   "nachrichten": 19292,
+   "nachrichten_anzahl": 84,
+   "arbeitsstrukturen": 33493,
+   "summe": 95016,
+   "schlange": 38,
+   "zeilen_gesamt": 161
+  },
+  {
+   "nr": 94,
+   "punkt": "Ma nach Empfang",
+   "semijoins_bisher": 47,
+   "tabellen": 1048,
+   "masken": 41183,
+   "nachrichten": 19292,
+   "nachrichten_anzahl": 84,
+   "arbeitsstrukturen": 33493,
+   "summe": 95016,
+   "schlange": 37,
+   "zeilen_gesamt": 161
+  },
+  {
+   "nr": 95,
+   "punkt": "Mb nach Entnahme",
+   "semijoins_bisher": 47,
+   "tabellen": 1048,
+   "masken": 41183,
+   "nachrichten": 19292,
+   "nachrichten_anzahl": 84,
+   "arbeitsstrukturen": 33493,
+   "summe": 95016,
+   "schlange": 37,
+   "zeilen_gesamt": 161
+  },
+  {
+   "nr": 96,
+   "punkt": "Ma nach Empfang",
+   "semijoins_bisher": 48,
+   "tabellen": 1048,
+   "masken": 41183,
+   "nachrichten": 19292,
+   "nachrichten_anzahl": 84,
+   "arbeitsstrukturen": 33493,
+   "summe": 95016,
+   "schlange": 36,
+   "zeilen_gesamt": 161
+  },
+  {
+   "nr": 97,
+   "punkt": "Mb nach Entnahme",
+   "semijoins_bisher": 48,
+   "tabellen": 1048,
+   "masken": 41183,
+   "nachrichten": 19292,
+   "nachrichten_anzahl": 84,
+   "arbeitsstrukturen": 33493,
+   "summe": 95016,
+   "schlange": 36,
+   "zeilen_gesamt": 161
+  },
+  {
+   "nr": 98,
+   "punkt": "Ma nach Empfang",
+   "semijoins_bisher": 49,
+   "tabellen": 1048,
+   "masken": 41183,
+   "nachrichten": 19292,
+   "nachrichten_anzahl": 84,
+   "arbeitsstrukturen": 33493,
+   "summe": 95016,
+   "schlange": 35,
+   "zeilen_gesamt": 161
+  },
+  {
+   "nr": 99,
+   "punkt": "Mb nach Entnahme",
+   "semijoins_bisher": 49,
+   "tabellen": 1048,
+   "masken": 41183,
+   "nachrichten": 19292,
+   "nachrichten_anzahl": 84,
+   "arbeitsstrukturen": 33493,
+   "summe": 95016,
+   "schlange": 35,
+   "zeilen_gesamt": 161
+  },
+  {
+   "nr": 100,
+   "punkt": "Ma nach Empfang",
+   "semijoins_bisher": 50,
+   "tabellen": 1048,
+   "masken": 41183,
+   "nachrichten": 19292,
+   "nachrichten_anzahl": 84,
+   "arbeitsstrukturen": 33493,
+   "summe": 95016,
+   "schlange": 34,
+   "zeilen_gesamt": 161
+  },
+  {
+   "nr": 101,
+   "punkt": "Mb nach Entnahme",
+   "semijoins_bisher": 50,
+   "tabellen": 1048,
+   "masken": 41183,
+   "nachrichten": 19292,
+   "nachrichten_anzahl": 84,
+   "arbeitsstrukturen": 33493,
+   "summe": 95016,
+   "schlange": 34,
+   "zeilen_gesamt": 161
+  },
+  {
+   "nr": 102,
+   "punkt": "Ma nach Empfang",
+   "semijoins_bisher": 51,
+   "tabellen": 1048,
+   "masken": 41183,
+   "nachrichten": 19292,
+   "nachrichten_anzahl": 84,
+   "arbeitsstrukturen": 33493,
+   "summe": 95016,
+   "schlange": 33,
+   "zeilen_gesamt": 161
+  },
+  {
+   "nr": 103,
+   "punkt": "Mb nach Entnahme",
+   "semijoins_bisher": 51,
+   "tabellen": 1048,
+   "masken": 41183,
+   "nachrichten": 19292,
+   "nachrichten_anzahl": 84,
+   "arbeitsstrukturen": 33493,
+   "summe": 95016,
+   "schlange": 33,
+   "zeilen_gesamt": 161
+  },
+  {
+   "nr": 104,
+   "punkt": "Ma nach Empfang",
+   "semijoins_bisher": 52,
+   "tabellen": 1048,
+   "masken": 41183,
+   "nachrichten": 19292,
+   "nachrichten_anzahl": 84,
+   "arbeitsstrukturen": 33493,
+   "summe": 95016,
+   "schlange": 32,
+   "zeilen_gesamt": 161
+  },
+  {
+   "nr": 105,
+   "punkt": "Mb nach Entnahme",
+   "semijoins_bisher": 52,
+   "tabellen": 1048,
+   "masken": 41183,
+   "nachrichten": 19292,
+   "nachrichten_anzahl": 84,
+   "arbeitsstrukturen": 33493,
+   "summe": 95016,
+   "schlange": 32,
+   "zeilen_gesamt": 161
+  },
+  {
+   "nr": 106,
+   "punkt": "Ma nach Empfang",
+   "semijoins_bisher": 53,
+   "tabellen": 1048,
+   "masken": 41183,
+   "nachrichten": 19292,
+   "nachrichten_anzahl": 84,
+   "arbeitsstrukturen": 33493,
+   "summe": 95016,
+   "schlange": 31,
+   "zeilen_gesamt": 161
+  },
+  {
+   "nr": 107,
+   "punkt": "Mb nach Entnahme",
+   "semijoins_bisher": 53,
+   "tabellen": 1048,
+   "masken": 41183,
+   "nachrichten": 19292,
+   "nachrichten_anzahl": 84,
+   "arbeitsstrukturen": 33493,
+   "summe": 95016,
+   "schlange": 31,
+   "zeilen_gesamt": 161
+  },
+  {
+   "nr": 108,
+   "punkt": "Ma nach Empfang",
+   "semijoins_bisher": 54,
+   "tabellen": 1048,
+   "masken": 41183,
+   "nachrichten": 19292,
+   "nachrichten_anzahl": 84,
+   "arbeitsstrukturen": 33493,
+   "summe": 95016,
+   "schlange": 30,
+   "zeilen_gesamt": 161
+  },
+  {
+   "nr": 109,
+   "punkt": "Mb nach Entnahme",
+   "semijoins_bisher": 54,
+   "tabellen": 1048,
+   "masken": 41183,
+   "nachrichten": 19292,
+   "nachrichten_anzahl": 84,
+   "arbeitsstrukturen": 33493,
+   "summe": 95016,
+   "schlange": 30,
+   "zeilen_gesamt": 161
+  },
+  {
+   "nr": 110,
+   "punkt": "Ma nach Empfang",
+   "semijoins_bisher": 55,
+   "tabellen": 1048,
+   "masken": 41183,
+   "nachrichten": 19292,
+   "nachrichten_anzahl": 84,
+   "arbeitsstrukturen": 33493,
+   "summe": 95016,
+   "schlange": 29,
+   "zeilen_gesamt": 161
+  },
+  {
+   "nr": 111,
+   "punkt": "Mb nach Entnahme",
+   "semijoins_bisher": 55,
+   "tabellen": 1048,
+   "masken": 41183,
+   "nachrichten": 19292,
+   "nachrichten_anzahl": 84,
+   "arbeitsstrukturen": 33493,
+   "summe": 95016,
+   "schlange": 29,
+   "zeilen_gesamt": 161
+  },
+  {
+   "nr": 112,
+   "punkt": "Ma nach Empfang",
+   "semijoins_bisher": 56,
+   "tabellen": 1048,
+   "masken": 41183,
+   "nachrichten": 19292,
+   "nachrichten_anzahl": 84,
+   "arbeitsstrukturen": 33493,
+   "summe": 95016,
+   "schlange": 28,
+   "zeilen_gesamt": 159
+  },
+  {
+   "nr": 113,
+   "punkt": "Mb nach Entnahme",
+   "semijoins_bisher": 56,
+   "tabellen": 1048,
+   "masken": 41183,
+   "nachrichten": 19264,
+   "nachrichten_anzahl": 84,
+   "arbeitsstrukturen": 33493,
+   "summe": 94988,
+   "schlange": 28,
+   "zeilen_gesamt": 159
+  },
+  {
+   "nr": 114,
+   "punkt": "Ma nach Empfang",
+   "semijoins_bisher": 57,
+   "tabellen": 1048,
+   "masken": 41183,
+   "nachrichten": 19264,
+   "nachrichten_anzahl": 84,
+   "arbeitsstrukturen": 33493,
+   "summe": 94988,
+   "schlange": 27,
+   "zeilen_gesamt": 159
+  },
+  {
+   "nr": 115,
+   "punkt": "Mb nach Entnahme",
+   "semijoins_bisher": 57,
+   "tabellen": 1048,
+   "masken": 41183,
+   "nachrichten": 19264,
+   "nachrichten_anzahl": 84,
+   "arbeitsstrukturen": 33493,
+   "summe": 94988,
+   "schlange": 27,
+   "zeilen_gesamt": 159
+  },
+  {
+   "nr": 116,
+   "punkt": "Ma nach Empfang",
+   "semijoins_bisher": 58,
+   "tabellen": 1048,
+   "masken": 41183,
+   "nachrichten": 19264,
+   "nachrichten_anzahl": 84,
+   "arbeitsstrukturen": 33493,
+   "summe": 94988,
+   "schlange": 26,
+   "zeilen_gesamt": 159
+  },
+  {
+   "nr": 117,
+   "punkt": "Ma nach Empfang",
+   "semijoins_bisher": 59,
+   "tabellen": 1048,
+   "masken": 41183,
+   "nachrichten": 19264,
+   "nachrichten_anzahl": 84,
+   "arbeitsstrukturen": 33493,
+   "summe": 94988,
+   "schlange": 26,
+   "zeilen_gesamt": 159
+  },
+  {
+   "nr": 118,
+   "punkt": "Mb nach Entnahme",
+   "semijoins_bisher": 59,
+   "tabellen": 1048,
+   "masken": 41183,
+   "nachrichten": 19264,
+   "nachrichten_anzahl": 84,
+   "arbeitsstrukturen": 33493,
+   "summe": 94988,
+   "schlange": 26,
+   "zeilen_gesamt": 159
+  },
+  {
+   "nr": 119,
+   "punkt": "Ma nach Empfang",
+   "semijoins_bisher": 60,
+   "tabellen": 1048,
+   "masken": 41183,
+   "nachrichten": 19264,
+   "nachrichten_anzahl": 84,
+   "arbeitsstrukturen": 33493,
+   "summe": 94988,
+   "schlange": 25,
+   "zeilen_gesamt": 159
+  },
+  {
+   "nr": 120,
+   "punkt": "Mb nach Entnahme",
+   "semijoins_bisher": 60,
+   "tabellen": 1048,
+   "masken": 41183,
+   "nachrichten": 19264,
+   "nachrichten_anzahl": 84,
+   "arbeitsstrukturen": 33493,
+   "summe": 94988,
+   "schlange": 25,
+   "zeilen_gesamt": 159
+  },
+  {
+   "nr": 121,
+   "punkt": "Ma nach Empfang",
+   "semijoins_bisher": 61,
+   "tabellen": 1048,
+   "masken": 41183,
+   "nachrichten": 19264,
+   "nachrichten_anzahl": 84,
+   "arbeitsstrukturen": 33493,
+   "summe": 94988,
+   "schlange": 24,
+   "zeilen_gesamt": 159
+  },
+  {
+   "nr": 122,
+   "punkt": "Mb nach Entnahme",
+   "semijoins_bisher": 61,
+   "tabellen": 1048,
+   "masken": 41183,
+   "nachrichten": 19264,
+   "nachrichten_anzahl": 84,
+   "arbeitsstrukturen": 33493,
+   "summe": 94988,
+   "schlange": 24,
+   "zeilen_gesamt": 159
+  },
+  {
+   "nr": 123,
+   "punkt": "Ma nach Empfang",
+   "semijoins_bisher": 62,
+   "tabellen": 1048,
+   "masken": 41183,
+   "nachrichten": 19264,
+   "nachrichten_anzahl": 84,
+   "arbeitsstrukturen": 33493,
+   "summe": 94988,
+   "schlange": 23,
+   "zeilen_gesamt": 159
+  },
+  {
+   "nr": 124,
+   "punkt": "Mb nach Entnahme",
+   "semijoins_bisher": 62,
+   "tabellen": 1048,
+   "masken": 41183,
+   "nachrichten": 19264,
+   "nachrichten_anzahl": 84,
+   "arbeitsstrukturen": 33493,
+   "summe": 94988,
+   "schlange": 23,
+   "zeilen_gesamt": 159
+  },
+  {
+   "nr": 125,
+   "punkt": "Ma nach Empfang",
+   "semijoins_bisher": 63,
+   "tabellen": 1048,
+   "masken": 41183,
+   "nachrichten": 19264,
+   "nachrichten_anzahl": 84,
+   "arbeitsstrukturen": 32965,
+   "summe": 94460,
+   "schlange": 22,
+   "zeilen_gesamt": 155
+  },
+  {
+   "nr": 126,
+   "punkt": "Mb nach Entnahme",
+   "semijoins_bisher": 63,
+   "tabellen": 1048,
+   "masken": 41183,
+   "nachrichten": 19264,
+   "nachrichten_anzahl": 84,
+   "arbeitsstrukturen": 32965,
+   "summe": 94460,
+   "schlange": 22,
+   "zeilen_gesamt": 155
+  },
+  {
+   "nr": 127,
+   "punkt": "Ma nach Empfang",
+   "semijoins_bisher": 64,
+   "tabellen": 1048,
+   "masken": 41183,
+   "nachrichten": 19264,
+   "nachrichten_anzahl": 84,
+   "arbeitsstrukturen": 32965,
+   "summe": 94460,
+   "schlange": 21,
+   "zeilen_gesamt": 155
+  },
+  {
+   "nr": 128,
+   "punkt": "Mb nach Entnahme",
+   "semijoins_bisher": 64,
+   "tabellen": 1048,
+   "masken": 41183,
+   "nachrichten": 19264,
+   "nachrichten_anzahl": 84,
+   "arbeitsstrukturen": 32965,
+   "summe": 94460,
+   "schlange": 21,
+   "zeilen_gesamt": 155
+  },
+  {
+   "nr": 129,
+   "punkt": "Ma nach Empfang",
+   "semijoins_bisher": 65,
+   "tabellen": 1048,
+   "masken": 41183,
+   "nachrichten": 19264,
+   "nachrichten_anzahl": 84,
+   "arbeitsstrukturen": 32965,
+   "summe": 94460,
+   "schlange": 20,
+   "zeilen_gesamt": 153
+  },
+  {
+   "nr": 130,
+   "punkt": "Ma nach Empfang",
+   "semijoins_bisher": 66,
+   "tabellen": 1048,
+   "masken": 41183,
+   "nachrichten": 19264,
+   "nachrichten_anzahl": 84,
+   "arbeitsstrukturen": 32965,
+   "summe": 94460,
+   "schlange": 20,
+   "zeilen_gesamt": 153
+  },
+  {
+   "nr": 131,
+   "punkt": "Mb nach Entnahme",
+   "semijoins_bisher": 66,
+   "tabellen": 1048,
+   "masken": 41183,
+   "nachrichten": 19236,
+   "nachrichten_anzahl": 84,
+   "arbeitsstrukturen": 32965,
+   "summe": 94432,
+   "schlange": 22,
+   "zeilen_gesamt": 153
+  },
+  {
+   "nr": 132,
+   "punkt": "Ma nach Empfang",
+   "semijoins_bisher": 67,
+   "tabellen": 1048,
+   "masken": 41183,
+   "nachrichten": 19236,
+   "nachrichten_anzahl": 84,
+   "arbeitsstrukturen": 32965,
+   "summe": 94432,
+   "schlange": 21,
+   "zeilen_gesamt": 149
+  },
+  {
+   "nr": 133,
+   "punkt": "Mb nach Entnahme",
+   "semijoins_bisher": 67,
+   "tabellen": 1048,
+   "masken": 41183,
+   "nachrichten": 19236,
+   "nachrichten_anzahl": 84,
+   "arbeitsstrukturen": 32965,
+   "summe": 94432,
+   "schlange": 21,
+   "zeilen_gesamt": 149
+  },
+  {
+   "nr": 134,
+   "punkt": "Ma nach Empfang",
+   "semijoins_bisher": 68,
+   "tabellen": 1048,
+   "masken": 41183,
+   "nachrichten": 19236,
+   "nachrichten_anzahl": 84,
+   "arbeitsstrukturen": 32965,
+   "summe": 94432,
+   "schlange": 20,
+   "zeilen_gesamt": 149
+  },
+  {
+   "nr": 135,
+   "punkt": "Ma nach Empfang",
+   "semijoins_bisher": 69,
+   "tabellen": 1048,
+   "masken": 41183,
+   "nachrichten": 19236,
+   "nachrichten_anzahl": 84,
+   "arbeitsstrukturen": 32965,
+   "summe": 94432,
+   "schlange": 20,
+   "zeilen_gesamt": 149
+  },
+  {
+   "nr": 136,
+   "punkt": "Mb nach Entnahme",
+   "semijoins_bisher": 69,
+   "tabellen": 1048,
+   "masken": 41183,
+   "nachrichten": 19236,
+   "nachrichten_anzahl": 84,
+   "arbeitsstrukturen": 32965,
+   "summe": 94432,
+   "schlange": 20,
+   "zeilen_gesamt": 149
+  },
+  {
+   "nr": 137,
+   "punkt": "Ma nach Empfang",
+   "semijoins_bisher": 70,
+   "tabellen": 1048,
+   "masken": 41183,
+   "nachrichten": 19236,
+   "nachrichten_anzahl": 84,
+   "arbeitsstrukturen": 32965,
+   "summe": 94432,
+   "schlange": 19,
+   "zeilen_gesamt": 149
+  },
+  {
+   "nr": 138,
+   "punkt": "Ma nach Empfang",
+   "semijoins_bisher": 71,
+   "tabellen": 1048,
+   "masken": 41183,
+   "nachrichten": 19236,
+   "nachrichten_anzahl": 84,
+   "arbeitsstrukturen": 32965,
+   "summe": 94432,
+   "schlange": 19,
+   "zeilen_gesamt": 149
+  },
+  {
+   "nr": 139,
+   "punkt": "Mb nach Entnahme",
+   "semijoins_bisher": 71,
+   "tabellen": 1048,
+   "masken": 41183,
+   "nachrichten": 19236,
+   "nachrichten_anzahl": 84,
+   "arbeitsstrukturen": 32965,
+   "summe": 94432,
+   "schlange": 19,
+   "zeilen_gesamt": 149
+  },
+  {
+   "nr": 140,
+   "punkt": "Ma nach Empfang",
+   "semijoins_bisher": 72,
+   "tabellen": 1048,
+   "masken": 41183,
+   "nachrichten": 19236,
+   "nachrichten_anzahl": 84,
+   "arbeitsstrukturen": 32965,
+   "summe": 94432,
+   "schlange": 18,
+   "zeilen_gesamt": 149
+  },
+  {
+   "nr": 141,
+   "punkt": "Mb nach Entnahme",
+   "semijoins_bisher": 72,
+   "tabellen": 1048,
+   "masken": 41183,
+   "nachrichten": 19236,
+   "nachrichten_anzahl": 84,
+   "arbeitsstrukturen": 32965,
+   "summe": 94432,
+   "schlange": 18,
+   "zeilen_gesamt": 149
+  },
+  {
+   "nr": 142,
+   "punkt": "Ma nach Empfang",
+   "semijoins_bisher": 73,
+   "tabellen": 1048,
+   "masken": 41183,
+   "nachrichten": 19236,
+   "nachrichten_anzahl": 84,
+   "arbeitsstrukturen": 32965,
+   "summe": 94432,
+   "schlange": 17,
+   "zeilen_gesamt": 149
+  },
+  {
+   "nr": 143,
+   "punkt": "Mb nach Entnahme",
+   "semijoins_bisher": 73,
+   "tabellen": 1048,
+   "masken": 41183,
+   "nachrichten": 19236,
+   "nachrichten_anzahl": 84,
+   "arbeitsstrukturen": 32965,
+   "summe": 94432,
+   "schlange": 17,
+   "zeilen_gesamt": 149
+  },
+  {
+   "nr": 144,
+   "punkt": "Ma nach Empfang",
+   "semijoins_bisher": 74,
+   "tabellen": 1048,
+   "masken": 41183,
+   "nachrichten": 19236,
+   "nachrichten_anzahl": 84,
+   "arbeitsstrukturen": 32965,
+   "summe": 94432,
+   "schlange": 16,
+   "zeilen_gesamt": 149
+  },
+  {
+   "nr": 145,
+   "punkt": "Mb nach Entnahme",
+   "semijoins_bisher": 74,
+   "tabellen": 1048,
+   "masken": 41183,
+   "nachrichten": 19236,
+   "nachrichten_anzahl": 84,
+   "arbeitsstrukturen": 32965,
+   "summe": 94432,
+   "schlange": 16,
+   "zeilen_gesamt": 149
+  },
+  {
+   "nr": 146,
+   "punkt": "Ma nach Empfang",
+   "semijoins_bisher": 75,
+   "tabellen": 1048,
+   "masken": 41183,
+   "nachrichten": 19236,
+   "nachrichten_anzahl": 84,
+   "arbeitsstrukturen": 32965,
+   "summe": 94432,
+   "schlange": 15,
+   "zeilen_gesamt": 149
+  },
+  {
+   "nr": 147,
+   "punkt": "Mb nach Entnahme",
+   "semijoins_bisher": 75,
+   "tabellen": 1048,
+   "masken": 41183,
+   "nachrichten": 19236,
+   "nachrichten_anzahl": 84,
+   "arbeitsstrukturen": 32965,
+   "summe": 94432,
+   "schlange": 15,
+   "zeilen_gesamt": 149
+  },
+  {
+   "nr": 148,
+   "punkt": "Ma nach Empfang",
+   "semijoins_bisher": 76,
+   "tabellen": 1048,
+   "masken": 41183,
+   "nachrichten": 19236,
+   "nachrichten_anzahl": 84,
+   "arbeitsstrukturen": 32965,
+   "summe": 94432,
+   "schlange": 14,
+   "zeilen_gesamt": 149
+  },
+  {
+   "nr": 149,
+   "punkt": "Mb nach Entnahme",
+   "semijoins_bisher": 76,
+   "tabellen": 1048,
+   "masken": 41183,
+   "nachrichten": 19236,
+   "nachrichten_anzahl": 84,
+   "arbeitsstrukturen": 32965,
+   "summe": 94432,
+   "schlange": 14,
+   "zeilen_gesamt": 149
+  },
+  {
+   "nr": 150,
+   "punkt": "Ma nach Empfang",
+   "semijoins_bisher": 77,
+   "tabellen": 1048,
+   "masken": 41183,
+   "nachrichten": 19236,
+   "nachrichten_anzahl": 84,
+   "arbeitsstrukturen": 32965,
+   "summe": 94432,
+   "schlange": 13,
+   "zeilen_gesamt": 149
+  },
+  {
+   "nr": 151,
+   "punkt": "Mb nach Entnahme",
+   "semijoins_bisher": 77,
+   "tabellen": 1048,
+   "masken": 41183,
+   "nachrichten": 19236,
+   "nachrichten_anzahl": 84,
+   "arbeitsstrukturen": 32965,
+   "summe": 94432,
+   "schlange": 13,
+   "zeilen_gesamt": 149
+  },
+  {
+   "nr": 152,
+   "punkt": "Ma nach Empfang",
+   "semijoins_bisher": 78,
+   "tabellen": 1048,
+   "masken": 41183,
+   "nachrichten": 19236,
+   "nachrichten_anzahl": 84,
+   "arbeitsstrukturen": 32965,
+   "summe": 94432,
+   "schlange": 12,
+   "zeilen_gesamt": 149
+  },
+  {
+   "nr": 153,
+   "punkt": "Mb nach Entnahme",
+   "semijoins_bisher": 78,
+   "tabellen": 1048,
+   "masken": 41183,
+   "nachrichten": 19236,
+   "nachrichten_anzahl": 84,
+   "arbeitsstrukturen": 32965,
+   "summe": 94432,
+   "schlange": 12,
+   "zeilen_gesamt": 149
+  },
+  {
+   "nr": 154,
+   "punkt": "Ma nach Empfang",
+   "semijoins_bisher": 79,
+   "tabellen": 1048,
+   "masken": 41183,
+   "nachrichten": 19236,
+   "nachrichten_anzahl": 84,
+   "arbeitsstrukturen": 32965,
+   "summe": 94432,
+   "schlange": 11,
+   "zeilen_gesamt": 149
+  },
+  {
+   "nr": 155,
+   "punkt": "Mb nach Entnahme",
+   "semijoins_bisher": 79,
+   "tabellen": 1048,
+   "masken": 41183,
+   "nachrichten": 19236,
+   "nachrichten_anzahl": 84,
+   "arbeitsstrukturen": 32965,
+   "summe": 94432,
+   "schlange": 11,
+   "zeilen_gesamt": 149
+  },
+  {
+   "nr": 156,
+   "punkt": "Ma nach Empfang",
+   "semijoins_bisher": 80,
+   "tabellen": 1048,
+   "masken": 41183,
+   "nachrichten": 19236,
+   "nachrichten_anzahl": 84,
+   "arbeitsstrukturen": 32965,
+   "summe": 94432,
+   "schlange": 10,
+   "zeilen_gesamt": 149
+  },
+  {
+   "nr": 157,
+   "punkt": "Mb nach Entnahme",
+   "semijoins_bisher": 80,
+   "tabellen": 1048,
+   "masken": 41183,
+   "nachrichten": 19236,
+   "nachrichten_anzahl": 84,
+   "arbeitsstrukturen": 32965,
+   "summe": 94432,
+   "schlange": 10,
+   "zeilen_gesamt": 149
+  },
+  {
+   "nr": 158,
+   "punkt": "Ma nach Empfang",
+   "semijoins_bisher": 81,
+   "tabellen": 1048,
+   "masken": 41183,
+   "nachrichten": 19236,
+   "nachrichten_anzahl": 84,
+   "arbeitsstrukturen": 32965,
+   "summe": 94432,
+   "schlange": 9,
+   "zeilen_gesamt": 145
+  },
+  {
+   "nr": 159,
+   "punkt": "Mb nach Entnahme",
+   "semijoins_bisher": 81,
+   "tabellen": 1048,
+   "masken": 41183,
+   "nachrichten": 19236,
+   "nachrichten_anzahl": 84,
+   "arbeitsstrukturen": 32965,
+   "summe": 94432,
+   "schlange": 9,
+   "zeilen_gesamt": 145
+  },
+  {
+   "nr": 160,
+   "punkt": "Ma nach Empfang",
+   "semijoins_bisher": 82,
+   "tabellen": 1048,
+   "masken": 41183,
+   "nachrichten": 19236,
+   "nachrichten_anzahl": 84,
+   "arbeitsstrukturen": 32965,
+   "summe": 94432,
+   "schlange": 8,
+   "zeilen_gesamt": 145
+  },
+  {
+   "nr": 161,
+   "punkt": "Mb nach Entnahme",
+   "semijoins_bisher": 82,
+   "tabellen": 1048,
+   "masken": 41183,
+   "nachrichten": 19236,
+   "nachrichten_anzahl": 84,
+   "arbeitsstrukturen": 32965,
+   "summe": 94432,
+   "schlange": 8,
+   "zeilen_gesamt": 145
+  },
+  {
+   "nr": 162,
+   "punkt": "Ma nach Empfang",
+   "semijoins_bisher": 83,
+   "tabellen": 1048,
+   "masken": 41183,
+   "nachrichten": 19236,
+   "nachrichten_anzahl": 84,
+   "arbeitsstrukturen": 32965,
+   "summe": 94432,
+   "schlange": 7,
+   "zeilen_gesamt": 145
+  },
+  {
+   "nr": 163,
+   "punkt": "Ma nach Empfang",
+   "semijoins_bisher": 84,
+   "tabellen": 1048,
+   "masken": 41183,
+   "nachrichten": 19236,
+   "nachrichten_anzahl": 84,
+   "arbeitsstrukturen": 32965,
+   "summe": 94432,
+   "schlange": 7,
+   "zeilen_gesamt": 145
+  },
+  {
+   "nr": 164,
+   "punkt": "Mb nach Entnahme",
+   "semijoins_bisher": 84,
+   "tabellen": 1048,
+   "masken": 41183,
+   "nachrichten": 19236,
+   "nachrichten_anzahl": 84,
+   "arbeitsstrukturen": 32965,
+   "summe": 94432,
+   "schlange": 7,
+   "zeilen_gesamt": 145
+  },
+  {
+   "nr": 165,
+   "punkt": "Ma nach Empfang",
+   "semijoins_bisher": 85,
+   "tabellen": 1048,
+   "masken": 41183,
+   "nachrichten": 19236,
+   "nachrichten_anzahl": 84,
+   "arbeitsstrukturen": 32965,
+   "summe": 94432,
+   "schlange": 6,
+   "zeilen_gesamt": 145
+  },
+  {
+   "nr": 166,
+   "punkt": "Mb nach Entnahme",
+   "semijoins_bisher": 85,
+   "tabellen": 1048,
+   "masken": 41183,
+   "nachrichten": 19236,
+   "nachrichten_anzahl": 84,
+   "arbeitsstrukturen": 32965,
+   "summe": 94432,
+   "schlange": 6,
+   "zeilen_gesamt": 145
+  },
+  {
+   "nr": 167,
+   "punkt": "Ma nach Empfang",
+   "semijoins_bisher": 86,
+   "tabellen": 1048,
+   "masken": 41183,
+   "nachrichten": 19236,
+   "nachrichten_anzahl": 84,
+   "arbeitsstrukturen": 32965,
+   "summe": 94432,
+   "schlange": 5,
+   "zeilen_gesamt": 141
+  },
+  {
+   "nr": 168,
+   "punkt": "Mb nach Entnahme",
+   "semijoins_bisher": 86,
+   "tabellen": 1048,
+   "masken": 41183,
+   "nachrichten": 19208,
+   "nachrichten_anzahl": 84,
+   "arbeitsstrukturen": 32965,
+   "summe": 94404,
+   "schlange": 5,
+   "zeilen_gesamt": 141
+  },
+  {
+   "nr": 169,
+   "punkt": "Ma nach Empfang",
+   "semijoins_bisher": 87,
+   "tabellen": 1048,
+   "masken": 41183,
+   "nachrichten": 19208,
+   "nachrichten_anzahl": 84,
+   "arbeitsstrukturen": 32965,
+   "summe": 94404,
+   "schlange": 4,
+   "zeilen_gesamt": 140
+  },
+  {
+   "nr": 170,
+   "punkt": "Mb nach Entnahme",
+   "semijoins_bisher": 87,
+   "tabellen": 1048,
+   "masken": 41183,
+   "nachrichten": 19180,
+   "nachrichten_anzahl": 84,
+   "arbeitsstrukturen": 32965,
+   "summe": 94376,
+   "schlange": 5,
+   "zeilen_gesamt": 140
+  },
+  {
+   "nr": 171,
+   "punkt": "Ma nach Empfang",
+   "semijoins_bisher": 88,
+   "tabellen": 1048,
+   "masken": 41183,
+   "nachrichten": 19180,
+   "nachrichten_anzahl": 84,
+   "arbeitsstrukturen": 32965,
+   "summe": 94376,
+   "schlange": 4,
+   "zeilen_gesamt": 140
+  },
+  {
+   "nr": 172,
+   "punkt": "Ma nach Empfang",
+   "semijoins_bisher": 89,
+   "tabellen": 1048,
+   "masken": 41183,
+   "nachrichten": 19180,
+   "nachrichten_anzahl": 84,
+   "arbeitsstrukturen": 32965,
+   "summe": 94376,
+   "schlange": 4,
+   "zeilen_gesamt": 140
+  },
+  {
+   "nr": 173,
+   "punkt": "Ma nach Empfang",
+   "semijoins_bisher": 90,
+   "tabellen": 1048,
+   "masken": 41183,
+   "nachrichten": 19180,
+   "nachrichten_anzahl": 84,
+   "arbeitsstrukturen": 32965,
+   "summe": 94376,
+   "schlange": 4,
+   "zeilen_gesamt": 140
+  },
+  {
+   "nr": 174,
+   "punkt": "Mb nach Entnahme",
+   "semijoins_bisher": 90,
+   "tabellen": 1048,
+   "masken": 41183,
+   "nachrichten": 19180,
+   "nachrichten_anzahl": 84,
+   "arbeitsstrukturen": 32965,
+   "summe": 94376,
+   "schlange": 4,
+   "zeilen_gesamt": 140
+  },
+  {
+   "nr": 175,
+   "punkt": "Ma nach Empfang",
+   "semijoins_bisher": 91,
+   "tabellen": 1048,
+   "masken": 41183,
+   "nachrichten": 19180,
+   "nachrichten_anzahl": 84,
+   "arbeitsstrukturen": 32965,
+   "summe": 94376,
+   "schlange": 3,
+   "zeilen_gesamt": 140
+  },
+  {
+   "nr": 176,
+   "punkt": "Mb nach Entnahme",
+   "semijoins_bisher": 91,
+   "tabellen": 1048,
+   "masken": 41183,
+   "nachrichten": 19180,
+   "nachrichten_anzahl": 84,
+   "arbeitsstrukturen": 32965,
+   "summe": 94376,
+   "schlange": 3,
+   "zeilen_gesamt": 140
+  },
+  {
+   "nr": 177,
+   "punkt": "Ma nach Empfang",
+   "semijoins_bisher": 92,
+   "tabellen": 1048,
+   "masken": 41183,
+   "nachrichten": 19180,
+   "nachrichten_anzahl": 84,
+   "arbeitsstrukturen": 32965,
+   "summe": 94376,
+   "schlange": 2,
+   "zeilen_gesamt": 138
+  },
+  {
+   "nr": 178,
+   "punkt": "Mb nach Entnahme",
+   "semijoins_bisher": 92,
+   "tabellen": 1048,
+   "masken": 41183,
+   "nachrichten": 19152,
+   "nachrichten_anzahl": 84,
+   "arbeitsstrukturen": 32965,
+   "summe": 94348,
+   "schlange": 4,
+   "zeilen_gesamt": 138
+  },
+  {
+   "nr": 179,
+   "punkt": "Ma nach Empfang",
+   "semijoins_bisher": 93,
+   "tabellen": 1048,
+   "masken": 41183,
+   "nachrichten": 19152,
+   "nachrichten_anzahl": 84,
+   "arbeitsstrukturen": 32965,
+   "summe": 94348,
+   "schlange": 3,
+   "zeilen_gesamt": 136
+  },
+  {
+   "nr": 180,
+   "punkt": "Mb nach Entnahme",
+   "semijoins_bisher": 93,
+   "tabellen": 1048,
+   "masken": 41183,
+   "nachrichten": 19152,
+   "nachrichten_anzahl": 84,
+   "arbeitsstrukturen": 32965,
+   "summe": 94348,
+   "schlange": 3,
+   "zeilen_gesamt": 136
+  },
+  {
+   "nr": 181,
+   "punkt": "Ma nach Empfang",
+   "semijoins_bisher": 94,
+   "tabellen": 1048,
+   "masken": 41183,
+   "nachrichten": 19152,
+   "nachrichten_anzahl": 84,
+   "arbeitsstrukturen": 32965,
+   "summe": 94348,
+   "schlange": 2,
+   "zeilen_gesamt": 135
+  },
+  {
+   "nr": 182,
+   "punkt": "Mb nach Entnahme",
+   "semijoins_bisher": 94,
+   "tabellen": 1048,
+   "masken": 41183,
+   "nachrichten": 19180,
+   "nachrichten_anzahl": 84,
+   "arbeitsstrukturen": 32965,
+   "summe": 94376,
+   "schlange": 4,
+   "zeilen_gesamt": 135
+  },
+  {
+   "nr": 183,
+   "punkt": "Ma nach Empfang",
+   "semijoins_bisher": 95,
+   "tabellen": 1020,
+   "masken": 41183,
+   "nachrichten": 19180,
+   "nachrichten_anzahl": 84,
+   "arbeitsstrukturen": 32965,
+   "summe": 94348,
+   "schlange": 3,
+   "zeilen_gesamt": 133
+  },
+  {
+   "nr": 184,
+   "punkt": "Mb nach Entnahme",
+   "semijoins_bisher": 95,
+   "tabellen": 1020,
+   "masken": 41183,
+   "nachrichten": 19180,
+   "nachrichten_anzahl": 84,
+   "arbeitsstrukturen": 32965,
+   "summe": 94348,
+   "schlange": 5,
+   "zeilen_gesamt": 133
+  },
+  {
+   "nr": 185,
+   "punkt": "Ma nach Empfang",
+   "semijoins_bisher": 96,
+   "tabellen": 1020,
+   "masken": 41183,
+   "nachrichten": 19180,
+   "nachrichten_anzahl": 84,
+   "arbeitsstrukturen": 32965,
+   "summe": 94348,
+   "schlange": 4,
+   "zeilen_gesamt": 133
+  },
+  {
+   "nr": 186,
+   "punkt": "Ma nach Empfang",
+   "semijoins_bisher": 97,
+   "tabellen": 1020,
+   "masken": 41183,
+   "nachrichten": 19180,
+   "nachrichten_anzahl": 84,
+   "arbeitsstrukturen": 32965,
+   "summe": 94348,
+   "schlange": 4,
+   "zeilen_gesamt": 133
+  },
+  {
+   "nr": 187,
+   "punkt": "Mb nach Entnahme",
+   "semijoins_bisher": 97,
+   "tabellen": 1020,
+   "masken": 41183,
+   "nachrichten": 19180,
+   "nachrichten_anzahl": 84,
+   "arbeitsstrukturen": 32965,
+   "summe": 94348,
+   "schlange": 4,
+   "zeilen_gesamt": 133
+  },
+  {
+   "nr": 188,
+   "punkt": "Ma nach Empfang",
+   "semijoins_bisher": 98,
+   "tabellen": 1020,
+   "masken": 41183,
+   "nachrichten": 19180,
+   "nachrichten_anzahl": 84,
+   "arbeitsstrukturen": 32965,
+   "summe": 94348,
+   "schlange": 3,
+   "zeilen_gesamt": 132
+  },
+  {
+   "nr": 189,
+   "punkt": "Mb nach Entnahme",
+   "semijoins_bisher": 98,
+   "tabellen": 1020,
+   "masken": 41183,
+   "nachrichten": 19152,
+   "nachrichten_anzahl": 84,
+   "arbeitsstrukturen": 32965,
+   "summe": 94320,
+   "schlange": 5,
+   "zeilen_gesamt": 132
+  },
+  {
+   "nr": 190,
+   "punkt": "Ma nach Empfang",
+   "semijoins_bisher": 99,
+   "tabellen": 1020,
+   "masken": 41183,
+   "nachrichten": 19152,
+   "nachrichten_anzahl": 84,
+   "arbeitsstrukturen": 32965,
+   "summe": 94320,
+   "schlange": 4,
+   "zeilen_gesamt": 132
+  },
+  {
+   "nr": 191,
+   "punkt": "Mb nach Entnahme",
+   "semijoins_bisher": 99,
+   "tabellen": 1020,
+   "masken": 41183,
+   "nachrichten": 19152,
+   "nachrichten_anzahl": 84,
+   "arbeitsstrukturen": 32965,
+   "summe": 94320,
+   "schlange": 4,
+   "zeilen_gesamt": 132
+  },
+  {
+   "nr": 192,
+   "punkt": "Ma nach Empfang",
+   "semijoins_bisher": 100,
+   "tabellen": 1048,
+   "masken": 41155,
+   "nachrichten": 19152,
+   "nachrichten_anzahl": 84,
+   "arbeitsstrukturen": 32965,
+   "summe": 94320,
+   "schlange": 3,
+   "zeilen_gesamt": 131
+  },
+  {
+   "nr": 193,
+   "punkt": "Mb nach Entnahme",
+   "semijoins_bisher": 100,
+   "tabellen": 1048,
+   "masken": 41155,
+   "nachrichten": 19152,
+   "nachrichten_anzahl": 84,
+   "arbeitsstrukturen": 32965,
+   "summe": 94320,
+   "schlange": 4,
+   "zeilen_gesamt": 131
+  },
+  {
+   "nr": 194,
+   "punkt": "Ma nach Empfang",
+   "semijoins_bisher": 101,
+   "tabellen": 1048,
+   "masken": 41155,
+   "nachrichten": 19152,
+   "nachrichten_anzahl": 84,
+   "arbeitsstrukturen": 32965,
+   "summe": 94320,
+   "schlange": 3,
+   "zeilen_gesamt": 131
+  },
+  {
+   "nr": 195,
+   "punkt": "Mb nach Entnahme",
+   "semijoins_bisher": 101,
+   "tabellen": 1048,
+   "masken": 41155,
+   "nachrichten": 19152,
+   "nachrichten_anzahl": 84,
+   "arbeitsstrukturen": 32965,
+   "summe": 94320,
+   "schlange": 3,
+   "zeilen_gesamt": 131
+  },
+  {
+   "nr": 196,
+   "punkt": "Ma nach Empfang",
+   "semijoins_bisher": 102,
+   "tabellen": 1048,
+   "masken": 41155,
+   "nachrichten": 19152,
+   "nachrichten_anzahl": 84,
+   "arbeitsstrukturen": 32965,
+   "summe": 94320,
+   "schlange": 2,
+   "zeilen_gesamt": 130
+  },
+  {
+   "nr": 197,
+   "punkt": "Mb nach Entnahme",
+   "semijoins_bisher": 102,
+   "tabellen": 1048,
+   "masken": 41155,
+   "nachrichten": 19152,
+   "nachrichten_anzahl": 84,
+   "arbeitsstrukturen": 32965,
+   "summe": 94320,
+   "schlange": 3,
+   "zeilen_gesamt": 130
+  },
+  {
+   "nr": 198,
+   "punkt": "Ma nach Empfang",
+   "semijoins_bisher": 103,
+   "tabellen": 1048,
+   "masken": 41155,
+   "nachrichten": 19152,
+   "nachrichten_anzahl": 84,
+   "arbeitsstrukturen": 32965,
+   "summe": 94320,
+   "schlange": 2,
+   "zeilen_gesamt": 130
+  },
+  {
+   "nr": 199,
+   "punkt": "Mb nach Entnahme",
+   "semijoins_bisher": 103,
+   "tabellen": 1048,
+   "masken": 41155,
+   "nachrichten": 19152,
+   "nachrichten_anzahl": 84,
+   "arbeitsstrukturen": 32965,
+   "summe": 94320,
+   "schlange": 2,
+   "zeilen_gesamt": 130
+  },
+  {
+   "nr": 200,
+   "punkt": "Ma nach Empfang",
+   "semijoins_bisher": 104,
+   "tabellen": 1048,
+   "masken": 41155,
+   "nachrichten": 19152,
+   "nachrichten_anzahl": 84,
+   "arbeitsstrukturen": 32965,
+   "summe": 94320,
+   "schlange": 1,
+   "zeilen_gesamt": 130
+  },
+  {
+   "nr": 201,
+   "punkt": "Mb nach Entnahme",
+   "semijoins_bisher": 104,
+   "tabellen": 1048,
+   "masken": 41155,
+   "nachrichten": 19152,
+   "nachrichten_anzahl": 84,
+   "arbeitsstrukturen": 32965,
+   "summe": 94320,
+   "schlange": 1,
+   "zeilen_gesamt": 130
+  },
+  {
+   "nr": 202,
+   "punkt": "Ma nach Empfang",
+   "semijoins_bisher": 105,
+   "tabellen": 1048,
+   "masken": 41155,
+   "nachrichten": 19152,
+   "nachrichten_anzahl": 84,
+   "arbeitsstrukturen": 32965,
+   "summe": 94320,
+   "schlange": 0,
+   "zeilen_gesamt": 130
+  },
+  {
+   "nr": 203,
+   "punkt": "Mb nach Entnahme",
+   "semijoins_bisher": 105,
+   "tabellen": 1048,
+   "masken": 41155,
+   "nachrichten": 19152,
+   "nachrichten_anzahl": 84,
+   "arbeitsstrukturen": 32965,
+   "summe": 94320,
+   "schlange": 0,
+   "zeilen_gesamt": 130
+  },
+  {
+   "nr": 204,
+   "punkt": "ME Ende",
+   "semijoins_bisher": 105,
+   "tabellen": 1048,
+   "masken": 41155,
+   "nachrichten": 19152,
+   "nachrichten_anzahl": 84,
+   "arbeitsstrukturen": 32965,
+   "summe": 94320,
+   "schlange": 0,
+   "zeilen_gesamt": 130
+  }
+ ],
+ "messluecke": {
+  "beschreibung": "aufgeweitete Maske (2^k Bit) + Projektions-Ganzzahl (2^s Bit) + 1-Tupel + frozenset-Huelle",
+  "obergrenze_bytes": 324
+ },
+ "getrennt": {
+  "pruefkopien_bytes": 65486,
+  "kontrollkopien_bytes": 54240,
+  "messinstrumentierung_bytes": 148311,
+  "hinweis": "nicht Teil des Rechenzustands; nur zur Vollstaendigkeit"
+ },
+ "KONTROLLE": {
+  "echte_loesungen": 12,
+  "zu_viel_gesamt": 0,
+  "fehlend_gesamt": 0,
+  "fest_widerspricht_kontrolle": {}
+ },
+ "pruefung": {
+  "E0_instrumentierte_kopie_gleich_original": true,
+  "E4_speicherung": true,
+  "E5_kanten": true,
+  "status_erwartet": true,
+  "kontrolle_erwartet": true,
+  "zu_viel_null_bei_fixpunkt": true
+ },
+ "bestanden": true,
+ "zeiten_s": {
+  "T1": 0.00582,
+  "T2_instrumentiert": 0.17163,
+  "T3": 0.00052,
+  "T4": 0.01607,
+  "hinweis": "instrumentierter Millisekundenlauf \u2013 keine Geschwindigkeitsaussage"
+ },
+ "maxrss_mib": 17.6,
+ "rlimit_as": [
+  -1,
+  -1
+ ],
+ "python": "3.13.16",
+ "abhaengigkeiten": {
+  "gruppen": {
+   "pfad": "/home/claude/kastenmaschine/l1/stern/gruppen.py",
+   "sha256": "4c8f4546ee3cd00c82029c24226e06eacab9be5890fbf6314f53495943a40878"
+  },
+  "ereignis": {
+   "pfad": "/home/claude/kastenmaschine/l1/stern/ereignis.py",
+   "sha256": "8c65044347d8f37d67a7a0d82055856dd1c4839cd13bc762ef1ac5abaf49f9f6"
+  },
+  "ereignis_mess": {
+   "pfad": "/home/claude/kastenmaschine/l1/stern/ereignis_mess.py",
+   "sha256": "f5065efcf807d8d72b23bfa9b6f259c07571d608ded9ec97adbfa30d240066f3"
+  },
+  "begrenzt": {
+   "pfad": "/home/claude/kastenmaschine/l1/stern/begrenzt.py",
+   "sha256": "08ffa959894148bdff5f302947100621f557129ae31e418afe6723762c0fae50"
+  },
+  "begrenzt_n3": {
+   "pfad": "/home/claude/kastenmaschine/l1/stern/begrenzt_n3.py",
+   "sha256": "cd2859cff9c4cf735e3d409a3769fa6ffce2fd508d77ff70598b798100bd0c99"
+  },
+  "bitmenge": {
+   "pfad": "/home/claude/kastenmaschine/l1/stern/bitmenge.py",
+   "sha256": "23f952c483cb1e5e2a896ca6d266151674507f0e4a6bec8e9b1e25a8a3bec3b4"
+  },
+  "stern": {
+   "pfad": "/home/claude/kastenmaschine/l1/stern/stern.py",
+   "sha256": "da8d10bbe24deb7264d4abc66640c002d7379d037cf1a6c8b869589f8c536bfb"
+  },
+  "pruefstand": {
+   "pfad": "/home/claude/kastenmaschine/l1/pruefstand.py",
+   "sha256": "0ae511450470ca91c32a7a25a8d75f83985d06d6f217c27f16e317ab2ac1d910"
+  },
+  "gatter": {
+   "pfad": "/home/claude/kastenmaschine/miner_pruefung/sha256d/gatter.py",
+   "sha256": "75611ddf49d31dc933fe81ee56fe3a4e10cd1f1a3a571bf25fe6108b485f8f4f"
+  },
+  "d6": {
+   "pfad": "/home/claude/kastenmaschine/l1/d6.py",
+   "sha256": "91ec11fc4d1d1bcf0045b0dc73a3525f0fadfd116c939101e87160bb77f6c794"
+  },
+  "e1_bit": {
+   "pfad": "/home/claude/kastenmaschine/miner_pruefung/sha256d/e1_bit.py",
+   "sha256": "cfa14b5181eda91e8b92bc4d1baded6137d39ba325c3cf524ea4d8a6f4a23248"
+  }
+ }
+}

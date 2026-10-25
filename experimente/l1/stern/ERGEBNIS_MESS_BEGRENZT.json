@@ -1,0 +1,102 @@
+{
+ "grenzen": {
+  "zeit_s": 120.0,
+  "rss_mib": 400.0
+ },
+ "python": "3.13.16",
+ "laeufe": {
+  "N3_TUPEL": {
+   "status": "OK",
+   "wall_s": 0.6,
+   "peak_rss_abgetastet_mib": 17.4,
+   "maxrss_kind_mib": 17.8
+  },
+  "N3_BIT": {
+   "status": "OK",
+   "wall_s": 0.31,
+   "peak_rss_abgetastet_mib": 17.3,
+   "maxrss_kind_mib": 17.6
+  },
+  "N3u_TUPEL": {
+   "status": "OK",
+   "wall_s": 0.2,
+   "peak_rss_abgetastet_mib": 17.3,
+   "maxrss_kind_mib": 17.3
+  },
+  "N3u_BIT": {
+   "status": "OK",
+   "wall_s": 0.2,
+   "peak_rss_abgetastet_mib": 17.1,
+   "maxrss_kind_mib": 17.3
+  }
+ },
+ "dateien": {
+  "ereignis_mess.py": "f5065efcf807d8d72b23bfa9b6f259c07571d608ded9ec97adbfa30d240066f3",
+  "bitmenge_mess.py": "adf1c864db5207bcb6a0aebc64789ccc4e3112557da97e61ddb2d416edb10241",
+  "bitmenge_mess_lauf.py": "b73577e00d3572c754c6cdf5fcfe7be7f4ca283d34edb00a5fbe510b8489554a"
+ },
+ "selbsttest": {
+  "status": "OK",
+  "wall_s": 0.2,
+  "faelle": 4784,
+  "fehler": 0
+ },
+ "vergleich": {
+  "N3": {
+   "E1_struktur_gleich": true,
+   "E1_gleich_B2_exakt": true,
+   "E2_status_gleich": true,
+   "E2_endrelationen_gleich": true,
+   "E2_fest_gleich": true,
+   "E3_zaehler_gleich": true,
+   "zaehler_tupel": {
+    "entnahmen": 98,
+    "semijoin_aufrufe_direkt": 105,
+    "projektionen": 195,
+    "nachrichten_gesendet": 105,
+    "gestrichen": 346
+   },
+   "zaehler_bit": {
+    "entnahmen": 98,
+    "semijoin_aufrufe_direkt": 105,
+    "projektionen": 195,
+    "nachrichten_gesendet": 105,
+    "gestrichen": 346
+   },
+   "untersuchungsfall": false,
+   "hoechststand_tupel": 111560,
+   "hoechststand_bit": 95016,
+   "E0_tupel": true,
+   "E0_bit": true
+  },
+  "N3u": {
+   "E1_struktur_gleich": true,
+   "E1_gleich_B2_exakt": true,
+   "E2_status_gleich": true,
+   "E2_endrelationen_gleich": true,
+   "E2_fest_gleich": true,
+   "E3_zaehler_gleich": true,
+   "zaehler_tupel": {
+    "entnahmen": 29,
+    "semijoin_aufrufe_direkt": 25,
+    "projektionen": 51,
+    "nachrichten_gesendet": 51,
+    "gestrichen": 126
+   },
+   "zaehler_bit": {
+    "entnahmen": 29,
+    "semijoin_aufrufe_direkt": 25,
+    "projektionen": 51,
+    "nachrichten_gesendet": 51,
+    "gestrichen": 126
+   },
+   "untersuchungsfall": false,
+   "hoechststand_tupel": 113027,
+   "hoechststand_bit": 83727,
+   "E0_tupel": true,
+   "E0_bit": true
+  }
+ },
+ "untersuchungsfaelle": [],
+ "alle_ok": true
+}

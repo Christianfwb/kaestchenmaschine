@@ -1,0 +1,275 @@
+{
+ "heuristik": "mindegree",
+ "netz": "N4r10 Leine W_i=W_(i-3)",
+ "kaestchen": 764,
+ "variablen": 723,
+ "gleichwertigkeit_E2": true,
+ "struktur": {
+  "bestanden": true,
+  "gruppen": 723,
+  "kanten": 722,
+  "wurzeln": 1,
+  "groesste_gruppe": 29,
+  "groesste_schnittstelle": 28,
+  "histogramm_k": {
+   "1": 1,
+   "2": 4,
+   "3": 65,
+   "4": 114,
+   "5": 327,
+   "6": 20,
+   "7": 49,
+   "8": 21,
+   "9": 16,
+   "10": 15,
+   "11": 10,
+   "12": 8,
+   "13": 8,
+   "14": 7,
+   "15": 6,
+   "16": 5,
+   "17": 7,
+   "18": 10,
+   "19": 6,
+   "20": 3,
+   "21": 3,
+   "22": 2,
+   "23": 1,
+   "24": 2,
+   "25": 2,
+   "26": 4,
+   "27": 3,
+   "28": 3,
+   "29": 1
+  },
+  "histogramm_s": {
+   "1": 4,
+   "2": 65,
+   "3": 114,
+   "4": 327,
+   "5": 20,
+   "6": 49,
+   "7": 21,
+   "8": 16,
+   "9": 15,
+   "10": 10,
+   "11": 8,
+   "12": 8,
+   "13": 7,
+   "14": 6,
+   "15": 5,
+   "16": 7,
+   "17": 10,
+   "18": 6,
+   "19": 3,
+   "20": 3,
+   "21": 2,
+   "22": 1,
+   "23": 2,
+   "24": 2,
+   "25": 4,
+   "26": 3,
+   "27": 3,
+   "28": 1
+  },
+  "gruppen_ueber_18": 30,
+  "gruppen_ueber_8": 122,
+  "erstmals": [
+   [
+    1,
+    2
+   ],
+   [
+    4,
+    3
+   ],
+   [
+    55,
+    4
+   ],
+   [
+    152,
+    5
+   ],
+   [
+    507,
+    6
+   ],
+   [
+    526,
+    7
+   ],
+   [
+    573,
+    8
+   ],
+   [
+    593,
+    9
+   ],
+   [
+    607,
+    10
+   ],
+   [
+    622,
+    11
+   ],
+   [
+    631,
+    12
+   ],
+   [
+    637,
+    13
+   ],
+   [
+    646,
+    14
+   ],
+   [
+    649,
+    15
+   ],
+   [
+    654,
+    16
+   ],
+   [
+    661,
+    18
+   ],
+   [
+    664,
+    19
+   ],
+   [
+    677,
+    20
+   ],
+   [
+    682,
+    21
+   ],
+   [
+    685,
+    22
+   ],
+   [
+    686,
+    24
+   ],
+   [
+    687,
+    26
+   ],
+   [
+    689,
+    28
+   ],
+   [
+    695,
+    29
+   ]
+  ],
+  "ordnung_anfang": [
+   "v0370",
+   "v1378",
+   "v1385",
+   "v0019",
+   "v0029",
+   "v0035",
+   "v0047",
+   "v0063",
+   "v0073",
+   "v0096",
+   "v0116",
+   "v0139",
+   "v0147",
+   "v0161",
+   "v0190",
+   "v0200",
+   "v0223",
+   "v0254",
+   "v0277",
+   "v0287"
+  ],
+  "ordnung_ende": [
+   "v0026",
+   "v0032",
+   "v0074",
+   "v0127",
+   "v0140",
+   "v0144",
+   "v0146",
+   "v0201",
+   "v0204",
+   "v0211",
+   "v0218",
+   "v0278",
+   "v0282",
+   "v0284",
+   "v0789",
+   "v0811",
+   "v0991",
+   "v0998",
+   "v1168",
+   "v1175"
+  ]
+ },
+ "bits": {
+  "tabellen": 2147635354,
+  "nachrichten": 2147635352,
+  "masken_schlank": 118317093172,
+  "groesste_tabelle": 536870912,
+  "groesste_nachricht": 268435456
+ },
+ "objektbytes_gerechnet": {
+  "tabellen": 286373904,
+  "nachrichten": 286776736,
+  "masken_schlank": 15776068992,
+  "zwischenobjekt_je_aufruf": 178957064,
+  "arbeitsstrukturen_schaetzung": 849777
+ },
+ "annahme": "Ganzzahl B Bit = 28 + 4*ceil(B/30) Bytes (CPython 3.13 64-bit); Tupel 48; frozenset(1) 216; Liste 56+8n \u2013 Overhead-Annahme, keine Messung; keine Ganzzahlen angelegt",
+ "summe_objektbytes": 16349219632,
+ "summe_MiB": 15591.8,
+ "austausch_aufwand_summe_2s_mal_s_minus_1": 27431637940,
+ "zeiten_s": {
+  "ableitung_und_umbau": 0.219,
+  "ordnung": 0.884,
+  "gesamt": 1.137
+ },
+ "maxrss_mib": 18.6,
+ "python": "3.13.16",
+ "abhaengigkeiten": {
+  "pruefstand": {
+   "pfad": "/home/claude/kastenmaschine/l1/pruefstand.py",
+   "sha256": "0ae511450470ca91c32a7a25a8d75f83985d06d6f217c27f16e317ab2ac1d910"
+  },
+  "d6": {
+   "pfad": "/home/claude/kastenmaschine/l1/d6.py",
+   "sha256": "91ec11fc4d1d1bcf0045b0dc73a3525f0fadfd116c939101e87160bb77f6c794"
+  },
+  "gatter": {
+   "pfad": "/home/claude/kastenmaschine/miner_pruefung/sha256d/gatter.py",
+   "sha256": "75611ddf49d31dc933fe81ee56fe3a4e10cd1f1a3a571bf25fe6108b485f8f4f"
+  },
+  "e1_bit": {
+   "pfad": "/home/claude/kastenmaschine/miner_pruefung/sha256d/e1_bit.py",
+   "sha256": "cfa14b5181eda91e8b92bc4d1baded6137d39ba325c3cf524ea4d8a6f4a23248"
+  },
+  "gruppen": {
+   "pfad": "/home/claude/kastenmaschine/l1/stern/gruppen.py",
+   "sha256": "4c8f4546ee3cd00c82029c24226e06eacab9be5890fbf6314f53495943a40878"
+  },
+  "stern": {
+   "pfad": "/home/claude/kastenmaschine/l1/stern/stern.py",
+   "sha256": "da8d10bbe24deb7264d4abc66640c002d7379d037cf1a6c8b869589f8c536bfb"
+  },
+  "n4r10_struktur": {
+   "pfad": "/home/claude/kastenmaschine/l1/stern_n4/n4r10_struktur.py",
+   "sha256": "47c1e941eb8a181a77d60fdcf50ed8699e55b0d40003ef37187d5743ae6e9cdf"
+  }
+ }
+}

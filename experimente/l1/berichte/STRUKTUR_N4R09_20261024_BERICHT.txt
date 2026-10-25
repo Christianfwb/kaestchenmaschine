@@ -1,0 +1,29 @@
+VON: fable
+AN: ghost (Kopie christian)
+BEZUG: GO 2026-10-24 21:15 – Strukturpruefung N4r09 (nur Variablen und Verbindungen)
+KURZ: Die Min-Fill-Reihenfolge passt NICHT ins Budget von 8 Variablen je Gruppe. Stopp bei Schritt 880 von 1326: Variable v0109 verlangt eine Gruppe mit 9 Variablen. Das heisst nur "diese Reihenfolge passt nicht", nicht "eine passende Einteilung ist unmoeglich".
+
+WAS GEPRUEFT WURDE
+- Netz: das bestehende N4r09 aus pruefstand._n4r(9, True), unveraendert. 1328 Knoten im Graphen (2 Konstanten, 12 freie Eingaenge, 409 XOR, 905 UND), 32 Zielbits.
+- Kaestchen = jedes Gatter (Variablen: Ausgang + Eingaenge, Vorzeichen ignoriert, Konstanten ausgelassen): 1314 Gatter-Kaestchen mit 2–3 Variablen; 32 Zielbit-Kaestchen mit je einer Variablen (erzeugen keine Kanten). 1326 Variablen gesamt.
+- Keine Loesungstabellen erzeugt (alle Kaestchen-Tabellen leer), keine Rueckwaertsableitung, keine Kontrollbelegung durchgerechnet. Einzige Rechnung: Nachbarschaftsgraph und Min-Fill.
+- Min-Fill-Regel identisch mit gruppen.min_fill (kleinster Fill, Gleichstand: Grad, dann Name), jedoch mit Sofortstopp, sobald eliminierte Variable + Bucket mehr als 8 Variablen haetten. Variablennamen v0000..v1327 = Knotennummer (vierstellig, damit die Namens-Gleichstandsregel eindeutig ist).
+
+BEFUND
+- Schritte 1–879: alle Gruppen hoechstens 8 Variablen (groesste bisher 8).
+- Schritt 880: Variable v0109 (UND-Gatter, Eingaenge Knoten 105 negiert und 108) haette Gruppe {v0109, v0002, v0020, v0022, v0026, v0038, v0099, v0104, v0111} = 9 Variablen > 8. STOPP. 879 Variablen eliminiert, 447 verbleiben.
+  Einordnung der Gruppenvariablen (nur zur Lesbarkeit, aus dem Netzaufbau, keine Ableitung): v0002 ist freier Eingang x0 (W0 Bit 0); v0020, v0022, v0026 sind fruehe XOR-Knoten (Additionsstufen 21–23, in Runde 1 und spaeter als Leine wieder gelesen, Stufen 137–139); v0038, v0099, v0104, v0111 sind XOR-Knoten der Stufen 44–51. Das Fill-Kriterium hat also fruehe Eingangsnachbarn (Leine) mit Zwischenknoten mehrerer Stufen in einem Bucket zusammengefuehrt.
+- Baumstruktur, Abdeckung und Running Intersection wurden NICHT geprueft, weil die Zerlegung nicht ins Budget passt (Struktur = null in der Ergebnisdatei).
+
+MESSUNG (Einzelmessung; Fable-Container, Xeon 2,10 GHz, 2 Kerne, Python 3.13.16)
+- Min-Fill bis zum Stopp 3,3 s; Wand 3,41 s; Spitze RSS 17,6 MiB (ru_maxrss) / 17,5 MiB abgetastet. Waechter 120 s / 400 MiB. RLIMIT_AS im Testprozess ausgelesen: unbegrenzt (-1) – es gibt hier KEINE harte Speichergrenze, nur die Ueberwachung.
+- Zwei Laeufe: der erste lieferte denselben Befund; der zweite nur, weil der Waechter die ru_maxrss-Anzeige falsch auslas (Feldname). Ergebnisdatei identisch (Schritt 880, v0109, 9 Variablen).
+
+ABHAENGIGKEITEN (tatsaechlich importiert, Pfad + SHA256 in ERGEBNIS_STRUKTUR_N4R09.json unter abhaengigkeiten): pruefstand.py, gatter.py, gruppen.py, stern.py, e1_bit.py, d6.py. Hinweis: d6.py und e1_bit.py werden von pruefstand.py beim Import mitgeladen; es wird daraus NICHTS ausgefuehrt. Wenn du das sauberer willst, kann ich die Netzstruktur in eine eigene Datei auslagern (kleine Aenderung, nach GO).
+
+BELEGT: Min-Fill mit dieser Gleichstandsregel ueberschreitet bei N4r09 (Gatter-Kaestchen) im Schritt 880 die 8-Variablen-Grenze.
+VERMUTUNG: keine.
+OFFEN: ob eine andere Reihenfolge (andere Gleichstandsregel, Min-Degree, oder groebere Kaestchen wie Additionsstufen statt Einzelgatter) ins Budget passt – nicht versucht, weil nicht freigegeben. Keine Aussage ueber Loesbarkeit, N5 oder SHA-256.
+
+DATEIEN: kastenmaschine/l1/stern_n4/strukt_n4.py, strukt_n4_lauf.py, ERGEBNIS_STRUKTUR_N4R09.json, ERGEBNIS_STRUKTUR_N4R09_BEGRENZT.json. Bestehende Dateien unveraendert. Stopp.
+--- ENDE ---

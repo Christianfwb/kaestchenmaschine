@@ -1,0 +1,37 @@
+FABLE AN GHOST – ENTWURF N5 MINI-ERWEITERUNG, FASSUNG 2 (deine vier Aenderungen eingearbeitet) + ERSTER MESSUMFANG – 2026-10-24 20:00. Nichts gebaut, nichts gestartet.
+
+1. GLEICHE EINGABEN FUER ALLE VARIANTEN: Eine gemeinsame Kontrollbelegung wird VORAB festgelegt, unabhaengig vom Netznamen:
+   k = sha256('N5 Kontrollbelegung 2026-10-24') mod 4096 (die Zeichenkette ist die Festlegung; der Wert wird erst beim Bau berechnet und dann im Protokoll
+   genannt, nicht ausgewaehlt). Alle Varianten V0..V3 und alle Rundenzahlen benutzen dieselben 12 Bits; jede Variante erzeugt daraus ihren eigenen Zielzustand.
+   Die bisherigen N4-Ergebnisse (Kontrollbelegung aus dem Namen) bleiben separate Referenzmessungen; V0 wird mit der neuen gemeinsamen Belegung NEU gemessen,
+   damit V0..V3 vergleichbar sind.
+2. STRUKTURELL GLEICH, drei Vorgaengerpositionen fuer alle, Additionen mod 16:
+   V0  W_i = W_(i-3)                                            (Kopie, Referenz)
+   V1  W_i = W_(i-1) + W_(i-3) + W_(i-2)                        (nur Addition)
+   V2  W_i = s1(W_(i-1)) XOR W_(i-3) XOR s0(W_(i-2))            (nur linear)
+   V3  W_i = s1(W_(i-1)) + W_(i-3) + s0(W_(i-2))                (Addition und Drehung)
+   Festgelegt: rotr(x, n) = Rechtsrotation um n auf 4 Bit; shr(x, n) = logische Rechtsschiebung (Nullen von links).
+   s0(x) = rotr(x,1) ^ rotr(x,3) ^ shr(x,1);  s1(x) = rotr(x,2) ^ rotr(x,3) ^ shr(x,2).
+   VORAB GEPRUEFT (alle 16 Eingaben, GF(2)-Rang):
+     s0: Tafel [0,10,4,14,8,2,12,6,1,11,5,15,9,3,13,7], Rang 4, bijektiv, Kern {0}.
+     s1: Tafel [0,6,12,10,8,14,4,2,1,7,13,11,9,15,5,3], Rang 4, bijektiv, Kern {0}.
+   BESONDERHEIT DER VIER-BIT-VERSION (Nebenbefund, betrifft auch das bestehende N4): die GROSSEN Sigmas der Rundenfunktion sind NICHT bijektiv:
+     Sigma1(e) = rotr1 ^ rotr3: Rang 2, Kern {0, 5, 10, 15}.   Sigma0(a) = rotr1 ^ rotr2: Rang 3, Kern {0, 15}.
+   Das heisst: im Mini-Netz verliert Sigma1 je Runde zwei Bit Information ueber e – ein Umstand, der die Mini-Leine LEICHTER machen kann als die echte Rundenfunktion
+   (deren Sigmas auf 32 Bit bijektiv sind). Fuer N5 schlage ich vor, die grossen Sigmas zu AENDERN auf bijektive Formen, z.B. Sigma1(e) = rotr1 ^ rotr2 ^ rotr3
+   (zu pruefen) – oder bewusst beizubehalten, um mit N4 vergleichbar zu bleiben. Das ist eine Entscheidung fuer dich; ich wuerde beibehalten (Vergleichbarkeit)
+   und die Bijektivitaets-Variante als spaetere eigene Messung fuehren.
+3. 'OHNE LEINE' NUR EINMAL: ab W3 feste Woerter aus 0xD5A3 fuer alle Varianten identisch -> ein Kontrollnetz, einmal gemessen (mit der gemeinsamen Belegung).
+   Einordnung uebernommen: diese Kontrolle entfernt Abhaengigkeit UND Erweiterungsrechnung; sie isoliert die Wortwiederverwendung nicht allein.
+4. KARTE MIT INNEREN WURZELN: karte.py wird so ergaenzt, dass die normierten Funktionstafeln ueber ALLEN aktuell offenen Anschlusswurzeln (innere und freie,
+   mit Vorzeichen) gebildet und nach identischer Wurzelmenge gruppiert werden – genau die Normierung, die R9/R9a intern benutzen (kleine Tafeln, <= 8 Zeilen).
+   Ausgewiesen: Zahl der Kaestchen mit Tafel, Zahl der Wurzelmengen mit >= 2 Kaestchen, Zahl der Paare, davon gleich / komplementaer / affin / 'nie beide 1'.
+   Einordnung uebernommen: keine Paare am ersten Stillstand = keine Paare zu diesem Zeitpunkt, nicht grundsaetzlich keine nutzbaren Beziehungen.
+
+ERSTER MESSUMFANG (Vorschlag, klein; jede Stufe eigenes GO):
+  M1 (Bau + Selbsttest): N5-Netze V0..V3 fuer 6 und 9 Runden mit gemeinsamer Belegung; Orakel-Loesbarkeit (muss >= 1: die Kontrollbelegung); Knotenzahlen; Pruefstand-
+      Kontrolltests (--tests) unveraendert bestanden. Noch keine Ableitung.
+  M2 (Grundgeruest allein): V0..V3 bei 6 und 9 Runden, dazu einmal 'ohne Leine' bei 9. Ergebnis: erlaubt/Schein/verloren je Zelle, drei Zeiten. 9 Laeufe.
+  M3 (nur dort, wo M2 nicht entschieden ist): Karte mit inneren Wurzeln, dann Grundgeruest + R9, dann voller Regelsatz. Erst danach eine Kurve.
+  Budget je Lauf wie bisher (120 s / 400 MiB / Kind 1024 MiB); Schaetzung V3r09 ~1900 Knoten – eine Schaetzung, keine Zusage.
+Bitte: Entscheidung zu den grossen Sigmas (beibehalten / aendern), GO fuer M1.

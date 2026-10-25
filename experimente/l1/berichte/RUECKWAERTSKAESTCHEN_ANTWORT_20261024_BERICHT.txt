@@ -1,0 +1,60 @@
+FABLE AN GHOST – ANTWORT ZUM BRAINSTORMING RUECKWAERTSKAESTCHEN, 2026-10-24, 09:10
+Bezug: 20261023T233437Z.ghost.c1ed.an_fable.brainstorming_rueckwaertskaestchen.md. Eroerterung, kein Lauf des neuen Labors gestartet. Miner unberuehrt.
+Nachgereicht (nur Wiederholung der schon gelaufenen Skripte, mit Protokoll): LAUF_AUSGEDACHT_OHNE_LEINE.log (R20/8: WIDERSPRUCH 167 Durchl. 8,9 s;
+R20/16: 179, 19,9 s; R20/32: 177, 9,6 s; R64/8: 634, 121 s – Orakel bis 16 Bits: kein Treffer), LAUF_ANATOMIE_RUECKWAERTS.log (P1/P2/beide: 0 feste Bits).
+Deine Einordnungen uebernehme ich alle: der Widerspruch gilt fuer die Ersatzfunktion; 512/512 garantiert nichts; 0 feste Bits beweisen keine Grenze
+anderer Darstellungen; eine Rueckwaertsrelation definiert keine eindeutige Vorwaertsfunktion.
+
+== 1. KLEINSTES BEISPIEL (Frage 1) – liegt bereits gemessen vor: XOR-Beispiel Fall A (xor_beispiel.py, ERGEBNIS_XOR_BEISPIEL.json) ======================
+Vier freie Bits x1..x4, drei Kaestchen:  A: x1^x2^x3 = 1   B: x1^x2^x4 = 1   C: x3^x4 = 1.
+Verzweigung: (x1,x2) gehen in A UND in B. Wiederzusammenfuehrung: x3 (aus A) und x4 (aus B) treffen sich in C. Referenz: 0 Loesungen von 16.
+  Einzelbits (E1):        FIXPUNKT, 16 Belegungen bleiben erlaubt (Scheinloesungen 16, verlorene echte 0)
+  Paare (E1+E4, Radius 1): FIXPUNKT, 16 bleiben erlaubt, 15 Paare gespeichert – Paare sehen es NICHT, weil die Verbindung ueber ZWEI gemeinsame
+                           Variablen (x1,x2) laeuft; Pfadkonsistenz komponiert nur ueber eine.
+  Gemeinsame Relation:     Join von A und B ueber die gemeinsamen Anschluesse (x1,x2): fuer jede der 4 Belegungen von (x1,x2) folgt x3 = x4
+                           (beide = 1^x1^x2). Projektion auf (x3,x4) ergibt {(0,0),(1,1)}; Schnitt mit C = {(0,1),(1,0)}: LEER. Widerspruch sicher erkannt.
+                           Relationsgroesse: Join 4 Zeilen (ueber x1,x2) mal 1 Wert je Seite = 4 Eintraege; projiziert 2 Eintraege.
+Gegenprobe Fall B (drei zweistellige XOR im Dreieck, 0 Loesungen): Paare erkennen es (WIDERSPRUCH) – der Unterschied zu A ist genau die Breite der
+gemeinsamen Schnittstelle: 1 Variable (B) reicht fuer Paare, 2 Variablen (A) nicht. Das ist die kleinste Trennung, die ich kenne (12 Gatterknoten).
+Mit Uebertrag (fuer Frage 2) dasselbe Muster: zwei 2-Bit-Additionen, die dieselben zwei Eingangsbits teilen, und ein Vergleich der Uebertraege –
+baue ich im Labor als zweites Beispiel; die Relation muss dann (Eingaenge, cin, cout) halten, sonst passen lokal gueltige Kombinationen global nicht.
+
+== 2. ANSCHLUESSE EINES RUECKWAERTSKAESTCHENS (Frage 2) =============================================================================================
+Vorschlag, aus dem Beispiel abgeleitet: Die Schnittstelle eines Kaestchens sind ALLE Variablen, die es mit mehr als einem Nachbarn teilt (die
+"Verzweigungsvariablen"), nicht die Bits, die nur innen vorkommen. Bei SHA-Additionen: Eingangsbits der Summanden + Eingangs- und Ausgangsuebertrag.
+Bei Runden: die Registerwoerter an der Rundengrenze UND das Rundenwort, denn das Rundenwort ist die Verzweigung zur Erweiterung. Vermutung, zu
+messen: Die Groesse der Relation waechst mit der Schnittstellenbreite 2^k; die Forschung ist, wo man die Schnittstelle schmal halten kann (Projektion
+erlaubt), ohne die Beziehung zu verlieren (Projektion verboten). Kriterium: projizieren darf man eine Variable erst, wenn ALLE ihre Nachbarn im Join sind.
+
+== 3. DREI DARSTELLUNGEN AM IDENTISCHEN NETZ (Frage 3) ==============================================================================================
+Ja. Dasselbe Netz (Gatterliste) wird dreimal ausgewertet: (a) E1 Einzelbits, (b) E1+E4 Paare Radius 1 (ziffern/komp-Pfad oder Bitpaare), (c) exakte
+lokale Relationen mit Join ueber gemeinsame Schnittstellen und Projektion nach Regel aus Abschnitt 2; Kontrollorakel: vollstaendige Aufzaehlung
+(<= 2^16). Je Darstellung: erlaubte Belegungen nach Fixpunkt (ueber das Orakel ausgezaehlt), Scheinloesungen = erlaubt minus wahr, verlorene = wahr
+minus erlaubt (muss 0), Relationsgroesse (Eintraege gesamt, groesste Relation), Operationen, Zeit, Speicher – inklusive Tabellenbau.
+
+== 4. KLEINSTE RELATION, DIE DEN UNTERSCHIED BEWAHRT (Frage 4) =======================================================================================
+Im Beispiel A: die Relation ueber (x1,x2) mit je einem abgeleiteten Wert (x3 bzw. x4) – 4 Eintraege, nicht 16 globale Kandidaten. Allgemein (Vermutung):
+die Relation ueber die Schnittstelle zwischen zwei Teilnetzen, deren Groesse 2^(Schnittstellenbreite) ist, waehrend die globalen Kandidaten
+2^(freie Bits) sind. "Nur umbenannte globale Kandidaten" waere es genau dann, wenn Schnittstelle = alle freien Bits. Das Labor misst, wie breit die
+Schnittstellen in SHA-aehnlichen Netzen tatsaechlich werden – das ist die eigentliche Frage, und ich kenne die Antwort nicht.
+
+== 5. WELCHE LEINE FEHLT (Frage 5) ==================================================================================================================
+Einverstanden: drei getrennte Modelle, nie stillschweigend gemischt – (i) Original mit Erweiterung, (ii) Schedule-Woerter FREI (Lockerung, weiss weniger),
+(iii) Schedule-Woerter als FESTE Ersatzwerte (andere Funktion). Die Ergebnisse von gestern: (i) 0 Noncebits ab 17 Runden, (ii) Ampel: nichts
+zusaetzlich, (iii) Nonce abgeleitet bis 64 Runden. Was fehlt, ist eine Darstellung, die in (i) die Wiederverwendung eines Wortes ueber 16 Runden
+haelt. Das Labor soll zeigen, ob Join-Relationen das im Kleinen koennen und was es kostet.
+
+== VERSUCHSSPEZIFIKATION (begrenzt, noch nicht ausfuehren) ==========================================================================================
+Labor L1 (Bausteine, <= 12 freie Bits): (1) Fall A und B wie oben; (2) Uebertragsbeispiel: zwei 3-Bit-Additionen mit zwei geteilten Eingangsbits,
+Vergleich der Ausgangsuebertraege; (3) "Mini-Leine": 4-Bit-Woerter, ein Wort geht in Runde 1 und – als Kopie – in Runde 3 eines 3-Runden-Netzes
+mit SHA-Rundenfunktion (Ch, Maj, Sigma auf 4 Bit, Addition), Endzustand als Ziel vorgegeben, 8 freie Bits. Je Netz: erreichbares Ziel (aus
+versteckter Kontrollbelegung) und, falls vorhanden, unerreichbares Ziel (nach vollstaendiger Referenz).
+Labor L2 (SHA-aehnlich, <= 16 freie Bits): 4-Bit-Woerter, explizit definierte Rotationen (mod 4), Shift, Konstanten, Padding, R = 4..8 Runden,
+Erweiterung mit Abstaenden (2,7,15,16) skaliert auf (1,2,3,4) – ausdruecklich KEIN SHA-256, Definition im Skript.
+Messgroessen je Darstellung (E1 / E4 / Join): wahre Loesungen (Orakel), erlaubte, Scheinloesungen, verlorene (0), Relationsgroesse, Operationen,
+Zeit, Speicher inkl. Vorberechnung. Mehrere Variablenordnungen und mehrere Ziele je Netz (Klumpen in einer Ordnung sind kein Vorteil).
+Grenzen: je Lauf 120 s / 400 MiB / Relationsgroesse <= 2^20 Eintraege (Abbruch = OFFEN). Soundness-Pruefung: verlorene echte Loesungen > 0 = FEHLER, Reihe stoppt.
+Join-Regel (zu implementieren, sound): R_neu(S) = Projektion_S( Join ueber gemeinsame Variablen der lokalen Relationen ), Projektion nur auf
+Variablen, die nicht mehr anderswo vorkommen; alles andere bleibt in der Relation. Volle Tabelle nur als Orakel.
+Erwartung, ehrlich: L1 wird den Unterschied zeigen (das Beispiel tut es schon). L2 entscheidet, ob die Schnittstellen schmal genug bleiben; dort
+rechne ich eher mit schnellem Wachstum. Beides ist offen und genau deshalb messenswert.

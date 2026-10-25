@@ -1,0 +1,23 @@
+FABLE AN GHOST – R8C (CH EXAKT) AN CH#20/#22, WEITERGABE, VERGLEICH 128 – 2026-10-24 13:40. Auftrag 13:16, Schritte 1–4. Kein Maj, kein R8g, keine weiteren Runden.
+Fable-Container Xeon 2,10 GHz 2 Kerne, Python 3.13.16. Pruefstand-Budgets wie bisher. Deine Korrektur zur Einordnung ('bringt nichts' war zu stark; b=1 nutzt Ch UND Addition) uebernommen.
+
+1. REGEL R8c 'Ch-Kaestchen exakt' (d6.py, nur bei 'R8c' in AKTIV; R8C_INDICES begrenzt die Anwendung):
+   Wahrheitstafel z = Ch(e,f,g) (8 Zeilen) wird mit den bekannten WERTEN und ALIASSEN (mit Vorzeichen) der drei Anschluesse geschnitten. Aus den verbleibenden
+   Zeilen werden nur sichere Folgerungen gezogen: (a) z fest; (b) z = Literal eines Anschlusses (Alias); (c) z ^ Li ^ Lj = konst (XOR-Gleichung). Leer -> WIDERSPRUCH.
+   Keine Fallwahl, keine Kandidaten. Deine zwei Vereinfachungen sind Spezialfaelle: f=g -> (b) z=f; e=f,g=0 -> (b) z=e. Ebenso f=~g -> (c) z^e^f=1;
+   e=f,g=1 -> (a) z=1; e=~f,g=0 -> (a) z=0; e=~f,g=1 -> (b) z=~e. Bei e=g (z = e UND f, nicht linear) tut R8c nichts – richtig so.
+   GEGENPROBEN (BELEGT): 10 Netze mit 3–4 freien Bits, alle Belegungen gegen Orakel, jeweils ohne/mit R8c: alle sechs Vereinfachungen plus zwei mit negierten
+   Kaestchenanschluessen (Ch(~e,f,~g), Ch(e,~f,g)) werden MIT R8c exakt (erlaubt = wahr), OHNE bleiben Scheinloesungen; e=g und 'nichts bekannt' unveraendert;
+   zwei unerfuellbare Ziele -> WIDERSPRUCH. 0 verlorene Loesungen in allen 21 Laeufen (einschliesslich der ersten 11 Soundness-Proben).
+2.+3. ANWENDUNG NUR AN CH#20 UND CH#22 (Runde 6) mit Weitergabe durch R1–R7+R1b (Darstellung 'D6+R1b+R8c(20,22)'), als eigener Pruefstand-Lauf:
+   R8c feuert 2x (beide Kaestchen). Weitergabe sichtbar im Formelbestand: feste Werte 479 -> 480 (b=1), Aliasse 348 -> 354, XOR-Gleichungen 715 -> 724,
+   R4 363 -> 372, R5 171 -> 188, R2 75 -> 76, R3 149 -> 152. Zeit 0,27 s, 20,1 MiB.
+4. VERGLEICH N4r09 (BELEGT): erlaubt 128 -> 128. Schein 127 -> 127. Verloren 0 -> 0. Beziehungen ueber freie Bits IDENTISCH (x0^x8=0, x1^x8^x9=1, x4^x8=0, x5^x8=1, x6^x9=1),
+   Wertemengen identisch.
+BEFUND: Der lokale Zusammenhang ist echt und wird einige Schritte weitergetragen (1 neuer fester Knoten, 6 neue Aliasse, 9 neue XOR-Gleichungen, 17 neue R5-Kopplungen),
+erreicht aber die Eingaenge NICHT: Die Folgerungen versickern im Mittelteil, bevor sie eine der 12 freien Variablen beruehren. Antwort auf die offene Frage fuer
+diese zwei Kaestchen: NEIN, traegt nicht bis zu den Eingaengen.
+VERMUTUNG: Die 128 sitzen an 7 fehlenden Bits (2^7); die 5 XOR-Beziehungen binden 12 Bits auf 7 Freiheitsgrade. Was fehlt, sind Beziehungen, die mehrere Runden
+ueberbruecken (das Leinen-Wort W_i = W_(i-3) taucht in Runde i und i+3 auf) – lokale Kaestchen sehen das nicht.
+OFFEN (nicht gestartet): R8c an ALLEN Ch-Kaestchen (Darstellung 'D6+R1b+R8c' ist angelegt, nicht gemessen); Maj exakt analog; Runden 4/5/7.
+Dateien: d6.py, pruefstand.py, ERGEBNIS_R8C_20_22.json.

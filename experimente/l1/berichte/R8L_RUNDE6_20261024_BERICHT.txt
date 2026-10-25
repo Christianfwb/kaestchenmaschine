@@ -1,0 +1,25 @@
+FABLE AN GHOST – R8L AN DEN VIER CH-BITS DER RUNDE 6, N4r09, D6+R5+R6+R7+R1b – 2026-10-24 13:20. Auftrag 13:10.
+Nur Runde 6, gleicher Fall, gleicher Code r8l.py (unveraendert gegenueber letztem Paket), keine neuen Regeln, kein R8g, kein Maj, keine Weitergabe.
+Tabellen erhalten (zeilen_rest), echte Loesung in allen vier erhalten, FEHLER-Stopp aktiv. 0,25 s, Fable-Container Xeon 2,10 GHz, Python 3.13.16.
+Alle acht Anschluesse aller vier Kaestchen sind INNERE Knoten (keine freien Bits); cin bei Ch#20 ist die Konstante 0 (Stufe 0).
+
+ERGEBNIS (BELEGT)  A = D6 lokal | C = A + Ch allein | B = A + Ch + Stufe | S = A + Stufe allein:
+Ch#20 (Bit 0): D6 fest g=0, cin=0; Aliasse e=f, s=NICHT e.       A 4  -> C 2  -> B 2   (S 4).  NEU: b = 1 FEST; z = e; cout = e; (Rest folgt daraus).
+Ch#21 (Bit 1): D6 Alias e=g, 1 XOR, Stufengleichung.             A 16 -> C 8  -> B 8   (S 16). NEU als Wert/Paar/XOR3: nichts. (z = e UND f steckt in C, ist aber nicht linear.)
+Ch#22 (Bit 2): D6 Alias f=g, Stufengleichung.                    A 32 -> C 16 -> B 16  (S 32). NEU: z = f = g (zwei Aliasse) – e faellt heraus.
+Ch#23 (Bit 3): D6 nichts ausser Stufengleichung.                 A 64 -> C 32 -> B 32  (S 64). NEU: nichts.
+
+LESART (getrennt):
+(1) Ch + Stufe gegenueber Ch allein: ueberall 0. Die Stufe ist exakt linear und D6 besitzt ihre Gleichung; als Funktion bringt sie lokal nichts mehr.
+    Damit ist deine Frage fuer Runde 6 beantwortet: Das Paar bewahrt nichts ueber Ch allein hinaus. (Dreimal gemessen: Runde 9, 8, 6.)
+(2) A -> C halbiert sich immer. Das ist fuer sich KEIN Gewinn: z ist eine Funktion von (e,f,g), und in A steht z als unabhaengige Variable, weil D6 die Ch-Beziehung
+    nur als UND/XOR-Gleichungen haelt, die hier nicht linear sind. Die Halbierung misst nur, dass die Ch-Tabelle z festlegt.
+(3) Der echte Befund steckt in den NEU-Spalten – Folgerungen, die D6s Regeln R1–R7+R1b nicht ziehen, obwohl D6 alle Zutaten hat:
+    Ch#22: f = g (Alias, D6 hat ihn) -> Ch wird e-unabhaengig: z = f. D6 kann das nicht, weil R1 nur mit bekannten WERTEN arbeitet, nicht mit Aliassen.
+    Ch#20: e = f, g = 0 -> z = e (Ch mit gleichem Auswahl- und Erstbit); zusammen mit der linearen Stufengleichung und s = NICHT e folgt b = 1 FEST und cout = e.
+           b ist ein innerer Knoten der Nachbarkette (h+Sigma1). Ob 'b = 1' bis zu den 12 freien Bits durchreicht, ist die Weitergabe-Frage – NICHT gemessen.
+    Beides sind Folgerungen der exakten Ch-Relation mit Alias-Eingaben, keine Fallunterscheidung und keine Kandidaten.
+VERMUTUNG: Eine Regel 'Ch-Kaestchen exakt' (Ch-Tabelle mit festen Werten UND Aliassen der Anschluesse schneiden, daraus Werte/Aliasse ziehen) waere das kleinste,
+was die Luecke schliesst – im Grunde R1b fuer Aliasse statt nur fuer Werte, auf das ganze Ch-Kaestchen statt auf ein UND. Ob 128 dadurch sinkt, weiss ich nicht.
+OFFEN: Weitergabe von b=1 (Ch#20) und z=f (Ch#22) durch R1–R7; Maj analog (Maj(a,b,c) mit a=b -> Maj=a); Runden 4, 5, 7. Nichts gestartet.
+Dateien: ERGEBNIS_R8L_N4r09_R6_D6R5R6R7R1b.json (r8l.py/d6.py/pruefstand.py wie im Paket R1B_UND_DREITEILUNG, Pruefsummen dort).

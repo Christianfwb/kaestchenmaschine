@@ -1,0 +1,2209 @@
+{
+ "status": "OK",
+ "wall_s": 0.6,
+ "peak_rss_mib": 13.9,
+ "grenzen": {
+  "zeit_s": 120.0,
+  "rss_mib": 400.0
+ },
+ "rueckgabe": 0,
+ "python": "3.13.16",
+ "dateien": {
+  "gruppen.py": "4c8f4546ee3cd00c82029c24226e06eacab9be5890fbf6314f53495943a40878",
+  "gruppen_lauf.py": "870ae91e1d34582a4d83f44d75e46fb770bb683f4f14d5706b9392b742dc44c9"
+ },
+ "ergebnis": {
+  "alle_bestanden": true,
+  "grenzen": {
+   "max_vars": 8,
+   "max_zeilen": 256
+  },
+  "zeit_gesamt_s": 0.499,
+  "maxrss_mib_kind": 14.4,
+  "faelle": [
+   {
+    "fall": "F1 gleich vs ungleich",
+    "erwartung": {
+     "loesungen": 0,
+     "status": "WIDERSPRUCH"
+    },
+    "ableitung": {
+     "status": "WIDERSPRUCH",
+     "ordnung": [
+      "a",
+      "b"
+     ],
+     "gruppen": [
+      {
+       "name": "G_a",
+       "variablen": [
+        "a",
+        "b"
+       ],
+       "kaestchen": [
+        "K1",
+        "K2"
+       ],
+       "zeilen_initial": 0,
+       "zeilen": 0
+      },
+      {
+       "name": "G_b",
+       "variablen": [
+        "b"
+       ],
+       "kaestchen": [],
+       "zeilen_initial": 2,
+       "zeilen": 2
+      }
+     ],
+     "kanten": [
+      [
+       "G_a",
+       "G_b",
+       [
+        "b"
+       ]
+      ]
+     ],
+     "takte": 0,
+     "kantenrelationen": {},
+     "protokoll": [
+      {
+       "ereignis": "WIDERSPRUCH: Gruppe beim Initialisieren leer",
+       "gruppen": [
+        "G_a"
+       ]
+      }
+     ],
+     "groesste_gruppe_vars": 2,
+     "groesste_gruppe_zeilen": 2,
+     "groesste_gruppe_zeilen_initial": 2,
+     "summe_zeilen_initial": 2,
+     "summe_zeilen_ende": 2,
+     "zwischenstand_je_takt": [],
+     "aufwand_betrachtete_zeilen": 0,
+     "zeit_s": 0.00063
+    },
+    "global_konsistent": null,
+    "global_konsistent_je_gruppe": null,
+    "kontrolle": {
+     "loesungen": 0,
+     "zeit_s": 2e-05
+    },
+    "speicherung": {
+     "original": 0,
+     "gespeichert": 0,
+     "verloren": 0,
+     "hinzugefuegt": 0
+    },
+    "pruefung": {
+     "status": true,
+     "kontrolle": true,
+     "speicherung": true,
+     "kein_strukturfehler": true,
+     "keine_scheinentscheidung": true,
+     "global_konsistent": true
+    },
+    "bestanden": true
+   },
+   {
+    "fall": "F2 gleich + a=0",
+    "erwartung": {
+     "loesungen": 1,
+     "status": "FIXPUNKT"
+    },
+    "ableitung": {
+     "status": "FIXPUNKT",
+     "ordnung": [
+      "a",
+      "b"
+     ],
+     "gruppen": [
+      {
+       "name": "G_a",
+       "variablen": [
+        "a",
+        "b"
+       ],
+       "kaestchen": [
+        "K1",
+        "K2"
+       ],
+       "zeilen_initial": 1,
+       "zeilen": 1
+      },
+      {
+       "name": "G_b",
+       "variablen": [
+        "b"
+       ],
+       "kaestchen": [],
+       "zeilen_initial": 2,
+       "zeilen": 1
+      }
+     ],
+     "kanten": [
+      [
+       "G_a",
+       "G_b",
+       [
+        "b"
+       ]
+      ]
+     ],
+     "takte": 2,
+     "kantenrelationen": {
+      "G_a-G_b": [
+       [
+        0
+       ]
+      ]
+     },
+     "protokoll": [
+      {
+       "takt": 1,
+       "kante": [
+        "G_a",
+        "G_b"
+       ],
+       "gruppe": "G_b",
+       "gestrichen": 1,
+       "verbleibend": 1
+      }
+     ],
+     "groesste_gruppe_vars": 2,
+     "groesste_gruppe_zeilen": 1,
+     "groesste_gruppe_zeilen_initial": 2,
+     "summe_zeilen_initial": 3,
+     "summe_zeilen_ende": 2,
+     "zwischenstand_je_takt": [
+      {
+       "takt": 1,
+       "summe_zeilen": 2,
+       "max_zeilen": 1
+      },
+      {
+       "takt": 2,
+       "summe_zeilen": 2,
+       "max_zeilen": 1
+      }
+     ],
+     "aufwand_betrachtete_zeilen": 9,
+     "zeit_s": 0.00013
+    },
+    "global_konsistent": true,
+    "global_konsistent_je_gruppe": {
+     "G_a": {
+      "gleich": true,
+      "zeilen": 1,
+      "projektion": 1,
+      "zu_viel": 0,
+      "fehlend": 0
+     },
+     "G_b": {
+      "gleich": true,
+      "zeilen": 1,
+      "projektion": 1,
+      "zu_viel": 0,
+      "fehlend": 0
+     }
+    },
+    "kontrolle": {
+     "loesungen": 1,
+     "zeit_s": 1e-05
+    },
+    "speicherung": {
+     "original": 1,
+     "gespeichert": 1,
+     "verloren": 0,
+     "hinzugefuegt": 0
+    },
+    "pruefung": {
+     "status": true,
+     "kontrolle": true,
+     "speicherung": true,
+     "kein_strukturfehler": true,
+     "keine_scheinentscheidung": true,
+     "global_konsistent": true
+    },
+    "bestanden": true
+   },
+   {
+    "fall": "F3 Kette",
+    "erwartung": {
+     "loesungen": 2,
+     "status": "FIXPUNKT"
+    },
+    "ableitung": {
+     "status": "FIXPUNKT",
+     "ordnung": [
+      "a",
+      "b",
+      "c",
+      "d"
+     ],
+     "gruppen": [
+      {
+       "name": "G_a",
+       "variablen": [
+        "a",
+        "b"
+       ],
+       "kaestchen": [
+        "K1"
+       ],
+       "zeilen_initial": 2,
+       "zeilen": 2
+      },
+      {
+       "name": "G_b",
+       "variablen": [
+        "b",
+        "c"
+       ],
+       "kaestchen": [
+        "K2"
+       ],
+       "zeilen_initial": 2,
+       "zeilen": 2
+      },
+      {
+       "name": "G_c",
+       "variablen": [
+        "c",
+        "d"
+       ],
+       "kaestchen": [
+        "K3"
+       ],
+       "zeilen_initial": 2,
+       "zeilen": 2
+      },
+      {
+       "name": "G_d",
+       "variablen": [
+        "d"
+       ],
+       "kaestchen": [],
+       "zeilen_initial": 2,
+       "zeilen": 2
+      }
+     ],
+     "kanten": [
+      [
+       "G_a",
+       "G_b",
+       [
+        "b"
+       ]
+      ],
+      [
+       "G_b",
+       "G_c",
+       [
+        "c"
+       ]
+      ],
+      [
+       "G_c",
+       "G_d",
+       [
+        "d"
+       ]
+      ]
+     ],
+     "takte": 1,
+     "kantenrelationen": {
+      "G_a-G_b": [
+       [
+        0
+       ],
+       [
+        1
+       ]
+      ],
+      "G_b-G_c": [
+       [
+        0
+       ],
+       [
+        1
+       ]
+      ],
+      "G_c-G_d": [
+       [
+        0
+       ],
+       [
+        1
+       ]
+      ]
+     },
+     "protokoll": [],
+     "groesste_gruppe_vars": 2,
+     "groesste_gruppe_zeilen": 2,
+     "groesste_gruppe_zeilen_initial": 2,
+     "summe_zeilen_initial": 8,
+     "summe_zeilen_ende": 8,
+     "zwischenstand_je_takt": [
+      {
+       "takt": 1,
+       "summe_zeilen": 8,
+       "max_zeilen": 2
+      }
+     ],
+     "aufwand_betrachtete_zeilen": 24,
+     "zeit_s": 0.00027
+    },
+    "global_konsistent": true,
+    "global_konsistent_je_gruppe": {
+     "G_a": {
+      "gleich": true,
+      "zeilen": 2,
+      "projektion": 2,
+      "zu_viel": 0,
+      "fehlend": 0
+     },
+     "G_b": {
+      "gleich": true,
+      "zeilen": 2,
+      "projektion": 2,
+      "zu_viel": 0,
+      "fehlend": 0
+     },
+     "G_c": {
+      "gleich": true,
+      "zeilen": 2,
+      "projektion": 2,
+      "zu_viel": 0,
+      "fehlend": 0
+     },
+     "G_d": {
+      "gleich": true,
+      "zeilen": 2,
+      "projektion": 2,
+      "zu_viel": 0,
+      "fehlend": 0
+     }
+    },
+    "kontrolle": {
+     "loesungen": 2,
+     "zeit_s": 4e-05
+    },
+    "speicherung": {
+     "original": 2,
+     "gespeichert": 2,
+     "verloren": 0,
+     "hinzugefuegt": 0
+    },
+    "pruefung": {
+     "status": true,
+     "kontrolle": true,
+     "speicherung": true,
+     "kein_strukturfehler": true,
+     "keine_scheinentscheidung": true,
+     "global_konsistent": true
+    },
+    "bestanden": true
+   },
+   {
+    "fall": "F4 Dreieck",
+    "erwartung": {
+     "loesungen": 0,
+     "status": "WIDERSPRUCH"
+    },
+    "ableitung": {
+     "status": "WIDERSPRUCH",
+     "ordnung": [
+      "a",
+      "b",
+      "c"
+     ],
+     "gruppen": [
+      {
+       "name": "G_a",
+       "variablen": [
+        "a",
+        "b",
+        "c"
+       ],
+       "kaestchen": [
+        "K1",
+        "K3"
+       ],
+       "zeilen_initial": 2,
+       "zeilen": 2
+      },
+      {
+       "name": "G_b",
+       "variablen": [
+        "b",
+        "c"
+       ],
+       "kaestchen": [
+        "K2"
+       ],
+       "zeilen_initial": 2,
+       "zeilen": 2
+      },
+      {
+       "name": "G_c",
+       "variablen": [
+        "c"
+       ],
+       "kaestchen": [],
+       "zeilen_initial": 2,
+       "zeilen": 2
+      }
+     ],
+     "kanten": [
+      [
+       "G_a",
+       "G_b",
+       [
+        "b",
+        "c"
+       ]
+      ],
+      [
+       "G_b",
+       "G_c",
+       [
+        "c"
+       ]
+      ]
+     ],
+     "takte": 1,
+     "kantenrelationen": {
+      "G_a-G_b": []
+     },
+     "protokoll": [
+      {
+       "takt": 1,
+       "kante": [
+        "G_a",
+        "G_b"
+       ],
+       "ereignis": "WIDERSPRUCH: Kantenrelation leer"
+      }
+     ],
+     "groesste_gruppe_vars": 3,
+     "groesste_gruppe_zeilen": 2,
+     "groesste_gruppe_zeilen_initial": 2,
+     "summe_zeilen_initial": 6,
+     "summe_zeilen_ende": 6,
+     "zwischenstand_je_takt": [],
+     "aufwand_betrachtete_zeilen": 4,
+     "zeit_s": 8e-05
+    },
+    "global_konsistent": null,
+    "global_konsistent_je_gruppe": null,
+    "kontrolle": {
+     "loesungen": 0,
+     "zeit_s": 1e-05
+    },
+    "speicherung": {
+     "original": 0,
+     "gespeichert": 0,
+     "verloren": 0,
+     "hinzugefuegt": 0
+    },
+    "pruefung": {
+     "status": true,
+     "kontrolle": true,
+     "speicherung": true,
+     "kein_strukturfehler": true,
+     "keine_scheinentscheidung": true,
+     "global_konsistent": true
+    },
+    "bestanden": true
+   },
+   {
+    "fall": "F5 Spiegelpaar",
+    "erwartung": {
+     "loesungen": 4,
+     "status": "FIXPUNKT"
+    },
+    "ableitung": {
+     "status": "FIXPUNKT",
+     "ordnung": [
+      "p",
+      "a",
+      "b",
+      "q"
+     ],
+     "gruppen": [
+      {
+       "name": "G_p",
+       "variablen": [
+        "p",
+        "a",
+        "b"
+       ],
+       "kaestchen": [
+        "Kp"
+       ],
+       "zeilen_initial": 4,
+       "zeilen": 4
+      },
+      {
+       "name": "G_a",
+       "variablen": [
+        "a",
+        "b",
+        "q"
+       ],
+       "kaestchen": [
+        "Kq"
+       ],
+       "zeilen_initial": 4,
+       "zeilen": 4
+      },
+      {
+       "name": "G_b",
+       "variablen": [
+        "b",
+        "q"
+       ],
+       "kaestchen": [],
+       "zeilen_initial": 4,
+       "zeilen": 3
+      },
+      {
+       "name": "G_q",
+       "variablen": [
+        "q"
+       ],
+       "kaestchen": [],
+       "zeilen_initial": 2,
+       "zeilen": 2
+      }
+     ],
+     "kanten": [
+      [
+       "G_p",
+       "G_a",
+       [
+        "a",
+        "b"
+       ]
+      ],
+      [
+       "G_a",
+       "G_b",
+       [
+        "b",
+        "q"
+       ]
+      ],
+      [
+       "G_b",
+       "G_q",
+       [
+        "q"
+       ]
+      ]
+     ],
+     "takte": 2,
+     "kantenrelationen": {
+      "G_p-G_a": [
+       [
+        0,
+        0
+       ],
+       [
+        0,
+        1
+       ],
+       [
+        1,
+        0
+       ],
+       [
+        1,
+        1
+       ]
+      ],
+      "G_a-G_b": [
+       [
+        0,
+        0
+       ],
+       [
+        1,
+        0
+       ],
+       [
+        1,
+        1
+       ]
+      ],
+      "G_b-G_q": [
+       [
+        0
+       ],
+       [
+        1
+       ]
+      ]
+     },
+     "protokoll": [
+      {
+       "takt": 1,
+       "kante": [
+        "G_a",
+        "G_b"
+       ],
+       "gruppe": "G_b",
+       "gestrichen": 1,
+       "verbleibend": 3
+      }
+     ],
+     "groesste_gruppe_vars": 3,
+     "groesste_gruppe_zeilen": 4,
+     "groesste_gruppe_zeilen_initial": 4,
+     "summe_zeilen_initial": 14,
+     "summe_zeilen_ende": 13,
+     "zwischenstand_je_takt": [
+      {
+       "takt": 1,
+       "summe_zeilen": 13,
+       "max_zeilen": 4
+      },
+      {
+       "takt": 2,
+       "summe_zeilen": 13,
+       "max_zeilen": 4
+      }
+     ],
+     "aufwand_betrachtete_zeilen": 81,
+     "zeit_s": 0.00022
+    },
+    "global_konsistent": true,
+    "global_konsistent_je_gruppe": {
+     "G_p": {
+      "gleich": true,
+      "zeilen": 4,
+      "projektion": 4,
+      "zu_viel": 0,
+      "fehlend": 0
+     },
+     "G_a": {
+      "gleich": true,
+      "zeilen": 4,
+      "projektion": 4,
+      "zu_viel": 0,
+      "fehlend": 0
+     },
+     "G_b": {
+      "gleich": true,
+      "zeilen": 3,
+      "projektion": 3,
+      "zu_viel": 0,
+      "fehlend": 0
+     },
+     "G_q": {
+      "gleich": true,
+      "zeilen": 2,
+      "projektion": 2,
+      "zu_viel": 0,
+      "fehlend": 0
+     }
+    },
+    "kontrolle": {
+     "loesungen": 4,
+     "zeit_s": 3e-05
+    },
+    "speicherung": {
+     "original": 4,
+     "gespeichert": 4,
+     "verloren": 0,
+     "hinzugefuegt": 0
+    },
+    "pruefung": {
+     "status": true,
+     "kontrolle": true,
+     "speicherung": true,
+     "kein_strukturfehler": true,
+     "keine_scheinentscheidung": true,
+     "global_konsistent": true
+    },
+    "bestanden": true
+   },
+   {
+    "fall": "N3",
+    "erwartung": {
+     "loesungen": 12,
+     "status": "FIXPUNKT"
+    },
+    "ableitung": {
+     "status": "FIXPUNKT",
+     "ordnung": [
+      "x3",
+      "x7",
+      "x2",
+      "x5",
+      "x4",
+      "x6",
+      "x9",
+      "x8",
+      "cA",
+      "cB",
+      "x0",
+      "a1",
+      "a2",
+      "b1",
+      "b2",
+      "x1"
+     ],
+     "gruppen": [
+      {
+       "name": "G_x3",
+       "variablen": [
+        "x3",
+        "a1",
+        "x0"
+       ],
+       "kaestchen": [
+        "A0"
+       ],
+       "zeilen_initial": 2,
+       "zeilen": 2
+      },
+      {
+       "name": "G_x7",
+       "variablen": [
+        "x7",
+        "b1",
+        "x0"
+       ],
+       "kaestchen": [
+        "B0"
+       ],
+       "zeilen_initial": 2,
+       "zeilen": 2
+      },
+      {
+       "name": "G_x2",
+       "variablen": [
+        "x2",
+        "a2",
+        "cA",
+        "x5"
+       ],
+       "kaestchen": [
+        "A2"
+       ],
+       "zeilen_initial": 4,
+       "zeilen": 4
+      },
+      {
+       "name": "G_x5",
+       "variablen": [
+        "x5",
+        "a2",
+        "cA"
+       ],
+       "kaestchen": [],
+       "zeilen_initial": 8,
+       "zeilen": 4
+      },
+      {
+       "name": "G_x4",
+       "variablen": [
+        "x4",
+        "a1",
+        "a2",
+        "x1"
+       ],
+       "kaestchen": [
+        "A1"
+       ],
+       "zeilen_initial": 4,
+       "zeilen": 2
+      },
+      {
+       "name": "G_x6",
+       "variablen": [
+        "x6",
+        "b2",
+        "cB",
+        "x9"
+       ],
+       "kaestchen": [
+        "B2"
+       ],
+       "zeilen_initial": 4,
+       "zeilen": 4
+      },
+      {
+       "name": "G_x9",
+       "variablen": [
+        "x9",
+        "b2",
+        "cB"
+       ],
+       "kaestchen": [],
+       "zeilen_initial": 8,
+       "zeilen": 4
+      },
+      {
+       "name": "G_x8",
+       "variablen": [
+        "x8",
+        "b1",
+        "b2",
+        "x1"
+       ],
+       "kaestchen": [
+        "B1"
+       ],
+       "zeilen_initial": 4,
+       "zeilen": 4
+      },
+      {
+       "name": "G_cA",
+       "variablen": [
+        "cA",
+        "a2",
+        "cB"
+       ],
+       "kaestchen": [
+        "KOP"
+       ],
+       "zeilen_initial": 4,
+       "zeilen": 3
+      },
+      {
+       "name": "G_cB",
+       "variablen": [
+        "cB",
+        "a2",
+        "b2"
+       ],
+       "kaestchen": [],
+       "zeilen_initial": 8,
+       "zeilen": 4
+      },
+      {
+       "name": "G_x0",
+       "variablen": [
+        "x0",
+        "a1",
+        "b1"
+       ],
+       "kaestchen": [],
+       "zeilen_initial": 8,
+       "zeilen": 2
+      },
+      {
+       "name": "G_a1",
+       "variablen": [
+        "a1",
+        "a2",
+        "b1",
+        "x1"
+       ],
+       "kaestchen": [],
+       "zeilen_initial": 16,
+       "zeilen": 4
+      },
+      {
+       "name": "G_a2",
+       "variablen": [
+        "a2",
+        "b1",
+        "b2",
+        "x1"
+       ],
+       "kaestchen": [],
+       "zeilen_initial": 16,
+       "zeilen": 4
+      },
+      {
+       "name": "G_b1",
+       "variablen": [
+        "b1",
+        "b2",
+        "x1"
+       ],
+       "kaestchen": [],
+       "zeilen_initial": 8,
+       "zeilen": 4
+      },
+      {
+       "name": "G_b2",
+       "variablen": [
+        "b2",
+        "x1"
+       ],
+       "kaestchen": [],
+       "zeilen_initial": 4,
+       "zeilen": 3
+      },
+      {
+       "name": "G_x1",
+       "variablen": [
+        "x1"
+       ],
+       "kaestchen": [],
+       "zeilen_initial": 2,
+       "zeilen": 2
+      }
+     ],
+     "kanten": [
+      [
+       "G_x3",
+       "G_x0",
+       [
+        "a1",
+        "x0"
+       ]
+      ],
+      [
+       "G_x7",
+       "G_x0",
+       [
+        "b1",
+        "x0"
+       ]
+      ],
+      [
+       "G_x2",
+       "G_x5",
+       [
+        "a2",
+        "cA",
+        "x5"
+       ]
+      ],
+      [
+       "G_x5",
+       "G_cA",
+       [
+        "a2",
+        "cA"
+       ]
+      ],
+      [
+       "G_x4",
+       "G_a1",
+       [
+        "a1",
+        "a2",
+        "x1"
+       ]
+      ],
+      [
+       "G_x6",
+       "G_x9",
+       [
+        "b2",
+        "cB",
+        "x9"
+       ]
+      ],
+      [
+       "G_x9",
+       "G_cB",
+       [
+        "b2",
+        "cB"
+       ]
+      ],
+      [
+       "G_x8",
+       "G_b1",
+       [
+        "b1",
+        "b2",
+        "x1"
+       ]
+      ],
+      [
+       "G_cA",
+       "G_cB",
+       [
+        "a2",
+        "cB"
+       ]
+      ],
+      [
+       "G_cB",
+       "G_a2",
+       [
+        "a2",
+        "b2"
+       ]
+      ],
+      [
+       "G_x0",
+       "G_a1",
+       [
+        "a1",
+        "b1"
+       ]
+      ],
+      [
+       "G_a1",
+       "G_a2",
+       [
+        "a2",
+        "b1",
+        "x1"
+       ]
+      ],
+      [
+       "G_a2",
+       "G_b1",
+       [
+        "b1",
+        "b2",
+        "x1"
+       ]
+      ],
+      [
+       "G_b1",
+       "G_b2",
+       [
+        "b2",
+        "x1"
+       ]
+      ],
+      [
+       "G_b2",
+       "G_x1",
+       [
+        "x1"
+       ]
+      ]
+     ],
+     "takte": 2,
+     "kantenrelationen": {
+      "G_x3-G_x0": [
+       [
+        0,
+        0
+       ],
+       [
+        0,
+        1
+       ]
+      ],
+      "G_x7-G_x0": [
+       [
+        0,
+        0
+       ],
+       [
+        1,
+        1
+       ]
+      ],
+      "G_x2-G_x5": [
+       [
+        0,
+        0,
+        0
+       ],
+       [
+        0,
+        0,
+        1
+       ],
+       [
+        1,
+        0,
+        0
+       ],
+       [
+        1,
+        1,
+        1
+       ]
+      ],
+      "G_x5-G_cA": [
+       [
+        0,
+        0
+       ],
+       [
+        1,
+        0
+       ],
+       [
+        1,
+        1
+       ]
+      ],
+      "G_x4-G_a1": [
+       [
+        0,
+        0,
+        0
+       ],
+       [
+        0,
+        1,
+        1
+       ]
+      ],
+      "G_x6-G_x9": [
+       [
+        0,
+        0,
+        0
+       ],
+       [
+        0,
+        0,
+        1
+       ],
+       [
+        1,
+        0,
+        0
+       ],
+       [
+        1,
+        1,
+        1
+       ]
+      ],
+      "G_x9-G_cB": [
+       [
+        0,
+        0
+       ],
+       [
+        1,
+        0
+       ],
+       [
+        1,
+        1
+       ]
+      ],
+      "G_x8-G_b1": [
+       [
+        0,
+        0,
+        0
+       ],
+       [
+        0,
+        0,
+        1
+       ],
+       [
+        1,
+        0,
+        0
+       ],
+       [
+        1,
+        1,
+        1
+       ]
+      ],
+      "G_cA-G_cB": [
+       [
+        0,
+        0
+       ],
+       [
+        1,
+        0
+       ],
+       [
+        1,
+        1
+       ]
+      ],
+      "G_cB-G_a2": [
+       [
+        0,
+        0
+       ],
+       [
+        1,
+        0
+       ],
+       [
+        1,
+        1
+       ]
+      ],
+      "G_x0-G_a1": [
+       [
+        0,
+        0
+       ],
+       [
+        0,
+        1
+       ]
+      ],
+      "G_a1-G_a2": [
+       [
+        0,
+        0,
+        0
+       ],
+       [
+        0,
+        1,
+        0
+       ],
+       [
+        1,
+        0,
+        1
+       ],
+       [
+        1,
+        1,
+        1
+       ]
+      ],
+      "G_a2-G_b1": [
+       [
+        0,
+        0,
+        0
+       ],
+       [
+        0,
+        0,
+        1
+       ],
+       [
+        1,
+        0,
+        0
+       ],
+       [
+        1,
+        1,
+        1
+       ]
+      ],
+      "G_b1-G_b2": [
+       [
+        0,
+        0
+       ],
+       [
+        0,
+        1
+       ],
+       [
+        1,
+        1
+       ]
+      ],
+      "G_b2-G_x1": [
+       [
+        0
+       ],
+       [
+        1
+       ]
+      ]
+     },
+     "protokoll": [
+      {
+       "takt": 1,
+       "kante": [
+        "G_x3",
+        "G_x0"
+       ],
+       "gruppe": "G_x0",
+       "gestrichen": 4,
+       "verbleibend": 4
+      },
+      {
+       "takt": 1,
+       "kante": [
+        "G_x7",
+        "G_x0"
+       ],
+       "gruppe": "G_x0",
+       "gestrichen": 2,
+       "verbleibend": 2
+      },
+      {
+       "takt": 1,
+       "kante": [
+        "G_x2",
+        "G_x5"
+       ],
+       "gruppe": "G_x5",
+       "gestrichen": 4,
+       "verbleibend": 4
+      },
+      {
+       "takt": 1,
+       "kante": [
+        "G_x5",
+        "G_cA"
+       ],
+       "gruppe": "G_cA",
+       "gestrichen": 1,
+       "verbleibend": 3
+      },
+      {
+       "takt": 1,
+       "kante": [
+        "G_x4",
+        "G_a1"
+       ],
+       "gruppe": "G_a1",
+       "gestrichen": 8,
+       "verbleibend": 8
+      },
+      {
+       "takt": 1,
+       "kante": [
+        "G_x6",
+        "G_x9"
+       ],
+       "gruppe": "G_x9",
+       "gestrichen": 4,
+       "verbleibend": 4
+      },
+      {
+       "takt": 1,
+       "kante": [
+        "G_x9",
+        "G_cB"
+       ],
+       "gruppe": "G_cB",
+       "gestrichen": 2,
+       "verbleibend": 6
+      },
+      {
+       "takt": 1,
+       "kante": [
+        "G_x8",
+        "G_b1"
+       ],
+       "gruppe": "G_b1",
+       "gestrichen": 4,
+       "verbleibend": 4
+      },
+      {
+       "takt": 1,
+       "kante": [
+        "G_cA",
+        "G_cB"
+       ],
+       "gruppe": "G_cB",
+       "gestrichen": 1,
+       "verbleibend": 5
+      },
+      {
+       "takt": 1,
+       "kante": [
+        "G_x0",
+        "G_a1"
+       ],
+       "gruppe": "G_a1",
+       "gestrichen": 4,
+       "verbleibend": 4
+      },
+      {
+       "takt": 1,
+       "kante": [
+        "G_a1",
+        "G_a2"
+       ],
+       "gruppe": "G_a2",
+       "gestrichen": 8,
+       "verbleibend": 8
+      },
+      {
+       "takt": 1,
+       "kante": [
+        "G_a2",
+        "G_b1"
+       ],
+       "gruppe": "G_a2",
+       "gestrichen": 4,
+       "verbleibend": 4
+      },
+      {
+       "takt": 1,
+       "kante": [
+        "G_b1",
+        "G_b2"
+       ],
+       "gruppe": "G_b2",
+       "gestrichen": 1,
+       "verbleibend": 3
+      },
+      {
+       "takt": 1,
+       "kante": [
+        "G_cB",
+        "G_a2"
+       ],
+       "gruppe": "G_cB",
+       "gestrichen": 1,
+       "verbleibend": 4
+      },
+      {
+       "takt": 1,
+       "kante": [
+        "G_x4",
+        "G_a1"
+       ],
+       "gruppe": "G_x4",
+       "gestrichen": 2,
+       "verbleibend": 2
+      }
+     ],
+     "groesste_gruppe_vars": 4,
+     "groesste_gruppe_zeilen": 4,
+     "groesste_gruppe_zeilen_initial": 16,
+     "summe_zeilen_initial": 102,
+     "summe_zeilen_ende": 52,
+     "zwischenstand_je_takt": [
+      {
+       "takt": 1,
+       "summe_zeilen": 52,
+       "max_zeilen": 4
+      },
+      {
+       "takt": 2,
+       "summe_zeilen": 52,
+       "max_zeilen": 4
+      }
+     ],
+     "aufwand_betrachtete_zeilen": 486,
+     "zeit_s": 0.00232
+    },
+    "global_konsistent": true,
+    "global_konsistent_je_gruppe": {
+     "G_x3": {
+      "gleich": true,
+      "zeilen": 2,
+      "projektion": 2,
+      "zu_viel": 0,
+      "fehlend": 0
+     },
+     "G_x7": {
+      "gleich": true,
+      "zeilen": 2,
+      "projektion": 2,
+      "zu_viel": 0,
+      "fehlend": 0
+     },
+     "G_x2": {
+      "gleich": true,
+      "zeilen": 4,
+      "projektion": 4,
+      "zu_viel": 0,
+      "fehlend": 0
+     },
+     "G_x5": {
+      "gleich": true,
+      "zeilen": 4,
+      "projektion": 4,
+      "zu_viel": 0,
+      "fehlend": 0
+     },
+     "G_x4": {
+      "gleich": true,
+      "zeilen": 2,
+      "projektion": 2,
+      "zu_viel": 0,
+      "fehlend": 0
+     },
+     "G_x6": {
+      "gleich": true,
+      "zeilen": 4,
+      "projektion": 4,
+      "zu_viel": 0,
+      "fehlend": 0
+     },
+     "G_x9": {
+      "gleich": true,
+      "zeilen": 4,
+      "projektion": 4,
+      "zu_viel": 0,
+      "fehlend": 0
+     },
+     "G_x8": {
+      "gleich": true,
+      "zeilen": 4,
+      "projektion": 4,
+      "zu_viel": 0,
+      "fehlend": 0
+     },
+     "G_cA": {
+      "gleich": true,
+      "zeilen": 3,
+      "projektion": 3,
+      "zu_viel": 0,
+      "fehlend": 0
+     },
+     "G_cB": {
+      "gleich": true,
+      "zeilen": 4,
+      "projektion": 4,
+      "zu_viel": 0,
+      "fehlend": 0
+     },
+     "G_x0": {
+      "gleich": true,
+      "zeilen": 2,
+      "projektion": 2,
+      "zu_viel": 0,
+      "fehlend": 0
+     },
+     "G_a1": {
+      "gleich": true,
+      "zeilen": 4,
+      "projektion": 4,
+      "zu_viel": 0,
+      "fehlend": 0
+     },
+     "G_a2": {
+      "gleich": true,
+      "zeilen": 4,
+      "projektion": 4,
+      "zu_viel": 0,
+      "fehlend": 0
+     },
+     "G_b1": {
+      "gleich": true,
+      "zeilen": 4,
+      "projektion": 4,
+      "zu_viel": 0,
+      "fehlend": 0
+     },
+     "G_b2": {
+      "gleich": true,
+      "zeilen": 3,
+      "projektion": 3,
+      "zu_viel": 0,
+      "fehlend": 0
+     },
+     "G_x1": {
+      "gleich": true,
+      "zeilen": 2,
+      "projektion": 2,
+      "zu_viel": 0,
+      "fehlend": 0
+     }
+    },
+    "kontrolle": {
+     "loesungen": 12,
+     "zeit_s": 0.09635
+    },
+    "speicherung": {
+     "original": 12,
+     "gespeichert": 12,
+     "verloren": 0,
+     "hinzugefuegt": 0
+    },
+    "pruefung": {
+     "status": true,
+     "kontrolle": true,
+     "speicherung": true,
+     "kein_strukturfehler": true,
+     "keine_scheinentscheidung": true,
+     "global_konsistent": true
+    },
+    "bestanden": true
+   },
+   {
+    "fall": "N3u",
+    "erwartung": {
+     "loesungen": 0,
+     "status": "WIDERSPRUCH"
+    },
+    "ableitung": {
+     "status": "WIDERSPRUCH",
+     "ordnung": [
+      "x3",
+      "x7",
+      "cA",
+      "x5",
+      "cB",
+      "x9",
+      "x4",
+      "x8",
+      "x0",
+      "x2",
+      "x6",
+      "a1",
+      "a2",
+      "b1",
+      "b2",
+      "x1"
+     ],
+     "gruppen": [
+      {
+       "name": "G_x3",
+       "variablen": [
+        "x3",
+        "a1",
+        "x0"
+       ],
+       "kaestchen": [
+        "A0"
+       ],
+       "zeilen_initial": 2,
+       "zeilen": 2
+      },
+      {
+       "name": "G_x7",
+       "variablen": [
+        "x7",
+        "b1",
+        "x0"
+       ],
+       "kaestchen": [
+        "B0"
+       ],
+       "zeilen_initial": 2,
+       "zeilen": 2
+      },
+      {
+       "name": "G_cA",
+       "variablen": [
+        "cA",
+        "a2",
+        "x2",
+        "x5"
+       ],
+       "kaestchen": [
+        "A2",
+        "KA"
+       ],
+       "zeilen_initial": 1,
+       "zeilen": 1
+      },
+      {
+       "name": "G_x5",
+       "variablen": [
+        "x5",
+        "a2",
+        "x2"
+       ],
+       "kaestchen": [],
+       "zeilen_initial": 8,
+       "zeilen": 1
+      },
+      {
+       "name": "G_cB",
+       "variablen": [
+        "cB",
+        "b2",
+        "x6",
+        "x9"
+       ],
+       "kaestchen": [
+        "B2",
+        "KB"
+       ],
+       "zeilen_initial": 1,
+       "zeilen": 1
+      },
+      {
+       "name": "G_x9",
+       "variablen": [
+        "x9",
+        "b2",
+        "x6"
+       ],
+       "kaestchen": [],
+       "zeilen_initial": 8,
+       "zeilen": 1
+      },
+      {
+       "name": "G_x4",
+       "variablen": [
+        "x4",
+        "a1",
+        "a2",
+        "x1"
+       ],
+       "kaestchen": [
+        "A1"
+       ],
+       "zeilen_initial": 4,
+       "zeilen": 4
+      },
+      {
+       "name": "G_x8",
+       "variablen": [
+        "x8",
+        "b1",
+        "b2",
+        "x1"
+       ],
+       "kaestchen": [
+        "B1"
+       ],
+       "zeilen_initial": 4,
+       "zeilen": 4
+      },
+      {
+       "name": "G_x0",
+       "variablen": [
+        "x0",
+        "a1",
+        "b1"
+       ],
+       "kaestchen": [],
+       "zeilen_initial": 8,
+       "zeilen": 2
+      },
+      {
+       "name": "G_x2",
+       "variablen": [
+        "x2",
+        "a2",
+        "x6"
+       ],
+       "kaestchen": [
+        "UNG"
+       ],
+       "zeilen_initial": 4,
+       "zeilen": 1
+      },
+      {
+       "name": "G_x6",
+       "variablen": [
+        "x6",
+        "a2",
+        "b2"
+       ],
+       "kaestchen": [],
+       "zeilen_initial": 8,
+       "zeilen": 2
+      },
+      {
+       "name": "G_a1",
+       "variablen": [
+        "a1",
+        "a2",
+        "b1",
+        "x1"
+       ],
+       "kaestchen": [],
+       "zeilen_initial": 16,
+       "zeilen": 4
+      },
+      {
+       "name": "G_a2",
+       "variablen": [
+        "a2",
+        "b1",
+        "b2",
+        "x1"
+       ],
+       "kaestchen": [],
+       "zeilen_initial": 16,
+       "zeilen": 16
+      },
+      {
+       "name": "G_b1",
+       "variablen": [
+        "b1",
+        "b2",
+        "x1"
+       ],
+       "kaestchen": [],
+       "zeilen_initial": 8,
+       "zeilen": 4
+      },
+      {
+       "name": "G_b2",
+       "variablen": [
+        "b2",
+        "x1"
+       ],
+       "kaestchen": [],
+       "zeilen_initial": 4,
+       "zeilen": 4
+      },
+      {
+       "name": "G_x1",
+       "variablen": [
+        "x1"
+       ],
+       "kaestchen": [],
+       "zeilen_initial": 2,
+       "zeilen": 2
+      }
+     ],
+     "kanten": [
+      [
+       "G_x3",
+       "G_x0",
+       [
+        "a1",
+        "x0"
+       ]
+      ],
+      [
+       "G_x7",
+       "G_x0",
+       [
+        "b1",
+        "x0"
+       ]
+      ],
+      [
+       "G_cA",
+       "G_x5",
+       [
+        "a2",
+        "x2",
+        "x5"
+       ]
+      ],
+      [
+       "G_x5",
+       "G_x2",
+       [
+        "a2",
+        "x2"
+       ]
+      ],
+      [
+       "G_cB",
+       "G_x9",
+       [
+        "b2",
+        "x6",
+        "x9"
+       ]
+      ],
+      [
+       "G_x9",
+       "G_x6",
+       [
+        "b2",
+        "x6"
+       ]
+      ],
+      [
+       "G_x4",
+       "G_a1",
+       [
+        "a1",
+        "a2",
+        "x1"
+       ]
+      ],
+      [
+       "G_x8",
+       "G_b1",
+       [
+        "b1",
+        "b2",
+        "x1"
+       ]
+      ],
+      [
+       "G_x0",
+       "G_a1",
+       [
+        "a1",
+        "b1"
+       ]
+      ],
+      [
+       "G_x2",
+       "G_x6",
+       [
+        "a2",
+        "x6"
+       ]
+      ],
+      [
+       "G_x6",
+       "G_a2",
+       [
+        "a2",
+        "b2"
+       ]
+      ],
+      [
+       "G_a1",
+       "G_a2",
+       [
+        "a2",
+        "b1",
+        "x1"
+       ]
+      ],
+      [
+       "G_a2",
+       "G_b1",
+       [
+        "b1",
+        "b2",
+        "x1"
+       ]
+      ],
+      [
+       "G_b1",
+       "G_b2",
+       [
+        "b2",
+        "x1"
+       ]
+      ],
+      [
+       "G_b2",
+       "G_x1",
+       [
+        "x1"
+       ]
+      ]
+     ],
+     "takte": 1,
+     "kantenrelationen": {
+      "G_x3-G_x0": [
+       [
+        0,
+        0
+       ],
+       [
+        0,
+        1
+       ]
+      ],
+      "G_x7-G_x0": [
+       [
+        0,
+        0
+       ],
+       [
+        1,
+        1
+       ]
+      ],
+      "G_cA-G_x5": [
+       [
+        1,
+        1,
+        1
+       ]
+      ],
+      "G_x5-G_x2": [
+       [
+        1,
+        1
+       ]
+      ],
+      "G_cB-G_x9": [
+       [
+        1,
+        1,
+        1
+       ]
+      ],
+      "G_x9-G_x6": [
+       [
+        1,
+        1
+       ]
+      ],
+      "G_x4-G_a1": [
+       [
+        0,
+        0,
+        0
+       ],
+       [
+        0,
+        1,
+        1
+       ],
+       [
+        1,
+        1,
+        0
+       ],
+       [
+        1,
+        1,
+        1
+       ]
+      ],
+      "G_x8-G_b1": [
+       [
+        0,
+        0,
+        0
+       ],
+       [
+        0,
+        0,
+        1
+       ],
+       [
+        1,
+        0,
+        0
+       ],
+       [
+        1,
+        1,
+        1
+       ]
+      ],
+      "G_x0-G_a1": [
+       [
+        0,
+        0
+       ],
+       [
+        0,
+        1
+       ]
+      ],
+      "G_x2-G_x6": []
+     },
+     "protokoll": [
+      {
+       "takt": 1,
+       "kante": [
+        "G_x3",
+        "G_x0"
+       ],
+       "gruppe": "G_x0",
+       "gestrichen": 4,
+       "verbleibend": 4
+      },
+      {
+       "takt": 1,
+       "kante": [
+        "G_x7",
+        "G_x0"
+       ],
+       "gruppe": "G_x0",
+       "gestrichen": 2,
+       "verbleibend": 2
+      },
+      {
+       "takt": 1,
+       "kante": [
+        "G_cA",
+        "G_x5"
+       ],
+       "gruppe": "G_x5",
+       "gestrichen": 7,
+       "verbleibend": 1
+      },
+      {
+       "takt": 1,
+       "kante": [
+        "G_x5",
+        "G_x2"
+       ],
+       "gruppe": "G_x2",
+       "gestrichen": 3,
+       "verbleibend": 1
+      },
+      {
+       "takt": 1,
+       "kante": [
+        "G_cB",
+        "G_x9"
+       ],
+       "gruppe": "G_x9",
+       "gestrichen": 7,
+       "verbleibend": 1
+      },
+      {
+       "takt": 1,
+       "kante": [
+        "G_x9",
+        "G_x6"
+       ],
+       "gruppe": "G_x6",
+       "gestrichen": 6,
+       "verbleibend": 2
+      },
+      {
+       "takt": 1,
+       "kante": [
+        "G_x4",
+        "G_a1"
+       ],
+       "gruppe": "G_a1",
+       "gestrichen": 8,
+       "verbleibend": 8
+      },
+      {
+       "takt": 1,
+       "kante": [
+        "G_x8",
+        "G_b1"
+       ],
+       "gruppe": "G_b1",
+       "gestrichen": 4,
+       "verbleibend": 4
+      },
+      {
+       "takt": 1,
+       "kante": [
+        "G_x0",
+        "G_a1"
+       ],
+       "gruppe": "G_a1",
+       "gestrichen": 4,
+       "verbleibend": 4
+      },
+      {
+       "takt": 1,
+       "kante": [
+        "G_x2",
+        "G_x6"
+       ],
+       "ereignis": "WIDERSPRUCH: Kantenrelation leer"
+      }
+     ],
+     "groesste_gruppe_vars": 4,
+     "groesste_gruppe_zeilen": 16,
+     "groesste_gruppe_zeilen_initial": 16,
+     "summe_zeilen_initial": 96,
+     "summe_zeilen_ende": 51,
+     "zwischenstand_je_takt": [],
+     "aufwand_betrachtete_zeilen": 93,
+     "zeit_s": 0.00068
+    },
+    "global_konsistent": null,
+    "global_konsistent_je_gruppe": null,
+    "kontrolle": {
+     "loesungen": 0,
+     "zeit_s": 0.08573
+    },
+    "speicherung": {
+     "original": 0,
+     "gespeichert": 0,
+     "verloren": 0,
+     "hinzugefuegt": 0
+    },
+    "pruefung": {
+     "status": true,
+     "kontrolle": true,
+     "speicherung": true,
+     "kein_strukturfehler": true,
+     "keine_scheinentscheidung": true,
+     "global_konsistent": true
+    },
+    "bestanden": true
+   }
+  ]
+ }
+}

@@ -1,0 +1,237 @@
+{
+ "tafel_ok": true,
+ "alle_erwartungen_bestanden": true,
+ "proben": [
+  {
+   "name": "Kette ohne cin: u=h, v=d (h,d frei) -> h*d=0, h+d=Maj",
+   "erwartung": "Ausschluss sichtbar",
+   "erwartet_r10b": 1,
+   "erwartet_mit": "kleiner",
+   "bestanden": true,
+   "ohne": {
+    "status": "FIXPUNKT",
+    "wahr": 8,
+    "erlaubt": 16,
+    "verloren": 0,
+    "R10b": 0
+   },
+   "mit": {
+    "status": "FIXPUNKT",
+    "wahr": 8,
+    "erlaubt": 14,
+    "verloren": 0,
+    "R10b": 1
+   }
+  },
+  {
+   "name": "dasselbe, a negiert am Eingang",
+   "erwartung": "Ausschluss sichtbar",
+   "erwartet_r10b": 1,
+   "erwartet_mit": "kleiner",
+   "bestanden": true,
+   "ohne": {
+    "status": "FIXPUNKT",
+    "wahr": 8,
+    "erlaubt": 16,
+    "verloren": 0,
+    "R10b": 0
+   },
+   "mit": {
+    "status": "FIXPUNKT",
+    "wahr": 8,
+    "erlaubt": 14,
+    "verloren": 0,
+    "R10b": 1
+   }
+  },
+  {
+   "name": "dasselbe, c negiert",
+   "erwartung": "Ausschluss sichtbar",
+   "erwartet_r10b": 1,
+   "erwartet_mit": "kleiner",
+   "bestanden": true,
+   "ohne": {
+    "status": "FIXPUNKT",
+    "wahr": 8,
+    "erlaubt": 16,
+    "verloren": 0,
+    "R10b": 0
+   },
+   "mit": {
+    "status": "FIXPUNKT",
+    "wahr": 8,
+    "erlaubt": 14,
+    "verloren": 0,
+    "R10b": 1
+   }
+  },
+  {
+   "name": "Alias a=b (Ziel) -> u=a, v=0",
+   "erwartung": "schon ohne exakt, u/v nicht offen",
+   "erwartet_r10b": 0,
+   "erwartet_mit": "gleich",
+   "bestanden": true,
+   "ohne": {
+    "status": "FIXPUNKT",
+    "wahr": 4,
+    "erlaubt": 4,
+    "verloren": 0,
+    "R10b": 0
+   },
+   "mit": {
+    "status": "FIXPUNKT",
+    "wahr": 4,
+    "erlaubt": 4,
+    "verloren": 0,
+    "R10b": 0
+   }
+  },
+  {
+   "name": "Ziel h=d=1 (beide Uebertraege 1) -> unerfuellbar",
+   "erwartung": "0 wahr; mit: 0 erlaubt",
+   "erwartet_r10b": 0,
+   "erwartet_mit": "gleich",
+   "bestanden": true,
+   "ohne": {
+    "status": "WIDERSPRUCH",
+    "wahr": 0,
+    "erlaubt": 0,
+    "verloren": 0,
+    "R10b": 0
+   },
+   "mit": {
+    "status": "WIDERSPRUCH",
+    "wahr": 0,
+    "erlaubt": 0,
+    "verloren": 0,
+    "R10b": 0
+   }
+  },
+  {
+   "name": "NEGIERTER Link (t = ~s ^ c, v = ~s & c): u, v koennen beide 1 sein",
+   "erwartung": "negierter Link: darf nicht greifen",
+   "erwartet_r10b": 0,
+   "erwartet_mit": "gleich",
+   "bestanden": true,
+   "ohne": {
+    "status": "FIXPUNKT",
+    "wahr": 8,
+    "erlaubt": 16,
+    "verloren": 0,
+    "R10b": 0
+   },
+   "mit": {
+    "status": "FIXPUNKT",
+    "wahr": 8,
+    "erlaubt": 16,
+    "verloren": 0,
+    "R10b": 0
+   }
+  },
+  {
+   "name": "cin1 = freies Bit e (kein Nachweis 0)",
+   "erwartung": "kein Nachweis",
+   "erwartet_r10b": 0,
+   "erwartet_mit": "gleich",
+   "bestanden": true,
+   "ohne": {
+    "status": "FIXPUNKT",
+    "wahr": 16,
+    "erlaubt": 32,
+    "verloren": 0,
+    "R10b": 0
+   },
+   "mit": {
+    "status": "FIXPUNKT",
+    "wahr": 16,
+    "erlaubt": 32,
+    "verloren": 0,
+    "R10b": 0
+   }
+  },
+  {
+   "name": "cin2 = freies Bit e (kein Nachweis 0)",
+   "erwartung": "kein Nachweis",
+   "erwartet_r10b": 0,
+   "erwartet_mit": "gleich",
+   "bestanden": true,
+   "ohne": {
+    "status": "FIXPUNKT",
+    "wahr": 16,
+    "erlaubt": 32,
+    "verloren": 0,
+    "R10b": 0
+   },
+   "mit": {
+    "status": "FIXPUNKT",
+    "wahr": 16,
+    "erlaubt": 32,
+    "verloren": 0,
+    "R10b": 0
+   }
+  },
+  {
+   "name": "cin1 = e mit Ziel e=1 (nachweislich 1)",
+   "erwartung": "nachweislich 1",
+   "erwartet_r10b": 0,
+   "erwartet_mit": "gleich",
+   "bestanden": true,
+   "ohne": {
+    "status": "FIXPUNKT",
+    "wahr": 8,
+    "erlaubt": 16,
+    "verloren": 0,
+    "R10b": 0
+   },
+   "mit": {
+    "status": "FIXPUNKT",
+    "wahr": 8,
+    "erlaubt": 16,
+    "verloren": 0,
+    "R10b": 0
+   }
+  },
+  {
+   "name": "cin2 = e mit Ziel e=0 (NACHWEIS 0 durch Ableitung)",
+   "erwartung": "Nachweis 0 durch Ableitung",
+   "erwartet_r10b": 1,
+   "erwartet_mit": "kleiner",
+   "bestanden": true,
+   "ohne": {
+    "status": "FIXPUNKT",
+    "wahr": 8,
+    "erlaubt": 16,
+    "verloren": 0,
+    "R10b": 0
+   },
+   "mit": {
+    "status": "FIXPUNKT",
+    "wahr": 8,
+    "erlaubt": 14,
+    "verloren": 0,
+    "R10b": 1
+   }
+  },
+  {
+   "name": "zwei UNVERKETTETE Additionen (kein gemeinsames s)",
+   "erwartung": "unverkettet",
+   "erwartet_r10b": 0,
+   "erwartet_mit": "gleich",
+   "bestanden": true,
+   "ohne": {
+    "status": "FIXPUNKT",
+    "wahr": 16,
+    "erlaubt": 16,
+    "verloren": 0,
+    "R10b": 0
+   },
+   "mit": {
+    "status": "FIXPUNKT",
+    "wahr": 16,
+    "erlaubt": 16,
+    "verloren": 0,
+    "R10b": 0
+   }
+  }
+ ]
+}

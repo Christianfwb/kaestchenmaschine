@@ -1,0 +1,20 @@
+FABLE AN GHOST – KORREKTUR ZUM R10b-PRUEFSTAND (Paket R10B_PRUEFSTAND bleibt bestehen) – 2026-10-24 23:50. Hinweis 17:50. Nichts im N5-Netz, kein R8g.
+Fable-Container Xeon 2,10 GHz 2 Kerne, Python 3.13.16.
+
+DER FEHLER (bestaetigt): D6_R10b._mit_zusatz trug die Zusatzstufen und den Zielwert u&v = 0 in DAS TESTNETZ ein; die Gegenprobe berechnete die 'echten Loesungen'
+ERST DANACH mit N.erfuellt() auf diesem veraenderten Netz. Ein falscher Ausschluss der Regel waere damit Teil des Orakels geworden und unsichtbar geblieben.
+KORREKTUR (r10b.py):
+ 1. Die Regel arbeitet auf einer tiefen Kopie des Netzes; das Original bleibt unveraendert (Abdruck aus Knotenzahl, Zielen und Stufen wird vor/nach jeder Ableitung
+    verglichen; Abweichung -> Abbruch).
+ 2. Das Orakel (alle Belegungen am Originalnetz) wird VOR jeder Ableitung berechnet.
+ 3. Erwartungen werden GEPRUEFT, nicht nur ausgegeben: je Probe erwartete Zahl der R10b-Anwendungen und erwartetes Verhaeltnis 'mit' zu 'ohne' (kleiner / gleich);
+    jede Probe BESTANDEN/GESCHEITERT; Gesamtergebnis im JSON; Exit 3 bei Scheitern. Verlorene Loesung -> FEHLER/Stopp wie bisher.
+ERGEBNIS (ERGEBNIS_R10B_GEGENPROBEN.json): Wahrheitstafel bestaetigt; 11 Proben, alle Erwartungen BESTANDEN, 0 verlorene (Zahlen unveraendert gegenueber dem
+ersten Paket: 16 -> 14 wo die Regel greift, gleich wo sie nicht greifen darf).
+SABOTAGEPROBE (r10b_sabotage.py, ERGEBNIS_R10B_SABOTAGE.json): eine absichtlich unsound gemachte Variante (laesst den negierten Link zu) am Netz mit negiertem Link:
+wahr 8, erlaubt 0, VERLOREN 8 -> FEHLER ERKANNT. Mit dem alten Ablauf (Orakel nach der Veraenderung) waeren diese 8 verlorenen Loesungen unsichtbar gewesen
+– die Korrektur macht genau das sichtbar.
+EINORDNUNG: Die mathematische Uebertragsbeziehung war und ist korrekt; die IMPLEMENTIERUNGSPRUEFUNG ist jetzt abgeschlossen, soweit Kleinstnetze sie leisten.
+Derselbe Fehlertyp (Regel veraendert N, Pruefstand misst danach) ist in pruefstand.messen() NICHT moeglich: dort rechnet das Kind in einem eigenen Prozess,
+und der Elternprozess baut das Netz fuer das Orakel selbst neu auf. Fuer eine spaetere Anwendung im N5-Netz ueber den Pruefstand gilt das also bereits.
+Dateien: kastenmaschine/l1/n5/{r10b.py, r10b_sabotage.py, ERGEBNIS_R10B_GEGENPROBEN.json, ERGEBNIS_R10B_SABOTAGE.json}. Warte auf eure Pruefung.

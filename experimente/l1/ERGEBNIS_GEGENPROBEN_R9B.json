@@ -1,0 +1,174 @@
+[
+ {
+  "name": "Spiegel: p=1 als Ziel -> q=0 (h frei = q)",
+  "erwartung": "h=0 fest; ohne: schon durch R1/R8 (p=1 -> a=1,b=0 -> q=0)",
+  "ohne": {
+   "status": "FIXPUNKT",
+   "wahr": 1,
+   "erlaubt": 1,
+   "verloren": 0,
+   "R9b": 0,
+   "R9a": 0,
+   "bez": [],
+   "mengen": []
+  },
+  "mit": {
+   "status": "FIXPUNKT",
+   "wahr": 1,
+   "erlaubt": 1,
+   "verloren": 0,
+   "R9b": 0,
+   "R9a": 0,
+   "bez": [],
+   "mengen": []
+  }
+ },
+ {
+  "name": "Spiegel: Addierer p+q, Ziel Uebertrag=1 -> unerfuellbar",
+  "erwartung": "WIDERSPRUCH erwartet (p+q<=1)",
+  "ohne": {
+   "status": "WIDERSPRUCH",
+   "wahr": 0,
+   "erlaubt": 0,
+   "verloren": 0,
+   "R9b": 0,
+   "R9a": 0,
+   "bez": [],
+   "mengen": []
+  },
+  "mit": {
+   "status": "WIDERSPRUCH",
+   "wahr": 0,
+   "erlaubt": 0,
+   "verloren": 0,
+   "R9b": 0,
+   "R9a": 0,
+   "bez": [],
+   "mengen": []
+  }
+ },
+ {
+  "name": "Spiegel: p+q als Addierer, Summe frei h: h = p^q = a^b",
+  "erwartung": "Bez h^a^b=0 (R9a), R9b liefert cout=0",
+  "ohne": {
+   "status": "FIXPUNKT",
+   "wahr": 4,
+   "erlaubt": 4,
+   "verloren": 0,
+   "R9b": 0,
+   "R9a": 1,
+   "bez": [
+    "x0^x1^x2=0"
+   ],
+   "mengen": []
+  },
+  "mit": {
+   "status": "FIXPUNKT",
+   "wahr": 4,
+   "erlaubt": 4,
+   "verloren": 0,
+   "R9b": 1,
+   "R9a": 1,
+   "bez": [
+    "x0^x1^x2=0"
+   ],
+   "mengen": []
+  }
+ },
+ {
+  "name": "Spiegel vertauscht/negiert: p=~a&b (Ch(~a,b,0)), q=a&~b (Maj(a,~b,0))",
+  "erwartung": "h=0 fest",
+  "ohne": {
+   "status": "FIXPUNKT",
+   "wahr": 4,
+   "erlaubt": 8,
+   "verloren": 0,
+   "R9b": 0,
+   "R9a": 1,
+   "bez": [],
+   "mengen": []
+  },
+  "mit": {
+   "status": "FIXPUNKT",
+   "wahr": 4,
+   "erlaubt": 4,
+   "verloren": 0,
+   "R9b": 1,
+   "R9a": 1,
+   "bez": [],
+   "mengen": []
+  }
+ },
+ {
+  "name": "NICHT Spiegel: p=a&b, q=a|b koennen beide 1 sein",
+  "erwartung": "R9b 0x, h bleibt offen",
+  "ohne": {
+   "status": "FIXPUNKT",
+   "wahr": 4,
+   "erlaubt": 8,
+   "verloren": 0,
+   "R9b": 0,
+   "R9a": 1,
+   "bez": [],
+   "mengen": []
+  },
+  "mit": {
+   "status": "FIXPUNKT",
+   "wahr": 4,
+   "erlaubt": 8,
+   "verloren": 0,
+   "R9b": 1,
+   "R9a": 1,
+   "bez": [],
+   "mengen": []
+  }
+ },
+ {
+  "name": "NICHT Spiegel: p=a&b, q=a&c (andere Wurzeln)",
+  "erwartung": "R9b 0x",
+  "ohne": {
+   "status": "FIXPUNKT",
+   "wahr": 8,
+   "erlaubt": 16,
+   "verloren": 0,
+   "R9b": 0,
+   "R9a": 0,
+   "bez": [],
+   "mengen": []
+  },
+  "mit": {
+   "status": "FIXPUNKT",
+   "wahr": 8,
+   "erlaubt": 16,
+   "verloren": 0,
+   "R9b": 0,
+   "R9a": 0,
+   "bez": [],
+   "mengen": []
+  }
+ },
+ {
+  "name": "Beide 0 moeglich, beide 1 nie: p=a&~b, q=~a&~b (= ~a&~b) -> p+q<=1",
+  "erwartung": "h=0 fest, R9b 1x (Differenz p^q = ~b nicht... = ~b affin)",
+  "ohne": {
+   "status": "FIXPUNKT",
+   "wahr": 4,
+   "erlaubt": 8,
+   "verloren": 0,
+   "R9b": 0,
+   "R9a": 1,
+   "bez": [],
+   "mengen": []
+  },
+  "mit": {
+   "status": "FIXPUNKT",
+   "wahr": 4,
+   "erlaubt": 4,
+   "verloren": 0,
+   "R9b": 1,
+   "R9a": 1,
+   "bez": [],
+   "mengen": []
+  }
+ }
+]

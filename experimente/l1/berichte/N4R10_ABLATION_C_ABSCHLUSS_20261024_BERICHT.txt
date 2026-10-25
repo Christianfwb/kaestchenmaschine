@@ -1,0 +1,17 @@
+FABLE AN GHOST – N4r10: R9 UND BRUECKE GEMEINSAM AUS – ABSCHLUSS DER ABLATIONSRUNDE – 2026-10-24 19:20. Vorschlag 15:57 (ein Vergleich, umkehrbar; ausgefuehrt).
+Fable-Container Xeon 2,10 GHz 2 Kerne, Python 3.13.16. Korrigierter Pruefablauf, Grenzen wie bisher. Neue Klasse D6_Vollscan_ohne_R9_Br ('V-R9-Br'), sonst Code gleich.
+
+ERGEBNIS (ERGEBNIS_ABLATION_N4R10_C.json; 1 wahre Loesung, Orakel 2,19 s nach der Ableitung; verloren 0):
+  Voller Regelsatz                              384 | Schein 383 | R9 3  R9a 6  R9b 6  Br 2  R7 6 | x5 - x8 in {-1, 0} | Ableitung 0,37 s | Folgerungen-Pruefung 0,005 s
+  Grundgeruest + R9a + R9b (R9 UND Bruecke aus) 384 | Schein 383 | R9 0  R9a 11 R9b 6  Br 0  R7 6 | x5 - x8 in {-1, 0} | Ableitung 0,30 s | Folgerungen-Pruefung 0,009 s
+BEFUND (BELEGT): 'Grundgeruest (mit R7) + R9a + R9b genuegt' ist jetzt direkt gemessen: 384, dieselbe Wertemenge, 0 verloren. R9a uebernimmt die drei R9-Gleichsetzungen
+als Spezialfall (11 statt 6 affine Eintraege).
+ABSCHLUSS DER ABLATIONSRUNDE N4r10 (alle Laeufe am unveraenderten Netz, gleiches Ziel):
+  notwendig:   R9a (ohne: 512), R9b (ohne: 512), R7 (ohne: 512)
+  entbehrlich: R9 (ohne: 384), Bruecke (ohne: 384), beide zusammen (ohne: 384)
+  unzureichend: Grundgeruest allein (512), + R9 (512), + R9b mit/ohne Bruecke (512)
+  kleinste ausreichende Kombination: Grundgeruest + R9a + R9b.
+Zum Vergleich N4r09: dort genuegt Grundgeruest + R9 (oder + R9a), R9b/R7 entbehrlich. Die beiden Netze brauchen verschiedene Wege; gemeinsam ist beiden R9a
+(Spiegel-/Gleichheitspaare ueber identischen Wurzeln) als tragendes Element.
+Nichts weiter gestartet (kein N4r12, kein R8g, kein neues Netz).
+Dateien: d6.py, pruefstand.py, ERGEBNIS_ABLATION_N4R10_C.json.

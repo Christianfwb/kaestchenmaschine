@@ -1,0 +1,304 @@
+[
+ {
+  "name": "a&b: Maj(a,b,0) = Maj(a,b,0)  -> gleich",
+  "erwartung": "Alias h=d (Hash-Consing macht die Knoten evtl. schon gleich)",
+  "ohne": {
+   "status": "FIXPUNKT",
+   "wahr": 4,
+   "erlaubt": 8,
+   "verloren": 0,
+   "R9": 0,
+   "protokoll": []
+  },
+  "mit": {
+   "status": "FIXPUNKT",
+   "wahr": 4,
+   "erlaubt": 8,
+   "verloren": 0,
+   "R9": 0,
+   "protokoll": []
+  }
+ },
+ {
+  "name": "a&b: Ch(a,b,0) vs Maj(b,a,0)  -> gleich, vertauscht",
+  "erwartung": "Alias h=d, R9 1x",
+  "ohne": {
+   "status": "FIXPUNKT",
+   "wahr": 4,
+   "erlaubt": 8,
+   "verloren": 0,
+   "R9": 0,
+   "protokoll": []
+  },
+  "mit": {
+   "status": "FIXPUNKT",
+   "wahr": 4,
+   "erlaubt": 8,
+   "verloren": 0,
+   "R9": 0,
+   "protokoll": []
+  }
+ },
+ {
+  "name": "a&b vs Maj(~a,~b,1)=~(a&b)     -> negiert gleich",
+  "erwartung": "Alias h=~d, R9 1x",
+  "ohne": {
+   "status": "FIXPUNKT",
+   "wahr": 4,
+   "erlaubt": 16,
+   "verloren": 0,
+   "R9": 0,
+   "protokoll": []
+  },
+  "mit": {
+   "status": "FIXPUNKT",
+   "wahr": 4,
+   "erlaubt": 8,
+   "verloren": 0,
+   "R9": 1,
+   "protokoll": [
+    [
+     "Maj",
+     0,
+     "gleich",
+     [
+      2,
+      3
+     ]
+    ]
+   ]
+  }
+ },
+ {
+  "name": "a&b vs a|b = Maj(a,b,1)        -> VERSCHIEDEN",
+  "erwartung": "kein Alias, R9 0x",
+  "ohne": {
+   "status": "FIXPUNKT",
+   "wahr": 4,
+   "erlaubt": 16,
+   "verloren": 0,
+   "R9": 0,
+   "protokoll": []
+  },
+  "mit": {
+   "status": "FIXPUNKT",
+   "wahr": 4,
+   "erlaubt": 16,
+   "verloren": 0,
+   "R9": 0,
+   "protokoll": []
+  }
+ },
+ {
+  "name": "a&b vs ~a&b = Ch(a,0,b)        -> VERSCHIEDEN",
+  "erwartung": "kein Alias, R9 0x",
+  "ohne": {
+   "status": "FIXPUNKT",
+   "wahr": 4,
+   "erlaubt": 16,
+   "verloren": 0,
+   "R9": 0,
+   "protokoll": []
+  },
+  "mit": {
+   "status": "FIXPUNKT",
+   "wahr": 4,
+   "erlaubt": 16,
+   "verloren": 0,
+   "R9": 0,
+   "protokoll": []
+  }
+ },
+ {
+  "name": "a&b vs a&c: andere Bits        -> VERSCHIEDEN",
+  "erwartung": "kein Alias, R9 0x",
+  "ohne": {
+   "status": "FIXPUNKT",
+   "wahr": 8,
+   "erlaubt": 32,
+   "verloren": 0,
+   "R9": 0,
+   "protokoll": []
+  },
+  "mit": {
+   "status": "FIXPUNKT",
+   "wahr": 8,
+   "erlaubt": 32,
+   "verloren": 0,
+   "R9": 0,
+   "protokoll": []
+  }
+ },
+ {
+  "name": "Maj(a,b,c) vs Maj(c,a,b)       -> gleich, permutiert",
+  "erwartung": "Alias h=d",
+  "ohne": {
+   "status": "FIXPUNKT",
+   "wahr": 8,
+   "erlaubt": 32,
+   "verloren": 0,
+   "R9": 0,
+   "protokoll": []
+  },
+  "mit": {
+   "status": "FIXPUNKT",
+   "wahr": 8,
+   "erlaubt": 16,
+   "verloren": 0,
+   "R9": 1,
+   "protokoll": [
+    [
+     "Maj",
+     1,
+     "gleich",
+     [
+      2,
+      3,
+      4
+     ]
+    ]
+   ]
+  }
+ },
+ {
+  "name": "Maj(a,b,c) vs Maj(~a,~b,~c)    -> negiert gleich",
+  "erwartung": "Alias h=~d",
+  "ohne": {
+   "status": "FIXPUNKT",
+   "wahr": 8,
+   "erlaubt": 32,
+   "verloren": 0,
+   "R9": 0,
+   "protokoll": []
+  },
+  "mit": {
+   "status": "FIXPUNKT",
+   "wahr": 8,
+   "erlaubt": 16,
+   "verloren": 0,
+   "R9": 1,
+   "protokoll": [
+    [
+     "Maj",
+     1,
+     "negiert gleich",
+     [
+      2,
+      3,
+      4
+     ]
+    ]
+   ]
+  }
+ },
+ {
+  "name": "Maj(a,b,c) vs Maj(~a,b,c)      -> VERSCHIEDEN",
+  "erwartung": "kein Alias",
+  "ohne": {
+   "status": "FIXPUNKT",
+   "wahr": 8,
+   "erlaubt": 32,
+   "verloren": 0,
+   "R9": 0,
+   "protokoll": []
+  },
+  "mit": {
+   "status": "FIXPUNKT",
+   "wahr": 8,
+   "erlaubt": 32,
+   "verloren": 0,
+   "R9": 0,
+   "protokoll": []
+  }
+ },
+ {
+  "name": "Ch(a,b,c) vs Ch(~a,c,b)        -> gleich (Auswahl gespiegelt)",
+  "erwartung": "Alias h=d",
+  "ohne": {
+   "status": "FIXPUNKT",
+   "wahr": 8,
+   "erlaubt": 16,
+   "verloren": 0,
+   "R9": 0,
+   "protokoll": []
+  },
+  "mit": {
+   "status": "FIXPUNKT",
+   "wahr": 8,
+   "erlaubt": 16,
+   "verloren": 0,
+   "R9": 0,
+   "protokoll": []
+  }
+ },
+ {
+  "name": "Ch(a,b,c) vs Ch(a,c,b)         -> VERSCHIEDEN",
+  "erwartung": "kein Alias",
+  "ohne": {
+   "status": "FIXPUNKT",
+   "wahr": 8,
+   "erlaubt": 32,
+   "verloren": 0,
+   "R9": 0,
+   "protokoll": []
+  },
+  "mit": {
+   "status": "FIXPUNKT",
+   "wahr": 8,
+   "erlaubt": 32,
+   "verloren": 0,
+   "R9": 0,
+   "protokoll": []
+  }
+ },
+ {
+  "name": "Drittes Bit erst durch Ableitung fest: Maj(a,b,c), c=0 Ziel, vs Ch(a,b,0)",
+  "erwartung": "Alias h=d, R9 1x (wie am N4r09)",
+  "ohne": {
+   "status": "FIXPUNKT",
+   "wahr": 4,
+   "erlaubt": 8,
+   "verloren": 0,
+   "R9": 0,
+   "protokoll": []
+  },
+  "mit": {
+   "status": "FIXPUNKT",
+   "wahr": 4,
+   "erlaubt": 8,
+   "verloren": 0,
+   "R9": 0,
+   "protokoll": []
+  }
+ },
+ {
+  "name": "Gleiche Funktion ueber Alias-Wurzeln: b=e, Ch(a,b,0) vs Maj(a,e,0)",
+  "erwartung": "Alias h=d",
+  "ohne": {
+   "status": "FIXPUNKT",
+   "wahr": 4,
+   "erlaubt": 16,
+   "verloren": 0,
+   "R9": 0,
+   "protokoll": []
+  },
+  "mit": {
+   "status": "FIXPUNKT",
+   "wahr": 4,
+   "erlaubt": 8,
+   "verloren": 0,
+   "R9": 1,
+   "protokoll": [
+    [
+     "Maj",
+     0,
+     "gleich",
+     [
+      2,
+      4
+     ]
+    ]
+   ]
+  }
+ }
+]

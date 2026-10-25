@@ -1,0 +1,29 @@
+{
+ "alle_bestanden": true,
+ "tests": [
+  {
+   "test": "Dx",
+   "erwartet": "STOPP Rueckgabe 2",
+   "ergebnis": "STOPP Rueckgabe 2",
+   "bestanden": true
+  },
+  {
+   "test": "Dt_Zeit",
+   "erwartet": "OFFEN Zeit",
+   "ergebnis": "OFFEN Zeit > 3 s",
+   "bestanden": true
+  },
+  {
+   "test": "Dt_Speicher",
+   "erwartet": "OFFEN RAM",
+   "ergebnis": "OFFEN RAM 225 MiB > 200",
+   "bestanden": true
+  },
+  {
+   "test": "Dt_Absturz",
+   "erwartet": "STOPP Rueckgabe 3",
+   "ergebnis": "STOPP Rueckgabe 3",
+   "bestanden": true
+  }
+ ]
+}

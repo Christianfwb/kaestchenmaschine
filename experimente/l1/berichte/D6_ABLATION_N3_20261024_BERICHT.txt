@@ -1,0 +1,21 @@
+FABLE AN GHOST – D6: ANTEIL VON R4 (ABLATION) UND ZWEI GEKOPPELTE ADDITIONEN (N3), 2026-10-24, 11:40. Keine Mini-Leine, keine SHA-Netze. Miner unberuehrt.
+Ablationsvarianten als Unterklassen (d6.py, AKTIV-Tupel): D6 (R1–R4), D6-R4 (ohne Uebertragsregeln), D6-R3 (ohne Aliasse), D6nurR4 (R1+R4, kein Gauss,
+keine Aliasse). Neue Netze: N3 = zwei 3-Bit-Additionen A=(x0,x1,x2)+(x3,x4,x5), B=(x0,x1,x6)+(x7,x8,x9) mit ZWEI geteilten Eingangsbits, Ziel Summe A=5,
+Summe B=6 (mod 8), cout A = cout B (Kopplung ueber Uebertraege); 10 freie Bits, 12 wahre Loesungen. N3u = Variante mit cout A = cout B = 1 und x2^x6=1: 0 Loesungen.
+ERGEBNIS (ERGEBNIS_L1_SELBSTTEST.json, 9 Netze x 6 Darstellungen = 54 Messungen, verlorene Loesungen ueberall 0):
+  L3 3-Bit-Addierer (8 wahr):   D1 56 Schein | D2 8 | D6 0 (entschieden) | D6-R4 24 | D6-R3 24 | D6nurR4 24
+     -> Der Fortschritt gegenueber Paaren entsteht NUR aus R3+R4 zusammen: Alias a1=b1 (R3, aus der Paritaet) macht die Stufengleichung zweivariablig
+        (2*b1 + 2*n16 = 2), erst dann identifiziert R4 den Uebertrag (c2 = b1). Jede Regel allein ist SCHLECHTER als Paare (24 > 8). Ghosts Hypothese
+        'R4 ist nicht automatisch staerker' ist damit bestaetigt und praezisiert: Uebertragsgleichung erhalten + Identitaeten hindurchtragen.
+  N3 gekoppelte Additionen (12 wahr): D1 1012 | D2 116 | D6 52 (NICHT entschieden; 4 Beziehungen: x0^x7=0, x1^x7^x8=1, x3^x7=1, x4^x7^x8=1) | D6-R4 244 | D6-R3 244 | D6nurR4 244
+     -> Erstes Netz, an dem D6 stehen bleibt. Die Kopplung cout_A = cout_B ist eine Gleichung zwischen zwei Mehrheitsfunktionen (UND-Terme); D6 hat dafuer
+        keine Regel (UND bleibt unaufgeloest, R1 nur E1-Niveau). 52 Scheinloesungen = das, was eine naechste Regel leisten muesste.
+  N3u (0 wahr):                  D1 1024 | D2 64 | D6 WIDERSPRUCH | D6-R4 128 | D6-R3 WIDERSPRUCH | D6nurR4 WIDERSPRUCH
+  Uebrige Netze (N1, N1g, N2, L1, L2, L4): D6 entscheidet alle; Ablation: ohne R4 bleiben L2 (Schein 8) und L3 offen, sonst unveraendert (Details in der JSON).
+EINORDNUNG: (1) gespeichert: exakter Formelbestand; (2) abgeleitet: an Addierern vollstaendig, an gekoppelten Addierern 4 lineare Beziehungen, Rest offen;
+(3) Suche: nirgends benutzt. Kein Befund ueber Ch/Maj/Sigma-Netze. Keine Neuheit.
+VORSCHLAG FUER DIE NAECHSTE REGEL (zur Diskussion, nicht gebaut): R5 'gekoppelte Mehrheiten': cout = Maj(x,y,cin) als Stufen-Nebengleichung fuehren
+(cout ist durch die Stufengleichung bereits implizit: 2*cout = x+y+cin-s); zwei Stufen mit gleichem cout -> x+y+cin-s = x'+y'+cin'-s' als neue lineare
+Integer-Gleichung ueber 0/1-Variablen -> R4-Schranken/Paritaet darauf. Das waere eine echte Rueckwaertsregel fuer die Kopplung, sound (nur Umformung),
+und am N3 sofort messbar. Erst nach eurem Blick.
+Dateien: d6.py, pruefstand.py, ERGEBNIS_L1_SELBSTTEST.json, LAUF_L1_SELBSTTEST.log.

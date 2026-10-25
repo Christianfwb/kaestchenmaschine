@@ -1,0 +1,44 @@
+VON: fable
+AN: ghost, christian
+BEZUG: GO Christian 2026-10-25 18:17 – Ausduenn-Mini-Test (Entwurf V2 + Nachtraege 1/2), 48 Faelle
+KURZ: Ergebnis NEGATIV, in allen 48 Faellen, bei voller Sicherheit. (1) Das D6-Grundgeruest leitet aus Kopf + k Zielbits KEINE Einschraenkung ueber die 8 Nonce-Bits ab (affiner Rang 0 in 48/48; E = 256, Weg E spart nichts). (2) Die vorab eingefrorenen billigen Filter schliessen 0 von 256 Kandidaten aus (A = 0 in 48/48). (3) Nachtraegliche Beobachtung (ausserhalb der Bilanz): Von allen abgeleiteten Tatsachen schliessen nur 3–9 je Fall ueberhaupt etwas aus, und die billigste davon kostet 419 Gatter (6 Runden; H_nonce = 702) bzw. 858 Gatter (9 Runden; H_nonce = 1234) – also 60–70 % des Hashes, um einen Kandidaten zu pruefen. Selbst allein und ohne Vorarbeit ist jede dieser Bedingungen in der Bilanz negativ. Ein negatives Ergebnis ist gueltig; hier ist es eindeutig.
+
+AUFBAU (wie Entwurf): Mini-Leine (4-Bit-Woerter, W_i = W_(i-3)), W0 = Kopf (8 Werte aus sha256('AUSDUENNEN F i'): 13, 9, 7, 2, 15, 6, 6, 11 – F6 und F7 zufaellig gleich, beide behalten), W1+W2 = Nonce (256), Ziel: Bits 0..k-1 von Register a = 0, k = 2, 3, 4; Runden 6 und 9. Ableitung D6+R1b+R8c+R8m (kein R9), Zustand eingefroren; Filter vor der Kontrolle als Datei mit Pruefsumme (E4 bestanden, 48/48); Kontrolle: alle 256 Nonces vorwaerts.
+H (Gatter gesamt) / H_nonce (nonceabhaengig) / H_kopf (nur Kopf, vorab): 6 Runden 795 / 702 / 93; 9 Runden 1314 / 1234 / 80.
+
+ZWEI LAEUFE – offengelegt
+Lauf 1 (Ordner lauf1/): Form-2-Kandidaten waren die GATTERBEDINGUNGEN (Ausgang = Funktion der Eingaenge). Die sind bei Vorwaertsauswertung immer wahr und koennen nichts ausschliessen; A = 0 in 48/48. Das war ein Konstruktionsfehler von mir, entdeckt am Ergebnis. Form 1, Loesungszahlen, Sicherheit und Zeiten von Lauf 1 sind korrekt und stimmen mit Lauf 2 ueberein.
+Lauf 2 (Hauptergebnis): Form-2-Kandidaten = von D6 ABGELEITETE Tatsachen ueber nonceabhaengige Innenknoten (fester Wert; Gleichheit zweier Knoten; neue Folgerungen), Auswahl vorab nach Kegelkosten <= 2 / 8 / 32 plus drei billigste. Zusaetzlich geaendert gegenueber Entwurf V2 (vor Lauf 1, offengelegt): "Knotentiefe <= d" war im Mini-Netz per Konstruktion leer (Nonce-Gatter liegen bei Tiefe 5–14); ersetzt durch Kegelkosten – weiterhin strukturell, vor der Kontrolle.
+
+ERGEBNISSE LAUF 2 (48 Faelle; je Zeile 8 Koepfe)
+Runden/k | Loesungen von 256 (min–max, Mittel) | Form 1 Rang | Kandidaten (Kegel<=32) | A aller Filter | Bed. mit Ausschluss / alle abgeleiteten | kleinster Kegel mit Ausschluss | beste Bilanz Weg P/E ohne C_pre | mit C_pre
+r6 k2 | 51–73, 61,5 | 0 (8/8) | 46–67 | 0 | 3 / 107–136 | 419 | −256 | −129 521 … −326 284
+r6 k3 | 23–36, 29,4 | 0 | 46–67 | 0 | 5 / 109–138 | 419 | −256 | −185 k … −240 k
+r6 k4 | 10–23, 14,8 | 0 | 46–67 | 0 | 7 / 111–140 | 419 | −256 | −126 k … −272 k
+r9 k2 | 61–68, 64,0 | 0 | 46–67 | 0 | 5 / 121–151 | 858 | −256 | −364 k … −622 k
+r9 k3 | 18–38, 27,0 | 0 | 46–67 | 0 | 7 / 123–153 | 858 | −256 | −315 k … −556 k
+r9 k4 | 8–19, 14,0 | 0 | 46–67 | 0 | 9 / 125–155 | 858 | −256 | −421 k … −517 k
+Widersprueche (Block unloesbar erkannt): 0. Faelle mit 0 Loesungen: 0. Sicherheit E1: 48/48 – keine echte Loesung verletzt irgendeine abgeleitete Einschraenkung (alle Tatsachen geprueft, nicht nur die Filter). E2 (Loesungs-Nonces im affinen Raum): bestanden (trivial bei Rang 0).
+Loesungszahlen liegen nahe 256 / 2^k (64, 32, 16): Die Zielbits verhalten sich fuer diesen Nonce-Raum wie Zufall – was man von einer Hashrunde erwartet, hier gemessen.
+"Beste Bilanz ohne C_pre = −256": Das ist Weg E mit Rang 0 (c_erzeugen = 1 je Kandidat, nichts ausgeschlossen) – also die Kosten des blossen Durchzaehlens. Alle Filterwege sind schlechter. Mit Vorarbeit (C_pre 0,13–0,15 s Ableitung = grob 180 000–420 000 Gatteraequivalente nach dem gekennzeichneten Umrechnungsfaktor 4,3e−7 s je Gatter) wird alles deutlich negativ; die Vorarbeit allein kostet bei 256 Kandidaten mehr als das gesamte Hashen (K_0 = 256 x 702 = 179 712 bzw. 256 x 1234 = 315 904).
+
+NACHTRAEGLICHE BEOBACHTUNG (nicht Teil der Bilanz; die Filter waren eingefroren)
+Je Fall wurde fuer JEDE abgeleitete Tatsache ueber einen nonceabhaengigen Knoten gezaehlt, wie viele der 256 Nonces sie verletzen (A) und was ihr Kegel kostet. Bild in allen 48 Faellen gleich:
+- Die 46–67 billigen Tatsachen (Kegel <= 32) schliessen NICHTS aus: Sie sind Vorwaertsfolgen des festen Kopfes (z. B. UND mit einem Kopfbit = 0) und gelten fuer alle 256 Nonces. D6 hat sie korrekt abgeleitet, aber sie tragen nichts ueber den Nonce.
+- Die einzigen Tatsachen mit Ausschlusskraft sitzen am ZIEL: die k Zielbits selbst und ihre unmittelbaren Vorgaenger/Aliase (3–9 Stueck; bei r9 k4 z. B. Knoten 1282–1299 = Register a der letzten Runde, A = 126–143 von 256, Kegel 858–987). Um sie zu pruefen, muss man 60–70 % (6 Runden) bzw. 70–80 % (9 Runden) des Hashes rechnen. Beste Einzelbedingung allein, ohne Vorarbeit: −10 198 bis −87 828 Gatter je 256 Kandidaten – negativ in allen 48 Faellen.
+- Dazwischen gibt es nichts: kein Knoten mit Kegel zwischen 32 und 419 (r6) bzw. 858 (r9) schliesst auch nur einen Nonce aus.
+Lesart (Vermutung, konsistent mit allen 48 Messungen): Ausschlusskraft entsteht nur, wo das Ziel rueckwaerts hinreicht – und das Grundgeruest reicht hier genau eine Registerstufe weit. Billig ist nur, was vorwaerts aus dem Kopf folgt – und das sagt nichts ueber den Nonce. Die Luecke dazwischen ist die Hashfunktion.
+
+WAS NICHT GEPRUEFT WURDE (und warum das die Aussage begrenzt)
+- Kein R9/R9a/R9b (gesonderte Stufe, nicht freigegeben). Bei N4r09 mit VOLLEM Ausgang hatte R9 den Unterschied gemacht; ob R9 mit nur k Zielbits etwas ueber den Nonce traegt, ist offen. Meine Erwartung (Vermutung): wenig, weil R9 Gleichheiten zwischen Knoten braucht, die hier bei k <= 4 Zielbits kaum entstehen – aber das ist genau die Art Aussage, die wir messen statt glauben sollten, wenn ihr wollt.
+- Kein exakter Stern auf dieses Problem (er wuerde bei 256 Kandidaten die Loesungsmenge exakt liefern – zu Kosten, die wir kennen: hier klein, aber im echten Netz 2^Breite).
+- 4-Bit-Woerter, 6–9 Runden, 8 Nonce-Bits: Mini-Modell. Keine Aussage ueber SHA-256, Miner, Hardware; H_nonce ist eine Mini-Baseline, kein technisches Midstate. Ein positives Ergebnis waere kein Miningvorteil gewesen; ein negatives ist einer weniger zu pruefen.
+
+ERWARTUNGEN: E1 Sicherheit 48/48 bestanden. E2 Raum bestanden. E3 Kosten nachvollziehbar (alle Posten in den Ergebnisdateien: c_rechnen, c_pruefen (konkret und Tabellenannahme, Maximum), c_verknuepfen, c_erzeugen, C_pre in s und gekennzeichnet in Gattern, H, H_nonce, H_kopf). E4 Filter vor Kontrolle eingefroren (Pruefsumme) 48/48. Waechter: 48 Kinder, 120 s / 400 MiB, alle OK, gesamt 31 s, RSS je Kind ~19 MiB.
+
+EINFACH GESAGT
+Wir haben 48 kleine Blockkoepfe durchprobiert und gefragt: Was weiss die Regelmaschine ueber den Nonce, bevor sie hasht? Antwort: nichts, was billig ist. Alles Billige, was sie weiss, folgt aus dem festen Kopf und gilt fuer jeden Nonce. Alles, was einen Nonce aussortieren koennte, sitzt am Ziel – und um es zu pruefen, muss man zwei Drittel des Hashes rechnen. Dazwischen ist nichts. Niemand hat gelogen, nichts ging verloren (jede echte Loesung ueberlebt jede Regel), und die Rechnung steht in allen Posten da. Das Ausduennen lohnt sich im Mini-Netz nicht – nicht ein bisschen nicht, sondern in jedem der 48 Faelle deutlich nicht.
+
+DATEIEN (kastenmaschine/l1/ausduennen/): ausduennen.py (Lauf 2, mit Offenlegung von Lauf 1 im Kopf), ausduennen_lauf.py, ERGEBNIS_AUSD2_r{6,9}_k{2,3,4}_F{1..8}.json (48, je mit eingefrorenem Filter, Bilanz, Beobachtung), FILTER2_*.json (48, Pruefsummen), ERGEBNIS_AUSD2_BEGRENZT.json (Zusammenfassung), lauf1/ (Lauf 1: 48 Ergebnisse + Filter, unveraendert). Abhaengigkeiten (pruefstand, d6, gatter, e1_bit) mit Pfad + SHA256 je Ergebnisdatei. Bestehende Dateien unveraendert. Stopp.
+--- ENDE ---
+Hinweis: Die 192 Einzeldateien (ERGEBNIS_AUSD2_*, FILTER2_*, lauf1/*) sind einzeln in SHA256SUMS.txt gelistet und zusaetzlich gesammelt in EINZELERGEBNISSE_LAUF1_LAUF2.zip uebergeben.

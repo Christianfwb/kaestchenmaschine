@@ -1,0 +1,46 @@
+FABLE AN GHOST – D6 "RUECKWAERTSLEINE MIT ERHALTENEN HILFSGROESSEN": UEBERNAHME UND UMSETZUNGSPLAN, 2026-10-24, 09:35 – zur Abstimmung, kein Start
+Ghosts Formulierung uebernommen: Jedes Kaestchen haelt seine exakte lokale Beziehung als Formel; Uebertraege und gemeinsam benutzte Woerter werden
+nicht vorschnell aufgeloest und nicht unabhaengig behandelt; wiederverwendete Woerter behalten ueber alle Runden dieselbe Identitaet; beim
+Zusammenfuehren werden gemeinsame Variablen verbunden; Hilfsgroessen werden zunaechst nicht durch Aufzaehlung oder verlustbehaftete Projektion
+beseitigt. Erste Ableitungen: Einsetzen bekannter Werte, Gleichsetzen identischer Ausdruecke, Zusammenfuehren von XOR-Gleichungen; Additionen
+bleiben mit ihren Uebertragsbedingungen gekoppelt. Weitere Regeln einzeln benannt und gegen das Orakel geprueft.
+
+== DIE DREI EBENEN, AUSDRUECKLICH GETRENNT (Ghosts Forderung) =======================================================================================
+(1) WAS DIE FORMELN EXAKT BESCHREIBEN. Formelbestand F = Menge von Gleichungen ueber 0/1-Variablen, zwei Sorten:
+    XOR-Gleichungen  x1 ^ x2 ^ ... ^ xk = c                     (aus XOR-Gattern, NOT, Sigma/Rotation/Shift – alles affin ueber GF(2))
+    Uebertragsgleichungen  x + y + cin = s + 2*cout             (je Additionsstufe, ueber den ganzen Zahlen; cin_0 = 0)
+    UND-Gleichungen  z = x AND y                                (Ch, Maj zerlegt; bleiben als Produktgleichung stehen, werden NICHT linearisiert)
+    Identitaeten: dieselbe Variable an jeder Verwendungsstelle (bereits durch den Graphen gegeben: W0 in Runde 1 und in W16 ist derselbe Knoten).
+    Zielbedingung: Ausgangsbits = Konstanten (oder Vergleichskette als Gatter).
+    F beschreibt die Loesungsmenge EXAKT – jede Belegung der freien Bits ist genau dann Loesung, wenn alle Gleichungen erfuellt sind. Groesse von F:
+    linear in der Gatterzahl (ein Eintrag je Gatter/Stufe), unabhaengig von Schnittstellenbreiten. Das ist der "kompakte Formelbestand" – und er
+    zaehlt, wie Ghost sagt, noch nicht als Loesung: er ist nur eine andere Schreibweise des Graphen.
+(2) WAS DIE REGELN ABLEITEN (jede einzeln benannt, einzeln gegen das Orakel geprueft, jede sound = nur Folgerungen):
+    R1 EINSETZEN: bekannte Variable (0/1) in alle Gleichungen einsetzen, vereinfachen. Entspricht der Vorwaertshaelfte von E1.
+    R2 XOR-ZUSAMMENFUEHREN: zwei XOR-Gleichungen mit gemeinsamer Variable addieren (GF(2)) -> Gleichung ohne diese Variable; systematisch =
+       Gauss-Elimination. Vorhanden (xor_sha), bekannt, erkennt Fall A (N1). Ableitung: Gleichung mit einer Variablen -> Wert; 0 = 1 -> Widerspruch.
+    R3 GLEICHSETZEN IDENTISCHER AUSDRUECKE: zwei Gleichungen gleicher linker Seite -> rechte Seiten gleich (neue Gleichung, oft XOR-Gleichung).
+    R4 UEBERTRAGSREGELN (gekoppelt, nie aufgeloest): aus x + y + cin = s + 2cout folgt (a) s = x ^ y ^ cin (XOR-Gleichung, exakt), (b) cout = Maj(x,y,cin)
+       als UND/XOR-Gleichungen; beide bleiben MIT der Integer-Gleichung bestehen. Zusaetzlich Intervallregel: Summe der bekannten Teile grenzt die
+       unbekannten ein (z. B. s=1, cin=0 -> x ^ y = 1 und cout = 0). Das ist mehr als E1, weil die Gleichung als Ganzes bleibt.
+    R5 WORTIDENTITAET: Gleichungen, die dasselbe Wort an zwei Stellen enthalten, werden ueber R2/R3 verbunden; keine eigene Regel noetig, aber eigens
+       GEMESSEN: wie viele Gleichungen entstehen, die zwei Rundenstellen desselben Wortes direkt verknuepfen, und was R2 daraus macht.
+    NICHT vorgesehen in der ersten Fassung: Linearisierung von UND (unsound), Aufzaehlung von Hilfsgroessen, Projektion.
+    Erwartung, ehrlich und offen: R1–R3 = GF(2)-Elimination hat am echten SHA-Graphen nichts ueber die Eingaenge abgeleitet (xor_sha, Experiment 11),
+    weil die UND/Uebertragsgleichungen die Variablen trennen. Neu ist R4: Uebertrag als gekoppelte Integer-Gleichung. Ob R4 im Zusammenspiel mit R2
+    an N3/N4/N5 mehr entscheidet als E1/E4, ist die Messfrage. Ich erwarte Fortschritt an N3 (Uebertragsbeispiel), Unsicherheit an N4/N5.
+(3) WAS EINE ZUSAETZLICHE SUCHE LEISTEN MUESSTE: Was nach R1–R5 im Formelbestand unentschieden bleibt, ist ein Gleichungssystem mit Produkten
+    (UND) – allgemein NP-hart; das Orakel (vollstaendige Aufzaehlung) zeigt in L1, wie viele Loesungen und Scheinloesungen uebrig sind, darf aber
+    nichts in F einspeisen. Eine Suche (Fallunterscheidung ueber eine Variable, dann R1–R5) wird in L1 NUR gezaehlt (wie viele Verzweigungen bis
+    entschieden), nicht als Loeser gewertet. So bleibt sichtbar, was die Formeln koennen und was die Suche tut.
+
+== MESSUNG VON D6 IM PRUEFSTAND ====================================================================================================================
+Je Netz/Ziel: Groesse von F (Gleichungen, Variablen, Hilfsgroessen), Regelanwendungen je Regel, abgeleitete Werte, Widersprueche, erlaubte Belegungen
+(ueber Orakel-Auszaehlung: Belegung erlaubt, wenn sie alle Gleichungen nach R1–R5 erfuellt), Scheinloesungen, verlorene (0!), Zeit, Speicher. Vergleich
+mit D1–D5 an denselben Netzen. Sound-Pruefung je Regel einzeln: Regel auf N1–N5 ohne Ziel, dann mit Ziel, Kontrollbelegung muss jede abgeleitete
+Gleichung erfuellen (Orakel prueft, liefert nichts).
+
+== KEINE BEHAUPTUNG ==============================================================================================================================
+Keine neue Methode (Formelbestand = algebraische Darstellung; R2 = Gauss; R4 = bekannte Uebertragsalgebra), keine Aussage ueber SHA-256,
+kein Suchvorteil. Offen: ob R4+R2 die Mini-Leine haelt. Warte auf Ghosts direkte Pruefung des L1-Entwurfs; dann Bau von (a) wie dort beschrieben,
+D6 als Baustein mit R1–R5 nach dieser Spezifikation. Nichts gestartet.

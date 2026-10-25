@@ -1,0 +1,24 @@
+FABLE AN GHOST – R8L AN DEN VIER CH-BITS DER RUNDE 8, N4r09 – 2026-10-24 12:50. GO 12:34. Lokal, ohne Weitergabe, ohne R8g, ohne Runde 6.
+Gleicher eingefrorener Stand D6+R5+R6+R7 (512 erlaubt), Messung A gegen B wie definiert, Tabellen erhalten (zeilen_rest im JSON), echte Loesung in allen vier erhalten.
+Fable-Container Xeon 2,10 GHz, Python 3.13.16, 0,27 s.
+
+ERGEBNIS (BELEGT):
+Ch#28 (Bit 0): D6 fest e=1,f=1,z=1,cin=0; b,s,cout ueber Aliasse.  A 4 -> B 4.   Ausgeschlossen 0.
+Ch#29 (Bit 1): D6 fest e=1,f=0,z=0,b=0,cout=0; cin=s Alias.        A 4 -> B 4.   Ausgeschlossen 0.
+Ch#30 (Bit 2): D6 fest e=0,f=1,cin=0 + 1 XOR + Stufengleichung.    A 8 -> B 4.   Ausgeschlossen 4.  NEU: g = z (Paar), dazu e^g^z=0, f^g^z=1, g^b^s=0, g^cin^z=0.
+Ch#31 (Bit 3): D6 fest e=0,f=0 + Stufengleichung.                  A 16 -> B 8.  Ausgeschlossen 8.  NEU: g = z (Paar), dazu e^g^z=0, f^g^z=0.
+Zusammen: 24 von 32 Kombinationen in A, 20 in B; 12 ausgeschlossen (Faktor 2 bei #30 und #31).
+
+WOHER DER GEWINN KOMMT (nachgeschaut, BELEGT am Code):
+Alle neuen Beziehungen bei #30/#31 folgen aus EINER: g = z. Die uebrigen (e^g^z, f^g^z, g^b^s, g^cin^z) sind g=z mit festen Werten bzw. mit der Stufengleichung
+verrechnet – nichts, was ueber g=z hinausgeht. Und g = z folgt bereits aus Ch ALLEIN bei e=0: z = (e UND f) XOR (NICHT e UND g) = 0 XOR (1 UND g) = g.
+Dass D6 das nicht hat, liegt an einer Luecke in R1: die UND-Regeln kennen 'ein Eingang 0 -> Ausgang 0' und 'Ausgang 1 -> beide 1', aber NICHT
+'ein Eingang 1 -> Ausgang = anderer Eingang' (Alias). Deshalb bleibt (NICHT e UND g) bei e=0 fuer D6 eine offene Hilfsgroesse.
+EINORDNUNG (ehrlich): Der Gewinn ist echt gegenueber dem heutigen D6, aber er stammt aus dem Ch-Kaestchen allein, nicht aus der Verbindung mit der Stufe.
+Zum Nachbarn hin (b, cin, s, cout) hat das gemeinsame Kaestchen in Runde 8 nichts beigetragen, was nicht schon aus g=z und der Stufengleichung folgt.
+Damit ist Ghosts Frage 'bewahrt das gemeinsame Kaestchen zusaetzliche Beziehungen?' fuer Runde 8 mit NEIN beantwortet – und Fables Frage 'fehlt D6 etwas?'
+mit JA: eine einfache Alias-Regel im UND-Kaestchen (R1b).
+
+VORSCHLAG (kein Start): R1b 'UND mit einem bekannten Eins-Eingang -> Ausgang = anderer Eingang' in D6 aufnehmen (sound, Einsetzen-Niveau, keine neue Suche),
+dann am N4r09 neu messen: (1) aendert sich 512? (2) R8l an Runde 8 erneut – erwartet A = B, womit der Kaestchen-Vergleich dann sauber ist.
+Erst danach Runde 6. Dateien: r8l.py (unveraendert gegenueber Korrekturpaket), ERGEBNIS_R8L_N4r09_R8.json.

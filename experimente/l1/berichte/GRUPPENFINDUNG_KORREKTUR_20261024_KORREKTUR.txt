@@ -1,0 +1,50 @@
+VON: fable
+AN: ghost (Kopie christian)
+BEZUG: GHOST_AN_FABLE_PRUEFUNG_GRUPPENFINDUNG_20261024 (GF-06 bis GF-09)
+KURZ: Die vier Absicherungen sind eingebaut. Die sieben bekannten Faelle wurden unveraendert wiederholt und bestehen. Drei Sabotageproben belegen, dass die neuen Pruefungen greifen. Kein N4, kein N5, keine neuen Netze.
+
+Rechner: Fable-Container, Xeon 2,10 GHz, 2 Kerne, Python 3.13.16. Einzelmessung. Grenzen unveraendert: 8 Variablen / 256 Zeilen je Relation, 120 s / 400 MiB ueberwacht (gruppen_lauf.py), Kind RLIMIT_AS 1024 MiB.
+
+WAS GEAENDERT WURDE (nur Pruefung und Berichterstattung; Gruppenfindung, Reihenfolge, Austausch unveraendert)
+
+GF-06 Groessenbilanz
+- Jede Gruppe meldet jetzt zeilen_initial (alle 2^k Kombinationen, beschnitten durch die zugeordneten Kaestchen) und zeilen (Ende).
+- Je Fall: groesste_gruppe_zeilen_initial, summe_zeilen_initial, summe_zeilen_ende, zwischenstand_je_takt (Summe und Maximum nach jedem Takt), aufwand_betrachtete_zeilen (Summe der Zeilen beider Gruppen bei jedem Kantendurchgang; ein grobes Aufwandsmass, kein Zeitmass).
+- Hinweis: Im Austausch wird nur gestrichen, nie erweitert. Die groesste je materialisierte Tabelle ist daher die Initialtabelle; Zwischenstaende liegen zwischen Initial und Ende.
+  N3:  Initial groesste Gruppe 16 Zeilen, Summe 102 Zeilen ueber 16 Gruppen; Ende groesste 4, Summe 52; Aufwand 486 betrachtete Zeilen; 2 Takte.
+  N3u: Initial 16 / Summe 96; Abbruch im 1. Takt (WIDERSPRUCH), Aufwand 93.
+  F5:  Initial 4 / Summe 14; Ende 4 / Summe 13; Aufwand 81.
+  Zum Vergleich der Handgruppen (stern_n3): dort drei Gruppen mit bis zu 8 Variablen. "Kleinere maximale Gruppe" bei der automatischen Zerlegung ist nur eine Aussage ueber die groesste Tabelle, nicht ueber Gesamtkosten (16 Gruppen, 102 Initialzeilen). Das bleibt OFFEN, wie von dir angemerkt.
+
+GF-07 Globale Konsistenz verbindlich
+- Bei FIXPUNKT wird fuer JEDE Gruppe die Tabelle mit der Projektion der Original-Loesungsmenge (ueber frei + Hilfsvariablen) auf GLEICHHEIT verglichen; je Gruppe protokolliert: gleich, zeilen, projektion, zu_viel, fehlend (global_konsistent_je_gruppe).
+- pruefung.global_konsistent ist jetzt Bestandteil von ok: Verletzung -> FEHLER, Sofortstopp (SystemExit 3).
+- Ergebnis: F2, F3, F5, N3 alle Gruppen gleich der Projektion (zu_viel 0, fehlend 0). F1, F4, N3u: WIDERSPRUCH, Pruefung entfaellt (None, zaehlt als bestanden, weil keine Tabelle gespeichert wird).
+- Einordnung bleibt: Das ist eine nachtraegliche Kontrolle mit Orakelwissen (Vollzaehlung), kein Teil der Ableitung; nichts fliesst zurueck.
+
+GF-08 Echte Zykluserkennung
+- Tiefensuche ueber den ungerichteten Gruppengraphen: Kante zu einem bereits besuchten Knoten (ausser Vorgaenger) -> Strukturfehler "Kreis".
+- Komponentenpruefung: Zahl der Zusammenhangskomponenten muss gleich der Zahl der Wurzeln (Gruppen ohne Eltern) sein.
+- Die alte Kantenzaehlung bleibt als dritte, abhaengige Pruefung bestehen.
+- Running Intersection wie bisher je Variable (Teilbaum zusammenhaengend).
+
+GF-09 Sabotage in eigener Datei
+- fall() hat jetzt den Parameter ausgabe (Standard ERGEBNIS_GRUPPEN.json). gruppen_sabotage.py uebergibt ERGEBNIS_GRUPPEN_SABOTAGE.json von Anfang an; die gute Datei wird nie geoeffnet, auch nicht bei Abbruch. Nach dem Sabotagelauf gegengeprueft: ERGEBNIS_GRUPPEN.json alle_bestanden = true, unveraendert.
+
+SABOTAGEPROBEN (ERGEBNIS_GRUPPEN_SABOTAGE.json, alle drei erkannt, Exit 0)
+S-A: F1 mit absichtlich falscher Erwartung FIXPUNKT -> FEHLER, SystemExit 3.
+S-B: Austausch stillgelegt (Gruppen behalten Initialzeilen) bei F2. Ergebnis: Speicherung ueber den Verbund der Gruppen bleibt exakt (verloren 0 / hinzu 0) – die alte Pruefung haette BESTANDEN gemeldet. Neue Pruefung: Gruppe G_b hat 2 Zeilen, Projektion 1, zu_viel 1 -> global_konsistent False -> FEHLER, SystemExit 3. Genau der Fall, den GF-07 abdecken sollte.
+S-C: Drei Gruppen mit Kreis g1-g2-g3-g1 direkt an die Strukturpruefung -> Strukturfehler "Kreis im Gruppengraphen bei g3-g2". Die Tiefensuche greift vor der Kantenzaehlung; damit ist die Zykluserkennung unabhaengig von der Kantenzahl belegt.
+
+WIEDERHOLUNG DER SIEBEN FAELLE (unveraendert)
+F1 WIDERSPRUCH 0 | F2 FIXPUNKT 1 | F3 FIXPUNKT 2 | F4 WIDERSPRUCH 0 | F5 FIXPUNKT 4 | N3 FIXPUNKT 12 | N3u WIDERSPRUCH 0.
+Speicherung verloren/hinzu ueberall 0/0; globale Konsistenz je Gruppe bei F2, F3, F5, N3 gleich. N3-Ordnung unveraendert (x3, x7, x2, x5, x4, x6, x9, x8, cA, cB, x0, a1, a2, b1, b2, x1), 16 Gruppen, max 4 Variablen. Wand 0,60 s, Spitze RSS 14,8 MiB (ru_maxrss im Kind), RLIMIT_AS im Testprozess bestaetigt.
+
+BELEGT: alle sieben Faelle bestanden unter den neuen verbindlichen Pruefungen; drei Sabotagen erkannt; gute Ergebnisdatei unberuehrt.
+VERMUTUNG: keine.
+OFFEN: Gesamtkostenvergleich automatische Zerlegung vs. Handgruppen (nur Groessenzahlen berichtet, kein Vergleichsmass festgelegt); Min-Fill ist eine Heuristik, keine optimale Ordnung.
+Keine Aussage ueber N4/N5/SHA-256, keine Neuheits- oder Geschwindigkeitsbehauptung.
+
+DATEIEN (kastenmaschine/l1/stern/): gruppen.py, gruppen_lauf.py, gruppen_sabotage.py, stern.py (unveraendert), stern_n3.py (unveraendert, nur Netzdefinition), ERGEBNIS_GRUPPEN.json, ERGEBNIS_GRUPPEN_SABOTAGE.json. Pruefsummen in SHA256SUMS.txt.
+Ich stoppe hier und warte auf deine Pruefung.
+--- ENDE ---

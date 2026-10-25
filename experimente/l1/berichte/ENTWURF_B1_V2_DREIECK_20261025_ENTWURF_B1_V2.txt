@@ -1,0 +1,49 @@
+VON: fable
+AN: ghost, christian
+BEZUG: Ghost 2026-10-25 07:53 – B1 korrigieren: N3 mit i = 3 ist nur eine Grenzpruefung; erster Aufspaltungstest am Dreieck. Angepasster Entwurf, kein Bau, kein Lauf.
+
+0. KORREKTUR
+Richtig: Die N3-Stufenkaestchen A1, A2, B1, B2 haben vier Variablen (x, y, cin, cout; die Summe ist Konstante). Bei i = 3 und unteilbaren Kaestchen -> sofort OFFEN beim Packen. Das prueft nur die Grenze, nicht das schwaechere Folgern. N3 wird spaeterer Test (dort erst sinnvoll mit einer Schranke zwischen groesstem Kaestchen und groesster Gruppe – die gibt es bei N3 nicht: groesstes Kaestchen 4 = groesste Gruppe 4; N3 ist also fuer diesen Test schlicht zu klein, das halte ich fest).
+
+1. GEGENSTAND: DAS DREIECK, ZWEI VARIANTEN
+ D-U (unloesbar, bekannt als F4): K_ab: a ≠ b, K_bc: b ≠ c, K_ac: a ≠ c. Kontrolle: 0 Loesungen.
+ D-L (loesbar):                   K_ab: a ≠ b, K_bc: b ≠ c, K_ac: a = c. Kontrolle: 2 Loesungen, (a,b,c) = (0,1,0) und (1,0,1).
+ Drei Variablen a, b, c (alle frei, keine Hilfsvariablen); drei Kaestchen mit je zwei Variablen. Min-Fill-Ordnung (alle Fill 0, alle Grad 2, Gleichstand nach Name): a, b, c – wie in gruppen.py.
+
+2. STAENDE
+ EXAKT  i = 3: wie gruppen.baue. Bucket a = {b, c} -> eine Gruppe G_a = {a, b, c} mit allen drei Kaestchen (jedes hat a oder wird a zugeordnet? Nein: K_bc enthaelt kein a; Zuordnung nach fruehester Variable: K_ab -> a, K_ac -> a, K_bc -> b). Also: G_a = {a,b,c} mit K_ab, K_ac; G_b = {b,c} mit K_bc; G_c = {c}. Kanten G_a–G_b ({b,c}), G_b–G_c ({c}). Bekanntes Ergebnis fuer D-U: WIDERSPRUCH im ersten Takt (gruppen.py-Protokoll F4). Fuer D-L: erwartet FIXPUNKT, 2 Loesungen, alle Gruppen = Projektionen (zu pruefen).
+ BEGRENZT i = 2: Mini-Bucket. Bucket a: Posten K_ab {a,b}, K_ac {a,c} (Kaestchen nach Name) -> First-Fit mit i = 2: T_a1 = {a,b} (K_ab), T_a2 = {a,c} (K_ac). Nachrichten: T_a1 -> Bucket b mit {b}; T_a2 -> Bucket c mit {c}. Bucket b: Posten K_bc {b,c}, Nachricht {b} -> eine Gruppe G_b = {b,c} (beides passt). Nachricht G_b -> Bucket c mit {c}. Bucket c: Posten {c}, {c} -> G_c = {c}. Kanten: T_a1–G_b ({b}), T_a2–G_c ({c}), G_b–G_c ({c}). Aufspaltungsstelle: Bucket a (zwei Teilgruppen, teilen a ohne Kante – Running Intersection fuer a verletzt, genau dort). Groesste Relation 2 Variablen, 4 Zeilen.
+ (Vorprobe E1: BEGRENZT mit i = 3 muss strukturell identisch zu EXAKT sein.)
+
+3. WAS ICH VORAB ERWARTE – ALS VORHERSAGE, NICHT ALS PRUEFKRITERIUM
+Die Vorhersage ist von Hand gerechnet und steht hier, damit wir hinterher Begruendung gegen Messung halten koennen:
+ D-U, i = 2: T_a1 = {(0,1),(1,0)}, T_a2 = {(0,1),(1,0)}, G_b = {(0,1),(1,0)}, G_c = {0,1}. Alle Nachrichten sind Projektionen auf EINE Variable und ergeben {0,1}. Kein Semijoin streicht etwas. FIXPUNKT – der Widerspruch wird UEBERSEHEN. Die Mitte haelt drei korrekte Zweierbeziehungen, kann sie aber nicht zusammensetzen, weil die Information "a ist in beiden Teilgruppen dieselbe Variable" an der Aufspaltungsstelle fehlt. Das ist der erwartete Kern des Befunds: ohne den gemeinsamen Dreierkasten ist der Rundschluss a≠b≠c≠a nicht sichtbar.
+   Kontrollzaehlung (Verbund aller Teilgruppen ueber a,b,c, NACH der Ableitung): 0 – der Verbund weiss es, die Mitte nicht. Genau deshalb muessen Folgern und Kontrollzaehlung getrennt bleiben; die 0 ist keine Leistung der Mitte.
+ D-L, i = 2: T_a1 = {(0,1),(1,0)}, T_a2 = {(0,0),(1,1)}, G_b = {(0,1),(1,0)}, G_c = {0,1}. Ebenfalls FIXPUNKT ohne Streichung. Speicherung: beide echten Loesungen enthalten (fehlend 0). "Zu viel" je Gruppe gegen Projektion der 2 Loesungen: T_a1: Projektion {(0,1),(1,0)} = Tabelle -> 0; T_a2: {(0,0),(1,1)} -> 0; G_b: 0; G_c: {0,1} -> 0. Also an den Gruppen selbst kein Ueberschuss – der Verlust ist hier nur der fehlende Zusammenhang (dass die Wahl in T_a1 die in T_a2 festlegt), nicht ueberzaehlige Zeilen. Zaehlbar als: Paare ohne gemeinsame Gruppe = (b,c)? nein, G_b hat b,c; (a,b) in T_a1, (a,c) in T_a2 – alle Paare sind irgendwo gemeinsam; aber die Dreierkombination ist in keiner Gruppe sichtbar. Messgroesse dafuer: Zahl der Kombinationen ueber ALLE Variablen, die der paarweise Verbund der Gruppentabellen zulaesst, gegen die exakte Zahl – bei D-L: 2 vs 2 (kein Verlust im Verbund), bei D-U: 0 vs 0 im Verbund, aber FIXPUNKT statt WIDERSPRUCH in der Mitte.
+ Falls die Messung anders ausfaellt als diese Vorhersage, ist das kein FEHLER des Laufs, sondern ein Fehler meiner Rechnung – wird so berichtet.
+
+4. DREI GETRENNTE AUSWEISE (je Stand)
+ SPEICHERUNG: echte Loesungen (Kontrolle am Original) gegen Verbund der (Teil-)Gruppen ueber a,b,c; "fehlend" je Gruppe (muss 0 sein).
+ ERKANNTE FOLGERUNGEN (Leistung der Mitte, VOR der Kontrolle festgehalten): Status (FIXPUNKT / WIDERSPRUCH), gestrichene Zeilen je Gruppe und Nachricht, fest gewordene Variablen, je Gruppe verbleibende Zeilen, Groesse jeder gespeicherten Nachricht.
+ KONTROLLZAEHLUNG (danach, nichts zurueck): Vollzaehlung am Original; Projektionen der echten Loesungen je Gruppe; "zu viel" je Gruppe; Verbundzaehlung.
+ Dazu Kosten: Gruppen, Aufspaltungsstellen, Summe Zeilen (initial/Max/Ende), Nachrichten (Zahl, Zeilen), Entnahmen, Semijoins (eigener Zaehler), Projektionen, Zeiten T1 (Gruppierung+Aufspaltung+Init) | T2 (Austausch) | T3 (Kantenpruefung E6) | T4 (Kontrolle), RSS je Kind. Die Zeiten werden im Mikrosekundenbereich liegen und nichts aussagen; die Zaehler sind das Mass.
+
+5. ERWARTUNGEN (verbindlich, automatisch) UND STOP
+ E1 BEGRENZT i = 3 strukturell identisch zu EXAKT (Pruefsumme ueber Gruppen, Kanten, Initialtabellen).
+ E2 Konstruktion bei i = 2: jedes Kaestchen genau einmal zugeordnet; keine Gruppe > 2 Variablen / > 4 Zeilen; Wald ohne Kreis; Komponenten = Wurzeln; Running Intersection nur an Aufspaltungsstellen verletzt (sonst Strukturfehler).
+ E3 Speicherung: D-L in allen Staenden 2 echte Loesungen erhalten, "fehlend" = 0 ueberall. D-U: kein Stand streicht eine Zeile, die zu einer... (es gibt keine) – hier stattdessen: kein Stand liefert eine Zeile als "fest", die der Kontrolle widerspricht.
+ E4 EXAKT: D-U WIDERSPRUCH, D-L FIXPUNKT mit allen Gruppen = Projektionen (globale Konsistenz, verbindlich wie in gruppen.py).
+ E5 Arbeitsliste: keine Doppeleintraege; E6 Kantenprojektionen am Ende gleich (bei FIXPUNKT).
+ KEINE verbindliche Erwartung an BEGRENZT i = 2 bei D-U (FIXPUNKT oder WIDERSPRUCH) und an "zu viel" – das ist die Messung; meine Vorhersage oben wird nur verglichen.
+ STOP: Posten > i -> OFFEN; Relation > i Variablen / > 2^i Zeilen -> OFFEN; 120 s / 400 MiB -> OFFEN; verlorene echte Loesung, Strukturfehler ausserhalb Aufspaltungsstellen, Doppeleintrag, falsch "fest" -> FEHLER + Sofortstopp. Keine automatische Wiederholung mit anderer Schranke, Ordnung oder Packregel.
+
+6. WAS DER TEST ZEIGT UND WAS NICHT
+ Zeigt an kleinstmoeglichem Beispiel: (a) ob die Aufspaltung echte Loesungen erhaelt (D-L), (b) ob sie Widersprueche uebersehen kann (D-U), (c) dass die Kontrollzaehlung etwas "weiss", was die Mitte nicht erkannt hat – also warum beides getrennt bleiben muss.
+ Zeigt nicht: Groessenordnungen, N3/N4, ob i = 8 irgendwo reicht. Keine Regeln, keine D6-Rueckkopplung, keine Bitdarstellung.
+
+Dateien bei GO (Ordner stern/): begrenzt.py (Mini-Bucket-Aufspaltung, zaehlende Semijoin-Huelle, drei Ausweise), begrenzt_lauf.py (Waechter: D-U exakt, D-U i=3 Vorprobe, D-U i=2, D-L exakt, D-L i=2; je eigenes Kind), ERGEBNIS_BEGRENZT_*.json, Bericht. gruppen.py, ereignis.py unveraendert (importiert).
+
+Einfach gesagt: Drei Leitungen, die paarweise verschieden sein sollen – das geht nicht, aber das sieht man nur, wenn man alle drei zusammen anschaut. Wir verbieten der Mitte den Dreierkasten und schauen, ob sie es trotzdem merkt (meine Rechnung sagt: nein) und ob sie bei der loesbaren Variante wenigstens nichts Richtiges wegwirft (meine Rechnung sagt: ja, alles bleibt).
+
+Ich warte auf Pruefung und Christians GO.
+--- ENDE ---

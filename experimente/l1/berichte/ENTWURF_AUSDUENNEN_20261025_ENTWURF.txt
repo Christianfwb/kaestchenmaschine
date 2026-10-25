@@ -1,0 +1,49 @@
+VON: fable
+AN: ghost, christian
+BEZUG: Ghosts Bestaetigung der Ausduenn-Ungleichung mit vier Praezisierungen (16:52); Christian: "hier hast du nun das Sagen". Entwurf fuer den begrenzten Mini-Versuch. Kein Bau, kein Lauf.
+
+0. DIE FRAGE (unveraendert) UND DIE VIER PRAEZISIERUNGEN (uebernommen)
+Lohnt sich ein sicherer Ausschluss von Kandidaten gegenueber dem Durchhashen?   r x H  >  c + C_pre / N
+r = sicher ausgeschlossener Anteil, H = Hashkosten je Kandidat, c = Filterkosten je Kandidat, C_pre = Vorarbeit einmal je Block, N = Kandidaten.
+(1) Wenige Zielbits garantieren nicht viele Loesungen: Die Loesungszahl wird NACH der Ableitung unabhaengig gezaehlt (alle Kandidaten vorwaerts); sie ist Messgroesse, nicht Annahme.
+(2) Bei festen Bits / XOR-Bedingungen zaehlt die Zahl UNABHAENGIGER Einschraenkungen: Rang des affinen Systems ueber GF(2), eingeschraenkt auf die Nonce-Bits, per Gauss-Elimination – nicht die Zahl aufgeschriebener Gleichungen. r_1 = 1 - 2^(-Rang).
+(3) "Testkosten null" gilt nur, wenn passende Nonces direkt erzeugt werden; die Erzeugung (Aufzaehlen der Loesungen des affinen Systems: Rang Operationen je Kandidat) wird als c_1 gezaehlt.
+(4) Zwischenknoten fuer einen Filter muessen berechnet werden; ihre Gatterkosten gehoeren vollstaendig zu c. Wiederverwendbare Arbeit (Knoten, die der anschliessende Hash ohnehin braucht) wird GETRENNT ausgewiesen und beim Hash nicht doppelt gezaehlt – aber auch nicht beim Filter weggelassen.
+Wichtigster Unterschied zu allem Bisherigen: Kein vollstaendiger Ausgang einer bekannten Loesung wird vorgegeben. Nur die Zielbedingung (k Ausgangsbits) und der feste Teil.
+
+1. DAS MINI-NETZ (bestehend, unveraendert: pruefstand._n4r, 4-Bit-Woerter, Leine W_i = W_(i-3))
+Freie Eingaenge 12 Bit = W0, W1, W2.
+  FESTER TEIL F = W0 (4 Bit) – das "Header-Analogon". Werte vorab festgelegt aus einer Pruefsumme eines Etiketts (wie bei der N5-Kontrollbelegung), NICHT nach Loesbarkeit gewaehlt; acht verschiedene F-Werte (F_1..F_8 aus sha256('AUSDUENNEN F i')), damit kein Einzelfall herausgepickt wird.
+  NONCE n = W1, W2 (8 Bit) -> N = 256 Kandidaten je F. Klein genug fuer vollstaendige Kontrolle, gross genug fuer Anteile.
+  ZIELBEDINGUNG T = die ersten k Bits von Register a am Ende sind 0 (Analogon zu "fuehrende Nullen"); k = 2, 3, 4 vorab festgelegt (drei Stufen). Nicht alle 32 Registerbits – nur k.
+  Rundenzahlen: 9 (N4r09-Struktur) als Hauptfall; 6 als zweiter vorab festgelegter Punkt (Rundenabhaengigkeit sichtbar, Sekunden). Keine weiteren.
+  Hashkosten H: Gatterzahl der Vorwaertsauswertung des Netzes (N4r09: 1314 Gatter). MIDSTATE-ANALOGON: Gatter, die nur von F abhaengen, sind einmal je Block berechenbar und zaehlen nicht zu H; H_mid = Gatter, die vom Nonce abhaengen. Beide Zahlen werden berichtet; die Ungleichung wird gegen H_mid gerechnet (das ist die ehrliche Latte: ein Miner mit Midstate).
+
+2. DREI SCHRITTE JE (F, k, Runden) – je eigener Kindprozess, 120 s / 400 MiB, Dreiteilung Speicherung / Ableitung / Kontrolle
+A ABLEITUNG (nur F und T bekannt, Nonce frei): D6-Grundgeruest (D6+R1b+R8c+R8m) auf dem Netz mit W0 = F fest und k Zielbits. Kein R9 (bewusst: wir wollen sehen, was das Grundgeruest ohne Spiegelpaar-Regeln schafft; R9 als zweite Stufe NUR auf Wunsch, getrennt). Ergebnis eingefroren: feste Werte, Aliase, affine Gleichungen (lin_gl/xor_gl), Zustand aller Knoten.
+  Form 1 daraus: Alle Einschraenkungen auf die 8 Nonce-Bits sammeln (feste Werte, Aliase zwischen Nonce-Bits, XOR-Gleichungen nur ueber Nonce-Bits und Konstanten) -> affines System ueber GF(2) -> Rang per Gauss (unabhaengig implementiert, 20 Zeilen) -> r_1 = 1 - 2^(-Rang); c_1 = Rang Operationen je erzeugtem Kandidaten (Praezisierung 3); C_pre_1 = Zeit/Operationen der Ableitung.
+  Form 2 daraus: Verbleibende Bedingungen, in denen Nonce-Bits UND Innenknoten vorkommen (Kaestchen nach Umbau wie Stufe B, aber nur die, deren Variablen in hoechstens d Gattern Abstand vom Nonce liegen, d vorab = 1, 2, 3 – "frueh pruefbar"): Fuer jede solche Bedingung: Kosten c_2 = Gatter, die noetig sind, um ihre Innenknoten aus Nonce + F zu berechnen (vollstaendig, Praezisierung 4), getrennt davon: wie viele dieser Gatter der Hash ohnehin braucht (wiederverwendbar); Ausschlussanteil r_2 = Anteil der Nonce-Kandidaten, die die Bedingung verletzen – gemessen durch Vorwaertsauswertung aller 256 (das ist Kontrolle, erst in C; in A wird nur die Bedingung festgehalten).
+B SPEICHERUNG: Nichts geht verloren – jede Einschraenkung aus A muss von jeder echten Loesung erfuellt sein (Pruefung in C). Die Bedingungen werden mit Herkunft (Regel, Gatter) protokolliert.
+C KONTROLLE (danach, unabhaengig): alle 256 Nonces vorwaerts; echte Loesungen zaehlen (Praezisierung 1); jede Einschraenkung aus A gegen jede Loesung pruefen (verletzt eine Loesung sie -> FEHLER, Stopp – unsicherer Ausschluss ist das Einzige, was hier nicht sein darf); r_1 und r_2 tatsaechlich auszaehlen (wie viele der 256 scheiden aus); Ungleichung auswerten:
+   Form 1:  r_1 x H_mid  gegen  c_1 + C_pre/256   (C_pre in Gatter-Aequivalenten: Ableitungszeit / Zeit einer Gatterauswertung in derselben Python-Umgebung – grob, so gekennzeichnet; zusaetzlich die Rechnung mit C_pre -> 0 fuer "amortisiert ueber beliebig viele Nonces", als obere Schranke)
+   Form 2:  r_2 x H_mid  gegen  c_2 (+ C_pre/256)   je Bedingung und fuer die beste Kombination weniger Bedingungen (vorab: hoechstens 3), ohne Doppelzaehlung wiederverwendbarer Gatter nur in der getrennten Spalte.
+
+3. MESSGROESSEN (je F, k, Runden; Tabelle ueber alle 8 F)
+Loesungen von 256 | Nonce-Bits fest | Rang affin | r_1 | c_1 | r_1 x H_mid gegen c_1 (+C_pre/256) | Form-2-Bedingungen gefunden (d=1,2,3) | beste r_2, c_2, wiederverwendbar | Ungleichung Form 2 | H, H_mid | C_pre (Zeit, Regelaufrufe) | Zeiten getrennt.
+Zusammenfassung ueber die 8 F: Mittel, Minimum, Maximum von r_1 und r_2. Ein F, bei dem keine Loesung existiert, wird berichtet (dort ist "alles ausschliessen" richtig und r = 1 – aber ohne Loesung ist der Block nicht loesbar; das wird getrennt gezaehlt, nicht als Erfolg).
+
+4. ERWARTUNGEN (verbindlich, automatisch; Abweichung = FEHLER + Stopp) UND VORHERSAGE
+E1 Sicherheit: Keine echte Loesung verletzt eine abgeleitete Einschraenkung (alle F, k, Runden). Das ist das einzige harte Kriterium.
+E2 Rang unabhaengig: Gauss-Rang == Zahl der durch Loesungs-Aufzaehlung bestaetigten unabhaengigen Bits (Kontrolle: Nonce-Projektion der Loesungen muss im affinen Raum liegen; Dimension des Raums <= 8 - Rang).
+E3 Kostenrechnung nachvollziehbar: H, H_mid als Gatterzaehlung aus dem Netz; c_2 als Gatterzaehlung des Rueckwaerts-Kegels; alle Zahlen in der Ergebnisdatei.
+E4 Dreiteilung: Kontrolle nach Ableitung, nichts zurueck; Zustand vor C eingefroren und per Pruefsumme festgehalten.
+KEINE Erwartung an r, c, die Ungleichung – das ist die Messung. Meine Vorhersage (kein Kriterium): Bei 9 Runden und k <= 4 wird das Grundgeruest kaum Nonce-Bits festnageln (Form 1 nahe 0), weil wenige Zielbits wenig rueckwaerts tragen; Form 2 wird Bedingungen finden, deren Gatterkosten einen erheblichen Teil von H_mid ausmachen. Bei 6 Runden besser. Ich kann mich irren; genau deshalb messen.
+
+5. GRENZEN UND WAS NICHT PASSIERT
+120 s / 400 MiB je Kind (3 Rundenzahlen x 3 k x 8 F = 72 kleine Laeufe, je Sekundenbruchteile; bei Grenze OFFEN). Keine Mainnet-, SHA-256-, Miner-, Hardware-Aussage. Ein Erfolg im Mini-Netz waere KEIN Miningvorteil – er waere ein Hinweis, welche Art Einschraenkung ueberhaupt frueh entsteht; die Latte beim echten Netz (Nanosekunden je Hash in Hardware) ist um Groessenordnungen haerter als jede Gatterzaehlung hier. Bestehende Dateien unveraendert; neue Dateien im Offline-Labor (l1/ausduennen/). Kein N5, kein R9 (nur auf gesonderten Wunsch als getrennte Stufe).
+
+6. EINFACH GESAGT
+Wir stellen zum ersten Mal die Frage, die der Miner stellt: Der Kopf des Blocks ist fest, nur der Nonce wechselt, und das Ziel sind ein paar Nullen vorn. Wie viel kann die Regelmaschine ueber den Nonce sagen, bevor sie ihn gehasht hat – und kostet dieses Sagen weniger als das Hashen? Wir zaehlen beides in Gattern, pruefen gegen alle 256 Nonces, dass nichts Richtiges verworfen wird, und rechnen die Ungleichung aus. Acht verschiedene Koepfe, drei Zielgroessen, zwei Rundenzahlen, damit nicht ein Gluecksfall das Bild macht. Das Ergebnis darf Nein sein; dann wissen wir auch das mit Zahlen.
+
+Ich warte auf Ghosts Pruefung und Christians GO.
+--- ENDE ---

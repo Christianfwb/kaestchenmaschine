@@ -1,0 +1,2894 @@
+[
+ {
+  "netz": "L3 loesbar: 3-Bit-Addierer mit Uebertrag, nur Summe",
+  "frei": 6,
+  "knoten": 24,
+  "wahr": 8,
+  "zeilen": [
+   {
+    "darstellung": "D6+R9b(Spiegel)",
+    "status": "FIXPUNKT",
+    "erlaubt": 8,
+    "scheinloesungen": 0,
+    "verlorene": 0,
+    "entschieden": true,
+    "groesse": {
+     "r9_protokoll": [],
+     "r9_stat": {
+      "kaestchen_mit_tafel": 0,
+      "wurzelmengen": 0,
+      "paare": 0,
+      "tafelzeilen": 0
+     },
+     "xor_gleichungen": 10,
+     "und_gleichungen": 11,
+     "stufen": 3,
+     "werte": 8,
+     "aliasse": 5,
+     "regeln": {
+      "R1": 3,
+      "R2": 1,
+      "R3": 3,
+      "R4": 5,
+      "R5": 0,
+      "R6": 1,
+      "R7": 2,
+      "R8m": 2,
+      "R1b": 1
+     },
+     "beziehungen_ueber_freie_bits": [
+      "x0^x3=1",
+      "x1^x4=0",
+      "x2^x4^x5=1"
+     ],
+     "ganzzahlige_beziehungen": [],
+     "wertemengen": [
+      "+1*x2 +1*x4 +1*x5 in [1, 3]",
+      "+4*x2 +4*x4 +4*x5 in [4, 12]"
+     ],
+     "feste_freie_bits": 0,
+     "s": 0.0008
+    },
+    "folgerungen": {
+     "frei_fest": {},
+     "frei_lin": [],
+     "frei_menge": [
+      [
+       [
+        [
+         2,
+         1
+        ],
+        [
+         4,
+         1
+        ],
+        [
+         5,
+         1
+        ]
+       ],
+       [
+        1,
+        3
+       ]
+      ],
+      [
+       [
+        [
+         2,
+         4
+        ],
+        [
+         4,
+         4
+        ],
+        [
+         5,
+         4
+        ]
+       ],
+       [
+        4,
+        12
+       ]
+      ]
+     ],
+     "frei_xor": [
+      [
+       0,
+       3,
+       1
+      ],
+      [
+       1,
+       4,
+       0
+      ],
+      [
+       2,
+       4,
+       5,
+       1
+      ]
+     ],
+     "widerspruch": false
+    },
+    "ableitung_s": 0.0008,
+    "ableitung_peak_mib": 18.9,
+    "kontrolle_s": 0.0001,
+    "wall_s": 0.1,
+    "peak_mib_extern": 0.0,
+    "rlimit_aktiv": true,
+    "rlimit_mib": 1024
+   },
+   {
+    "darstellung": "D6+Vollscan",
+    "status": "FIXPUNKT",
+    "erlaubt": 8,
+    "scheinloesungen": 0,
+    "verlorene": 0,
+    "entschieden": true,
+    "groesse": {
+     "r9_protokoll": [],
+     "r9_stat": {
+      "kaestchen_mit_tafel": 2,
+      "wurzelmengen": 2,
+      "paare": 0,
+      "tafelzeilen": 0
+     },
+     "xor_gleichungen": 10,
+     "und_gleichungen": 11,
+     "stufen": 3,
+     "werte": 8,
+     "aliasse": 5,
+     "regeln": {
+      "R1": 3,
+      "R2": 1,
+      "R3": 3,
+      "R4": 5,
+      "R5": 0,
+      "R6": 1,
+      "R7": 2,
+      "R8m": 2,
+      "R1b": 1
+     },
+     "beziehungen_ueber_freie_bits": [
+      "x0^x3=1",
+      "x1^x4=0",
+      "x2^x4^x5=1"
+     ],
+     "ganzzahlige_beziehungen": [],
+     "wertemengen": [
+      "+1*x2 +1*x4 +1*x5 in [1, 3]",
+      "+4*x2 +4*x4 +4*x5 in [4, 12]"
+     ],
+     "feste_freie_bits": 0,
+     "s": 0.0013
+    },
+    "folgerungen": {
+     "frei_fest": {},
+     "frei_lin": [],
+     "frei_menge": [
+      [
+       [
+        [
+         2,
+         1
+        ],
+        [
+         4,
+         1
+        ],
+        [
+         5,
+         1
+        ]
+       ],
+       [
+        1,
+        3
+       ]
+      ],
+      [
+       [
+        [
+         2,
+         4
+        ],
+        [
+         4,
+         4
+        ],
+        [
+         5,
+         4
+        ]
+       ],
+       [
+        4,
+        12
+       ]
+      ]
+     ],
+     "frei_xor": [
+      [
+       0,
+       3,
+       1
+      ],
+      [
+       1,
+       4,
+       0
+      ],
+      [
+       2,
+       4,
+       5,
+       1
+      ]
+     ],
+     "widerspruch": false
+    },
+    "ableitung_s": 0.0013,
+    "ableitung_peak_mib": 18.9,
+    "kontrolle_s": 0.0002,
+    "wall_s": 0.1,
+    "peak_mib_extern": 0.0,
+    "rlimit_aktiv": true,
+    "rlimit_mib": 1024
+   }
+  ]
+ },
+ {
+  "netz": "N3 zwei gekoppelte Additionen (2 geteilte Bits, cout gleich)",
+  "frei": 10,
+  "knoten": 45,
+  "wahr": 12,
+  "zeilen": [
+   {
+    "darstellung": "D6+R9b(Spiegel)",
+    "status": "FIXPUNKT",
+    "erlaubt": 12,
+    "scheinloesungen": 0,
+    "verlorene": 0,
+    "entschieden": true,
+    "groesse": {
+     "r9_protokoll": [],
+     "r9_stat": {
+      "kaestchen_mit_tafel": 0,
+      "wurzelmengen": 0,
+      "paare": 0,
+      "tafelzeilen": 0
+     },
+     "xor_gleichungen": 22,
+     "und_gleichungen": 22,
+     "stufen": 6,
+     "werte": 12,
+     "aliasse": 6,
+     "regeln": {
+      "R1": 3,
+      "R2": 1,
+      "R3": 4,
+      "R4": 11,
+      "R5": 1,
+      "R6": 3,
+      "R7": 4,
+      "R8m": 2,
+      "R1b": 1
+     },
+     "beziehungen_ueber_freie_bits": [
+      "x0^x7=0",
+      "x1^x7^x8=1",
+      "x3^x7=1",
+      "x4^x7^x8=1"
+     ],
+     "ganzzahlige_beziehungen": [
+      "+4*x2 +2*x4 +4*x5 -4*x6 -2*x7 -2*x8 -4*x9 = -2"
+     ],
+     "wertemengen": [
+      "+1*x1 +1*x4 in [0, 2]",
+      "+1*x1 +1*x7 +1*x8 in [1, 3]",
+      "+2*x1 +4*x2 +2*x4 +4*x5 in [4, 12]",
+      "+2*x1 +4*x6 +2*x7 +2*x8 +4*x9 in [6, 14]"
+     ],
+     "feste_freie_bits": 0,
+     "s": 0.0013
+    },
+    "folgerungen": {
+     "frei_fest": {},
+     "frei_lin": [
+      [
+       [
+        [
+         2,
+         4
+        ],
+        [
+         4,
+         2
+        ],
+        [
+         5,
+         4
+        ],
+        [
+         6,
+         -4
+        ],
+        [
+         7,
+         -2
+        ],
+        [
+         8,
+         -2
+        ],
+        [
+         9,
+         -4
+        ]
+       ],
+       -2
+      ]
+     ],
+     "frei_menge": [
+      [
+       [
+        [
+         1,
+         1
+        ],
+        [
+         4,
+         1
+        ]
+       ],
+       [
+        0,
+        2
+       ]
+      ],
+      [
+       [
+        [
+         1,
+         1
+        ],
+        [
+         7,
+         1
+        ],
+        [
+         8,
+         1
+        ]
+       ],
+       [
+        1,
+        3
+       ]
+      ],
+      [
+       [
+        [
+         1,
+         2
+        ],
+        [
+         2,
+         4
+        ],
+        [
+         4,
+         2
+        ],
+        [
+         5,
+         4
+        ]
+       ],
+       [
+        4,
+        12
+       ]
+      ],
+      [
+       [
+        [
+         1,
+         2
+        ],
+        [
+         6,
+         4
+        ],
+        [
+         7,
+         2
+        ],
+        [
+         8,
+         2
+        ],
+        [
+         9,
+         4
+        ]
+       ],
+       [
+        6,
+        14
+       ]
+      ]
+     ],
+     "frei_xor": [
+      [
+       0,
+       7,
+       0
+      ],
+      [
+       1,
+       7,
+       8,
+       1
+      ],
+      [
+       3,
+       7,
+       1
+      ],
+      [
+       4,
+       7,
+       8,
+       1
+      ]
+     ],
+     "widerspruch": false
+    },
+    "ableitung_s": 0.0013,
+    "ableitung_peak_mib": 19.1,
+    "kontrolle_s": 0.0017,
+    "wall_s": 0.1,
+    "peak_mib_extern": 0.0,
+    "rlimit_aktiv": true,
+    "rlimit_mib": 1024
+   },
+   {
+    "darstellung": "D6+Vollscan",
+    "status": "FIXPUNKT",
+    "erlaubt": 12,
+    "scheinloesungen": 0,
+    "verlorene": 0,
+    "entschieden": true,
+    "groesse": {
+     "r9_protokoll": [],
+     "r9_stat": {
+      "kaestchen_mit_tafel": 5,
+      "wurzelmengen": 5,
+      "paare": 0,
+      "tafelzeilen": 0
+     },
+     "xor_gleichungen": 22,
+     "und_gleichungen": 22,
+     "stufen": 6,
+     "werte": 12,
+     "aliasse": 6,
+     "regeln": {
+      "R1": 3,
+      "R2": 1,
+      "R3": 4,
+      "R4": 11,
+      "R5": 1,
+      "R6": 3,
+      "R7": 4,
+      "R8m": 2,
+      "R1b": 1
+     },
+     "beziehungen_ueber_freie_bits": [
+      "x0^x7=0",
+      "x1^x7^x8=1",
+      "x3^x7=1",
+      "x4^x7^x8=1"
+     ],
+     "ganzzahlige_beziehungen": [
+      "+4*x2 +2*x4 +4*x5 -4*x6 -2*x7 -2*x8 -4*x9 = -2"
+     ],
+     "wertemengen": [
+      "+1*x1 +1*x4 in [0, 2]",
+      "+1*x1 +1*x7 +1*x8 in [1, 3]",
+      "+2*x1 +4*x2 +2*x4 +4*x5 in [4, 12]",
+      "+2*x1 +4*x6 +2*x7 +2*x8 +4*x9 in [6, 14]"
+     ],
+     "feste_freie_bits": 0,
+     "s": 0.0016
+    },
+    "folgerungen": {
+     "frei_fest": {},
+     "frei_lin": [
+      [
+       [
+        [
+         2,
+         4
+        ],
+        [
+         4,
+         2
+        ],
+        [
+         5,
+         4
+        ],
+        [
+         6,
+         -4
+        ],
+        [
+         7,
+         -2
+        ],
+        [
+         8,
+         -2
+        ],
+        [
+         9,
+         -4
+        ]
+       ],
+       -2
+      ]
+     ],
+     "frei_menge": [
+      [
+       [
+        [
+         1,
+         1
+        ],
+        [
+         4,
+         1
+        ]
+       ],
+       [
+        0,
+        2
+       ]
+      ],
+      [
+       [
+        [
+         1,
+         1
+        ],
+        [
+         7,
+         1
+        ],
+        [
+         8,
+         1
+        ]
+       ],
+       [
+        1,
+        3
+       ]
+      ],
+      [
+       [
+        [
+         1,
+         2
+        ],
+        [
+         2,
+         4
+        ],
+        [
+         4,
+         2
+        ],
+        [
+         5,
+         4
+        ]
+       ],
+       [
+        4,
+        12
+       ]
+      ],
+      [
+       [
+        [
+         1,
+         2
+        ],
+        [
+         6,
+         4
+        ],
+        [
+         7,
+         2
+        ],
+        [
+         8,
+         2
+        ],
+        [
+         9,
+         4
+        ]
+       ],
+       [
+        6,
+        14
+       ]
+      ]
+     ],
+     "frei_xor": [
+      [
+       0,
+       7,
+       0
+      ],
+      [
+       1,
+       7,
+       8,
+       1
+      ],
+      [
+       3,
+       7,
+       1
+      ],
+      [
+       4,
+       7,
+       8,
+       1
+      ]
+     ],
+     "widerspruch": false
+    },
+    "ableitung_s": 0.0017,
+    "ableitung_peak_mib": 19.1,
+    "kontrolle_s": 0.0023,
+    "wall_s": 0.1,
+    "peak_mib_extern": 0.0,
+    "rlimit_aktiv": true,
+    "rlimit_mib": 1024
+   }
+  ]
+ },
+ {
+  "netz": "N3u gekoppelte Additionen, Variante",
+  "frei": 10,
+  "knoten": 45,
+  "wahr": 0,
+  "zeilen": [
+   {
+    "darstellung": "D6+R9b(Spiegel)",
+    "status": "WIDERSPRUCH",
+    "erlaubt": 0,
+    "scheinloesungen": 0,
+    "verlorene": 0,
+    "entschieden": true,
+    "groesse": {
+     "r9_protokoll": [],
+     "r9_stat": {
+      "kaestchen_mit_tafel": 0,
+      "wurzelmengen": 0,
+      "paare": 0,
+      "tafelzeilen": 0
+     },
+     "xor_gleichungen": 15,
+     "und_gleichungen": 22,
+     "stufen": 6,
+     "werte": 19,
+     "aliasse": 0,
+     "regeln": {
+      "R1": 0,
+      "R2": 0,
+      "R3": 0,
+      "R4": 14,
+      "R5": 0,
+      "R6": 2,
+      "R7": 0
+     },
+     "beziehungen_ueber_freie_bits": [],
+     "ganzzahlige_beziehungen": [],
+     "wertemengen": [],
+     "feste_freie_bits": 8,
+     "s": 0.0003
+    },
+    "folgerungen": {
+     "frei_fest": {
+      "0": 1,
+      "1": 1,
+      "2": 1,
+      "5": 1,
+      "6": 1,
+      "7": 1,
+      "8": 1,
+      "9": 1
+     },
+     "frei_lin": [],
+     "frei_menge": [],
+     "frei_xor": [],
+     "widerspruch": true
+    },
+    "ableitung_s": 0.0004,
+    "ableitung_peak_mib": 19.1,
+    "kontrolle_s": 0.0001,
+    "wall_s": 0.1,
+    "peak_mib_extern": 0.0,
+    "rlimit_aktiv": true,
+    "rlimit_mib": 1024
+   },
+   {
+    "darstellung": "D6+Vollscan",
+    "status": "WIDERSPRUCH",
+    "erlaubt": 0,
+    "scheinloesungen": 0,
+    "verlorene": 0,
+    "entschieden": true,
+    "groesse": {
+     "r9_protokoll": [],
+     "r9_stat": {
+      "kaestchen_mit_tafel": 4,
+      "wurzelmengen": 4,
+      "paare": 0,
+      "tafelzeilen": 0
+     },
+     "xor_gleichungen": 15,
+     "und_gleichungen": 22,
+     "stufen": 6,
+     "werte": 19,
+     "aliasse": 0,
+     "regeln": {
+      "R1": 0,
+      "R2": 0,
+      "R3": 0,
+      "R4": 14,
+      "R5": 0,
+      "R6": 2,
+      "R7": 0
+     },
+     "beziehungen_ueber_freie_bits": [],
+     "ganzzahlige_beziehungen": [],
+     "wertemengen": [],
+     "feste_freie_bits": 8,
+     "s": 0.0004
+    },
+    "folgerungen": {
+     "frei_fest": {
+      "0": 1,
+      "1": 1,
+      "2": 1,
+      "5": 1,
+      "6": 1,
+      "7": 1,
+      "8": 1,
+      "9": 1
+     },
+     "frei_lin": [],
+     "frei_menge": [],
+     "frei_xor": [],
+     "widerspruch": true
+    },
+    "ableitung_s": 0.0004,
+    "ableitung_peak_mib": 19.1,
+    "kontrolle_s": 0.0001,
+    "wall_s": 0.1,
+    "peak_mib_extern": 0.0,
+    "rlimit_aktiv": true,
+    "rlimit_mib": 1024
+   }
+  ]
+ },
+ {
+  "netz": "N4r08 Leine W_i=W_(i-3)",
+  "frei": 12,
+  "knoten": 1152,
+  "wahr": 1,
+  "zeilen": [
+   {
+    "darstellung": "D6+R9b(Spiegel)",
+    "status": "FIXPUNKT",
+    "erlaubt": 1,
+    "scheinloesungen": 0,
+    "verlorene": 0,
+    "entschieden": true,
+    "groesse": {
+     "r9_protokoll": [],
+     "r9_stat": {
+      "kaestchen_mit_tafel": 0,
+      "wurzelmengen": 0,
+      "paare": 0,
+      "tafelzeilen": 0
+     },
+     "xor_gleichungen": 613,
+     "und_gleichungen": 783,
+     "stufen": 224,
+     "werte": 760,
+     "aliasse": 390,
+     "regeln": {
+      "R1": 539,
+      "R2": 101,
+      "R3": 149,
+      "R4": 342,
+      "R5": 93,
+      "R6": 52,
+      "R7": 0,
+      "R1b": 168,
+      "R8c": 21,
+      "R8m": 56
+     },
+     "beziehungen_ueber_freie_bits": [],
+     "ganzzahlige_beziehungen": [],
+     "wertemengen": [],
+     "feste_freie_bits": 12,
+     "s": 0.1794
+    },
+    "folgerungen": {
+     "frei_fest": {
+      "0": 1,
+      "1": 1,
+      "10": 0,
+      "11": 1,
+      "2": 0,
+      "3": 1,
+      "4": 1,
+      "5": 0,
+      "6": 0,
+      "7": 0,
+      "8": 1,
+      "9": 0
+     },
+     "frei_lin": [],
+     "frei_menge": [],
+     "frei_xor": [],
+     "widerspruch": false
+    },
+    "ableitung_s": 0.1795,
+    "ableitung_peak_mib": 20.7,
+    "kontrolle_s": 0.0023,
+    "wall_s": 0.3,
+    "peak_mib_extern": 17.9,
+    "rlimit_aktiv": true,
+    "rlimit_mib": 1024
+   },
+   {
+    "darstellung": "D6+Vollscan",
+    "status": "FIXPUNKT",
+    "erlaubt": 1,
+    "scheinloesungen": 0,
+    "verlorene": 0,
+    "entschieden": true,
+    "groesse": {
+     "r9_protokoll": [
+      [
+       "R9b",
+       [
+        "Ch",
+        8
+       ],
+       [
+        "Ch",
+        12
+       ],
+       "nie beide 1",
+       "p+q+h=1",
+       2152
+      ],
+      [
+       "R9a",
+       [
+        "Ch",
+        8
+       ],
+       [
+        "Ch",
+        12
+       ],
+       "affin",
+       [
+        74
+       ],
+       0
+      ],
+      [
+       "Ch",
+       13,
+       "gleich",
+       [
+        3,
+        624
+       ]
+      ],
+      [
+       "R9a",
+       [
+        "Ch",
+        16
+       ],
+       [
+        "Maj",
+        164
+       ],
+       "affin",
+       [
+        304
+       ],
+       0
+      ],
+      [
+       "R9b",
+       [
+        "Maj",
+        26
+       ],
+       [
+        "Maj",
+        30
+       ],
+       "nie beide 1",
+       "p+q+h=1",
+       2153
+      ],
+      [
+       "R9a",
+       [
+        "Maj",
+        26
+       ],
+       [
+        "Maj",
+        30
+       ],
+       "affin",
+       [
+        3,
+        14
+       ],
+       0
+      ],
+      [
+       "R9b",
+       [
+        "Maj",
+        33
+       ],
+       [
+        "Maj",
+        41
+       ],
+       "nie beide 1",
+       "p+q+h=1",
+       2154
+      ],
+      [
+       "R9a",
+       [
+        "Maj",
+        33
+       ],
+       [
+        "Maj",
+        41
+       ],
+       "affin",
+       [
+        4
+       ],
+       0
+      ],
+      [
+       "Maj",
+       62,
+       "gleich",
+       [
+        84,
+        143
+       ]
+      ],
+      [
+       "R9b",
+       [
+        "Maj",
+        69
+       ],
+       [
+        "Maj",
+        162
+       ],
+       "nie beide 1",
+       "p+q+h=1",
+       2155
+      ],
+      [
+       "R9a",
+       [
+        "Maj",
+        69
+       ],
+       [
+        "Maj",
+        162
+       ],
+       "affin",
+       [
+        322
+       ],
+       0
+      ]
+     ],
+     "r9_stat": {
+      "kaestchen_mit_tafel": 0,
+      "wurzelmengen": 0,
+      "paare": 90,
+      "tafelzeilen": 28
+     },
+     "xor_gleichungen": 619,
+     "und_gleichungen": 783,
+     "stufen": 224,
+     "werte": 763,
+     "aliasse": 391,
+     "regeln": {
+      "R1": 539,
+      "R2": 106,
+      "R3": 148,
+      "R4": 341,
+      "R5": 94,
+      "R6": 52,
+      "R7": 0,
+      "R1b": 169,
+      "R8c": 20,
+      "R8m": 56,
+      "R9b": 4,
+      "R9a": 5,
+      "R9": 2
+     },
+     "beziehungen_ueber_freie_bits": [],
+     "ganzzahlige_beziehungen": [],
+     "wertemengen": [],
+     "feste_freie_bits": 12,
+     "s": 0.2254
+    },
+    "folgerungen": {
+     "frei_fest": {
+      "0": 1,
+      "1": 1,
+      "10": 0,
+      "11": 1,
+      "2": 0,
+      "3": 1,
+      "4": 1,
+      "5": 0,
+      "6": 0,
+      "7": 0,
+      "8": 1,
+      "9": 0
+     },
+     "frei_lin": [],
+     "frei_menge": [],
+     "frei_xor": [],
+     "widerspruch": false
+    },
+    "ableitung_s": 0.2255,
+    "ableitung_peak_mib": 20.7,
+    "kontrolle_s": 0.0023,
+    "wall_s": 0.3,
+    "peak_mib_extern": 18.2,
+    "rlimit_aktiv": true,
+    "rlimit_mib": 1024
+   }
+  ]
+ },
+ {
+  "netz": "N4r09 Leine W_i=W_(i-3)",
+  "frei": 12,
+  "knoten": 1328,
+  "wahr": 1,
+  "zeilen": [
+   {
+    "darstellung": "D6+R9b(Spiegel)",
+    "status": "FIXPUNKT",
+    "erlaubt": 128,
+    "scheinloesungen": 127,
+    "verlorene": 0,
+    "entschieden": false,
+    "groesse": {
+     "r9_protokoll": [
+      [
+       "R9b",
+       [
+        "Maj",
+        25
+       ],
+       [
+        "Maj",
+        201
+       ],
+       "nie beide 1",
+       "p+q+h=1",
+       2328
+      ],
+      [
+       "R9a",
+       [
+        "Maj",
+        25
+       ],
+       [
+        "Maj",
+        201
+       ],
+       "affin",
+       [
+        3,
+        10
+       ],
+       0
+      ],
+      [
+       "Maj",
+       197,
+       "gleich",
+       [
+        10,
+        11
+       ]
+      ],
+      [
+       "R9b",
+       [
+        "Maj",
+        197
+       ],
+       [
+        "Maj",
+        261
+       ],
+       "nie beide 1",
+       "p+q+h=1",
+       2329
+      ],
+      [
+       "R9a",
+       [
+        "Maj",
+        197
+       ],
+       [
+        "Maj",
+        261
+       ],
+       "affin",
+       [
+        10,
+        11
+       ],
+       0
+      ]
+     ],
+     "r9_stat": {
+      "kaestchen_mit_tafel": 0,
+      "wurzelmengen": 0,
+      "paare": 0,
+      "tafelzeilen": 36
+     },
+     "xor_gleichungen": 740,
+     "und_gleichungen": 905,
+     "stufen": 252,
+     "werte": 468,
+     "aliasse": 368,
+     "regeln": {
+      "R1": 322,
+      "R2": 69,
+      "R3": 142,
+      "R4": 366,
+      "R5": 188,
+      "R6": 59,
+      "R7": 4,
+      "R1b": 174,
+      "R8c": 15,
+      "R8m": 44,
+      "R9b": 2,
+      "R9a": 2,
+      "R9": 1
+     },
+     "beziehungen_ueber_freie_bits": [
+      "x0^x8=0",
+      "x1^x8^x9=1",
+      "x4^x8=0",
+      "x5^x8=1",
+      "x6^x9=1"
+     ],
+     "ganzzahlige_beziehungen": [],
+     "wertemengen": [
+      "-1*x1 +1*x8 -1*x9 in [-1, 1]",
+      "+1*x1 -1*x8 -1*x9 in [-1, 1]",
+      "+1*x1 +1*x8 +1*x9 in [1, 3]"
+     ],
+     "feste_freie_bits": 0,
+     "s": 0.3746
+    },
+    "folgerungen": {
+     "frei_fest": {},
+     "frei_lin": [],
+     "frei_menge": [
+      [
+       [
+        [
+         1,
+         -1
+        ],
+        [
+         8,
+         1
+        ],
+        [
+         9,
+         -1
+        ]
+       ],
+       [
+        -1,
+        1
+       ]
+      ],
+      [
+       [
+        [
+         1,
+         1
+        ],
+        [
+         8,
+         -1
+        ],
+        [
+         9,
+         -1
+        ]
+       ],
+       [
+        -1,
+        1
+       ]
+      ],
+      [
+       [
+        [
+         1,
+         1
+        ],
+        [
+         8,
+         1
+        ],
+        [
+         9,
+         1
+        ]
+       ],
+       [
+        1,
+        3
+       ]
+      ]
+     ],
+     "frei_xor": [
+      [
+       0,
+       8,
+       0
+      ],
+      [
+       1,
+       8,
+       9,
+       1
+      ],
+      [
+       4,
+       8,
+       0
+      ],
+      [
+       5,
+       8,
+       1
+      ],
+      [
+       6,
+       9,
+       1
+      ]
+     ],
+     "widerspruch": false
+    },
+    "ableitung_s": 0.3748,
+    "ableitung_peak_mib": 21.2,
+    "kontrolle_s": 0.0062,
+    "wall_s": 0.5,
+    "peak_mib_extern": 18.1,
+    "rlimit_aktiv": true,
+    "rlimit_mib": 1024
+   },
+   {
+    "darstellung": "D6+Vollscan",
+    "status": "FIXPUNKT",
+    "erlaubt": 1,
+    "scheinloesungen": 0,
+    "verlorene": 0,
+    "entschieden": true,
+    "groesse": {
+     "r9_protokoll": [
+      [
+       "R9b",
+       [
+        "Maj",
+        80
+       ],
+       [
+        "Maj",
+        112
+       ],
+       "nie beide 1",
+       "p+q+h=1",
+       2328
+      ],
+      [
+       "R9a",
+       [
+        "Maj",
+        80
+       ],
+       [
+        "Maj",
+        112
+       ],
+       "affin",
+       [
+        2,
+        727
+       ],
+       0
+      ],
+      [
+       "R9a",
+       [
+        "Maj",
+        81
+       ],
+       [
+        "Maj",
+        113
+       ],
+       "affin",
+       [
+        20,
+        120
+       ],
+       1
+      ],
+      [
+       "R9b",
+       [
+        "Ch",
+        8
+       ],
+       [
+        "Ch",
+        12
+       ],
+       "nie beide 1",
+       "p+q+h=1",
+       2329
+      ],
+      [
+       "R9a",
+       [
+        "Ch",
+        8
+       ],
+       [
+        "Ch",
+        12
+       ],
+       "nicht affin"
+      ],
+      [
+       "R9b",
+       [
+        "Ch",
+        8
+       ],
+       [
+        "Ch",
+        16
+       ],
+       "nie beide 1",
+       "p+q+h=1",
+       2330
+      ],
+      [
+       "R9a",
+       [
+        "Ch",
+        8
+       ],
+       [
+        "Ch",
+        16
+       ],
+       "affin",
+       [
+        74
+       ],
+       0
+      ],
+      [
+       "R9a",
+       [
+        "Ch",
+        12
+       ],
+       [
+        "Ch",
+        16
+       ],
+       "nicht affin"
+      ],
+      [
+       "R9b",
+       [
+        "Maj",
+        25
+       ],
+       [
+        "Maj",
+        201
+       ],
+       "nie beide 1",
+       "p+q+h=1",
+       2331
+      ],
+      [
+       "R9a",
+       [
+        "Maj",
+        25
+       ],
+       [
+        "Maj",
+        201
+       ],
+       "affin",
+       [
+        3,
+        10
+       ],
+       0
+      ],
+      [
+       "Maj",
+       158,
+       "gleich",
+       [
+        11,
+        22
+       ]
+      ],
+      [
+       "Maj",
+       197,
+       "gleich",
+       [
+        10,
+        11
+       ]
+      ],
+      [
+       "R9a",
+       [
+        "Ch",
+        8
+       ],
+       [
+        "Ch",
+        12
+       ],
+       "nicht affin"
+      ],
+      [
+       "R9a",
+       [
+        "Ch",
+        8
+       ],
+       [
+        "Ch",
+        16
+       ],
+       "affin",
+       [
+        119
+       ],
+       1
+      ],
+      [
+       "R9a",
+       [
+        "Ch",
+        12
+       ],
+       [
+        "Ch",
+        16
+       ],
+       "nicht affin"
+      ],
+      [
+       "R9a",
+       [
+        "Ch",
+        21
+       ],
+       [
+        "Ch",
+        25
+       ],
+       "nicht affin"
+      ],
+      [
+       "R9b",
+       [
+        "Ch",
+        21
+       ],
+       [
+        "Maj",
+        261
+       ],
+       "nie beide 1",
+       "p+q+h=1",
+       2332
+      ],
+      [
+       "R9a",
+       [
+        "Ch",
+        21
+       ],
+       [
+        "Maj",
+        261
+       ],
+       "affin",
+       [
+        10,
+        11
+       ],
+       0
+      ],
+      [
+       "R9a",
+       [
+        "Ch",
+        25
+       ],
+       [
+        "Maj",
+        197
+       ],
+       "nicht affin"
+      ],
+      [
+       "R9b",
+       [
+        "Ch",
+        25
+       ],
+       [
+        "Maj",
+        261
+       ],
+       "nie beide 1",
+       "p+q+h=1",
+       2333
+      ],
+      [
+       "R9a",
+       [
+        "Ch",
+        25
+       ],
+       [
+        "Maj",
+        261
+       ],
+       "nicht affin"
+      ],
+      [
+       "R9b",
+       [
+        "Maj",
+        197
+       ],
+       [
+        "Maj",
+        261
+       ],
+       "nie beide 1",
+       "p+q+h=1",
+       2334
+      ],
+      [
+       "Maj",
+       159,
+       "gleich",
+       [
+        247,
+        609
+       ]
+      ],
+      [
+       "R9a",
+       [
+        "Ch",
+        8
+       ],
+       [
+        "Ch",
+        12
+       ],
+       "nicht affin"
+      ],
+      [
+       "R9a",
+       [
+        "Ch",
+        12
+       ],
+       [
+        "Ch",
+        16
+       ],
+       "nicht affin"
+      ],
+      [
+       "R9a",
+       [
+        "Ch",
+        21
+       ],
+       [
+        "Ch",
+        25
+       ],
+       "nicht affin"
+      ],
+      [
+       "R9a",
+       [
+        "Ch",
+        21
+       ],
+       [
+        "Maj",
+        261
+       ],
+       "affin",
+       [
+        10,
+        11
+       ],
+       1
+      ],
+      [
+       "R9a",
+       [
+        "Ch",
+        25
+       ],
+       [
+        "Maj",
+        197
+       ],
+       "nicht affin"
+      ],
+      [
+       "R9a",
+       [
+        "Ch",
+        25
+       ],
+       [
+        "Maj",
+        261
+       ],
+       "nicht affin"
+      ],
+      [
+       "R9a",
+       [
+        "Ch",
+        22
+       ],
+       [
+        "Ch",
+        26
+       ],
+       "nicht affin"
+      ],
+      [
+       "R9a",
+       [
+        "Ch",
+        22
+       ],
+       [
+        "Maj",
+        86
+       ],
+       "affin",
+       [
+        992
+       ],
+       1
+      ],
+      [
+       "R9a",
+       [
+        "Ch",
+        22
+       ],
+       [
+        "Maj",
+        230
+       ],
+       "affin",
+       [
+        11
+       ],
+       1
+      ],
+      [
+       "R9b",
+       [
+        "Ch",
+        26
+       ],
+       [
+        "Maj",
+        86
+       ],
+       "nie beide 1",
+       "p+q+h=1",
+       2335
+      ],
+      [
+       "R9a",
+       [
+        "Ch",
+        26
+       ],
+       [
+        "Maj",
+        86
+       ],
+       "nicht affin"
+      ],
+      [
+       "R9b",
+       [
+        "Ch",
+        26
+       ],
+       [
+        "Maj",
+        158
+       ],
+       "nie beide 1",
+       "p+q+h=1",
+       2336
+      ],
+      [
+       "R9a",
+       [
+        "Ch",
+        26
+       ],
+       [
+        "Maj",
+        158
+       ],
+       "nicht affin"
+      ],
+      [
+       "R9a",
+       [
+        "Ch",
+        26
+       ],
+       [
+        "Maj",
+        230
+       ],
+       "nicht affin"
+      ],
+      [
+       "R9b",
+       [
+        "Maj",
+        86
+       ],
+       [
+        "Maj",
+        230
+       ],
+       "nie beide 1",
+       "p+q+h=1",
+       2337
+      ],
+      [
+       "R9a",
+       [
+        "Maj",
+        86
+       ],
+       [
+        "Maj",
+        230
+       ],
+       "affin",
+       [
+        11,
+        992
+       ],
+       0
+      ],
+      [
+       "R9b",
+       [
+        "Maj",
+        158
+       ],
+       [
+        "Maj",
+        230
+       ],
+       "nie beide 1",
+       "p+q+h=1",
+       2338
+      ],
+      [
+       "Maj",
+       31,
+       "gleich",
+       [
+        16,
+        31
+       ]
+      ],
+      [
+       "Maj",
+       127,
+       "gleich",
+       [
+        10,
+        362
+       ]
+      ],
+      [
+       "Maj",
+       130,
+       "gleich",
+       [
+        4,
+        10
+       ]
+      ],
+      [
+       "Maj",
+       231,
+       "gleich",
+       [
+        10,
+        859
+       ]
+      ],
+      [
+       "R9a",
+       [
+        "Ch",
+        10
+       ],
+       [
+        "Ch",
+        14
+       ],
+       "nicht affin"
+      ],
+      [
+       "R9a",
+       [
+        "Ch",
+        11
+       ],
+       [
+        "Ch",
+        15
+       ],
+       "affin",
+       [
+        10,
+        146
+       ],
+       1
+      ],
+      [
+       "R9b",
+       [
+        "Ch",
+        23
+       ],
+       [
+        "Ch",
+        27
+       ],
+       "nie beide 1",
+       "p+q+h=1",
+       2339
+      ],
+      [
+       "R9a",
+       [
+        "Ch",
+        23
+       ],
+       [
+        "Ch",
+        27
+       ],
+       "nicht affin"
+      ],
+      [
+       "R9b",
+       [
+        "Ch",
+        23
+       ],
+       [
+        "Maj",
+        199
+       ],
+       "nie beide 1",
+       "p+q+h=1",
+       2340
+      ],
+      [
+       "R9a",
+       [
+        "Ch",
+        23
+       ],
+       [
+        "Maj",
+        199
+       ],
+       "nicht affin"
+      ],
+      [
+       "R9b",
+       [
+        "Ch",
+        27
+       ],
+       [
+        "Maj",
+        231
+       ],
+       "nie beide 1",
+       "p+q+h=1",
+       2341
+      ],
+      [
+       "R9a",
+       [
+        "Ch",
+        27
+       ],
+       [
+        "Maj",
+        231
+       ],
+       "nicht affin"
+      ],
+      [
+       "R9b",
+       [
+        "Maj",
+        199
+       ],
+       [
+        "Maj",
+        231
+       ],
+       "nie beide 1",
+       "p+q+h=1",
+       2342
+      ],
+      [
+       "R9a",
+       [
+        "Maj",
+        199
+       ],
+       [
+        "Maj",
+        231
+       ],
+       "nicht affin"
+      ]
+     ],
+     "r9_stat": {
+      "kaestchen_mit_tafel": 0,
+      "wurzelmengen": 0,
+      "paare": 1729,
+      "tafelzeilen": 184
+     },
+     "xor_gleichungen": 797,
+     "und_gleichungen": 905,
+     "stufen": 252,
+     "werte": 810,
+     "aliasse": 531,
+     "regeln": {
+      "R1": 568,
+      "R2": 120,
+      "R3": 194,
+      "R4": 461,
+      "R5": 1190,
+      "R6": 75,
+      "R7": 0,
+      "R1b": 224,
+      "R8c": 21,
+      "R8m": 77,
+      "R9b": 15,
+      "R9a": 11,
+      "R9": 7,
+      "R9b_bruecke": 14,
+      "R6gegen": 5
+     },
+     "beziehungen_ueber_freie_bits": [],
+     "ganzzahlige_beziehungen": [],
+     "wertemengen": [],
+     "feste_freie_bits": 12,
+     "s": 0.5429
+    },
+    "folgerungen": {
+     "frei_fest": {
+      "0": 1,
+      "1": 0,
+      "10": 1,
+      "11": 0,
+      "2": 1,
+      "3": 0,
+      "4": 1,
+      "5": 0,
+      "6": 1,
+      "7": 1,
+      "8": 1,
+      "9": 0
+     },
+     "frei_lin": [],
+     "frei_menge": [],
+     "frei_xor": [],
+     "widerspruch": false
+    },
+    "ableitung_s": 0.5431,
+    "ableitung_peak_mib": 21.2,
+    "kontrolle_s": 0.0025,
+    "wall_s": 0.7,
+    "peak_mib_extern": 19.4,
+    "rlimit_aktiv": true,
+    "rlimit_mib": 1024
+   }
+  ]
+ },
+ {
+  "netz": "N4r10 Leine W_i=W_(i-3)",
+  "frei": 12,
+  "knoten": 1506,
+  "wahr": 1,
+  "zeilen": [
+   {
+    "darstellung": "D6+R9b(Spiegel)",
+    "status": "FIXPUNKT",
+    "erlaubt": 512,
+    "scheinloesungen": 511,
+    "verlorene": 0,
+    "entschieden": false,
+    "groesse": {
+     "r9_protokoll": [],
+     "r9_stat": {
+      "kaestchen_mit_tafel": 0,
+      "wurzelmengen": 0,
+      "paare": 0,
+      "tafelzeilen": 0
+     },
+     "xor_gleichungen": 776,
+     "und_gleichungen": 1029,
+     "stufen": 280,
+     "werte": 465,
+     "aliasse": 316,
+     "regeln": {
+      "R1": 341,
+      "R2": 60,
+      "R3": 129,
+      "R4": 354,
+      "R5": 102,
+      "R6": 66,
+      "R7": 5,
+      "R1b": 133,
+      "R8c": 14,
+      "R8m": 31
+     },
+     "beziehungen_ueber_freie_bits": [
+      "x0^x8=0",
+      "x1^x8^x9=0",
+      "x4^x8=0"
+     ],
+     "ganzzahlige_beziehungen": [],
+     "wertemengen": [
+      "-1*x1 +1*x8 +1*x9 in [0, 2]",
+      "+1*x1 -1*x8 -1*x9 in [-2, 0]",
+      "+1*x1 -1*x8 +1*x9 in [0, 2]",
+      "+1*x1 +1*x8 -1*x9 in [0, 2]",
+      "+1*x1 +1*x8 +1*x9 in [0, 2]"
+     ],
+     "feste_freie_bits": 0,
+     "s": 0.3321
+    },
+    "folgerungen": {
+     "frei_fest": {},
+     "frei_lin": [],
+     "frei_menge": [
+      [
+       [
+        [
+         1,
+         -1
+        ],
+        [
+         8,
+         1
+        ],
+        [
+         9,
+         1
+        ]
+       ],
+       [
+        0,
+        2
+       ]
+      ],
+      [
+       [
+        [
+         1,
+         1
+        ],
+        [
+         8,
+         -1
+        ],
+        [
+         9,
+         -1
+        ]
+       ],
+       [
+        -2,
+        0
+       ]
+      ],
+      [
+       [
+        [
+         1,
+         1
+        ],
+        [
+         8,
+         -1
+        ],
+        [
+         9,
+         1
+        ]
+       ],
+       [
+        0,
+        2
+       ]
+      ],
+      [
+       [
+        [
+         1,
+         1
+        ],
+        [
+         8,
+         1
+        ],
+        [
+         9,
+         -1
+        ]
+       ],
+       [
+        0,
+        2
+       ]
+      ],
+      [
+       [
+        [
+         1,
+         1
+        ],
+        [
+         8,
+         1
+        ],
+        [
+         9,
+         1
+        ]
+       ],
+       [
+        0,
+        2
+       ]
+      ]
+     ],
+     "frei_xor": [
+      [
+       0,
+       8,
+       0
+      ],
+      [
+       1,
+       8,
+       9,
+       0
+      ],
+      [
+       4,
+       8,
+       0
+      ]
+     ],
+     "widerspruch": false
+    },
+    "ableitung_s": 0.3323,
+    "ableitung_peak_mib": 22.0,
+    "kontrolle_s": 0.0072,
+    "wall_s": 0.4,
+    "peak_mib_extern": 18.5,
+    "rlimit_aktiv": true,
+    "rlimit_mib": 1024
+   },
+   {
+    "darstellung": "D6+Vollscan",
+    "status": "FIXPUNKT",
+    "erlaubt": 384,
+    "scheinloesungen": 383,
+    "verlorene": 0,
+    "entschieden": false,
+    "groesse": {
+     "r9_protokoll": [
+      [
+       "R9a",
+       [
+        "Ch",
+        28
+       ],
+       [
+        "Maj",
+        260
+       ],
+       "nicht affin"
+      ],
+      [
+       "Maj",
+       114,
+       "gleich",
+       [
+        22,
+        127
+       ]
+      ],
+      [
+       "Maj",
+       260,
+       "gleich",
+       [
+        2,
+        1158
+       ]
+      ],
+      [
+       "R9a",
+       [
+        "Ch",
+        12
+       ],
+       [
+        "Ch",
+        16
+       ],
+       "nicht affin"
+      ],
+      [
+       "R9a",
+       [
+        "Ch",
+        24
+       ],
+       [
+        "Ch",
+        28
+       ],
+       "nicht affin"
+      ],
+      [
+       "R9b",
+       [
+        "Ch",
+        24
+       ],
+       [
+        "Maj",
+        228
+       ],
+       "nie beide 1",
+       "p+q+h=1",
+       2506
+      ],
+      [
+       "R9a",
+       [
+        "Ch",
+        24
+       ],
+       [
+        "Maj",
+        228
+       ],
+       "affin",
+       [
+        1158
+       ],
+       0
+      ],
+      [
+       "R9a",
+       [
+        "Ch",
+        28
+       ],
+       [
+        "Maj",
+        228
+       ],
+       "nicht affin"
+      ],
+      [
+       "R9a",
+       [
+        "Ch",
+        28
+       ],
+       [
+        "Maj",
+        260
+       ],
+       "nicht affin"
+      ],
+      [
+       "R9b",
+       [
+        "Maj",
+        228
+       ],
+       [
+        "Maj",
+        260
+       ],
+       "nie beide 1",
+       "p+q+h=1",
+       2507
+      ],
+      [
+       "R9b",
+       [
+        "Maj",
+        25
+       ],
+       [
+        "Maj",
+        189
+       ],
+       "nie beide 1",
+       "p+q+h=1",
+       2508
+      ],
+      [
+       "R9a",
+       [
+        "Maj",
+        25
+       ],
+       [
+        "Maj",
+        189
+       ],
+       "affin",
+       [
+        2,
+        3
+       ],
+       0
+      ],
+      [
+       "R9b",
+       [
+        "Maj",
+        81
+       ],
+       [
+        "Maj",
+        113
+       ],
+       "nie beide 1",
+       "p+q+h=1",
+       2509
+      ],
+      [
+       "R9a",
+       [
+        "Maj",
+        81
+       ],
+       [
+        "Maj",
+        113
+       ],
+       "affin",
+       [
+        3,
+        20
+       ],
+       0
+      ],
+      [
+       "Maj",
+       149,
+       "gleich",
+       [
+        3,
+        10
+       ]
+      ],
+      [
+       "R9a",
+       [
+        "Ch",
+        12
+       ],
+       [
+        "Ch",
+        16
+       ],
+       "nicht affin"
+      ],
+      [
+       "R9a",
+       [
+        "Maj",
+        25
+       ],
+       [
+        "Maj",
+        189
+       ],
+       "affin",
+       [
+        3,
+        10
+       ],
+       0
+      ],
+      [
+       "R9b",
+       [
+        "Maj",
+        149
+       ],
+       [
+        "Maj",
+        189
+       ],
+       "nie beide 1",
+       "p+q+h=1",
+       2510
+      ],
+      [
+       "R9a",
+       [
+        "Ch",
+        12
+       ],
+       [
+        "Ch",
+        16
+       ],
+       "nicht affin"
+      ],
+      [
+       "R9a",
+       [
+        "Ch",
+        29
+       ],
+       [
+        "Maj",
+        201
+       ],
+       "nicht affin"
+      ],
+      [
+       "R9a",
+       [
+        "Maj",
+        201
+       ],
+       [
+        "Maj",
+        261
+       ],
+       "nicht affin"
+      ],
+      [
+       "R9a",
+       [
+        "Maj",
+        81
+       ],
+       [
+        "Maj",
+        113
+       ],
+       "affin",
+       [
+        3,
+        11
+       ],
+       0
+      ],
+      [
+       "R9b",
+       [
+        "Maj",
+        117
+       ],
+       [
+        "Maj",
+        225
+       ],
+       "nie beide 1",
+       "p+q+h=1",
+       2511
+      ],
+      [
+       "R9a",
+       [
+        "Maj",
+        117
+       ],
+       [
+        "Maj",
+        225
+       ],
+       "affin",
+       [
+        10
+       ],
+       0
+      ],
+      [
+       "R9a",
+       [
+        "Ch",
+        12
+       ],
+       [
+        "Ch",
+        16
+       ],
+       "nicht affin"
+      ],
+      [
+       "R9a",
+       [
+        "Ch",
+        29
+       ],
+       [
+        "Maj",
+        201
+       ],
+       "nicht affin"
+      ],
+      [
+       "R9a",
+       [
+        "Maj",
+        201
+       ],
+       [
+        "Maj",
+        261
+       ],
+       "nicht affin"
+      ],
+      [
+       "R9a",
+       [
+        "Ch",
+        12
+       ],
+       [
+        "Ch",
+        16
+       ],
+       "nicht affin"
+      ],
+      [
+       "R9a",
+       [
+        "Ch",
+        29
+       ],
+       [
+        "Maj",
+        201
+       ],
+       "nicht affin"
+      ],
+      [
+       "R9a",
+       [
+        "Maj",
+        201
+       ],
+       [
+        "Maj",
+        261
+       ],
+       "nicht affin"
+      ]
+     ],
+     "r9_stat": {
+      "kaestchen_mit_tafel": 221,
+      "wurzelmengen": 185,
+      "paare": 199,
+      "tafelzeilen": 168
+     },
+     "xor_gleichungen": 794,
+     "und_gleichungen": 1029,
+     "stufen": 280,
+     "werte": 468,
+     "aliasse": 324,
+     "regeln": {
+      "R1": 341,
+      "R2": 61,
+      "R3": 133,
+      "R4": 367,
+      "R5": 103,
+      "R6": 66,
+      "R7": 6,
+      "R1b": 134,
+      "R8c": 13,
+      "R8m": 31,
+      "R9": 3,
+      "R9b": 6,
+      "R9a": 6,
+      "R9b_bruecke": 2
+     },
+     "beziehungen_ueber_freie_bits": [
+      "x0^x8=0",
+      "x1^x8^x9=0",
+      "x4^x8=0"
+     ],
+     "ganzzahlige_beziehungen": [],
+     "wertemengen": [
+      "-1*x1 +1*x8 +1*x9 in [0, 2]",
+      "+1*x1 -1*x8 -1*x9 in [-2, 0]",
+      "+1*x1 -1*x8 +1*x9 in [0, 2]",
+      "+1*x1 +1*x8 -1*x9 in [0, 2]",
+      "+1*x1 +1*x8 +1*x9 in [0, 2]",
+      "+1*x5 -1*x8 in [-1, 0]"
+     ],
+     "feste_freie_bits": 0,
+     "s": 0.4053
+    },
+    "folgerungen": {
+     "frei_fest": {},
+     "frei_lin": [],
+     "frei_menge": [
+      [
+       [
+        [
+         1,
+         -1
+        ],
+        [
+         8,
+         1
+        ],
+        [
+         9,
+         1
+        ]
+       ],
+       [
+        0,
+        2
+       ]
+      ],
+      [
+       [
+        [
+         1,
+         1
+        ],
+        [
+         8,
+         -1
+        ],
+        [
+         9,
+         -1
+        ]
+       ],
+       [
+        -2,
+        0
+       ]
+      ],
+      [
+       [
+        [
+         1,
+         1
+        ],
+        [
+         8,
+         -1
+        ],
+        [
+         9,
+         1
+        ]
+       ],
+       [
+        0,
+        2
+       ]
+      ],
+      [
+       [
+        [
+         1,
+         1
+        ],
+        [
+         8,
+         1
+        ],
+        [
+         9,
+         -1
+        ]
+       ],
+       [
+        0,
+        2
+       ]
+      ],
+      [
+       [
+        [
+         1,
+         1
+        ],
+        [
+         8,
+         1
+        ],
+        [
+         9,
+         1
+        ]
+       ],
+       [
+        0,
+        2
+       ]
+      ],
+      [
+       [
+        [
+         5,
+         1
+        ],
+        [
+         8,
+         -1
+        ]
+       ],
+       [
+        -1,
+        0
+       ]
+      ]
+     ],
+     "frei_xor": [
+      [
+       0,
+       8,
+       0
+      ],
+      [
+       1,
+       8,
+       9,
+       0
+      ],
+      [
+       4,
+       8,
+       0
+      ]
+     ],
+     "widerspruch": false
+    },
+    "ableitung_s": 0.4055,
+    "ableitung_peak_mib": 22.0,
+    "kontrolle_s": 0.0068,
+    "wall_s": 0.5,
+    "peak_mib_extern": 18.8,
+    "rlimit_aktiv": true,
+    "rlimit_mib": 1024
+   }
+  ]
+ }
+]

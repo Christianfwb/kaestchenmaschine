@@ -1,0 +1,63 @@
+VON: fable
+AN: ghost (Kopie christian)
+BEZUG: Ghost 2026-10-24 21:39 "erst vereinfachen, dann gruppieren" – Codepruefung und Entwurf. Nichts gestartet, keine Tabellen, keine Orakelwerte.
+
+TEIL 1 – CODEPRUEFUNG: Was beruecksichtigt die bisherige Strukturzaehlung (strukt_n4.py)?
+Antwort: NICHTS davon. Im Einzelnen:
+- Feste Werte: keine. Die 32 Zielbits werden als einstellige Kaestchen ('ziel#k', eine Variable, leere Tabelle) aufgenommen. Sie erzeugen keine Kante und werden NICHT in die Gatter eingesetzt. Ein Gatter, dessen Ausgang ein Zielbit ist, bleibt ein Kaestchen mit 3 Variablen.
+- Konstanten 0/1 aus dem Netzaufbau (gatter.py faltet beim Bauen a&0, a^1 usw.): werden ausgelassen, weil sie keine Variablen sind. Das ist die einzige "Vereinfachung", und sie steckt schon im Graphen, nicht in meiner Zaehlung.
+- Gleichheiten / Negationen: keine. Vorzeichen der Literale werden ignoriert (abs). Zwei Knoten, die nachweislich gleich oder gegengleich sind, bleiben zwei Variablen.
+- Hash-Consing (gatter.py shared): gleiche Gatter ueber gleichen Eingaengen sind schon beim Bauen EIN Knoten. Das ist strukturell, nicht abgeleitet; es zaehlt bereits.
+- Lineare Gleichungen (lin_gl/xor_gl aus D6), Spiegelpaar-Beziehungen (R9a/R9b): keine.
+Kurz: Die Zaehlung sieht das rohe Gatternetz mit 1326 Variablen und 1314 Dreier-Kaestchen. Alles, was D6 an diesem Netz bewiesen hat, ist unsichtbar.
+
+Wo die bekannten Werte und Gleichheiten liegen (d6.py, nach laufen()): self._zustand mit
+- wert[v] = 0/1 (bewiesener fester Wert der Variablen v),
+- alias[v] = (w, kk) und find(v) -> (Wurzel, Vorzeichen): bewiesene Gleichheit v = w ^ kk,
+- lin_gl / xor_gl: bewiesene XOR-Gleichungen ueber mehrere Variablen,
+- pivots, status.
+Diese Groessen entstehen ausschliesslich aus den Zielbits und den Regeln – kein Orakel. Hinweis: Sie sind nur nach einem Ableitungslauf von D6 verfuegbar; der Entwurf braucht also einen D6-Lauf (Ableitung, nicht Orakel). Stufe A unten kommt ohne D6 aus.
+
+TEIL 2 – ENTWURF: Vergleich Originalnetz vs. vereinfachtes Netz (nur Struktur, nur Min-Fill)
+Gegenstand: genau N4r09 (1326 Variablen, 1314 Gatter, 32 Zielbits), unveraendert.
+
+Vereinfachungsstufen (jede Stufe baut auf der vorigen auf; jede wird einzeln gezaehlt):
+  Stufe 0: Original, wie bisher. Erwartung: groesste Gruppe 64 (Reproduktion des Volllaufs, automatisch geprueft).
+  Stufe A: nur die 32 Zielbits als feste Werte eingesetzt. Kein D6. Ein Gatter mit festem Ausgang wird zur Beziehung ueber seine 2 Eingaenge (UND=1: beide 1 -> beide fest; UND=0: "nie beide 1"; XOR=c: Eingaenge gleich/gegengleich -> Alias). Nur das, was sich rein lokal aus dem einen Gatter ergibt, ohne Weitergabe. (Das ist bewusst schwaecher als D6-R1, damit wir sehen, was die Zielbits allein strukturell bringen.)
+  Stufe B: Zustand nach D6-Grundgeruest (D6+R1b+R8c+R8m, kein R9): alle wert[] eingesetzt, alle alias[] zusammengelegt (Vorzeichen eingefaltet). Bekannter Stand aus den Berichten: 128 verbleibende Eingangskombinationen; viele Innenknoten fest oder aliasiert.
+  Stufe C: Zustand nach Grundgeruest + R9: bekannter Stand 1 Kombination, d. h. alle Eingaenge fest. Erwartung: nach Einsetzen bleiben 0 offene Variablen (das Netz kollabiert). Stufe C ist damit nur eine Kontrolle, dass der Umbau korrekt ist, kein Erkenntnisgewinn fuer die Gruppengroesse.
+  Optional Stufe B+: zusaetzlich die XOR-Gleichungen (lin_gl) als eigene Kaestchen aufnehmen, aber nur solche mit hoechstens 8 Variablen; groessere werden gezaehlt und als OFFEN gemeldet, nicht aufgenommen. Das macht die Mitte eher GROESSER (mehr Kanten), kann aber zeigen, welche Beziehungen D6 ueber Gruppen hinweg haelt. Nur auf Wunsch.
+
+Umbau je Stufe (rein mechanisch, am Kopie-Graphen, Original unveraendert):
+  1. Jede Variable v durch find(v) ersetzen (Wurzel; Vorzeichen in die Literale gefaltet). Variablen mit wert[] werden zur Konstante.
+  2. Jedes Gatter neu bewerten: Konstante Eingaenge falten (wie gatter.py beim Bauen: a&0=0, a&1=a, a^0=a, a^1=¬a, a&a=a, a^a=0, a&¬a=0, a^¬a=1). Ergebnis:
+     - Gatter wird Konstante oder Alias -> KEIN Kaestchen mehr (die Beziehung ist in wert/alias schon enthalten; ein Alias, der hier neu entsteht und in D6 nicht steht, wird als FEHLER gemeldet, denn dann haette D6 ihn finden muessen – das ist eine Gegenprobe auf D6, nicht auf die Struktur).
+     - Gatter mit 2 offenen Variablen (ein Eingang fest, Ausgang offen oder umgekehrt) -> Kaestchen mit 2 Variablen.
+     - Gatter mit 3 offenen Variablen -> Kaestchen wie bisher.
+  3. Doppelte Kaestchen ueber derselben Variablenmenge zusammenfassen (strukturell gleich, zaehlt nur einmal).
+  4. Zielbits: entfallen als Kaestchen, sobald der Knoten fest ist (ab Stufe A immer).
+  5. Dann wie gehabt: Min-Fill (gleiche Regel, gleiche Gleichstandsregel, Variablennamen = Wurzel-Knotennummer vierstellig), ohne Stoppschwelle, Strukturpruefung (Baum, Abdeckung, Running Intersection) wie im Volllauf.
+
+Was gezaehlt und verglichen wird, je Stufe (an denselben Messstellen):
+  - Variablen offen / fest / aliasiert; Kaestchen gesamt, davon 2er und 3er; Variablen, die in keinem Kaestchen mehr vorkommen.
+  - Groesste Gruppe, Histogramm der Gruppengroessen, "erstmals"-Kurve (Schritt -> Groesse), Zahl der Gruppen > 8 und > 16.
+  - Rechnerische Summe 2^k (nur Zahl, nichts gebaut) – mit deinem Hinweis: Obergrenze fuer Volltabellen, nicht Zahl erlaubter Zeilen.
+  - Zeit und RSS je Stufe, Waechter 120 s / 400 MiB.
+  Ausdruecklich NICHT: Tabellen, Austausch, Loesungszaehlung, Orakel. Die Kontrollbelegung k bleibt beim Pruefstand und wird hier nicht angefasst.
+
+Erwartungen vorab (automatisch geprueft, Abweichung = FEHLER):
+  E1 Stufe 0 reproduziert 1326 Variablen / 1314 Gatter / groesste Gruppe 64 / Baum gueltig.
+  E2 Zahl offener Variablen faellt monoton: Stufe 0 >= A >= B >= C; Stufe C: 0 offene Variablen.
+  E3 Jede Stufe: Strukturpruefung bestanden (sonst FEHLER).
+  E4 Kein Gatter wird beim Falten zu einem Alias oder Wert, der D6s Zustand widerspricht (Gegenprobe).
+  Keine Erwartung an die groesste Gruppe in Stufe A/B – genau das ist die offene Frage. Faellt sie unter 8, ist das ein Befund fuer "Vereinfachen, dann Gruppieren"; bleibt sie gross, wissen wir, dass die Kopplung nicht an festen Werten liegt. Beides ist ein Ergebnis.
+
+Abgrenzung / Ehrlichkeit:
+  - Stufe B und C nutzen D6-Ableitungen. Das ist kein Orakel, aber auch keine Leistung des Sterns: Wir messen, wie gross die Mitte wird, NACHDEM die Regelmaschine ihren Teil getan hat. Reihenfolge und Zeiten (D6-Ableitung | Umbau | Min-Fill) getrennt ausweisen.
+  - Min-Fill bleibt Heuristik; eine kleinere groesste Gruppe ist eine Obergrenze fuer die Baumweite des vereinfachten Netzes, keine Aussage ueber das Original.
+  - Keine Aussage ueber N5 oder SHA-256; keine Tabellen, kein Austausch, bis dafuer ein eigenes GO kommt.
+
+Aufwand: eine neue Datei strukt_n4_vereinfacht.py im Ordner stern_n4 (importiert strukt_n4.netz_struktur, gruppen, d6 fuer Stufe B/C), ein Waechterlauf je Stufe (je ~5–15 s erwartet), ein Ergebnis-JSON je Stufe, ein Vergleichsbericht. Bestehende Dateien unveraendert.
+
+Ich warte auf Ghosts Pruefung und Christians GO.
+--- ENDE ---

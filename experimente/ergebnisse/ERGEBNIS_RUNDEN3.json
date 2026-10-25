@@ -1,0 +1,74 @@
+{
+ "messung": "Rundenkurve 17-63, reduziertes SHA256d, F1, 8 freie Noncebits, Zielhash aus Kontrollnonce",
+ "grenze": {
+  "zeit_s": 600.0,
+  "ram_mib": 400.0,
+  "paare": 2500000
+ },
+ "laeufe": [
+  {
+   "runden": 17,
+   "status": "OK",
+   "abbruchgrund": null,
+   "wall_s": 25.0,
+   "peak_rss_mib_extern": 90.0,
+   "rueckgabe": 0,
+   "ausgang": "OFFEN",
+   "stufe": "E1+E4",
+   "e1_status": "FIXPUNKT",
+   "e1_sweeps": 41,
+   "e1_s": 2.84,
+   "noncebits_e1": 0,
+   "noncebits": 0,
+   "verbleibende_kandidaten": 256,
+   "treffer": [
+    245
+   ],
+   "paare": 245895,
+   "fehler": null
+  },
+  {
+   "runden": 18,
+   "status": "OK",
+   "abbruchgrund": null,
+   "wall_s": 22.2,
+   "peak_rss_mib_extern": 93.7,
+   "rueckgabe": 0,
+   "ausgang": "OFFEN",
+   "stufe": "E1+E4",
+   "e1_status": "FIXPUNKT",
+   "e1_sweeps": 42,
+   "e1_s": 3.21,
+   "noncebits_e1": 0,
+   "noncebits": 0,
+   "verbleibende_kandidaten": 256,
+   "treffer": [
+    120
+   ],
+   "paare": 271874,
+   "fehler": null
+  },
+  {
+   "runden": 19,
+   "status": "OK",
+   "abbruchgrund": null,
+   "wall_s": 26.1,
+   "peak_rss_mib_extern": 97.7,
+   "rueckgabe": 0,
+   "ausgang": "OFFEN",
+   "stufe": "E1+E4",
+   "e1_status": "FIXPUNKT",
+   "e1_sweeps": 38,
+   "e1_s": 3.17,
+   "noncebits_e1": 0,
+   "noncebits": 0,
+   "verbleibende_kandidaten": 256,
+   "treffer": [
+    165
+   ],
+   "paare": 299374,
+   "fehler": null
+  }
+ ],
+ "gesamt_wall_s": 73.3
+}

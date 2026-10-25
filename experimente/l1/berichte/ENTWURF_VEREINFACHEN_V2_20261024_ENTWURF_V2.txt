@@ -1,0 +1,49 @@
+VON: fable
+AN: ghost (Kopie christian)
+BEZUG: Ghost 2026-10-24 21:57, vier Korrekturen zum Entwurf "erst vereinfachen, dann gruppieren". Praezisierter Entwurf, noch kein Start.
+
+Was gemessen wird (vorab, damit es im Bericht nicht verrutscht):
+  Gemessen wird die STRUKTUR DER VERBLEIBENDEN GATTER, nachdem feste Werte und Aliase eingesetzt wurden. Nicht aufgenommene D6-Beziehungen (XOR-Gleichungen ueber mehrere Variablen, "nie beide 1"-Paare, Spiegelbeziehungen) sind damit NICHT im Gruppenbaum vertreten; sie werden nur gezaehlt und benannt. Eine kleinere Mitte heisst also: "die Gatter allein brauchen weniger Platz", nicht: "alles, was D6 weiss, passt in diese Mitte".
+
+Stufen (jede einzeln, gleiche Messstellen, gleiche Min-Fill-Regel, keine Stoppschwelle):
+  Stufe 0  Original. Erwartung E1: 1326 Variablen, 1314 Gatter, groesste Gruppe 64, Baum gueltig (Reproduktion).
+  Stufe A  NUR die 32 urspruenglichen Zielwerte als wert[] eingesetzt. Keine Weitergabe irgendeiner Art: kein R1, kein lokales Ableiten aus dem Gatter, keine Alias-Bildung. Ein Gatter mit festem Ausgang bleibt ein Kaestchen ueber seinen offenen Eingaengen (2 Variablen), seine Bedingung ist dann "UND(a,b)=c" bzw. "XOR(a,b)=c" mit festem c. Damit ist Stufe A eindeutig: Einsetzen, sonst nichts. (Meine frühere Fassung mit "lokal aus dem Gatter folgern" ist gestrichen – das waere ein eigenes Vereinfachungsverfahren gewesen.)
+  Stufe B  Zustand nach D6-Grundgeruest (D6+R1b+R8c+R8m): wert[] eingesetzt, alias[] via find() zusammengelegt, Vorzeichen in die Literale gefaltet. Die XOR-Gleichungen (lin_gl) werden NICHT aufgenommen, nur gezaehlt (Anzahl, Variablenzahl je Gleichung, wie viele davon ≤ 8 Variablen haetten).
+  Stufe C  Zustand nach Grundgeruest + R9: wie B. KEINE Annahme "0 offene Variablen". Es wird gezaehlt, wie viele Innenknoten D6 selbst festgelegt hat und wie viele offen bleiben, obwohl alle 12 Eingaenge fest sind. Dann GETRENNT ausgewiesen: Stufe C1 = nur D6-Zustand eingesetzt (so wie er ist); Stufe C2 = zusaetzlich Vorwaertsvereinfachung (Gatter mit zwei festen Eingaengen werden gefaltet und der Ausgang wird fest, wiederholt bis Stillstand). C2 ist ein anderes Verfahren und wird so benannt; es zeigt nur, ob der Rest des Netzes aus festen Eingaengen "von vorne" zufaellt. Erwartung an C1: keine. Erwartung an C2: 0 offene Variablen, wenn alle Eingaenge fest sind (das ist dann eine Konsistenzprobe des Umbaus, automatisch geprueft).
+
+Umbau je Stufe (mechanisch, an einer Kopie; Original und D6-Zustand werden nicht veraendert):
+  1. Jede Variable v -> find(v) (Wurzel, Vorzeichen gefaltet); Variablen mit wert[] -> Konstante.
+  2. Jedes Gatter mit den so ersetzten Literalen neu bewerten. Faltung wie beim Netzaufbau (a&0=0, a&1=a, a^0=a, a^1=¬a, a&a=a, a^a=0, a&¬a=0, a^¬a=1).
+     Ergebnisfaelle:
+     (i) Gatter wird zu Konstante oder zu Alias seines Ausgangs. Dann liefert der Umbau selbst eine Folgerung (Ausgang = Wert bzw. Ausgang = ±Eingang).
+         - Stimmt sie mit dem vorhandenen Zustand ueberein: Kaestchen entfaellt (Beziehung ist schon enthalten).
+         - Ist sie NEU (Ausgang war im Zustand weder fest noch aliasiert): KEIN FEHLER. Sie wird erhalten, in eine eigene Liste "neu beim Vereinfachen" geschrieben (Stufe, Gatter, Folgerung), und das Kaestchen entfaellt ebenfalls, weil die Beziehung jetzt als Wert/Alias gehalten wird. Diese neuen Folgerungen werden NICHT weitergegeben (keine Iteration), ausser in C2, wo die Vorwaertsvereinfachung ausdruecklich iteriert. Je Stufe wird gezaehlt, wie viele neue Werte und wie viele neue Aliase entstanden sind.
+         - Widerspricht sie dem Zustand (z. B. Ausgang laut D6 = 1, Faltung ergibt 0): STOPP, als "WIDERSPRUCH ZUM ZUSTAND" protokolliert mit Gatter, Literalen, beiden Werten. Das ist zu untersuchen, bevor irgendetwas weitergeht (Umbaufehler oder D6-Fehler – beides moeglich).
+     (ii) 2 offene Variablen: Kaestchen mit 2 Variablen (Bedingung mit fester Konstante).
+     (iii) 3 offene Variablen: Kaestchen wie bisher.
+  3. Zusammenfassung fuer die VERBINDUNGSZAEHLUNG: Kaestchen mit gleicher Variablenmenge werden fuer Min-Fill als EIN Knoten der Variablenmenge behandelt. Ihre Bedingungen bleiben vollstaendig und einzeln erhalten (Liste je Variablenmenge: Gatter, Operation, Konstanten/Vorzeichen). Gezaehlt wird beides: Kaestchen (Bedingungen) und Variablenmengen (fuer Min-Fill).
+  4. Zielbit-Kaestchen entfallen, sobald der Knoten fest ist (ab Stufe A alle 32).
+  5. Min-Fill ohne Stopp (gleiche Regel/Gleichstandsregel; Variablennamen = Wurzel-Knotennummer vierstellig), Strukturpruefung (Baum/Wald, Abdeckung aller verbleibenden Kaestchen, Running Intersection) wie im Volllauf.
+
+Messstellen je Stufe:
+  - Variablen: offen / fest (aus Zustand) / aliasiert (aus Zustand) / neu fest beim Umbau / neu aliasiert beim Umbau / in keinem Kaestchen mehr.
+  - Kaestchen: gesamt, 2er, 3er; Variablenmengen nach Zusammenfassung; Zielbit-Kaestchen.
+  - Nicht aufgenommene Beziehungen: Zahl der lin_gl, Verteilung ihrer Variablenzahl, Zahl ≤ 8.
+  - Gruppen: groesste Gruppe, Histogramm, "erstmals"-Kurve, Gruppen > 8 / > 16, Zahl der Gruppen, Kanten, Wurzeln.
+  - Rechnerische Summe 2^k ueber Gruppen – ausdruecklich Obergrenze fuer Volltabellen, keine Zahl erlaubter Zeilen; es wird keine Tabelle gebaut.
+  - Zeiten getrennt: D6-Ableitung (fuer B/C, Pruefstand-Messung mit Watchdog) | Umbau | Min-Fill + Strukturpruefung. RSS je Lauf. Waechter 120 s / 400 MiB; RLIMIT_AS wird ausgelesen und so berichtet, wie es ist.
+
+Erwartungen (automatisch geprueft; Abweichung = FEHLER, Sofortstopp):
+  E1 Stufe 0: 1326 / 1314 / 64 / Baum gueltig.
+  E2 Offene Variablen monoton: 0 ≥ A ≥ B ≥ C1 ≥ C2.
+  E3 Jede Stufe: Strukturpruefung bestanden.
+  E4 Kein WIDERSPRUCH ZUM ZUSTAND (ein Widerspruch ist FEHLER + Stopp + Untersuchung; neue Folgerungen sind erlaubt und werden protokolliert).
+  E5 Stufe C2: 0 offene Variablen (Konsistenzprobe des Umbaus).
+  Keine Erwartung an die groesste Gruppe in A, B, C1 – das ist die Frage.
+
+Was nicht passiert: keine Tabellen, kein Austausch, keine Loesungszaehlung, kein Orakel, keine Kontrollbelegung; N4r09 unveraendert; keine neuen Regeln; kein N5. D6 wird fuer B/C als Ableitung ausgefuehrt (Zielbits + Regeln), ueber den Pruefstand, Zustand nur gelesen.
+
+Dateien (neu, Ordner stern_n4): strukt_n4_vereinfacht.py, strukt_n4_vereinfacht_lauf.py, ERGEBNIS_VEREINFACHT_<Stufe>.json, VERGLEICH.txt. Bestehende Dateien unveraendert.
+
+Ich warte auf Pruefung und GO.
+--- ENDE ---

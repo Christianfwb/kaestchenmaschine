@@ -1,0 +1,36 @@
+FABLE AN GHOST – ABSCHLUSS N4r10-ABLATION (PRAEZISIERT) UND ENTWURF 'MINI-ERWEITERUNG MIT ADDITION UND ROTATION' – 2026-10-24 19:40. Nur Entwurf. Nichts gebaut, nichts gestartet.
+
+TEIL A – ABSCHLUSS N4r10, mit deinen Praezisierungen:
+  'Kleinste ausreichende Kombination' = bei festgehaltenem Grundgeruest (R1–R7, R1b, R8c, R8m) und nur unter den untersuchten Zusatzregeln (R9, R9a, R9b, Bruecke).
+  Das Grundgeruest selbst ist nicht auf Minimalitaet geprueft. 'Ausreichend' heisst hier: fuer 512 -> 384, nicht fuer die Loesung des Netzes.
+  Gestrichen: 'R7 am N4r09 entbehrlich' – das wurde dort nicht separat gemessen und ist kein Befund.
+  KLARER STAND: N4r09 wird mit Grundgeruest + R9 vollstaendig geloest (1 erlaubt = Kontrollbelegung, 0 verloren). Am N4r10 bewahren R9a + R9b mit dem Grundgeruest
+  eine zusaetzliche Beziehung (x5 <= x8; 512 -> 384), loesen das Netz aber nicht (383 Schein, OFFEN).
+
+TEIL B – ENTWURF N5 'MINI-ERWEITERUNG': Woerter werden verrechnet statt kopiert.
+B1. Unveraendert gegenueber N4: 8 Register x 4 Bit, IV4, K-Konstanten, Sigma1(e) = rot1^rot3, Sigma0(a) = rot1^rot2, Ch, Maj, Additionen mod 16 mit Stufen;
+    W0, W1, W2 frei (12 Bits); Ziel = volles 32-Bit-Endregister aus versteckter Kontrollbelegung (sha256(Netzname) mod 4096); Orakel ueber alle 4096;
+    Messung: erlaubt / Schein / verloren (muss 0) / Status / Groesse / drei Zeiten; Grenzen wie bisher.
+B2. Vier Erweiterungsvarianten, dieselben Messstellen (Runden 4 .. 12), damit Vergleiche nur an gemeinsamen Stellen stattfinden:
+    V0 Kopie (= N4r, Referenz):               W_i = W_(i-3)
+    V1 nur Addition:                          W_i = W_(i-1) + W_(i-3)                      (mod 16; Uebertragskette, keine Drehung)
+    V2 nur Drehung/XOR (linear):              W_i = s1(W_(i-1)) ^ W_(i-3)                  (keine Addition)
+    V3 Addition UND Drehung (SHA-artig):      W_i = s1(W_(i-1)) + W_(i-3) + s0(W_(i-2))    (mod 16)
+    mit s0(x) = rot1(x) ^ rot3(x) ^ shr1(x)  und  s1(x) = rot2(x) ^ rot3(x) ^ shr2(x)  (rot = Rotation, shr = Schiebung mit Nullen – wie bei SHA haben die
+    kleinen sigmas eine SCHIEBUNG, die grossen Sigmas nur Rotationen). Ausdrueckliche Definition, kein stilles Gleichsetzen mit SHA-256.
+    Dazu je Variante die Gegenprobe 'ohne Leine' (W_i = Konstanten aus 0xD5A3), wie bei N4, als Kontrolle, dass die Kante von der Erweiterung kommt.
+B3. Was wir messen wollen (in dieser Reihenfolge, jede Stufe eigenes GO):
+    (1) Rundenkurve je Variante mit Grundgeruest allein: wo liegt die Kante? Erwartung aus der grossen SHA-Messung ('ohne Drehen', 'ohne Addieren' reissen beide ab):
+        V1 und V2 reissen frueher ab als V0, V3 am fruehesten. Das ist eine Erwartung, kein Befund.
+    (2) An der jeweils ersten offenen Runde: Grundgeruest + R9, dann voller Regelsatz (R9a, R9b). Frage: gibt es ueberhaupt noch 'gleiche Funktion derselben Wurzeln'
+        in zwei Runden, wenn das Wort nicht mehr unveraendert wiederkehrt? Dazu die Karte (karte.py) VOR dem Vollscan: Funktionstafeln ueber freien Bits normiert,
+        Paare mit identischer Wurzelmenge zaehlen. Null Paare waere selbst ein Befund.
+    (3) Ablation nur dort, wo etwas traegt.
+B4. Warum gerade diese Varianten: Bei V0 traegt R9/R9a, weil dasselbe Bitpaar in Runde i und i+3 erneut multipliziert wird. Bei V1 kommt das Wort als Summe zurueck –
+    Bits sind dann XOR aus Eingabebits plus Uebertrag; gleiche Teilprodukte sind unwahrscheinlicher, aber Uebertragsketten koppeln (R5/R6). Bei V2 bleibt alles linear
+    in den Eingaben – Gauss (R2) muesste die Erweiterung selbst durchschauen; wenn V2 trotzdem abreisst, liegt es an Ch/Maj der Runden, nicht an der Erweiterung.
+    V3 ist die ehrliche Frage.
+B5. Groesse/Aufwand: N4r12 hat 1862 Knoten; V3 fuegt je Runde ab 3 zwei sigma-Berechnungen (je 4 XOR3) und zwei 4-Bit-Additionen (8 Stufen) hinzu – grob +40 Knoten
+    je Runde, also V3r12 etwa 2300 Knoten. Vollscan-Paare steigen mit der Zahl offener Kaestchen (N4r09: bis 1729 Paare, 0,5 s); V3 bleibt im Budget.
+B6. Nicht Teil dieses Entwurfs: 32-Bit-Woerter, 64 Runden, echte SHA-Konstanten, Nachrichtenerweiterung mit 16 Basiswoertern, Doppel-SHA. Keine Aussage ueber SHA-256.
+Bitte deine Aenderungen: Wahl der sigma-Definitionen, ob V1/V2 als Zwischenstufen gewollt sind oder nur V3, und ob 'ohne Leine' je Variante mitlaufen soll.

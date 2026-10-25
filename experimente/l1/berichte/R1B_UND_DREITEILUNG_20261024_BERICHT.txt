@@ -1,0 +1,24 @@
+FABLE AN GHOST – R1B EINGEBAUT, GEGENPROBEN, VERGLEICH MIT/OHNE, DREITEILUNG RUNDE 8 – 2026-10-24 13:05. Auftrag 12:37.
+Fable-Container Xeon 2,10 GHz 2 Kerne, Python 3.13.16; Pruefstand-Budgets wie bisher (120 s / 400 MiB, Kind RLIMIT_AS 1024 MiB). Runde 6, R8g: nicht angefasst.
+
+1. R1b (d6.py, nur bei 'R1b' in AKTIV): UND-Kaestchen z = a UND b. Ist ein Eingangsliteral nachweislich 1 und der Ausgang offen -> z = anderes Eingangsliteral
+   (Alias mit Vorzeichen ueber verbinde(); Negation des Literals geht als Versatz ein). Einsetzen-Niveau, keine Suche, keine Kandidaten.
+   Neue Darstellung 'D6+R5+R6+R7+R1b' (Klasse D6_R567b); alle bisherigen Darstellungen unveraendert.
+2. GEGENPROBEN (BELEGT, alle 4 Belegungen gegen Orakel, 0 verloren, jeweils R1b=1 gefeuert):
+   z=a&b, a=1 -> z=b | z=a&~b, a=1 -> z=~b | z=~a&b, a=0 -> z=b | z=~a&~b, a=0 -> z=~b. Dazu die alten R1-Faelle (b=1, z=0 -> a=0; auch negiert) unveraendert.
+3. VERGLEICH MIT/OHNE R1b, Pruefstand (ERGEBNIS_R1B_VERGLEICH.json), verlorene Loesungen ueberall 0:
+   L1 L2 L3 L4 N1 N3 N3u: identisch (N3: R1b feuert 1x, Ergebnis 12/12 gleich).  N4r08: 1/1 beide (R1b 170x, Zeit 0,16 -> 0,14 s).
+   N4r09: ohne R1b 512 erlaubt (511 Schein), 3 XOR-Beziehungen – MIT R1b 128 erlaubt (127 Schein), 0 verloren, 0,22 s, R1b 172x, R5 50 -> 171x.
+          Beziehungen ueber freie Bits jetzt 5: x0^x8=0, x1^x8^x9=1, x4^x8=0, x5^x8=1, x6^x9=1 (vorher x4^x5=1 als eine; jetzt in zwei aufgeloest plus x6^x9 neu).
+   Also: die Kante bei 9 Runden ist nicht weg, aber 512 -> 128 (Faktor 4) durch eine Einsetzen-Regel.
+4. DREITEILUNG RUNDE 8 (r8l.py; A = D6 lokal, C = A + Ch allein, B = A + Ch + Stufe gemeinsam; zusaetzlich S = A + Stufe allein):
+   ohne R1b: Ch#28 4/4/4  Ch#29 4/4/4  Ch#30 8/4/4  Ch#31 16/8/8   -> Gewinn Ch allein 4+8, Gewinn GEMEINSAM ueber Ch hinaus 0.
+   mit  R1b: Ch#28 2/2/2  Ch#29 4/4/4  Ch#30 4/4/4  Ch#31 8/8/8    -> Gewinn 0 / 0.  (D6 hat jetzt g=z als Alias; bei #28 auch g,b,s,cout verkettet.)
+   Echte Loesung in allen Tabellen erhalten; FEHLER-Stopp unveraendert aktiv.
+BEFUND (BELEGT): Der gesamte Runde-8-Gewinn des lokalen Kaestchens war die R1-Luecke. Nach R1b bewahrt die Verbindung Ch+Stufe an Runde 8 nichts,
+was D6 nicht schon lokal hat. Ghosts Frage fuer Runde 8: NEIN (sauber). Christians Kaestchen-Idee hat die Luecke aber ueberhaupt erst sichtbar gemacht.
+VERMUTUNG: Die Stufe tragt lokal nichts bei, weil D6 ihre Gleichung bereits vollstaendig als lineare Gleichung besitzt; ein Paar aus Ch und Stufe kann
+lokal nur dann mehr wissen, wenn eine der Beziehungen nicht linear/alias darstellbar ist – an diesen Anschluessen ist Ch bei bekanntem e aber linear.
+OFFEN: Runde 9 mit R1b erneut (erwartet unveraendert A=B), Runde 6, Maj-Kaestchen, und ob analoge Luecken in R1 bleiben (z.B. ODER = NICHT(UND(NICHT,NICHT)) –
+durch die Graphdarstellung schon abgedeckt, da ODER als UND mit Negationen gebaut ist). Nichts davon gestartet.
+Dateien: d6.py, pruefstand.py, r8l.py, ERGEBNIS_R1B_VERGLEICH.json, ERGEBNIS_R8L_N4r09_R8_D6R5R6R7.json, ERGEBNIS_R8L_N4r09_R8_D6R5R6R7R1b.json.

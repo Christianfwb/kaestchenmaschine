@@ -1,0 +1,33 @@
+FABLE AN GHOST – BEGRENZTER VOLLSCAN R9/R9a/R9b, N4r09 ENTSCHIEDEN (128 -> 1) – 2026-10-24 16:50. Auftrag 14:43. Kein R8g.
+Fable-Container Xeon 2,10 GHz 2 Kerne, Python 3.13.16. Pruefstand-Budgets wie bisher (120 s / 400 MiB, Kind RLIMIT_AS 1024 MiB), Kontrolle durch Orakel ueber alle 4096.
+Deine drei Korrekturen uebernommen: (1) 'Spiegelpaar vollstaendig beschrieben' war falsch – p^q=a^b und p*q=0 lassen p=0,q=1 zu; die Zuordnung bleibt nur in den
+Kaestchen selbst. (2) UND-Bruecke jetzt in JEDER Runde bis zum Stillstand geprueft (Gleichung einmal, Bruecke wiederholt; Zaehler 'R9b_bruecke'). (3) 'kein Abnehmer'
+-> 'kein passendes UND-Kaestchen bei dieser Pruefung'. Ausserdem: die Spiegelpaar-Klasse (feste Indizes) stuerzte auf kleineren Netzen ab (IndexError); der
+Pruefstand hat das korrekt als FEHLER gestoppt; behoben (Indizes ausserhalb werden uebersprungen).
+
+VOLLSCAN (Klasse D6_Vollscan, Darstellung 'D6+Vollscan'): R9 (gleiche Funktion), R9a (affine Differenz), R9b (nie beide 1) ueber ALLE vorhandenen Ch-/Maj-
+Kaestchen – aber nur Paare mit IDENTISCHER normierter Wurzelmenge; keine groesseren Tafeln. Tafeln hoechstens 8 Zeilen (3 Wurzeln). Gezaehlt: Paare, Tafelzeilen.
+Alle 29 Gegenproben (R9, R9a, R9b) danach unveraendert: 0 verlorene Loesungen.
+
+ERGEBNIS (BELEGT, ERGEBNIS_VOLLSCAN.json), Spalten: Darstellung | erlaubt | Schein | verloren | Regeln R9/R9a/R9b/Bruecke | Paare | Tafelzeilen | Zeit
+  L3   Spiegel 8/0/0 | Vollscan 8/0/0 (keine Paare)             N3  12/0/0 | 12/0/0 (keine Paare)            N3u WIDERSPRUCH beide
+  N4r08  Spiegel 1/0/0 | Vollscan 1/0/0, R9 2 R9a 5 R9b 4, 90 Paare, 28 Zeilen, 0,23 s
+  N4r09  Spiegel 128/127/0 | VOLLSCAN 1/0/0 – ENTSCHIEDEN. Alle 12 freien Bits fest, Orakel: die eine erlaubte Belegung IST die Kontrollbelegung.
+         R9 7x, R9a 11x, R9b 15x, Bruecke 14x; bis zu 1729 Paare je Runde, 184 Tafelzeilen gesamt; Ableitung 0,54 s, 21,2 MiB; Kontrolle 0,003 s.
+  N4r10  Spiegel 512/511/0 | Vollscan 384/383/0, R9 3 R9a 6 R9b 6 Bruecke 2, 199 Paare, 168 Zeilen, 0,41 s. (384 = 3*128: keine Zweierpotenz mehr, Wertemengen wirken.)
+Protokoll N4r09 (Auszug, vollstaendig im JSON): Die entscheidenden Paare liegen NICHT nur an freien Bits – z.B. Maj#80/Maj#112 (Wurzeln 2, 727), Maj#81/Maj#113
+(20, 120), Ch#8/Ch#16 (74), Ch#22/Maj#86 (992), Ch#11/Ch#15 (10, 146): Paare ueber inneren Wurzeln, Runden 3/4/5 gegen 7/8. Die Spiegelpaare an den freien
+Bits waren Zeugen des Musters; getragen hat das Muster an INNEREN Knoten – genau dein Vorbehalt 'ueber andere Wege' von 14:43.
+
+EINORDNUNG (ehrlich, in unserer Sprache):
+BELEGT: Am Mini-Leinen-Netz N4r09 (9 Runden, 4-Bit-Register, 12 freie Bits, Leine W_i = W_(i-3), volles Endregister als Ziel) leiten die Regeln R1–R7, R1b, R8c,
+R8m, R9, R9a, R9b ohne Suche, ohne Fallunterscheidung, ohne Kandidatenlisten die einzige Loesung ab; 0 verlorene; Einzelmessung 0,54 s.
+Die Kante lag bisher bei 8 Runden (9 Runden: 4095 -> 511 -> 128 -> 1 im Lauf des Tages: D6, +R1b, +Vollscan). N4r10: 4095 -> 1024 -> 512 -> 384, nicht entschieden.
+NICHT belegt: irgendetwas ueber SHA-256 (32-Bit-Woerter, 64 Runden, Sigma mit Shift, Nachrichtenerweiterung mit sigma0/sigma1 statt reiner Kopie). Die Mini-Leine
+ist W_i = W_(i-3) als KOPIE; die echte Erweiterung ist Summe mit Rotationen. Kein Mainnet-, Neuheits- oder Hardwarebezug.
+VERMUTUNG: Was hier traegt, ist 'dieselbe Funktion in zwei Runden' – die Wiederverwendung des Wortes erzeugt gleiche Teilprodukte an verschiedenen Stellen, und
+deren Gleichheit/Spiegelung/Ausschluss ist linear bzw. ganzzahlig fassbar. Bei echter Erweiterung (Summe, nicht Kopie) ist unklar, ob solche Paare entstehen.
+OFFEN (nicht gestartet, Vorschlaege): (i) Ablation am N4r09: Vollscan ohne R9 / ohne R9a / ohne R9b / ohne Bruecke – welche Teile tragen; (ii) Rundenkurve mit
+Vollscan: N4r10, N4r12 (10: 384; 12: ?), mit/ohne Leine; (iii) Gegenprobe 'unloesbares N4r09' (Ziel um ein Bit verfaelscht) -> muss WIDERSPRUCH liefern, kein
+Scheinbeweis; (iv) erst danach: Mini-Leine mit echter Erweiterungsformel statt Kopie (neues Netz, eigener Entwurf).
+Dateien: d6.py, pruefstand.py, ERGEBNIS_VOLLSCAN.json, gegenproben_r9.py, gegenproben_r9a.py, gegenproben_r9b.py.

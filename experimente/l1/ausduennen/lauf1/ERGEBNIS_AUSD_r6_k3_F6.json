@@ -1,0 +1,601 @@
+{
+ "fall": {
+  "kopf": 6,
+  "kopf_wert": 6,
+  "k": 3,
+  "runden": 6,
+  "netz": "AUSD r6 k3 F6",
+  "knoten": 796,
+  "gatter": 782
+ },
+ "ableitung": {
+  "status": "FIXPUNKT",
+  "wert": 117,
+  "alias": 80,
+  "zeit_s": 0.0788,
+  "regeln": {
+   "R1": 85,
+   "R2": 13,
+   "R3": 20,
+   "R4": 135,
+   "R5": 7,
+   "R6": 38,
+   "R7": 0,
+   "R1b": 49,
+   "R8c": 2
+  },
+  "darstellung": "D6+R1b+R8c+R8m"
+ },
+ "form1": {
+  "rang": 0,
+  "konsistent": true,
+  "zeilen": [],
+  "herkunft_anzahl": 0,
+  "E": 256,
+  "c_erzeugen": 1,
+  "A_form1": 0
+ },
+ "form2": {
+  "kandidaten": 24,
+  "filter": {
+   "alle_kegel_le_2": {
+    "bedingungen": [
+     80
+    ],
+    "kosten": {
+     "q": 1,
+     "c_rechnen": 2,
+     "kopfgatter_wiederverwendbar": 6,
+     "c_pruefen": 4,
+     "c_verknuepfen": 0,
+     "c_filter": 6
+    }
+   },
+   "alle_kegel_le_8": {
+    "bedingungen": [
+     77,
+     80,
+     87,
+     140,
+     141,
+     142,
+     153
+    ],
+    "kosten": {
+     "q": 7,
+     "c_rechnen": 15,
+     "kopfgatter_wiederverwendbar": 23,
+     "c_pruefen": 28,
+     "c_verknuepfen": 6,
+     "c_filter": 49
+    }
+   },
+   "alle_kegel_le_32": {
+    "bedingungen": [
+     77,
+     80,
+     84,
+     87,
+     91,
+     94,
+     96,
+     140,
+     141,
+     142,
+     148,
+     149,
+     153,
+     168,
+     169,
+     170,
+     172,
+     174,
+     201,
+     202,
+     207,
+     232,
+     233,
+     302
+    ],
+    "kosten": {
+     "q": 24,
+     "c_rechnen": 71,
+     "kopfgatter_wiederverwendbar": 59,
+     "c_pruefen": 96,
+     "c_verknuepfen": 23,
+     "c_filter": 190
+    }
+   },
+   "drei_billigste": {
+    "bedingungen": [
+     80,
+     142,
+     77
+    ],
+    "kosten": {
+     "q": 3,
+     "c_rechnen": 10,
+     "kopfgatter_wiederverwendbar": 23,
+     "c_pruefen": 12,
+     "c_verknuepfen": 2,
+     "c_filter": 24
+    }
+   }
+  },
+  "kandidaten_detail": {
+   "77": {
+    "art": "gatter",
+    "vars": [
+     "v0006",
+     "v0007",
+     "v0120"
+    ],
+    "tiefe": 11,
+    "kegel": 7,
+    "pruef": 4,
+    "pruef_konkret": 2,
+    "pruef_tabelle": 4
+   },
+   "80": {
+    "art": "gatter",
+    "vars": [
+     "v0006",
+     "v0007",
+     "v0080"
+    ],
+    "tiefe": 6,
+    "kegel": 2,
+    "pruef": 4,
+    "pruef_konkret": 2,
+    "pruef_tabelle": 4
+   },
+   "84": {
+    "art": "gatter",
+    "vars": [
+     "v0008",
+     "v0080",
+     "v0127"
+    ],
+    "tiefe": 14,
+    "kegel": 19,
+    "pruef": 4,
+    "pruef_konkret": 2,
+    "pruef_tabelle": 4
+   },
+   "87": {
+    "art": "gatter",
+    "vars": [
+     "v0008",
+     "v0080",
+     "v0087"
+    ],
+    "tiefe": 11,
+    "kegel": 7,
+    "pruef": 4,
+    "pruef_konkret": 2,
+    "pruef_tabelle": 4
+   },
+   "91": {
+    "art": "gatter",
+    "vars": [
+     "v0009",
+     "v0087",
+     "v0134"
+    ],
+    "tiefe": 17,
+    "kegel": 31,
+    "pruef": 4,
+    "pruef_konkret": 2,
+    "pruef_tabelle": 4
+   },
+   "94": {
+    "art": "gatter",
+    "vars": [
+     "v0009",
+     "v0087",
+     "v0094"
+    ],
+    "tiefe": 14,
+    "kegel": 12,
+    "pruef": 4,
+    "pruef_konkret": 2,
+    "pruef_tabelle": 4
+   },
+   "96": {
+    "art": "gatter",
+    "vars": [
+     "v0009",
+     "v0095",
+     "v0096"
+    ],
+    "tiefe": 16,
+    "kegel": 16,
+    "pruef": 4,
+    "pruef_konkret": 2,
+    "pruef_tabelle": 4
+   },
+   "140": {
+    "art": "gatter",
+    "vars": [
+     "v0006",
+     "v0007",
+     "v0120"
+    ],
+    "tiefe": 11,
+    "kegel": 7,
+    "pruef": 4,
+    "pruef_konkret": 2,
+    "pruef_tabelle": 4
+   },
+   "141": {
+    "art": "gatter",
+    "vars": [
+     "v0006",
+     "v0120",
+     "v0141"
+    ],
+    "tiefe": 11,
+    "kegel": 8,
+    "pruef": 4,
+    "pruef_konkret": 2,
+    "pruef_tabelle": 4
+   },
+   "142": {
+    "art": "gatter",
+    "vars": [
+     "v0006",
+     "v0141",
+     "v0142"
+    ],
+    "tiefe": 11,
+    "kegel": 6,
+    "pruef": 4,
+    "pruef_konkret": 2,
+    "pruef_tabelle": 4
+   },
+   "148": {
+    "art": "gatter",
+    "vars": [
+     "v0007",
+     "v0146",
+     "v0148"
+    ],
+    "tiefe": 17,
+    "kegel": 25,
+    "pruef": 4,
+    "pruef_konkret": 2,
+    "pruef_tabelle": 4
+   },
+   "149": {
+    "art": "gatter",
+    "vars": [
+     "v0006",
+     "v0149",
+     "v0166"
+    ],
+    "tiefe": 15,
+    "kegel": 18,
+    "pruef": 4,
+    "pruef_konkret": 2,
+    "pruef_tabelle": 4
+   },
+   "153": {
+    "art": "gatter",
+    "vars": [
+     "v0006",
+     "v0007",
+     "v0120"
+    ],
+    "tiefe": 11,
+    "kegel": 7,
+    "pruef": 4,
+    "pruef_konkret": 2,
+    "pruef_tabelle": 4
+   },
+   "168": {
+    "art": "gatter",
+    "vars": [
+     "v0006",
+     "v0148",
+     "v0168"
+    ],
+    "tiefe": 18,
+    "kegel": 28,
+    "pruef": 4,
+    "pruef_konkret": 2,
+    "pruef_tabelle": 4
+   },
+   "169": {
+    "art": "gatter",
+    "vars": [
+     "v0006",
+     "v0148",
+     "v0169"
+    ],
+    "tiefe": 18,
+    "kegel": 28,
+    "pruef": 4,
+    "pruef_konkret": 2,
+    "pruef_tabelle": 4
+   },
+   "170": {
+    "art": "gatter",
+    "vars": [
+     "v0007",
+     "v0154",
+     "v0170"
+    ],
+    "tiefe": 19,
+    "kegel": 30,
+    "pruef": 4,
+    "pruef_konkret": 2,
+    "pruef_tabelle": 4
+   },
+   "172": {
+    "art": "gatter",
+    "vars": [
+     "v0007",
+     "v0154",
+     "v0172"
+    ],
+    "tiefe": 19,
+    "kegel": 30,
+    "pruef": 4,
+    "pruef_konkret": 2,
+    "pruef_tabelle": 4
+   },
+   "174": {
+    "art": "gatter",
+    "vars": [
+     "v0007",
+     "v0169",
+     "v0174"
+    ],
+    "tiefe": 19,
+    "kegel": 30,
+    "pruef": 4,
+    "pruef_konkret": 2,
+    "pruef_tabelle": 4
+   },
+   "201": {
+    "art": "gatter",
+    "vars": [
+     "v0010",
+     "v0168",
+     "v0201"
+    ],
+    "tiefe": 19,
+    "kegel": 29,
+    "pruef": 4,
+    "pruef_konkret": 2,
+    "pruef_tabelle": 4
+   },
+   "202": {
+    "art": "gatter",
+    "vars": [
+     "v0010",
+     "v0168",
+     "v0202"
+    ],
+    "tiefe": 19,
+    "kegel": 29,
+    "pruef": 4,
+    "pruef_konkret": 2,
+    "pruef_tabelle": 4
+   },
+   "207": {
+    "art": "gatter",
+    "vars": [
+     "v0011",
+     "v0202",
+     "v0207"
+    ],
+    "tiefe": 20,
+    "kegel": 30,
+    "pruef": 4,
+    "pruef_konkret": 2,
+    "pruef_tabelle": 4
+   },
+   "232": {
+    "art": "gatter",
+    "vars": [
+     "v0006",
+     "v0150",
+     "v0232"
+    ],
+    "tiefe": 16,
+    "kegel": 25,
+    "pruef": 4,
+    "pruef_konkret": 2,
+    "pruef_tabelle": 4
+   },
+   "233": {
+    "art": "gatter",
+    "vars": [
+     "v0006",
+     "v0150",
+     "v0233"
+    ],
+    "tiefe": 16,
+    "kegel": 25,
+    "pruef": 4,
+    "pruef_konkret": 2,
+    "pruef_tabelle": 4
+   },
+   "302": {
+    "art": "gatter",
+    "vars": [
+     "v0006",
+     "v0201",
+     "v0304"
+    ],
+    "tiefe": 21,
+    "kegel": 32,
+    "pruef": 4,
+    "pruef_konkret": 2,
+    "pruef_tabelle": 4
+   }
+  }
+ },
+ "filter_eingefroren": {
+  "datei": "FILTER_r6_k3_F6.json",
+  "sha256": "b35673a14ee497f1176c33ef9cedccb2d02f3827ac17b8324241d8a7110e5ba1"
+ },
+ "kontrolle": {
+  "loesungen": 26,
+  "nonces": [
+   0,
+   5,
+   20,
+   41,
+   44,
+   50,
+   60,
+   72,
+   80,
+   96,
+   106,
+   118,
+   127,
+   129,
+   133,
+   139,
+   145,
+   162,
+   180,
+   201,
+   211,
+   231,
+   232,
+   243,
+   244,
+   250
+  ],
+  "verletzt": [],
+  "verletzt_anzahl": 0,
+  "A_filter": {
+   "alle_kegel_le_2": 0,
+   "alle_kegel_le_8": 0,
+   "alle_kegel_le_32": 0,
+   "drei_billigste": 0
+  },
+  "zeit_s": 0.0795
+ },
+ "bilanz": {
+  "referenz_K0": 179712,
+  "H": 782,
+  "H_nonce": 702,
+  "H_kopf_vorab": 80,
+  "C_pre_s": 0.0788,
+  "C_pre_gatter_geschaetzt": 246386,
+  "umrechnung_hinweis": "C_pre in Gatter = Ableitungszeit / Zeit einer Gatterauswertung (3.20e-07 s) in derselben Python-Umgebung \u2013 grobe Schaetzung",
+  "wege": {
+   "P_alle_kegel_le_2": {
+    "A": 0,
+    "r": 0.0,
+    "c_filter": 6,
+    "K_ohne_Cpre": 181248,
+    "ersparnis_ohne_Cpre": -1536,
+    "K_mit_Cpre": 427634,
+    "ersparnis_mit_Cpre": -247922
+   },
+   "P_alle_kegel_le_8": {
+    "A": 0,
+    "r": 0.0,
+    "c_filter": 49,
+    "K_ohne_Cpre": 192256,
+    "ersparnis_ohne_Cpre": -12544,
+    "K_mit_Cpre": 438642,
+    "ersparnis_mit_Cpre": -258930
+   },
+   "P_alle_kegel_le_32": {
+    "A": 0,
+    "r": 0.0,
+    "c_filter": 190,
+    "K_ohne_Cpre": 228352,
+    "ersparnis_ohne_Cpre": -48640,
+    "K_mit_Cpre": 474738,
+    "ersparnis_mit_Cpre": -295026
+   },
+   "P_drei_billigste": {
+    "A": 0,
+    "r": 0.0,
+    "c_filter": 24,
+    "K_ohne_Cpre": 185856,
+    "ersparnis_ohne_Cpre": -6144,
+    "K_mit_Cpre": 432242,
+    "ersparnis_mit_Cpre": -252530
+   },
+   "E_form1": {
+    "E": 256,
+    "A": 0,
+    "r": 0.0,
+    "c_erzeugen": 1,
+    "K_ohne_Cpre": 179968,
+    "ersparnis_ohne_Cpre": -256,
+    "K_mit_Cpre": 426354,
+    "ersparnis_mit_Cpre": -246642
+   },
+   "EP_alle_kegel_le_2": {
+    "E": 256,
+    "A_E": 0,
+    "K_ohne_Cpre": 181504,
+    "ersparnis_ohne_Cpre": -1792,
+    "ersparnis_mit_Cpre": -248178
+   },
+   "EP_alle_kegel_le_8": {
+    "E": 256,
+    "A_E": 0,
+    "K_ohne_Cpre": 192512,
+    "ersparnis_ohne_Cpre": -12800,
+    "ersparnis_mit_Cpre": -259186
+   },
+   "EP_alle_kegel_le_32": {
+    "E": 256,
+    "A_E": 0,
+    "K_ohne_Cpre": 228608,
+    "ersparnis_ohne_Cpre": -48896,
+    "ersparnis_mit_Cpre": -295282
+   },
+   "EP_drei_billigste": {
+    "E": 256,
+    "A_E": 0,
+    "K_ohne_Cpre": 186112,
+    "ersparnis_ohne_Cpre": -6400,
+    "ersparnis_mit_Cpre": -252786
+   }
+  }
+ },
+ "pruefung": {
+  "E1_sicher": true,
+  "E2_raum": true,
+  "E4_filter_vor_kontrolle": true,
+  "widerspruch_sicher": true
+ },
+ "bestanden": true,
+ "zeiten_s": {
+  "aufbau": 0.0019,
+  "ableitung": 0.0788,
+  "form1_form2_filter": 0.0718,
+  "kontrolle": 0.0795
+ },
+ "maxrss_mib": 19.6,
+ "abhaengigkeiten": {
+  "pruefstand": {
+   "pfad": "/home/claude/kastenmaschine/l1/pruefstand.py",
+   "sha256": "0ae511450470ca91c32a7a25a8d75f83985d06d6f217c27f16e317ab2ac1d910"
+  },
+  "d6": {
+   "pfad": "/home/claude/kastenmaschine/l1/d6.py",
+   "sha256": "91ec11fc4d1d1bcf0045b0dc73a3525f0fadfd116c939101e87160bb77f6c794"
+  },
+  "gatter": {
+   "pfad": "/home/claude/kastenmaschine/miner_pruefung/sha256d/gatter.py",
+   "sha256": "75611ddf49d31dc933fe81ee56fe3a4e10cd1f1a3a571bf25fe6108b485f8f4f"
+  },
+  "e1_bit": {
+   "pfad": "/home/claude/kastenmaschine/miner_pruefung/sha256d/e1_bit.py",
+   "sha256": "cfa14b5181eda91e8b92bc4d1baded6137d39ba325c3cf524ea4d8a6f4a23248"
+  }
+ }
+}

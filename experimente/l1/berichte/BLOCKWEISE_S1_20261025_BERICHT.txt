@@ -1,0 +1,40 @@
+VON: fable
+AN: ghost, christian
+BEZUG: GO Christian 2026-10-25 15:07 – blockweiser exakter Abgleich, Variante A: S0 Selbsttest, S1 Gegenproben (Dreieck, N3-Gatter, N4r09 Stufe B). Kein N4r10.
+KURZ: Alles bitgleich. Selbsttest 9168 Faelle, 0 Abweichungen. Dreieck DU/DL, N3, N3u und N4r09 Stufe B liefern mit blockweisen Relationen dieselben Initial- und Endrelationen, denselben Status, dieselben festen Werte und identische Zaehler wie die gespeicherten Referenzen. N4r09: Austausch 2,5 s statt 62 s (schlanke Masken) bei 28 MiB RSS; die groessten gehaltenen Hilfsobjekte sind jetzt Indextabellen (3,4 MB) und eine kurzlebige Maskentabelle (2,4 MB) statt 7,2 MB dauerhafter Masken. Gemessene Speicherersparnis gibt es damit – an N4r09; fuer N4r10 bleibt es Rechnung.
+
+1. WAS GEBAUT WURDE (blockweise.py; Variante A, Arbeitsliste unveraendert aus ereignis_mess.py)
+- Relation = bytearray mit 2^k Bit; Block = niedrigste w = min(12, k) Variablen (512 Byte); Blockindex = hohe Variablen. Einzige gespeicherte Masken: EINS/NULL fuer j < w je Blockbreite, fuer alle Gruppen gemeinsam (bei w = 12: 24 Masken, 12 KiB).
+- Je (Gruppe, S) eine kleine Indextabelle (S_low-Offsets, 2^|S_low| Ganzzahlen) – gehalten; je Aufruf eine Maskentabelle (2^|S_low| x 2^w Bit) – kurzlebig, gezaehlt als Maximum.
+- Projektion/Semijoin blockweise wie im Entwurf; Nullbloecke uebersprungen; Zeilenzahl mitgefuehrt (keine Vollzaehlung der Relation). Nachricht = bytes mit 2^s Bit in Kantenreihenfolge (frozenset({bytes}) in der Arbeitsliste).
+- Initialisierung blockweise aus den Kaestchen (keine 2^k-Bit-Maske).
+- Variante B (sofortiger Empfang, Pruefsummen) NICHT gebaut, wie von Ghost verlangt.
+
+2. S0 SELBSTTEST (blockweise gegen bitmenge_schlank UND Tupelmengen): Blockbreite 2 Bit (damit schon k = 3 in Bloecke zerfaellt) und 12 Bit; alle Relationen k = 1..3 erschoepfend mit allen Schnittmengen in allen Reihenfolgen; 800 Stichproben k = 4..8 mit leer / voll / Einzelzeile / S = () / S nur hoch / S nur niedrig / gemischt / vertauscht; geprueft: Initialisierung, Projektion, Semijoin, Zeilenzahl. 9168 Faelle, 0 Fehler. (Ein Fehler beim ersten Durchlauf – Bloecke unter 8 Bit wurden mit Fuellbits initialisiert – wurde behoben und ist im Code kommentiert; danach 0.)
+
+3. S1 GEGENPROBEN (Variante A; Vergleich gegen gespeicherte Referenzen, verbindlich)
+Fall     | Referenz                              | init gleich | Endrelationen gleich | Status | Zaehler gleich (Entn/Proj/Nachr/gestrichen) | Semijoins direkt | Kanten | Zeit gesamt | RSS
+DU       | ERGEBNIS_BEGRENZT_DU_exakt (Zeilen/fest) | ja        | ja (Zeilenzahlen, feste Werte) | WIDERSPRUCH | ja | 1   | –    | 0,00 s | 15,1 MiB
+DL       | ERGEBNIS_BEGRENZT_DL_exakt            | ja          | ja                   | FIXPUNKT | ja | 4     | gleich | 0,00 s | 15,2 MiB
+N3       | ERGEBNIS_MESS_N3_TUPEL (Tupel)        | ja          | ja (Tupelmengen)     | FIXPUNKT | ja (98/195/105/346) | 105 | gleich | 0,02 s | 16,4 MiB
+N3u      | ERGEBNIS_MESS_N3u_TUPEL               | ja          | ja                   | WIDERSPRUCH | ja (29/51/51/126) | 25 | –    | 0,01 s | 16,5 MiB
+N4r09 B  | UEBERGABE_V0 (init hex) + V1 (end hex, feste Eingaenge) | ja | ja (492 Relationen, hex) | FIXPUNKT | ja (2236/4669/2916/1233189) | 2916 | gleich (491) | 3,5 s | 27,9 MiB
+Dreieck-Referenz hatte nur Zeilenzahlen und feste Werte gespeichert; dort wurden diese verglichen (gleich). Alle 8 feste Eingangsbits bei N4r09 gleich der Referenz.
+
+4. N4r09 STUFE B – MESSUNG (Variante A, Messpunkte M0, jede 25. Entnahme, Ende: 91 Punkte)
+- Zeiten: Gruppierung 0,56 s, Initialisierung 0,011 s, Austausch 2,51 s, Kantenpruefung + feste Werte 0,42 s; gesamt 3,5 s. Vergleich: schlanke Masken 62,2 s Austausch + 28,9 s Kantenpruefung. Grund: Nullbloecke werden uebersprungen (5 375 von 14 636 Bloecken), Operationen laufen auf 512-Byte-Zahlen, und der Austausch streicht frueh viel (nach 500 Entnahmen nur noch 7 596 von 1 233 681 Zeilen). Ein instrumentierter Einzellauf – keine Geschwindigkeitsgarantie, aber ein gemessener Unterschied um Faktor ~25.
+- Operationen: 15,2 Mio UND (kleine Zahlen), 20 372 ODER, 8 567 Maskentabellen gebaut, 14 636 Blockbesuche.
+- Gehaltene Bytes (beobachteter Hoechststand bei Messpunkt 20): Tabellen 201 592 (bytearrays, konstant – sie schrumpfen nicht, nur ihr Inhalt), Nachrichten 201 652 (982 bytes-Objekte), Indextabellen 3 408 000 (gehalten; das ist der groesste Posten – 2^|S_low| Ganzzahlen je (Gruppe, S)), Maskentabelle maximal 2 359 296 (kurzlebig, je Aufruf eine). RSS 27,9 MiB (schlanke Masken: 28,4; bisher: 28,0 – bei dieser Groesse dominiert der Interpreter).
+- Messluecke: Zwischenobjekte innerhalb eines Blockaufrufs (ein Block, erlaubt, P) sind klein (<= 2^w Bit bzw. 2^s Bit fuer P); die Maskentabelle ist das groesste kurzlebige Objekt und ist als Maximum gezaehlt. Keine garantierte Obergrenze fuer Python-interne Objekte.
+
+5. WAS DAS FUER N4r10 HEISST (Rechnung, keine Messung – und ausdruecklich KEIN Start)
+- Speicher: Tabellen 112 MiB (bytearrays, Summe 2^k Bit – unveraendert zur Schaetzung), Nachrichten Variante A ~112 MiB, Indextabellen: je (Gruppe, S) 2^|S_low| Ganzzahlen, |S_low| <= 12 -> hoechstens 4096 x ~32 Byte = 128 KB je Kante und Richtung, bei 1444 Richtungen bis ~180 MB im schlechtesten Fall – DAS waere zu viel; sie muessten kurzlebig werden (je Aufruf neu, wie die Maskentabelle; Kosten: 2^|S_low| kleine Rechnungen je Aufruf, vernachlaessigbar gegen den Blockdurchlauf). Diese Aenderung ist klein, aber eine Aenderung; sie gehoert in den N4r10-Entwurf, nicht in diesen Lauf.
+- Zeit: Die Ersparnis bei N4r09 kam vom Ueberspringen leerer Bloecke und vom fruehen Streichen. Bei N4r10 ist die groesste Gruppe 2^28 Bit = 65 536 Bloecke, und bis die Tabellen duenn werden, kostet jeder Semijoin dort bis zu 65 536 x 4 096 kleine Operationen (~2,7e8). Ob die 600 s reichen, kann ich aus N4r09 nicht ableiten; die alte Schaetzung "10–30 Minuten" war fuer die Mathematik vor dem Ueberspringen – jetzt ist sie unsicher in beide Richtungen. Ein Lauf unter hartem 600-s-/400-MiB-Waechter mit Fortschrittsdatei wuerde es zeigen, OFFEN als moeglicher Ausgang.
+
+6. ERWARTUNGEN: alle bestanden (Init gleich, Endrelationen gleich, Status gleich, Zaehler identisch, Kantenprojektionen gleich, feste Eingaenge gleich; Selbsttest 0 Fehler). Waechter: Selbsttest/Dreieck/N3 120 s, N4r09 600 s hart, 400 MiB – alle OK. RLIMIT_AS unbegrenzt.
+
+EINFACH GESAGT
+Die Streifen-Methode rechnet bitgenau dasselbe wie vorher, an allen fuenf bekannten Faellen. Bei N4r09 war sie sogar 25-mal schneller als die Schablonen-Methode, weil leere Streifen gar nicht angefasst werden und die Zahlen klein bleiben. Die grossen Schablonen (7 MB) sind weg; neu sind kleine Nachschlagetabellen (3,4 MB bei N4r09), die bei N4r10 zu gross wuerden und deshalb kurzlebig gemacht werden muessten – ein kleiner, aber eigener Schritt. Ob N4r10 dann in 600 Sekunden durchlaeuft, weiss ich nicht; das wuerde erst der Lauf zeigen.
+
+DATEIEN (kastenmaschine/l1/stern/): blockweise.py, blockweise_vergleich.py, blockweise_lauf.py, ERGEBNIS_BLOCK_SELBSTTEST.json, ERGEBNIS_BLOCK_{DU,DL,N3,N3u,N4R09}.json (mit Messreihen), ERGEBNIS_BLOCK_BEGRENZT.json. Abhaengigkeiten mit Pfad + SHA256 je Ergebnisdatei. Bestehende Dateien unveraendert. Stopp.
+--- ENDE ---

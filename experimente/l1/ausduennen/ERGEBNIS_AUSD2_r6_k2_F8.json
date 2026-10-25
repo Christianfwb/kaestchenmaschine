@@ -1,0 +1,999 @@
+{
+ "fall": {
+  "kopf": 8,
+  "kopf_wert": 11,
+  "k": 2,
+  "runden": 6,
+  "netz": "AUSD r6 k2 F8",
+  "knoten": 796,
+  "gatter": 782
+ },
+ "ableitung": {
+  "status": "FIXPUNKT",
+  "wert": 108,
+  "alias": 88,
+  "zeit_s": 0.063,
+  "regeln": {
+   "R1": 76,
+   "R2": 13,
+   "R3": 18,
+   "R4": 132,
+   "R5": 9,
+   "R6": 38,
+   "R7": 0,
+   "R1b": 60,
+   "R8c": 2,
+   "R8m": 1
+  },
+  "darstellung": "D6+R1b+R8c+R8m"
+ },
+ "form1": {
+  "rang": 0,
+  "konsistent": true,
+  "zeilen": [],
+  "herkunft_anzahl": 0,
+  "E": 256,
+  "c_erzeugen": 1,
+  "A_form1": 0
+ },
+ "form2": {
+  "kandidaten": 46,
+  "filter": {
+   "alle_kegel_le_2": {
+    "bedingungen": [
+     74,
+     75,
+     76,
+     78,
+     79,
+     83,
+     85,
+     90,
+     92,
+     117,
+     118,
+     162
+    ],
+    "kosten": {
+     "q": 12,
+     "c_rechnen": 12,
+     "kopfgatter_wiederverwendbar": 38,
+     "c_pruefen": 34,
+     "c_verknuepfen": 11,
+     "c_filter": 57
+    }
+   },
+   "alle_kegel_le_8": {
+    "bedingungen": [
+     74,
+     75,
+     76,
+     78,
+     79,
+     81,
+     82,
+     83,
+     85,
+     86,
+     90,
+     92,
+     117,
+     118,
+     120,
+     121,
+     123,
+     140,
+     162,
+     163,
+     164,
+     224,
+     225,
+     226
+    ],
+    "kosten": {
+     "q": 24,
+     "c_rechnen": 27,
+     "kopfgatter_wiederverwendbar": 45,
+     "c_pruefen": 67,
+     "c_verknuepfen": 23,
+     "c_filter": 117
+    }
+   },
+   "alle_kegel_le_32": {
+    "bedingungen": [
+     74,
+     75,
+     76,
+     78,
+     79,
+     81,
+     82,
+     83,
+     85,
+     86,
+     90,
+     92,
+     93,
+     117,
+     118,
+     120,
+     121,
+     123,
+     128,
+     130,
+     131,
+     132,
+     135,
+     137,
+     140,
+     148,
+     150,
+     156,
+     162,
+     163,
+     164,
+     165,
+     166,
+     167,
+     169,
+     224,
+     225,
+     226,
+     227,
+     228,
+     229,
+     230,
+     231,
+     233,
+     238,
+     303
+    ],
+    "kosten": {
+     "q": 46,
+     "c_rechnen": 74,
+     "kopfgatter_wiederverwendbar": 59,
+     "c_pruefen": 125,
+     "c_verknuepfen": 45,
+     "c_filter": 244
+    }
+   },
+   "drei_billigste": {
+    "bedingungen": [
+     78,
+     74,
+     75
+    ],
+    "kosten": {
+     "q": 3,
+     "c_rechnen": 3,
+     "kopfgatter_wiederverwendbar": 11,
+     "c_pruefen": 8,
+     "c_verknuepfen": 2,
+     "c_filter": 13
+    }
+   }
+  },
+  "kandidaten_detail": {
+   "74": {
+    "art": "d6_alias_nonce",
+    "vars": [
+     "v0074",
+     "v0006"
+    ],
+    "tiefe": 5,
+    "kegel": 1,
+    "pruef": 3,
+    "pruef_konkret": 2,
+    "pruef_tabelle": 3
+   },
+   "75": {
+    "art": "d6_alias_nonce",
+    "vars": [
+     "v0075",
+     "v0006"
+    ],
+    "tiefe": 5,
+    "kegel": 1,
+    "pruef": 3,
+    "pruef_konkret": 2,
+    "pruef_tabelle": 3
+   },
+   "76": {
+    "art": "d6_alias_nonce",
+    "vars": [
+     "v0076",
+     "v0007"
+    ],
+    "tiefe": 8,
+    "kegel": 1,
+    "pruef": 3,
+    "pruef_konkret": 2,
+    "pruef_tabelle": 3
+   },
+   "78": {
+    "art": "d6_fest",
+    "vars": [
+     "v0078"
+    ],
+    "tiefe": 8,
+    "kegel": 1,
+    "pruef": 2,
+    "pruef_konkret": 1,
+    "pruef_tabelle": 2
+   },
+   "79": {
+    "art": "d6_fest",
+    "vars": [
+     "v0079"
+    ],
+    "tiefe": 8,
+    "kegel": 2,
+    "pruef": 2,
+    "pruef_konkret": 1,
+    "pruef_tabelle": 2
+   },
+   "81": {
+    "art": "d6_alias",
+    "vars": [
+     "v0081",
+     "v0080"
+    ],
+    "tiefe": 9,
+    "kegel": 4,
+    "pruef": 3,
+    "pruef_konkret": 2,
+    "pruef_tabelle": 3
+   },
+   "82": {
+    "art": "d6_alias",
+    "vars": [
+     "v0082",
+     "v0080"
+    ],
+    "tiefe": 10,
+    "kegel": 6,
+    "pruef": 3,
+    "pruef_konkret": 2,
+    "pruef_tabelle": 3
+   },
+   "83": {
+    "art": "d6_alias_nonce",
+    "vars": [
+     "v0083",
+     "v0008"
+    ],
+    "tiefe": 11,
+    "kegel": 1,
+    "pruef": 3,
+    "pruef_konkret": 2,
+    "pruef_tabelle": 3
+   },
+   "85": {
+    "art": "d6_alias_nonce",
+    "vars": [
+     "v0085",
+     "v0008"
+    ],
+    "tiefe": 11,
+    "kegel": 1,
+    "pruef": 3,
+    "pruef_konkret": 2,
+    "pruef_tabelle": 3
+   },
+   "86": {
+    "art": "d6_alias",
+    "vars": [
+     "v0086",
+     "v0080"
+    ],
+    "tiefe": 11,
+    "kegel": 7,
+    "pruef": 3,
+    "pruef_konkret": 2,
+    "pruef_tabelle": 3
+   },
+   "90": {
+    "art": "d6_alias_nonce",
+    "vars": [
+     "v0090",
+     "v0009"
+    ],
+    "tiefe": 14,
+    "kegel": 1,
+    "pruef": 3,
+    "pruef_konkret": 2,
+    "pruef_tabelle": 3
+   },
+   "92": {
+    "art": "d6_alias_nonce",
+    "vars": [
+     "v0092",
+     "v0009"
+    ],
+    "tiefe": 14,
+    "kegel": 1,
+    "pruef": 3,
+    "pruef_konkret": 2,
+    "pruef_tabelle": 3
+   },
+   "93": {
+    "art": "d6_alias",
+    "vars": [
+     "v0093",
+     "v0089"
+    ],
+    "tiefe": 14,
+    "kegel": 12,
+    "pruef": 3,
+    "pruef_konkret": 2,
+    "pruef_tabelle": 3
+   },
+   "117": {
+    "art": "d6_alias_nonce",
+    "vars": [
+     "v0117",
+     "v0006"
+    ],
+    "tiefe": 6,
+    "kegel": 2,
+    "pruef": 3,
+    "pruef_konkret": 2,
+    "pruef_tabelle": 3
+   },
+   "118": {
+    "art": "d6_alias_nonce",
+    "vars": [
+     "v0118",
+     "v0006"
+    ],
+    "tiefe": 6,
+    "kegel": 2,
+    "pruef": 3,
+    "pruef_konkret": 2,
+    "pruef_tabelle": 3
+   },
+   "120": {
+    "art": "d6_alias_nonce",
+    "vars": [
+     "v0120",
+     "v0007"
+    ],
+    "tiefe": 11,
+    "kegel": 7,
+    "pruef": 3,
+    "pruef_konkret": 2,
+    "pruef_tabelle": 3
+   },
+   "121": {
+    "art": "d6_alias",
+    "vars": [
+     "v0121",
+     "v0077"
+    ],
+    "tiefe": 10,
+    "kegel": 4,
+    "pruef": 3,
+    "pruef_konkret": 2,
+    "pruef_tabelle": 3
+   },
+   "123": {
+    "art": "d6_alias_nonce",
+    "vars": [
+     "v0123",
+     "v0006"
+    ],
+    "tiefe": 8,
+    "kegel": 3,
+    "pruef": 3,
+    "pruef_konkret": 2,
+    "pruef_tabelle": 3
+   },
+   "128": {
+    "art": "d6_fest",
+    "vars": [
+     "v0128"
+    ],
+    "tiefe": 13,
+    "kegel": 9,
+    "pruef": 2,
+    "pruef_konkret": 1,
+    "pruef_tabelle": 2
+   },
+   "130": {
+    "art": "d6_fest",
+    "vars": [
+     "v0130"
+    ],
+    "tiefe": 13,
+    "kegel": 11,
+    "pruef": 2,
+    "pruef_konkret": 1,
+    "pruef_tabelle": 2
+   },
+   "131": {
+    "art": "d6_alias",
+    "vars": [
+     "v0131",
+     "v0129"
+    ],
+    "tiefe": 14,
+    "kegel": 20,
+    "pruef": 3,
+    "pruef_konkret": 2,
+    "pruef_tabelle": 3
+   },
+   "132": {
+    "art": "d6_alias",
+    "vars": [
+     "v0132",
+     "v0129"
+    ],
+    "tiefe": 15,
+    "kegel": 22,
+    "pruef": 3,
+    "pruef_konkret": 2,
+    "pruef_tabelle": 3
+   },
+   "135": {
+    "art": "d6_alias",
+    "vars": [
+     "v0135",
+     "v0091"
+    ],
+    "tiefe": 16,
+    "kegel": 14,
+    "pruef": 3,
+    "pruef_konkret": 2,
+    "pruef_tabelle": 3
+   },
+   "137": {
+    "art": "d6_alias",
+    "vars": [
+     "v0137",
+     "v0129"
+    ],
+    "tiefe": 16,
+    "kegel": 23,
+    "pruef": 3,
+    "pruef_konkret": 2,
+    "pruef_tabelle": 3
+   },
+   "140": {
+    "art": "d6_alias_nonce",
+    "vars": [
+     "v0140",
+     "v0007"
+    ],
+    "tiefe": 10,
+    "kegel": 5,
+    "pruef": 3,
+    "pruef_konkret": 2,
+    "pruef_tabelle": 3
+   },
+   "148": {
+    "art": "d6_alias",
+    "vars": [
+     "v0148",
+     "v0168"
+    ],
+    "tiefe": 18,
+    "kegel": 28,
+    "pruef": 3,
+    "pruef_konkret": 2,
+    "pruef_tabelle": 3
+   },
+   "150": {
+    "art": "d6_alias",
+    "vars": [
+     "v0150",
+     "v0232"
+    ],
+    "tiefe": 16,
+    "kegel": 25,
+    "pruef": 3,
+    "pruef_konkret": 2,
+    "pruef_tabelle": 3
+   },
+   "156": {
+    "art": "d6_alias",
+    "vars": [
+     "v0156",
+     "v0177"
+    ],
+    "tiefe": 20,
+    "kegel": 32,
+    "pruef": 3,
+    "pruef_konkret": 2,
+    "pruef_tabelle": 3
+   },
+   "162": {
+    "art": "d6_alias_nonce",
+    "vars": [
+     "v0162",
+     "v0006"
+    ],
+    "tiefe": 6,
+    "kegel": 2,
+    "pruef": 3,
+    "pruef_konkret": 2,
+    "pruef_tabelle": 3
+   },
+   "163": {
+    "art": "d6_fest",
+    "vars": [
+     "v0163"
+    ],
+    "tiefe": 7,
+    "kegel": 3,
+    "pruef": 2,
+    "pruef_konkret": 1,
+    "pruef_tabelle": 2
+   },
+   "164": {
+    "art": "d6_alias_nonce",
+    "vars": [
+     "v0164",
+     "v0007"
+    ],
+    "tiefe": 11,
+    "kegel": 6,
+    "pruef": 3,
+    "pruef_konkret": 2,
+    "pruef_tabelle": 3
+   },
+   "165": {
+    "art": "d6_alias",
+    "vars": [
+     "v0165",
+     "v0144"
+    ],
+    "tiefe": 14,
+    "kegel": 16,
+    "pruef": 3,
+    "pruef_konkret": 2,
+    "pruef_tabelle": 3
+   },
+   "166": {
+    "art": "d6_fest",
+    "vars": [
+     "v0166"
+    ],
+    "tiefe": 15,
+    "kegel": 17,
+    "pruef": 2,
+    "pruef_konkret": 1,
+    "pruef_tabelle": 2
+   },
+   "167": {
+    "art": "d6_alias",
+    "vars": [
+     "v0167",
+     "v0146"
+    ],
+    "tiefe": 17,
+    "kegel": 24,
+    "pruef": 3,
+    "pruef_konkret": 2,
+    "pruef_tabelle": 3
+   },
+   "169": {
+    "art": "d6_alias",
+    "vars": [
+     "v0169",
+     "v0168"
+    ],
+    "tiefe": 18,
+    "kegel": 29,
+    "pruef": 3,
+    "pruef_konkret": 2,
+    "pruef_tabelle": 3
+   },
+   "224": {
+    "art": "d6_fest",
+    "vars": [
+     "v0224"
+    ],
+    "tiefe": 7,
+    "kegel": 3,
+    "pruef": 2,
+    "pruef_konkret": 1,
+    "pruef_tabelle": 2
+   },
+   "225": {
+    "art": "d6_alias_nonce",
+    "vars": [
+     "v0225",
+     "v0007"
+    ],
+    "tiefe": 12,
+    "kegel": 8,
+    "pruef": 3,
+    "pruef_konkret": 2,
+    "pruef_tabelle": 3
+   },
+   "226": {
+    "art": "d6_fest",
+    "vars": [
+     "v0226"
+    ],
+    "tiefe": 12,
+    "kegel": 8,
+    "pruef": 2,
+    "pruef_konkret": 1,
+    "pruef_tabelle": 2
+   },
+   "227": {
+    "art": "d6_fest",
+    "vars": [
+     "v0227"
+    ],
+    "tiefe": 13,
+    "kegel": 10,
+    "pruef": 2,
+    "pruef_konkret": 1,
+    "pruef_tabelle": 2
+   },
+   "228": {
+    "art": "d6_fest",
+    "vars": [
+     "v0228"
+    ],
+    "tiefe": 15,
+    "kegel": 20,
+    "pruef": 2,
+    "pruef_konkret": 1,
+    "pruef_tabelle": 2
+   },
+   "229": {
+    "art": "d6_alias",
+    "vars": [
+     "v0229",
+     "v0127"
+    ],
+    "tiefe": 15,
+    "kegel": 20,
+    "pruef": 3,
+    "pruef_konkret": 2,
+    "pruef_tabelle": 3
+   },
+   "230": {
+    "art": "d6_alias",
+    "vars": [
+     "v0230",
+     "v0127"
+    ],
+    "tiefe": 16,
+    "kegel": 22,
+    "pruef": 3,
+    "pruef_konkret": 2,
+    "pruef_tabelle": 3
+   },
+   "231": {
+    "art": "d6_fest",
+    "vars": [
+     "v0231"
+    ],
+    "tiefe": 18,
+    "kegel": 32,
+    "pruef": 2,
+    "pruef_konkret": 1,
+    "pruef_tabelle": 2
+   },
+   "233": {
+    "art": "d6_fest",
+    "vars": [
+     "v0233"
+    ],
+    "tiefe": 16,
+    "kegel": 25,
+    "pruef": 2,
+    "pruef_konkret": 1,
+    "pruef_tabelle": 2
+   },
+   "238": {
+    "art": "d6_fest",
+    "vars": [
+     "v0238"
+    ],
+    "tiefe": 17,
+    "kegel": 29,
+    "pruef": 2,
+    "pruef_konkret": 1,
+    "pruef_tabelle": 2
+   },
+   "303": {
+    "art": "d6_alias",
+    "vars": [
+     "v0303",
+     "v0201"
+    ],
+    "tiefe": 20,
+    "kegel": 30,
+    "pruef": 3,
+    "pruef_konkret": 2,
+    "pruef_tabelle": 3
+   }
+  }
+ },
+ "filter_eingefroren": {
+  "datei": "FILTER2_r6_k2_F8.json",
+  "sha256": "8187ac8a916a204f7e366f36bc869d3a94fcc63c3847be28e6562de5a8c827d9"
+ },
+ "kontrolle": {
+  "loesungen": 60,
+  "nonces": [
+   4,
+   5,
+   18,
+   21,
+   25,
+   27,
+   36,
+   45,
+   47,
+   48,
+   51,
+   56,
+   59,
+   61,
+   62,
+   65,
+   70,
+   71,
+   75,
+   77,
+   88,
+   92,
+   94,
+   103,
+   105,
+   111,
+   112,
+   115,
+   116,
+   119,
+   127,
+   128,
+   129,
+   131,
+   139,
+   143,
+   147,
+   151,
+   152,
+   157,
+   163,
+   164,
+   174,
+   176,
+   177,
+   179,
+   180,
+   182,
+   186,
+   188,
+   196,
+   202,
+   203,
+   208,
+   209,
+   214,
+   224,
+   235,
+   237,
+   242
+  ],
+  "verletzt": [],
+  "verletzt_anzahl": 0,
+  "A_filter": {
+   "alle_kegel_le_2": 0,
+   "alle_kegel_le_8": 0,
+   "alle_kegel_le_32": 0,
+   "drei_billigste": 0
+  },
+  "zeit_s": 0.0771
+ },
+ "bilanz": {
+  "referenz_K0": 179712,
+  "H": 782,
+  "H_nonce": 702,
+  "H_kopf_vorab": 80,
+  "C_pre_s": 0.063,
+  "C_pre_gatter_geschaetzt": 129265,
+  "umrechnung_hinweis": "C_pre in Gatter = Ableitungszeit / Zeit einer Gatterauswertung (4.87e-07 s) in derselben Python-Umgebung \u2013 grobe Schaetzung",
+  "wege": {
+   "P_alle_kegel_le_2": {
+    "A": 0,
+    "r": 0.0,
+    "c_filter": 57,
+    "K_ohne_Cpre": 194304,
+    "ersparnis_ohne_Cpre": -14592,
+    "K_mit_Cpre": 323569,
+    "ersparnis_mit_Cpre": -143857
+   },
+   "P_alle_kegel_le_8": {
+    "A": 0,
+    "r": 0.0,
+    "c_filter": 117,
+    "K_ohne_Cpre": 209664,
+    "ersparnis_ohne_Cpre": -29952,
+    "K_mit_Cpre": 338929,
+    "ersparnis_mit_Cpre": -159217
+   },
+   "P_alle_kegel_le_32": {
+    "A": 0,
+    "r": 0.0,
+    "c_filter": 244,
+    "K_ohne_Cpre": 242176,
+    "ersparnis_ohne_Cpre": -62464,
+    "K_mit_Cpre": 371441,
+    "ersparnis_mit_Cpre": -191729
+   },
+   "P_drei_billigste": {
+    "A": 0,
+    "r": 0.0,
+    "c_filter": 13,
+    "K_ohne_Cpre": 183040,
+    "ersparnis_ohne_Cpre": -3328,
+    "K_mit_Cpre": 312305,
+    "ersparnis_mit_Cpre": -132593
+   },
+   "E_form1": {
+    "E": 256,
+    "A": 0,
+    "r": 0.0,
+    "c_erzeugen": 1,
+    "K_ohne_Cpre": 179968,
+    "ersparnis_ohne_Cpre": -256,
+    "K_mit_Cpre": 309233,
+    "ersparnis_mit_Cpre": -129521
+   },
+   "EP_alle_kegel_le_2": {
+    "E": 256,
+    "A_E": 0,
+    "K_ohne_Cpre": 194560,
+    "ersparnis_ohne_Cpre": -14848,
+    "ersparnis_mit_Cpre": -144113
+   },
+   "EP_alle_kegel_le_8": {
+    "E": 256,
+    "A_E": 0,
+    "K_ohne_Cpre": 209920,
+    "ersparnis_ohne_Cpre": -30208,
+    "ersparnis_mit_Cpre": -159473
+   },
+   "EP_alle_kegel_le_32": {
+    "E": 256,
+    "A_E": 0,
+    "K_ohne_Cpre": 242432,
+    "ersparnis_ohne_Cpre": -62720,
+    "ersparnis_mit_Cpre": -191985
+   },
+   "EP_drei_billigste": {
+    "E": 256,
+    "A_E": 0,
+    "K_ohne_Cpre": 183296,
+    "ersparnis_ohne_Cpre": -3584,
+    "ersparnis_mit_Cpre": -132849
+   }
+  }
+ },
+ "beobachtung_nachtraeglich": {
+  "hinweis": "NACHTRAEGLICHE BEOBACHTUNG, nicht Teil der Bilanz (Filter waren vorab eingefroren): Ausschluss je einzelner abgeleiteter Bedingung ueber alle 256 Nonces gegen ihre Kegelkosten",
+  "bedingungen_gesamt": 112,
+  "mit_ausschluss": 3,
+  "kleinster_kegel_mit_ausschluss": 419,
+  "groesster_kegel_ohne_ausschluss": 246,
+  "beste_einzelbedingung": {
+   "gatter": 750,
+   "art": "d6_fest",
+   "kegel": 419,
+   "A": 137,
+   "ersparnis_allein_ohne_Cpre": -11602
+  },
+  "top10": [
+   {
+    "gatter": 750,
+    "art": "d6_fest",
+    "kegel": 419,
+    "A": 137,
+    "ersparnis_allein_ohne_Cpre": -11602
+   },
+   {
+    "gatter": 751,
+    "art": "d6_alias",
+    "kegel": 463,
+    "A": 130,
+    "ersparnis_allein_ohne_Cpre": -28036
+   },
+   {
+    "gatter": 753,
+    "art": "d6_fest",
+    "kegel": 464,
+    "A": 130,
+    "ersparnis_allein_ohne_Cpre": -28036
+   },
+   {
+    "gatter": 74,
+    "art": "d6_alias_nonce",
+    "kegel": 1,
+    "A": 0,
+    "ersparnis_allein_ohne_Cpre": -1024
+   },
+   {
+    "gatter": 75,
+    "art": "d6_alias_nonce",
+    "kegel": 1,
+    "A": 0,
+    "ersparnis_allein_ohne_Cpre": -1024
+   },
+   {
+    "gatter": 76,
+    "art": "d6_alias_nonce",
+    "kegel": 1,
+    "A": 0,
+    "ersparnis_allein_ohne_Cpre": -1024
+   },
+   {
+    "gatter": 78,
+    "art": "d6_fest",
+    "kegel": 1,
+    "A": 0,
+    "ersparnis_allein_ohne_Cpre": -768
+   },
+   {
+    "gatter": 83,
+    "art": "d6_alias_nonce",
+    "kegel": 1,
+    "A": 0,
+    "ersparnis_allein_ohne_Cpre": -1024
+   },
+   {
+    "gatter": 85,
+    "art": "d6_alias_nonce",
+    "kegel": 1,
+    "A": 0,
+    "ersparnis_allein_ohne_Cpre": -1024
+   },
+   {
+    "gatter": 90,
+    "art": "d6_alias_nonce",
+    "kegel": 1,
+    "A": 0,
+    "ersparnis_allein_ohne_Cpre": -1024
+   }
+  ]
+ },
+ "pruefung": {
+  "E1_sicher": true,
+  "E2_raum": true,
+  "E4_filter_vor_kontrolle": true,
+  "widerspruch_sicher": true
+ },
+ "bestanden": true,
+ "zeiten_s": {
+  "aufbau": 0.0017,
+  "ableitung": 0.063,
+  "form1_form2_filter": 0.0088,
+  "kontrolle": 0.0771
+ },
+ "maxrss_mib": 19.5,
+ "abhaengigkeiten": {
+  "pruefstand": {
+   "pfad": "/home/claude/kastenmaschine/l1/pruefstand.py",
+   "sha256": "0ae511450470ca91c32a7a25a8d75f83985d06d6f217c27f16e317ab2ac1d910"
+  },
+  "d6": {
+   "pfad": "/home/claude/kastenmaschine/l1/d6.py",
+   "sha256": "91ec11fc4d1d1bcf0045b0dc73a3525f0fadfd116c939101e87160bb77f6c794"
+  },
+  "gatter": {
+   "pfad": "/home/claude/kastenmaschine/miner_pruefung/sha256d/gatter.py",
+   "sha256": "75611ddf49d31dc933fe81ee56fe3a4e10cd1f1a3a571bf25fe6108b485f8f4f"
+  },
+  "e1_bit": {
+   "pfad": "/home/claude/kastenmaschine/miner_pruefung/sha256d/e1_bit.py",
+   "sha256": "cfa14b5181eda91e8b92bc4d1baded6137d39ba325c3cf524ea4d8a6f4a23248"
+  }
+ }
+}

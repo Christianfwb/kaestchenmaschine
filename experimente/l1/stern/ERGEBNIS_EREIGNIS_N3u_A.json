@@ -1,0 +1,523 @@
+{
+ "fall": "N3u",
+ "verfahren": "Arbeitsliste",
+ "status": "WIDERSPRUCH",
+ "ausgang_pruefsumme": "c94c1b2d866bc7e005f9a4d052e8d696ed979af99fd8b89a35196e2d0824487d",
+ "gruppen": 16,
+ "kanten": 15,
+ "ordnung": [
+  "x3",
+  "x7",
+  "cA",
+  "x5",
+  "cB",
+  "x9",
+  "x4",
+  "x8",
+  "x0",
+  "x2",
+  "x6",
+  "a1",
+  "a2",
+  "b1",
+  "b2",
+  "x1"
+ ],
+ "zaehler": {
+  "bearbeitungen": 11,
+  "nachrichten_geprueft": 15,
+  "nachrichten_gesendet": 15,
+  "gestrichen": 31,
+  "aufbau_s": 3e-05,
+  "max_schlange": 16
+ },
+ "protokoll": [
+  {
+   "bearbeitung": 4,
+   "gruppe": "G_x5",
+   "von": "G_cA",
+   "gestrichen": 7,
+   "verbleibend": 1
+  },
+  {
+   "bearbeitung": 6,
+   "gruppe": "G_x9",
+   "von": "G_cB",
+   "gestrichen": 7,
+   "verbleibend": 1
+  },
+  {
+   "bearbeitung": 9,
+   "gruppe": "G_x0",
+   "von": "G_x3",
+   "gestrichen": 4,
+   "verbleibend": 4
+  },
+  {
+   "bearbeitung": 9,
+   "gruppe": "G_x0",
+   "von": "G_x7",
+   "gestrichen": 2,
+   "verbleibend": 2
+  },
+  {
+   "bearbeitung": 10,
+   "gruppe": "G_x2",
+   "von": "G_x5",
+   "gestrichen": 3,
+   "verbleibend": 1
+  },
+  {
+   "bearbeitung": 11,
+   "gruppe": "G_x6",
+   "von": "G_x2",
+   "gestrichen": 6,
+   "verbleibend": 2
+  },
+  {
+   "bearbeitung": 11,
+   "gruppe": "G_x6",
+   "von": "G_x9",
+   "gestrichen": 2,
+   "verbleibend": 0
+  },
+  {
+   "bearbeitung": 11,
+   "gruppe": "G_x6",
+   "ereignis": "WIDERSPRUCH: Gruppe leer"
+  }
+ ],
+ "endrelationen": {
+  "G_x3": [
+   [
+    0,
+    0,
+    1
+   ],
+   [
+    1,
+    0,
+    0
+   ]
+  ],
+  "G_x7": [
+   [
+    0,
+    0,
+    0
+   ],
+   [
+    1,
+    1,
+    1
+   ]
+  ],
+  "G_cA": [
+   [
+    1,
+    1,
+    1,
+    1
+   ]
+  ],
+  "G_x5": [
+   [
+    1,
+    1,
+    1
+   ]
+  ],
+  "G_cB": [
+   [
+    1,
+    1,
+    1,
+    1
+   ]
+  ],
+  "G_x9": [
+   [
+    1,
+    1,
+    1
+   ]
+  ],
+  "G_x4": [
+   [
+    0,
+    0,
+    0,
+    0
+   ],
+   [
+    0,
+    1,
+    1,
+    1
+   ],
+   [
+    1,
+    0,
+    1,
+    1
+   ],
+   [
+    1,
+    1,
+    1,
+    0
+   ]
+  ],
+  "G_x8": [
+   [
+    0,
+    0,
+    0,
+    1
+   ],
+   [
+    0,
+    1,
+    0,
+    0
+   ],
+   [
+    1,
+    0,
+    0,
+    0
+   ],
+   [
+    1,
+    1,
+    1,
+    1
+   ]
+  ],
+  "G_x0": [
+   [
+    0,
+    0,
+    0
+   ],
+   [
+    1,
+    0,
+    1
+   ]
+  ],
+  "G_x2": [
+   [
+    1,
+    1,
+    0
+   ]
+  ],
+  "G_x6": [],
+  "G_a1": [
+   [
+    0,
+    0,
+    0,
+    0
+   ],
+   [
+    0,
+    0,
+    0,
+    1
+   ],
+   [
+    0,
+    0,
+    1,
+    0
+   ],
+   [
+    0,
+    0,
+    1,
+    1
+   ],
+   [
+    0,
+    1,
+    0,
+    0
+   ],
+   [
+    0,
+    1,
+    0,
+    1
+   ],
+   [
+    0,
+    1,
+    1,
+    0
+   ],
+   [
+    0,
+    1,
+    1,
+    1
+   ],
+   [
+    1,
+    0,
+    0,
+    0
+   ],
+   [
+    1,
+    0,
+    0,
+    1
+   ],
+   [
+    1,
+    0,
+    1,
+    0
+   ],
+   [
+    1,
+    0,
+    1,
+    1
+   ],
+   [
+    1,
+    1,
+    0,
+    0
+   ],
+   [
+    1,
+    1,
+    0,
+    1
+   ],
+   [
+    1,
+    1,
+    1,
+    0
+   ],
+   [
+    1,
+    1,
+    1,
+    1
+   ]
+  ],
+  "G_a2": [
+   [
+    0,
+    0,
+    0,
+    0
+   ],
+   [
+    0,
+    0,
+    0,
+    1
+   ],
+   [
+    0,
+    0,
+    1,
+    0
+   ],
+   [
+    0,
+    0,
+    1,
+    1
+   ],
+   [
+    0,
+    1,
+    0,
+    0
+   ],
+   [
+    0,
+    1,
+    0,
+    1
+   ],
+   [
+    0,
+    1,
+    1,
+    0
+   ],
+   [
+    0,
+    1,
+    1,
+    1
+   ],
+   [
+    1,
+    0,
+    0,
+    0
+   ],
+   [
+    1,
+    0,
+    0,
+    1
+   ],
+   [
+    1,
+    0,
+    1,
+    0
+   ],
+   [
+    1,
+    0,
+    1,
+    1
+   ],
+   [
+    1,
+    1,
+    0,
+    0
+   ],
+   [
+    1,
+    1,
+    0,
+    1
+   ],
+   [
+    1,
+    1,
+    1,
+    0
+   ],
+   [
+    1,
+    1,
+    1,
+    1
+   ]
+  ],
+  "G_b1": [
+   [
+    0,
+    0,
+    0
+   ],
+   [
+    0,
+    0,
+    1
+   ],
+   [
+    0,
+    1,
+    0
+   ],
+   [
+    0,
+    1,
+    1
+   ],
+   [
+    1,
+    0,
+    0
+   ],
+   [
+    1,
+    0,
+    1
+   ],
+   [
+    1,
+    1,
+    0
+   ],
+   [
+    1,
+    1,
+    1
+   ]
+  ],
+  "G_b2": [
+   [
+    0,
+    0
+   ],
+   [
+    0,
+    1
+   ],
+   [
+    1,
+    0
+   ],
+   [
+    1,
+    1
+   ]
+  ],
+  "G_x1": [
+   [
+    0
+   ],
+   [
+    1
+   ]
+  ]
+ },
+ "endrelationen_pruefsumme": "81e090a14a2246b2b3ed40f2fd5ca3d9c12653d36057203f87e73fdd010c7ad9",
+ "kanten_projektionen_gleich": null,
+ "speicherung": {
+  "original": 0,
+  "gespeichert": 0
+ },
+ "global_konsistent_je_gruppe": null,
+ "zeiten_s": {
+  "gruppierung_und_init": 0.00057,
+  "ableitung": 0.00013,
+  "kontrolle": 0.08743
+ },
+ "pruefung": {
+  "status": true,
+  "kontrolle": true,
+  "speicherung": true,
+  "global_konsistent": true,
+  "E6_kanten_projektionen_gleich": true,
+  "kein_fehler": true
+ },
+ "bestanden": true,
+ "maxrss_mib": 15.1,
+ "rlimit_as": [
+  -1,
+  -1
+ ],
+ "python": "3.13.16",
+ "abhaengigkeiten": {
+  "gruppen": {
+   "pfad": "/home/claude/kastenmaschine/veroeffentlichung/kaestchenmaschine/experimente/l1/stern/gruppen.py",
+   "sha256": "4c8f4546ee3cd00c82029c24226e06eacab9be5890fbf6314f53495943a40878"
+  },
+  "stern": {
+   "pfad": "/home/claude/kastenmaschine/veroeffentlichung/kaestchenmaschine/experimente/l1/stern/stern.py",
+   "sha256": "da8d10bbe24deb7264d4abc66640c002d7379d037cf1a6c8b869589f8c536bfb"
+  },
+  "stern_n3": {
+   "pfad": "/home/claude/kastenmaschine/veroeffentlichung/kaestchenmaschine/experimente/l1/stern_n3/stern_n3.py",
+   "sha256": "0029d711e9e0e46a9e8313fabcdb8121a28e272b46b2f7a1cca215f1b20b54cb"
+  }
+ }
+}

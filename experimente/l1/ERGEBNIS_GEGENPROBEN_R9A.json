@@ -1,0 +1,469 @@
+[
+ {
+  "name": "Spiegel: p=a&~b (Maj(a,~b,0)), q=~a&b (Maj(~a,b,0)) -> p^q=a^b",
+  "erwartung": "affin, Bez h^d^a^b=0",
+  "ohne": {
+   "status": "FIXPUNKT",
+   "wahr": 4,
+   "erlaubt": 16,
+   "verloren": 0,
+   "R9a": 0,
+   "protokoll": [],
+   "bez": []
+  },
+  "mit": {
+   "status": "FIXPUNKT",
+   "wahr": 4,
+   "erlaubt": 8,
+   "verloren": 0,
+   "R9a": 2,
+   "protokoll": [
+    [
+     "R9a",
+     [
+      "Maj",
+      0
+     ],
+     [
+      "Maj",
+      1
+     ],
+     "affin",
+     [
+      2,
+      3
+     ],
+     0
+    ],
+    [
+     "R9a",
+     [
+      "Maj",
+      0
+     ],
+     [
+      "Maj",
+      1
+     ],
+     "affin",
+     [
+      2,
+      3
+     ],
+     0
+    ]
+   ],
+   "bez": [
+    "x0^x1^x2^x3=0"
+   ]
+  }
+ },
+ {
+  "name": "Spiegel vertauschte Eingaenge: Maj(~b,a,0) vs Ch(~a,b,0)",
+  "erwartung": "affin",
+  "ohne": {
+   "status": "FIXPUNKT",
+   "wahr": 4,
+   "erlaubt": 16,
+   "verloren": 0,
+   "R9a": 0,
+   "protokoll": [],
+   "bez": []
+  },
+  "mit": {
+   "status": "FIXPUNKT",
+   "wahr": 4,
+   "erlaubt": 8,
+   "verloren": 0,
+   "R9a": 2,
+   "protokoll": [
+    [
+     "R9a",
+     [
+      "Ch",
+      0
+     ],
+     [
+      "Maj",
+      0
+     ],
+     "affin",
+     [
+      2,
+      3
+     ],
+     0
+    ],
+    [
+     "R9a",
+     [
+      "Ch",
+      0
+     ],
+     [
+      "Maj",
+      0
+     ],
+     "affin",
+     [
+      2,
+      3
+     ],
+     0
+    ]
+   ],
+   "bez": [
+    "x0^x1^x2^x3=0"
+   ]
+  }
+ },
+ {
+  "name": "Negierte Ausgaenge: ~(a&~b) = Maj(~a,b,1) vs ~a&b",
+  "erwartung": "affin: (a|~b)^(~a&b)= a^b^1 -> Bez h^d^a^b=1",
+  "ohne": {
+   "status": "FIXPUNKT",
+   "wahr": 4,
+   "erlaubt": 16,
+   "verloren": 0,
+   "R9a": 0,
+   "protokoll": [],
+   "bez": []
+  },
+  "mit": {
+   "status": "FIXPUNKT",
+   "wahr": 4,
+   "erlaubt": 8,
+   "verloren": 0,
+   "R9a": 2,
+   "protokoll": [
+    [
+     "R9a",
+     [
+      "Maj",
+      0
+     ],
+     [
+      "Maj",
+      1
+     ],
+     "affin",
+     [
+      2,
+      3
+     ],
+     0
+    ],
+    [
+     "R9a",
+     [
+      "Maj",
+      0
+     ],
+     [
+      "Maj",
+      1
+     ],
+     "affin",
+     [
+      2,
+      3
+     ],
+     1
+    ]
+   ],
+   "bez": [
+    "x0^x1^x2^x3=1"
+   ]
+  }
+ },
+ {
+  "name": "a&b vs a|b: Differenz a^b",
+  "erwartung": "affin, Bez h^d^a^b=0",
+  "ohne": {
+   "status": "FIXPUNKT",
+   "wahr": 4,
+   "erlaubt": 16,
+   "verloren": 0,
+   "R9a": 0,
+   "protokoll": [],
+   "bez": []
+  },
+  "mit": {
+   "status": "FIXPUNKT",
+   "wahr": 4,
+   "erlaubt": 8,
+   "verloren": 0,
+   "R9a": 2,
+   "protokoll": [
+    [
+     "R9a",
+     [
+      "Ch",
+      0
+     ],
+     [
+      "Maj",
+      0
+     ],
+     "affin",
+     [
+      2,
+      3
+     ],
+     1
+    ],
+    [
+     "R9a",
+     [
+      "Ch",
+      0
+     ],
+     [
+      "Maj",
+      0
+     ],
+     "affin",
+     [
+      2,
+      3
+     ],
+     0
+    ]
+   ],
+   "bez": [
+    "x0^x1^x2^x3=0"
+   ]
+  }
+ },
+ {
+  "name": "a&b vs a^b (Ch(a,~b,b)): Differenz a|b NICHT affin",
+  "erwartung": "nicht affin, R9a 0x",
+  "ohne": {
+   "status": "FIXPUNKT",
+   "wahr": 4,
+   "erlaubt": 8,
+   "verloren": 0,
+   "R9a": 0,
+   "protokoll": [],
+   "bez": [
+    "x0^x1^x3=0"
+   ]
+  },
+  "mit": {
+   "status": "FIXPUNKT",
+   "wahr": 4,
+   "erlaubt": 8,
+   "verloren": 0,
+   "R9a": 0,
+   "protokoll": [
+    [
+     "R9a",
+     [
+      "Ch",
+      0
+     ],
+     [
+      "Ch",
+      1
+     ],
+     "nicht affin"
+    ],
+    [
+     "R9a",
+     [
+      "Ch",
+      0
+     ],
+     [
+      "Ch",
+      1
+     ],
+     "nicht affin"
+    ],
+    [
+     "R9a",
+     [
+      "Ch",
+      0
+     ],
+     [
+      "Ch",
+      1
+     ],
+     "nicht affin"
+    ]
+   ],
+   "bez": [
+    "x0^x1^x3=0"
+   ]
+  }
+ },
+ {
+  "name": "Maj(a,b,c) vs Ch(a,b,c): Differenz nicht affin",
+  "erwartung": "nicht affin, R9a 0x",
+  "ohne": {
+   "status": "FIXPUNKT",
+   "wahr": 8,
+   "erlaubt": 32,
+   "verloren": 0,
+   "R9a": 0,
+   "protokoll": [],
+   "bez": []
+  },
+  "mit": {
+   "status": "FIXPUNKT",
+   "wahr": 8,
+   "erlaubt": 32,
+   "verloren": 0,
+   "R9a": 0,
+   "protokoll": [
+    [
+     "R9a",
+     [
+      "Ch",
+      0
+     ],
+     [
+      "Maj",
+      0
+     ],
+     "nicht affin"
+    ],
+    [
+     "R9a",
+     [
+      "Ch",
+      0
+     ],
+     [
+      "Maj",
+      0
+     ],
+     "nicht affin"
+    ]
+   ],
+   "bez": []
+  }
+ },
+ {
+  "name": "Maj(a,b,c) vs Maj(a,b,~c): Differenz = a^b^1 affin",
+  "erwartung": "affin, Bez h^d^a^b=1",
+  "ohne": {
+   "status": "FIXPUNKT",
+   "wahr": 8,
+   "erlaubt": 32,
+   "verloren": 0,
+   "R9a": 0,
+   "protokoll": [],
+   "bez": []
+  },
+  "mit": {
+   "status": "FIXPUNKT",
+   "wahr": 8,
+   "erlaubt": 16,
+   "verloren": 0,
+   "R9a": 2,
+   "protokoll": [
+    [
+     "R9a",
+     [
+      "Maj",
+      0
+     ],
+     [
+      "Maj",
+      1
+     ],
+     "affin",
+     [
+      2,
+      3
+     ],
+     0
+    ],
+    [
+     "R9a",
+     [
+      "Maj",
+      0
+     ],
+     [
+      "Maj",
+      1
+     ],
+     "affin",
+     [
+      2,
+      3
+     ],
+     0
+    ]
+   ],
+   "bez": [
+    "x0^x1^x3^x4=0"
+   ]
+  }
+ },
+ {
+  "name": "Verschiedene Wurzeln a&b vs a&c: kein Vergleich",
+  "erwartung": "R9a 0x",
+  "ohne": {
+   "status": "FIXPUNKT",
+   "wahr": 8,
+   "erlaubt": 32,
+   "verloren": 0,
+   "R9a": 0,
+   "protokoll": [],
+   "bez": []
+  },
+  "mit": {
+   "status": "FIXPUNKT",
+   "wahr": 8,
+   "erlaubt": 32,
+   "verloren": 0,
+   "R9a": 0,
+   "protokoll": [],
+   "bez": []
+  }
+ },
+ {
+  "name": "Unerfuellbar: p^q=a^b, aber Ziel h=d und a^b=1 (p=h,q=d)",
+  "erwartung": "0 wahr, WIDERSPRUCH erwartet",
+  "ohne": {
+   "status": "WIDERSPRUCH",
+   "wahr": 0,
+   "erlaubt": 0,
+   "verloren": 0,
+   "R9a": 0,
+   "protokoll": [],
+   "bez": []
+  },
+  "mit": {
+   "status": "WIDERSPRUCH",
+   "wahr": 0,
+   "erlaubt": 0,
+   "verloren": 0,
+   "R9a": 1,
+   "protokoll": [
+    [
+     "R9a",
+     [
+      "Maj",
+      0
+     ],
+     [
+      "Maj",
+      1
+     ],
+     "affin",
+     [
+      2,
+      3
+     ],
+     0
+    ]
+   ],
+   "bez": []
+  }
+ }
+]

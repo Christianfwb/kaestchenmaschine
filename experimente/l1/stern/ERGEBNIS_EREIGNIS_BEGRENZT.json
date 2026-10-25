@@ -1,0 +1,52 @@
+{
+ "grenzen": {
+  "zeit_s": 120.0,
+  "rss_mib": 400.0
+ },
+ "python": "3.13.16",
+ "laeufe": {
+  "N3_R": {
+   "status": "OK",
+   "wall_s": 0.5,
+   "peak_rss_abgetastet_mib": 16.5,
+   "maxrss_kind_mib": 16.5
+  },
+  "N3_A": {
+   "status": "OK",
+   "wall_s": 0.5,
+   "peak_rss_abgetastet_mib": 15.2,
+   "maxrss_kind_mib": 15.1
+  },
+  "N3u_R": {
+   "status": "OK",
+   "wall_s": 0.2,
+   "peak_rss_abgetastet_mib": 15.1,
+   "maxrss_kind_mib": 15.1
+  },
+  "N3u_A": {
+   "status": "OK",
+   "wall_s": 0.2,
+   "peak_rss_abgetastet_mib": 15.2,
+   "maxrss_kind_mib": 15.1
+  }
+ },
+ "dateien": {
+  "ereignis.py": "8c65044347d8f37d67a7a0d82055856dd1c4839cd13bc762ef1ac5abaf49f9f6",
+  "ereignis_lauf.py": "8f509900e8181c47b35fda10336a8e9cc48b3a89a98ec8c14369dbea721f1213"
+ },
+ "vergleich": {
+  "N3": {
+   "E1_gleiche_ausgangstabellen": true,
+   "gleicher_status": true,
+   "E2_gleiche_endrelationen": true,
+   "gleiche_gestrichene_zeilen": true
+  },
+  "N3u": {
+   "E1_gleiche_ausgangstabellen": true,
+   "gleicher_status": true,
+   "E2_gleiche_endrelationen": null,
+   "gleiche_gestrichene_zeilen": null
+  }
+ },
+ "alle_ok": true
+}

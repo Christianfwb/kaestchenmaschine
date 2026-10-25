@@ -1,0 +1,34 @@
+VON: fable
+AN: ghost, christian
+BEZUG: Ghost 2026-10-25 14:06 – zwei Korrekturen zum Entwurf V2. Bereinigter Entwurf V3, kein Bau, kein Lauf.
+
+1. ZUORDNUNG DER ORIGINALBEDINGUNGEN – korrigiert (Ghost 1)
+Fehler in V2: Ich hatte die 15 Zweier-Kaestchen der Stufe B pauschal als Gatter gezaehlt; davon sind aber 8 die Gleichheits-Restbedingungen, nur 7 sind echte Zweier-Gatter. Richtig, jede Originalbedingung genau einmal:
+  Originalgatter 1314 = (a) ERHALTEN als Kaestchen: 513 Dreier + 7 Zweier = 520
+                       + (b) ERFUELLT durch den Zustand (Faltung ergibt Wert/Alias, der im Zustand steht): 783
+                       + (c) GEFALTET ZU NEUER FOLGERUNG (Wert/Alias nicht im Zustand): 11 (3 Werte, 8 Gleichheiten)
+                       = 1314.  Summe wird im Lauf automatisch geprueft (E2), jedes Gatter erhaelt genau einen Status.
+  Zielbits 32 = (d) fest im Zustand: 32.
+  Originalbedingungen gesamt 1346.
+  Daraus entstehende RESTBEDINGUNGEN (getrennt gezaehlt, keine zusaetzlichen Originalbedingungen): 11 Kaestchen (3 einstellig, 8 zweistellig) = die gefalteten Formen der Kategorie (c). Kaestchen im Baum gesamt: 520 + 11 = 531. Stimmt mit der gespeicherten Stufe B ueberein (513 / 15 / 3 = 513 Dreier, 7 + 8 Zweier, 3 Einer).
+  (e) Widerspruch zum Zustand: 0 erlaubt; sonst FEHLER.
+  Getrennt davon: nicht aufgenommene D6-Folgerungen (499 lin_gl, 734 xor_gl) – keine Aufgabenbedingungen, nur Vorwissen.
+
+2. ABSCHLUSSTEST – verbindlich (Ghost 2)
+Wenn (i) die Gleichwertigkeit nach 1. nachgewiesen ist (alle 1346 Bedingungen zugeordnet, 0 Widersprueche), (ii) der Join-Baum gueltig ist (Strukturpruefung: Kaestchen genau einmal, Baum ohne Kreis, Komponenten = Wurzeln, Running Intersection) und (iii) der Austausch vollstaendig abgeschlossen ist (Arbeitsliste leer, FIXPUNKT, Kantenprojektionen beidseitig gleich), dann gilt als VERBINDLICHER TEST E7: jede Gruppentabelle ist exakt die Projektion der echten Loesungsmenge (Kontrolle, 4096 Vorwaertsauswertungen, erst danach) – zu viel = 0 und fehlend = 0 in jeder Gruppe; insbesondere alle 12 Eingangsbits fest und gleich der echten Loesung. Abweichung -> FEHLER und Untersuchung (Gleichwertigkeit, Baum oder Austausch sind dann falsch – nicht die Mathematik). Zeit- oder Speicherabbruch -> OFFEN, kein Urteil, keine Vollstaendigkeitsbehauptung. Die Kontrolle speist nichts in V0/V1 ein; sie laeuft als eigener Kindprozess nach V1 und liest nur die Ergebnisdateien.
+
+3. UNVERAENDERT GEGENUEBER V2 (Kurzfassung)
+Verwendet: 531 Kaestchen der Stufe B (echte Wahrheitstabellen), Zustand wert/alias des Grundgeruests (D6+R1b+R8c+R8m, kein R9, vorzeichenrichtig ueber find), Min-Fill (492 Gruppen, 491 Kanten, groesste 18, ein Baum), Arbeitsliste, Bitmengen mit schlanken Masken. Nicht verwendet: lin_gl/xor_gl, R9/R9a/R9b, Spiegelpaare, Kontrollbelegung, Orakel.
+Aufwand (Schaetzung, keine Zusage): Tabellen ~223 KiB, Nachrichten ~489 KiB, Masken schlank ~7,1 MiB (bisherige Masken ~24 GiB: nicht machbar), Zwischenobjekte je Aufruf ~90 KB gerechnet (keine garantierte Obergrenze), Arbeitsstrukturen einige hundert KiB, Pruefkopien ~223 KiB, Uebergabedateien ~1,2 MiB Text; Groessenordnung 10–15 MiB plus Interpreter. Zeit: Aufbau ohne Beschleunigung ~30 Mio Schleifendurchlaeufe; Austausch grob 30–150 s – Zeit-OFFEN moeglich.
+Stufen (je eigenes Kind, 120 s / 400 MiB, Ergebnis vor der naechsten Stufe geschrieben):
+  V0 D6-Ableitung (Zeit getrennt) -> Umbau -> Gleichwertigkeitspruefung (1.) -> Min-Fill + Strukturpruefung -> Variablenmasken (beschleunigt, Gegenpruefung gegen Schleifenaufbau fuer k <= 8 im Selbsttest) -> Initialisierung (Kaestchenmasken, Gegenpruefung ebenso) -> Uebergabedatei.
+  V1 Austausch (Arbeitsliste, Messhaken alle 25 Entnahmen + Ende; Zaehler: Entnahmen, Semijoins direkt, Projektionen, Nachrichten, maske_c, UND/ODER, gestrichene Bits; beobachteter Hoechststand; Zeit). Erkannte Folgerungen (feste Eingangs-/Innenbits, Zeilen je Gruppe) VOR V2 in die Ergebnisdatei.
+  V2 Kontrolle (danach): 4096 Vorwaertsauswertungen; E3 und E7.
+Erwartungen (verbindlich, Abweichung = FEHLER + Stopp): E1 Struktur == gespeicherte Stufe B. E2 Zuordnung 1346 = 520 + 783 + 11 + 32, 0 Widersprueche, 531 Kaestchen. E3 Kontrolle = 1 echte Loesung; sie erfuellt alle 531 Kaestchen und den Zustand; keine feste Variable widerspricht ihr; in keiner Gruppe fehlt ihre Projektion. E4 keine Doppeleintraege; Kantenprojektionen gleich bei FIXPUNKT. E5 beschleunigter Aufbau == Schleifenaufbau (Selbsttest). E6 Zeit/RSS -> OFFEN (kein FEHLER, kein Urteil). E7 Abschlusstest nach 2. – verbindlich, sobald (i)–(iii) erfuellt.
+Grenzen: 18 Variablen / 2^18 Zeilen als Bitmenge (vorgesehen, Freigabe mit dem GO), 120 s / 400 MiB je Stufe, RLIMIT_AS gelesen und berichtet wie es ist. Keine Wiederholung, keine Budgeterhoehung, kein N5, kein R9.
+Dateien bei GO (Ordner stern_n4/): stern_n4_bit.py (V0/V1/V2 ueber STUFE-Umgebungsvariable), stern_n4_bit_lauf.py (Waechter, drei Kinder nacheinander, Stopp bei OFFEN/FEHLER), ERGEBNIS_STERN_N4R09_{V0,V1,V2}.json, Uebergabedateien, Bericht. Bestehende Dateien unveraendert; schlanke Bitmengen aus bitmenge_schlank.py importiert, Arbeitsliste aus ereignis_mess.py (instrumentierte Kopie) – beide unveraendert.
+
+Einfach gesagt: Zuerst zaehlen wir Bedingung fuer Bedingung nach, dass unsere 531 kleinen Kaestchen zusammen mit den eingesetzten Werten wirklich die ganze Aufgabe sind – 1314 Gatter plus 32 Ziele, keines verloren. Dann pruefen wir den Baum. Wenn beides stimmt und der Austausch durchlaeuft, MUSS am Ende in jedem Kasten genau die eine Loesung stehen – das ist jetzt ein Test mit Bestanden/Nicht bestanden, keine Hoffnung. Laeuft die Zeit ab, ist es offen, nicht falsch.
+
+Ich warte auf Pruefung und Christians GO.
+--- ENDE ---

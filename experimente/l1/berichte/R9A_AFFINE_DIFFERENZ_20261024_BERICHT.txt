@@ -1,0 +1,27 @@
+FABLE AN GHOST – R9a 'AFFINE DIFFERENZ' AN DEN ZWEI SPIEGELPAAREN, N4r09 – 2026-10-24 15:50. Auftrag 14:12. Kein R9-Vollscan, kein R8g.
+Fable-Container Xeon 2,10 GHz 2 Kerne, Python 3.13.16. Pruefstand-Budgets wie bisher.
+
+1. REGEL R9a (d6.py, nur bei 'R9a' in AKTIV, Paare aus R9A_PAARE): zwei vollstaendig normierte Ausgangstafeln (R9-Normierung: Wurzeln sortiert, Vorzeichen von
+   Eingaengen und Ausgang) ueber DENSELBEN Wurzeln werden zeilenweise XOR-verknuepft. Aus Zeile 0...0 folgt die Konstante, aus den Einheitszeilen die
+   Koeffizienten; dann wird an JEDER der 2^k Zeilen geprueft, ob Differenz = Konstante XOR (ausgewaehlte Wurzeln). Nur dann wird die XOR-Gleichung
+   out1 ^ out2 ^ (Wurzeln) = Konstante uebernommen (xor_gl, danach Gauss/R3 wie bisher). Nicht affin -> protokolliert, nichts uebernommen.
+2. GEGENPROBEN (gegenproben_r9a.py, ERGEBNIS_GEGENPROBEN_R9A.json; 9 Netze, alle Belegungen gegen Orakel; ohne = D6+R9, mit = +R9a ueber alle Paare; verloren 0):
+   affin erkannt: Spiegelpaar a&~b / ~a&b (16 -> 8 = Beziehung h^d^a^b=0 ueber freie Bits), dasselbe mit vertauschten Eingaengen und gemischt Maj/Ch,
+   negierte Ausgaenge (Konstante 1 korrekt), a&b vs a|b (Differenz a^b), Maj(a,b,c) vs Maj(a,b,~c) (Differenz a^b).
+   nicht affin, richtig abgelehnt: a&b vs a^b (Differenz a|b), Maj(a,b,c) vs Ch(a,b,c). Verschiedene Wurzelmengen: kein Vergleich.
+   Unerfuellbares Netz (p^q=a^b erzwungen gegen h=d, a^b=1): WIDERSPRUCH (vorher schon 0 erlaubt). Korrektur an mir: meine Erwartung 'a^b^1' bei Maj(a,b,~c) war
+   falsch notiert, die Differenz ist a^b; der Code rechnet richtig.
+3. N4r09, Pruefstand (ERGEBNIS_R9A.json): D6+R9(5) 128 | D6+R9a(Spiegel) 128. R9a feuert fuer BEIDE Spiegelpaare (Protokoll):
+     Maj#25 ^ Maj#201 ^ x3 ^ x10 = 0     (x3 = W0.b1, x10 = W2.b0)
+     Maj#197 ^ Maj#261 ^ x10 ^ x11 = 0   (x11 = W2.b1; nach R9 ist Maj#197 = Ch#21)
+   XOR-Gleichungen 735 -> 738, sonst identischer Bestand (Werte 468, Aliasse 367, R2/R4/R5 unveraendert). Beziehungen ueber freie Bits unveraendert (5 XOR,
+   3 Wertemengen). Verloren 0. Zeit 0,29 s, Aufwand R9a: zwei Tafelvergleiche a 4 Zeilen.
+BEFUND (BELEGT): Zwei nichtlineare Kaestchen liefern zusammen je eine lineare Gleichung – die Gleichungen werden korrekt gewonnen und eingespeist, aber sie
+erreichen die Eingaenge nicht: 128 -> 128. Gauss eliminiert die inneren Ausgaenge (Maj#25, #201, #197, #261), und diese kommen in keiner weiteren Gleichung vor,
+die zu den freien Bits fuehrt. Die neuen Beziehungen bleiben Wissen ueber innere Knoten.
+LESART (VERMUTUNG): Die Ausgaenge der Spiegelpaare gehen in Addierer (Uebertragsketten) – dort stehen sie in Stufengleichungen (R4, ganzzahlig), nicht in XOR-Gleichungen.
+Die affine Beziehung ist XOR-Wissen; die Weitergabe durch die Addierer verlangt ganzzahliges Wissen. Ob eine Umschreibung (p ^ q = s  <=>  p + q - 2pq = s, mit
+p*q = 0 fuer Spiegelpaare also p + q = x3 + x10 - 2*x3*x10 ... nicht linear) hilft, ist offen; fuer Spiegelpaare gilt jedenfalls EXAKT p + q = x_a XOR x_b als Zahl, und
+p*q = 0, also p + q <= 1 – eine ganzzahlige Ungleichung, die R4 (Schranken) nutzen koennte. Nicht gebaut.
+OFFEN (nicht gestartet): Spiegelpaar-Zusatz 'p + q <= 1' (bzw. p + q = x_a ^ x_b als 0/1-Wert) in die linearen Gleichungen; R9/R9a an allen Kaestchen (Vollscan).
+Dateien: d6.py, pruefstand.py, gegenproben_r9a.py, ERGEBNIS_GEGENPROBEN_R9A.json, ERGEBNIS_R9A.json.

@@ -1,0 +1,20 @@
+FABLE AN GHOST – KORREKTUR ZUM PAKET GEGENPROBE_ZIELBIT (bleibt unveraendert bestehen) – 2026-10-24 18:00. GO 15:23: nur Pruefablauf korrigieren, dieselbe Gegenprobe wiederholen.
+Fable-Container Xeon 2,10 GHz 2 Kerne, Python 3.13.16. Grenzen wie bisher.
+
+WAS FALSCH WAR (im Pruefstand seit Stufe a3, betrifft die Reihenfolge, nicht die Zahlen):
+1. messen() rechnete das Orakel (alle Eingaben am Netz) im Elternprozess VOR dem Start des Ableitungs-Kindes. Die Ableitung selbst lief zwar ohne Orakelzugriff
+   (eigener Prozess, bekommt nur Netz und Darstellung), aber die geforderte Reihenfolge 'erst ableiten und einfrieren, dann Orakel' war nicht eingehalten.
+2. Die ausgewiesene 'Kontrolle 0,0004 s' war die Pruefung der EINGEFRORENEN FOLGERUNGEN ueber alle 4096 Eingaben im Kind (bei WIDERSPRUCH ist jede Pruefung ein
+   Sofort-Nein, daher so kurz). Die vollstaendige Orakelpruefung wurde nicht gestoppt und nicht ausgewiesen. Mein Bericht hat das falsch als 'Kontrolle' bezeichnet.
+KORREKTUR (pruefstand.py, messen()): Orakel wird erst NACH der ersten abgeschlossenen Ableitung und deren Snapshot gerechnet und einzeln gestoppt. Drei Zeiten getrennt:
+ableitung_s (Kind), orakel_s (Eltern, vollstaendige Netzauswertung aller Eingaben), folgerungen_pruefung_s (Kind, eingefrorene Folgerungen gegen alle Eingaben).
+Alte Felder bleiben lesbar (kontrolle_s = folgerungen_pruefung_s). Kontrolltests des Pruefstands (--tests: Sabotage, Zeit, Speicher, Absturz) danach: alle bestanden.
+
+WIEDERHOLUNG, unveraendert (N4r09k = Register a Bit 0 gekippt; Grundgeruest + R9; ERGEBNIS_GEGENPROBE_N4r09k_KORRIGIERT.json):
+  Ableitung (ohne Orakel, Kind): WIDERSPRUCH, 0,162 s, 18,4 MiB. Folgerungen eingefroren (Snapshot geprueft). R9 2x, sonst wie zuvor.
+  Orakel (nach Ableitung, Eltern): 0 wahre Loesungen von 4096 – 1,865 s.
+  Pruefung der eingefrorenen Folgerungen gegen alle 4096: erlaubt 0 – 0,0004 s.
+  Schein 0, verloren 0. Ergebnis identisch mit dem ersten Lauf; nur Reihenfolge und Zeitausweis sind jetzt korrekt.
+EINORDNUNG: Das Orakel bestaetigt die Unloesbarkeit des gekippten Ziels, nicht jeden Ableitungsschritt. Die Soundness der Schritte stuetzt sich weiterhin auf die
+Gegenproben je Regel und auf 'verloren = 0' an allen loesbaren Netzen; ein unabhaengiger Nachvollzug der Widerspruchskette ist nicht erfolgt.
+Dateien: pruefstand.py, ERGEBNIS_GEGENPROBE_N4r09k_KORRIGIERT.json, ERGEBNIS_L1_KONTROLLTESTS.json. Nichts weiter gestartet.

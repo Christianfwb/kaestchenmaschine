@@ -1,0 +1,635 @@
+{
+ "grenzen": {
+  "zeit_s": 120.0,
+  "rss_mib": 400.0
+ },
+ "python": "3.13.16",
+ "laeufe": [
+  {
+   "r": 6,
+   "k": 2,
+   "F": 1,
+   "status": "OK",
+   "wall_s": 0.61,
+   "peak_rss_mib": 19.6,
+   "zeile": "r6 k2 F1(13) | FIXPUNKT    | Loesungen  54 | Form1 Rang 0 kons True E 256 | Kandidaten 22 | H_nonce 702 | beste Ersparnis mit C_pre: E_form1 -184492 | sicher True | BESTANDEN"
+  },
+  {
+   "r": 6,
+   "k": 2,
+   "F": 2,
+   "status": "OK",
+   "wall_s": 0.56,
+   "peak_rss_mib": 19.7,
+   "zeile": "r6 k2 F2( 9) | FIXPUNKT    | Loesungen  53 | Form1 Rang 0 kons True E 256 | Kandidaten 17 | H_nonce 702 | beste Ersparnis mit C_pre: P_alle_kegel_le_2 -177611 | sicher True | BESTANDEN"
+  },
+  {
+   "r": 6,
+   "k": 2,
+   "F": 3,
+   "status": "OK",
+   "wall_s": 0.51,
+   "peak_rss_mib": 19.7,
+   "zeile": "r6 k2 F3( 7) | FIXPUNKT    | Loesungen  73 | Form1 Rang 0 kons True E 256 | Kandidaten 21 | H_nonce 702 | beste Ersparnis mit C_pre: E_form1 -260442 | sicher True | BESTANDEN"
+  },
+  {
+   "r": 6,
+   "k": 2,
+   "F": 4,
+   "status": "OK",
+   "wall_s": 0.66,
+   "peak_rss_mib": 19.7,
+   "zeile": "r6 k2 F4( 2) | FIXPUNKT    | Loesungen  61 | Form1 Rang 0 kons True E 256 | Kandidaten 23 | H_nonce 702 | beste Ersparnis mit C_pre: P_alle_kegel_le_2 -162862 | sicher True | BESTANDEN"
+  },
+  {
+   "r": 6,
+   "k": 2,
+   "F": 5,
+   "status": "OK",
+   "wall_s": 0.46,
+   "peak_rss_mib": 19.8,
+   "zeile": "r6 k2 F5(15) | FIXPUNKT    | Loesungen  51 | Form1 Rang 0 kons True E 256 | Kandidaten 15 | H_nonce 702 | beste Ersparnis mit C_pre: P_alle_kegel_le_2 -204055 | sicher True | BESTANDEN"
+  },
+  {
+   "r": 6,
+   "k": 2,
+   "F": 6,
+   "status": "OK",
+   "wall_s": 0.5,
+   "peak_rss_mib": 19.7,
+   "zeile": "r6 k2 F6( 6) | FIXPUNKT    | Loesungen  70 | Form1 Rang 0 kons True E 256 | Kandidaten 24 | H_nonce 702 | beste Ersparnis mit C_pre: E_form1 -252160 | sicher True | BESTANDEN"
+  },
+  {
+   "r": 6,
+   "k": 2,
+   "F": 7,
+   "status": "OK",
+   "wall_s": 0.66,
+   "peak_rss_mib": 19.7,
+   "zeile": "r6 k2 F7( 6) | FIXPUNKT    | Loesungen  70 | Form1 Rang 0 kons True E 256 | Kandidaten 24 | H_nonce 702 | beste Ersparnis mit C_pre: E_form1 -195062 | sicher True | BESTANDEN"
+  },
+  {
+   "r": 6,
+   "k": 2,
+   "F": 8,
+   "status": "OK",
+   "wall_s": 0.72,
+   "peak_rss_mib": 19.8,
+   "zeile": "r6 k2 F8(11) | FIXPUNKT    | Loesungen  60 | Form1 Rang 0 kons True E 256 | Kandidaten 25 | H_nonce 702 | beste Ersparnis mit C_pre: E_form1 -244459 | sicher True | BESTANDEN"
+  },
+  {
+   "r": 6,
+   "k": 3,
+   "F": 1,
+   "status": "OK",
+   "wall_s": 0.5,
+   "peak_rss_mib": 19.7,
+   "zeile": "r6 k3 F1(13) | FIXPUNKT    | Loesungen  25 | Form1 Rang 0 kons True E 256 | Kandidaten 22 | H_nonce 702 | beste Ersparnis mit C_pre: E_form1 -221891 | sicher True | BESTANDEN"
+  },
+  {
+   "r": 6,
+   "k": 3,
+   "F": 2,
+   "status": "OK",
+   "wall_s": 0.46,
+   "peak_rss_mib": 19.8,
+   "zeile": "r6 k3 F2( 9) | FIXPUNKT    | Loesungen  23 | Form1 Rang 0 kons True E 256 | Kandidaten 17 | H_nonce 702 | beste Ersparnis mit C_pre: P_alle_kegel_le_2 -180974 | sicher True | BESTANDEN"
+  },
+  {
+   "r": 6,
+   "k": 3,
+   "F": 3,
+   "status": "OK",
+   "wall_s": 0.51,
+   "peak_rss_mib": 19.7,
+   "zeile": "r6 k3 F3( 7) | FIXPUNKT    | Loesungen  35 | Form1 Rang 0 kons True E 256 | Kandidaten 21 | H_nonce 702 | beste Ersparnis mit C_pre: E_form1 -236517 | sicher True | BESTANDEN"
+  },
+  {
+   "r": 6,
+   "k": 3,
+   "F": 4,
+   "status": "OK",
+   "wall_s": 0.51,
+   "peak_rss_mib": 19.7,
+   "zeile": "r6 k3 F4( 2) | FIXPUNKT    | Loesungen  34 | Form1 Rang 0 kons True E 256 | Kandidaten 23 | H_nonce 702 | beste Ersparnis mit C_pre: P_alle_kegel_le_2 -248114 | sicher True | BESTANDEN"
+  },
+  {
+   "r": 6,
+   "k": 3,
+   "F": 5,
+   "status": "OK",
+   "wall_s": 0.56,
+   "peak_rss_mib": 19.8,
+   "zeile": "r6 k3 F5(15) | FIXPUNKT    | Loesungen  30 | Form1 Rang 0 kons True E 256 | Kandidaten 15 | H_nonce 702 | beste Ersparnis mit C_pre: P_alle_kegel_le_2 -148500 | sicher True | BESTANDEN"
+  },
+  {
+   "r": 6,
+   "k": 3,
+   "F": 6,
+   "status": "OK",
+   "wall_s": 0.61,
+   "peak_rss_mib": 19.7,
+   "zeile": "r6 k3 F6( 6) | FIXPUNKT    | Loesungen  26 | Form1 Rang 0 kons True E 256 | Kandidaten 24 | H_nonce 702 | beste Ersparnis mit C_pre: E_form1 -246642 | sicher True | BESTANDEN"
+  },
+  {
+   "r": 6,
+   "k": 3,
+   "F": 7,
+   "status": "OK",
+   "wall_s": 0.51,
+   "peak_rss_mib": 19.8,
+   "zeile": "r6 k3 F7( 6) | FIXPUNKT    | Loesungen  26 | Form1 Rang 0 kons True E 256 | Kandidaten 24 | H_nonce 702 | beste Ersparnis mit C_pre: E_form1 -314924 | sicher True | BESTANDEN"
+  },
+  {
+   "r": 6,
+   "k": 3,
+   "F": 8,
+   "status": "OK",
+   "wall_s": 0.61,
+   "peak_rss_mib": 19.7,
+   "zeile": "r6 k3 F8(11) | FIXPUNKT    | Loesungen  36 | Form1 Rang 0 kons True E 256 | Kandidaten 25 | H_nonce 702 | beste Ersparnis mit C_pre: E_form1 -203336 | sicher True | BESTANDEN"
+  },
+  {
+   "r": 6,
+   "k": 4,
+   "F": 1,
+   "status": "OK",
+   "wall_s": 0.66,
+   "peak_rss_mib": 19.8,
+   "zeile": "r6 k4 F1(13) | FIXPUNKT    | Loesungen  14 | Form1 Rang 0 kons True E 256 | Kandidaten 22 | H_nonce 702 | beste Ersparnis mit C_pre: E_form1 -244780 | sicher True | BESTANDEN"
+  },
+  {
+   "r": 6,
+   "k": 4,
+   "F": 2,
+   "status": "OK",
+   "wall_s": 0.56,
+   "peak_rss_mib": 19.7,
+   "zeile": "r6 k4 F2( 9) | FIXPUNKT    | Loesungen  10 | Form1 Rang 0 kons True E 256 | Kandidaten 17 | H_nonce 702 | beste Ersparnis mit C_pre: P_alle_kegel_le_2 -193308 | sicher True | BESTANDEN"
+  },
+  {
+   "r": 6,
+   "k": 4,
+   "F": 3,
+   "status": "OK",
+   "wall_s": 0.61,
+   "peak_rss_mib": 19.7,
+   "zeile": "r6 k4 F3( 7) | FIXPUNKT    | Loesungen  16 | Form1 Rang 0 kons True E 256 | Kandidaten 21 | H_nonce 702 | beste Ersparnis mit C_pre: E_form1 -225427 | sicher True | BESTANDEN"
+  },
+  {
+   "r": 6,
+   "k": 4,
+   "F": 4,
+   "status": "OK",
+   "wall_s": 0.61,
+   "peak_rss_mib": 19.8,
+   "zeile": "r6 k4 F4( 2) | FIXPUNKT    | Loesungen  17 | Form1 Rang 0 kons True E 256 | Kandidaten 23 | H_nonce 702 | beste Ersparnis mit C_pre: P_alle_kegel_le_2 -201589 | sicher True | BESTANDEN"
+  },
+  {
+   "r": 6,
+   "k": 4,
+   "F": 5,
+   "status": "OK",
+   "wall_s": 0.61,
+   "peak_rss_mib": 19.6,
+   "zeile": "r6 k4 F5(15) | FIXPUNKT    | Loesungen  12 | Form1 Rang 0 kons True E 256 | Kandidaten 15 | H_nonce 702 | beste Ersparnis mit C_pre: P_alle_kegel_le_2 -133335 | sicher True | BESTANDEN"
+  },
+  {
+   "r": 6,
+   "k": 4,
+   "F": 6,
+   "status": "OK",
+   "wall_s": 0.46,
+   "peak_rss_mib": 19.7,
+   "zeile": "r6 k4 F6( 6) | FIXPUNKT    | Loesungen  13 | Form1 Rang 0 kons True E 256 | Kandidaten 24 | H_nonce 702 | beste Ersparnis mit C_pre: E_form1 -279860 | sicher True | BESTANDEN"
+  },
+  {
+   "r": 6,
+   "k": 4,
+   "F": 7,
+   "status": "OK",
+   "wall_s": 0.56,
+   "peak_rss_mib": 19.8,
+   "zeile": "r6 k4 F7( 6) | FIXPUNKT    | Loesungen  13 | Form1 Rang 0 kons True E 256 | Kandidaten 24 | H_nonce 702 | beste Ersparnis mit C_pre: E_form1 -238292 | sicher True | BESTANDEN"
+  },
+  {
+   "r": 6,
+   "k": 4,
+   "F": 8,
+   "status": "OK",
+   "wall_s": 0.71,
+   "peak_rss_mib": 19.6,
+   "zeile": "r6 k4 F8(11) | FIXPUNKT    | Loesungen  23 | Form1 Rang 0 kons True E 256 | Kandidaten 25 | H_nonce 702 | beste Ersparnis mit C_pre: E_form1 -199041 | sicher True | BESTANDEN"
+  },
+  {
+   "r": 9,
+   "k": 2,
+   "F": 1,
+   "status": "OK",
+   "wall_s": 1.27,
+   "peak_rss_mib": 21.7,
+   "zeile": "r9 k2 F1(13) | FIXPUNKT    | Loesungen  62 | Form1 Rang 0 kons True E 256 | Kandidaten 22 | H_nonce 1234 | beste Ersparnis mit C_pre: E_form1 -429185 | sicher True | BESTANDEN"
+  },
+  {
+   "r": 9,
+   "k": 2,
+   "F": 2,
+   "status": "OK",
+   "wall_s": 1.06,
+   "peak_rss_mib": 21.7,
+   "zeile": "r9 k2 F2( 9) | FIXPUNKT    | Loesungen  62 | Form1 Rang 0 kons True E 256 | Kandidaten 17 | H_nonce 1234 | beste Ersparnis mit C_pre: P_alle_kegel_le_2 -445767 | sicher True | BESTANDEN"
+  },
+  {
+   "r": 9,
+   "k": 2,
+   "F": 3,
+   "status": "OK",
+   "wall_s": 1.16,
+   "peak_rss_mib": 21.7,
+   "zeile": "r9 k2 F3( 7) | FIXPUNKT    | Loesungen  68 | Form1 Rang 0 kons True E 256 | Kandidaten 21 | H_nonce 1234 | beste Ersparnis mit C_pre: E_form1 -383534 | sicher True | BESTANDEN"
+  },
+  {
+   "r": 9,
+   "k": 2,
+   "F": 4,
+   "status": "OK",
+   "wall_s": 1.11,
+   "peak_rss_mib": 21.7,
+   "zeile": "r9 k2 F4( 2) | FIXPUNKT    | Loesungen  65 | Form1 Rang 0 kons True E 256 | Kandidaten 23 | H_nonce 1234 | beste Ersparnis mit C_pre: P_alle_kegel_le_2 -445643 | sicher True | BESTANDEN"
+  },
+  {
+   "r": 9,
+   "k": 2,
+   "F": 5,
+   "status": "OK",
+   "wall_s": 1.06,
+   "peak_rss_mib": 21.8,
+   "zeile": "r9 k2 F5(15) | FIXPUNKT    | Loesungen  65 | Form1 Rang 0 kons True E 256 | Kandidaten 15 | H_nonce 1234 | beste Ersparnis mit C_pre: P_alle_kegel_le_2 -415594 | sicher True | BESTANDEN"
+  },
+  {
+   "r": 9,
+   "k": 2,
+   "F": 6,
+   "status": "OK",
+   "wall_s": 1.06,
+   "peak_rss_mib": 21.7,
+   "zeile": "r9 k2 F6( 6) | FIXPUNKT    | Loesungen  61 | Form1 Rang 0 kons True E 256 | Kandidaten 24 | H_nonce 1234 | beste Ersparnis mit C_pre: E_form1 -539566 | sicher True | BESTANDEN"
+  },
+  {
+   "r": 9,
+   "k": 2,
+   "F": 7,
+   "status": "OK",
+   "wall_s": 1.16,
+   "peak_rss_mib": 21.7,
+   "zeile": "r9 k2 F7( 6) | FIXPUNKT    | Loesungen  61 | Form1 Rang 0 kons True E 256 | Kandidaten 24 | H_nonce 1234 | beste Ersparnis mit C_pre: E_form1 -972146 | sicher True | BESTANDEN"
+  },
+  {
+   "r": 9,
+   "k": 2,
+   "F": 8,
+   "status": "OK",
+   "wall_s": 1.16,
+   "peak_rss_mib": 21.6,
+   "zeile": "r9 k2 F8(11) | FIXPUNKT    | Loesungen  68 | Form1 Rang 0 kons True E 256 | Kandidaten 25 | H_nonce 1234 | beste Ersparnis mit C_pre: E_form1 -442893 | sicher True | BESTANDEN"
+  },
+  {
+   "r": 9,
+   "k": 3,
+   "F": 1,
+   "status": "OK",
+   "wall_s": 1.01,
+   "peak_rss_mib": 21.6,
+   "zeile": "r9 k3 F1(13) | FIXPUNKT    | Loesungen  29 | Form1 Rang 0 kons True E 256 | Kandidaten 22 | H_nonce 1234 | beste Ersparnis mit C_pre: E_form1 -329391 | sicher True | BESTANDEN"
+  },
+  {
+   "r": 9,
+   "k": 3,
+   "F": 2,
+   "status": "OK",
+   "wall_s": 1.23,
+   "peak_rss_mib": 21.6,
+   "zeile": "r9 k3 F2( 9) | FIXPUNKT    | Loesungen  19 | Form1 Rang 0 kons True E 256 | Kandidaten 17 | H_nonce 1234 | beste Ersparnis mit C_pre: P_alle_kegel_le_2 -416014 | sicher True | BESTANDEN"
+  },
+  {
+   "r": 9,
+   "k": 3,
+   "F": 3,
+   "status": "OK",
+   "wall_s": 1.11,
+   "peak_rss_mib": 21.8,
+   "zeile": "r9 k3 F3( 7) | FIXPUNKT    | Loesungen  29 | Form1 Rang 0 kons True E 256 | Kandidaten 21 | H_nonce 1234 | beste Ersparnis mit C_pre: E_form1 -517457 | sicher True | BESTANDEN"
+  },
+  {
+   "r": 9,
+   "k": 3,
+   "F": 4,
+   "status": "OK",
+   "wall_s": 1.06,
+   "peak_rss_mib": 21.7,
+   "zeile": "r9 k3 F4( 2) | FIXPUNKT    | Loesungen  38 | Form1 Rang 0 kons True E 256 | Kandidaten 23 | H_nonce 1234 | beste Ersparnis mit C_pre: P_alle_kegel_le_2 -502881 | sicher True | BESTANDEN"
+  },
+  {
+   "r": 9,
+   "k": 3,
+   "F": 5,
+   "status": "OK",
+   "wall_s": 1.06,
+   "peak_rss_mib": 21.6,
+   "zeile": "r9 k3 F5(15) | FIXPUNKT    | Loesungen  33 | Form1 Rang 0 kons True E 256 | Kandidaten 15 | H_nonce 1234 | beste Ersparnis mit C_pre: P_alle_kegel_le_2 -489196 | sicher True | BESTANDEN"
+  },
+  {
+   "r": 9,
+   "k": 3,
+   "F": 6,
+   "status": "OK",
+   "wall_s": 1.06,
+   "peak_rss_mib": 21.8,
+   "zeile": "r9 k3 F6( 6) | FIXPUNKT    | Loesungen  18 | Form1 Rang 0 kons True E 256 | Kandidaten 24 | H_nonce 1234 | beste Ersparnis mit C_pre: E_form1 -533126 | sicher True | BESTANDEN"
+  },
+  {
+   "r": 9,
+   "k": 3,
+   "F": 7,
+   "status": "OK",
+   "wall_s": 1.06,
+   "peak_rss_mib": 21.7,
+   "zeile": "r9 k3 F7( 6) | FIXPUNKT    | Loesungen  18 | Form1 Rang 0 kons True E 256 | Kandidaten 24 | H_nonce 1234 | beste Ersparnis mit C_pre: E_form1 -604148 | sicher True | BESTANDEN"
+  },
+  {
+   "r": 9,
+   "k": 3,
+   "F": 8,
+   "status": "OK",
+   "wall_s": 1.21,
+   "peak_rss_mib": 21.8,
+   "zeile": "r9 k3 F8(11) | FIXPUNKT    | Loesungen  32 | Form1 Rang 0 kons True E 256 | Kandidaten 25 | H_nonce 1234 | beste Ersparnis mit C_pre: E_form1 -644935 | sicher True | BESTANDEN"
+  },
+  {
+   "r": 9,
+   "k": 4,
+   "F": 1,
+   "status": "OK",
+   "wall_s": 1.01,
+   "peak_rss_mib": 21.7,
+   "zeile": "r9 k4 F1(13) | FIXPUNKT    | Loesungen  17 | Form1 Rang 0 kons True E 256 | Kandidaten 22 | H_nonce 1234 | beste Ersparnis mit C_pre: E_form1 -402190 | sicher True | BESTANDEN"
+  },
+  {
+   "r": 9,
+   "k": 4,
+   "F": 2,
+   "status": "OK",
+   "wall_s": 1.06,
+   "peak_rss_mib": 21.7,
+   "zeile": "r9 k4 F2( 9) | FIXPUNKT    | Loesungen   8 | Form1 Rang 0 kons True E 256 | Kandidaten 17 | H_nonce 1234 | beste Ersparnis mit C_pre: P_alle_kegel_le_2 -351825 | sicher True | BESTANDEN"
+  },
+  {
+   "r": 9,
+   "k": 4,
+   "F": 3,
+   "status": "OK",
+   "wall_s": 0.96,
+   "peak_rss_mib": 21.7,
+   "zeile": "r9 k4 F3( 7) | FIXPUNKT    | Loesungen  15 | Form1 Rang 0 kons True E 256 | Kandidaten 21 | H_nonce 1234 | beste Ersparnis mit C_pre: E_form1 -363327 | sicher True | BESTANDEN"
+  },
+  {
+   "r": 9,
+   "k": 4,
+   "F": 4,
+   "status": "OK",
+   "wall_s": 1.24,
+   "peak_rss_mib": 21.6,
+   "zeile": "r9 k4 F4( 2) | FIXPUNKT    | Loesungen  19 | Form1 Rang 0 kons True E 256 | Kandidaten 23 | H_nonce 1234 | beste Ersparnis mit C_pre: P_alle_kegel_le_2 -272247 | sicher True | BESTANDEN"
+  },
+  {
+   "r": 9,
+   "k": 4,
+   "F": 5,
+   "status": "OK",
+   "wall_s": 1.01,
+   "peak_rss_mib": 21.8,
+   "zeile": "r9 k4 F5(15) | FIXPUNKT    | Loesungen  18 | Form1 Rang 0 kons True E 256 | Kandidaten 15 | H_nonce 1234 | beste Ersparnis mit C_pre: P_alle_kegel_le_2 -553883 | sicher True | BESTANDEN"
+  },
+  {
+   "r": 9,
+   "k": 4,
+   "F": 6,
+   "status": "OK",
+   "wall_s": 1.06,
+   "peak_rss_mib": 21.8,
+   "zeile": "r9 k4 F6( 6) | FIXPUNKT    | Loesungen   9 | Form1 Rang 0 kons True E 256 | Kandidaten 24 | H_nonce 1234 | beste Ersparnis mit C_pre: E_form1 -401628 | sicher True | BESTANDEN"
+  },
+  {
+   "r": 9,
+   "k": 4,
+   "F": 7,
+   "status": "OK",
+   "wall_s": 1.06,
+   "peak_rss_mib": 21.7,
+   "zeile": "r9 k4 F7( 6) | FIXPUNKT    | Loesungen   9 | Form1 Rang 0 kons True E 256 | Kandidaten 24 | H_nonce 1234 | beste Ersparnis mit C_pre: E_form1 -675137 | sicher True | BESTANDEN"
+  },
+  {
+   "r": 9,
+   "k": 4,
+   "F": 8,
+   "status": "OK",
+   "wall_s": 1.06,
+   "peak_rss_mib": 21.7,
+   "zeile": "r9 k4 F8(11) | FIXPUNKT    | Loesungen  17 | Form1 Rang 0 kons True E 256 | Kandidaten 25 | H_nonce 1234 | beste Ersparnis mit C_pre: E_form1 -559239 | sicher True | BESTANDEN"
+  }
+ ],
+ "dateien": {
+  "ausduennen.py": "66f0ccaddd131c6e64d2cf6b78a5d565c1ad24e1cb9ea0edbb1728b61082bcc0",
+  "ausduennen_lauf.py": "10c36c7b441d9d42c02e8302e555879a26f084c9fad701a3cbbb9956bc097069"
+ },
+ "zusammenfassung": {
+  "r6_k2": {
+   "faelle": 8,
+   "widerspruch": 0,
+   "loesungen": {
+    "min": 51,
+    "max": 73,
+    "mittel": 61.5
+   },
+   "rang": {
+    "min": 0,
+    "max": 0,
+    "mittel": 0
+   },
+   "kandidaten": {
+    "min": 15,
+    "max": 25,
+    "mittel": 21.38
+   },
+   "beste_ersparnis_mit": {
+    "min": -260442,
+    "max": -162862,
+    "mittel": -210142.88
+   },
+   "beste_ersparnis_ohne": {
+    "min": -256,
+    "max": 0,
+    "mittel": -160
+   },
+   "sicher": true,
+   "nulloesung_ohne_widerspruch": 0
+  },
+  "r6_k3": {
+   "faelle": 8,
+   "widerspruch": 0,
+   "loesungen": {
+    "min": 23,
+    "max": 36,
+    "mittel": 29.38
+   },
+   "rang": {
+    "min": 0,
+    "max": 0,
+    "mittel": 0
+   },
+   "kandidaten": {
+    "min": 15,
+    "max": 25,
+    "mittel": 21.38
+   },
+   "beste_ersparnis_mit": {
+    "min": -314924,
+    "max": -148500,
+    "mittel": -225112.25
+   },
+   "beste_ersparnis_ohne": {
+    "min": -256,
+    "max": 0,
+    "mittel": -160
+   },
+   "sicher": true,
+   "nulloesung_ohne_widerspruch": 0
+  },
+  "r6_k4": {
+   "faelle": 8,
+   "widerspruch": 0,
+   "loesungen": {
+    "min": 10,
+    "max": 23,
+    "mittel": 14.75
+   },
+   "rang": {
+    "min": 0,
+    "max": 0,
+    "mittel": 0
+   },
+   "kandidaten": {
+    "min": 15,
+    "max": 25,
+    "mittel": 21.38
+   },
+   "beste_ersparnis_mit": {
+    "min": -279860,
+    "max": -133335,
+    "mittel": -214454
+   },
+   "beste_ersparnis_ohne": {
+    "min": -256,
+    "max": 0,
+    "mittel": -160
+   },
+   "sicher": true,
+   "nulloesung_ohne_widerspruch": 0
+  },
+  "r9_k2": {
+   "faelle": 8,
+   "widerspruch": 0,
+   "loesungen": {
+    "min": 61,
+    "max": 68,
+    "mittel": 64
+   },
+   "rang": {
+    "min": 0,
+    "max": 0,
+    "mittel": 0
+   },
+   "kandidaten": {
+    "min": 15,
+    "max": 25,
+    "mittel": 21.38
+   },
+   "beste_ersparnis_mit": {
+    "min": -972146,
+    "max": -383534,
+    "mittel": -509291
+   },
+   "beste_ersparnis_ohne": {
+    "min": -256,
+    "max": 0,
+    "mittel": -160
+   },
+   "sicher": true,
+   "nulloesung_ohne_widerspruch": 0
+  },
+  "r9_k3": {
+   "faelle": 8,
+   "widerspruch": 0,
+   "loesungen": {
+    "min": 18,
+    "max": 38,
+    "mittel": 27
+   },
+   "rang": {
+    "min": 0,
+    "max": 0,
+    "mittel": 0
+   },
+   "kandidaten": {
+    "min": 15,
+    "max": 25,
+    "mittel": 21.38
+   },
+   "beste_ersparnis_mit": {
+    "min": -644935,
+    "max": -329391,
+    "mittel": -504643.5
+   },
+   "beste_ersparnis_ohne": {
+    "min": -256,
+    "max": 0,
+    "mittel": -160
+   },
+   "sicher": true,
+   "nulloesung_ohne_widerspruch": 0
+  },
+  "r9_k4": {
+   "faelle": 8,
+   "widerspruch": 0,
+   "loesungen": {
+    "min": 8,
+    "max": 19,
+    "mittel": 14
+   },
+   "rang": {
+    "min": 0,
+    "max": 0,
+    "mittel": 0
+   },
+   "kandidaten": {
+    "min": 15,
+    "max": 25,
+    "mittel": 21.38
+   },
+   "beste_ersparnis_mit": {
+    "min": -675137,
+    "max": -272247,
+    "mittel": -447434.5
+   },
+   "beste_ersparnis_ohne": {
+    "min": -256,
+    "max": 0,
+    "mittel": -160
+   },
+   "sicher": true,
+   "nulloesung_ohne_widerspruch": 0
+  }
+ },
+ "alle_ok": true,
+ "wall_gesamt_s": 40.0
+}

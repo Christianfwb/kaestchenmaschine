@@ -1,0 +1,613 @@
+{
+ "status": "OK",
+ "wall_s": 0.1,
+ "peak_rss_mib": 0.0,
+ "grenzen": {
+  "zeit_s": 120.0,
+  "rss_mib": 400.0
+ },
+ "rueckgabe": 0,
+ "python": "3.13.16",
+ "dateien": {
+  "stern.py": "da8d10bbe24deb7264d4abc66640c002d7379d037cf1a6c8b869589f8c536bfb",
+  "stern_lauf.py": "e13d495779237802e4a6d7dcfda04622b2b2a9ae3f77ac3d1fcc2c1616a36e04"
+ },
+ "ergebnis": {
+  "alle_bestanden": true,
+  "grenzen": {
+   "max_vars": 8,
+   "max_zeilen": 256
+  },
+  "zeit_gesamt_s": 0.001,
+  "maxrss_mib_kind": 14.7,
+  "faelle": [
+   {
+    "fall": "F1 gleich(a,b) vs ungleich(a,b)",
+    "erwartung": {
+     "status_ohne": "WIDERSPRUCH",
+     "zugelassen_mitte_ohne": 0
+    },
+    "ableitung": {
+     "takte": 1,
+     "widerspruch_ohne_join": true,
+     "protokoll_ohne_join": [
+      {
+       "takt": 1,
+       "schnittmenge": [
+        "a",
+        "b"
+       ],
+       "ereignis": "WIDERSPRUCH: Durchschnitt leer"
+      }
+     ],
+     "mitte_relationen": {
+      "('a', 'b')": []
+     },
+     "feste_ohne_join": {},
+     "kaestchen_zeilen_ohne_join": {
+      "K1": 2,
+      "K2": 2
+     },
+     "zugelassen_laut_mitte_ohne_join": 0
+    },
+    "kontrolle": {
+     "original_loesungen": 0,
+     "zeit_s": 0.0
+    },
+    "speicherung": {
+     "original_loesungen": 0,
+     "gespeichert_ohne_join": 0,
+     "verloren_ohne_join": 0,
+     "hinzugefuegt_ohne_join": 0,
+     "gespeichert_mit_join": null,
+     "verloren_mit_join": null,
+     "hinzugefuegt_mit_join": null
+    },
+    "groesse": {
+     "variablen": 2,
+     "kaestchen": 2,
+     "zeilen_gesamt": 4,
+     "schnittmengen": 1,
+     "mitte_zeilen": 0,
+     "groesste_relation_vars": 2,
+     "groesste_relation_zeilen": 2,
+     "joins": []
+    },
+    "zeiten_s": {
+     "ableitung_ohne_join": 4e-05,
+     "ableitung_mit_join": null,
+     "zaehlung_zugelassen_laut_mitte": 0.0,
+     "kontrolle": 1e-05,
+     "speicherungsvergleich": 0.0
+    },
+    "pruefung": {
+     "status_ohne": true,
+     "status_mit": true,
+     "zugelassen_ohne": true,
+     "zugelassen_mit": true,
+     "speicherung_ohne": true,
+     "speicherung_mit": true,
+     "feste": true,
+     "kontrolle_unberuehrt": true
+    },
+    "bestanden": true
+   },
+   {
+    "fall": "F2 gleich(a,b) + a=0",
+    "erwartung": {
+     "status_ohne": "FIXPUNKT",
+     "zugelassen_mitte_ohne": 1,
+     "feste": {
+      "a": 0,
+      "b": 0
+     }
+    },
+    "ableitung": {
+     "takte": 2,
+     "widerspruch_ohne_join": false,
+     "protokoll_ohne_join": [
+      {
+       "takt": 1,
+       "schnittmenge": [
+        "a"
+       ],
+       "kaestchen": "K1",
+       "gestrichen": 1,
+       "verbleibend": 1
+      }
+     ],
+     "mitte_relationen": {
+      "('a',)": [
+       [
+        0
+       ]
+      ]
+     },
+     "feste_ohne_join": {
+      "a": 0,
+      "b": 0
+     },
+     "kaestchen_zeilen_ohne_join": {
+      "K1": 1,
+      "K2": 1
+     },
+     "zugelassen_laut_mitte_ohne_join": 1
+    },
+    "kontrolle": {
+     "original_loesungen": 1,
+     "zeit_s": 0.0
+    },
+    "speicherung": {
+     "original_loesungen": 1,
+     "gespeichert_ohne_join": 1,
+     "verloren_ohne_join": 0,
+     "hinzugefuegt_ohne_join": 0,
+     "gespeichert_mit_join": null,
+     "verloren_mit_join": null,
+     "hinzugefuegt_mit_join": null
+    },
+    "groesse": {
+     "variablen": 2,
+     "kaestchen": 2,
+     "zeilen_gesamt": 3,
+     "schnittmengen": 1,
+     "mitte_zeilen": 1,
+     "groesste_relation_vars": 2,
+     "groesste_relation_zeilen": 1,
+     "joins": []
+    },
+    "zeiten_s": {
+     "ableitung_ohne_join": 4e-05,
+     "ableitung_mit_join": null,
+     "zaehlung_zugelassen_laut_mitte": 2e-05,
+     "kontrolle": 1e-05,
+     "speicherungsvergleich": 1e-05
+    },
+    "pruefung": {
+     "status_ohne": true,
+     "status_mit": true,
+     "zugelassen_ohne": true,
+     "zugelassen_mit": true,
+     "speicherung_ohne": true,
+     "speicherung_mit": true,
+     "feste": true,
+     "kontrolle_unberuehrt": true
+    },
+    "bestanden": true
+   },
+   {
+    "fall": "F3 Kette gleich,gleich,ungleich",
+    "erwartung": {
+     "status_ohne": "FIXPUNKT",
+     "zugelassen_mitte_ohne": 16
+    },
+    "ableitung": {
+     "takte": 1,
+     "widerspruch_ohne_join": false,
+     "protokoll_ohne_join": [],
+     "mitte_relationen": {
+      "('b',)": [
+       [
+        0
+       ],
+       [
+        1
+       ]
+      ],
+      "('c',)": [
+       [
+        0
+       ],
+       [
+        1
+       ]
+      ]
+     },
+     "feste_ohne_join": {},
+     "kaestchen_zeilen_ohne_join": {
+      "K1": 2,
+      "K2": 2,
+      "K3": 2
+     },
+     "zugelassen_laut_mitte_ohne_join": 16
+    },
+    "kontrolle": {
+     "original_loesungen": 2,
+     "zeit_s": 0.0
+    },
+    "speicherung": {
+     "original_loesungen": 2,
+     "gespeichert_ohne_join": 2,
+     "verloren_ohne_join": 0,
+     "hinzugefuegt_ohne_join": 0,
+     "gespeichert_mit_join": null,
+     "verloren_mit_join": null,
+     "hinzugefuegt_mit_join": null
+    },
+    "groesse": {
+     "variablen": 4,
+     "kaestchen": 3,
+     "zeilen_gesamt": 6,
+     "schnittmengen": 2,
+     "mitte_zeilen": 4,
+     "groesste_relation_vars": 2,
+     "groesste_relation_zeilen": 2,
+     "joins": []
+    },
+    "zeiten_s": {
+     "ableitung_ohne_join": 3e-05,
+     "ableitung_mit_join": null,
+     "zaehlung_zugelassen_laut_mitte": 6e-05,
+     "kontrolle": 2e-05,
+     "speicherungsvergleich": 2e-05
+    },
+    "pruefung": {
+     "status_ohne": true,
+     "status_mit": true,
+     "zugelassen_ohne": true,
+     "zugelassen_mit": true,
+     "speicherung_ohne": true,
+     "speicherung_mit": true,
+     "feste": true,
+     "kontrolle_unberuehrt": true
+    },
+    "bestanden": true
+   },
+   {
+    "fall": "F4 Dreieck ungleich x3",
+    "erwartung": {
+     "status_ohne": "FIXPUNKT",
+     "zugelassen_mitte_ohne": 8,
+     "status_mit": "WIDERSPRUCH",
+     "zugelassen_mitte_mit": 0
+    },
+    "ableitung": {
+     "takte": 1,
+     "widerspruch_ohne_join": false,
+     "protokoll_ohne_join": [],
+     "mitte_relationen": {
+      "('a',)": [
+       [
+        0
+       ],
+       [
+        1
+       ]
+      ],
+      "('b',)": [
+       [
+        0
+       ],
+       [
+        1
+       ]
+      ],
+      "('c',)": [
+       [
+        0
+       ],
+       [
+        1
+       ]
+      ]
+     },
+     "feste_ohne_join": {},
+     "kaestchen_zeilen_ohne_join": {
+      "K1": 2,
+      "K2": 2,
+      "K3": 2
+     },
+     "joins": [
+      {
+       "name": "JOIN_Dreieck",
+       "aus": [
+        "K1",
+        "K2",
+        "K3"
+       ],
+       "variablen": [
+        "a",
+        "b",
+        "c"
+       ],
+       "zeilen": 0,
+       "zwischen": [
+        {
+         "variablen": 3,
+         "zeilen": 2,
+         "kandidaten": 4
+        },
+        {
+         "variablen": 3,
+         "zeilen": 0,
+         "kandidaten": 4
+        }
+       ],
+       "kandidaten_gesamt": 8
+      }
+     ],
+     "protokoll_mit_join": [
+      {
+       "ereignis": "JOIN",
+       "name": "JOIN_Dreieck",
+       "aus": [
+        "K1",
+        "K2",
+        "K3"
+       ],
+       "variablen": [
+        "a",
+        "b",
+        "c"
+       ],
+       "zeilen": 0,
+       "zwischenrelationen": [
+        {
+         "variablen": 3,
+         "zeilen": 2,
+         "kandidaten": 4
+        },
+        {
+         "variablen": 3,
+         "zeilen": 0,
+         "kandidaten": 4
+        }
+       ]
+      },
+      {
+       "ereignis": "WIDERSPRUCH: Join-Relation leer",
+       "name": "JOIN_Dreieck"
+      }
+     ],
+     "feste_mit_join": {},
+     "kaestchen_zeilen_mit_join": {
+      "JOIN_Dreieck": {
+       "variablen": [
+        "a",
+        "b",
+        "c"
+       ],
+       "zeilen": 0
+      }
+     },
+     "zugelassen_laut_mitte_ohne_join": 8,
+     "zugelassen_laut_mitte_mit_join": 0
+    },
+    "kontrolle": {
+     "original_loesungen": 0,
+     "zeit_s": 0.0
+    },
+    "speicherung": {
+     "original_loesungen": 0,
+     "gespeichert_ohne_join": 0,
+     "verloren_ohne_join": 0,
+     "hinzugefuegt_ohne_join": 0,
+     "gespeichert_mit_join": 0,
+     "verloren_mit_join": 0,
+     "hinzugefuegt_mit_join": 0
+    },
+    "groesse": {
+     "variablen": 3,
+     "kaestchen": 3,
+     "zeilen_gesamt": 6,
+     "schnittmengen": 3,
+     "mitte_zeilen": 6,
+     "groesste_relation_vars": 3,
+     "groesste_relation_zeilen": 0,
+     "joins": [
+      {
+       "name": "JOIN_Dreieck",
+       "aus": [
+        "K1",
+        "K2",
+        "K3"
+       ],
+       "variablen": [
+        "a",
+        "b",
+        "c"
+       ],
+       "zeilen": 0,
+       "zwischen": [
+        {
+         "variablen": 3,
+         "zeilen": 2,
+         "kandidaten": 4
+        },
+        {
+         "variablen": 3,
+         "zeilen": 0,
+         "kandidaten": 4
+        }
+       ],
+       "kandidaten_gesamt": 8
+      }
+     ]
+    },
+    "zeiten_s": {
+     "ableitung_ohne_join": 3e-05,
+     "ableitung_mit_join": 4e-05,
+     "zaehlung_zugelassen_laut_mitte": 3e-05,
+     "kontrolle": 1e-05,
+     "speicherungsvergleich": 1e-05
+    },
+    "pruefung": {
+     "status_ohne": true,
+     "status_mit": true,
+     "zugelassen_ohne": true,
+     "zugelassen_mit": true,
+     "speicherung_ohne": true,
+     "speicherung_mit": true,
+     "feste": true,
+     "kontrolle_unberuehrt": true
+    },
+    "bestanden": true
+   },
+   {
+    "fall": "F5 Spiegelpaar p=a&~b, q=~a&b",
+    "erwartung": {
+     "status_ohne": "FIXPUNKT",
+     "zugelassen_mitte_ohne": 16,
+     "status_mit": "FIXPUNKT",
+     "zugelassen_mitte_mit": 4
+    },
+    "ableitung": {
+     "takte": 1,
+     "widerspruch_ohne_join": false,
+     "protokoll_ohne_join": [],
+     "mitte_relationen": {
+      "('a', 'b')": [
+       [
+        0,
+        0
+       ],
+       [
+        0,
+        1
+       ],
+       [
+        1,
+        0
+       ],
+       [
+        1,
+        1
+       ]
+      ]
+     },
+     "feste_ohne_join": {},
+     "kaestchen_zeilen_ohne_join": {
+      "Kp": 4,
+      "Kq": 4
+     },
+     "joins": [
+      {
+       "name": "JOIN_Spiegel",
+       "aus": [
+        "Kp",
+        "Kq"
+       ],
+       "variablen": [
+        "a",
+        "b",
+        "p",
+        "q"
+       ],
+       "zeilen": 4,
+       "zwischen": [
+        {
+         "variablen": 4,
+         "zeilen": 4,
+         "kandidaten": 16
+        }
+       ],
+       "kandidaten_gesamt": 16
+      }
+     ],
+     "protokoll_mit_join": [
+      {
+       "ereignis": "JOIN",
+       "name": "JOIN_Spiegel",
+       "aus": [
+        "Kp",
+        "Kq"
+       ],
+       "variablen": [
+        "a",
+        "b",
+        "p",
+        "q"
+       ],
+       "zeilen": 4,
+       "zwischenrelationen": [
+        {
+         "variablen": 4,
+         "zeilen": 4,
+         "kandidaten": 16
+        }
+       ]
+      }
+     ],
+     "feste_mit_join": {},
+     "kaestchen_zeilen_mit_join": {
+      "JOIN_Spiegel": {
+       "variablen": [
+        "a",
+        "b",
+        "p",
+        "q"
+       ],
+       "zeilen": 4
+      }
+     },
+     "zugelassen_laut_mitte_ohne_join": 16,
+     "zugelassen_laut_mitte_mit_join": 4
+    },
+    "kontrolle": {
+     "original_loesungen": 4,
+     "zeit_s": 0.0
+    },
+    "speicherung": {
+     "original_loesungen": 4,
+     "gespeichert_ohne_join": 4,
+     "verloren_ohne_join": 0,
+     "hinzugefuegt_ohne_join": 0,
+     "gespeichert_mit_join": 4,
+     "verloren_mit_join": 0,
+     "hinzugefuegt_mit_join": 0
+    },
+    "groesse": {
+     "variablen": 4,
+     "kaestchen": 2,
+     "zeilen_gesamt": 8,
+     "schnittmengen": 1,
+     "mitte_zeilen": 4,
+     "groesste_relation_vars": 4,
+     "groesste_relation_zeilen": 4,
+     "joins": [
+      {
+       "name": "JOIN_Spiegel",
+       "aus": [
+        "Kp",
+        "Kq"
+       ],
+       "variablen": [
+        "a",
+        "b",
+        "p",
+        "q"
+       ],
+       "zeilen": 4,
+       "zwischen": [
+        {
+         "variablen": 4,
+         "zeilen": 4,
+         "kandidaten": 16
+        }
+       ],
+       "kandidaten_gesamt": 16
+      }
+     ]
+    },
+    "zeiten_s": {
+     "ableitung_ohne_join": 2e-05,
+     "ableitung_mit_join": 3e-05,
+     "zaehlung_zugelassen_laut_mitte": 8e-05,
+     "kontrolle": 2e-05,
+     "speicherungsvergleich": 3e-05
+    },
+    "pruefung": {
+     "status_ohne": true,
+     "status_mit": true,
+     "zugelassen_ohne": true,
+     "zugelassen_mit": true,
+     "speicherung_ohne": true,
+     "speicherung_mit": true,
+     "feste": true,
+     "kontrolle_unberuehrt": true
+    },
+    "bestanden": true
+   }
+  ]
+ }
+}

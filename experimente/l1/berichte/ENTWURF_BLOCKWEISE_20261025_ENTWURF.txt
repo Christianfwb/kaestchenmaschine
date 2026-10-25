@@ -1,0 +1,54 @@
+VON: fable
+AN: ghost, christian
+BEZUG: Ghost/Christian 2026-10-25 14:57 – exakter Abgleich ohne dauerhaft gespeicherte grosse Hilfsmasken ("blockweise"); Schwerpunkt Speicher (400 MiB) und vollstaendiger Beziehungserhalt; Zeit rechnerische Vorgabe ~600 s. Entwurf, kein Bau, kein Lauf.
+
+0. GRUNDSATZ
+Dieselben Relationen, derselbe Join-Baum (Referenz-Min-Fill, 723 Gruppen, groesste 28, Schnittstelle 27), derselbe Fixpunkt. Nichts wird weggeworfen, keine begrenzten Gruppen. Geaendert wird NUR, wie Projektion und Semijoin ausgefuehrt werden: Statt Masken ueber 2^k Bits (bei k = 28: 32 MiB je Maske, 56 je Gruppe) arbeitet jeder Abgleich blockweise mit kleinen Masken, die fuer alle Gruppen gemeinsam sind und einmal 2^m Bits gross (m = 12: 512 Byte je Maske, 24 Masken insgesamt).
+
+1. DARSTELLUNG
+- Gruppe mit k Variablen in FESTER Reihenfolge v_0..v_{k-1} (wie bisher: Position b = Summe wert(v_j) << j). Die Relation liegt als bytearray mit 2^k Bits (2^(k-3) Byte), NICHT als Ganzzahl: Bloecke lassen sich dann ohne Kopie der ganzen Relation herausschneiden und in Ort und Stelle zurueckschreiben. (Python-Ganzzahlen erzeugen bei jedem "rel >> x" eine 32-MiB-Kopie – das wuerde Zeit und Spitzenspeicher fressen.)
+- Block = die niedrigsten m Variablen (m fest, Vorschlag 12; bei Gruppen mit k <= m ist die ganze Relation ein Block). Blockindex t = Belegung der hohen Variablen v_m..v_{k-1}; Block t = Bytes [t*2^(m-3), (t+1)*2^(m-3)) als Ganzzahl mit 2^m Bits.
+- Gemeinsame kleine Masken (einmal, fuer alle Gruppen): EINS_j, NULL_j fuer j < m ueber 2^m Bits (bisherige Variablenmasken, auf den Block beschraenkt). Das sind die EINZIGEN gespeicherten Masken: 2m Stueck zu 2^m Bits = 12 KiB bei m = 12.
+- Nachrichtenlayout: Schnittmenge S in der Reihenfolge des EMPFAENGERS (Variablenreihenfolge der Empfaengergruppe, auf S eingeschraenkt). Damit zerfaellt S beim Empfaenger in S_low (Variablen < m, Teil des Blocks) und S_high (Variablen >= m, Teil des Blockindex), und die Nachricht M (2^s Bits) hat S_low in den niedrigen und S_high in den hohen Bitpositionen – beides ohne Umsortieren erreichbar.
+- Der Sender berechnet seine Projektion direkt in dieser Empfaengerreihenfolge (Projektion ist eine Abbildung Belegung -> Position; die Zielposition wird aus den Werten der S-Variablen in Empfaengerreihenfolge gebildet, egal wie der Sender selbst sortiert ist).
+
+2. OPERATIONEN (je Block, nur kleine Ganzzahlen)
+PROJEKTION der Gruppe auf S (Ergebnis P, 2^s Bits, als bytearray/Ganzzahl):
+  fuer jeden Block t (2^(k-m) Stueck): c_high = Werte der S_high-Variablen aus t (Bitauswahl aus t, winzig); fuer jede Belegung c_low der S_low-Variablen (2^|S_low| Stueck): maske_c_low = UND ueber S_low von EINS/NULL (kleine Masken, |S_low|-1 UND auf 2^m Bit); wenn Block & maske_c_low != 0: setze Bit (c_high << |S_low| | c_low) in P. Bloecke, die 0 sind, werden uebersprungen (bei fortgeschrittenem Austausch die meisten).
+  Kosten: hoechstens 2^(k-m) x 2^|S_low| kleine UND; bei s >= m also ~2^k kleine Operationen je Projektion – gleich viele BITS wie bisher, aber in 2^m-Bit-Stuecken statt 2^k-Bit-Zahlen, und ohne gespeicherte Masken.
+SEMIJOIN der Gruppe mit M ueber S:
+  fuer jeden Block t: c_high wie oben; M_sub = die 2^|S_low| Bits von M, deren S_high-Teil = c_high ist – das ist ein zusammenhaengendes Stueck von M (weil S_high die hohen Bits von M sind): M_sub = (M >> (c_high << |S_low|)) & (2^|S_low| - 1) – bei M als bytearray ein Byteschnitt; erlaubt = ODER ueber c_low in M_sub von maske_c_low; Block &= erlaubt; Block zurueckschreiben; gestrichene Bits zaehlen (Bitzaehlung vor/nach). Ist M_sub = 0, wird der Block direkt 0 (kein Rechnen).
+  Kosten wie Projektion. Kein Objekt groesser als 2^m Bit entsteht dabei, ausser P und M selbst (2^s Bit, bis 16 MiB bei s = 27).
+WARUM EXAKT: Jeder Block ist die Einschraenkung der Relation auf eine feste Belegung der hohen Variablen; Projektion und Semijoin zerfallen exakt in die Bloecke (Vereinigung bzw. blockweise Einschraenkung). Die kleinen Masken sind dieselben Variablenmasken wie in bitmenge_schlank, nur auf 2^m Bit. Gegenpruefung: Selbsttest Block-Operationen gegen bitmenge_schlank (und Tupel) auf allen Relationen bis k = 3 erschoepfend plus Stichproben bis k = 2m (damit mehrere Bloecke entstehen), einschliesslich leer, voll, Einzelzeile, S = (), S nur hoch, S nur niedrig, gemischt, vertauschte Reihenfolgen.
+
+3. AUSTAUSCH – zwei Varianten zur Entscheidung
+A) Wie bisher (Arbeitsliste, Nachricht je gerichteter Kante gespeichert, Empfang beim Entnehmen): Nachrichtenspeicher ~112 MiB (Summe 2^s ueber 1444 gerichtete Kanten, als bytearray; die groessten 16 MiB je Stueck).
+B) Sofortiger Empfang ("Schieben"): Sobald eine Gruppe eine geaenderte Projektion hat, wird der Semijoin beim Nachbarn SOFORT ausgefuehrt; gespeichert wird je gerichteter Kante nur eine Pruefsumme (SHA-256) der zuletzt gesendeten Projektion zur Aenderungserkennung, nicht die Projektion. Der Nachbar wird eingereiht, wenn sich seine Tabelle geaendert hat. Nachrichtenspeicher: 1444 x 32 Byte. Begruendung der Gleichheit: Der Fixpunkt der Semijoin-Reduktionen ist eindeutig (groesster Fixpunkt eines monotonen, kontrahierenden Operators); jede faire Reihenfolge erreicht ihn. B ist also derselbe Fixpunkt mit anderer Reihenfolge – KEINE andere Mathematik, aber ein anderer Ablauf (Zaehler nicht vergleichbar). Gegenpruefung: identische Endrelationen wie Variante A/bisherige Arbeitsliste an Dreieck, N3-Gatter, N4r09 Stufe B (bitgleich, verbindlich).
+Empfehlung: B, weil sie 112 MiB spart und der Fixpunkt beweisbar derselbe ist; A als Vergleich an den kleinen Faellen, um B zu belegen.
+
+4. GESAMTBEDARF GESCHAETZT (Schaetzung, keine Zusage; N4r10 Referenzordnung, m = 12)
+  Tabellen: 9,43e8 Bit = 112 MiB als bytearray (exakt die Bits plus ~57 Byte je Objekt).
+  Nachrichten: A) 112 MiB; B) ~46 KB Pruefsummen. Dazu waehrend einer Projektion/eines Semijoins: P bzw. M einmal (<= 16 MiB), M_sub, erlaubt, maske (<= 4 KiB).
+  Masken: 24 x 512 Byte = 12 KiB (statt 6,3 GiB).
+  Arbeitsstrukturen: ~1 MiB (bei N4r09 578 KB fuer 492 Gruppen; hier 723 Gruppen).
+  Zwischenobjekte: je Operation ein Block (512 Byte) + Ergebnisblock + M_sub; Bitzaehlung ueber die Relation blockweise (kein Zusatzobjekt). Beim Zurueckschreiben eines Blocks: in Ort und Stelle (bytearray-Slice-Zuweisung), keine Kopie der Relation. GROSSE Ausnahme: Beim Einlesen der Uebergabe (JSON mit Hex) entstehen voruebergehend Text + Ganzzahl + bytearray je Gruppe (3 x 32 MiB fuer die 28er) – Uebergabe deshalb binaer (eigene Datei je Gruppe, direkt als bytearray gelesen), Spitze dann ~1 Tabelle doppelt.
+  Kontrolle (V2): 4096 Vorwaertsauswertungen, eine Loesung; Projektion der einen Loesung je Gruppe = ein Bitindex; Vergleich = Bitzaehlung der Tabelle (muss 1 sein) und Bittest – kein Zusatzspeicher.
+  Pruefkopien: Initialrelationen NICHT doppelt im Speicher halten; nur Pruefsummen (SHA-256 je Gruppe) der Initialtabellen.
+  SUMME beobachtbar: A) ~112 + 112 + 1 + 16 + Interpreter ~25 = ~270 MiB; B) ~112 + 1 + 16 + 25 = ~155 MiB. Unsicherheit: Python-Allokator-Fragmentierung und bytearray-Vergroesserungen; ich rechne mit +20–30 %. A bleibt unter 400, aber ohne Reserve fuer Ueberraschungen; B mit Reserve.
+  Alles Rechnung aus Breiten und Objektannahmen (bytearray = 57 Byte + Nutzdaten), nichts angelegt.
+
+5. ZEIT (rechnerische Vorgabe ~600 s; Schaetzung)
+Je Semijoin/Projektion auf einer k-Gruppe ~2^k kleine Operationen (bei s >= m); Summe ueber alle Gruppen 9,4e8 Bit -> ~1e9 kleine Operationen je vollem Durchgang ueber alle Kanten; die Arbeitsliste braucht bei N4r09 ~2–3 Besuche je Gruppe. Bei ~1e7 kleinen Operationen/s in Python: ~300–600 s je Durchgang, also 10–30 Minuten gesamt. Das ueberschreitet die 600 s wahrscheinlich deutlich. Zwei Stellschrauben, beide ohne Verlust: groesseres m (16: Bloecke 8 KiB, 1/16 der Python-Schleifen bei gleicher Bitarbeit – aber 2^|S_low| waechst mit; ich wuerde m am Selbsttest/N4r09 messen) und Ueberspringen von Nullbloecken (im Lauf werden Tabellen schnell duenn; bei N4r09 blieben am Ende 492 von 1,2 Mio Zeilen). Ehrlich: Ich kann die Zeit erst nach dem N4r09-Gegenlauf seriös schaetzen; dort haben wir 62 s als Vergleich.
+
+6. STUFEN UND ERWARTUNGEN (bei GO)
+  S0 Selbsttest Block-Operationen gegen bitmenge_schlank/Tupel (verbindlich, 0 Abweichungen).
+  S1 Gegenpruefung Dreieck + N3-Gatter + N4r09 Stufe B: Variante A und B gegen die gespeicherten Endrelationen (bitgleich), feste Werte, Status (verbindlich). Dazu Zeit/Spitzenspeicher von N4r09 blockweise gegen 62 s / 28 MiB – daraus die Zeitschaetzung fuer N4r10 nachbessern. Danach STOPP und Bericht, BEVOR N4r10 laeuft.
+  S2 (eigenes GO): N4r10 V0 (Aufbau binaer, Gleichwertigkeit, Baum, Initialisierung blockweise – Initialisierung selbst ist blockweise: Kaestchenmasken je Block), V1 Austausch (Variante nach Entscheidung, Fortschrittsdatei alle 25 Entnahmen, Messpunkte: Tabellen-Bitsumme, gehaltene Objektbytes, RSS), V2 Kontrolle. Grenzen: 400 MiB verbindlich (Waechter), Zeit als Vorgabe 600 s gesamt mit Bericht bei Ueberschreitung als OFFEN (ihr entscheidet, ob der Lauf dann weiterlaufen darf – ich wuerde ihn NICHT automatisch weiterlaufen lassen). E7 bleibt verbindlich: bei FIXPUNKT alle 723 Tabellen = Projektion der echten Loesung(en) (Kontrolle: N4r10 hat laut frueherem Pruefstand eine echte Loesung – zu pruefen, nicht vorausgesetzt), alle 12 Eingangsbits bestimmt (direkt oder ueber Alias).
+
+7. WAS DER ENTWURF NICHT TUT
+Keine neuen Regeln, keine Vorvereinfachung ueber das Grundgeruest hinaus, keine Heuristikwahl (Referenzordnung), keine begrenzten Gruppen, keine Aenderung der Nachrichten-Mathematik; Variante B aendert nur die Reihenfolge der Semijoins und wird an den kleinen Faellen bitgleich gegengeprueft.
+
+Einfach gesagt: Statt fuer jeden Kasten riesige Schablonen aufzuheben, schneiden wir jeden Kasten in handliche Streifen von 4096 Feldern und legen auf jeden Streifen dieselben 24 kleinen Schablonen. Das Ergebnis ist genau dasselbe, nur der Speicher fuer Schablonen faellt von 6 Gigabyte auf 12 Kilobyte. Die Kaesten selbst (112 MiB) bleiben – die muessen wir halten, sonst verlieren wir Beziehungen. Wenn wir Nachrichten sofort verarbeiten statt sie zu lagern, sparen wir weitere 112 MiB, ohne dass sich am Ergebnis etwas aendert. Dafuer dauert es laenger – wie viel, messen wir erst an N4r09, bevor N4r10 drankommt.
+
+Ich warte auf Pruefung und GO fuer S0/S1.
+--- ENDE ---

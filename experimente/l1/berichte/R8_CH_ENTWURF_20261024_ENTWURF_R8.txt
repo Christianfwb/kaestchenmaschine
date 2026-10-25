@@ -1,0 +1,39 @@
+FABLE AN GHOST – ENTWURF R8 "CH-KAESTCHEN MIT BEIDEN ZWEIGEN", 2026-10-24, 11:50 – zur Abstimmung, nicht gebaut, nicht gestartet.
+Ghosts Vorgabe: Ch(e,f,g) als Kaestchen, das beide Moeglichkeiten (e=0: Ausgang = g; e=1: Ausgang = f) SAMT ihren Beziehungen zusammenhaelt, ohne einen Zweig
+zu waehlen; verbunden mit einem Nachbarkaestchen (XOR oder Addition); praezise festlegen, welche gemeinsame Beziehung erhalten bleibt. Die Ch-Gleichung
+allein ist keine Ableitung.
+
+== 1. WAS DAS KAESTCHEN SPEICHERT (exakt) ===========================================================================================================
+Ch-Kaestchen je Bit: drei Anschluesse e, f, g und Ausgang z; exakte Beziehung z = g ^ (e AND (f ^ g)), gleichwertig als zwei BEDINGTE lineare Gleichungen:
+   [e = 0]  z ^ g = 0        [e = 1]  z ^ f = 0
+Heute haelt D6 davon nur die UND-Form (R1, Einsetzen-Niveau). Neu: das Kaestchen haelt das Paar bedingter Gleichungen als Ganzes.
+
+== 2. DIE GEMEINSAME BEZIEHUNG MIT DEM NACHBARN (das ist die Ableitung) =============================================================================
+Nachbarkaestchen N (XOR-Gleichung oder Stufengleichung einer Addition) enthaelt z. Verbinden heisst: in jedem Zweig wird z durch den Zweigwert ersetzt
+und die Folgen im GANZEN Formelbestand gezogen (R1–R7 auf einer Kopie), ohne den Zweig zu waehlen:
+   Zweig 0: Bestand + {z = g}  --R1..R7-->  Folgerungen F0 (feste Werte, lineare Beziehungen, Wertemengen; oder WIDERSPRUCH)
+   Zweig 1: Bestand + {z = f}  --R1..R7-->  Folgerungen F1
+Erhalten bleibt als EINGEFRORENE Beziehung die Zweigpaarung:   (F0) ODER (F1)   – projiziert auf die freien Bits: Vereinigung zweier Loesungsmengen,
+jede durch lineare Beziehungen/Wertemengen beschrieben. Das ist genau die Form, die Mengen ohne Zweierpotenz-Groesse beschreiben kann (dein Hinweis
+von heute Morgen). Zusaetzlich UNBEDINGT abgeleitet wird:
+   (a) Ist ein Zweig WIDERSPRUCH -> der andere gilt: e wird fest, F_anderer wird in den Bestand uebernommen.
+   (b) Alles, was in F0 UND F1 steht (Schnitt der Folgerungen: gleiche feste Werte, gleiche Beziehungen), gilt ohne Bedingung -> in den Bestand.
+   (c) Ist f = g (Alias): z = f unabhaengig von e -> Alias (R3), e faellt aus dem Kaestchen heraus.
+Soundness: (a) und (b) sind Folgerungen aus 'e ist 0 oder 1'; keine Annahme wird festgehalten. Keine Suche: beide Zweige werden ausgewertet, keiner gewaehlt,
+kein Rueckwaertsgehen; Tiefe 1 (Zweige werden nicht weiter verzweigt). Bekannt als 'konstruktive Disjunktion' (Van Hentenryck u. a.) – keine Neuheit, hier
+auf die Ch-Struktur und unseren Formelbestand angewandt.
+
+== 3. WAS DAS VON SUCHE UNTERSCHEIDET (Ghosts Ebene 3) ===============================================================================================
+Suche waehlt e = 0, rechnet, geht zurueck, waehlt e = 1. R8 waehlt nie: Es rechnet beide Zweige aus und behaelt nur, was beide gemeinsam haben (b) oder was
+der einzige ueberlebende Zweig sagt (a), plus die Zweigpaarung als eingefrorene Oder-Beziehung. Der Preis: je Ch-Bit zwei Propagationen des Bestands
+(N4r09: 9 Runden x 4 Bits = 36 Ch-Bits -> 72 Propagationen a ~0,1 s = ~7 s; Maj analog waere spaeter R9). Groesse der eingefrorenen Beziehung: zwei
+Folgerungsmengen je Ch-Kaestchen – gemessen in Gleichungen, nicht in Belegungen.
+
+== 4. MESSPLAN AN N4r09 (512 erlaubt, 1 wahr) ========================================================================================================
+D6+R5+R6+R7 (Stand) gegen D6+R5+R6+R7+R8. Gemessen: erlaubte Belegungen ueber die eingefrorenen Folgerungen inkl. Oder-Beziehungen (erlaubt = erfuellt
+alle unbedingten UND fuer jede Oder-Beziehung mindestens einen Zweig); Scheinloesungen; verlorene (muss 0); Zahl der Ch-Kaestchen mit (a) Zweig-Widerspruch,
+mit (b) gemeinsamen Folgerungen, ohne Gewinn; Groesse (Gleichungen je Zweig); Ableitungsaufwand (Propagationen, Zeit) getrennt von der Kontrolle.
+Reihenfolge: R8 nur auf Ch-Bits der LETZTEN Runde zuerst (nahe am bekannten Ende), dann alle Runden. Netz, Regeln R1–R7 und Kontrollbelegung unveraendert.
+Erwartung (ehrlich offen): Zweig-Widersprueche (a) nahe am Ende sind wahrscheinlich, weil dort viel fest ist; ob die Oder-Beziehungen bis zu den freien
+Bits reichen, weiss ich nicht. Auch 512 -> 512 waere ein Befund: dann liegt die fehlende Beziehung nicht in Ch, sondern in Maj oder in der Kette der Additionen.
+Bitte deine Praezisierungen: Tiefe 1 ja/nein; Schnitt (b) nur ueber feste Werte oder auch ueber lineare Beziehungen (Span-Schnitt); Reihenfolge der Kaestchen.

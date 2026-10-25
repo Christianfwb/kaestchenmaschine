@@ -1,0 +1,19 @@
+FABLE AN GHOST – R10b AM N5 V3 r09: VOLLER REGELSATZ GEGEN VOLLER REGELSATZ + R10b – 2026-10-25 00:20. Vorschlag 18:05. Ein Vergleich, dann Stopp.
+Netz, Ziel, k = 2855 unveraendert. Fable-Container Xeon 2,10 GHz 2 Kerne, Python 3.13.16. Pruefstand (Kind rechnet, Eltern baut Netz fuer Orakel selbst; Grenzen
+120 s / 400 MiB / Kind 1024 MiB aktiv). Codeaenderungen: pruefstand.py laedt ueber den bestehenden Haken zusaetzlich Darstellungen (DARSTELLUNGEN_ZUSATZ) aus n5.py;
+n5.py stellt 'Vollscan+R10b' (r10b.D6_R10b) bereit. d6.py unveraendert.
+
+ERGEBNIS (ERGEBNIS_N5_R10B_V3R09.json; 1 wahre Loesung, Orakel 2,52 s nach der Ableitung):
+  Voller Regelsatz           erlaubt 4096 | Schein 4095 | verloren 0 | R9a 12 R9b 13 R4 465 | Werte 490, Aliasse 439 | fest 0, XOR 0, Mengen 0 | Ableitung 0,73 s, 19,5 MiB
+  + R10b                     erlaubt 4096 | Schein 4095 | verloren 0 | R10b 34 Anwendungen, R9a 12 R9b 12 R4 529 | Werte 525, Aliasse 443 | fest 0, XOR 0, Mengen 0 |
+                             Ableitung 1,49 s (BEIDE Durchgaenge: erster Fixpunkt, Bedingungspruefung, Zusatzgleichungen, zweiter Fixpunkt), 21,7 MiB
+  Folgerungen-Pruefung 0,003 / 0,002 s. Keine Grenze erreicht.
+BEFUND (BELEGT, diese Belegung): R10b greift an 34 Stellen (mehr als die 27 'offenen' der Analyse, weil die Bedingungen am ersten Fixpunkt geprueft werden und
+dort auch Paare mit abgeleitetem cin = 0 zaehlen), setzt 35 weitere innere Werte und 64 weitere R4-Schritte in Gang – und erreicht die Eingaenge NICHT:
+4096 -> 4096. Die echte Loesung bleibt erhalten. Gesamtlaufzeit verdoppelt sich etwa (0,73 -> 1,49 s).
+EINORDNUNG: Das neue Kaestchen stimmt im Kleinen und wirkt im Grossen – innen. Fuer die festgefahrene Rueckwaertsrechnung an V3 r09 hilft es NICHT weiter.
+Zusammen mit der Analyse von 22:50 (Stufensummen am Fixpunkt: 0 von 196) bleibt fuer V3 r09 stehen: Mit Erweiterung 'Addition + Drehung' ist bei 9 Runden
+keine der bisher gebauten lokalen Beziehungen bis zu den 12 Eingaengen durchgedrungen. Keine Aussage ueber SHA-256; andere Belegungen/Rundenzahlen nicht gemessen.
+OFFEN (nicht gestartet): V3 bei 7 und 8 Runden (wo beginnt der Stillstand fuer diese Belegung); allgemeines R10 (ganzzahlige Elimination) – mit dem Vorbehalt aus
+der Analyse; R8g Tiefe 1 als getrennt gemessene Fallunterscheidung. Entscheidung bei euch.
+Dateien: BERICHT.txt, ERGEBNIS_N5_R10B_V3R09.json, kastenmaschine/l1/pruefstand.py, kastenmaschine/l1/n5/{n5.py, r10b.py}.

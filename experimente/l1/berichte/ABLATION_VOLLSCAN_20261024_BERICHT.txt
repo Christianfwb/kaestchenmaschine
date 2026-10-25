@@ -1,0 +1,30 @@
+FABLE AN GHOST – ABLATION DES VOLLSCANS AM N4r09 – 2026-10-24 17:20. Auftrag 15:10. Keine Rundenkurve, kein R8g, keine Gegenprobe 'Ziel verfaelscht' (wartet).
+Fable-Container Xeon 2,10 GHz 2 Kerne, Python 3.13.16. Pruefstand wie bisher; verlorene Loesung -> FEHLER/Stopp (nicht ausgeloest).
+
+ENTKOPPLUNG (d6.py): Tafeln werden gebaut, sobald eine der R9-Regeln aktiv ist; R9 (Gleichsetzung), R9a (affine Differenz), R9b (nie beide 1) und die UND-Bruecke
+('R9bBr') sind jetzt einzeln schaltbar und laufen unabhaengig. Die 29 Gegenproben R9/R9a/R9b danach unveraendert: 0 verloren.
+Gemessen (gleiches N4r09, gleiches Ziel, Pruefstand-Kind je Darstellung): erlaubt | verloren | Regelaktivitaet R9/R9a/R9b/Bruecke | R4 | R2 | feste freie Bits | Zeit
+  Vollscan (alle vier)          1 | 0 |  7 / 11 / 15 / 14 | 461 | 120 | 12 | 0,39 s
+  ohne R9                       1 | 0 |  0 / 13 / 13 / 13 | 449 | 132 | 12 | 0,37 s
+  ohne R9a                      1 | 0 |  6 /  0 / 16 / 10 | 467 | 117 | 12 | 0,44 s
+  ohne R9b (und Bruecke)        1 | 0 |  8 /  7 /  0 /  0 | 445 | 109 | 12 | 0,32 s
+  ohne Bruecke                  1 | 0 |  7 / 11 / 15 /  0 | 461 | 120 | 12 | 0,32 s
+  NUR R9                        1 | 0 |  8 /  0 /  0 /  0 | 447 | 109 | 12 | 0,45 s
+  NUR R9a                       1 | 0 |  0 / 18 /  0 /  0 | 444 | 112 | 12 | 0,32 s
+  NUR R9b + Bruecke           128 | 0 |  0 /  0 /  8 /  0 | 359 |  70 |  0 | 0,31 s   (= Stand ohne R9-Regeln: 128, 5 XOR, 3 Wertemengen)
+  Referenz D6+R1b+R8c+R8m     128 | 0 |  0 /  0 /  0 /  0 | 362 |  69 |  0 | 0,25 s
+
+BEFUND (BELEGT):
+1. R9 ALLEIN entscheidet N4r09 (8 Gleichsetzungen 'gleiche Funktion'), ebenso R9a ALLEIN (18 affine Differenzen; R9 ist der Spezialfall Differenz = konstant).
+   Jede der beiden reicht; zusammen brauchen sie weniger Einzelschritte (7 + 11), aber nicht weniger Zeit.
+2. R9b ('nie beide 1') traegt NICHTS: allein 128 (wie ohne alles), und sein Wegfall aendert am Ergebnis nichts. Die UND-Bruecke ebenfalls nichts (am N4r09 feuert sie
+   zwar 14x, aber alles, was sie setzt, kommt auch ohne sie).
+3. Es ist also NICHT das Zusammenspiel dreier Regeln, sondern EINE Idee in zwei Staerken: 'zwei Kaestchen berechnen dieselbe Funktion derselben Wurzeln' (R9), bzw.
+   'ihre Differenz ist linear' (R9a). Was den Vollscan vom Spiegelpaar-Versuch unterscheidet, ist allein der UMFANG: alle Kaestchenpaare mit gleicher Wurzelmenge,
+   auch ueber INNEREN Wurzeln – nicht nur die an freien Bits.
+4. Regelaktivitaet dahinter: R4 (ganzzahlige Stufen) 362 -> ~450, R2 (Gauss) 69 -> ~110–130. Die neuen Gleichsetzungen werden also vor allem von den Zahlenregeln
+   und Gauss weitergetragen – das Zusammenspiel der KAESTCHEN (Gleichsetzung -> Addierer -> Gauss) traegt, nicht ein Zusammenspiel der R9-Varianten.
+EINORDNUNG: gilt fuer N4r09 (Mini-Leine, Kopie-Erweiterung). Fuer N4r10 (384) ist nicht gemessen, welche Variante traegt. Keine Aussage ueber SHA-256.
+OFFEN (nicht gestartet): Gegenprobe 'Ziel verfaelscht' wie von dir praezisiert: Zielbit kippen, Orakel prueft UNABHAENGIG, ob loesbar (0 oder >0 wahre Loesungen);
+bei 0: Vollscan muss WIDERSPRUCH oder ehrlich OFFEN liefern, nie 'entschieden' mit Scheinloesung; bei >0: 0 verloren. Danach Rundenkurve mit Vollscan.
+Dateien: d6.py, pruefstand.py, ERGEBNIS_ABLATION_VOLLSCAN.json.

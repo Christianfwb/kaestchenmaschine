@@ -1,0 +1,3030 @@
+{
+ "stufe": "V2",
+ "kontrolle": {
+  "belegungen": 4096,
+  "echte_loesungen": 1,
+  "loesung_eingaenge": [
+   {
+    "v0002": 1,
+    "v0003": 0,
+    "v0004": 1,
+    "v0005": 0,
+    "v0006": 1,
+    "v0007": 0,
+    "v0008": 1,
+    "v0009": 1,
+    "v0010": 1,
+    "v0011": 0,
+    "v0012": 1,
+    "v0013": 0
+   }
+  ],
+  "zeit_s": 1.719
+ },
+ "E7": {
+  "anwendbar": true,
+  "voraussetzungen": {
+   "gleichwertigkeit": true,
+   "struktur": true,
+   "fixpunkt": true,
+   "kanten_gleich": true
+  },
+  "zu_viel_gesamt": 0,
+  "fehlend_gesamt": 0,
+  "gruppen_mit_zu_viel": 0,
+  "feste_eingangsbits_der_mitte": 8,
+  "eingangsbits_korrekt": true,
+  "je_gruppe": {
+   "G_v0382": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0019": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0029": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0035": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0047": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0063": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0073": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0096": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0116": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0139": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0147": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0161": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0190": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0192": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0193": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0200": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0223": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0252": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0277": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0287": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0301": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0336": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0344": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0367": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0426": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0435": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0464": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0499": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0501": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0502": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0507": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0612": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0644": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0649": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0679": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0687": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0710": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0859": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0867": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0890": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0987": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0989": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v1039": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v1043": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v1180": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v1212": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v1219": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v1242": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0017": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0018": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0023": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0027": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0028": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0033": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0034": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0065": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0069": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0100": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0141": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0159": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0160": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0162": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0198": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0199": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0245": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0285": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0286": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0297": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0338": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0342": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0343": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0431": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0605": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0648": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0651": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0652": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0683": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0839": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0865": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0866": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v1041": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v1042": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v1177": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v1179": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0024": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0066": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0070": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0101": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0142": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0165": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0246": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0298": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0339": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0432": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0466": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0471": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0472": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0607": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0660": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0684": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0059": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0092": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0112": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0135": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0186": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0219": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0273": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0316": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0332": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0363": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0423": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0460": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0495": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0640": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0675": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0706": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0855": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0886": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v1035": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v1238": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0043": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0045": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0050": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0057": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0060": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0061": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0062": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0076": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0083": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0090": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0093": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0094": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0095": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0103": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0110": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0113": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0114": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0115": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0136": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0137": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0138": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0155": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0157": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0163": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0170": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0177": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0184": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0187": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0188": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0189": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0210": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0217": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0220": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0221": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0222": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0274": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0275": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0276": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0295": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0299": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0323": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0330": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0333": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0334": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0335": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0354": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0361": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0364": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0365": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0366": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0444": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0451": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0461": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0462": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0463": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0467": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0479": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0468": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0469": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0486": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0493": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0496": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0497": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0498": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0608": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0247": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0638": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0641": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0642": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0643": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0666": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0673": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0676": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0677": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0678": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0707": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0708": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0709": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0853": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0856": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0857": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0858": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0887": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0888": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0889": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v1033": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v1036": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v1037": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v1038": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v1239": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v1240": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v1241": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0031": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0015": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0025": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0042": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0053": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0054": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0052": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0055": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0079": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0080": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0078": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0081": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0086": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0087": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0085": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0088": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0097": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0106": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0107": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0105": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0108": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0122": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0123": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0121": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0124": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0129": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0130": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0128": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0131": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0173": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0174": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0172": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0175": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0180": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0181": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0179": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0182": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0213": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0214": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0212": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0215": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0242": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0267": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0268": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0266": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0269": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0271": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0249": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0305": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0306": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0308": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0309": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0311": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0312": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0326": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0327": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0325": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0328": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0350": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0351": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0349": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0352": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0357": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0358": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0356": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0359": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0419": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0420": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0418": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0421": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0433": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0447": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0448": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0446": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0449": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0454": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0455": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0453": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0456": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0459": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0474": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0475": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0482": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0483": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0481": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0484": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0489": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0490": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0488": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0491": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0627": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0628": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0626": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0629": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0634": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0635": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0633": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0636": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0654": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0655": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0662": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0663": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0661": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0664": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0650": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0669": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0670": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0668": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0671": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0700": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0701": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0699": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0702": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0849": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0850": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0848": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0851": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0873": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0874": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0872": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0875": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0880": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0881": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0879": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0882": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v1170": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v1225": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v1226": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v1224": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v1227": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v1232": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v1233": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v1231": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v1234": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0075": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0064": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0071": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0145": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0196": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0340": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0685": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0863": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v1205": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v1217": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v1028": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0021": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0014": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0016": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0133": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0625": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0682": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0686": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0704": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0681": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0884": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v1216": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v1218": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v1236": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v1196": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v1229": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v1198": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v1203": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v1210": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v1209": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0443": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v1034": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0039": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0040": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0098": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0102": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0119": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0167": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0294": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0494": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0169": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0154": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0195": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0197": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0216": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0470": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0841": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0862": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0864": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0861": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0877": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0852": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0164": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0307": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0478": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0046": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0056": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0044": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0049": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0037": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0067": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0051": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0058": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0089": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0048": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0473": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0109": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0300": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0329": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0296": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0331": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0324": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0360": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0355": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0362": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0353": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0847": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0854": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0637": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0143": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0310": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0337": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0341": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0317": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0318": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0166": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0632": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0656": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0476": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0036": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0218": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0072": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0068": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0082": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0126": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0099": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0104": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0111": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0038": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0313": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0084": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0091": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0005": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0158": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0437": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0450": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0436": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0485": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0445": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0452": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0457": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0492": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0009": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0156": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0183": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0148": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0176": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0003": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0004": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0665": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0012": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0013": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0178": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0185": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0609": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v1167": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0616": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0140": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0639": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0010": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0011": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0074": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0144": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0146": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0617": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0623": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0624": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0630": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0631": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0653": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0667": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0672": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0674": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0819": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v0999": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   },
+   "G_v1174": {
+    "zeilen": 1,
+    "projektion": 1,
+    "zu_viel": 0,
+    "fehlend": 0
+   }
+  }
+ },
+ "pruefung": {
+  "E3_kontrolle_eine_loesung": true,
+  "E3_loesung_erfuellt_kaestchen": true,
+  "E3_loesung_erfuellt_werte": true,
+  "E3_loesung_erfuellt_aliase": true,
+  "E3_nichts_fehlt": true,
+  "E3_keine_falsche_eingangsfestlegung": true,
+  "E7_abschlusstest": false
+ },
+ "bestanden": false,
+ "zeiten_s": {
+  "kontrolle": 1.719,
+  "vergleich": 1.962
+ },
+ "maxrss_mib": 23.2,
+ "python": "3.13.16",
+ "abhaengigkeiten": {
+  "pruefstand": {
+   "pfad": "/home/claude/kastenmaschine/l1/pruefstand.py",
+   "sha256": "0ae511450470ca91c32a7a25a8d75f83985d06d6f217c27f16e317ab2ac1d910"
+  },
+  "gatter": {
+   "pfad": "/home/claude/kastenmaschine/miner_pruefung/sha256d/gatter.py",
+   "sha256": "75611ddf49d31dc933fe81ee56fe3a4e10cd1f1a3a571bf25fe6108b485f8f4f"
+  },
+  "d6": {
+   "pfad": "/home/claude/kastenmaschine/l1/d6.py",
+   "sha256": "91ec11fc4d1d1bcf0045b0dc73a3525f0fadfd116c939101e87160bb77f6c794"
+  },
+  "e1_bit": {
+   "pfad": "/home/claude/kastenmaschine/miner_pruefung/sha256d/e1_bit.py",
+   "sha256": "cfa14b5181eda91e8b92bc4d1baded6137d39ba325c3cf524ea4d8a6f4a23248"
+  },
+  "stern": {
+   "pfad": "/home/claude/kastenmaschine/l1/stern/stern.py",
+   "sha256": "da8d10bbe24deb7264d4abc66640c002d7379d037cf1a6c8b869589f8c536bfb"
+  }
+ }
+}

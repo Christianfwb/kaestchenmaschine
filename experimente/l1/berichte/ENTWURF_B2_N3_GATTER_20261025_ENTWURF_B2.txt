@@ -1,0 +1,43 @@
+VON: fable
+AN: ghost, christian
+BEZUG: Ghost 2026-10-25 08:41 – naechster, etwas groesserer Vergleich begrenzter Gruppen. Vorschlag eines konkreten Testfalls mit Begruendung. Kein Bau, kein Lauf (nur eine Strukturzaehlung ohne Tabellen zur Auswahl, siehe 1).
+
+1. VORSCHLAG: N3 UND N3u AUF GATTEREBENE
+Netz: das bestehende N3 des Pruefstands (zwei gekoppelte 3-Bit-Additionen, 10 freie Eingaenge) und N3u (unloesbare Variante, unabhaengig bestaetigt: Pruefstand-Vollzaehlung 0 Loesungen; N3: 12). Beide unveraendert aus pruefstand.NETZE.
+Kaestchen: NICHT die vierstelligen Stufenrelationen aus stern_n3.py, sondern die EINZELNEN GATTER des Netzes (XOR/UND, je 3 Variablen: Ausgang + 2 Eingaenge; Zielbits als einstellige Kaestchen). Das ist dieselbe Kaestchenwahl wie bei der N4r09-Strukturzaehlung.
+Warum dieser Fall: Ich habe nur die Struktur gezaehlt (Min-Fill wie gruppen.py, keine Tabellen): N3 hat 45 Knoten, 33 Gatter, 7 Zielbits; die exakte Zerlegung braucht Gruppen bis 5 Variablen (Verteilung: 15 Gruppen mit 5, 13 mit 4, 13 mit 3, je eine mit 2 und 1). N3u: gleich gross, groesste Gruppe 5. Damit gilt genau Ghosts Bedingung: Jedes Kaestchen (3 Variablen) passt in eine Gruppe mit Schranke 3, der exakte Vergleich braucht aber 5. Es ist dasselbe Netz, dessen Wahrheit wir seit zwei Tagen kennen, nur feiner geschnitten – und die Kontrolle ist billig (1024 Eingabebelegungen vorwaerts, alle Innenknoten folgen daraus).
+Abgrenzung: Das ist ein anderer Kaestchenschnitt als der fruehere Stern-N3 (dort 4-Variablen-Stufen, groesste Gruppe 4). Die beiden exakten Staende sind nicht direkt vergleichbar; verglichen wird hier nur exakt-Gatter gegen begrenzt-Gatter.
+Alternativen, die ich verworfen habe: laengere Ungleichheitsringe (5er-Ring unloesbar, 6er loesbar) – nur die Dreiecksgeschichte in laenger, sagt nichts Neues; L2 (2-Bit-Addierer, 9 Gatter, groesste Gruppe 5) – kleiner, aber ohne Kopplung zweier Pfade, und der Kopplungsfall ist das, was uns interessiert.
+
+2. VORAB FESTGELEGT
+ Reihenfolge: Min-Fill wie gruppen.min_fill (Fill, Grad, Name), Variablennamen v000..v044 = Knotennummer dreistellig. Gleich fuer exakt und begrenzt (die Aufspaltung aendert die Ordnung nicht, nur die Gruppen).
+ Gruppenschranken: EXAKT (keine Schranke, gruppen.baue); BEGRENZT i = 3 (Hauptfall: Kaestchen passen gerade; jede Gruppe hoechstens 8 Zeilen); BEGRENZT i = 4 als zweiter, VORAB festgelegter Punkt (keine Erhoehung waehrend des Laufs; wenn i = 3 bereits alles erkennt, zeigt i = 4 nichts Neues und wird trotzdem berichtet). Vorprobe: i = 5 strukturell identisch zu EXAKT (Pruefsumme).
+ Aufspaltungsregel: Mini-Bucket, First-Fit, Kaestchen nach Name, dann Nachrichten nach Absender – unveraendert aus begrenzt.py. Kaestchen bleiben ganz (Posten > i -> OFFEN).
+ Austausch: dieselbe Arbeitsliste (ereignis.arbeitsliste, unveraendert) fuer alle Staende; Semijoin-Zaehler und Projektionszeilen wie im Dreieck.
+ Ressourcen: 120 s / 400 MiB je Kind (Waechter), 8 Variablen / 256 Zeilen je Relation als Obergrenze (hier nie erreicht: exakt max 5 Variablen, 32 Zeilen), RLIMIT_AS wird gelesen und berichtet, wie es ist.
+ Laeufe: 2 Netze x (exakt, i=5 Vorprobe, i=4, i=3) = 8 Kinder, jedes mit eigener Ergebnisdatei. Bestehende Dateien unveraendert; neue Datei begrenzt_n3.py (importiert pruefstand nur fuer die Netzdefinition, begrenzt.py fuer Aufspaltung/Pruefung, gruppen.py, ereignis.py).
+
+3. GETRENNT GEMESSEN (je Stand, an denselben Messstellen)
+ ERHALTENE LOESUNGEN (Speicherung): Kontrolle am Original (1024 Belegungen der 10 freien Eingaenge, Vorwaertsauswertung aller 35 Innenknoten; Zielbits pruefen) -> echte Loesungen als volle Belegungen aller 45 Variablen; je Gruppe "fehlend" (muss 0 sein); Verbundzaehlung ueber die freien Eingaenge (Kontrolle, keine Leistung der Mitte).
+ ERKANNTE FOLGERUNGEN (vor der Kontrolle festgehalten): Status; gestrichene Zeilen je Gruppe und Nachricht; fest gewordene Variablen (Eingaenge und Innenknoten getrennt gezaehlt); Paare mit ausgeschlossenen Kombinationen innerhalb gemeinsamer Gruppen; Zahl der Gruppen, deren Tabelle sich gegenueber der Initialisierung veraendert hat.
+ KONTROLLZAEHLUNG (danach): je Gruppe "zu viel" gegen Projektion der echten Loesungen; feste Variablen exakt vs. begrenzt (welche fehlen dem begrenzten Stand – das sind die "fehlenden Zusammenhaenge", konkret benannt, mit Knotennummer und Gattertyp); fuer N3u: ob der Widerspruch erkannt wird, und wenn nicht, wie viele Zeilen/Belegungen offen bleiben, obwohl die Kontrolle 0 sagt.
+ SEMIJOINS UND BEARBEITUNGEN: Entnahmen, Semijoin-Aufrufe (eigener Zaehler), Projektionen, Projektionszeilen gesamt, Nachrichten gesendet, groesste Listenlaenge.
+ SPEICHERBEDARF: Gruppen, Aufspaltungsstellen (Buckets mit mehr als einer Teilgruppe), groesste Gruppe (Variablen; Zeilen 2^k / lokal gefiltert / Ende), Summe Zeilen (initial / Ende), Zeilen aller gespeicherten Nachrichten am Ende, RSS je Kind. Dazu die rechnerische Summe 2^k nur als Zahl.
+ Zeiten getrennt: T1 Gruppierung+Aufspaltung+Init | T2 Austausch | T3 Kantenpruefung | T4 Kontrolle. Bei dieser Groesse Millisekunden; die Zaehler sind das Mass.
+
+4. ERWARTUNGEN (verbindlich, automatisch; Abweichung = FEHLER, Sofortstopp)
+ E1 i = 5 strukturell identisch zu EXAKT (beide Netze).
+ E2 Konstruktion: Kaestchen genau einmal; Schranke eingehalten; Wald ohne Kreis; Komponenten = Wurzeln; Running Intersection nur an Aufspaltungsstellen verletzt.
+ E3 Speicherung: N3 – alle 12 echten Loesungen in jedem Stand erhalten (fehlend 0 je Gruppe, Verbund enthaelt alle 12); keine "feste" Variable widerspricht der Kontrolle (beide Netze).
+ E4 EXAKT reproduziert: N3 FIXPUNKT mit allen Gruppen = Projektionen der 12 Loesungen (globale Konsistenz), N3u WIDERSPRUCH. Kontrolle: 12 bzw. 0.
+ E5 keine Doppeleintraege; E6 Kantenprojektionen am Ende gleich (bei FIXPUNKT).
+ KEINE Erwartung an BEGRENZT (Status bei N3u, Zahl fester Variablen, "zu viel", Kosten). Meine Vorhersage – nur zum spaeteren Vergleich, kein Kriterium: Bei i = 3 wird N3u voraussichtlich NICHT als Widerspruch erkannt und bei N3 bleiben viele Innenknoten offen, weil ein Volladdierer-Bit (x, y, cin, s, cout) nur gemeinsam in einer 5er-Gruppe exakt ist; bei i = 4 erwarte ich mehr feste Variablen, aber nicht alle. Ich kann mich irren; dann ist meine Rechnung falsch, nicht der Lauf.
+ STOP: Posten > i, Relation > 8 Variablen / > 256 Zeilen, 120 s / 400 MiB -> OFFEN; verlorene echte Loesung, Strukturfehler ausserhalb Aufspaltungsstellen, Doppeleintrag, falsch "fest" -> FEHLER + Sofortstopp. Keine automatische Wiederholung, keine Grenzerhoehung, kein N4/N5.
+
+5. WAS DER TEST BEANTWORTET
+ Wie viel erkennt der begrenzte Austausch an einem Netz mit zwei gekoppelten Rechenpfaden, wenn die Gruppen kleiner sein muessen als ein Volladdierer-Bit? Welche Zusammenhaenge fehlen ihm konkret (benannt nach Knoten)? Was kostet exakt gegen begrenzt an Semijoins und Zeilen? Nicht beantwortet: alles ueber N4/N5/SHA-256; keine Regeln, keine D6-Rueckkopplung, keine Bitdarstellung.
+
+Einfach gesagt: Wir nehmen die zwei gekoppelten Addierer, schneiden sie in einzelne Gatter (Dreierkaestchen) und erlauben der Mitte zuerst nur Dreierkaesten, dann Viererkaesten – ein ganzes Addierer-Bit braeuchte fuenf. Dann schauen wir, was sie noch zusammenbekommt, was ihr konkret fehlt, und was es kostet. Die Antwort kennen wir vorher nicht.
+
+Ich warte auf Pruefung und Christians GO.
+--- ENDE ---

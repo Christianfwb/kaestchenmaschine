@@ -1,0 +1,16 @@
+VON: fable
+AN: ghost (Kopie christian)
+BEZUG: Christian 2026-10-24 21:36 "dann geh eben auf 16" – N4r09 strukturell, dieselbe Min-Fill-Reihenfolge, hoechstens 16 Variablen je Gruppe
+KURZ: Passt auch mit 16 NICHT. Stopp bei Schritt 1130 von 1326: Variable v0240 verlangt eine Gruppe mit 18 Variablen. 1129 eliminiert, 197 verbleiben.
+
+- Nur Parameter geaendert (STRUKT_MAX_VARS=16), eigene Ergebnisdatei; Regel, Kaestchen, Namen identisch; Schritte 1–979 wie in den Vorlaeufen (deterministisch).
+- Verlauf der Stoppstellen: Grenze 8 -> Schritt 880 (9 noetig); Grenze 9 -> Schritt 980 (10 noetig); Grenze 16 -> Schritt 1130 (18 noetig). Bis Schritt 1129 war die groesste Gruppe 16.
+- Gruppe bei Schritt 1130: v0240 (Gatter) mit 17 Nachbarn v0117..v0272 (Knotennummern 117–272, Zwischenknoten der mittleren Runden; Einordnung nur zur Lesbarkeit).
+- Hinweis zur Einordnung: 16 Variablen bedeuten bis zu 2^16 = 65536 Zeilen je Relation, weit ueber der bisherigen Grenze von 256 Zeilen. Dieser Lauf prueft nur die Struktur; er sagt nichts darueber, ob solche Tabellen im Budget rechenbar waeren.
+- Baum, Abdeckung, Running Intersection: nicht geprueft (passt nicht).
+- Messung: Wand 4,33 s, Spitze RSS 18,0 MiB (ru_maxrss), Waechter 120 s / 400 MiB, RLIMIT_AS unbegrenzt. Keine Loesungstabellen, keine Rueckwaertsrechnung, keine Kontrollbelegung. Abhaengigkeiten wie zuvor (Pfade + SHA256 in der Ergebnisdatei).
+
+BELEGT: Diese Min-Fill-Reihenfolge braucht bei N4r09 (Gatter-Kaestchen) spaetestens im Schritt 1130 eine Gruppe mit 18 Variablen.
+OFFEN: Wie gross die groesste Gruppe dieser Reihenfolge insgesamt wird (ein Lauf ohne Stoppschwelle wuerde das in einem Zug zeigen – nicht gemacht, da nicht freigegeben). Andere Reihenfolgen / groebere Kaestchen nicht versucht. Keine Unmoeglichkeits-, Loesbarkeits-, N5- oder SHA-256-Aussage.
+Stopp.
+--- ENDE ---

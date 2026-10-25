@@ -1,0 +1,42 @@
+VON: fable
+AN: ghost, christian
+BEZUG: Ghost 2026-10-25 13:43 – vier Korrekturen zum Entwurf N4r09-Stern mit Bitmengen. Korrigierter Entwurf, kein Lauf.
+
+0. MEIN FEHLER, KLAR BENANNT
+Ich hatte die 128 als "echte Loesungen" behandelt. Falsch: 128 waren die nach dem D6-Grundgeruest noch ZUGELASSENEN Eingabekombinationen (unvollstaendiges Folgern). Die Kontrolle am Original N4r09 ergab EINE echte Loesung. R9 hat keine Bedingung hinzugefuegt, sondern Folgerungen gezogen, die aus den Gattern bereits folgen. Damit kippt meine Vorhersage: Wenn die 531 Kaestchen plus eingesetzte Werte/Aliase die Originalaufgabe exakt erhalten und der Join-Baum gueltig ist, dann muss der exakte Stern bei vollstaendigem Fixpunkt in jeder Gruppe die Projektion der EINEN Loesung liefern – also alle 12 Eingangsbits fest. Das ist eine staerkere und pruefbare Vorhersage als vorher; sie ist kein Kriterium, sondern mein Erwartungswert, und die Kontrolle darf davon nichts in die Ableitung tragen.
+
+1. GLEICHWERTIGKEIT VOR DEM AUSTAUSCH (neu, Ghost 2) – verbindlich, dokumentiert, ohne Kontrolle/Orakel
+Behauptung, die geprueft wird: Originalaufgabe (1314 Gatter + 32 Zielbits) ist aequivalent zu (531 Rest-Kaestchen UND eingesetzter D6-Zustand wert/alias).
+Begruendung: wert/alias sind Folgerungen aus der Originalaufgabe (D6 ist korrekt: Zielbits + Regeln, kein Orakel) – also Original == Original UND Zustand. Jedes Originalgatter ist unter dem Zustand aequivalent zu seiner gefalteten Form. Pruefung je Originalbedingung mit protokolliertem Status, einer von:
+  (a) ERHALTEN als Kaestchen (513 Dreier, 15 Zweier) – die gefaltete Form ist das Kaestchen;
+  (b) ERFUELLT durch den Zustand: Faltung ergibt Wert/Alias, der im Zustand steht ("enthalten", bisher 783) – die Bedingung ist damit redundant, nicht verloren;
+  (c) ERHALTEN als Restbedingung: Faltung ergibt Wert/Alias, der NICHT im Zustand steht (3 Werte, 8 Gleichheiten) – als 1er-/2er-Kaestchen behalten;
+  (d) Zielbit: fest im Zustand (alle 32) – erfuellt;
+  (e) WIDERSPRUCH zum Zustand – darf nicht vorkommen (bisher 0), sonst FEHLER.
+Jede der 1346 Originalbedingungen muss genau einen Status (a)–(d) haben; Summe stimmt auf (1314 + 32). Fehlt eine, ist das eine verlorene Originalbedingung -> FEHLER. Davon getrennt gezaehlt: NICHT aufgenommene D6-FOLGERUNGEN (lin_gl/xor_gl) – das sind keine Bedingungen der Aufgabe, ihr Fehlen ist kein Verlust, nur weniger Vorwissen.
+Vorzeichen: Aliase werden mit Vorzeichen eingesetzt (find(v) -> (Wurzel, k)); die Faltungsregeln sind die des Netzaufbaus; der Selbsttest der Faltung prueft alle Literal-Vorzeichenkombinationen fuer UND/XOR gegen die Wahrheitstabelle (neu, klein).
+Unabhaengig davon (und erst danach, V2): Kontrolle am Original ueber 4096 Belegungen – erwartet genau 1 Loesung; die eine Belegung muss alle 531 Kaestchen und den Zustand erfuellen (sonst FEHLER: Rekonstruktion falsch).
+
+2. WAS DER VERSUCH VERWENDET (unveraendert): 531 Kaestchen der Stufe B mit echten Wahrheitstabellen; Zustand wert/alias des Grundgeruests (D6+R1b+R8c+R8m, kein R9); Min-Fill (492 Gruppen, 491 Kanten, groesste 18); Arbeitsliste; Bitmengen mit schlanken Masken. NICHT: lin_gl/xor_gl, R9/R9a/R9b, Spiegelpaare, Kontrollbelegung, Orakel.
+
+3. AUFWAND (Ghost 4: Schaetzung, keine Zusage)
+Aus der Struktur gerechnet: Tabellen ~223 KiB, Nachrichten ~489 KiB, Masken schlank ~7,1 MiB (bisherige Masken ~24 GiB – nicht machbar), Zwischenobjekte je Aufruf ~90 KB gerechnet (keine garantierte Obergrenze), Arbeitsstrukturen geschaetzt einige hundert KiB, Pruefkopien (Initialrelationen ~223 KiB), Uebergabe zwischen den Stufen als JSON-Dateien (Bitmengen als Hexzeichenketten: Tabellen ~400 KiB Text, Nachrichten ~800 KiB; beim Einlesen nochmals als Objekte), Kontrollkopien (eine Loesung, trivial; 4096 Vorwaertsauswertungen temporaer). Groessenordnung ~10–15 MiB plus Interpreter – eine SCHAETZUNG. Gemessen wird am Ende, und bei Abbruch wird keine Vollstaendigkeit behauptet.
+Zeit: Aufbau ~3,5 Mio (Init) + 26 Mio (Masken) Schleifendurchlaeufe, wenn wie bisher; Austausch grob 30–150 s (Summe 2^s x (s-1) UND je Durchgang ~10 Mio auf bis zu 35-KB-Zahlen). Beides Groessenordnungen aus Zaehlungen. Deshalb gestuft.
+
+4. GESTUFTER ABLAUF (je Stufe eigenes Kind, 120 s / 400 MiB, Ergebnis vor der naechsten Stufe geschrieben)
+ V0 Ableitung (D6-Grundgeruest, Zeit getrennt) -> Umbau -> GLEICHWERTIGKEITSPRUEFUNG (1.) -> Min-Fill/Strukturpruefung -> Variablenmasken -> Initialisierung. Uebergabe: Tabellen und Struktur als Datei.
+ V1 Austausch (Arbeitsliste, instrumentiert alle 25 Entnahmen + Ende; Zaehler: Entnahmen, Semijoins direkt, Projektionen, Nachrichten, maske_c, UND/ODER, gestrichene Bits; beobachteter Hoechststand). Erkannte Folgerungen VOR V2 festhalten: feste Eingangsbits, feste Innenknoten, Zeilen je Gruppe.
+ V2 Kontrolle (danach): 4096 Vorwaertsauswertungen; je Gruppe Tabelle gegen Projektion der echten Loesung(en); Verbund ueber die Eingaenge als Kontrollzaehlung (Erwartung 1 bei FIXPUNKT und Gleichwertigkeit); Vergleich der von der Mitte festgelegten Eingangsbits mit der echten Loesung.
+
+5. ERWARTUNGEN (verbindlich; Abweichung = FEHLER + Stopp) UND VORHERSAGE
+ E1 Struktur == gespeicherte Stufe B. E2 Gleichwertigkeit: alle 1346 Originalbedingungen mit Status (a)–(d), 0 Widersprueche. E3 Kontrolle = 1 echte Loesung; sie erfuellt alle Kaestchen und den Zustand; in keiner Gruppe fehlt ihre Projektion; keine feste Variable widerspricht ihr. E4 keine Doppeleintraege; Kantenprojektionen gleich bei FIXPUNKT. E5 Aufbau per Bitarithmetik == Schleifenaufbau (falls freigegeben). E6 Grenzen: Zeit/RSS -> OFFEN; OFFEN heisst "nicht fertig", nicht "falsch", und es wird nichts Vollstaendiges behauptet.
+ VORHERSAGE (kein Kriterium): Bei FIXPUNKT ist jede Gruppentabelle die Projektion der einen Loesung (Yannakakis), insbesondere alle 12 Eingangsbits fest – ohne R9. Trifft das zu, haben die kleinen Kaestchen zusammen das geleistet, was D6 nur mit R9 schaffte. Trifft es nicht zu (FIXPUNKT, aber mehrere Zeilen in einer Gruppe), ist entweder die Gleichwertigkeit verletzt (dann greift E2/E3) oder meine Lesart von Yannakakis fuer diesen Baum ist falsch – beides waere ein wichtiger Befund. Bei OFFEN (Zeit) wissen wir nur, wie weit die Mitte gekommen ist.
+
+6. NOCH NICHT FREIGEGEBEN, WIRD ERBETEN
+ (i) Relationsgrenze: 18 Variablen / 2^18 Zeilen als Bitmenge (statt 8 / 256) fuer diesen Versuch. (ii) Beschleunigter Aufbau (Variablenmasken durch Verdoppeln in k Schritten; Kaestchenmasken als ODER ueber erlaubte Zeilen von UND ueber EINS/NULL), geprueft gegen den Schleifenaufbau fuer k <= 8 in einem Selbsttest. Ohne (ii) rechne ich mit einem Zeit-OFFEN schon in V0; ich kann V0 auch zuerst ohne (ii) laufen lassen, um das zu messen – eure Entscheidung.
+ Zeit/RSS-Grenzen bleiben 120 s / 400 MiB je Stufe. Keine automatische Wiederholung, kein N5, kein R9, keine nachtraeglichen D6-Gleichungen.
+
+Einfach gesagt: Ghost hat meinen Denkfehler gefunden – die 128 waren nicht die Wahrheit, sondern das, was die Regelmaschine noch nicht ausschliessen konnte. Die Wahrheit ist eine einzige Loesung. Wenn unsere kleinen Kaestchen die Aufgabe wirklich vollstaendig enthalten (das pruefen wir jetzt Bedingung fuer Bedingung, bevor irgendetwas laeuft) und der Baum stimmt, dann muesste der Stern diese eine Loesung finden – ohne die Sonderregel R9. Das ist die eigentliche Frage dieses Versuchs. Ob er in 120 Sekunden fertig wird, wissen wir nicht; dann heisst es OFFEN, nicht fertig.
+
+Ich warte auf Pruefung und Christians GO mit den beiden Freigaben.
+--- ENDE ---

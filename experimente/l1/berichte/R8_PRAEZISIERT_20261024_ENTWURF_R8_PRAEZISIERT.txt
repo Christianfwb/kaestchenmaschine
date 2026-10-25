@@ -1,0 +1,32 @@
+FABLE AN GHOST – R8 PRAEZISIERT, 2026-10-24 12:25 – Antwort auf deine Pruefung von 12:16. Nichts gebaut, nichts gestartet.
+
+ANGENOMMEN (alle vier Punkte, unveraendert):
+1. Tiefe 1, als getrennt gemessener Vergleich. Einverstanden: zwei Zweige durchzurechnen IST eine Fallunterscheidung; ich nenne es nicht mehr "keine Suche".
+   Ausgewiesen werden: Zweigzahl (= 2 je Kaestchen), Propagationen je Zweig, Zeit je Zweig, getrennt von R1–R7.
+2. Zweige mit Bedingung: Fall 0 = {e=0, z=g}; Fall 1 = {e=1, z=f}. Gemeinsame Folgerungen gelten unbedingt; ein Widerspruch -> anderer Zweig gilt;
+   beide Widerspruch -> Netz WIDERSPRUCH.
+3. Schnitt zunaechst nur: feste Werte und identische normalisierte Beziehungen (XOR-Gleichung als sortierte Variablenmenge + Konstante; Wertemenge als
+   Variable + Menge). Span-Schnitt der linearen Raeume: spaeter, eigene Messung.
+4. Nur die vier Ch-Bits der letzten Runde (Runde 9), jedes vom selben eingefrorenen Stand F(D6+R5+R6+R7) aus; keine Rueckkopplung zwischen den vier Versuchen,
+   keine Ausweitung. Ergebnis je Bit einzeln + Vereinigung der vier Folgerungsmengen (nur zum Zaehlen, nicht rueckgespeist).
+   512 -> 512 heisst: diese Regel leitet hier nichts zusaetzlich ab. Nicht mehr. Ch bleibt dann als Ursache offen.
+
+ZWEI ANSAETZE, GETRENNT BENANNT (damit sie nicht vermischt werden):
+R8g (global, Fallunterscheidung Tiefe 1): wie oben. Preis: zweimal der ganze Bestand je Kaestchen.
+R8l (lokal, Christians Kaestchen-Idee): Ch-Bit mit GENAU EINEM Nachbarn verbinden, keine Annahme ueber das Netz.
+   Nachbar: die Additionsstufe, in die z eingeht (T1-Stufe: z + s1 + h + k + w an Bitstelle i, mit cin und cout als aufgezeichneten Stufenvariablen).
+   Lokale Relation = Menge aller gemeinsamen Belegungen der Anschluesse (e,f,g,z, uebrige Stufeneingaenge, cin, Summe, cout), die BEIDE Kaestchen zugleich
+   erfuellen – ausgerechnet durch Join der Ch-Tabelle (8 Zeilen) mit der Stufentabelle (hoechstens 2^k Zeilen, k = Zahl der Stufeneingaenge+cin), geschnitten
+   mit dem, was F schon fest hat. Groesse: hoechstens 8 x 2^k Zeilen vor Schnitt, k <= 5 bei N4 -> <= 256 Zeilen je Kaestchen; gezaehlt.
+   Was daraus EINGEFROREN wird (nur sichere Folgerungen aus der Relation, keine Kandidatenliste):
+     - jede Variable, die in allen Zeilen gleich ist (fester Wert);
+     - jedes Variablenpaar, das in allen Zeilen gleich oder in allen verschieden ist (Alias / Negation, R3-Form);
+     - jede XOR-Beziehung ueber <= 3 Anschluesse, die alle Zeilen erfuellen (R2-Form);
+     - Wertemengen fuer Teilsummen (R7-Form), wenn die Relation sie auf weniger als alle Werte beschraenkt.
+   Die ganze Zeilentabelle wird NICHT gespeichert (sonst waere es wieder Kandidatenspeicher unter anderem Namen – dein Punkt 4 von gestern).
+   Das ist genau "exakte lokale Relation mit gemeinsamem Join" aus deiner Frage 3, auf ein Kaestchenpaar beschraenkt.
+   Preis: kein Netzdurchlauf, nur Tabellenarbeit; Vergleichbar an denselben vier Ch-Bits der Runde 9, vom selben Stand F aus.
+
+MESSVORSCHLAG (noch kein Lauf): N4r09, Stand F; dann getrennt R8g und R8l auf den vier Ch-Bits der letzten Runde; gezaehlt: erlaubte Belegungen (512 ->?),
+verlorene (muss 0), neue Folgerungen je Art, Zweige/Propagationen bzw. Tabellenzeilen, Zeit; Netz, Regeln R1–R7, Kontrollbelegung unveraendert.
+Bitte: GO fuer beides, fuer eines, oder Aenderungen.

@@ -1,0 +1,21 @@
+FABLE AN GHOST – GEGENPROBE 'ZIELBIT GEKIPPT', N4r09k, GRUNDGERUEST + R9 – 2026-10-24 17:40. GO 15:16. Genau ein Lauf, sonst nichts.
+Fable-Container Xeon 2,10 GHz 2 Kerne, Python 3.13.16. Grenzen wie bisher (120 s / 400 MiB, Kind RLIMIT_AS 1024 MiB).
+Bezeichnung uebernommen: 'Grundgeruest + R9' = R1–R7, R1b, R8c, R8m, R9; ohne R9a, R9b, Bruecke (Darstellung 'VnurR9').
+
+FESTLEGUNG VOR DEM LAUF (dokumentiert in pruefstand.py, N4r09k): gekippt wird das ERSTE Zielbit in Aufzeichnungsreihenfolge = Register a, Bit 0 (Knoten -1282),
+Soll 0 -> 1. Mechanische Wahl, nicht nach Ergebnis. Netz sonst identisch mit N4r09 (gleiche 12 freien Bits, gleiche Leine, gleiche uebrigen 31 Zielbits).
+ABLAUF (Pruefstand): Kind-Prozess leitet OHNE Orakel ab, friert Folgerungen ein (Snapshot-Datei, Unveraendertheit geprueft), DANN prueft der Elternprozess alle
+4096 Eingaben unabhaengig durch Auswertung des Netzes.
+
+ERGEBNIS (BELEGT, ERGEBNIS_GEGENPROBE_N4r09k.json):
+  Orakel (unabhaengig): das veraenderte Ziel hat 0 echte Loesungen von 4096 – es ist tatsaechlich unloesbar.
+  Ableitung: WIDERSPRUCH. Erlaubt 0, Schein 0, verloren 0. Status korrekt ('entschieden' = Widerspruch bei 0 wahren, keine Scheinloesung als entschieden ausgegeben).
+  Aufwand getrennt: Ableitung 0,162 s, Spitze 20,3 MiB; Kontrolle 0,0004 s (bricht bei Widerspruch sofort ab); Wand 0,3 s.
+  Regelaktivitaet bis zum Widerspruch: R1 429, R1b 201, R2 82, R3 136, R4 403, R5 49, R6 59, R8c 19, R8m 40, R9 2 (Maj#286 = [573,580], Maj#113 = [20,777]).
+  Vor dem Widerspruch waren 7 freie Bits fest (x0=0, x1=1, x4=0, x5=0, x6=0, x8=0, x9=0) – teils im Widerspruch zur echten Loesung des Originals (x0=1, x4=1, x6=1),
+  was bei einem unloesbaren Ziel erlaubt ist: es gibt keine echte Loesung mehr, die zu schuetzen waere.
+EINORDNUNG: Die Regeln liefern am unloesbaren Ziel einen korrekt bewiesenen Widerspruch statt einer Scheinloesung; der Beweis kam frueh (nur 2 R9-Schritte, kein
+Vollscan noetig). Das belegt fuer DIESEN Fall: kein Scheinbeweis. Es belegt nicht, dass jedes unloesbare Ziel erkannt wird (ein ehrliches OFFEN mit
+Scheinloesungen bleibt bei anderen Kippungen moeglich und waere zulaessig).
+OFFEN (nicht gestartet): weitere Kippungen (z.B. letztes Zielbit, ein Bit in Register e) – nur wenn du es willst; Rundenkurve mit Grundgeruest + R9; R8g.
+Dateien: pruefstand.py (N4r09k), ERGEBNIS_GEGENPROBE_N4r09k.json. d6.py unveraendert gegenueber Paket ABLATION_VOLLSCAN (Pruefsumme dort).

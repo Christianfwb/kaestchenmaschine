@@ -1,0 +1,456 @@
+{
+ "status": "OK",
+ "wall_s": 27.43,
+ "peak_rss_mib_extern": 21.1,
+ "grenzen": {
+  "zeit_s": 120.0,
+  "rss_mib_extern": 400.0,
+  "rlimit_as_mib_kind": 1024
+ },
+ "rueckgabe": 0,
+ "python": "3.13.16",
+ "abhaengigkeiten": {
+  "d6": {
+   "pfad": "/home/claude/kastenmaschine/l1/d6.py",
+   "relativ": "l1/d6.py",
+   "sha256": "91ec11fc4d1d1bcf0045b0dc73a3525f0fadfd116c939101e87160bb77f6c794"
+  },
+  "e1_bit": {
+   "pfad": "/home/claude/kastenmaschine/miner_pruefung/sha256d/e1_bit.py",
+   "relativ": "miner_pruefung/sha256d/e1_bit.py",
+   "sha256": "cfa14b5181eda91e8b92bc4d1baded6137d39ba325c3cf524ea4d8a6f4a23248"
+  },
+  "gatter": {
+   "pfad": "/home/claude/kastenmaschine/miner_pruefung/sha256d/gatter.py",
+   "relativ": "miner_pruefung/sha256d/gatter.py",
+   "sha256": "75611ddf49d31dc933fe81ee56fe3a4e10cd1f1a3a571bf25fe6108b485f8f4f"
+  },
+  "n5": {
+   "pfad": "/home/claude/kastenmaschine/l1/n5/n5.py",
+   "relativ": "l1/n5/n5.py",
+   "sha256": "55e98a2bcaee59c249098d5ecdaef59376db7168829f5e72c57a5048ef511499"
+  },
+  "pruefstand": {
+   "pfad": "/home/claude/kastenmaschine/l1/pruefstand.py",
+   "relativ": "l1/pruefstand.py",
+   "sha256": "a40c891a660efcc856191b39762efbef700d462ae453bb89bd300e805ad12277"
+  },
+  "pruefung": {
+   "pfad": "/home/claude/kastenmaschine/miner_pruefung/sha256d/pruefung.py",
+   "relativ": "miner_pruefung/sha256d/pruefung.py",
+   "sha256": "0ad28cd441ac4d4bf664f82d2ef36e1dc8611325f8c2d0f0c589689453f17425"
+  },
+  "teilbits": {
+   "pfad": "/home/claude/kastenmaschine/miner_pruefung/sha256d/teilbits.py",
+   "relativ": "miner_pruefung/sha256d/teilbits.py",
+   "sha256": "0d2aaed20a0d0ebd47c9c2fb41ae2de397db96d67e2cd728e620672afa6b4492"
+  }
+ },
+ "n5_lauf_py": {
+  "pfad": "/home/claude/kastenmaschine/l1/n5/n5_lauf.py",
+  "sha256": "cd51c7e9f8a7b9dfd6b929f48b70d2e9f08dd0003e325e7a7f4b9031ec1f8bb1"
+ },
+ "m1_ergebnis": {
+  "rlimit_im_testprozess": {
+   "rlimit_as_soft_mib": 1024,
+   "rlimit_as_hard_mib": 1024
+  },
+  "kontrolltext": "N5 Kontrollbelegung 2026-10-24",
+  "k": 2855,
+  "k_hex": "0xb27",
+  "bits_x0_bis_x11": [
+   1,
+   1,
+   1,
+   0,
+   0,
+   1,
+   0,
+   0,
+   1,
+   1,
+   0,
+   1
+  ],
+  "W0": 7,
+  "W1": 2,
+  "W2": 11,
+  "sigmas": {
+   "s0": [
+    0,
+    10,
+    4,
+    14,
+    8,
+    2,
+    12,
+    6,
+    1,
+    11,
+    5,
+    15,
+    9,
+    3,
+    13,
+    7
+   ],
+   "s1": [
+    0,
+    6,
+    12,
+    10,
+    8,
+    14,
+    4,
+    2,
+    1,
+    7,
+    13,
+    11,
+    9,
+    15,
+    5,
+    3
+   ],
+   "S1_gross": [
+    0,
+    10,
+    5,
+    15,
+    10,
+    0,
+    15,
+    5,
+    5,
+    15,
+    0,
+    10,
+    15,
+    5,
+    10,
+    0
+   ],
+   "S0_gross": [
+    0,
+    12,
+    9,
+    5,
+    3,
+    15,
+    10,
+    6,
+    6,
+    10,
+    15,
+    3,
+    5,
+    9,
+    12,
+    0
+   ]
+  },
+  "faelle": [
+   {
+    "variante": 0,
+    "runden": 6,
+    "name": "N5 V0 r06 (Erweiterung Kopie)",
+    "knoten": 796,
+    "ch_kaestchen": 24,
+    "maj_kaestchen": 192,
+    "stufen": 168,
+    "ziel_wortrechnung": [
+     5,
+     12,
+     3,
+     15,
+     0,
+     6,
+     10,
+     12
+    ],
+    "ziel_netz": [
+     5,
+     12,
+     3,
+     15,
+     0,
+     6,
+     10,
+     12
+    ],
+    "ziel_gleich": true,
+    "kontrolle_erreicht_netz": true,
+    "abweichungen_A_B_ueber_4096": 0,
+    "echte_loesungen_A": 1,
+    "echte_loesungen_B": 1,
+    "zeit_bau_s": 0.002,
+    "zeit_vergleich_4096_s": 2.34,
+    "status": "OK"
+   },
+   {
+    "variante": 1,
+    "runden": 6,
+    "name": "N5 V1 r06 (Erweiterung nur Addition)",
+    "knoten": 934,
+    "ch_kaestchen": 24,
+    "maj_kaestchen": 216,
+    "stufen": 192,
+    "ziel_wortrechnung": [
+     12,
+     15,
+     0,
+     15,
+     12,
+     14,
+     7,
+     12
+    ],
+    "ziel_netz": [
+     12,
+     15,
+     0,
+     15,
+     12,
+     14,
+     7,
+     12
+    ],
+    "ziel_gleich": true,
+    "kontrolle_erreicht_netz": true,
+    "abweichungen_A_B_ueber_4096": 0,
+    "echte_loesungen_A": 1,
+    "echte_loesungen_B": 1,
+    "zeit_bau_s": 0.002,
+    "zeit_vergleich_4096_s": 2.71,
+    "status": "OK"
+   },
+   {
+    "variante": 2,
+    "runden": 6,
+    "name": "N5 V2 r06 (Erweiterung nur linear)",
+    "knoten": 853,
+    "ch_kaestchen": 24,
+    "maj_kaestchen": 192,
+    "stufen": 168,
+    "ziel_wortrechnung": [
+     8,
+     14,
+     4,
+     15,
+     13,
+     10,
+     11,
+     12
+    ],
+    "ziel_netz": [
+     8,
+     14,
+     4,
+     15,
+     13,
+     10,
+     11,
+     12
+    ],
+    "ziel_gleich": true,
+    "kontrolle_erreicht_netz": true,
+    "abweichungen_A_B_ueber_4096": 0,
+    "echte_loesungen_A": 1,
+    "echte_loesungen_B": 1,
+    "zeit_bau_s": 0.001,
+    "zeit_vergleich_4096_s": 2.36,
+    "status": "OK"
+   },
+   {
+    "variante": 3,
+    "runden": 6,
+    "name": "N5 V3 r06 (Erweiterung Addition+Drehung)",
+    "knoten": 967,
+    "ch_kaestchen": 24,
+    "maj_kaestchen": 216,
+    "stufen": 192,
+    "ziel_wortrechnung": [
+     14,
+     2,
+     2,
+     15,
+     2,
+     8,
+     9,
+     12
+    ],
+    "ziel_netz": [
+     14,
+     2,
+     2,
+     15,
+     2,
+     8,
+     9,
+     12
+    ],
+    "ziel_gleich": true,
+    "kontrolle_erreicht_netz": true,
+    "abweichungen_A_B_ueber_4096": 0,
+    "echte_loesungen_A": 1,
+    "echte_loesungen_B": 1,
+    "zeit_bau_s": 0.002,
+    "zeit_vergleich_4096_s": 2.69,
+    "status": "OK"
+   },
+   {
+    "variante": 0,
+    "runden": 9,
+    "name": "N5 V0 r09 (Erweiterung Kopie)",
+    "knoten": 1328,
+    "ch_kaestchen": 36,
+    "maj_kaestchen": 288,
+    "stufen": 252,
+    "ziel_wortrechnung": [
+     1,
+     5,
+     10,
+     5,
+     9,
+     13,
+     5,
+     0
+    ],
+    "ziel_netz": [
+     1,
+     5,
+     10,
+     5,
+     9,
+     13,
+     5,
+     0
+    ],
+    "ziel_gleich": true,
+    "kontrolle_erreicht_netz": true,
+    "abweichungen_A_B_ueber_4096": 0,
+    "echte_loesungen_A": 1,
+    "echte_loesungen_B": 1,
+    "zeit_bau_s": 0.002,
+    "zeit_vergleich_4096_s": 4.04,
+    "status": "OK"
+   },
+   {
+    "variante": 1,
+    "runden": 9,
+    "name": "N5 V1 r09 (Erweiterung nur Addition)",
+    "knoten": 1604,
+    "ch_kaestchen": 36,
+    "maj_kaestchen": 336,
+    "stufen": 300,
+    "ziel_wortrechnung": [
+     6,
+     1,
+     9,
+     12,
+     0,
+     10,
+     7,
+     12
+    ],
+    "ziel_netz": [
+     6,
+     1,
+     9,
+     12,
+     0,
+     10,
+     7,
+     12
+    ],
+    "ziel_gleich": true,
+    "kontrolle_erreicht_netz": true,
+    "abweichungen_A_B_ueber_4096": 0,
+    "echte_loesungen_A": 1,
+    "echte_loesungen_B": 1,
+    "zeit_bau_s": 0.003,
+    "zeit_vergleich_4096_s": 4.37,
+    "status": "OK"
+   },
+   {
+    "variante": 2,
+    "runden": 9,
+    "name": "N5 V2 r09 (Erweiterung nur linear)",
+    "knoten": 1442,
+    "ch_kaestchen": 36,
+    "maj_kaestchen": 288,
+    "stufen": 252,
+    "ziel_wortrechnung": [
+     13,
+     10,
+     1,
+     8,
+     4,
+     10,
+     14,
+     13
+    ],
+    "ziel_netz": [
+     13,
+     10,
+     1,
+     8,
+     4,
+     10,
+     14,
+     13
+    ],
+    "ziel_gleich": true,
+    "kontrolle_erreicht_netz": true,
+    "abweichungen_A_B_ueber_4096": 0,
+    "echte_loesungen_A": 1,
+    "echte_loesungen_B": 1,
+    "zeit_bau_s": 0.002,
+    "zeit_vergleich_4096_s": 4.04,
+    "status": "OK"
+   },
+   {
+    "variante": 3,
+    "runden": 9,
+    "name": "N5 V3 r09 (Erweiterung Addition+Drehung)",
+    "knoten": 1670,
+    "ch_kaestchen": 36,
+    "maj_kaestchen": 336,
+    "stufen": 300,
+    "ziel_wortrechnung": [
+     14,
+     1,
+     7,
+     14,
+     13,
+     7,
+     8,
+     2
+    ],
+    "ziel_netz": [
+     14,
+     1,
+     7,
+     14,
+     13,
+     7,
+     8,
+     2
+    ],
+    "ziel_gleich": true,
+    "kontrolle_erreicht_netz": true,
+    "abweichungen_A_B_ueber_4096": 0,
+    "echte_loesungen_A": 1,
+    "echte_loesungen_B": 1,
+    "zeit_bau_s": 0.003,
+    "zeit_vergleich_4096_s": 4.74,
+    "status": "OK"
+   }
+  ],
+  "alle_ok": true
+ },
+ "rlimit_im_testprozess": {
+  "rlimit_as_soft_mib": 1024,
+  "rlimit_as_hard_mib": 1024
+ }
+}

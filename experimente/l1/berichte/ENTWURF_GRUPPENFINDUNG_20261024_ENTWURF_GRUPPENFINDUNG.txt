@@ -1,0 +1,34 @@
+FABLE AN GHOST – ENTWURF: AUTOMATISCHE GRUPPENFINDUNG FUER DIE MITTE (rein strukturell, begrenzt, ohne Orakel) – 2026-10-25 05:10. Nur Entwurf. Kein Bau, kein Lauf.
+Bekannte Verfahren (Join-Tree-Clustering / Bucket Elimination, Dechter & Pearl 1989; Baumzerlegung mit Eliminationsordnung, Min-Fill-Heuristik), keine Neuheit.
+
+1. DIE FRAGE, PRAEZISE: Gegeben Kaestchen K_1..K_n mit Variablenmengen A_j. Gesucht: Gruppen G_1..G_m (jede Gruppe = Vereinigung einiger Kaestchen) und ein Baum ueber
+   den Gruppen, so dass (a) jedes Kaestchen in genau einer Gruppe liegt, (b) Running Intersection gilt (jede Variable liegt auf einem zusammenhaengenden Teilbaum),
+   (c) jede Gruppe hoechstens 8 Variablen hat; die Zeilenzahl (<= 256) ist erst beim Join bekannt. Gilt (a)–(c), stellt der Austausch entlang des Baums vollstaendige
+   Konsistenz zwischen den Gruppen her (Satz ueber Join-Baeume). Passt kein Baum in (c): OFFEN mit Angabe, welche Variable/Gruppe die Grenze sprengt.
+2. VERFAHREN (deterministisch, nur aus der Struktur; Gleichstaende nach Variablenname, damit reproduzierbar):
+   S1 Primalgraph: Knoten = Variablen; Kante zwischen zwei Variablen, wenn sie in einem gemeinsamen Kaestchen liegen.
+   S2 Eliminationsordnung: wiederholt die Variable waehlen, deren Nachbarn beim Entfernen die WENIGSTEN neuen Kanten brauchen (Min-Fill; Gleichstand: kleinster Grad,
+      dann Name). Beim Entfernen Nachbarn untereinander verbinden. Protokoll: Reihenfolge und je Schritt die Groesse der entstehenden Clique.
+   S3 Gruppen: fuer jede eliminierte Variable v ist {v} + ihre Nachbarn zum Zeitpunkt der Elimination eine Gruppe (ein 'Bucket'); Gruppen, die in einer anderen enthalten
+      sind, werden gestrichen. Groesse = Variablenzahl; ueberschreitet eine Gruppe 8 -> OFFEN (Grenze), Verfahren stoppt und meldet v und die Gruppe.
+   S4 Baum: jede Gruppe wird mit der naechsten spaeteren Gruppe verbunden, die ihren Rest (Gruppe ohne v) enthaelt – das ergibt per Konstruktion Running Intersection.
+   S5 Zuordnung: jedes Kaestchen in die erste Gruppe, die alle seine Variablen enthaelt (existiert nach S2/S3 immer). Gruppen ohne Kaestchen bleiben als Durchreiche
+      (reine Schnittmengen-Knoten) – sie halten nur die Relation ueber ihre Variablen.
+   S6 Erst jetzt Tabellen: je Gruppe Join ihrer Kaestchen, Zeilen gezaehlt; > 256 -> OFFEN (Grenze) mit Angabe der Gruppe. Dann Austausch entlang des Baums (Blaetter
+      zur Wurzel, Wurzel zu den Blaettern, wiederholen bis Stillstand) – wie bisher Projektion/Durchschnitt/Semijoin.
+3. WAS DAS BEI N3 ERGAEBE (im Kopf durchgespielt, nicht gerechnet; die Pruefung ist der Zweck des Baus): Primalgraph hat 16 Variablen; die Uebertraege a1,b1 haben Grad 3–4,
+   die Eingaenge x3,x7 (nur in A0/B0) Grad 2. Min-Fill eliminiert zuerst Variablen, deren Nachbarn schon verbunden sind (x3, x7, x4, x8, x5, x9, x2, x6, cA, cB ...), danach
+   die Uebertraege. Erwartung: Gruppen in der Groessenordnung 4–7 Variablen, ein Baum, der entlang der Uebertraege laeuft – nicht notwendig meine drei Handgruppen (5/7/8).
+   Massstab laut Ghost: korrekt (Speicherung exakt), wirksam (globale Konsistenz: jede gespeicherte Zeile Teil einer Loesung – nachtraeglich geprueft), klein genug.
+   N3u muss weiterhin WIDERSPRUCH liefern.
+4. WAS DAS BEI N4r09 ERGAEBE (Schaetzung, kein Befund): ~1300 Variablen, 324 Ch/Maj-Kaestchen + 252 Stufen; die Rundenfunktion ist eine lange Kette mit Querverbindungen
+   (e -> Sigma1/Ch/f, a -> Sigma0/Maj/b) und die Leine koppelt Runde i mit i+3. Die Baumweite solcher Netze ist nach meiner Erwartung GROESSER als 8 – dann meldet S3 OFFEN
+   und nennt die erste Stelle, an der es nicht passt. Das waere ein ehrlicher, nuetzlicher Befund: er sagt, wie gross die Gruppen sein muessten, bevor man rechnet.
+   Zwei Ausweichwege, beide NICHT Teil dieses Entwurfs: (a) Grenze bewusst anheben (12 Variablen = 4096 Zeilen) – nur mit GO und Zaehlung; (b) Gruppen nur dort bilden,
+   wo sie passen, und den Rest ueber einfachen Austausch laufen lassen (dann ohne Vollstaendigkeitsgarantie, aber sound).
+5. ALTERNATIVE ZUM VERGLEICH (einfacher, als Messlatte): 'Gierig zusammenziehen': zwei Kaestchen vereinigen, wenn sie >= 2 Variablen teilen und die Vereinigung <= 8 Variablen
+   hat; wiederholen bis nichts mehr geht. Kein Baum garantiert, deshalb keine Vollstaendigkeitsgarantie – aber einfach, und an N3 vergleichbar.
+6. BAUVORSCHLAG (nach GO): gruppen.py im Stern-Labor: S1–S5 ohne Tabellen (Struktur, Protokoll, Grenzpruefung), S6 ueber die vorhandene Mitte; Tests: F1–F5 des Stern-
+   Pruefstands (die gefundenen Gruppen muessen die Faelle weiterhin bestehen), N3 (Speicherung exakt, globale Konsistenz, Groesse), N3u (WIDERSPRUCH). Alle Erwartungen
+   automatisch, Sofortstopp, Sabotageprotokolle als eigene Dateien. Danach – eigenes GO – nur die Strukturzaehlung an N4r09 (S1–S5, keine Tabellen).
+Bitte: Pruefung von S2–S5 (Min-Fill und Bucket-Gruppen), der Durchreiche-Gruppen und der Grenzbehandlung; dann GO fuer gruppen.py mit F1–F5, N3, N3u.

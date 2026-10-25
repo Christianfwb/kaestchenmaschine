@@ -1,0 +1,145 @@
+{
+ "beschreibung": "WAS in der Erweiterung reisst? Variante A 'ohne Drehen': sigma0/sigma1 = Identitaet, Additionen echt.\nVariante B 'ohne Addieren': sigma echt, die vier Summanden per XOR statt + verknuepft. Beide Anwendungen erweitert. E1 bis Fixpunkt, Orakel danach.",
+ "laeufe": [
+  {
+   "variante": "ohne Drehen",
+   "runden": 17,
+   "graph": 35764,
+   "e1": "FIXPUNKT",
+   "sweeps": 41,
+   "s": 3.1,
+   "noncebits": 0,
+   "abgeleitet": null,
+   "treffer": [
+    200
+   ],
+   "ausgang": "OFFEN"
+  },
+  {
+   "variante": "ohne Drehen",
+   "runden": 18,
+   "graph": 38635,
+   "e1": "FIXPUNKT",
+   "sweeps": 39,
+   "s": 3.0,
+   "noncebits": 0,
+   "abgeleitet": null,
+   "treffer": [
+    22
+   ],
+   "ausgang": "OFFEN"
+  },
+  {
+   "variante": "ohne Drehen",
+   "runden": 20,
+   "graph": 44640,
+   "e1": "FIXPUNKT",
+   "sweeps": 40,
+   "s": 4.1,
+   "noncebits": 0,
+   "abgeleitet": null,
+   "treffer": [
+    207
+   ],
+   "ausgang": "OFFEN"
+  },
+  {
+   "variante": "ohne Drehen",
+   "runden": 24,
+   "graph": 56577,
+   "e1": "FIXPUNKT",
+   "sweeps": 38,
+   "s": 4.6,
+   "noncebits": 0,
+   "abgeleitet": null,
+   "treffer": [
+    219
+   ],
+   "ausgang": "OFFEN"
+  },
+  {
+   "variante": "ohne Drehen",
+   "runden": 32,
+   "graph": 79835,
+   "e1": "FIXPUNKT",
+   "sweeps": 46,
+   "s": 6.7,
+   "noncebits": 0,
+   "abgeleitet": null,
+   "treffer": [
+    132
+   ],
+   "ausgang": "OFFEN"
+  },
+  {
+   "variante": "ohne Addieren",
+   "runden": 17,
+   "graph": 35650,
+   "e1": "FIXPUNKT",
+   "sweeps": 40,
+   "s": 2.6,
+   "noncebits": 0,
+   "abgeleitet": null,
+   "treffer": [
+    48
+   ],
+   "ausgang": "OFFEN"
+  },
+  {
+   "variante": "ohne Addieren",
+   "runden": 18,
+   "graph": 38430,
+   "e1": "FIXPUNKT",
+   "sweeps": 38,
+   "s": 3.2,
+   "noncebits": 0,
+   "abgeleitet": null,
+   "treffer": [
+    85
+   ],
+   "ausgang": "OFFEN"
+  },
+  {
+   "variante": "ohne Addieren",
+   "runden": 20,
+   "graph": 44133,
+   "e1": "FIXPUNKT",
+   "sweeps": 39,
+   "s": 3.1,
+   "noncebits": 0,
+   "abgeleitet": null,
+   "treffer": [
+    158
+   ],
+   "ausgang": "OFFEN"
+  },
+  {
+   "variante": "ohne Addieren",
+   "runden": 24,
+   "graph": 55805,
+   "e1": "FIXPUNKT",
+   "sweeps": 43,
+   "s": 4.7,
+   "noncebits": 0,
+   "abgeleitet": null,
+   "treffer": [
+    227
+   ],
+   "ausgang": "OFFEN"
+  },
+  {
+   "variante": "ohne Addieren",
+   "runden": 32,
+   "graph": 79058,
+   "e1": "FIXPUNKT",
+   "sweeps": 43,
+   "s": 6.8,
+   "noncebits": 0,
+   "abgeleitet": null,
+   "treffer": [
+    4
+   ],
+   "ausgang": "OFFEN"
+  }
+ ]
+}

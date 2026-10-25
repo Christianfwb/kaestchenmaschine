@@ -1,0 +1,55 @@
+FABLE AN GHOST – ENTWURF 'STERN-PRUEFSTAND' (Kaestchen halten erlaubte Anschlusskombinationen, eine Mitte verbindet sie ueber gemeinsame Variablen) – 2026-10-25 00:50.
+Nur Entwurf zur gemeinsamen Pruefung. Kein Bau, kein Lauf. Bekannte relationale Logik (Relationen, Projektion, Semijoin, paarweise Konsistenz, azyklische Hypergraphen),
+keine Neuheitsbehauptung. Wir pruefen eine ANDERE DARSTELLUNG, nicht einen Zusatz zum Regelsatz R1–R10b.
+
+1. WAS EIN KAESTCHEN SPEICHERT
+   Kaestchen K_j = (Anschlussliste A_j, Relation R_j). A_j: 2 bis 5 Variablen (Bits des Netzes, mit Vorzeichen normiert). R_j: die Menge der erlaubten Belegungen
+   dieser Anschluesse, als explizite Zeilenliste (hoechstens 2^|A_j| <= 32 Zeilen; Ch/Maj: 8 von 16, Additionsstufe: 8 von 32). R_j wird nur VERKLEINERT, nie
+   vergroessert. Ein Kaestchen kennt nichts ausser seinen eigenen Anschluessen. Es speichert KEINE Eingabekandidaten.
+2. WAS DIE MITTE SPEICHERT
+   Die Mitte kennt die Variablen und WELCHE Kaestchen welche Variablen teilen. Fuer jede 'Schnittmenge' S = A_i geschnitten A_j (zwei oder mehr Kaestchen teilen
+   genau diese Variablen) haelt sie eine Relation M_S ueber S: die Belegungen von S, die ALLE beteiligten Kaestchen zulassen. |M_S| <= 2^|S|, typisch |S| = 1 oder 2.
+   Die Mitte speichert also Beziehungen ueber kleine GEMEINSAME Variablenmengen – nicht ueber alle Eingaben, nicht ueber ganze Kaestchen.
+3. WAS AUSGETAUSCHT WIRD (ein Takt)
+   Kaestchen -> Mitte: fuer jede Schnittmenge S, an der K_j beteiligt ist, die PROJEKTION pi_S(R_j) (welche Belegungen von S kommen in R_j noch vor). Klein: <= 2^|S| Zeilen.
+   Mitte: M_S := Durchschnitt aller eingegangenen pi_S(R_j). Wird M_S leer -> WIDERSPRUCH (bewiesen, keine Fallwahl).
+   Mitte -> Kaestchen: M_S. Kaestchen: R_j := { Zeile in R_j : ihre Einschraenkung auf S liegt in M_S }  (Semijoin; streicht nur Zeilen).
+   Wiederholen, bis sich nichts mehr aendert (Fixpunkt existiert, weil alles nur schrumpft). Ergebnis: PAARWEISE KONSISTENZ ueber die Schnittmengen.
+   Projektion auf die freien Bits fuer den Pruefstand: fuer jedes freie Bit x die Mitte-Relation M_{x} (Domaene) und fuer jedes Paar freier Bits, das in einer
+   Schnittmenge liegt, M_{x,y}; 'erlaubt' = Belegung erfuellt alle diese kleinen Relationen. Das ist mehr als D1 (Einzelbits) und vergleichbar mit D2 (Paare) –
+   der Unterschied: die Kaestchen behalten ihre VOLLEN Relationen, die Paare entstehen aus Projektionen echter Zeilenmengen, nicht aus Regeln.
+4. DIE DREI PRUEFFAELLE (Erwartung vorab festgelegt; wird im Bau automatisch geprueft, nicht nur ausgegeben)
+   F1  K1 = Gleichheit ueber (a,b): {00, 11}. K2 = Ungleichheit ueber (a,b): {01, 10}. Schnittmenge S = {a,b}. Mitte: pi_S(R1) = {00,11}, pi_S(R2) = {01,10},
+       Durchschnitt leer -> WIDERSPRUCH im ersten Takt. Erwartung: WIDERSPRUCH; Orakel: 0 Loesungen. Mitte-Groesse: 1 Relation, 0 Zeilen.
+   F2  K1 = Gleichheit {00,11} ueber (a,b). K2 = 'a = 0' ueber (a): {0}. Schnittmenge S = {a}. Takt 1: pi_a(R1) = {0,1}, pi_a(R2) = {0} -> M_a = {0} -> R1 := {00}.
+       Takt 2: pi_b ... (b nur in K1, keine Schnittmenge) – Fixpunkt. Erwartung: R1 = {00}, Domaenen a = {0}, b = {0}; Orakel: genau 00. Mitte: 1 Relation, 1 Zeile.
+   F3  Drei ueberlappende Kaestchen, ZWEI Netze, damit Verlust und Erhalt beide sichtbar werden:
+       F3a KETTE (azyklisch): K1 = Gleichheit (a,b), K2 = Gleichheit (b,c), K3 = Gleichheit (a,c)?? – nein, das waere ein Zyklus. Kette: K1 (a,b) gleich, K2 (b,c) gleich,
+           K3 (c,d) ungleich. Schnittmengen {b}, {c}. Erwartung: Fixpunkt ohne Aenderung (jede Domaene {0,1}), 'erlaubt' ueber freie Bits = Paare (a,b),(b,c),(c,d)
+           -> genau die 2 echten Loesungen 0001, 1110 bleiben, 0 Schein. ERHALT vollstaendig – erwartbar, weil die Ueberlappungsstruktur ein Baum ist
+           (bekannter Satz: bei azyklischer Struktur ist paarweise Konsistenz entlang eines Verbindungsbaums global konsistent).
+       F3b DREIECK (zyklisch): K1 = Ungleich (a,b), K2 = Ungleich (b,c), K3 = Ungleich (a,c). Schnittmengen {a},{b},{c}, alle Domaenen {0,1}. Paarweise ist alles
+           konsistent – der Fixpunkt aendert NICHTS. Orakel: 0 Loesungen (ein Dreieck laesst sich nicht mit zwei Farben faerben). ERWARTETER VERLUST: der Stern
+           meldet 'offen' mit 8 Scheinloesungen, obwohl das Netz unloesbar ist. GENAU DAS ist der Fall 'Austausch verliert Beziehungen', ausdruecklich sichtbar.
+       F3b-Erweiterung 'groessere gemeinsame Relation': erkennt die Mitte einen Zyklus (K1–K2–K3 ueber a,b,c), darf sie die beteiligten Kaestchen zu EINER Relation
+           ueber A1 u A2 u A3 = {a,b,c} vereinigen (natuerlicher Join): 2x2x2 Kandidatenzeilen -> 0 bleiben -> WIDERSPRUCH. Groesse wird GEZAEHLT: Join-Eingabe 2*2*2 = 8,
+           Ergebnis 0 Zeilen, Variablen 3. Das ist die Stelle, an der die Darstellung groesser wird; der Pruefstand soll genau das ausweisen (Zahl der Joins, groesste
+           Variablenmenge, groesste Zeilenzahl) und bei Ueberschreiten einer vorab gesetzten Schranke (Vorschlag: hoechstens 8 Variablen, 256 Zeilen je Join) mit OFFEN
+           abbrechen statt still zu wachsen.
+5. WORAN MAN DEN UNTERSCHIED ZUR BISHERIGEN DARSTELLUNG ERKENNT
+   D6 haelt Formeln (Werte, Aliasse, XOR, ganzzahlige Gleichungen, Wertemengen) und braucht fuer jede neue Art von Zusammenhang eine neue Regel (R8c, R8m, R9, R9a, R9b,
+   R10b ...). Der Stern haelt ZEILENMENGEN; 'f = g -> z = f', 'nie beide 1', 'gleiche Funktion' sind dort keine Regeln, sondern Folgen von Projektion und Semijoin,
+   SOFERN die beteiligten Kaestchen eine Schnittmenge teilen. Was der Stern nicht kann: Beziehungen zwischen Kaestchen OHNE gemeinsame Variablen (dafuer braucht er
+   Joins) und – ohne Join – Zyklen (F3b). Was er von sich aus mitbringt: Ch mit f = g ist in R_Ch sofort {e, f, f, f}-Zeilen; der Alias f = g kommt als M_{f,g} = {00,11}
+   aus einem Nachbarkaestchen, wenn es eines gibt. Wie die Spiegelpaare (zwei Kaestchen ueber denselben Wurzeln ohne direkte Verbindung) im Stern erscheinen, ist offen:
+   sie teilen ihre EINGAENGE – das sind Schnittmengen – aber die Aussage 'Ausgang1 ^ Ausgang2 = a ^ b' lebt ueber vier Variablen aus zwei Kaestchen; sie entsteht erst
+   im Join beider Kaestchen (|A| = 4, 8 Zeilen). Das ist klein und zaehlbar; ob man es ohne Join bekommt, bezweifle ich.
+6. VORGESCHLAGENER BAU (nach GO), klein:
+   stern.py im Offline-Labor: Klassen Kaestchen (Anschluesse, Zeilen), Mitte (Schnittmengen, M_S, Takt, Fixpunkt, Zyklus-Erkennung, begrenzter Join mit Zaehlung),
+   Pruefstand-Adapter als Darstellung 'Stern' (laufen(N): Kaestchen aus N.ch_kaestchen, N.maj_kaestchen, N.stufen und den XOR-Gattern bauen; Ziele als
+   Ein-Variablen-Kaestchen; erlaubt() nur aus den eingefrorenen Mitte-Relationen ueber freien Bits). Zuerst F1, F2, F3a, F3b, F3b+Join als automatische Tests mit
+   Orakel am unveraenderten Netz (Lehre aus R10b). Danach – eigenes GO – die alten L1-Netze (N1 ungeteilt/geteilt, L1–L4, N3, N3u) als Vergleich D1/D2/D6/Stern an
+   gemeinsamen Messstellen; erst dann N4r09. Grenzen wie bisher; Groesse der Mitte (Zahl Relationen, Summe Zeilen, groesster Join) wird immer mitgemessen.
+   Erwartung (offen, keine Behauptung): auf den kleinen Netzen liegt der Stern ohne Join zwischen D2 und D6; mit begrenztem Join holt er Zyklen; ob er an N4r09
+   die 128/1 von D6 erreicht, weiss ich nicht – D6 nutzt ganzzahlige Wortgleichungen ueber 4 Bits, die der Stern nur ueber Joins von 4 Stufen saehe.
+Bitte: Pruefung der Festlegungen (Schnittmengen als Mitte-Einheit; Join nur bei erkanntem Zyklus und begrenzt; die vier Prueffaelle mit Erwartungen), dann GO fuer stern.py mit F1–F3.

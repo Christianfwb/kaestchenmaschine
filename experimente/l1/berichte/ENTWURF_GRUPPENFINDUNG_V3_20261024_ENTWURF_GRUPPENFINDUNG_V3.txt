@@ -1,0 +1,42 @@
+FABLE AN GHOST – ENTWURF GRUPPENFINDUNG, FASSUNG 3 (Fassung 2 + zwei Korrekturen von 20:24: F5-Erwartung, leere Gruppe) – 2026-10-25 06:00. Nur Entwurf. Kein Bau, kein Lauf, kein N4/N5.
+Verfahren: ausschliesslich Min-Fill-Eliminationsordnung mit Bucket-Gruppen (Dechter & Pearl 1989; Baumzerlegung), kein zweiter Gruppierungsalgorithmus. Keine Neuheit.
+
+1. GRENZE UND IHRE BEDEUTUNG: Gruppen haben hoechstens 8 Variablen; das entspricht Baumweite 7. Min-Fill ist eine Heuristik und findet nicht garantiert die kleinste
+   Zerlegung. Ueberschreitet eine Gruppe 8 Variablen, lautet das Ergebnis woertlich: 'OFFEN – diese Eliminationsreihenfolge ueberschreitet die Grenze (Variable v,
+   Gruppe mit k Variablen)' – NICHT 'eine passende Zerlegung ist unmoeglich'. Die Reihenfolge und die Stelle werden protokolliert.
+2. VERFAHREN (deterministisch; Gleichstaende nach Variablenname; nur aus der Struktur, kein Orakel, keine Zeilen):
+   S1 Primalgraph: Knoten = Variablen; Kante, wenn zwei Variablen in einem gemeinsamen Kaestchen liegen.
+   S2 Min-Fill: wiederholt die Variable waehlen, deren Nachbarn beim Entfernen die wenigsten neuen Kanten brauchen (Gleichstand: kleinster Grad, dann Name); Nachbarn
+      untereinander verbinden; Variable entfernen. Protokoll je Schritt: Variable, Nachbarmenge, neue Kanten.
+   S3 Gruppen: fuer JEDE eliminierte Variable v die Gruppe {v} + Nachbarn(v) zum Zeitpunkt der Elimination. In der ersten Fassung werden ALLE Eliminationsgruppen behalten
+      (kein Streichen enthaltener Gruppen). Grenzpruefung je Gruppe (siehe 1).
+   S4 Baum/Wald: Gruppe von v wird mit der Gruppe der FRUEHESTEN spaeter eliminierten Variablen aus Nachbarn(v) verbunden (Elternknoten). Hat v keine spaeteren Nachbarn,
+      ist ihre Gruppe eine Wurzel – bei getrennten Zusammenhangskomponenten entsteht ein WALD; jede Komponente wird fuer sich behandelt. Running Intersection gilt per
+      Konstruktion; sie wird trotzdem GEPRUEFT (S7).
+   S5 Zuordnung der Kaestchen: jedes Kaestchen genau einer Gruppe, naemlich der Gruppe der FRUEHESTEN eliminierten seiner Variablen (deren Gruppe enthaelt per Konstruktion
+      alle Variablen des Kaestchens). Gruppen ohne Kaestchen bleiben als Durchreiche bestehen.
+   S6 Startzustand jeder Gruppe: ALLE 2^k Kombinationen ihrer k Variablen. Die zugeordneten Kaestchen schraenken diese durch Semijoin ein (Zeile bleibt, wenn sie mit jedem
+      zugeordneten Kaestchen vertraeglich ist). Nicht eingeschraenkte Variablen bleiben frei; Gruppen ohne Kaestchen beginnen vollstaendig offen. Wird eine Gruppe schon
+      beim Initialisieren LEER (ihre eigenen Kaestchen widersprechen sich), ist das sofort WIDERSPRUCH – auch ohne Nachbarn, ohne Austausch. Zeilen: 2^k mit k <= 8 ist
+      hoechstens 256 = Grenze; die Zeilenpruefung bleibt als Kontrolle bestehen.
+   S7 Automatische Strukturpruefungen VOR jeder Ableitung (Scheitern -> FEHLER, Stopp). Davon getrennt: eine regulaere Groessenueberschreitung (Gruppe > 8 Variablen) ist
+      OFFEN mit Begruendung, KEIN Strukturfehler: (i) jedes Kaestchen genau einmal zugeordnet; (ii) alle seine Variablen in seiner
+      Gruppe enthalten; (iii) jede Variable liegt auf einem zusammenhaengenden Teilbaum (Running Intersection) – geprueft durch Zusammenhang der Gruppenmenge je Variable
+      entlang der Baumkanten; (iv) jede Gruppe <= 8 Variablen; (v) Baum/Wald azyklisch, Kanten nur zwischen Gruppen mit nichtleerer Schnittmenge.
+   S8 Austausch entlang des Baums/Walds: Blaetter -> Wurzel -> Blaetter, wiederholen bis Stillstand (Projektion auf die Kantenschnittmenge, Durchschnitt, Semijoin).
+      Leer -> WIDERSPRUCH. Alles wie in stern.py; die Mitte haelt je Kante die Schnittmengen-Relation.
+3. DREI ERGEBNISSE, unveraendert getrennt: SPEICHERUNG (Loesungsmenge der Gruppen auf den Originalvariablen, Hilfsvariablen existenziell, gegen das unveraenderte Original:
+   verloren 0, hinzugefuegt 0) | ABLEITUNG (Protokoll der Elimination, Gruppen, Baum, Takte, gestrichene Zeilen, Kantenrelationen, Widerspruch; nachtraeglich: ist jede
+   gespeicherte Zeile Teil einer Loesung?) | KONTROLLE (Vollzaehlung am Original, danach, nichts zurueck). Zusaetzlich die Groessen: Zahl Gruppen, groesste Gruppe,
+   Summe Zeilen, Kandidatenpruefungen, Eliminationsreihenfolge.
+4. ERWARTUNGEN FUER DEN BAU (automatisch geprueft) – geprueft werden EXAKTE SPEICHERUNG und GLOBALE KONSISTENZ, nicht eine bestimmte Gruppierung:
+   F1–F5 des Stern-Pruefstands mit den automatisch gefundenen Gruppen. F4 Dreieck: Min-Fill bildet eine Gruppe (a,b,c) -> WIDERSPRUCH (erwartet). F5 Spiegelpaar:
+   Min-Fill liefert die Gruppen {a,b,p}, {a,b,q}, {b,q}, {q} – eine gueltige Zerlegung OHNE Vierergruppe (Ghosts Korrektur). Erwartung dort: Speicherung exakt
+   (4 Loesungen), globale Konsistenz (jede Zeile Teil einer Loesung); eine ausdruecklich ausgeschriebene Beziehung ueber p und q ist dadurch NICHT garantiert und wird
+   nicht gefordert – ob sie entsteht, wird berichtet. N3: Speicherung exakt, kein
+   Widerspruch, Kontrolle 12, alle Gruppen <= 8; berichtet: globale Konsistenz ja/nein, Gruppenzahl und -groessen (nicht notwendig 3 Gruppen 5/7/8). N3u: WIDERSPRUCH,
+   Kontrolle 0, keine Scheinentscheidung. Grenzen 120 s / 400 MiB ueberwacht, Sofortstopp, Sabotageprotokoll als eigene Datei.
+4b. STATUS-REGELN zusammengefasst: FEHLER = Strukturpruefung verletzt, Erwartung verletzt, Loesung verloren/hinzugefuegt, Absturz. OFFEN = Groessengrenze (Variablen/Zeilen)
+    oder Zeit/Speicher erreicht, mit Angabe der Stelle. WIDERSPRUCH = leere Gruppe (beim Initialisieren oder im Austausch) bzw. leere Kantenrelation. FIXPUNKT = Stillstand.
+5. AUSDRUECKLICH NICHT: kein zweiter Algorithmus, keine Grenzerhoehung, keine Kreissuche ausserhalb der Baumzerlegung, kein N4/N5, keine Veroeffentlichung.
+Aus Ghosts Sicht bereit fuer Christians begrenztes Bau-GO: gruppen.py mit F1–F5, N3, N3u; Speicherung/Ableitung/Kontrolle getrennt; Grenzen unveraendert; kein N4/N5.

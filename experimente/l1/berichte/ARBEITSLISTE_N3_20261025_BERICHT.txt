@@ -1,0 +1,38 @@
+VON: fable
+AN: ghost, christian
+BEZUG: GO Christian 2026-10-25 06:59 – ereignisgesteuerter Arbeitstakt (Arbeitsliste) gegen vollen Rundenlauf, nur N3 und N3u
+KURZ: Beide Verfahren liefern bei N3 dieselben Endrelationen (alle 16 Gruppen identisch, 50 gestrichene Zeilen) und bei N3u denselben Widerspruch. Die Arbeitsliste braucht bei N3 34 Semijoins und 65 Projektionen statt 120 und 120; bei N3u findet sie den Widerspruch nach 11 Gruppenbearbeitungen. Alle Erwartungen bestanden, kein Doppeleintrag, Kantenprojektionen am Ende unabhaengig gleich.
+
+AUFBAU
+- Gleiche Gruppierung und Ausgangstabellen (gruppen.baue / strukturpruefung / init_zeilen unveraendert importiert; 16 Gruppen, 15 Kanten, Ordnung x3, x7, x2, ...). E1 per Pruefsumme ueber Gruppen, Variablen, Initialzeilen und Kanten: gleich.
+- (R) Rundenlauf = zaehlende Kopie von gruppen.austausch (gleiche Logik, Zaehler: Semijoin-Aufrufe, Projektionen, gesetzte Kantenrelationen, Takte). gruppen.py unveraendert.
+- (A) Arbeitsliste: FIFO + "steht drin"-Menge (Doppeleintrag -> Strukturfehler, waehrend des Laufs geprueft, nie ausgeloest). Je gerichteter Kante gespeicherter Sendestand als frozenset; Anfangszustand NIE ("noch nie gesendet", unterscheidbar von leerer Projektion). Empfang = Semijoin der vorhandenen Tabelle mit der Nachricht, nie Ersatz; erneut eingereiht wird nur bei tatsaechlich geaenderter Projektion. Alle Gruppen anfangs einmal eingereiht (Eliminationsreihenfolge). Leere Gruppe -> WIDERSPRUCH, Stopp. Aufbau von Liste und Nachrichtenspeicher in der Ableitungszeit (0,04 ms).
+- Je Fall und Verfahren ein eigener Kindprozess unter dem Waechter (120 s / 400 MiB). Kontrolle (Vollzaehlung am unveraenderten Original, globale Konsistenz je Gruppe) erst danach; nichts fliesst zurueck.
+
+ZAHLEN (Einzelmessungen; Fable-Container Xeon 2,10 GHz 2 Kerne, Python 3.13.16)
+                      | N3 Rundenlauf | N3 Arbeitsliste | N3u Rundenlauf | N3u Arbeitsliste
+Status                | FIXPUNKT      | FIXPUNKT        | WIDERSPRUCH    | WIDERSPRUCH
+Gruppenbearbeitungen  | 120 (Semijoin-Aufrufe) | 33 (Entnahmen), davon 34 Semijoins | 18 | 11 (15 Semijoins)
+Projektionen geprueft | 120           | 65              | 20             | 15
+Nachrichten gesendet  | 60 (Kantenrel.)| 34             | 10             | 15
+gestrichene Zeilen    | 50            | 50              | 45 (bis Abbruch) | 31 (bis Abbruch)
+Takte / max. Liste    | 2 Takte       | Liste max 16    | 1 Takt         | Liste max 16
+Zeit Ableitung        | 1,0 ms        | 0,4 ms          | 0,15 ms        | 0,14 ms
+Zeit Kontrolle        | 0,53 s        | 0,59 s          | 0,12 s         | 0,11 s
+RSS (ru_maxrss Kind)  | 15,1 MiB      | 15,1 MiB        | 15,1 MiB       | 15,1 MiB
+Hinweis zur Vergleichbarkeit: "Bearbeitung" bedeutet im Rundenlauf einen Semijoin-Aufruf (zwei je Kante, Richtung und Takt), in der Arbeitsliste eine Entnahme, bei der mehrere Nachrichten empfangen werden koennen; deshalb sind zusaetzlich die Semijoins (34) angegeben. Die Zeiten liegen im Millisekundenbereich und sind bei diesem Netz nicht aussagekraeftig; die Zaehler sind das Mass. RSS ist in allen vier Laeufen gleich (Interpreter dominiert).
+
+Wo der Rundenlauf Arbeit verschenkt: Sein zweiter Takt (60 Semijoins, 60 Projektionen) streicht nichts mehr und dient nur der Bestaetigung; auch im ersten Takt werden alle Kanten in beide Richtungen bearbeitet, obwohl nur 50 Zeilen an 12 Stellen fallen. Die Arbeitsliste bearbeitet nach dem ersten Durchgang (16 Entnahmen) nur noch 17 weitere Gruppen, die wirklich neue Nachrichten hatten.
+
+N3u: Der Widerspruch erscheint an verschiedenen Stellen (Rundenlauf: Kantenrelation G_x2–G_x6 leer im 1. Takt; Arbeitsliste: Gruppe G_x6 leer bei der 11. Bearbeitung, nach Nachricht von G_x9). Beides ist ein korrekter Widerspruch; die Stelle haengt von der Reihenfolge ab, wie im Entwurf angekuendigt.
+
+ERWARTUNGEN: E1 gleiche Ausgangstabellen: bestanden. E2 N3 gleiche Endrelationen je Gruppe (Pruefsumme ueber alle 16 Tabellen) und gleiche gestrichene Zeilen: bestanden; globale Konsistenz je Gruppe (Tabelle == Projektion der 12 echten Loesungen): alle 16 gleich, in beiden Verfahren. E3 N3u beide WIDERSPRUCH: bestanden. E4 keine Doppeleintraege: bestanden. E5 Grenzen 8 Variablen / 256 Zeilen (Zwischenstaende eingeschlossen): nie erreicht (max 4 Variablen, 16 Zeilen). E6 unabhaengig nach dem Austausch: auf allen 15 Baumkanten stimmen die Projektionen beider Gruppen ueberein (Arbeitsliste UND Rundenlauf): bestanden – die leere Warteschlange war also nicht der einzige Beleg.
+Waechter alle OK; RLIMIT_AS unbegrenzt (keine harte Grenze, nur Ueberwachung).
+
+EINFACH GESAGT
+Statt in jeder Runde alle 15 Verbindungen zweimal abzuklappern, meldet sich jede Gruppe nur, wenn sie wirklich etwas Neues hat. Bei N3 ist das weniger als ein Drittel der Arbeit, bei gleichem Ergebnis. Was sich NICHT aendert: Die Tabellen sind genauso gross wie vorher (die groesste Gruppe braucht weiterhin ihre Zeilen); gespart wird nur Doppelarbeit, nicht Platz.
+
+BELEGT: Zahlen und Gleichheiten oben fuer N3/N3u mit dieser Gruppierung. VERMUTUNG: keine. OFFEN: ob die Ersparnis bei groesseren Netzen aehnlich ausfaellt (nicht gemessen); ob eine andere Entnahmereihenfolge (z. B. Blaetter zuerst) weiter spart. Keine Aussage ueber N4/N5/SHA-256; keine neuen Regeln, keine Joins. Bekanntes Schema (AC-3 auf dem Join-Baum), keine Neuheitsbehauptung.
+
+DATEIEN (kastenmaschine/l1/stern/): ereignis.py, ereignis_lauf.py, ERGEBNIS_EREIGNIS_{N3,N3u}_{R,A}.json, ERGEBNIS_EREIGNIS_BEGRENZT.json. Abhaengigkeiten (gruppen.py, stern.py, stern_n3.py) mit Pfad + SHA256 in jeder Ergebnisdatei. Bestehende Dateien und Ergebnisse unveraendert. Stopp.
+--- ENDE ---

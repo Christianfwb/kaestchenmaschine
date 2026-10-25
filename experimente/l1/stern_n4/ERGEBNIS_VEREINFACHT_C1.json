@@ -1,0 +1,100 @@
+{
+ "stufe": "C1",
+ "netz": "N4r09 Leine W_i=W_(i-3)",
+ "knoten": 1328,
+ "zustand": {
+  "quelle": "Grundgeruest + R9 (D6_R9)",
+  "d6_status": "FIXPUNKT",
+  "d6_ergebnis": "FIXPUNKT",
+  "d6_wert": 797,
+  "d6_alias": 529,
+  "nicht_aufgenommen": {
+   "lin_gl": 1421,
+   "xor_gl": 777,
+   "xor_gl_variablen_verteilung": {
+    "3": 571,
+    "4": 141,
+    "2": 56,
+    "1": 9
+   },
+   "lin_gl_variablen_verteilung": {
+    "5": 252,
+    "50": 1,
+    "26": 17,
+    "14": 57,
+    "8": 1094
+   }
+  }
+ },
+ "vorwaerts": null,
+ "zaehlung": {
+  "variablen_gesamt": 1326,
+  "wurzeln": 797,
+  "fest": 797,
+  "aliasiert": 529,
+  "offen": 0,
+  "offen_in_keinem_kaestchen": 0,
+  "kaestchen": 0,
+  "kaestchen_1": 0,
+  "kaestchen_2": 0,
+  "kaestchen_3": 0,
+  "rest_wert": 0,
+  "rest_gleich": 0,
+  "enthalten": 1314,
+  "variablenmengen_verschieden": 0,
+  "mengen_mehrfach": 0
+ },
+ "widerspruch": null,
+ "restbedingungen": {
+  "neu_wert": [],
+  "neu_alias": [],
+  "hinweis": "erste 200 je Liste; Zahlen in zaehlung"
+ },
+ "kaestchen_herkunft": [],
+ "zeiten_s": {
+  "ableitung": 0.3852,
+  "umbau": 0.0021
+ },
+ "struktur": {
+  "bestanden": true,
+  "gruppen": 0,
+  "groesste_gruppe": 0,
+  "hinweis": "keine Kaestchen uebrig"
+ },
+ "pruefung": {
+  "E4_kein_widerspruch": true,
+  "E3_struktur": true
+ },
+ "bestanden": true,
+ "maxrss_mib": 18.3,
+ "rlimit_as": [
+  -1,
+  -1
+ ],
+ "abhaengigkeiten": {
+  "pruefstand": {
+   "pfad": "/home/claude/kastenmaschine/l1/pruefstand.py",
+   "sha256": "0ae511450470ca91c32a7a25a8d75f83985d06d6f217c27f16e317ab2ac1d910"
+  },
+  "gatter": {
+   "pfad": "/home/claude/kastenmaschine/miner_pruefung/sha256d/gatter.py",
+   "sha256": "75611ddf49d31dc933fe81ee56fe3a4e10cd1f1a3a571bf25fe6108b485f8f4f"
+  },
+  "d6": {
+   "pfad": "/home/claude/kastenmaschine/l1/d6.py",
+   "sha256": "91ec11fc4d1d1bcf0045b0dc73a3525f0fadfd116c939101e87160bb77f6c794"
+  },
+  "gruppen": {
+   "pfad": "/home/claude/kastenmaschine/l1/stern/gruppen.py",
+   "sha256": "4c8f4546ee3cd00c82029c24226e06eacab9be5890fbf6314f53495943a40878"
+  },
+  "stern": {
+   "pfad": "/home/claude/kastenmaschine/l1/stern/stern.py",
+   "sha256": "da8d10bbe24deb7264d4abc66640c002d7379d037cf1a6c8b869589f8c536bfb"
+  },
+  "e1_bit": {
+   "pfad": "/home/claude/kastenmaschine/miner_pruefung/sha256d/e1_bit.py",
+   "sha256": "cfa14b5181eda91e8b92bc4d1baded6137d39ba325c3cf524ea4d8a6f4a23248"
+  }
+ }
+}

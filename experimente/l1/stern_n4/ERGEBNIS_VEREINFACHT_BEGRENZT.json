@@ -1,0 +1,49 @@
+{
+ "grenzen": {
+  "zeit_s": 120.0,
+  "rss_mib": 400.0
+ },
+ "python": "3.13.16",
+ "stufen": {
+  "0": {
+   "status": "OK",
+   "wall_s": 6.05,
+   "peak_rss_abgetastet_mib": 20.7,
+   "maxrss_kind_mib": 20.4,
+   "rueckgabe": 0
+  },
+  "A": {
+   "status": "OK",
+   "wall_s": 4.42,
+   "peak_rss_abgetastet_mib": 20.4,
+   "maxrss_kind_mib": 20.4,
+   "rueckgabe": 0
+  },
+  "B": {
+   "status": "OK",
+   "wall_s": 1.01,
+   "peak_rss_abgetastet_mib": 18.0,
+   "maxrss_kind_mib": 17.8,
+   "rueckgabe": 0
+  },
+  "C1": {
+   "status": "OK",
+   "wall_s": 0.5,
+   "peak_rss_abgetastet_mib": 18.4,
+   "maxrss_kind_mib": 18.3,
+   "rueckgabe": 0
+  },
+  "C2": {
+   "status": "OK",
+   "wall_s": 0.5,
+   "peak_rss_abgetastet_mib": 18.6,
+   "maxrss_kind_mib": 18.3,
+   "rueckgabe": 0
+  }
+ },
+ "dateien": {
+  "strukt_n4_vereinfacht.py": "b2503d3caffef6863ba9d562b2135c0c19407c6d252a308f7f8203a6920e1c86",
+  "strukt_n4_vereinfacht_lauf.py": "d894e9d501c013bd4b7b726ab57b2288baa241db641b48ad2f98adbbe0639398"
+ },
+ "alle_ok": true
+}

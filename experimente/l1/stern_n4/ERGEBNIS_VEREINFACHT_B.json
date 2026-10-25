@@ -1,0 +1,4539 @@
+{
+ "stufe": "B",
+ "netz": "N4r09 Leine W_i=W_(i-3)",
+ "knoten": 1328,
+ "zustand": {
+  "quelle": "D6+R1b+R8c+R8m (Grundgeruest)",
+  "d6_status": "FIXPUNKT",
+  "d6_ergebnis": "FIXPUNKT",
+  "d6_wert": 468,
+  "d6_alias": 366,
+  "nicht_aufgenommen": {
+   "lin_gl": 499,
+   "xor_gl": 734,
+   "xor_gl_variablen_verteilung": {
+    "3": 558,
+    "4": 137,
+    "2": 33,
+    "1": 6
+   },
+   "lin_gl_variablen_verteilung": {
+    "5": 252,
+    "50": 1,
+    "26": 1,
+    "14": 57,
+    "8": 188
+   }
+  }
+ },
+ "vorwaerts": null,
+ "zaehlung": {
+  "variablen_gesamt": 1326,
+  "wurzeln": 960,
+  "fest": 468,
+  "aliasiert": 366,
+  "offen": 492,
+  "offen_in_keinem_kaestchen": 0,
+  "kaestchen": 531,
+  "kaestchen_1": 3,
+  "kaestchen_2": 15,
+  "kaestchen_3": 513,
+  "rest_wert": 3,
+  "rest_gleich": 8,
+  "enthalten": 783,
+  "variablenmengen_verschieden": 519,
+  "mengen_mehrfach": 8
+ },
+ "widerspruch": null,
+ "restbedingungen": {
+  "neu_wert": [
+   {
+    "gatter": 501,
+    "op": "and",
+    "eingaenge": [
+     -480,
+     477
+    ],
+    "variable": 501,
+    "wert": 0
+   },
+   {
+    "gatter": 649,
+    "op": "and",
+    "eingaenge": [
+     278,
+     596
+    ],
+    "variable": 649,
+    "wert": 0
+   },
+   {
+    "gatter": 987,
+    "op": "and",
+    "eingaenge": [
+     348,
+     983
+    ],
+    "variable": 987,
+    "wert": 0
+   }
+  ],
+  "neu_alias": [
+   {
+    "gatter": 192,
+    "op": "and",
+    "eingaenge": [
+     -171,
+     168
+    ],
+    "variable": 192,
+    "gleich": 10,
+    "negiert": 0
+   },
+   {
+    "gatter": 317,
+    "op": "xor",
+    "eingaenge": [
+     315,
+     316
+    ],
+    "variable": 317,
+    "gleich": 316,
+    "negiert": 0
+   },
+   {
+    "gatter": 382,
+    "op": "and",
+    "eingaenge": [
+     -381,
+     -231
+    ],
+    "variable": 382,
+    "gleich": 609,
+    "negiert": 0
+   },
+   {
+    "gatter": 423,
+    "op": "xor",
+    "eingaenge": [
+     362,
+     401
+    ],
+    "variable": 423,
+    "gleich": 362,
+    "negiert": 0
+   },
+   {
+    "gatter": 459,
+    "op": "xor",
+    "eingaenge": [
+     457,
+     458
+    ],
+    "variable": 459,
+    "gleich": 457,
+    "negiert": 1
+   },
+   {
+    "gatter": 467,
+    "op": "xor",
+    "eingaenge": [
+     465,
+     466
+    ],
+    "variable": 467,
+    "gleich": 466,
+    "negiert": 0
+   },
+   {
+    "gatter": 471,
+    "op": "and",
+    "eingaenge": [
+     282,
+     430
+    ],
+    "variable": 471,
+    "gleich": 653,
+    "negiert": 0
+   },
+   {
+    "gatter": 840,
+    "op": "xor",
+    "eingaenge": [
+     838,
+     839
+    ],
+    "variable": 3,
+    "gleich": 839,
+    "negiert": 0
+   }
+  ],
+  "hinweis": "erste 200 je Liste; Zahlen in zaehlung"
+ },
+ "kaestchen_herkunft": [
+  {
+   "name": "xor#14",
+   "variablen": [
+    "v0003",
+    "v0004",
+    "v0014"
+   ]
+  },
+  {
+   "name": "and#15",
+   "variablen": [
+    "v0003",
+    "v0004",
+    "v0015"
+   ]
+  },
+  {
+   "name": "xor#16",
+   "variablen": [
+    "v0005",
+    "v0015",
+    "v0016"
+   ]
+  },
+  {
+   "name": "and#17",
+   "variablen": [
+    "v0005",
+    "v0015",
+    "v0017"
+   ]
+  },
+  {
+   "name": "and#18",
+   "variablen": [
+    "v0015",
+    "v0017",
+    "v0018"
+   ]
+  },
+  {
+   "name": "and#19",
+   "variablen": [
+    "v0005",
+    "v0018",
+    "v0019"
+   ]
+  },
+  {
+   "name": "xor#20",
+   "variablen": [
+    "v0003",
+    "v0010",
+    "v0011"
+   ]
+  },
+  {
+   "name": "and#21",
+   "variablen": [
+    "v0003",
+    "v0010",
+    "v0021"
+   ]
+  },
+  {
+   "name": "xor#22",
+   "variablen": [
+    "v0014",
+    "v0021",
+    "v0653"
+   ]
+  },
+  {
+   "name": "and#23",
+   "variablen": [
+    "v0014",
+    "v0021",
+    "v0023"
+   ]
+  },
+  {
+   "name": "and#24",
+   "variablen": [
+    "v0021",
+    "v0023",
+    "v0024"
+   ]
+  },
+  {
+   "name": "and#25",
+   "variablen": [
+    "v0014",
+    "v0024",
+    "v0025"
+   ]
+  },
+  {
+   "name": "xor#26",
+   "variablen": [
+    "v0016",
+    "v0025",
+    "v0609"
+   ]
+  },
+  {
+   "name": "and#27",
+   "variablen": [
+    "v0016",
+    "v0025",
+    "v0027"
+   ]
+  },
+  {
+   "name": "and#28",
+   "variablen": [
+    "v0025",
+    "v0027",
+    "v0028"
+   ]
+  },
+  {
+   "name": "and#29",
+   "variablen": [
+    "v0016",
+    "v0028",
+    "v0029"
+   ]
+  },
+  {
+   "name": "xor#30",
+   "variablen": [
+    "v0003",
+    "v0004",
+    "v0014"
+   ]
+  },
+  {
+   "name": "and#31",
+   "variablen": [
+    "v0003",
+    "v0014",
+    "v0031"
+   ]
+  },
+  {
+   "name": "xor#32",
+   "variablen": [
+    "v0016",
+    "v0031",
+    "v1174"
+   ]
+  },
+  {
+   "name": "and#33",
+   "variablen": [
+    "v0016",
+    "v0031",
+    "v0033"
+   ]
+  },
+  {
+   "name": "and#34",
+   "variablen": [
+    "v0031",
+    "v0033",
+    "v0034"
+   ]
+  },
+  {
+   "name": "and#35",
+   "variablen": [
+    "v0016",
+    "v0034",
+    "v0035"
+   ]
+  },
+  {
+   "name": "xor#36",
+   "variablen": [
+    "v0003",
+    "v0036",
+    "v1174"
+   ]
+  },
+  {
+   "name": "xor#37",
+   "variablen": [
+    "v0004",
+    "v0010",
+    "v0037"
+   ]
+  },
+  {
+   "name": "xor#38",
+   "variablen": [
+    "v0011",
+    "v0038",
+    "v0653"
+   ]
+  },
+  {
+   "name": "xor#39",
+   "variablen": [
+    "v0039",
+    "v0609",
+    "v0653"
+   ]
+  },
+  {
+   "name": "xor#40",
+   "variablen": [
+    "v0010",
+    "v0040",
+    "v0609"
+   ]
+  },
+  {
+   "name": "xor#41",
+   "variablen": [
+    "v0003",
+    "v0010",
+    "v0011"
+   ]
+  },
+  {
+   "name": "xor#42",
+   "variablen": [
+    "v0036",
+    "v0037",
+    "v0042"
+   ]
+  },
+  {
+   "name": "and#43",
+   "variablen": [
+    "v0036",
+    "v0037",
+    "v0043"
+   ]
+  },
+  {
+   "name": "xor#44",
+   "variablen": [
+    "v0036",
+    "v0043",
+    "v0044"
+   ]
+  },
+  {
+   "name": "and#45",
+   "variablen": [
+    "v0036",
+    "v0043",
+    "v0045"
+   ]
+  },
+  {
+   "name": "xor#46",
+   "variablen": [
+    "v0037",
+    "v0045",
+    "v0046"
+   ]
+  },
+  {
+   "name": "and#47",
+   "variablen": [
+    "v0037",
+    "v0045",
+    "v0047"
+   ]
+  },
+  {
+   "name": "xor#48",
+   "variablen": [
+    "v0036",
+    "v0042",
+    "v0048"
+   ]
+  },
+  {
+   "name": "and#49",
+   "variablen": [
+    "v0036",
+    "v0042",
+    "v0049"
+   ]
+  },
+  {
+   "name": "xor#50",
+   "variablen": [
+    "v0004",
+    "v0044",
+    "v0050"
+   ]
+  },
+  {
+   "name": "xor#51",
+   "variablen": [
+    "v0049",
+    "v0050",
+    "v0051"
+   ]
+  },
+  {
+   "name": "and#52",
+   "variablen": [
+    "v0004",
+    "v0044",
+    "v0052"
+   ]
+  },
+  {
+   "name": "and#53",
+   "variablen": [
+    "v0044",
+    "v0049",
+    "v0053"
+   ]
+  },
+  {
+   "name": "and#54",
+   "variablen": [
+    "v0004",
+    "v0049",
+    "v0054"
+   ]
+  },
+  {
+   "name": "and#55",
+   "variablen": [
+    "v0053",
+    "v0054",
+    "v0055"
+   ]
+  },
+  {
+   "name": "and#56",
+   "variablen": [
+    "v0052",
+    "v0055",
+    "v0056"
+   ]
+  },
+  {
+   "name": "xor#57",
+   "variablen": [
+    "v0046",
+    "v0057",
+    "v1174"
+   ]
+  },
+  {
+   "name": "xor#58",
+   "variablen": [
+    "v0056",
+    "v0057",
+    "v0058"
+   ]
+  },
+  {
+   "name": "and#59",
+   "variablen": [
+    "v0046",
+    "v0059",
+    "v1174"
+   ]
+  },
+  {
+   "name": "and#60",
+   "variablen": [
+    "v0046",
+    "v0056",
+    "v0060"
+   ]
+  },
+  {
+   "name": "and#61",
+   "variablen": [
+    "v0056",
+    "v0061",
+    "v1174"
+   ]
+  },
+  {
+   "name": "and#62",
+   "variablen": [
+    "v0060",
+    "v0061",
+    "v0062"
+   ]
+  },
+  {
+   "name": "and#63",
+   "variablen": [
+    "v0059",
+    "v0062",
+    "v0063"
+   ]
+  },
+  {
+   "name": "xor#64",
+   "variablen": [
+    "v0036",
+    "v0048",
+    "v0064"
+   ]
+  },
+  {
+   "name": "and#65",
+   "variablen": [
+    "v0036",
+    "v0048",
+    "v0065"
+   ]
+  },
+  {
+   "name": "and#66",
+   "variablen": [
+    "v0036",
+    "v0065",
+    "v0066"
+   ]
+  },
+  {
+   "name": "and#67",
+   "variablen": [
+    "v0048",
+    "v0066",
+    "v0067"
+   ]
+  },
+  {
+   "name": "xor#68",
+   "variablen": [
+    "v0051",
+    "v0067",
+    "v0068"
+   ]
+  },
+  {
+   "name": "and#69",
+   "variablen": [
+    "v0051",
+    "v0067",
+    "v0069"
+   ]
+  },
+  {
+   "name": "and#70",
+   "variablen": [
+    "v0067",
+    "v0069",
+    "v0070"
+   ]
+  },
+  {
+   "name": "and#71",
+   "variablen": [
+    "v0051",
+    "v0070",
+    "v0071"
+   ]
+  },
+  {
+   "name": "xor#72",
+   "variablen": [
+    "v0058",
+    "v0071",
+    "v0072"
+   ]
+  },
+  {
+   "name": "and#73",
+   "variablen": [
+    "v0058",
+    "v0071",
+    "v0073"
+   ]
+  },
+  {
+   "name": "xor#74",
+   "variablen": [
+    "v0010",
+    "v0036",
+    "v0074"
+   ]
+  },
+  {
+   "name": "and#75",
+   "variablen": [
+    "v0010",
+    "v0036",
+    "v0075"
+   ]
+  },
+  {
+   "name": "xor#76",
+   "variablen": [
+    "v0010",
+    "v0064",
+    "v0076"
+   ]
+  },
+  {
+   "name": "xor#77",
+   "variablen": [
+    "v0075",
+    "v0076",
+    "v0624"
+   ]
+  },
+  {
+   "name": "and#78",
+   "variablen": [
+    "v0010",
+    "v0064",
+    "v0078"
+   ]
+  },
+  {
+   "name": "and#79",
+   "variablen": [
+    "v0064",
+    "v0075",
+    "v0079"
+   ]
+  },
+  {
+   "name": "and#80",
+   "variablen": [
+    "v0010",
+    "v0075",
+    "v0080"
+   ]
+  },
+  {
+   "name": "and#81",
+   "variablen": [
+    "v0079",
+    "v0080",
+    "v0081"
+   ]
+  },
+  {
+   "name": "and#82",
+   "variablen": [
+    "v0078",
+    "v0081",
+    "v0082"
+   ]
+  },
+  {
+   "name": "xor#83",
+   "variablen": [
+    "v0011",
+    "v0068",
+    "v0083"
+   ]
+  },
+  {
+   "name": "xor#84",
+   "variablen": [
+    "v0082",
+    "v0083",
+    "v0084"
+   ]
+  },
+  {
+   "name": "and#85",
+   "variablen": [
+    "v0011",
+    "v0068",
+    "v0085"
+   ]
+  },
+  {
+   "name": "and#86",
+   "variablen": [
+    "v0068",
+    "v0082",
+    "v0086"
+   ]
+  },
+  {
+   "name": "and#87",
+   "variablen": [
+    "v0011",
+    "v0082",
+    "v0087"
+   ]
+  },
+  {
+   "name": "and#88",
+   "variablen": [
+    "v0086",
+    "v0087",
+    "v0088"
+   ]
+  },
+  {
+   "name": "and#89",
+   "variablen": [
+    "v0085",
+    "v0088",
+    "v0089"
+   ]
+  },
+  {
+   "name": "xor#90",
+   "variablen": [
+    "v0009",
+    "v0072",
+    "v0090"
+   ]
+  },
+  {
+   "name": "xor#91",
+   "variablen": [
+    "v0089",
+    "v0090",
+    "v0091"
+   ]
+  },
+  {
+   "name": "and#92",
+   "variablen": [
+    "v0009",
+    "v0072",
+    "v0092"
+   ]
+  },
+  {
+   "name": "and#93",
+   "variablen": [
+    "v0072",
+    "v0089",
+    "v0093"
+   ]
+  },
+  {
+   "name": "and#94",
+   "variablen": [
+    "v0009",
+    "v0089",
+    "v0094"
+   ]
+  },
+  {
+   "name": "and#95",
+   "variablen": [
+    "v0093",
+    "v0094",
+    "v0095"
+   ]
+  },
+  {
+   "name": "and#96",
+   "variablen": [
+    "v0092",
+    "v0095",
+    "v0096"
+   ]
+  },
+  {
+   "name": "xor#97",
+   "variablen": [
+    "v0010",
+    "v0038",
+    "v0097"
+   ]
+  },
+  {
+   "name": "and#98",
+   "variablen": [
+    "v0010",
+    "v0038",
+    "v0098"
+   ]
+  },
+  {
+   "name": "xor#99",
+   "variablen": [
+    "v0039",
+    "v0098",
+    "v0099"
+   ]
+  },
+  {
+   "name": "and#100",
+   "variablen": [
+    "v0039",
+    "v0098",
+    "v0100"
+   ]
+  },
+  {
+   "name": "and#101",
+   "variablen": [
+    "v0098",
+    "v0100",
+    "v0101"
+   ]
+  },
+  {
+   "name": "and#102",
+   "variablen": [
+    "v0039",
+    "v0101",
+    "v0102"
+   ]
+  },
+  {
+   "name": "xor#103",
+   "variablen": [
+    "v0040",
+    "v0103",
+    "v0653"
+   ]
+  },
+  {
+   "name": "xor#104",
+   "variablen": [
+    "v0102",
+    "v0103",
+    "v0104"
+   ]
+  },
+  {
+   "name": "and#105",
+   "variablen": [
+    "v0040",
+    "v0105",
+    "v0653"
+   ]
+  },
+  {
+   "name": "and#106",
+   "variablen": [
+    "v0040",
+    "v0102",
+    "v0106"
+   ]
+  },
+  {
+   "name": "and#107",
+   "variablen": [
+    "v0102",
+    "v0107",
+    "v0653"
+   ]
+  },
+  {
+   "name": "and#108",
+   "variablen": [
+    "v0106",
+    "v0107",
+    "v0108"
+   ]
+  },
+  {
+   "name": "and#109",
+   "variablen": [
+    "v0105",
+    "v0108",
+    "v0109"
+   ]
+  },
+  {
+   "name": "xor#110",
+   "variablen": [
+    "v0003",
+    "v0110",
+    "v0609"
+   ]
+  },
+  {
+   "name": "xor#111",
+   "variablen": [
+    "v0109",
+    "v0110",
+    "v0111"
+   ]
+  },
+  {
+   "name": "and#112",
+   "variablen": [
+    "v0003",
+    "v0112",
+    "v0609"
+   ]
+  },
+  {
+   "name": "and#113",
+   "variablen": [
+    "v0003",
+    "v0109",
+    "v0113"
+   ]
+  },
+  {
+   "name": "and#114",
+   "variablen": [
+    "v0109",
+    "v0114",
+    "v0609"
+   ]
+  },
+  {
+   "name": "and#115",
+   "variablen": [
+    "v0113",
+    "v0114",
+    "v0115"
+   ]
+  },
+  {
+   "name": "and#116",
+   "variablen": [
+    "v0112",
+    "v0115",
+    "v0116"
+   ]
+  },
+  {
+   "name": "xor#117=0",
+   "variablen": [
+    "v0074",
+    "v0097"
+   ]
+  },
+  {
+   "name": "and#118",
+   "variablen": [
+    "v0074",
+    "v0097",
+    "v0119"
+   ]
+  },
+  {
+   "name": "xor#119",
+   "variablen": [
+    "v0099",
+    "v0119",
+    "v0624"
+   ]
+  },
+  {
+   "name": "and#121",
+   "variablen": [
+    "v0099",
+    "v0121",
+    "v0624"
+   ]
+  },
+  {
+   "name": "and#122",
+   "variablen": [
+    "v0119",
+    "v0122",
+    "v0624"
+   ]
+  },
+  {
+   "name": "and#123",
+   "variablen": [
+    "v0099",
+    "v0119",
+    "v0123"
+   ]
+  },
+  {
+   "name": "and#124",
+   "variablen": [
+    "v0122",
+    "v0123",
+    "v0124"
+   ]
+  },
+  {
+   "name": "and#125",
+   "variablen": [
+    "v0121",
+    "v0124",
+    "v0126"
+   ]
+  },
+  {
+   "name": "xor#126",
+   "variablen": [
+    "v0084",
+    "v0104",
+    "v0126"
+   ]
+  },
+  {
+   "name": "and#128",
+   "variablen": [
+    "v0084",
+    "v0104",
+    "v0128"
+   ]
+  },
+  {
+   "name": "and#129",
+   "variablen": [
+    "v0084",
+    "v0126",
+    "v0129"
+   ]
+  },
+  {
+   "name": "and#130",
+   "variablen": [
+    "v0104",
+    "v0126",
+    "v0130"
+   ]
+  },
+  {
+   "name": "and#131",
+   "variablen": [
+    "v0129",
+    "v0130",
+    "v0131"
+   ]
+  },
+  {
+   "name": "and#132",
+   "variablen": [
+    "v0128",
+    "v0131",
+    "v0133"
+   ]
+  },
+  {
+   "name": "xor#133",
+   "variablen": [
+    "v0091",
+    "v0111",
+    "v0133"
+   ]
+  },
+  {
+   "name": "and#135",
+   "variablen": [
+    "v0091",
+    "v0111",
+    "v0135"
+   ]
+  },
+  {
+   "name": "and#136",
+   "variablen": [
+    "v0091",
+    "v0133",
+    "v0136"
+   ]
+  },
+  {
+   "name": "and#137",
+   "variablen": [
+    "v0111",
+    "v0133",
+    "v0137"
+   ]
+  },
+  {
+   "name": "and#138",
+   "variablen": [
+    "v0136",
+    "v0137",
+    "v0138"
+   ]
+  },
+  {
+   "name": "and#139",
+   "variablen": [
+    "v0135",
+    "v0138",
+    "v0139"
+   ]
+  },
+  {
+   "name": "xor#140",
+   "variablen": [
+    "v0074",
+    "v0140",
+    "v0624"
+   ]
+  },
+  {
+   "name": "and#141",
+   "variablen": [
+    "v0074",
+    "v0141",
+    "v0624"
+   ]
+  },
+  {
+   "name": "and#142",
+   "variablen": [
+    "v0074",
+    "v0141",
+    "v0142"
+   ]
+  },
+  {
+   "name": "and#143",
+   "variablen": [
+    "v0142",
+    "v0143",
+    "v0624"
+   ]
+  },
+  {
+   "name": "xor#144",
+   "variablen": [
+    "v0084",
+    "v0143",
+    "v0144"
+   ]
+  },
+  {
+   "name": "and#145",
+   "variablen": [
+    "v0084",
+    "v0143",
+    "v0145"
+   ]
+  },
+  {
+   "name": "xor#146",
+   "variablen": [
+    "v0091",
+    "v0145",
+    "v0146"
+   ]
+  },
+  {
+   "name": "and#147",
+   "variablen": [
+    "v0091",
+    "v0145",
+    "v0147"
+   ]
+  },
+  {
+   "name": "xor#148",
+   "variablen": [
+    "v0140",
+    "v0146",
+    "v0148"
+   ]
+  },
+  {
+   "name": "xor#149",
+   "variablen": [
+    "v0074",
+    "v0144",
+    "v0631"
+   ]
+  },
+  {
+   "name": "xor#154",
+   "variablen": [
+    "v0148",
+    "v0154",
+    "v0631"
+   ]
+  },
+  {
+   "name": "and#155",
+   "variablen": [
+    "v0148",
+    "v0155",
+    "v0631"
+   ]
+  },
+  {
+   "name": "xor#156",
+   "variablen": [
+    "v0148",
+    "v0155",
+    "v0156"
+   ]
+  },
+  {
+   "name": "and#157",
+   "variablen": [
+    "v0148",
+    "v0155",
+    "v0157"
+   ]
+  },
+  {
+   "name": "xor#158",
+   "variablen": [
+    "v0157",
+    "v0158",
+    "v0631"
+   ]
+  },
+  {
+   "name": "and#159",
+   "variablen": [
+    "v0157",
+    "v0159",
+    "v0631"
+   ]
+  },
+  {
+   "name": "and#160",
+   "variablen": [
+    "v0157",
+    "v0159",
+    "v0160"
+   ]
+  },
+  {
+   "name": "and#161",
+   "variablen": [
+    "v0160",
+    "v0161",
+    "v0631"
+   ]
+  },
+  {
+   "name": "and#162",
+   "variablen": [
+    "v0010",
+    "v0074",
+    "v0162"
+   ]
+  },
+  {
+   "name": "xor#163",
+   "variablen": [
+    "v0074",
+    "v0162",
+    "v0163"
+   ]
+  },
+  {
+   "name": "and#164",
+   "variablen": [
+    "v0003",
+    "v0140",
+    "v0164"
+   ]
+  },
+  {
+   "name": "and#165",
+   "variablen": [
+    "v0004",
+    "v0144",
+    "v0165"
+   ]
+  },
+  {
+   "name": "xor#166",
+   "variablen": [
+    "v0144",
+    "v0165",
+    "v0166"
+   ]
+  },
+  {
+   "name": "and#167",
+   "variablen": [
+    "v0146",
+    "v0167",
+    "v1174"
+   ]
+  },
+  {
+   "name": "xor#168",
+   "variablen": [
+    "v0010",
+    "v0148",
+    "v0163"
+   ]
+  },
+  {
+   "name": "and#169",
+   "variablen": [
+    "v0148",
+    "v0163",
+    "v0169"
+   ]
+  },
+  {
+   "name": "xor#170",
+   "variablen": [
+    "v0154",
+    "v0164",
+    "v0170"
+   ]
+  },
+  {
+   "name": "xor#171",
+   "variablen": [
+    "v0010",
+    "v0169",
+    "v0170"
+   ]
+  },
+  {
+   "name": "and#172",
+   "variablen": [
+    "v0154",
+    "v0164",
+    "v0172"
+   ]
+  },
+  {
+   "name": "and#173",
+   "variablen": [
+    "v0154",
+    "v0169",
+    "v0173"
+   ]
+  },
+  {
+   "name": "and#174",
+   "variablen": [
+    "v0164",
+    "v0169",
+    "v0174"
+   ]
+  },
+  {
+   "name": "and#175",
+   "variablen": [
+    "v0173",
+    "v0174",
+    "v0175"
+   ]
+  },
+  {
+   "name": "and#176",
+   "variablen": [
+    "v0172",
+    "v0175",
+    "v0176"
+   ]
+  },
+  {
+   "name": "xor#177",
+   "variablen": [
+    "v0156",
+    "v0166",
+    "v0177"
+   ]
+  },
+  {
+   "name": "xor#178",
+   "variablen": [
+    "v0176",
+    "v0177",
+    "v0178"
+   ]
+  },
+  {
+   "name": "and#179",
+   "variablen": [
+    "v0156",
+    "v0166",
+    "v0179"
+   ]
+  },
+  {
+   "name": "and#180",
+   "variablen": [
+    "v0156",
+    "v0176",
+    "v0180"
+   ]
+  },
+  {
+   "name": "and#181",
+   "variablen": [
+    "v0166",
+    "v0176",
+    "v0181"
+   ]
+  },
+  {
+   "name": "and#182",
+   "variablen": [
+    "v0180",
+    "v0181",
+    "v0182"
+   ]
+  },
+  {
+   "name": "and#183",
+   "variablen": [
+    "v0179",
+    "v0182",
+    "v0183"
+   ]
+  },
+  {
+   "name": "xor#184",
+   "variablen": [
+    "v0158",
+    "v0167",
+    "v0184"
+   ]
+  },
+  {
+   "name": "xor#185",
+   "variablen": [
+    "v0183",
+    "v0184",
+    "v0185"
+   ]
+  },
+  {
+   "name": "and#186",
+   "variablen": [
+    "v0158",
+    "v0167",
+    "v0186"
+   ]
+  },
+  {
+   "name": "and#187",
+   "variablen": [
+    "v0158",
+    "v0183",
+    "v0187"
+   ]
+  },
+  {
+   "name": "and#188",
+   "variablen": [
+    "v0167",
+    "v0183",
+    "v0188"
+   ]
+  },
+  {
+   "name": "and#189",
+   "variablen": [
+    "v0187",
+    "v0188",
+    "v0189"
+   ]
+  },
+  {
+   "name": "and#190",
+   "variablen": [
+    "v0186",
+    "v0189",
+    "v0190"
+   ]
+  },
+  {
+   "name": "rest_gleich#192",
+   "variablen": [
+    "v0010",
+    "v0192"
+   ]
+  },
+  {
+   "name": "and#193",
+   "variablen": [
+    "v0010",
+    "v0192",
+    "v0193"
+   ]
+  },
+  {
+   "name": "and#194",
+   "variablen": [
+    "v0010",
+    "v0193"
+   ]
+  },
+  {
+   "name": "xor#195",
+   "variablen": [
+    "v0010",
+    "v0178",
+    "v0195"
+   ]
+  },
+  {
+   "name": "and#196",
+   "variablen": [
+    "v0010",
+    "v0178",
+    "v0196"
+   ]
+  },
+  {
+   "name": "xor#197",
+   "variablen": [
+    "v0185",
+    "v0196",
+    "v0197"
+   ]
+  },
+  {
+   "name": "and#198",
+   "variablen": [
+    "v0185",
+    "v0196",
+    "v0198"
+   ]
+  },
+  {
+   "name": "and#199",
+   "variablen": [
+    "v0196",
+    "v0198",
+    "v0199"
+   ]
+  },
+  {
+   "name": "and#200",
+   "variablen": [
+    "v0185",
+    "v0199",
+    "v0200"
+   ]
+  },
+  {
+   "name": "xor#210",
+   "variablen": [
+    "v0012",
+    "v0195",
+    "v0210"
+   ]
+  },
+  {
+   "name": "xor#211",
+   "variablen": [
+    "v0011",
+    "v0210",
+    "v0653"
+   ]
+  },
+  {
+   "name": "and#212",
+   "variablen": [
+    "v0012",
+    "v0195",
+    "v0212"
+   ]
+  },
+  {
+   "name": "and#213",
+   "variablen": [
+    "v0011",
+    "v0195",
+    "v0213"
+   ]
+  },
+  {
+   "name": "and#214",
+   "variablen": [
+    "v0011",
+    "v0012",
+    "v0214"
+   ]
+  },
+  {
+   "name": "and#215",
+   "variablen": [
+    "v0213",
+    "v0214",
+    "v0215"
+   ]
+  },
+  {
+   "name": "and#216",
+   "variablen": [
+    "v0212",
+    "v0215",
+    "v0216"
+   ]
+  },
+  {
+   "name": "xor#217",
+   "variablen": [
+    "v0013",
+    "v0197",
+    "v0217"
+   ]
+  },
+  {
+   "name": "xor#218",
+   "variablen": [
+    "v0216",
+    "v0217",
+    "v0218"
+   ]
+  },
+  {
+   "name": "and#219",
+   "variablen": [
+    "v0013",
+    "v0197",
+    "v0219"
+   ]
+  },
+  {
+   "name": "and#220",
+   "variablen": [
+    "v0197",
+    "v0216",
+    "v0220"
+   ]
+  },
+  {
+   "name": "and#221",
+   "variablen": [
+    "v0013",
+    "v0216",
+    "v0221"
+   ]
+  },
+  {
+   "name": "and#222",
+   "variablen": [
+    "v0220",
+    "v0221",
+    "v0222"
+   ]
+  },
+  {
+   "name": "and#223",
+   "variablen": [
+    "v0219",
+    "v0222",
+    "v0223"
+   ]
+  },
+  {
+   "name": "xor#242",
+   "variablen": [
+    "v0011",
+    "v0242",
+    "v0653"
+   ]
+  },
+  {
+   "name": "and#245",
+   "variablen": [
+    "v0011",
+    "v0245",
+    "v0653"
+   ]
+  },
+  {
+   "name": "and#246",
+   "variablen": [
+    "v0011",
+    "v0245",
+    "v0246"
+   ]
+  },
+  {
+   "name": "and#247",
+   "variablen": [
+    "v0246",
+    "v0247",
+    "v0653"
+   ]
+  },
+  {
+   "name": "xor#249",
+   "variablen": [
+    "v0247",
+    "v0249",
+    "v0609"
+   ]
+  },
+  {
+   "name": "and#252",
+   "variablen": [
+    "v0247",
+    "v0252",
+    "v0609"
+   ]
+  },
+  {
+   "name": "xor#264",
+   "variablen": [
+    "v0011",
+    "v0242",
+    "v0653"
+   ]
+  },
+  {
+   "name": "and#266",
+   "variablen": [
+    "v0242",
+    "v0266",
+    "v0653"
+   ]
+  },
+  {
+   "name": "and#267",
+   "variablen": [
+    "v0011",
+    "v0267",
+    "v0653"
+   ]
+  },
+  {
+   "name": "and#268",
+   "variablen": [
+    "v0011",
+    "v0242",
+    "v0268"
+   ]
+  },
+  {
+   "name": "and#269",
+   "variablen": [
+    "v0267",
+    "v0268",
+    "v0269"
+   ]
+  },
+  {
+   "name": "and#270",
+   "variablen": [
+    "v0266",
+    "v0269",
+    "v0271"
+   ]
+  },
+  {
+   "name": "xor#271",
+   "variablen": [
+    "v0218",
+    "v0249",
+    "v0271"
+   ]
+  },
+  {
+   "name": "and#273",
+   "variablen": [
+    "v0218",
+    "v0249",
+    "v0273"
+   ]
+  },
+  {
+   "name": "and#274",
+   "variablen": [
+    "v0218",
+    "v0271",
+    "v0274"
+   ]
+  },
+  {
+   "name": "and#275",
+   "variablen": [
+    "v0249",
+    "v0271",
+    "v0275"
+   ]
+  },
+  {
+   "name": "and#276",
+   "variablen": [
+    "v0274",
+    "v0275",
+    "v0276"
+   ]
+  },
+  {
+   "name": "and#277",
+   "variablen": [
+    "v0273",
+    "v0276",
+    "v0277"
+   ]
+  },
+  {
+   "name": "xor#284",
+   "variablen": [
+    "v0218",
+    "v0653",
+    "v0819"
+   ]
+  },
+  {
+   "name": "and#285",
+   "variablen": [
+    "v0218",
+    "v0285",
+    "v0653"
+   ]
+  },
+  {
+   "name": "and#286",
+   "variablen": [
+    "v0285",
+    "v0286",
+    "v0653"
+   ]
+  },
+  {
+   "name": "and#287",
+   "variablen": [
+    "v0218",
+    "v0286",
+    "v0287"
+   ]
+  },
+  {
+   "name": "xor#288",
+   "variablen": [
+    "v0010",
+    "v0011",
+    "v0819"
+   ]
+  },
+  {
+   "name": "xor#294",
+   "variablen": [
+    "v0010",
+    "v0294",
+    "v0653"
+   ]
+  },
+  {
+   "name": "and#295",
+   "variablen": [
+    "v0010",
+    "v0295",
+    "v0653"
+   ]
+  },
+  {
+   "name": "xor#296",
+   "variablen": [
+    "v0010",
+    "v0295",
+    "v0296"
+   ]
+  },
+  {
+   "name": "and#297",
+   "variablen": [
+    "v0010",
+    "v0295",
+    "v0297"
+   ]
+  },
+  {
+   "name": "and#298",
+   "variablen": [
+    "v0295",
+    "v0297",
+    "v0298"
+   ]
+  },
+  {
+   "name": "and#299",
+   "variablen": [
+    "v0010",
+    "v0298",
+    "v0299"
+   ]
+  },
+  {
+   "name": "xor#300",
+   "variablen": [
+    "v0299",
+    "v0300",
+    "v0653"
+   ]
+  },
+  {
+   "name": "and#301",
+   "variablen": [
+    "v0299",
+    "v0301",
+    "v0653"
+   ]
+  },
+  {
+   "name": "and#305",
+   "variablen": [
+    "v0011",
+    "v0140",
+    "v0305"
+   ]
+  },
+  {
+   "name": "and#306",
+   "variablen": [
+    "v0003",
+    "v0011",
+    "v0306"
+   ]
+  },
+  {
+   "name": "xor#307",
+   "variablen": [
+    "v0305",
+    "v0306",
+    "v0307"
+   ]
+  },
+  {
+   "name": "and#308",
+   "variablen": [
+    "v0144",
+    "v0308",
+    "v0653"
+   ]
+  },
+  {
+   "name": "and#309",
+   "variablen": [
+    "v0004",
+    "v0309",
+    "v0653"
+   ]
+  },
+  {
+   "name": "xor#310",
+   "variablen": [
+    "v0308",
+    "v0309",
+    "v0310"
+   ]
+  },
+  {
+   "name": "and#311",
+   "variablen": [
+    "v0146",
+    "v0311",
+    "v0819"
+   ]
+  },
+  {
+   "name": "and#312",
+   "variablen": [
+    "v0312",
+    "v0819",
+    "v1174"
+   ]
+  },
+  {
+   "name": "xor#313",
+   "variablen": [
+    "v0311",
+    "v0312",
+    "v0313"
+   ]
+  },
+  {
+   "name": "xor#316",
+   "variablen": [
+    "v0294",
+    "v0307",
+    "v0316"
+   ]
+  },
+  {
+   "name": "rest_gleich#317",
+   "variablen": [
+    "v0316",
+    "v0317"
+   ]
+  },
+  {
+   "name": "and#318",
+   "variablen": [
+    "v0294",
+    "v0307",
+    "v0318"
+   ]
+  },
+  {
+   "name": "xor#323",
+   "variablen": [
+    "v0296",
+    "v0310",
+    "v0323"
+   ]
+  },
+  {
+   "name": "xor#324",
+   "variablen": [
+    "v0318",
+    "v0323",
+    "v0324"
+   ]
+  },
+  {
+   "name": "and#325",
+   "variablen": [
+    "v0296",
+    "v0310",
+    "v0325"
+   ]
+  },
+  {
+   "name": "and#326",
+   "variablen": [
+    "v0296",
+    "v0318",
+    "v0326"
+   ]
+  },
+  {
+   "name": "and#327",
+   "variablen": [
+    "v0310",
+    "v0318",
+    "v0327"
+   ]
+  },
+  {
+   "name": "and#328",
+   "variablen": [
+    "v0326",
+    "v0327",
+    "v0328"
+   ]
+  },
+  {
+   "name": "and#329",
+   "variablen": [
+    "v0325",
+    "v0328",
+    "v0329"
+   ]
+  },
+  {
+   "name": "xor#330",
+   "variablen": [
+    "v0300",
+    "v0313",
+    "v0330"
+   ]
+  },
+  {
+   "name": "xor#331",
+   "variablen": [
+    "v0329",
+    "v0330",
+    "v0331"
+   ]
+  },
+  {
+   "name": "and#332",
+   "variablen": [
+    "v0300",
+    "v0313",
+    "v0332"
+   ]
+  },
+  {
+   "name": "and#333",
+   "variablen": [
+    "v0300",
+    "v0329",
+    "v0333"
+   ]
+  },
+  {
+   "name": "and#334",
+   "variablen": [
+    "v0313",
+    "v0329",
+    "v0334"
+   ]
+  },
+  {
+   "name": "and#335",
+   "variablen": [
+    "v0333",
+    "v0334",
+    "v0335"
+   ]
+  },
+  {
+   "name": "and#336",
+   "variablen": [
+    "v0332",
+    "v0335",
+    "v0336"
+   ]
+  },
+  {
+   "name": "xor#337",
+   "variablen": [
+    "v0317",
+    "v0324",
+    "v0337"
+   ]
+  },
+  {
+   "name": "and#338",
+   "variablen": [
+    "v0317",
+    "v0324",
+    "v0338"
+   ]
+  },
+  {
+   "name": "and#339",
+   "variablen": [
+    "v0317",
+    "v0338",
+    "v0339"
+   ]
+  },
+  {
+   "name": "and#340",
+   "variablen": [
+    "v0324",
+    "v0339",
+    "v0340"
+   ]
+  },
+  {
+   "name": "xor#341",
+   "variablen": [
+    "v0331",
+    "v0340",
+    "v0341"
+   ]
+  },
+  {
+   "name": "and#342",
+   "variablen": [
+    "v0331",
+    "v0340",
+    "v0342"
+   ]
+  },
+  {
+   "name": "and#343",
+   "variablen": [
+    "v0340",
+    "v0342",
+    "v0343"
+   ]
+  },
+  {
+   "name": "and#344",
+   "variablen": [
+    "v0331",
+    "v0343",
+    "v0344"
+   ]
+  },
+  {
+   "name": "xor#347=0",
+   "variablen": [
+    "v0003",
+    "v0317"
+   ]
+  },
+  {
+   "name": "and#349",
+   "variablen": [
+    "v0003",
+    "v0317",
+    "v0349"
+   ]
+  },
+  {
+   "name": "and#350",
+   "variablen": [
+    "v0010",
+    "v0317",
+    "v0350"
+   ]
+  },
+  {
+   "name": "and#351",
+   "variablen": [
+    "v0003",
+    "v0010",
+    "v0351"
+   ]
+  },
+  {
+   "name": "and#352",
+   "variablen": [
+    "v0350",
+    "v0351",
+    "v0352"
+   ]
+  },
+  {
+   "name": "and#353",
+   "variablen": [
+    "v0349",
+    "v0352",
+    "v0353"
+   ]
+  },
+  {
+   "name": "xor#354",
+   "variablen": [
+    "v0004",
+    "v0337",
+    "v0354"
+   ]
+  },
+  {
+   "name": "xor#355",
+   "variablen": [
+    "v0353",
+    "v0354",
+    "v0355"
+   ]
+  },
+  {
+   "name": "and#356",
+   "variablen": [
+    "v0004",
+    "v0337",
+    "v0356"
+   ]
+  },
+  {
+   "name": "and#357",
+   "variablen": [
+    "v0337",
+    "v0353",
+    "v0357"
+   ]
+  },
+  {
+   "name": "and#358",
+   "variablen": [
+    "v0004",
+    "v0353",
+    "v0358"
+   ]
+  },
+  {
+   "name": "and#359",
+   "variablen": [
+    "v0357",
+    "v0358",
+    "v0359"
+   ]
+  },
+  {
+   "name": "and#360",
+   "variablen": [
+    "v0356",
+    "v0359",
+    "v0360"
+   ]
+  },
+  {
+   "name": "xor#361",
+   "variablen": [
+    "v0005",
+    "v0341",
+    "v0361"
+   ]
+  },
+  {
+   "name": "xor#362",
+   "variablen": [
+    "v0360",
+    "v0361",
+    "v0362"
+   ]
+  },
+  {
+   "name": "and#363",
+   "variablen": [
+    "v0005",
+    "v0341",
+    "v0363"
+   ]
+  },
+  {
+   "name": "and#364",
+   "variablen": [
+    "v0341",
+    "v0360",
+    "v0364"
+   ]
+  },
+  {
+   "name": "and#365",
+   "variablen": [
+    "v0005",
+    "v0360",
+    "v0365"
+   ]
+  },
+  {
+   "name": "and#366",
+   "variablen": [
+    "v0364",
+    "v0365",
+    "v0366"
+   ]
+  },
+  {
+   "name": "and#367",
+   "variablen": [
+    "v0363",
+    "v0366",
+    "v0367"
+   ]
+  },
+  {
+   "name": "rest_gleich#382",
+   "variablen": [
+    "v0382",
+    "v0609"
+   ]
+  },
+  {
+   "name": "xor#416",
+   "variablen": [
+    "v0010",
+    "v0355",
+    "v0653"
+   ]
+  },
+  {
+   "name": "and#418",
+   "variablen": [
+    "v0355",
+    "v0418",
+    "v0653"
+   ]
+  },
+  {
+   "name": "and#419",
+   "variablen": [
+    "v0010",
+    "v0355",
+    "v0419"
+   ]
+  },
+  {
+   "name": "and#420",
+   "variablen": [
+    "v0010",
+    "v0420",
+    "v0653"
+   ]
+  },
+  {
+   "name": "and#421",
+   "variablen": [
+    "v0419",
+    "v0420",
+    "v0421"
+   ]
+  },
+  {
+   "name": "and#422",
+   "variablen": [
+    "v0418",
+    "v0421",
+    "v0423"
+   ]
+  },
+  {
+   "name": "rest_gleich#423",
+   "variablen": [
+    "v0362",
+    "v0423"
+   ]
+  },
+  {
+   "name": "and#426",
+   "variablen": [
+    "v0362",
+    "v0423",
+    "v0426"
+   ]
+  },
+  {
+   "name": "xor#430",
+   "variablen": [
+    "v0010",
+    "v0355",
+    "v0653"
+   ]
+  },
+  {
+   "name": "and#431",
+   "variablen": [
+    "v0010",
+    "v0355",
+    "v0431"
+   ]
+  },
+  {
+   "name": "and#432",
+   "variablen": [
+    "v0010",
+    "v0431",
+    "v0432"
+   ]
+  },
+  {
+   "name": "and#433",
+   "variablen": [
+    "v0355",
+    "v0432",
+    "v0433"
+   ]
+  },
+  {
+   "name": "xor#434",
+   "variablen": [
+    "v0362",
+    "v0433",
+    "v0999"
+   ]
+  },
+  {
+   "name": "and#435",
+   "variablen": [
+    "v0362",
+    "v0433",
+    "v0435"
+   ]
+  },
+  {
+   "name": "xor#436",
+   "variablen": [
+    "v0010",
+    "v0436",
+    "v0999"
+   ]
+  },
+  {
+   "name": "xor#437",
+   "variablen": [
+    "v0010",
+    "v0437",
+    "v0653"
+   ]
+  },
+  {
+   "name": "xor#442",
+   "variablen": [
+    "v0010",
+    "v0436",
+    "v0999"
+   ]
+  },
+  {
+   "name": "and#443",
+   "variablen": [
+    "v0010",
+    "v0436",
+    "v0443"
+   ]
+  },
+  {
+   "name": "xor#444",
+   "variablen": [
+    "v0003",
+    "v0437",
+    "v0444"
+   ]
+  },
+  {
+   "name": "xor#445",
+   "variablen": [
+    "v0443",
+    "v0444",
+    "v0445"
+   ]
+  },
+  {
+   "name": "and#446",
+   "variablen": [
+    "v0003",
+    "v0437",
+    "v0446"
+   ]
+  },
+  {
+   "name": "and#447",
+   "variablen": [
+    "v0003",
+    "v0443",
+    "v0447"
+   ]
+  },
+  {
+   "name": "and#448",
+   "variablen": [
+    "v0437",
+    "v0443",
+    "v0448"
+   ]
+  },
+  {
+   "name": "and#449",
+   "variablen": [
+    "v0447",
+    "v0448",
+    "v0449"
+   ]
+  },
+  {
+   "name": "and#450",
+   "variablen": [
+    "v0446",
+    "v0449",
+    "v0450"
+   ]
+  },
+  {
+   "name": "xor#451",
+   "variablen": [
+    "v0004",
+    "v0436",
+    "v0451"
+   ]
+  },
+  {
+   "name": "xor#452",
+   "variablen": [
+    "v0450",
+    "v0451",
+    "v0452"
+   ]
+  },
+  {
+   "name": "and#453",
+   "variablen": [
+    "v0004",
+    "v0436",
+    "v0453"
+   ]
+  },
+  {
+   "name": "and#454",
+   "variablen": [
+    "v0004",
+    "v0450",
+    "v0454"
+   ]
+  },
+  {
+   "name": "and#455",
+   "variablen": [
+    "v0436",
+    "v0450",
+    "v0455"
+   ]
+  },
+  {
+   "name": "and#456",
+   "variablen": [
+    "v0454",
+    "v0455",
+    "v0456"
+   ]
+  },
+  {
+   "name": "and#457",
+   "variablen": [
+    "v0453",
+    "v0456",
+    "v0457"
+   ]
+  },
+  {
+   "name": "xor#458=1",
+   "variablen": [
+    "v0437",
+    "v1174"
+   ]
+  },
+  {
+   "name": "rest_gleich#459",
+   "variablen": [
+    "v0457",
+    "v0459"
+   ]
+  },
+  {
+   "name": "and#460",
+   "variablen": [
+    "v0437",
+    "v0460",
+    "v1174"
+   ]
+  },
+  {
+   "name": "and#461",
+   "variablen": [
+    "v0457",
+    "v0461",
+    "v1174"
+   ]
+  },
+  {
+   "name": "and#462",
+   "variablen": [
+    "v0437",
+    "v0457",
+    "v0462"
+   ]
+  },
+  {
+   "name": "and#463",
+   "variablen": [
+    "v0461",
+    "v0462",
+    "v0463"
+   ]
+  },
+  {
+   "name": "and#464",
+   "variablen": [
+    "v0460",
+    "v0463",
+    "v0464"
+   ]
+  },
+  {
+   "name": "and#466",
+   "variablen": [
+    "v0010",
+    "v0074",
+    "v0466"
+   ]
+  },
+  {
+   "name": "rest_gleich#467",
+   "variablen": [
+    "v0466",
+    "v0467"
+   ]
+  },
+  {
+   "name": "and#468",
+   "variablen": [
+    "v0010",
+    "v0011",
+    "v0468"
+   ]
+  },
+  {
+   "name": "and#469",
+   "variablen": [
+    "v0010",
+    "v0140",
+    "v0469"
+   ]
+  },
+  {
+   "name": "xor#470",
+   "variablen": [
+    "v0468",
+    "v0469",
+    "v0470"
+   ]
+  },
+  {
+   "name": "rest_gleich#471",
+   "variablen": [
+    "v0471",
+    "v0653"
+   ]
+  },
+  {
+   "name": "and#472",
+   "variablen": [
+    "v0144",
+    "v0472",
+    "v0653"
+   ]
+  },
+  {
+   "name": "xor#473",
+   "variablen": [
+    "v0471",
+    "v0472",
+    "v0473"
+   ]
+  },
+  {
+   "name": "and#474",
+   "variablen": [
+    "v0474",
+    "v0819",
+    "v0999"
+   ]
+  },
+  {
+   "name": "and#475",
+   "variablen": [
+    "v0146",
+    "v0475",
+    "v0999"
+   ]
+  },
+  {
+   "name": "xor#476",
+   "variablen": [
+    "v0474",
+    "v0475",
+    "v0476"
+   ]
+  },
+  {
+   "name": "xor#477",
+   "variablen": [
+    "v0010",
+    "v0467",
+    "v0999"
+   ]
+  },
+  {
+   "name": "and#478",
+   "variablen": [
+    "v0467",
+    "v0478",
+    "v0999"
+   ]
+  },
+  {
+   "name": "xor#479",
+   "variablen": [
+    "v0445",
+    "v0470",
+    "v0479"
+   ]
+  },
+  {
+   "name": "xor#480",
+   "variablen": [
+    "v0010",
+    "v0478",
+    "v0479"
+   ]
+  },
+  {
+   "name": "and#481",
+   "variablen": [
+    "v0445",
+    "v0470",
+    "v0481"
+   ]
+  },
+  {
+   "name": "and#482",
+   "variablen": [
+    "v0445",
+    "v0478",
+    "v0482"
+   ]
+  },
+  {
+   "name": "and#483",
+   "variablen": [
+    "v0470",
+    "v0478",
+    "v0483"
+   ]
+  },
+  {
+   "name": "and#484",
+   "variablen": [
+    "v0482",
+    "v0483",
+    "v0484"
+   ]
+  },
+  {
+   "name": "and#485",
+   "variablen": [
+    "v0481",
+    "v0484",
+    "v0485"
+   ]
+  },
+  {
+   "name": "xor#486",
+   "variablen": [
+    "v0452",
+    "v0473",
+    "v0486"
+   ]
+  },
+  {
+   "name": "xor#487",
+   "variablen": [
+    "v0011",
+    "v0485",
+    "v0486"
+   ]
+  },
+  {
+   "name": "and#488",
+   "variablen": [
+    "v0452",
+    "v0473",
+    "v0488"
+   ]
+  },
+  {
+   "name": "and#489",
+   "variablen": [
+    "v0452",
+    "v0485",
+    "v0489"
+   ]
+  },
+  {
+   "name": "and#490",
+   "variablen": [
+    "v0473",
+    "v0485",
+    "v0490"
+   ]
+  },
+  {
+   "name": "and#491",
+   "variablen": [
+    "v0489",
+    "v0490",
+    "v0491"
+   ]
+  },
+  {
+   "name": "and#492",
+   "variablen": [
+    "v0488",
+    "v0491",
+    "v0492"
+   ]
+  },
+  {
+   "name": "xor#493",
+   "variablen": [
+    "v0459",
+    "v0476",
+    "v0493"
+   ]
+  },
+  {
+   "name": "xor#494",
+   "variablen": [
+    "v0492",
+    "v0493",
+    "v0494"
+   ]
+  },
+  {
+   "name": "and#495",
+   "variablen": [
+    "v0459",
+    "v0476",
+    "v0495"
+   ]
+  },
+  {
+   "name": "and#496",
+   "variablen": [
+    "v0459",
+    "v0492",
+    "v0496"
+   ]
+  },
+  {
+   "name": "and#497",
+   "variablen": [
+    "v0476",
+    "v0492",
+    "v0497"
+   ]
+  },
+  {
+   "name": "and#498",
+   "variablen": [
+    "v0496",
+    "v0497",
+    "v0498"
+   ]
+  },
+  {
+   "name": "and#499",
+   "variablen": [
+    "v0495",
+    "v0498",
+    "v0499"
+   ]
+  },
+  {
+   "name": "rest_wert#501",
+   "variablen": [
+    "v0501"
+   ]
+  },
+  {
+   "name": "and#502",
+   "variablen": [
+    "v0010",
+    "v0501",
+    "v0502"
+   ]
+  },
+  {
+   "name": "and#503=0",
+   "variablen": [
+    "v0010",
+    "v0502"
+   ]
+  },
+  {
+   "name": "xor#506",
+   "variablen": [
+    "v0009",
+    "v0011",
+    "v0494"
+   ]
+  },
+  {
+   "name": "and#507",
+   "variablen": [
+    "v0011",
+    "v0494",
+    "v0507"
+   ]
+  },
+  {
+   "name": "xor#603",
+   "variablen": [
+    "v0011",
+    "v0653",
+    "v1167"
+   ]
+  },
+  {
+   "name": "and#605",
+   "variablen": [
+    "v0011",
+    "v0605",
+    "v0653"
+   ]
+  },
+  {
+   "name": "and#607",
+   "variablen": [
+    "v0011",
+    "v0605",
+    "v0607"
+   ]
+  },
+  {
+   "name": "and#608",
+   "variablen": [
+    "v0607",
+    "v0608",
+    "v0653"
+   ]
+  },
+  {
+   "name": "xor#610",
+   "variablen": [
+    "v0608",
+    "v0609",
+    "v1174"
+   ]
+  },
+  {
+   "name": "and#612",
+   "variablen": [
+    "v0608",
+    "v0609",
+    "v0612"
+   ]
+  },
+  {
+   "name": "xor#616",
+   "variablen": [
+    "v0011",
+    "v0616",
+    "v1174"
+   ]
+  },
+  {
+   "name": "xor#617",
+   "variablen": [
+    "v0010",
+    "v0617",
+    "v1167"
+   ]
+  },
+  {
+   "name": "xor#622=0",
+   "variablen": [
+    "v0074",
+    "v0616"
+   ]
+  },
+  {
+   "name": "and#623",
+   "variablen": [
+    "v0074",
+    "v0616",
+    "v0623"
+   ]
+  },
+  {
+   "name": "xor#624",
+   "variablen": [
+    "v0140",
+    "v0617",
+    "v0624"
+   ]
+  },
+  {
+   "name": "xor#625",
+   "variablen": [
+    "v0623",
+    "v0624",
+    "v0625"
+   ]
+  },
+  {
+   "name": "and#626",
+   "variablen": [
+    "v0140",
+    "v0617",
+    "v0626"
+   ]
+  },
+  {
+   "name": "and#627",
+   "variablen": [
+    "v0140",
+    "v0623",
+    "v0627"
+   ]
+  },
+  {
+   "name": "and#628",
+   "variablen": [
+    "v0617",
+    "v0623",
+    "v0628"
+   ]
+  },
+  {
+   "name": "and#629",
+   "variablen": [
+    "v0627",
+    "v0628",
+    "v0629"
+   ]
+  },
+  {
+   "name": "and#630",
+   "variablen": [
+    "v0626",
+    "v0629",
+    "v0630"
+   ]
+  },
+  {
+   "name": "xor#631",
+   "variablen": [
+    "v0144",
+    "v0616",
+    "v0631"
+   ]
+  },
+  {
+   "name": "xor#632",
+   "variablen": [
+    "v0630",
+    "v0631",
+    "v0632"
+   ]
+  },
+  {
+   "name": "and#633",
+   "variablen": [
+    "v0144",
+    "v0616",
+    "v0633"
+   ]
+  },
+  {
+   "name": "and#634",
+   "variablen": [
+    "v0144",
+    "v0630",
+    "v0634"
+   ]
+  },
+  {
+   "name": "and#635",
+   "variablen": [
+    "v0616",
+    "v0630",
+    "v0635"
+   ]
+  },
+  {
+   "name": "and#636",
+   "variablen": [
+    "v0634",
+    "v0635",
+    "v0636"
+   ]
+  },
+  {
+   "name": "and#637",
+   "variablen": [
+    "v0633",
+    "v0636",
+    "v0637"
+   ]
+  },
+  {
+   "name": "xor#638",
+   "variablen": [
+    "v0146",
+    "v0617",
+    "v0638"
+   ]
+  },
+  {
+   "name": "xor#639",
+   "variablen": [
+    "v0637",
+    "v0638",
+    "v0639"
+   ]
+  },
+  {
+   "name": "and#640",
+   "variablen": [
+    "v0146",
+    "v0617",
+    "v0640"
+   ]
+  },
+  {
+   "name": "and#641",
+   "variablen": [
+    "v0146",
+    "v0637",
+    "v0641"
+   ]
+  },
+  {
+   "name": "and#642",
+   "variablen": [
+    "v0617",
+    "v0637",
+    "v0642"
+   ]
+  },
+  {
+   "name": "and#643",
+   "variablen": [
+    "v0641",
+    "v0642",
+    "v0643"
+   ]
+  },
+  {
+   "name": "and#644",
+   "variablen": [
+    "v0640",
+    "v0643",
+    "v0644"
+   ]
+  },
+  {
+   "name": "and#648",
+   "variablen": [
+    "v0010",
+    "v0011",
+    "v0648"
+   ]
+  },
+  {
+   "name": "rest_wert#649",
+   "variablen": [
+    "v0649"
+   ]
+  },
+  {
+   "name": "xor#650",
+   "variablen": [
+    "v0648",
+    "v0649",
+    "v0650"
+   ]
+  },
+  {
+   "name": "and#651",
+   "variablen": [
+    "v0651",
+    "v0653",
+    "v1167"
+   ]
+  },
+  {
+   "name": "and#652",
+   "variablen": [
+    "v0652",
+    "v0653",
+    "v1167"
+   ]
+  },
+  {
+   "name": "xor#653",
+   "variablen": [
+    "v0651",
+    "v0652",
+    "v0653"
+   ]
+  },
+  {
+   "name": "and#654",
+   "variablen": [
+    "v0654",
+    "v0999",
+    "v1174"
+   ]
+  },
+  {
+   "name": "and#655",
+   "variablen": [
+    "v0655",
+    "v0819",
+    "v1174"
+   ]
+  },
+  {
+   "name": "xor#656",
+   "variablen": [
+    "v0654",
+    "v0655",
+    "v0656"
+   ]
+  },
+  {
+   "name": "xor#659",
+   "variablen": [
+    "v0011",
+    "v0625",
+    "v0650"
+   ]
+  },
+  {
+   "name": "xor#660",
+   "variablen": [
+    "v0010",
+    "v0011",
+    "v0660"
+   ]
+  },
+  {
+   "name": "and#661",
+   "variablen": [
+    "v0625",
+    "v0650",
+    "v0661"
+   ]
+  },
+  {
+   "name": "and#662",
+   "variablen": [
+    "v0010",
+    "v0625",
+    "v0662"
+   ]
+  },
+  {
+   "name": "and#663",
+   "variablen": [
+    "v0010",
+    "v0650",
+    "v0663"
+   ]
+  },
+  {
+   "name": "and#664",
+   "variablen": [
+    "v0662",
+    "v0663",
+    "v0664"
+   ]
+  },
+  {
+   "name": "and#665",
+   "variablen": [
+    "v0661",
+    "v0664",
+    "v0665"
+   ]
+  },
+  {
+   "name": "xor#666",
+   "variablen": [
+    "v0632",
+    "v0653",
+    "v0666"
+   ]
+  },
+  {
+   "name": "xor#667",
+   "variablen": [
+    "v0665",
+    "v0666",
+    "v0667"
+   ]
+  },
+  {
+   "name": "and#668",
+   "variablen": [
+    "v0632",
+    "v0653",
+    "v0668"
+   ]
+  },
+  {
+   "name": "and#669",
+   "variablen": [
+    "v0632",
+    "v0665",
+    "v0669"
+   ]
+  },
+  {
+   "name": "and#670",
+   "variablen": [
+    "v0653",
+    "v0665",
+    "v0670"
+   ]
+  },
+  {
+   "name": "and#671",
+   "variablen": [
+    "v0669",
+    "v0670",
+    "v0671"
+   ]
+  },
+  {
+   "name": "and#672",
+   "variablen": [
+    "v0668",
+    "v0671",
+    "v0672"
+   ]
+  },
+  {
+   "name": "xor#673",
+   "variablen": [
+    "v0639",
+    "v0656",
+    "v0673"
+   ]
+  },
+  {
+   "name": "xor#674",
+   "variablen": [
+    "v0672",
+    "v0673",
+    "v0674"
+   ]
+  },
+  {
+   "name": "and#675",
+   "variablen": [
+    "v0639",
+    "v0656",
+    "v0675"
+   ]
+  },
+  {
+   "name": "and#676",
+   "variablen": [
+    "v0639",
+    "v0672",
+    "v0676"
+   ]
+  },
+  {
+   "name": "and#677",
+   "variablen": [
+    "v0656",
+    "v0672",
+    "v0677"
+   ]
+  },
+  {
+   "name": "and#678",
+   "variablen": [
+    "v0676",
+    "v0677",
+    "v0678"
+   ]
+  },
+  {
+   "name": "and#679",
+   "variablen": [
+    "v0675",
+    "v0678",
+    "v0679"
+   ]
+  },
+  {
+   "name": "xor#680",
+   "variablen": [
+    "v0010",
+    "v0011",
+    "v0660"
+   ]
+  },
+  {
+   "name": "and#681",
+   "variablen": [
+    "v0010",
+    "v0660",
+    "v0681"
+   ]
+  },
+  {
+   "name": "xor#682",
+   "variablen": [
+    "v0667",
+    "v0681",
+    "v0682"
+   ]
+  },
+  {
+   "name": "and#683",
+   "variablen": [
+    "v0667",
+    "v0681",
+    "v0683"
+   ]
+  },
+  {
+   "name": "and#684",
+   "variablen": [
+    "v0681",
+    "v0683",
+    "v0684"
+   ]
+  },
+  {
+   "name": "and#685",
+   "variablen": [
+    "v0667",
+    "v0684",
+    "v0685"
+   ]
+  },
+  {
+   "name": "xor#686",
+   "variablen": [
+    "v0674",
+    "v0685",
+    "v0686"
+   ]
+  },
+  {
+   "name": "and#687",
+   "variablen": [
+    "v0674",
+    "v0685",
+    "v0687"
+   ]
+  },
+  {
+   "name": "xor#697",
+   "variablen": [
+    "v0011",
+    "v0012",
+    "v0682"
+   ]
+  },
+  {
+   "name": "and#699",
+   "variablen": [
+    "v0012",
+    "v0682",
+    "v0699"
+   ]
+  },
+  {
+   "name": "and#700",
+   "variablen": [
+    "v0011",
+    "v0682",
+    "v0700"
+   ]
+  },
+  {
+   "name": "and#701",
+   "variablen": [
+    "v0011",
+    "v0012",
+    "v0701"
+   ]
+  },
+  {
+   "name": "and#702",
+   "variablen": [
+    "v0700",
+    "v0701",
+    "v0702"
+   ]
+  },
+  {
+   "name": "and#703",
+   "variablen": [
+    "v0699",
+    "v0702",
+    "v0704"
+   ]
+  },
+  {
+   "name": "xor#704",
+   "variablen": [
+    "v0013",
+    "v0686",
+    "v0704"
+   ]
+  },
+  {
+   "name": "and#706",
+   "variablen": [
+    "v0013",
+    "v0686",
+    "v0706"
+   ]
+  },
+  {
+   "name": "and#707",
+   "variablen": [
+    "v0686",
+    "v0704",
+    "v0707"
+   ]
+  },
+  {
+   "name": "and#708",
+   "variablen": [
+    "v0013",
+    "v0704",
+    "v0708"
+   ]
+  },
+  {
+   "name": "and#709",
+   "variablen": [
+    "v0707",
+    "v0708",
+    "v0709"
+   ]
+  },
+  {
+   "name": "and#710",
+   "variablen": [
+    "v0706",
+    "v0709",
+    "v0710"
+   ]
+  },
+  {
+   "name": "xor#839",
+   "variablen": [
+    "v0010",
+    "v0011",
+    "v0839"
+   ]
+  },
+  {
+   "name": "rest_gleich#840",
+   "variablen": [
+    "v0003",
+    "v0839"
+   ]
+  },
+  {
+   "name": "and#841",
+   "variablen": [
+    "v0010",
+    "v0011",
+    "v0841"
+   ]
+  },
+  {
+   "name": "xor#846",
+   "variablen": [
+    "v0011",
+    "v0653",
+    "v1167"
+   ]
+  },
+  {
+   "name": "xor#847",
+   "variablen": [
+    "v0011",
+    "v0841",
+    "v0847"
+   ]
+  },
+  {
+   "name": "and#848",
+   "variablen": [
+    "v0653",
+    "v0848",
+    "v1167"
+   ]
+  },
+  {
+   "name": "and#849",
+   "variablen": [
+    "v0653",
+    "v0841",
+    "v0849"
+   ]
+  },
+  {
+   "name": "and#850",
+   "variablen": [
+    "v0841",
+    "v0850",
+    "v1167"
+   ]
+  },
+  {
+   "name": "and#851",
+   "variablen": [
+    "v0849",
+    "v0850",
+    "v0851"
+   ]
+  },
+  {
+   "name": "and#852",
+   "variablen": [
+    "v0848",
+    "v0851",
+    "v0852"
+   ]
+  },
+  {
+   "name": "xor#853",
+   "variablen": [
+    "v0819",
+    "v0853",
+    "v0999"
+   ]
+  },
+  {
+   "name": "xor#854",
+   "variablen": [
+    "v0852",
+    "v0853",
+    "v0854"
+   ]
+  },
+  {
+   "name": "and#855",
+   "variablen": [
+    "v0819",
+    "v0855",
+    "v0999"
+   ]
+  },
+  {
+   "name": "and#856",
+   "variablen": [
+    "v0819",
+    "v0852",
+    "v0856"
+   ]
+  },
+  {
+   "name": "and#857",
+   "variablen": [
+    "v0852",
+    "v0857",
+    "v0999"
+   ]
+  },
+  {
+   "name": "and#858",
+   "variablen": [
+    "v0856",
+    "v0857",
+    "v0858"
+   ]
+  },
+  {
+   "name": "and#859",
+   "variablen": [
+    "v0855",
+    "v0858",
+    "v0859"
+   ]
+  },
+  {
+   "name": "xor#860",
+   "variablen": [
+    "v0003",
+    "v0010",
+    "v0011"
+   ]
+  },
+  {
+   "name": "and#861",
+   "variablen": [
+    "v0003",
+    "v0010",
+    "v0861"
+   ]
+  },
+  {
+   "name": "xor#862",
+   "variablen": [
+    "v0847",
+    "v0861",
+    "v0862"
+   ]
+  },
+  {
+   "name": "and#863",
+   "variablen": [
+    "v0847",
+    "v0861",
+    "v0863"
+   ]
+  },
+  {
+   "name": "xor#864",
+   "variablen": [
+    "v0854",
+    "v0863",
+    "v0864"
+   ]
+  },
+  {
+   "name": "and#865",
+   "variablen": [
+    "v0854",
+    "v0863",
+    "v0865"
+   ]
+  },
+  {
+   "name": "and#866",
+   "variablen": [
+    "v0863",
+    "v0865",
+    "v0866"
+   ]
+  },
+  {
+   "name": "and#867",
+   "variablen": [
+    "v0854",
+    "v0866",
+    "v0867"
+   ]
+  },
+  {
+   "name": "xor#870",
+   "variablen": [
+    "v0003",
+    "v0010",
+    "v0011"
+   ]
+  },
+  {
+   "name": "and#872",
+   "variablen": [
+    "v0003",
+    "v0011",
+    "v0872"
+   ]
+  },
+  {
+   "name": "and#873",
+   "variablen": [
+    "v0010",
+    "v0011",
+    "v0873"
+   ]
+  },
+  {
+   "name": "and#874",
+   "variablen": [
+    "v0003",
+    "v0010",
+    "v0874"
+   ]
+  },
+  {
+   "name": "and#875",
+   "variablen": [
+    "v0873",
+    "v0874",
+    "v0875"
+   ]
+  },
+  {
+   "name": "and#876",
+   "variablen": [
+    "v0872",
+    "v0875",
+    "v0877"
+   ]
+  },
+  {
+   "name": "xor#877",
+   "variablen": [
+    "v0004",
+    "v0862",
+    "v0877"
+   ]
+  },
+  {
+   "name": "and#879",
+   "variablen": [
+    "v0004",
+    "v0862",
+    "v0879"
+   ]
+  },
+  {
+   "name": "and#880",
+   "variablen": [
+    "v0862",
+    "v0877",
+    "v0880"
+   ]
+  },
+  {
+   "name": "and#881",
+   "variablen": [
+    "v0004",
+    "v0877",
+    "v0881"
+   ]
+  },
+  {
+   "name": "and#882",
+   "variablen": [
+    "v0880",
+    "v0881",
+    "v0882"
+   ]
+  },
+  {
+   "name": "and#883",
+   "variablen": [
+    "v0879",
+    "v0882",
+    "v0884"
+   ]
+  },
+  {
+   "name": "xor#884",
+   "variablen": [
+    "v0005",
+    "v0864",
+    "v0884"
+   ]
+  },
+  {
+   "name": "and#886",
+   "variablen": [
+    "v0005",
+    "v0864",
+    "v0886"
+   ]
+  },
+  {
+   "name": "and#887",
+   "variablen": [
+    "v0864",
+    "v0884",
+    "v0887"
+   ]
+  },
+  {
+   "name": "and#888",
+   "variablen": [
+    "v0005",
+    "v0884",
+    "v0888"
+   ]
+  },
+  {
+   "name": "and#889",
+   "variablen": [
+    "v0887",
+    "v0888",
+    "v0889"
+   ]
+  },
+  {
+   "name": "and#890",
+   "variablen": [
+    "v0886",
+    "v0889",
+    "v0890"
+   ]
+  },
+  {
+   "name": "rest_wert#987",
+   "variablen": [
+    "v0987"
+   ]
+  },
+  {
+   "name": "and#989",
+   "variablen": [
+    "v0010",
+    "v0987",
+    "v0989"
+   ]
+  },
+  {
+   "name": "and#990=0",
+   "variablen": [
+    "v0010",
+    "v0989"
+   ]
+  },
+  {
+   "name": "xor#1026",
+   "variablen": [
+    "v0011",
+    "v0653",
+    "v1167"
+   ]
+  },
+  {
+   "name": "and#1028",
+   "variablen": [
+    "v0653",
+    "v1028",
+    "v1167"
+   ]
+  },
+  {
+   "name": "xor#1033",
+   "variablen": [
+    "v0999",
+    "v1033",
+    "v1174"
+   ]
+  },
+  {
+   "name": "xor#1034",
+   "variablen": [
+    "v1028",
+    "v1033",
+    "v1034"
+   ]
+  },
+  {
+   "name": "and#1035",
+   "variablen": [
+    "v0999",
+    "v1035",
+    "v1174"
+   ]
+  },
+  {
+   "name": "and#1036",
+   "variablen": [
+    "v0999",
+    "v1028",
+    "v1036"
+   ]
+  },
+  {
+   "name": "and#1037",
+   "variablen": [
+    "v1028",
+    "v1037",
+    "v1174"
+   ]
+  },
+  {
+   "name": "and#1038",
+   "variablen": [
+    "v1036",
+    "v1037",
+    "v1038"
+   ]
+  },
+  {
+   "name": "and#1039",
+   "variablen": [
+    "v1035",
+    "v1038",
+    "v1039"
+   ]
+  },
+  {
+   "name": "xor#1040",
+   "variablen": [
+    "v0009",
+    "v0011",
+    "v1034"
+   ]
+  },
+  {
+   "name": "and#1041",
+   "variablen": [
+    "v0011",
+    "v1034",
+    "v1041"
+   ]
+  },
+  {
+   "name": "and#1042",
+   "variablen": [
+    "v0011",
+    "v1041",
+    "v1042"
+   ]
+  },
+  {
+   "name": "and#1043",
+   "variablen": [
+    "v1034",
+    "v1042",
+    "v1043"
+   ]
+  },
+  {
+   "name": "xor#1168",
+   "variablen": [
+    "v0011",
+    "v0653",
+    "v1167"
+   ]
+  },
+  {
+   "name": "and#1170",
+   "variablen": [
+    "v0011",
+    "v1167",
+    "v1170"
+   ]
+  },
+  {
+   "name": "xor#1175",
+   "variablen": [
+    "v1170",
+    "v1174",
+    "v1209"
+   ]
+  },
+  {
+   "name": "and#1177",
+   "variablen": [
+    "v1170",
+    "v1174",
+    "v1177"
+   ]
+  },
+  {
+   "name": "and#1179",
+   "variablen": [
+    "v1170",
+    "v1177",
+    "v1179"
+   ]
+  },
+  {
+   "name": "and#1180",
+   "variablen": [
+    "v1174",
+    "v1179",
+    "v1180"
+   ]
+  },
+  {
+   "name": "xor#1196",
+   "variablen": [
+    "v0010",
+    "v0011",
+    "v1196"
+   ]
+  },
+  {
+   "name": "and#1198",
+   "variablen": [
+    "v0010",
+    "v0011",
+    "v1198"
+   ]
+  },
+  {
+   "name": "xor#1203",
+   "variablen": [
+    "v0653",
+    "v1198",
+    "v1203"
+   ]
+  },
+  {
+   "name": "and#1205",
+   "variablen": [
+    "v0653",
+    "v1198",
+    "v1205"
+   ]
+  },
+  {
+   "name": "xor#1210",
+   "variablen": [
+    "v1205",
+    "v1209",
+    "v1210"
+   ]
+  },
+  {
+   "name": "and#1212",
+   "variablen": [
+    "v1205",
+    "v1209",
+    "v1212"
+   ]
+  },
+  {
+   "name": "xor#1216",
+   "variablen": [
+    "v1196",
+    "v1203",
+    "v1216"
+   ]
+  },
+  {
+   "name": "and#1217",
+   "variablen": [
+    "v1196",
+    "v1203",
+    "v1217"
+   ]
+  },
+  {
+   "name": "xor#1218",
+   "variablen": [
+    "v1210",
+    "v1217",
+    "v1218"
+   ]
+  },
+  {
+   "name": "and#1219",
+   "variablen": [
+    "v1210",
+    "v1217",
+    "v1219"
+   ]
+  },
+  {
+   "name": "xor#1222",
+   "variablen": [
+    "v0010",
+    "v0011",
+    "v1196"
+   ]
+  },
+  {
+   "name": "and#1224",
+   "variablen": [
+    "v0011",
+    "v1196",
+    "v1224"
+   ]
+  },
+  {
+   "name": "and#1225",
+   "variablen": [
+    "v0010",
+    "v1196",
+    "v1225"
+   ]
+  },
+  {
+   "name": "and#1226",
+   "variablen": [
+    "v0010",
+    "v0011",
+    "v1226"
+   ]
+  },
+  {
+   "name": "and#1227",
+   "variablen": [
+    "v1225",
+    "v1226",
+    "v1227"
+   ]
+  },
+  {
+   "name": "and#1228",
+   "variablen": [
+    "v1224",
+    "v1227",
+    "v1229"
+   ]
+  },
+  {
+   "name": "xor#1229",
+   "variablen": [
+    "v0012",
+    "v1216",
+    "v1229"
+   ]
+  },
+  {
+   "name": "and#1231",
+   "variablen": [
+    "v0012",
+    "v1216",
+    "v1231"
+   ]
+  },
+  {
+   "name": "and#1232",
+   "variablen": [
+    "v1216",
+    "v1229",
+    "v1232"
+   ]
+  },
+  {
+   "name": "and#1233",
+   "variablen": [
+    "v0012",
+    "v1229",
+    "v1233"
+   ]
+  },
+  {
+   "name": "and#1234",
+   "variablen": [
+    "v1232",
+    "v1233",
+    "v1234"
+   ]
+  },
+  {
+   "name": "and#1235",
+   "variablen": [
+    "v1231",
+    "v1234",
+    "v1236"
+   ]
+  },
+  {
+   "name": "xor#1236",
+   "variablen": [
+    "v0013",
+    "v1218",
+    "v1236"
+   ]
+  },
+  {
+   "name": "and#1238",
+   "variablen": [
+    "v0013",
+    "v1218",
+    "v1238"
+   ]
+  },
+  {
+   "name": "and#1239",
+   "variablen": [
+    "v1218",
+    "v1236",
+    "v1239"
+   ]
+  },
+  {
+   "name": "and#1240",
+   "variablen": [
+    "v0013",
+    "v1236",
+    "v1240"
+   ]
+  },
+  {
+   "name": "and#1241",
+   "variablen": [
+    "v1239",
+    "v1240",
+    "v1241"
+   ]
+  },
+  {
+   "name": "and#1242",
+   "variablen": [
+    "v1238",
+    "v1241",
+    "v1242"
+   ]
+  }
+ ],
+ "zeiten_s": {
+  "ableitung": 0.2529,
+  "umbau": 0.0027,
+  "min_fill_und_strukturpruefung": 0.631
+ },
+ "struktur": {
+  "bestanden": true,
+  "gruppen": 492,
+  "kanten": 491,
+  "wurzeln": 1,
+  "groesste_gruppe": 18,
+  "histogramm": {
+   "1": 1,
+   "2": 5,
+   "3": 56,
+   "4": 81,
+   "5": 216,
+   "6": 15,
+   "7": 32,
+   "8": 22,
+   "9": 10,
+   "10": 13,
+   "11": 9,
+   "12": 8,
+   "13": 6,
+   "14": 6,
+   "15": 2,
+   "16": 4,
+   "17": 4,
+   "18": 2
+  },
+  "erstmals": [
+   [
+    1,
+    2
+   ],
+   [
+    2,
+    3
+   ],
+   [
+    49,
+    4
+   ],
+   [
+    121,
+    5
+   ],
+   [
+    347,
+    6
+   ],
+   [
+    358,
+    7
+   ],
+   [
+    359,
+    8
+   ],
+   [
+    391,
+    9
+   ],
+   [
+    422,
+    10
+   ],
+   [
+    423,
+    11
+   ],
+   [
+    428,
+    12
+   ],
+   [
+    446,
+    13
+   ],
+   [
+    447,
+    14
+   ],
+   [
+    457,
+    15
+   ],
+   [
+    459,
+    16
+   ],
+   [
+    464,
+    18
+   ]
+  ],
+  "gruppen_ueber_8": 64,
+  "gruppen_ueber_16": 6,
+  "summe_2_hoch_k_obergrenze_volltabellen": "1.613e+06"
+ },
+ "pruefung": {
+  "E4_kein_widerspruch": true,
+  "E3_struktur": true
+ },
+ "bestanden": true,
+ "maxrss_mib": 17.8,
+ "rlimit_as": [
+  -1,
+  -1
+ ],
+ "abhaengigkeiten": {
+  "pruefstand": {
+   "pfad": "/home/claude/kastenmaschine/l1/pruefstand.py",
+   "sha256": "0ae511450470ca91c32a7a25a8d75f83985d06d6f217c27f16e317ab2ac1d910"
+  },
+  "gatter": {
+   "pfad": "/home/claude/kastenmaschine/miner_pruefung/sha256d/gatter.py",
+   "sha256": "75611ddf49d31dc933fe81ee56fe3a4e10cd1f1a3a571bf25fe6108b485f8f4f"
+  },
+  "d6": {
+   "pfad": "/home/claude/kastenmaschine/l1/d6.py",
+   "sha256": "91ec11fc4d1d1bcf0045b0dc73a3525f0fadfd116c939101e87160bb77f6c794"
+  },
+  "gruppen": {
+   "pfad": "/home/claude/kastenmaschine/l1/stern/gruppen.py",
+   "sha256": "4c8f4546ee3cd00c82029c24226e06eacab9be5890fbf6314f53495943a40878"
+  },
+  "stern": {
+   "pfad": "/home/claude/kastenmaschine/l1/stern/stern.py",
+   "sha256": "da8d10bbe24deb7264d4abc66640c002d7379d037cf1a6c8b869589f8c536bfb"
+  },
+  "e1_bit": {
+   "pfad": "/home/claude/kastenmaschine/miner_pruefung/sha256d/e1_bit.py",
+   "sha256": "cfa14b5181eda91e8b92bc4d1baded6137d39ba325c3cf524ea4d8a6f4a23248"
+  }
+ }
+}

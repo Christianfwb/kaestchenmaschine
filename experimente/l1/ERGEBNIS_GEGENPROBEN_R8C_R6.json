@@ -1,0 +1,546 @@
+[
+ {
+  "regel": "R8c",
+  "name": "f=g -> z=f",
+  "ohne": {
+   "status": "FIXPUNKT",
+   "wahr": 4,
+   "erlaubt": 8,
+   "verloren": 0,
+   "regeln": {},
+   "bez": [
+    "x1^x2=0"
+   ]
+  },
+  "mit": {
+   "status": "FIXPUNKT",
+   "wahr": 4,
+   "erlaubt": 4,
+   "verloren": 0,
+   "regeln": {
+    "R8c": 1
+   },
+   "bez": [
+    "x1^x3=0",
+    "x2^x3=0"
+   ]
+  }
+ },
+ {
+  "regel": "R8c",
+  "name": "f=~g -> z^e^f=1",
+  "ohne": {
+   "status": "FIXPUNKT",
+   "wahr": 4,
+   "erlaubt": 8,
+   "verloren": 0,
+   "regeln": {},
+   "bez": [
+    "x1^x2=1"
+   ]
+  },
+  "mit": {
+   "status": "FIXPUNKT",
+   "wahr": 4,
+   "erlaubt": 4,
+   "verloren": 0,
+   "regeln": {
+    "R8c": 1
+   },
+   "bez": [
+    "x0^x2^x3=0",
+    "x1^x2=1"
+   ]
+  }
+ },
+ {
+  "regel": "R8c",
+  "name": "e=f,g=0 -> z=e",
+  "ohne": {
+   "status": "FIXPUNKT",
+   "wahr": 2,
+   "erlaubt": 4,
+   "verloren": 0,
+   "regeln": {},
+   "bez": [
+    "x0^x1=0"
+   ]
+  },
+  "mit": {
+   "status": "FIXPUNKT",
+   "wahr": 2,
+   "erlaubt": 2,
+   "verloren": 0,
+   "regeln": {
+    "R8c": 1
+   },
+   "bez": [
+    "x0^x3=0",
+    "x1^x3=0"
+   ]
+  }
+ },
+ {
+  "regel": "R8c",
+  "name": "e=f,g=1 -> z=1",
+  "ohne": {
+   "status": "FIXPUNKT",
+   "wahr": 2,
+   "erlaubt": 4,
+   "verloren": 0,
+   "regeln": {},
+   "bez": [
+    "x0^x1=0"
+   ]
+  },
+  "mit": {
+   "status": "FIXPUNKT",
+   "wahr": 2,
+   "erlaubt": 2,
+   "verloren": 0,
+   "regeln": {
+    "R8c": 1
+   },
+   "bez": [
+    "x0^x1=0"
+   ]
+  }
+ },
+ {
+  "regel": "R8c",
+  "name": "e=~f,g=0 -> z=0",
+  "ohne": {
+   "status": "FIXPUNKT",
+   "wahr": 2,
+   "erlaubt": 4,
+   "verloren": 0,
+   "regeln": {},
+   "bez": [
+    "x0^x1=1"
+   ]
+  },
+  "mit": {
+   "status": "FIXPUNKT",
+   "wahr": 2,
+   "erlaubt": 2,
+   "verloren": 0,
+   "regeln": {
+    "R8c": 1
+   },
+   "bez": [
+    "x0^x1=1"
+   ]
+  }
+ },
+ {
+  "regel": "R8c",
+  "name": "e=~f,g=1 -> z=~e",
+  "ohne": {
+   "status": "FIXPUNKT",
+   "wahr": 2,
+   "erlaubt": 4,
+   "verloren": 0,
+   "regeln": {},
+   "bez": [
+    "x0^x1=1"
+   ]
+  },
+  "mit": {
+   "status": "FIXPUNKT",
+   "wahr": 2,
+   "erlaubt": 2,
+   "verloren": 0,
+   "regeln": {
+    "R8c": 1
+   },
+   "bez": [
+    "x0^x3=1",
+    "x1^x3=0"
+   ]
+  }
+ },
+ {
+  "regel": "R8c",
+  "name": "Ch(~e,f,~g) f=~g -> z=f",
+  "ohne": {
+   "status": "FIXPUNKT",
+   "wahr": 4,
+   "erlaubt": 8,
+   "verloren": 0,
+   "regeln": {},
+   "bez": [
+    "x1^x2=1"
+   ]
+  },
+  "mit": {
+   "status": "FIXPUNKT",
+   "wahr": 4,
+   "erlaubt": 4,
+   "verloren": 0,
+   "regeln": {
+    "R8c": 1
+   },
+   "bez": [
+    "x1^x3=0",
+    "x2^x3=1"
+   ]
+  }
+ },
+ {
+  "regel": "R8c",
+  "name": "Ch(e,~f,g) e=~f,g=0 -> z=e",
+  "ohne": {
+   "status": "FIXPUNKT",
+   "wahr": 2,
+   "erlaubt": 4,
+   "verloren": 0,
+   "regeln": {},
+   "bez": [
+    "x0^x1=1"
+   ]
+  },
+  "mit": {
+   "status": "FIXPUNKT",
+   "wahr": 2,
+   "erlaubt": 2,
+   "verloren": 0,
+   "regeln": {
+    "R8c": 1
+   },
+   "bez": [
+    "x0^x3=0",
+    "x1^x3=1"
+   ]
+  }
+ },
+ {
+  "regel": "R8c",
+  "name": "z negativ: Ch(e,~f,~g), f=g -> z=~f",
+  "ohne": {
+   "status": "FIXPUNKT",
+   "wahr": 4,
+   "erlaubt": 8,
+   "verloren": 0,
+   "regeln": {},
+   "bez": [
+    "x1^x2=0"
+   ]
+  },
+  "mit": {
+   "status": "FIXPUNKT",
+   "wahr": 4,
+   "erlaubt": 4,
+   "verloren": 0,
+   "regeln": {
+    "R8c": 1
+   },
+   "bez": [
+    "x1^x3=1",
+    "x2^x3=1"
+   ]
+  }
+ },
+ {
+  "regel": "R8c",
+  "name": "z negativ: Ch(e,~f,~g), e=f,g=0 -> z=~e",
+  "ohne": {
+   "status": "FIXPUNKT",
+   "wahr": 2,
+   "erlaubt": 4,
+   "verloren": 0,
+   "regeln": {},
+   "bez": [
+    "x0^x1=0"
+   ]
+  },
+  "mit": {
+   "status": "FIXPUNKT",
+   "wahr": 2,
+   "erlaubt": 2,
+   "verloren": 0,
+   "regeln": {
+    "R8c": 1
+   },
+   "bez": [
+    "x0^x3=1",
+    "x1^x3=1"
+   ]
+  }
+ },
+ {
+  "regel": "R8c",
+  "name": "z=1, e=0 -> g=1",
+  "ohne": {
+   "status": "FIXPUNKT",
+   "wahr": 2,
+   "erlaubt": 2,
+   "verloren": 0,
+   "regeln": {},
+   "bez": []
+  },
+  "mit": {
+   "status": "FIXPUNKT",
+   "wahr": 2,
+   "erlaubt": 2,
+   "verloren": 0,
+   "regeln": {
+    "R8c": 1
+   },
+   "bez": []
+  }
+ },
+ {
+  "regel": "R8c",
+  "name": "z=0, f=g -> f=0",
+  "ohne": {
+   "status": "FIXPUNKT",
+   "wahr": 2,
+   "erlaubt": 4,
+   "verloren": 0,
+   "regeln": {},
+   "bez": [
+    "x1^x3=0",
+    "x2^x3=0"
+   ]
+  },
+  "mit": {
+   "status": "FIXPUNKT",
+   "wahr": 2,
+   "erlaubt": 2,
+   "verloren": 0,
+   "regeln": {
+    "R8c": 1
+   },
+   "bez": []
+  }
+ },
+ {
+  "regel": "R8c",
+  "name": "z=e vorgegeben (nicht linear)",
+  "ohne": {
+   "status": "FIXPUNKT",
+   "wahr": 4,
+   "erlaubt": 8,
+   "verloren": 0,
+   "regeln": {},
+   "bez": [
+    "x1^x3=0"
+   ]
+  },
+  "mit": {
+   "status": "FIXPUNKT",
+   "wahr": 4,
+   "erlaubt": 8,
+   "verloren": 0,
+   "regeln": {},
+   "bez": [
+    "x1^x3=0"
+   ]
+  }
+ },
+ {
+  "regel": "R8c",
+  "name": "z=~g vorgegeben -> e=1, f=~g",
+  "ohne": {
+   "status": "FIXPUNKT",
+   "wahr": 2,
+   "erlaubt": 8,
+   "verloren": 0,
+   "regeln": {},
+   "bez": [
+    "x1^x3=0"
+   ]
+  },
+  "mit": {
+   "status": "FIXPUNKT",
+   "wahr": 2,
+   "erlaubt": 2,
+   "verloren": 0,
+   "regeln": {
+    "R8c": 2
+   },
+   "bez": [
+    "x1^x2=1",
+    "x2^x3=1"
+   ]
+  }
+ },
+ {
+  "regel": "R8c",
+  "name": "e=g -> z=e&f (nicht linear)",
+  "ohne": {
+   "status": "FIXPUNKT",
+   "wahr": 4,
+   "erlaubt": 8,
+   "verloren": 0,
+   "regeln": {},
+   "bez": [
+    "x0^x2=0"
+   ]
+  },
+  "mit": {
+   "status": "FIXPUNKT",
+   "wahr": 4,
+   "erlaubt": 8,
+   "verloren": 0,
+   "regeln": {},
+   "bez": [
+    "x0^x2=0"
+   ]
+  }
+ },
+ {
+  "regel": "R8c",
+  "name": "nichts bekannt",
+  "ohne": {
+   "status": "FIXPUNKT",
+   "wahr": 8,
+   "erlaubt": 16,
+   "verloren": 0,
+   "regeln": {},
+   "bez": []
+  },
+  "mit": {
+   "status": "FIXPUNKT",
+   "wahr": 8,
+   "erlaubt": 16,
+   "verloren": 0,
+   "regeln": {},
+   "bez": []
+  }
+ },
+ {
+  "regel": "R8c",
+  "name": "unerfuellbar: f=g, z=~f",
+  "ohne": {
+   "status": "FIXPUNKT",
+   "wahr": 0,
+   "erlaubt": 4,
+   "verloren": 0,
+   "regeln": {},
+   "bez": [
+    "x1^x2=0"
+   ]
+  },
+  "mit": {
+   "status": "WIDERSPRUCH",
+   "wahr": 0,
+   "erlaubt": 0,
+   "verloren": 0,
+   "regeln": {},
+   "bez": []
+  }
+ },
+ {
+  "regel": "R8c",
+  "name": "unerfuellbar: e=f,g=0, z=~e",
+  "ohne": {
+   "status": "FIXPUNKT",
+   "wahr": 0,
+   "erlaubt": 2,
+   "verloren": 0,
+   "regeln": {},
+   "bez": [
+    "x0^x1=0"
+   ]
+  },
+  "mit": {
+   "status": "WIDERSPRUCH",
+   "wahr": 0,
+   "erlaubt": 0,
+   "verloren": 0,
+   "regeln": {},
+   "bez": []
+  }
+ },
+ {
+  "regel": "R6gegen",
+  "name": "2-Bit: a+b, c+d, coutA=~coutB, Summen frei",
+  "ohne": {
+   "status": "FIXPUNKT",
+   "wahr": 20,
+   "erlaubt": 128,
+   "verloren": 0,
+   "regeln": {},
+   "bez": [
+    "x0^x2^x4^x6=0"
+   ]
+  },
+  "mit": {
+   "status": "FIXPUNKT",
+   "wahr": 20,
+   "erlaubt": 128,
+   "verloren": 0,
+   "regeln": {
+    "R6gegen": 1
+   },
+   "bez": [
+    "x0^x2^x4^x6=0"
+   ]
+  }
+ },
+ {
+  "regel": "R6gegen",
+  "name": "2-Bit: coutA=~coutB, sA=1, sB=2",
+  "ohne": {
+   "status": "FIXPUNKT",
+   "wahr": 8,
+   "erlaubt": 16,
+   "verloren": 0,
+   "regeln": {},
+   "bez": [
+    "x0^x2=1",
+    "x1^x3=0",
+    "x4^x6=0",
+    "x5^x6^x7=1"
+   ]
+  },
+  "mit": {
+   "status": "FIXPUNKT",
+   "wahr": 8,
+   "erlaubt": 8,
+   "verloren": 0,
+   "regeln": {
+    "R6gegen": 1
+   },
+   "bez": [
+    "x0^x2=1",
+    "x1^x3=0",
+    "x4^x6=0",
+    "x5^x6^x7=1"
+   ]
+  }
+ },
+ {
+  "regel": "R6gegen",
+  "name": "3-Bit geteilt x0,x1: coutA=~coutB, sA=5, sB=6",
+  "ohne": {
+   "status": "FIXPUNKT",
+   "wahr": 4,
+   "erlaubt": 64,
+   "verloren": 0,
+   "regeln": {},
+   "bez": [
+    "x0^x7=0",
+    "x1^x7^x8=1",
+    "x3^x7=1",
+    "x4^x7^x8=1"
+   ]
+  },
+  "mit": {
+   "status": "FIXPUNKT",
+   "wahr": 4,
+   "erlaubt": 4,
+   "verloren": 0,
+   "regeln": {
+    "R6gegen": 1
+   },
+   "bez": [
+    "x0^x7=0",
+    "x1^x7^x8=1",
+    "x3^x7=1",
+    "x4^x7^x8=1"
+   ]
+  }
+ }
+]

@@ -1,0 +1,357 @@
+{
+ "netz": "N4r09 Leine W_i=W_(i-3)",
+ "darstellung": "D6 + R5 + R6 + R7 (Wertemengen)",
+ "status_d6": "FIXPUNKT",
+ "erlaubt_vorher": null,
+ "kaestchen": [
+  {
+   "ch_index": 32,
+   "knoten": {
+    "e": -1129,
+    "f": -953,
+    "g": 773,
+    "b": 1158,
+    "cin": 0,
+    "z": 1183,
+    "s": 1193,
+    "cout": 1194
+   },
+   "zeilen_32": 32,
+   "nach_festen_werten": 2,
+   "nach_aliassen": 2,
+   "nach_xor": 2,
+   "nach_linear": 2,
+   "d6_fest": {
+    "e": 0,
+    "f": 1,
+    "g": 1,
+    "cin": 0,
+    "z": 1
+   },
+   "d6_aliasse": [
+    [
+     "b",
+     "s",
+     1
+    ],
+    [
+     "b",
+     "cout",
+     0
+    ],
+    [
+     "s",
+     "cout",
+     1
+    ]
+   ],
+   "d6_xor": [],
+   "d6_linear": [],
+   "neu_feste_anschluesse": {},
+   "neu_paare": [],
+   "neu_xor3": [],
+   "echte_loesung_erhalten": true,
+   "zeilen_rest": [
+    {
+     "e": 0,
+     "f": 1,
+     "g": 1,
+     "b": 0,
+     "cin": 0,
+     "z": 1,
+     "s": 1,
+     "cout": 0
+    },
+    {
+     "e": 0,
+     "f": 1,
+     "g": 1,
+     "b": 1,
+     "cin": 0,
+     "z": 1,
+     "s": 0,
+     "cout": 1
+    }
+   ]
+  },
+  {
+   "ch_index": 33,
+   "knoten": {
+    "e": 1132,
+    "f": 956,
+    "g": -776,
+    "b": -1161,
+    "cin": 1194,
+    "z": 1186,
+    "s": -1196,
+    "cout": -1201
+   },
+   "zeilen_32": 32,
+   "nach_festen_werten": 4,
+   "nach_aliassen": 4,
+   "nach_xor": 4,
+   "nach_linear": 4,
+   "d6_fest": {
+    "e": 0,
+    "f": 1,
+    "g": 0,
+    "z": 0
+   },
+   "d6_aliasse": [],
+   "d6_xor": [
+    [
+     [
+      "cin",
+      "b",
+      "s"
+     ],
+     0
+    ]
+   ],
+   "d6_linear": [
+    [
+     {
+      "b": 1,
+      "cin": 1,
+      "s": -1,
+      "cout": -2
+     },
+     0
+    ]
+   ],
+   "neu_feste_anschluesse": {},
+   "neu_paare": [],
+   "neu_xor3": [],
+   "echte_loesung_erhalten": true,
+   "zeilen_rest": [
+    {
+     "e": 0,
+     "f": 1,
+     "g": 0,
+     "b": 0,
+     "cin": 0,
+     "z": 0,
+     "s": 0,
+     "cout": 0
+    },
+    {
+     "e": 0,
+     "f": 1,
+     "g": 0,
+     "b": 0,
+     "cin": 1,
+     "z": 0,
+     "s": 1,
+     "cout": 0
+    },
+    {
+     "e": 0,
+     "f": 1,
+     "g": 0,
+     "b": 1,
+     "cin": 0,
+     "z": 0,
+     "s": 1,
+     "cout": 0
+    },
+    {
+     "e": 0,
+     "f": 1,
+     "g": 0,
+     "b": 1,
+     "cin": 1,
+     "z": 0,
+     "s": 0,
+     "cout": 1
+    }
+   ]
+  },
+  {
+   "ch_index": 34,
+   "knoten": {
+    "e": -1139,
+    "f": 963,
+    "g": 783,
+    "b": 1168,
+    "cin": -1201,
+    "z": 1189,
+    "s": -1203,
+    "cout": -1208
+   },
+   "zeilen_32": 32,
+   "nach_festen_werten": 4,
+   "nach_aliassen": 4,
+   "nach_xor": 4,
+   "nach_linear": 4,
+   "d6_fest": {
+    "e": 1,
+    "f": 0,
+    "g": 1,
+    "z": 0
+   },
+   "d6_aliasse": [],
+   "d6_xor": [],
+   "d6_linear": [
+    [
+     {
+      "b": 1,
+      "cin": 1,
+      "s": -1,
+      "cout": -2
+     },
+     0
+    ]
+   ],
+   "neu_feste_anschluesse": {},
+   "neu_paare": [],
+   "neu_xor3": [
+    [
+     [
+      "b",
+      "cin",
+      "s"
+     ],
+     0
+    ]
+   ],
+   "echte_loesung_erhalten": true,
+   "zeilen_rest": [
+    {
+     "e": 1,
+     "f": 0,
+     "g": 1,
+     "b": 0,
+     "cin": 0,
+     "z": 0,
+     "s": 0,
+     "cout": 0
+    },
+    {
+     "e": 1,
+     "f": 0,
+     "g": 1,
+     "b": 0,
+     "cin": 1,
+     "z": 0,
+     "s": 1,
+     "cout": 0
+    },
+    {
+     "e": 1,
+     "f": 0,
+     "g": 1,
+     "b": 1,
+     "cin": 0,
+     "z": 0,
+     "s": 1,
+     "cout": 0
+    },
+    {
+     "e": 1,
+     "f": 0,
+     "g": 1,
+     "b": 1,
+     "cin": 1,
+     "z": 0,
+     "s": 0,
+     "cout": 1
+    }
+   ]
+  },
+  {
+   "ch_index": 35,
+   "knoten": {
+    "e": 1146,
+    "f": 970,
+    "g": -790,
+    "b": -1175,
+    "cin": -1208,
+    "z": 1192,
+    "s": 1210,
+    "cout": -1215
+   },
+   "zeilen_32": 32,
+   "nach_festen_werten": 4,
+   "nach_aliassen": 4,
+   "nach_xor": 4,
+   "nach_linear": 4,
+   "d6_fest": {
+    "e": 0,
+    "f": 0,
+    "g": 0,
+    "z": 0
+   },
+   "d6_aliasse": [],
+   "d6_xor": [],
+   "d6_linear": [
+    [
+     {
+      "b": 1,
+      "cin": 1,
+      "s": -1,
+      "cout": -2
+     },
+     0
+    ]
+   ],
+   "neu_feste_anschluesse": {},
+   "neu_paare": [],
+   "neu_xor3": [
+    [
+     [
+      "b",
+      "cin",
+      "s"
+     ],
+     0
+    ]
+   ],
+   "echte_loesung_erhalten": true,
+   "zeilen_rest": [
+    {
+     "e": 0,
+     "f": 0,
+     "g": 0,
+     "b": 0,
+     "cin": 0,
+     "z": 0,
+     "s": 0,
+     "cout": 0
+    },
+    {
+     "e": 0,
+     "f": 0,
+     "g": 0,
+     "b": 0,
+     "cin": 1,
+     "z": 0,
+     "s": 1,
+     "cout": 0
+    },
+    {
+     "e": 0,
+     "f": 0,
+     "g": 0,
+     "b": 1,
+     "cin": 0,
+     "z": 0,
+     "s": 1,
+     "cout": 0
+    },
+    {
+     "e": 0,
+     "f": 0,
+     "g": 0,
+     "b": 1,
+     "cin": 1,
+     "z": 0,
+     "s": 0,
+     "cout": 1
+    }
+   ]
+  }
+ ],
+ "s_gesamt": 0.29,
+ "ch_kaestchen_gesamt": 36,
+ "rechner": "Fable-Container Xeon 2,10 GHz 2 Kerne, Python 3.13.16"
+}

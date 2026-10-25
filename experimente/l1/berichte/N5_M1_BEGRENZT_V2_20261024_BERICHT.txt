@@ -1,0 +1,19 @@
+FABLE AN GHOST – N5 M1, FASSUNG 2: ALLE LOKALEN ABHAENGIGKEITEN, HARTE GRENZE IM TESTPROZESS BESTAETIGT – 2026-10-24 21:15. Auftrag 16:55. Netze und Eingaben
+unveraendert, kein M2. Fable-Container Xeon 2,10 GHz 2 Kerne, Python 3.13.16.
+
+1. ABHAENGIGKEITEN: n5_lauf.py liest jetzt im Kind nach dem Import SAEMTLICHE geladenen Module, deren Datei unter /home/claude/kastenmaschine liegt (keine feste Liste).
+   Ergebnis: 7 Dateien (Pfad, relativer Pfad, SHA-256 im JSON) – beigelegt in passender Ordnerstruktur unter kastenmaschine/:
+     l1/n5/n5.py                          (Testskript; geaendert: liest aktive RLIMIT_AS, bricht bei Abweichung ab)
+     l1/n5/n5_lauf.py                     (Waechter; geaendert)
+     l1/pruefstand.py, l1/d6.py
+     miner_pruefung/sha256d/gatter.py, miner_pruefung/sha256d/e1_bit.py, miner_pruefung/sha256d/pruefung.py, miner_pruefung/sha256d/teilbits.py
+   e1_bit, pruefung, teilbits werden von pruefstand.py bzw. transitiv importiert; n5.py selbst benutzt nur Netz/_mini_runden/IV4/K4 aus pruefstand und inv aus gatter.
+   Mein voriges Paket hatte drei davon nicht erfasst (feste Liste) – korrigiert.
+2. HARTE SPEICHERGRENZE: kind_limits() verschluckt keine Fehler mehr: Fehlschlag beim Setzen -> Popen scheitert -> FEHLER, Exit 3, KEIN Test. Zusaetzlich liest n5.py
+   als erstes die TATSAECHLICH aktive RLIMIT_AS seines Prozesses aus (resource.getrlimit) und protokolliert sie; stimmt sie nicht mit der vom Waechter erwarteten
+   Grenze (Umgebungsvariable N5_ERWARTE_RLIMIT_MIB) ueberein, bricht n5.py vor dem Test mit FEHLER ab.
+   GEMESSEN im Testprozess: rlimit_as_soft = 1024 MiB, rlimit_as_hard = 1024 MiB (im JSON unter rlimit_im_testprozess).
+   GEGENPROBE: n5.py direkt mit erwarteter Grenze 1024, aber ohne gesetzte RLIMIT gestartet -> 'FEHLER: harte Speichergrenze nicht aktiv ... Test nicht gestartet', Exit 3.
+3. M1 WIEDERHOLT, unveraendert: Status OK, Wand 27,4 s, Spitze RSS 21,1 MiB (Grenze 400), Zeitgrenze 120 s; k = 2855, W0 = 7, W1 = 2, W2 = 11; alle acht Faelle OK
+   (A = B fuer alle 4096, Kontrolle erreicht, je 1 echte Loesung; Knoten 796/934/853/967 und 1328/1604/1442/1670).
+Dateien: BERICHT.txt, ERGEBNIS_N5_M1_BEGRENZT.json, ERGEBNIS_N5_M1.json, kastenmaschine/... (8 Quelldateien). Warte auf eure Pruefung; M2 nur mit GO.

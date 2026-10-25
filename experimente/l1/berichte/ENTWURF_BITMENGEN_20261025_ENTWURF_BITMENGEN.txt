@@ -1,0 +1,42 @@
+VON: fable
+AN: ghost, christian
+BEZUG: Ghosts Vorschlag 2026-10-25 08:50 (kompakte Speicherung), Christians GO fuer den Entwurf. Entwurf, kein Bau, kein Lauf.
+
+1. ZIEL
+Dieselben Beziehungen, dieselbe Gruppierung, dieselbe Arbeitsliste, dieselben Folgerungen – nur eine andere Speicherform fuer die Gruppentabellen und Nachrichten: Bitmengen statt Tupelmengen. Gemessen wird, ob das Platz spart und was es an Operationen kostet. Erkenntnis darf sich dabei nicht aendern; das wird hart geprueft (bitgleiche Endrelationen und Zaehler).
+
+2. DARSTELLUNG (vorab festgelegt)
+- Gruppe mit Variablen (v_0, ..., v_{k-1}) in der festen Gruppenreihenfolge: Relation = Ganzzahl mit 2^k Bits. Bit Nr. b ist 1, wenn die Belegung mit v_j = (b >> j) & 1 erlaubt ist. Bei k = 5: 32 Bit, bei k = 8 (unsere Obergrenze): 256 Bit.
+- Nachricht ueber Schnittmenge S (m Variablen, Reihenfolge wie in der Kante festgelegt): Ganzzahl mit 2^m Bits.
+- Projektion einer Gruppe auf S: fuer jede Belegung von S ODER ueber alle Belegungen der uebrigen Variablen. Umsetzung ueber vorab berechnete Masken je (Gruppe, Kante): maske[c] = Bitmenge aller Gruppenbelegungen, deren S-Teil = c ist. Projektion: Bit c gesetzt, wenn (relation & maske[c]) != 0. Kosten: 2^m UND-Operationen auf 2^k-Bit-Zahlen.
+- Semijoin mit Nachricht M: relation &= ODER ueber alle c mit Bit c in M von maske[c]. Umsetzung: aufgeweitete Maske = ODER der maske[c] fuer gesetzte c; dann ein UND. Kosten: hoechstens 2^m ODER + 1 UND.
+- Masken sind reine Struktur (haengen nur von Variablenreihenfolgen ab), werden einmal bei der Gruppierung gebaut und gezaehlt (Zahl, Bits) – sie gehoeren zum Speicherbedarf und werden NICHT verschwiegen. Bei k = 8, m = 7 sind das 128 Masken zu 256 Bit je Kante und Richtung.
+- Leer = 0; FIXPUNKT/WIDERSPRUCH wie bisher. Initialisierung: 2^k-Bit "alles erlaubt", dann je zugeordnetem Kaestchen UND mit der aufgeweiteten Kaestchenmaske (Kaestchen bleiben als Tupelmengen, wie sie sind; sie werden nur einmal in eine Maske uebersetzt).
+- Keine Vorzeichen-Tricks, keine Kompression darueber hinaus. Python-Ganzzahlen (beliebig lang) – kein Bitarray-Paket, keine neue Abhaengigkeit.
+
+3. VERGLEICH
+Staende: N3 exakt und N3u exakt auf Gatterebene (genau die B2-Staende: gleiche Kaestchen, gleiche Ordnung, gleiche 43 Gruppen, gleiche Kanten), je einmal mit Tupelmengen (TUPEL = begrenzt_n3.py, Stand exakt, unveraendert) und einmal mit Bitmengen (BIT, neue Datei). Die Arbeitsliste bleibt dieselbe Funktion (ereignis.arbeitsliste, unveraendert): sie ruft nur g.proj(S) und g.semijoin(S, M) und vergleicht Nachrichten mit != – dafuer braucht die Bit-Gruppe proj() als Ganzzahl (hashbar, vergleichbar; die frozenset-Huelle in der Arbeitsliste um eine Ganzzahl ist unschaedlich – wird geprueft; falls nicht, wird die Nachricht als frozenset({zahl}) gefuehrt, mit Hinweis).
+Erwartungen (verbindlich, automatisch; Abweichung = FEHLER, Sofortstopp):
+ E1 Struktur gleich: Gruppen, Variablenreihenfolgen, Kanten, Initialrelationen von BIT in Tupel zurueckuebersetzt == TUPEL-Initialrelationen (Pruefsumme).
+ E2 Ergebnis gleich: Status gleich (N3 FIXPUNKT, N3u WIDERSPRUCH); jede Endrelation von BIT, zurueckuebersetzt, == TUPEL-Endrelation (Mengen-Gleichheit je Gruppe); feste Variablen gleich; gestrichene Zeilen gleich.
+ E3 Zaehler gleich: Entnahmen, Semijoin-Aufrufe, Projektionen, Nachrichten gesendet identisch (dieselbe Arbeitsliste, dieselbe Reihenfolge – jede Abweichung heisst, dass eine Operation nicht dasselbe tut).
+ E4 Speicherung: Kontrolle (1024 Belegungen vorwaerts) wie in B2; fehlend 0 je Gruppe in BIT; keine feste Variable widerspricht der Kontrolle.
+ E5 Kantenprojektionen am Ende gleich (E6 aus B2), keine Doppeleintraege.
+ KEINE Erwartung an Speicher- und Operationszahlen – das ist die Messung.
+
+4. MESSGROESSEN (getrennt)
+ Speicher, gezaehlt (nicht geschaetzt): (a) theoretisch: Summe 2^k Bits ueber alle Gruppen (Tabellen) + Summe 2^m Bits ueber alle gespeicherten Nachrichten + Bits aller Masken; (b) tatsaechlich im Prozess: rekursives sys.getsizeof aller Gruppentabellen, Nachrichten und Masken, fuer TUPEL (Set + Tupel + Ints) und BIT (Ganzzahlen + Maskenlisten), getrennt nach Tabellen / Nachrichten / Masken; (c) RSS je Kind – mit dem ausdruecklichen Hinweis, dass er bei dieser Groesse vom Interpreter dominiert ist und nichts ueber die Speicherform aussagt.
+ Operationen: Semijoin-Aufrufe und Projektionen (gleich per E3); zusaetzlich je Verfahren die Elementaroperationen: TUPEL = geprüfte Tupel (Summe Zeilen je Semijoin/Projektion), BIT = Zahl der Ganzzahl-UND/ODER-Operationen und die Bitbreite. Das sind verschiedene Einheiten; sie werden nebeneinander berichtet, nicht gegeneinander verrechnet.
+ Zeiten: T1 Gruppierung+Masken+Init | T2 Austausch | T3 Kantenpruefung | T4 Kontrolle; mit dem Hinweis Millisekunden, Einzelmessung.
+ Hochrechnung (nur Rechnung, keine Messung, als solche gekennzeichnet): dieselben Bitzahlen fuer eine Gruppe mit 8 Variablen / 256 Zeilen, damit sichtbar wird, wo der Unterschied gross wuerde.
+
+5. GRENZEN UND STOP
+ Netze unveraendert (N3/N3u Gatterebene), keine neuen Faelle, kein N4/N5, keine Begrenzung (nur exakt), keine Regeln. 120 s / 400 MiB je Kind, 8 Variablen / 256 Zeilen je Relation (hier max 5 / 32). Abweichung in E1–E5 -> FEHLER + Sofortstopp (dann ist die Bit-Umsetzung falsch, nicht das Verfahren). Keine automatische Wiederholung.
+
+6. DATEIEN BEI GO
+ stern/bitmenge.py (BitGruppe: init, proj, semijoin ueber Masken; Rueckuebersetzung in Tupel; Zaehler), stern/bitmenge_n3.py (Vergleichsfall, importiert begrenzt_n3.gatter_kaestchen, gruppen, ereignis, pruefstand), stern/bitmenge_lauf.py (Waechter: N3 TUPEL, N3 BIT, N3u TUPEL, N3u BIT; TUPEL-Laeufe = begrenzt_n3.py Stand exakt, unveraendert aufgerufen), ERGEBNIS_BIT_*.json, Bericht. Bestehende Dateien unveraendert.
+
+Einfach gesagt: Statt jede erlaubte Zeile als eigenes Kaertchen zu lagern, schreiben wir fuer jeden Kasten eine Reihe aus Nullen und Einsen – eine Eins fuer jede erlaubte Zeile. Dieselben Kaesten, dieselben Nachrichten, dieselben Schluesse; nur das Lager wird kleiner, und Abgleich wird zu "Reihe UND Reihe". Ob es wirklich kleiner wird und was die Masken kosten, zaehlen wir nach – mit der Garantie, dass am Ende bitgenau dasselbe herauskommt wie vorher, sonst Stopp.
+
+Ich warte auf Ghosts Pruefung und das Bau-GO.
+--- ENDE ---

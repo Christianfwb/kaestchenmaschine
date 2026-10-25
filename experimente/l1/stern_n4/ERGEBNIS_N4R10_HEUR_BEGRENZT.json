@@ -1,0 +1,44 @@
+{
+ "grenzen": {
+  "zeit_s": 120.0,
+  "rss_mib": 400.0
+ },
+ "python": "3.13.16",
+ "laeufe": {
+  "minfill": {
+   "status": "OK",
+   "wall_s": 1.51,
+   "peak_rss_abgetastet_mib": 19.4,
+   "maxrss_kind_mib": 19.6,
+   "groesste_gruppe": 28,
+   "groesste_schnittstelle": 27,
+   "summe_MiB": 6553.3,
+   "aufwand": 11467704500
+  },
+  "mindegree": {
+   "status": "OK",
+   "wall_s": 1.21,
+   "peak_rss_abgetastet_mib": 18.5,
+   "maxrss_kind_mib": 18.6,
+   "groesste_gruppe": 29,
+   "groesste_schnittstelle": 28,
+   "summe_MiB": 15591.8,
+   "aufwand": 27431637940
+  },
+  "minfill_rev": {
+   "status": "OK",
+   "wall_s": 1.64,
+   "peak_rss_abgetastet_mib": 18.7,
+   "maxrss_kind_mib": 18.7,
+   "groesste_gruppe": 28,
+   "groesste_schnittstelle": 27,
+   "summe_MiB": 7628.6,
+   "aufwand": 13354478772
+  }
+ },
+ "dateien": {
+  "n4r10_heuristik.py": "1e5c9271793a2871d602f71b53ff87e905e6d875d535cdc675a7e6641fe8c25c",
+  "n4r10_heuristik_lauf.py": "e461bff7e275f45b7f1fe7954e35d14988da2bcebef9f79e377064a4ff05f516"
+ },
+ "alle_ok": true
+}

@@ -1,0 +1,37 @@
+FABLE AN GHOST – N5 M2: GRUNDGERUEST AN V0–V3 (6 UND 9 RUNDEN) + KONTROLLE OHNE LEINE – 2026-10-24 21:45. GO 16:59. Genau neun Laeufe. Kein M3, kein R9/R9a/R9b,
+keine Bruecke, keine Karte, kein R8g. Fable-Container Xeon 2,10 GHz 2 Kerne, Python 3.13.16. Grenzen 120 s / 400 MiB / Kind RLIMIT_AS 1024 MiB (aktiv).
+Ablauf je Lauf: Kind leitet ab (ohne Orakel), friert ein; danach Orakel ueber alle 4096 am Netz; danach Pruefung der eingefrorenen Folgerungen. Drei Zeiten getrennt.
+Kontrollbelegung k = 2855 (W0=7, W1=2, W2=11) fuer alle; Ziele und Rundenfunktion unveraendert.
+Aenderungen am Code (dokumentiert, Pruefsummen im Paket): n5.py um die Kontrolle 'ohne Leine' (Variante 9: W_i = Konstanten aus 0xD5A3 wie N4r..o) erweitert, VORAB gegen
+die Wortrechnung geprueft (alle 4096: 0 Abweichungen, Ziel gleich, 1 echte Loesung, 1240 Knoten; ERGEBNIS_N5_OHNE_LEINE_VORPRUEFUNG.json). pruefstand.py: ein Haken
+(Umgebungsvariable PRUEFSTAND_NETZE_MODUL), ueber den Eltern- und Kindprozess zusaetzliche Netze aus n5.py laden; ohne die Variable unveraendertes Verhalten.
+Bestehende Artefakte unveraendert.
+
+ERGEBNISTABELLE (ERGEBNIS_N5_M2.json). Darstellung: Grundgeruest = R1–R7, R1b, R8c, R8m. wahr = Orakel. Zeiten: Ableitung | Orakel | Folgerungen-Pruefung; Speicher = Spitze Kind.
+  Netz        Knoten  Status    wahr erlaubt Schein verloren  fest/XOR/Mengen   Ableitung   Orakel   Folg.    Speicher
+  V0 r06        796   FIXPUNKT    1      1      0      0       12 / 0 / 0        0,062 s    1,16 s   0,002 s  17,6 MiB   ENTSCHIEDEN
+  V1 r06        934   FIXPUNKT    1      1      0      0       12 / 0 / 0        0,099 s    1,24 s   0,003 s  19,0 MiB   ENTSCHIEDEN
+  V2 r06        853   FIXPUNKT    1      1      0      0       12 / 0 / 0        0,081 s    1,18 s   0,002 s  19,6 MiB   ENTSCHIEDEN
+  V3 r06        967   FIXPUNKT    1      1      0      0       12 / 0 / 0        0,106 s    1,25 s   0,002 s  19,8 MiB   ENTSCHIEDEN
+  V0 r09       1328   FIXPUNKT    1      1      0      0       12 / 0 / 0        0,218 s    1,73 s   0,002 s  20,1 MiB   ENTSCHIEDEN
+  V1 r09       1604   FIXPUNKT    1      1      0      0       12 / 0 / 0        0,407 s    2,45 s   0,002 s  21,1 MiB   ENTSCHIEDEN
+  V2 r09       1442   FIXPUNKT    1    256    255      0        0 / 4 / 2        0,333 s    2,07 s   0,005 s  22,0 MiB   OFFEN (Schein)
+  V3 r09       1670   FIXPUNKT    1   4096   4095      0        0 / 0 / 0        0,374 s    2,34 s   0,002 s  22,0 MiB   OFFEN (nichts abgeleitet)
+  ohne Leine r09 1240 FIXPUNKT    1      1      0      0       12 / 0 / 0        0,177 s    1,76 s   0,002 s  22,2 MiB   ENTSCHIEDEN
+Keine Grenze erreicht, kein Absturz, 0 verlorene Loesungen in allen neun.
+
+BEFUNDE (BELEGT, fuer DIESE Kontrollbelegung):
+1. Bei 6 Runden loest das Grundgeruest alle vier Varianten. Bei 9 Runden: V0 (Kopie) und V1 (nur Addition) geloest; V2 (nur linear) 256 Schein mit 4 XOR-Beziehungen
+   und 2 Wertemengen; V3 (Addition + Drehung) 4096 – das Grundgeruest leitet NICHTS ueber die Eingaenge ab. Reihenfolge der Schwierigkeit: V0 ~ V1 < V2 < V3.
+   Meine Erwartung 'V1/V2 reissen frueher ab als V0' trifft fuer V1 NICHT zu; V3 am schwersten trifft zu.
+2. UNBEQUEM UND WICHTIG: V0 r09 ist strukturell identisch mit N4r09 (1328 Knoten, gleiche Rundenfunktion, gleiche Kopie-Leine) – nur die Kontrollbelegung ist anders
+   (N4r09: aus dem Netznamen; hier k = 2855). N4r09 blieb mit demselben Grundgeruest bei 128 erlaubten; V0 r09 wird GELOEST. Die Schwierigkeit haengt also stark
+   an der konkreten Zielbelegung, nicht nur an Rundenzahl und Erweiterung. Folgen: (a) alle N4-Kanten des heutigen Tages gelten fuer EINE Belegung; (b) Vergleiche
+   zwischen Varianten sind nur bei gleicher Belegung aussagekraeftig (genau dein Punkt 1 im Entwurf – er hat sich sofort als entscheidend erwiesen); (c) fuer belastbare
+   Kanten brauchen wir mehrere vorab festgelegte Kontrollbelegungen je Netz. Das ist ein Vorschlag, kein Lauf.
+3. 'ohne Leine' r09 geloest – wie bei N4; die Kontrolle entfernt Abhaengigkeit und Erweiterungsrechnung zugleich (deine Einordnung).
+EINORDNUNG: Keine Aussage ueber SHA-256. V3 ist der SHA-aehnlichste Fall und der einzige, bei dem das Grundgeruest bei 9 Runden leer ausgeht.
+OFFEN (nicht gestartet, zur gemeinsamen Auswertung): M3 an V2 r09 und V3 r09 (Karte mit inneren Wurzeln, dann +R9, dann voller Satz); zweite und dritte
+Kontrollbelegung fuer V0/V3 r09, um die Belegungsabhaengigkeit zu messen.
+Dateien: ERGEBNIS_N5_M2.json, ERGEBNIS_N5_OHNE_LEINE_VORPRUEFUNG.json, kastenmaschine/l1/n5/n5.py, kastenmaschine/l1/pruefstand.py, kastenmaschine/l1/d6.py (uebrige
+Abhaengigkeiten unveraendert wie Paket M1_BEGRENZT_V2).

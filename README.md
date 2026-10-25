@@ -8,9 +8,19 @@ So macht die Kästchenmaschine die **Topologie von SHA-256 greifbar**: Sie legt 
 
 Dieses Repository enthält **Forschungscode, Offline-Beispiele und Messdaten**. Der produktive GPU-Miner mit Node-Anbindung und Einreichung ist [nicht enthalten](miner/README.md).
 
-**Stand:** 23. Oktober 2026 · öffentliches Forschungsrepository · [Prüfung und Änderungen](docs/REVIEW_20261023.md) · [MIT-Lizenz](LICENSE).
+**Stand:** 25. Oktober 2026 · **Projekt abgeschlossen** · [Abschlussbericht](docs/ABSCHLUSS_20261025.md) · [Prüfung und Änderungen vom 23. Oktober](docs/REVIEW_20261023.md) · [MIT-Lizenz](LICENSE).
 
-[Schnellstart](#schnellstart) · [Ergebnisse](#was-ist-gemessen) · [Technik](docs/TECHNIK.md) · [Experimente und Korrekturen](docs/EXPERIMENTE.md) · [Nachrechnen](docs/REPRODUKTION.md) · [Offene Fragen](docs/OFFENE_FRAGEN.md)
+[Schnellstart](#schnellstart) · [Abschluss](#abschluss-25-oktober-2026) · [Ergebnisse](#was-ist-gemessen) · [Technik](docs/TECHNIK.md) · [Experimente und Korrekturen](docs/EXPERIMENTE.md) · [Nachrechnen](docs/REPRODUKTION.md) · [Offene Fragen](docs/OFFENE_FRAGEN.md)
+
+## Abschluss (25. Oktober 2026)
+
+Wir haben das Projekt mit drei Messreihen abgeschlossen; alles steht im [Abschlussbericht](docs/ABSCHLUSS_20261025.md) und in [experimente/l1](experimente/l1).
+
+1. **Wo die Ableitung reißt:** Die Rundenkurve ist scharf – bis 16 Runden je Kompression alle Noncebits, **ab 17 Runden keines mehr bis 64**. Ohne Nachrichtenerweiterung dagegen bis 64 Runden alles. Entscheidend ist die bloße Wiederverwendung eines unbekannten Wortes 16 Runden später („Sicherheitslinie“). [Rundenkurve 17–63](experimente/berichte/BERICHT_RUNDENKURVE_17_63.txt), [Sicherheitslinie](experimente/berichte/BERICHT_SICHERHEITSLINIE.txt).
+2. **Der Stern (Join-Baum mit Bitmengen) löst kleine Netze vollständig:** Am Mini-Netz N4r09 (9 Runden mit Leine, 12 freie Bits) findet der exakte Stern nach D6-Grundvereinfachung **die eine Lösung ohne Sonderregeln** – jede der 492 Gruppen endet mit genau einer Zeile, bestätigt durch 4096 Vorwärtsauswertungen. Eine Runde mehr (N4r10) treibt die nötige Gruppenbreite von 18 auf 28 Variablen; der Bedarf wächst exponentiell mit der Breite (Tabellen ~120 MiB, Masken ~6 GiB, Austausch ~1000×). Kleinere Gruppen bewahren alle Lösungen, verlieren aber Erkennung – gemessen am Dreieck und an N3.
+3. **Billig aussortieren statt lösen** (die Frage des Miners): In 48 Fällen mit festem Kopf, wenigen Zielbits und 256 Nonces leitet das Grundgerüst **nichts** über die Noncebits ab; alles, was Kandidaten ausschließt, sitzt am Ziel und kostet 60–70 % des Hashes. Bilanz negativ in allen 48 Fällen, keine Lösung verloren.
+
+**Folgerung:** Die Kästchenmaschine funktioniert im Kleinen vollständig und nachprüfbar und zeigt präzise, wo Hashfunktionen Rückwärtsrechnen verhindern. Ein Mining-Vorteil ist nicht belegt und wird von uns nicht weiter verfolgt. Keine Aussage über andere Verfahren, Hardware oder Neuheit.
 
 ## Was ist gemessen?
 
@@ -22,7 +32,7 @@ Die übrigen Headerfelder und der Suchbereich waren für diesen historischen Kon
 
 **Beim vollständigen SHA256d steht dieser Nachweis aus.** Die geprüften Regeln rechnen dort bis zum Fixpunkt und bestimmen keine Noncebits – nicht aus Mangel an Rechenzeit, sondern weil die Regeln nichts mehr hergeben. Offen ist, ob stärkere Ableitungsregeln das ändern. Die kleinen Erfolge sind belegt; ein entsprechender Erfolg beim vollständigen Bitcoin-Verfahren ist noch nicht belegt.
 
-**Warum wir weiterforschen möchten:** Die nachgewiesenen Erfolge im kleinen Modell motivieren weitere Versuche mit stärkeren Verfahren und mehr Rechenleistung. Unsere Forschungshypothese ist, dass sich die gemeinsame Ableitung auch für anspruchsvollere Fälle nutzbar machen lässt. Ob und wie weit das bis zum vollständigen SHA256d gelingt, ist offen. Die kleinen Erfolge sind ein konkreter Ausgangspunkt für diese Untersuchung, kein Beleg dafür, dass allein mehr Hardware das Problem löst.
+**Stand nach Abschluss:** Die Forschungshypothese, dass sich die gemeinsame Ableitung auf anspruchsvollere Fälle übertragen lässt, haben wir am 24./25. Oktober mit dem Stern (Join-Baum) geprüft: Im Kleinen ja, vollständig und ohne Sonderregeln; mit jeder weiteren Rundenwiederholung wächst die nötige Breite exponentiell. Siehe [Abschluss](#abschluss-25-oktober-2026).
 
 Alle Aussagen gelten für die jeweils genannten Vorlagen, freien Bits und Regeln. Zeiten sind Einzelmessungen auf Fables CPU-Umgebung, keine Leistungsversprechen.
 
@@ -33,6 +43,10 @@ Alle Aussagen gelten für die jeweils genannten Vorlagen, freien Bits und Regeln
 | Vollständiges SHA256d mit genauem Endhash | Eine Vorlage, ein vorab festgelegter Zielhash, acht freie Bits | Mehr feste innere Werte, aber weiterhin keine Noncebits. E1 erreicht nach 41 Durchläufen dasselbe H2-Registerbild wie E1+E4; Paare bestimmen zusätzlich 70 innere Bitknoten. | [Korrigierter Vergleich](experimente/ergebnisse/ERGEBNIS_ZIELHASH_FIX.json) |
 | Exakte Tabellen und NumPy-Fallvektoren | Zwei freie Bits, also vier Kandidaten je Vorlage | Alle acht Digests und Zielentscheidungen stimmen mit hashlib überein. Diese Verfahren werten die Fälle gemeinsam aus; sie sind kein belegter Suchvorteil. | [Tabellen](experimente/ergebnisse/ERGEBNIS_TABELLEN4.json), [Vektoren](experimente/ergebnisse/ERGEBNIS_PHASEN.json) |
 | XOR-Gleichungen | Zwei oder acht freie Bits; UND-Ausgänge als freie Variablen | Die untersuchte Lockerung liefert keine neue Eingangsbeziehung und keinen Widerspruch. | [XOR-Auswertung](experimente/ergebnisse/ERGEBNIS_XORSHA.json) |
+| Rundenkurve 17–63 und Kontrolle ohne Nachrichtenerweiterung | Acht freie Noncebits; exakter Zielhash; W16.. als Konstanten in der Kontrolle | Ab 17 Runden 0/8 Noncebits bis 64 (E1 und E1+E4); ohne Erweiterung 8/8 bis 64 Runden. Wiederverwendung eines Wortes genügt zum Abriss. | [Rundenkurve](experimente/ergebnisse/ERGEBNIS_RUNDEN2.json), [Kontrolle](experimente/ergebnisse/ERGEBNIS_ERWEITERUNG_KONTROLLE.json), [Trenntests](experimente/ergebnisse/ERGEBNIS_ERWEITERUNG_WO.json) |
+| Mini-Netz N4r09 (4-Bit-Wörter, Leine W_i = W_(i−3), 9 Runden), Regelmaschine D6 | 12 freie Bits, alle 32 Registerbits vorgegeben | Grundgerüst 128 Kandidaten, mit R9 die eine Lösung; exakter Stern (Join-Baum, Bitmengen) die eine Lösung **ohne R9**, 492 Gruppen, größte 18, 62 s. | [Stern N4r09](experimente/l1/berichte/STERN_N4R09_BIT_20261025_BERICHT.txt), [Ergebnisse](experimente/l1/stern_n4) |
+| Mini-Netz N4r10 (10 Runden), nur Struktur | dasselbe Netz, eine Runde mehr | Größte Gruppe 28 (drei Heuristiken: 28/29/28); gerechneter Bedarf außerhalb von 400 MiB / 600 s. | [Struktur](experimente/l1/berichte/N4R10_STRUKTUR_VOLL_20261025_BERICHT.txt), [Heuristiken](experimente/l1/berichte/N4R10_HEURISTIKEN_20261025_BERICHT.txt) |
+| Ausdünnen (Mining-Frage) | 48 Fälle: fester Kopf, 2–4 Zielbits, 256 Nonces, 6 und 9 Runden | Keine Einschränkung über Noncebits (Rang 0); Filter schließen 0 aus; Bilanz negativ in 48/48 bei voller Sicherheit. | [Bericht](experimente/l1/berichte/AUSDUENNEN_ERGEBNIS_20261025_BERICHT.txt), [Ergebnisse](experimente/l1/ausduennen) |
 
 Die reduzierten Rechnungen sind **kein Bitcoin-SHA256d**. Für diese Kontrollfälle wird der Zielhash aus einer vorher gewählten Nonce erzeugt; der Löser erhält nur die Vorlage, freie Bits und diesen Hash. Eine getrennte Referenzauswertung aller 256 Kandidaten prüft anschließend das Ergebnis. Der Versuch belegt Ableitung in diesen Fällen, keine allgemeine Urbildlösung und keinen Zeitgewinn gegenüber 256 direkten Auswertungen.
 
@@ -82,6 +96,7 @@ Die Bitregeln brauchen auf zyklisch gekoppelten Netzen keine vollständige Entsc
 | [experimente/skripte](experimente/skripte) | Linux-Läufer und festgelegte Eingabedaten |
 | [experimente/ergebnisse](experimente/ergebnisse) | Archivierte Messungen einschließlich früherer Fehler/Abbrüche |
 | [experimente/berichte](experimente/berichte) | Historische Originalberichte; manche Aussagen wurden später korrigiert |
+| [experimente/l1](experimente/l1) | Labor vom 24./25. Oktober: Prüfstand, Regelmaschine D6, Stern (Join-Baum), Gruppenfindung, Arbeitsliste, begrenzte Gruppen, Bitmengen, blockweiser Abgleich, N4r09/N4r10, Ausdünnen; Teamberichte in [experimente/l1/berichte](experimente/l1/berichte); Schnelltest `python -B -I tests/test_stern.py` (Linux, ~20 s) |
 | [docs/EXPERIMENTE.md](docs/EXPERIMENTE.md) | Heutige Einordnung und sichtbare Korrekturen der Originalberichte |
 | [docs/HERKUNFT.md](docs/HERKUNFT.md) | Herkunft der Dateien und Abweichungen zwischen Fassungen |
 
@@ -89,7 +104,7 @@ Historische Resultate bleiben unverändert. Korrekturen am heutigen Code können
 
 ## Grenzen und nächste Fragen
 
-17–63 Runden wurden in der Rundenkurve nicht untersucht; mehr freie Bits und andere Vorlagen ebenfalls nicht systematisch. Eine feste Ausgangsbedingung kann mehr innere Werte bestimmen, ohne eine Nonce herzuleiten. Das [Vorratsmodell](experimente/berichte/BERICHT_VORRAT_MODELL.txt) vergleicht unterschiedliche Spielräume und ist kein fairer abschließender Leistungsnachweis. Die [offenen Fragen](docs/OFFENE_FRAGEN.md) sind Forschungsfragen, keine versprochenen Verbesserungen.
+Die Rundenkurve 17–63 ist seit dem 23. Oktober gemessen (scharfe Kante bei 17); mehr freie Bits und andere Vorlagen wurden nicht systematisch untersucht. Eine feste Ausgangsbedingung kann mehr innere Werte bestimmen, ohne eine Nonce herzuleiten. Das [Vorratsmodell](experimente/berichte/BERICHT_VORRAT_MODELL.txt) vergleicht unterschiedliche Spielräume und ist kein fairer abschließender Leistungsnachweis. Die [offenen Fragen](docs/OFFENE_FRAGEN.md) sind Forschungsfragen, keine versprochenen Verbesserungen.
 
 ## Warum ich diese Forschung veröffentliche
 
@@ -114,7 +129,7 @@ Unabhängige Noncegruppen lassen sich grundsätzlich parallel bearbeiten. Ob ein
 
 Bei einem gemessenen Gesamtdurchsatz von **G vollständig entschiedenen Gruppen pro Sekunde** benötigt der gesamte 32-Bit-Noncebereich einer festen Vorlage rechnerisch **16.777.216 / G Sekunden**. Das setzt voraus, dass dieser Durchsatz über den Bereich gehalten wird; OPEN-Fälle müssen berücksichtigt werden. Diese Rechnung beschreibt den Prüfaufwand, nicht die Wahrscheinlichkeit eines Blockfunds.
 
-**Diese Erfolge machen Mut, hier weiterzuforschen:** Die kleinen Modelle liefern echte Ableitungen, und unser GPU-Kästchenminer hat den historischen Genesis-Treffer mit vollständigem SHA256d in einem begrenzten Suchbereich selbst wiedergefunden — unabhängig bestätigt, nicht nur als vorgegebenen Treffer erhalten. Darauf möchten wir aufbauen: mit größeren kontrollierten Versuchen, besseren Regeln und nachvollziehbaren Messungen. Ob sich dabei auch die Ableitungserfolge der kleinen Modelle auf die vollständige Rechnung übertragen lassen, bleibt die spannende offene Frage.
+**Stand nach Abschluss (25. Oktober 2026):** Die Übertragung der kleinen Ableitungserfolge auf die vollständige Rechnung haben wir mit stärkeren Verfahren (exakter Join-Baum mit Bitmengen) geprüft und mit der Mining-Frage (billiges Aussortieren) konfrontiert. Beides ist gemessen und negativ für das vollständige SHA256d; die Begründung – exponentiell wachsende Breite durch die Wiederverwendung unbekannter Wörter – steht im [Abschlussbericht](docs/ABSCHLUSS_20261025.md). Wir verfolgen die Mining-Frage nicht weiter; das Repository bleibt als nachprüfbares Labor offen.
 
 #### Was Unterstützung ermöglichen würde
 
@@ -122,7 +137,7 @@ Bei einem gemessenen Gesamtdurchsatz von **G vollständig entschiedenen Gruppen 
 
 Offen und messbar – jeweils mit festen Zeit- und Speichergrenzen, weil der Aufwand noch nicht bekannt ist – sind dagegen:
 
-- **Rundenkurve 17 bis 63:** Bis 16 Runden je Kompression leitet die Maschine die Nonce vollständig ab, bei 64 nichts. Wo und wie die Ableitung dazwischen endet, ist nicht gemessen.
+- **Rundenkurve 17 bis 63:** inzwischen gemessen – scharfe Kante bei 17 Runden, Ursache Nachrichtenerweiterung (siehe Abschluss).
 - **Mehr freie Bits im reduzierten Modell:** Alle Rundenläufe hatten 8 freie Bits. Ob die Ableitung bei 16 oder 32 freien Bits vollständig bleibt, trennt „die Regeln lösen es“ von „256 Kandidaten sind wenig“.
 - **Stärkere Ableitungsregeln:** Paare, Tripel und Gleichungssysteme auf reduzierten Runden, um zu sehen, welche Beziehung die Reichweite tatsächlich verlängert.
 - **Unabhängige Nachprüfung:** Wiederholung der archivierten Läufe auf anderer Hardware und durch andere Personen.

@@ -1,0 +1,32 @@
+FABLE AN GHOST – N5 M3 AN V3 r09: KARTE UEBER ALLE WURZELN, DREI VERGLEICHE – 2026-10-24 22:15. GO 17:06. Nur V3 r09, k = 2855, Ziel unveraendert. Keine neuen Regeln,
+kein R8g. Fable-Container Xeon 2,10 GHz 2 Kerne, Python 3.13.16. Grenzen wie bisher (keine erreicht), FEHLER-Stopp aktiv (nicht ausgeloest). Bestehende Artefakte unveraendert.
+Codeaenderung: karte.py um 'Tafeln ueber allen Wurzeln' ergaenzt (R9-Normierung: Wurzeln via find, Vorzeichen von Eingaengen und Ausgang; Gruppen gleicher Wurzelmenge;
+Paare klassifiziert gleich / komplementaer / affin / nicht affin, dazu 'nie beide 1'); Rundenbeschriftung 'None' = Kaestchen der Erweiterung (vor den Runden gebaut).
+
+1. KARTE AM STILLSTAND DES GRUNDGERUESTS (KARTE_N5v3r09.json/.txt):
+   372 Kaestchen (36 Ch, 336 Maj; davon 48 in der Erweiterung). Fest 126, offen 246 (Ch 28, Maj 218). Mit verlorenem Rest 156, vollstaendig ausgedrueckt 90.
+   Je Runde offen/mit Rest: Erweiterung 48/46 | R1 12/7 | R2 36/24 | R3 32/18 | R4 24/14 | R5 22/12 | R6 20/18 | R7 20/7 | R8 16/4 | R9 16/6.
+   Rest-Formen: Maj 4 von 8 (72x), Maj 8 von 16 (65x), Ch 4 von 8 (8x), Maj 8/8 mit Rest 4 (8x), Ch 8/16 (3x) – wie bei N4: UND/ODER-Reste.
+   Freie Bits an offenen Kaestchen: alle 12 (bei N4r09 nur 8); W0.b0 allein an 53 Kaestchen. Keine XOR-Beziehung, keine Wertemenge ueber freie Bits.
+   TAFELN UEBER ALLEN WURZELN: 246 Kaestchen mit Tafel; Paare gleicher Wurzelmenge: gleich 0, komplementaer 0, affin 8, nicht affin 2, 'nie beide 1' 8,
+   dazu 124 Paare, deren Ausgaenge bereits dieselbe Wurzel haben (vom Grundgeruest schon zusammengelegt).
+   Die 8 affinen Paare: Ch#8(R3)/Ch#12(R4) ueber (x0, w416); Ch#21(R6)/Maj#245(R7)/Maj#305(R9) ueber (x0, w1390) (3 Paare); Ch#22(R6)/Maj#100(R2) ueber (x0, w1509);
+   Maj#73(R1)/Maj#177(R5)/Maj#249(R7) ueber (x0, x1) (3 Paare). Alle Spiegel-/Differenzpaare haengen an x0 = W0.b0 – dem Bit, das in R1 (Runde 1) und in der
+   Erweiterung (W3 = s1(W2)+W0+s0(W1), Bit 0 von W0 geht ohne Drehung ein) direkt steht.
+   Im Vergleich N4r09 (Kopie-Leine, Stillstand mit Ch/Maj exakt): dort gab es echte GLEICHHEITEN (gleiche Funktion in Runde i und i+3); hier KEINE einzige. Die
+   Drehung/Addition zerstoert die Wiederkehr identischer Teilprodukte – es bleiben nur affine Verwandtschaften an einem einzigen Bit.
+2. DREI VERGLEICHE vom selben Ausgangsstand (ERGEBNIS_N5_M3_V3R09.json; 1 wahre Loesung, Orakel 2,46 s nach der Ableitung):
+   Grundgeruest           erlaubt 4096 | Schein 4095 | verloren 0 | R4 420 R2 69 R7 0                      | fest 0, XOR 0, Mengen 0 | Ableitung 0,37 s, 19,1 MiB | Folg. 0,003 s
+   Grundgeruest + R9      erlaubt 4096 | Schein 4095 | verloren 0 | R9 1, R4 420 R2 69                    | fest 0, XOR 0, Mengen 0 | 0,42 s, 21,8 MiB | 0,003 s
+   Voller Regelsatz       erlaubt 4096 | Schein 4095 | verloren 0 | R9 2, R9a 12, R9b 13, Bruecke 0, R4 465 | fest 0, XOR 0, Mengen 0 | 0,60 s, 21,8 MiB | 0,002 s
+BEFUND (BELEGT, diese Belegung): An V3 r09 leitet keiner der drei Regelsaetze irgendetwas ueber die 12 Eingaenge ab – 4096 erlaubt in allen drei. R9/R9a/R9b feuern
+(2/12/13; R4 steigt 420 -> 465), die Folgerungen versickern innen. Das ist der erste Fall des Tages, in dem auch der volle Regelsatz bei 9 Runden leer ausgeht.
+Zum Vergleich (gleiche Belegung, M2): V0 r09 und V1 r09 vom Grundgeruest allein geloest; V2 r09 256.
+EINORDNUNG: Mit der Erweiterung 'Addition + Drehung' faellt genau die Struktur weg, die unsere Regeln R9/R9a tragen liess (identische Funktionen derselben Wurzeln in
+zwei Runden). Das ist konsistent mit der grossen SHA-Messung (Kopie W[i]=W[i-16] allein bricht schon; echte Erweiterung sowieso) – und es ist genau das, was du mit
+'Uebergang von wiederkehrenden gleichen Woertern zu wiederkehrenden Beziehungen zwischen veraenderten Woertern' gemeint hast. Keine Aussage ueber SHA-256.
+VERMUTUNG (keine Behauptung): Die 8 affinen Paare an x0 zeigen, dass Beziehungen weiterhin entstehen, aber an EINEM Bit und ohne Partner; was fehlt, waere eine Regel,
+die die Erweiterungsgleichung W3 = s1(W2) + W0 + s0(W1) als ganzes Wort (R6-artig) mit den Rundenadditionen koppelt. Nicht entworfen.
+OFFEN (zur gemeinsamen Auswertung): V2 r09 (256) mit +R9 / voller Satz als Zwischenstufe; V3 bei 7 und 8 Runden (wo liegt die Kante fuer DIESE Belegung); zweite
+Kontrollbelegung fuer V3 r09.
+Dateien: BERICHT.txt, KARTE_N5v3r09.json, KARTE_N5v3r09.txt, ERGEBNIS_N5_M3_V3R09.json, kastenmaschine/l1/{karte.py, pruefstand.py, d6.py, n5/n5.py}.

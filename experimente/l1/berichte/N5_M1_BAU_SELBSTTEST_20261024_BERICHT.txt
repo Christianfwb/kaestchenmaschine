@@ -1,0 +1,26 @@
+FABLE AN GHOST – N5 M1: BAU UND SELBSTTEST – 2026-10-24 20:30. GO 16:13 (Christian, nach deinen Vorgaben). Nur Bau und Selbsttest. Keine Ableitung, kein M2/M3,
+kein R8g, keine Miner-/Node-/GPU-/Mainnet-Laeufe. Fable-Container Xeon 2,10 GHz 2 Kerne, Python 3.13.16.
+Korrektur uebernommen: Sigma1 allein ist nicht bijektiv (Rang 2); daraus folgt KEIN Verlust von zwei Bits im gesamten Rundenzustand. Ob es die Ableitung
+erleichtert, ist offen. Die grossen Sigmas bleiben unveraendert, damit nur die Erweiterung variiert.
+
+LABORORDNER: neu l1/n5/ (Fable-Container); vorgeschlagener Zielordner bei dir: creative_lab/n5_mini_erweiterung/. Bestehende Dateien (pruefstand.py, d6.py) UNVERAENDERT;
+n5.py importiert sie nur (Netz, _mini_runden, IV4, K4). Keine Builds angefasst.
+FESTLEGUNGEN (dokumentiert im Kopf von n5.py):
+  Kontrollbelegung: Zeichenkette 'N5 Kontrollbelegung 2026-10-24' als UTF-8 (reines ASCII) -> SHA-256 -> 32-Byte-Digest Little-Endian als Zahl -> mod 4096.
+  Ergebnis (erst beim Bau berechnet): k = 2855 = 0xb27; Bits x0..x11 = [1,1,1,0, 0,1,0,0, 1,1,0,1]; W0 = 7, W1 = 2, W2 = 11.
+  Bitzuordnung: W0 = (x0..x3), W1 = (x4..x7), W2 = (x8..x11), Bit 0 = niedrigstwertig; Wortwert = Summe x_(4w+b) * 2^b.
+  Erweiterungen V0..V3 wie Entwurf V2; rotr = Rechtsrotation (4 Bit), shr = logische Rechtsschiebung; s0 = rotr1^rotr3^shr1, s1 = rotr2^rotr3^shr2 (Tafeln im JSON).
+  Grosse Sigmas, Ch, Maj, IV4, K4, Rundenfunktion: identisch mit N4.
+ZWEI VORWAERTSIMPLEMENTIERUNGEN: (A) Wortrechnung auf Ganzzahlen (n5.py, ohne Graph); (B) Kaestchennetz (pruefstand.Netz + eigene Erweiterung). Je Fall ALLE 4096
+Eingaben in beiden gerechnet und verglichen; Abweichung haette FEHLER/Stopp ausgeloest.
+ERGEBNIS (ERGEBNIS_N5_M1.json), je Fall: Knoten (Ch / Maj / Stufen) | Ziel A = Ziel B | Kontrollbelegung erreicht Ziel (B) | Abweichungen A/B ueber 4096 | echte Loesungen A / B | Vergleichszeit
+  V0 r06   796 (24/192/168) | ja | ja | 0 | 1 / 1 | 2,4 s        V0 r09  1328 (36/288/252) | ja | ja | 0 | 1 / 1 | 3,8 s
+  V1 r06   934 (24/216/192) | ja | ja | 0 | 1 / 1 | 2,7 s        V1 r09  1604 (36/336/300) | ja | ja | 0 | 1 / 1 | 4,5 s
+  V2 r06   853 (24/192/168) | ja | ja | 0 | 1 / 1 | 2,7 s        V2 r09  1442 (36/288/252) | ja | ja | 0 | 1 / 1 | 4,0 s
+  V3 r06   967 (24/216/192) | ja | ja | 0 | 1 / 1 | 2,8 s        V3 r09  1670 (36/336/300) | ja | ja | 0 | 1 / 1 | 4,8 s
+Alle acht Faelle OK. V0 r09 hat exakt die Knotenzahl von N4r09 (1328) – gleiche Struktur, nur andere Kontrollbelegung (N4: aus dem Namen; N5: gemeinsam).
+Jedes Ziel hat genau 1 echte Loesung (die Kontrollbelegung) – in A und B uebereinstimmend. Knotenzuwachs gegenueber V0: V1 +276 (r09), V2 +114, V3 +342 –
+unter meiner Schaetzung (~1900 fuer V3r09 geschaetzt, 1670 gemessen).
+PRUEFSTAND-KONTROLLTESTS (--tests, Code unveraendert) danach: alle vier bestanden (ERGEBNIS_L1_KONTROLLTESTS.json). Ressourcenlimits unveraendert.
+NICHT GEMACHT: keine Ableitung an N5, keine Karte, kein Vergleich mit N4-Ergebnissen (andere Kontrollbelegung).
+Dateien: n5.py, ERGEBNIS_N5_M1.json, ERGEBNIS_L1_KONTROLLTESTS.json. Warte auf eure Pruefung; M2 nur mit GO.

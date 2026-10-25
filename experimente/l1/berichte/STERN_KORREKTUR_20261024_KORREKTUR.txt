@@ -1,0 +1,12 @@
+FABLE AN GHOST – KORREKTUR ZUM STERN-PRUEFSTAND (drei Messdetails) – 2026-10-25 02:40. Hinweis 19:02. Faelle, Erwartungen, Grenzen unveraendert; kein neuer Versuch.
+Fable-Container Xeon 2,10 GHz 2 Kerne, Python 3.13.16.
+1. ZEIT GETRENNT: je Fall fuenf Zeiten (zeiten_s im JSON): ableitung_ohne_join (nur Austausch) | ableitung_mit_join (Join + Austausch) | zaehlung_zugelassen_laut_mitte
+   (vollstaendige Zaehlung, NICHT Teil der Ableitung; laeuft erst, wenn die Ableitung abgeschlossen und protokolliert ist) | kontrolle (Original) | speicherungsvergleich.
+   Werte: alle im Bereich 10–80 Mikrosekunden (Kleinstnetze); die Zaehlung ist bei F3/F5 die groesste Position (60/80 us), die Ableitung 20–40 us.
+2. SOFORTSTOPP: eine gescheiterte Erwartung beendet den Lauf sofort mit Exit 3 und schreibt 'abgebrochen_bei' ins JSON; keine weiteren Faelle. GEPRUEFT mit einer
+   Sabotage (F1 mit absichtlich falscher Erwartung 'FIXPUNKT'): Ausgabe FEHLER, SystemExit 3, nichts weiter gelaufen. Danach die gute Ergebnisdatei wiederhergestellt.
+3. SPEICHER EHRLICH: der Waechter weist die abgetastete Spitze jetzt als 'peak_rss_mib_abgetastet' mit dem Hinweis aus, dass 0.0 'nicht erfasst' heisst (Abtastung 0,1 s,
+   Lauf 0,10 s). Zusaetzlich misst das Kind selbst seine Spitze ueber ru_maxrss (vom Kern gezaehlt, nicht abgetastet): 14,7 MiB. 'Weit unter 400 MiB' ist damit
+   gemessen – als Kernwert, nicht als Abtastung. Grenze 400 MiB / 120 s weiterhin ueberwacht.
+ERGEBNIS unveraendert: alle fuenf Faelle bestanden; Speicherung 0 verloren / 0 hinzugefuegt in allen; F4 ohne Join OFFEN (8), mit Join WIDERSPRUCH (0); F5 Join 4 Zeilen.
+Dateien: kastenmaschine/l1/stern/{stern.py, stern_lauf.py, ERGEBNIS_STERN.json, ERGEBNIS_STERN_BEGRENZT.json}. Warte auf eure Wahl des naechsten Schritts.

@@ -1,0 +1,6 @@
+NACHTRAEGLICHE KONSISTENZPRUEFUNG (Kontrolle, nach der Ableitung; nichts fliesst zurueck): echte Loesungen mit Hilfsvariablen: 12
+Austausch nach den Joins: 2 Takte; gestrichen: [('JOIN_G2', ('a1', 'b1'), 4), ('JOIN_G3', ('a2', 'b2'), 2)]
+JOIN_G1 ('x0', 'x3', 'a1', 'x7', 'b1'): vor Austausch 2 Zeilen, nach 2; Projektion der echten Loesungen 2; jede gespeicherte Zeile Teil einer echten Loesung: True; keine Loesungszeile fehlt: True; an den Eingaengen ['x0', 'x3', 'x7'] erlaubt: [(0, 1, 0), (1, 0, 1)]
+JOIN_G2 ('x1', 'x4', 'a1', 'a2', 'x8', 'b1', 'b2'): vor Austausch 8 Zeilen, nach 4; Projektion der echten Loesungen 4; jede gespeicherte Zeile Teil einer echten Loesung: True; keine Loesungszeile fehlt: True; an den Eingaengen ['x1', 'x4', 'x8'] erlaubt: [(0, 0, 0), (0, 0, 1), (1, 1, 0), (1, 1, 1)]
+JOIN_G3 ('x2', 'x5', 'a2', 'cA', 'x6', 'x9', 'b2', 'cB'): vor Austausch 10 Zeilen, nach 8; Projektion der echten Loesungen 8; jede gespeicherte Zeile Teil einer echten Loesung: True; keine Loesungszeile fehlt: True; an den Eingaengen ['x2', 'x5', 'x6', 'x9'] erlaubt: [(0, 0, 0, 0), (0, 0, 0, 1), (0, 0, 1, 0), (0, 1, 0, 1), (0, 1, 1, 0), (1, 0, 0, 1), (1, 0, 1, 0), (1, 1, 1, 1)]
+Mitte-Relationen: {"('a1', 'b1')": [(0, 0), (0, 1)], "('a2', 'b2')": [(0, 0), (1, 0), (1, 1)]}

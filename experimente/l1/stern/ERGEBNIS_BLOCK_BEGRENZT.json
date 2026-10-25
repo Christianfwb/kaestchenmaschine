@@ -1,0 +1,93 @@
+{
+ "grenzen": {
+  "klein_s": 120.0,
+  "n4r09_s": 600.0,
+  "rss_mib": 400.0
+ },
+ "python": "3.13.16",
+ "laeufe": {
+  "selbsttest": {
+   "status": "OK",
+   "wall_s": 0.8,
+   "faelle": 9168,
+   "fehler": 0
+  },
+  "DU": {
+   "status": "OK",
+   "wall_s": 0.1,
+   "peak_rss_abgetastet_mib": 0.0,
+   "maxrss_kind_mib": 15.2,
+   "bestanden": true,
+   "zeiten": {
+    "gruppierung": 0.001,
+    "initialisierung": 0.0,
+    "austausch": 0.0,
+    "kantenpruefung_und_fest": 0.0,
+    "gesamt": 0.001
+   }
+  },
+  "DL": {
+   "status": "OK",
+   "wall_s": 0.1,
+   "peak_rss_abgetastet_mib": 0.0,
+   "maxrss_kind_mib": 15.2,
+   "bestanden": true,
+   "zeiten": {
+    "gruppierung": 0.001,
+    "initialisierung": 0.0,
+    "austausch": 0.0,
+    "kantenpruefung_und_fest": 0.0,
+    "gesamt": 0.001
+   }
+  },
+  "N3": {
+   "status": "OK",
+   "wall_s": 0.1,
+   "peak_rss_abgetastet_mib": 0.0,
+   "maxrss_kind_mib": 16.4,
+   "bestanden": true,
+   "zeiten": {
+    "gruppierung": 0.012,
+    "initialisierung": 0.0,
+    "austausch": 0.005,
+    "kantenpruefung_und_fest": 0.001,
+    "gesamt": 0.018
+   }
+  },
+  "N3u": {
+   "status": "OK",
+   "wall_s": 0.1,
+   "peak_rss_abgetastet_mib": 0.0,
+   "maxrss_kind_mib": 16.5,
+   "bestanden": true,
+   "zeiten": {
+    "gruppierung": 0.013,
+    "initialisierung": 0.0,
+    "austausch": 0.001,
+    "kantenpruefung_und_fest": 0.001,
+    "gesamt": 0.015
+   }
+  },
+  "N4R09": {
+   "status": "OK",
+   "wall_s": 3.61,
+   "peak_rss_abgetastet_mib": 27.3,
+   "maxrss_kind_mib": 27.9,
+   "bestanden": true,
+   "zeiten": {
+    "gruppierung": 0.555,
+    "initialisierung": 0.011,
+    "austausch": 2.513,
+    "kantenpruefung_und_fest": 0.423,
+    "gesamt": 3.502
+   }
+  }
+ },
+ "dateien": {
+  "blockweise.py": "afa30ed88bf3ba0541a0c0164cf7a985eeffd1957b02fa70506e1d170e3eade0",
+  "blockweise_vergleich.py": "0dc37f5f991f0a45f92890f0767bcae4d7cf38de28723159c5f55c2eecddd45e",
+  "blockweise_lauf.py": "bc12e688cfcde8a175897ea70b582596c085ae3de4533ec4bd845bd4a0aa202e",
+  "ereignis_mess.py": "f5065efcf807d8d72b23bfa9b6f259c07571d608ded9ec97adbfa30d240066f3"
+ },
+ "alle_ok": true
+}

@@ -1,0 +1,52 @@
+VON: fable
+AN: ghost, christian
+BEZUG: Vorschlag 2026-10-25 06:52 – ereignisgesteuerter Arbeitstakt fuer den Stern (Arbeitsliste). Entwurf, kein Bau, kein Lauf.
+
+TEIL 1 – Macht der bestehende Austausch Teile davon schon? (Codepruefung stern.py / gruppen.py)
+- gruppen.austausch (Baumkanten): pro Takt zwei volle Durchgaenge ueber ALLE Kanten (hoch, runter). An jeder Kante wird die Kantenrelation M = proj_a(S) ∩ proj_b(S) neu berechnet und auf BEIDE Gruppen ein Semijoin angewendet – auch wenn sich seit dem letzten Mal an keiner der beiden Gruppen etwas geaendert hat. Abbruch, wenn in einem ganzen Takt nichts gestrichen wurde.
+- stern.Mitte.takt (Handgruppen/Schnittmengen): pro Takt ueber ALLE Schnittmengen; M = Durchschnitt aller Projektionen; Semijoin auf alle beteiligten Kaestchen. Gleicher Abbruch.
+Was davon schon "ereignisgesteuert" ist: (a) der Abbruch ist ein globaler Aenderungstest (gestrichen == 0); (b) die Kantenrelationen werden gespeichert (kantenrel bzw. self.M) und bleiben zwischen Takten erhalten; (c) der Semijoin selbst ist inkrementell (er streicht nur).
+Was fehlt: keine Arbeitsliste, keine Merkung, welche Gruppe sich geaendert hat, keine gerichteten Nachrichten. Jede Kante wird in jedem Takt zweimal voll bearbeitet, auch unbeteiligte. Bei N3 (16 Gruppen, 15 Kanten, 2 Takte) sind das 2 Takte x 2 Richtungen x 15 Kanten = 60 Kantenbearbeitungen mit je 2 Projektionen und 2 Semijoins, obwohl der zweite Takt nichts mehr streicht.
+Kurz: Der bestehende Austausch ist ein voller Rundenlauf mit Aenderungs-Stopp; gezieltes Weiterreichen macht er nicht.
+
+TEIL 2 – Entwurf "Arbeitsliste" (neue Datei stern/ereignis.py; gruppen.py, stern.py unveraendert)
+Grundlage: dieselbe Gruppierung wie gruppen.py (baue, strukturpruefung, init_zeilen unveraendert importiert), dieselben Ausgangstabellen. Nur der Austausch wird ersetzt.
+
+Datenhaltung in der Mitte:
+- Je gerichteter Baumkante (a -> b, Schnittmenge S) eine gespeicherte Nachricht N[a->b] = proj_a(S), zuletzt gesendeter Stand. Anfangs leer (noch nichts gesendet).
+- Arbeitsliste: Warteschlange (FIFO) PLUS Mengen-Markierung "steht drin". Eine Gruppe wird nur eingereiht, wenn sie nicht schon drinsteht -> keine Doppeleintraege. Reihenfolge deterministisch (Eliminationsreihenfolge beim Start, danach Einreihungsreihenfolge).
+- Je Gruppe eine Menge "eingehend geaendert" (welche Nachbarn seit der letzten Bearbeitung eine neue Nachricht geschickt haben).
+
+Ablauf:
+ 0. Initialisierung wie bisher (alle 2^k Zeilen, lokal gefiltert; leere Gruppe -> WIDERSPRUCH, Stopp). Alle Gruppen einmal einreihen (jede ist genau einmal dran).
+ 1. Gruppe g aus der Liste nehmen (Bearbeitung +1).
+    a. Fuer jede eingehende Nachricht N[h->g], die seit der letzten Bearbeitung von g neu ist (beim ersten Mal: alle vorhandenen): Semijoin g ⋉ N[h->g] (gestrichene Zeilen zaehlen). Wird g leer -> WIDERSPRUCH, sofortiger Stopp.
+    b. Fuer jede ausgehende Kante g -> h: P = proj_g(S) berechnen (Nachricht geprueft +1). Ist P ungleich der gespeicherten N[g->h] (oder noch keine gespeichert): speichern, h als "eingehend geaendert von g" markieren, h einreihen, falls nicht schon drin (Nachricht gesendet +1). Ist P gleich: nichts.
+    c. "eingehend geaendert" von g leeren.
+ 2. Liste leer -> FIXPUNKT (nicht "geloest"). Leere Relation irgendwo -> WIDERSPRUCH.
+Zuverlaessigkeit (warum keine Gruppe vergessen wird): Eine Gruppe aendert ihre Tabelle nur in Schritt 1a, und direkt danach werden in 1b ALLE ihre ausgehenden Projektionen neu geprueft; jede geaenderte Projektion reiht den Empfaenger ein. Eine Gruppe, deren Eingaenge sich nicht geaendert haben, kann durch erneute Bearbeitung nichts mehr streichen (Semijoin ist idempotent). Daher gilt bei leerer Liste: jede Tabelle ist gegen alle aktuellen Nachrichten reduziert, und alle Nachrichten entsprechen den aktuellen Tabellen – dasselbe Fixpunktkriterium wie beim vollen Rundenlauf. Das Verfahren ist das bekannte Arbeitslisten-Schema der Kantenkonsistenz (AC-3, Mackworth 1977) auf dem Join-Baum; keine Neuheit, wir messen nur den Aufwand.
+Feinheit: Beim vollen Rundenlauf wird an jeder Kante M = proj_a ∩ proj_b auf beide Seiten angewendet; hier erhaelt jede Seite die Projektion der anderen (g ⋉ proj_h(S)). Mathematisch gleich (g ⋉ (proj_g ∩ proj_h) = g ⋉ proj_h). Wird als Erwartung geprueft, nicht vorausgesetzt.
+
+Zaehlung (getrennt, beide Verfahren an denselben Messstellen):
+- Gruppenbearbeitungen (Arbeitsliste: Entnahmen; Rundenlauf: Semijoin-Aufrufe je Gruppe und Kante, d. h. 2 je Kante und Richtung und Takt).
+- Nachrichten geprueft (Projektionen berechnet) und Nachrichten gesendet (geaenderte, weitergereichte).
+- Gestrichene Zeilen gesamt (muessen gleich sein), groesste Listenlaenge, Takte (nur Rundenlauf).
+- Zeiten getrennt: Gruppierung+Initialisierung (gemeinsam, einmal) | Austausch Rundenlauf | Austausch Arbeitsliste | Kontrolle. Jeder Austausch in einem eigenen Kindprozess unter dem Waechter (120 s / 400 MiB), damit RSS getrennt ist; ru_maxrss im Kind; RLIMIT_AS wird gelesen und so berichtet, wie es ist.
+- Fuer den Rundenlauf werden die Zaehler in einer ZAEHLENDEN KOPIE von gruppen.austausch gefuehrt (gleiche Logik, nur Zaehler); dass die Kopie dieselben Endrelationen liefert wie das Original gruppen.austausch, wird als Vorab-Erwartung geprueft (sonst FEHLER). gruppen.py selbst bleibt unveraendert.
+
+Faelle: N3 (loesbar, bekannt 12 echte) und N3u (unloesbar), Netzdefinitionen unveraendert aus stern_n3.py, Gruppierung aus gruppen.baue (16 Gruppen, Ordnung x3, x7, ...). Zusaetzlich F1–F5 als billige Vorprobe (gleiche Erwartungen), wenn ihr wollt – sonst nur N3/N3u.
+
+Erwartungen (vorab, automatisch; Abweichung = FEHLER, Sofortstopp):
+ E1 Gleiche Gruppierung und gleiche Ausgangstabellen in beiden Verfahren (Pruefsumme ueber Gruppennamen, Variablen, Initialzeilen).
+ E2 N3: beide FIXPUNKT; je Gruppe identische Endrelation (Mengen-Gleichheit); gestrichene Zeilen gesamt gleich; globale Konsistenz je Gruppe (Tabelle == Projektion der echten Loesungen) – Kontrolle erst danach, nichts zurueck.
+ E3 N3u: beide WIDERSPRUCH. (Die Stelle des Widerspruchs darf sich unterscheiden – Reihenfolge ist anders; das wird berichtet, nicht geprueft.)
+ E4 Arbeitsliste: keine Gruppe mehrfach gleichzeitig in der Liste (wird waehrend des Laufs geprueft).
+ E5 Grenzen: keine Relation > 8 Variablen / 256 Zeilen (Zwischenstaende eingeschlossen; Grenze -> OFFEN).
+ KEINE Erwartung an die Aufwandszahlen – das ist die Frage. Weniger Bearbeitungen = Befund "gezieltes Weiterreichen spart Arbeit"; gleich viele oder mehr = ebenfalls Befund. Beide Verfahren liefern dieselben Relationen; die Groesse einer notwendigen Relation wird durch die Arbeitsliste nicht kleiner – das steht so im Bericht.
+
+Nicht enthalten: keine neuen Regeln, keine Tabellenvergroesserung, keine Joins, kein N4/N5, kein Orakel in Ableitung oder Reihenfolge. Speicherung / Ableitung / Kontrolle getrennt wie bisher.
+
+Dateien bei GO (Ordner stern/): ereignis.py (Arbeitsliste + zaehlende Rundenlauf-Kopie + Vergleichsfall), ereignis_lauf.py (Waechter, je Verfahren ein Kind), ERGEBNIS_EREIGNIS_{N3,N3u}.json, ERGEBNIS_EREIGNIS_BEGRENZT.json, Bericht. Bestehende Dateien und Ergebnisse unveraendert.
+
+Liebe Gruesse zurueck – ich warte auf Pruefung und GO.
+--- ENDE ---

@@ -1,0 +1,63 @@
+{
+ "grenzen": {
+  "zeit_s": 120.0,
+  "rss_mib": 400.0
+ },
+ "python": "3.13.16",
+ "laeufe": {
+  "N3_exakt": {
+   "status": "OK",
+   "wall_s": 0.1,
+   "peak_rss_abgetastet_mib": 0.0,
+   "maxrss_kind_mib": 17.9
+  },
+  "N3_i5": {
+   "status": "OK",
+   "wall_s": 0.1,
+   "peak_rss_abgetastet_mib": 0.0,
+   "maxrss_kind_mib": 16.9
+  },
+  "N3_i4": {
+   "status": "OK",
+   "wall_s": 0.1,
+   "peak_rss_abgetastet_mib": 0.0,
+   "maxrss_kind_mib": 16.8
+  },
+  "N3_i3": {
+   "status": "OK",
+   "wall_s": 0.1,
+   "peak_rss_abgetastet_mib": 0.0,
+   "maxrss_kind_mib": 16.8
+  },
+  "N3u_exakt": {
+   "status": "OK",
+   "wall_s": 0.1,
+   "peak_rss_abgetastet_mib": 0.0,
+   "maxrss_kind_mib": 16.8
+  },
+  "N3u_i5": {
+   "status": "OK",
+   "wall_s": 0.1,
+   "peak_rss_abgetastet_mib": 0.0,
+   "maxrss_kind_mib": 16.8
+  },
+  "N3u_i4": {
+   "status": "OK",
+   "wall_s": 0.1,
+   "peak_rss_abgetastet_mib": 0.0,
+   "maxrss_kind_mib": 17.0
+  },
+  "N3u_i3": {
+   "status": "OK",
+   "wall_s": 0.1,
+   "peak_rss_abgetastet_mib": 0.0,
+   "maxrss_kind_mib": 16.8
+  }
+ },
+ "dateien": {
+  "begrenzt_n3.py": "cd2859cff9c4cf735e3d409a3769fa6ffce2fd508d77ff70598b798100bd0c99",
+  "begrenzt_n3_lauf.py": "57e1fd6dde79155798690ce6e00b4f4c21e81e4e99a06e1611a4e88a346c46f4"
+ },
+ "E1_i5_gleich_exakt": true,
+ "alle_ok": true
+}

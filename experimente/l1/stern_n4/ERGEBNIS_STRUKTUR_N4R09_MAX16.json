@@ -1,0 +1,118 @@
+{
+ "info": {
+  "netz": "N4r09 Leine W_i=W_(i-3)",
+  "knoten_im_graph": 1328,
+  "variablen": 1326,
+  "kaestchen": 1346,
+  "gatter": 1314,
+  "zielbits": 32,
+  "max_vars": 16
+ },
+ "befund": {
+  "passt": false,
+  "schritt": 1130,
+  "variable": "v0240",
+  "gruppe": [
+   "v0240",
+   "v0117",
+   "v0120",
+   "v0127",
+   "v0134",
+   "v0201",
+   "v0204",
+   "v0211",
+   "v0218",
+   "v0224",
+   "v0227",
+   "v0230",
+   "v0231",
+   "v0255",
+   "v0258",
+   "v0263",
+   "v0265",
+   "v0272"
+  ],
+  "gruppen_vars": 18,
+  "bisher_groesste": 16,
+  "eliminiert_bisher": 1129,
+  "rest": 197
+ },
+ "struktur": null,
+ "zeit_min_fill_s": 4.193,
+ "zeit_gesamt_s": 4.194,
+ "maxrss_mib": 18.0,
+ "rlimit_as": [
+  -1,
+  -1
+ ],
+ "python": "3.13.16",
+ "abhaengigkeiten": {
+  "pruefstand": {
+   "pfad": "/home/claude/kastenmaschine/l1/pruefstand.py",
+   "sha256": "0ae511450470ca91c32a7a25a8d75f83985d06d6f217c27f16e317ab2ac1d910"
+  },
+  "gatter": {
+   "pfad": "/home/claude/kastenmaschine/miner_pruefung/sha256d/gatter.py",
+   "sha256": "75611ddf49d31dc933fe81ee56fe3a4e10cd1f1a3a571bf25fe6108b485f8f4f"
+  },
+  "gruppen": {
+   "pfad": "/home/claude/kastenmaschine/l1/stern/gruppen.py",
+   "sha256": "4c8f4546ee3cd00c82029c24226e06eacab9be5890fbf6314f53495943a40878"
+  },
+  "stern": {
+   "pfad": "/home/claude/kastenmaschine/l1/stern/stern.py",
+   "sha256": "da8d10bbe24deb7264d4abc66640c002d7379d037cf1a6c8b869589f8c536bfb"
+  },
+  "e1_bit": {
+   "pfad": "/home/claude/kastenmaschine/miner_pruefung/sha256d/e1_bit.py",
+   "sha256": "cfa14b5181eda91e8b92bc4d1baded6137d39ba325c3cf524ea4d8a6f4a23248"
+  },
+  "d6": {
+   "pfad": "/home/claude/kastenmaschine/l1/d6.py",
+   "sha256": "91ec11fc4d1d1bcf0045b0dc73a3525f0fadfd116c939101e87160bb77f6c794"
+  }
+ },
+ "ordnung_anfang": [
+  "v0019",
+  "v0029",
+  "v0035",
+  "v0047",
+  "v0063",
+  "v0073",
+  "v0096",
+  "v0116",
+  "v0139",
+  "v0147",
+  "v0161",
+  "v0190",
+  "v0200",
+  "v0223",
+  "v0254",
+  "v0277",
+  "v0287",
+  "v0301",
+  "v0336",
+  "v0344",
+  "v0367",
+  "v0406",
+  "v0429",
+  "v0435",
+  "v0464",
+  "v0499",
+  "v0507",
+  "v0530",
+  "v0569",
+  "v0592",
+  "v0615",
+  "v0644",
+  "v0679",
+  "v0687",
+  "v0710",
+  "v0749",
+  "v0772",
+  "v0795",
+  "v0824",
+  "v0859"
+ ],
+ "eliminiert": 1129
+}

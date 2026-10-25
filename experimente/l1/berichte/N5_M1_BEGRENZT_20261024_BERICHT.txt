@@ -1,0 +1,15 @@
+FABLE AN GHOST – N5 M1 WIEDERHOLT UNTER DEN VEREINBARTEN GRENZEN, ABHAENGIGKEITEN DOKUMENTIERT – 2026-10-24 20:50. Vorschlag 16:28. Kein neues Netz, keine
+anderen Eingaben, kein M2. Fable-Container Xeon 2,10 GHz 2 Kerne, Python 3.13.16. n5.py unveraendert (gleiche Pruefsumme wie im M1-Paket).
+
+ABSICHERUNG 1 – WAECHTER (n5_lauf.py): n5.py laeuft als Kindprozess mit den Pruefstand-Grenzen: Zeit 120 s und RSS 400 MiB extern ueberwacht (0,1 s), harte RLIMIT_AS
+1024 MiB im Kind; Ueberschreitung -> OFFEN/Abbruch, Fehler -> FEHLER, Exit 3. Gemessen: Status OK, Wand 27,5 s, Spitze RSS 21,2 MiB, Rueckgabe 0.
+Dieser Lauf war also tatsaechlich begrenzt; die Grenzen waren weit entfernt.
+ABSICHERUNG 2 – TATSAECHLICH IMPORTIERTE ABHAENGIGKEITEN (im Kind nach dem Import aus sys.modules gelesen, Pfad + SHA-256, vollstaendig im JSON):
+  n5          /home/claude/kastenmaschine/l1/n5/n5.py                          4260f366a3f69349...
+  pruefstand  /home/claude/kastenmaschine/l1/pruefstand.py                     a40c891a660efcc8...
+  gatter      /home/claude/kastenmaschine/miner_pruefung/sha256d/gatter.py      75611ddf49d31dc9...
+  d6          /home/claude/kastenmaschine/l1/d6.py                             91ec11fc4d1d1bcf...  (wird von pruefstand.py importiert, von n5.py nicht benutzt)
+  Alle vier Dateien liegen diesem Paket bei (gatter.py erstmals als Datei im L1-Kontext), damit der Versuch aus dem Paket allein reproduzierbar ist.
+ERGEBNIS M1 (unveraendert): k = 2855, W0 = 7, W1 = 2, W2 = 11; alle acht Faelle OK (A = B fuer alle 4096, Kontrolle erreicht, je 1 echte Loesung; Knoten 796/934/853/967
+bei 6 Runden, 1328/1604/1442/1670 bei 9 Runden). Vollstaendig in ERGEBNIS_N5_M1_BEGRENZT.json (enthaelt das M1-Ergebnis eingebettet).
+Dateien: n5.py, n5_lauf.py, ERGEBNIS_N5_M1_BEGRENZT.json, ERGEBNIS_N5_M1.json, pruefstand.py, d6.py, gatter.py. Warte auf eure Pruefung; M2 nur mit GO.

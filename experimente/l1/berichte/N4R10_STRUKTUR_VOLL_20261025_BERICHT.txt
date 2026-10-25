@@ -1,0 +1,34 @@
+VON: fable
+AN: ghost, christian
+BEZUG: GO Christian 2026-10-25 14:36 – N4r10 vollstaendig strukturell vermessen (18er-Grenze nur fuer die Zaehlung aufgehoben)
+KURZ: Die Min-Fill-Reihenfolge laeuft durch: 723 Gruppen, 722 Kanten, EIN Baum, Strukturpruefung bestanden. Groesste Gruppe 28 Variablen, groesste Schnittstelle 27. Gerechneter Gesamtbedarf fuer DIESE Reihenfolge: Tabellen ~120 MiB, Nachrichten ~120 MiB, schlanke Masken ~6,3 GiB – weit ausserhalb von 400 MiB. Austausch-Aufwand (Summe 2^s x (s-1)) rund 990-mal N4r09, das waere bei gleicher Rechengeschwindigkeit ~17 Stunden statt 62 s. Mit dieser Reihenfolge ist ein exakter Stern-Lauf nicht machbar. Das beschreibt diese Reihenfolge, nicht die minimal moegliche Baumweite.
+
+STRUKTUR (Min-Fill, Fill/Grad/Name, bis zum Ende; keine Tabellen, Masken, Ableitung)
+- Gleichwertigkeit wie zuvor: 1492 Gatter = 753 + 728 + 11, 32 Zielbits, 0 Widersprueche, 764 Kaestchen, 723 offene Variablen.
+- 723 Gruppen, 722 Kanten, 1 Wurzel; Kaestchen genau einmal, kein Kreis, Komponenten = Wurzeln, Running Intersection: bestanden. 227 Gruppen ohne eigenes Kaestchen (nur Durchreichung).
+- Gruppengroessen k: 1x1, 4x2, 65x3, 114x4, 327x5, 20x6, 49x7, 21x8, 15x9, 15x10, 9x11, 9x12, 7x13, 8x14, 9x15, 5x16, 8x17, 7x18, 6x19, 3x20, 3x21, 1x22, 2x23, 6x24, 4x25, 2x26, 2x27, 1x28. Gruppen > 18: 30 (N4r09: 0 > 18, 2 mit 18).
+- Schnittstellen s: bis 27; 20 Kanten mit s >= 19. Groesste Kanten (s, k_a, k_b): (27, 28, 27) G_v1379–G_v1386; (26, 27, 27); (26, 27, 26); (25, 26, 25) zweimal; (24, 25, 28) G_v0005–G_v1379 (Eingangswurzel v0005 haengt an der 28er-Gruppe).
+- Wo es gross wird: in den letzten ~70 Eliminationsschritten (ab Schritt 657, dort stoppte die 18er-Grenze), bei den Knoten der Runden 8–10 (v1168–v1386) und den Eingangswurzeln – die vierte Wiederholung der Leine.
+
+GESAMTBEDARF GERECHNET (Objektbytes nach sys.getsizeof-Formel dieses Pythons; nichts aufgebaut; Schaetzung fuer diese Reihenfolge)
+                      | N4r10 (diese Ordnung)        | N4r09 zum Vergleich (gemessen)
+Tabellen              | 943 Mio Bit = 112 MiB; ~120 MiB Objektbytes; groesste 2^28 Bit = 32 MiB | 1,6 Mio Bit; 223 KiB
+Nachrichten (1444)    | 943 Mio Bit; ~120 MiB mit Huelle | 489 KiB
+Masken schlank        | 49,6 Mrd Bit = 5,8 GiB; ~6,3 GiB Objektbytes (2k Masken zu 2^k Bit je Gruppe: allein die 28er-Gruppe 56 x 32 MiB) | 7,1 MiB
+Masken bisher         | 1,0e17 Bit – sinnlos                              | (24 GiB, nicht gebaut)
+Zwischenobjekt je Aufruf | ~85 MiB gerechnet (2 x 32 MiB + 16 MiB)        | ~90 KB
+Arbeitsstrukturen     | ~0,8 MiB (proportional zu N4r09)                 | 578 KB gemessen
+Austausch-Aufwand     | Summe 2^s x (s-1) = 1,15e10                       | 1,16e7 (-> 62 s)
+Folgerung: Allein die Tabellen (120 MiB) passen nur knapp, die Masken (6,3 GiB) nicht; der Austausch laege bei grob 990 x 62 s. OFFEN waere nicht erst beim Lauf, sondern schon beim Aufbau.
+Hinweis zur Messung dieses Strukturlaufs: RSS 104 MiB (statt ~19 MiB) – weil die Groessenrechnung selbst zur Bestimmung der Objektbytes kurz Ganzzahlen mit 2^28 Bit angelegt hat (sys.getsizeof an echten Objekten). Das ist Messaufwand, kein Stern-Speicher; Zeit 3,2 s.
+
+WAS DAS HEISST
+- Fuer die Relationsgrenze des eigentlichen Rechenlaufs: Mit dieser Min-Fill-Reihenfolge gibt es keine Grenze zwischen 18 und 28, die den Baum vollstaendig macht und zugleich ins Budget passt. 19 oder 20 wuerden bei Schritt 657 ff. weiterhelfen, aber die Ordnung braucht danach 28. Eine Grenzerhoehung allein loest es nicht.
+- Was uebrig bleibt (Vorschlaege, kein GO): (1) andere Eliminationsheuristiken strukturell vergleichen (Min-Degree, Min-Fill mit anderer Gleichstandsregel, mehrere zufaellige Gleichstandsaufloesungen – Sekunden je Lauf, reine Zaehlung); Ghost hat recht, dass 28 nur diese Ordnung beschreibt, nicht die Baumweite. (2) Mehr Vorvereinfachung: das Grundgeruest allein liess 512 offen; mit R9a/R9b/R7 waren es 384 – ein Stufe-B+-Zustand mit diesen Folgerungen eingesetzt wuerde vermutlich mehr Variablen festlegen/aliasieren und den Baum verkleinern (Vermutung; strukturell pruefbar in Sekunden). (3) Begrenzte Gruppen (Weg B) mit i = 18 als bewusst unvollstaendiges Folgern – soundness bleibt, Erkennung sinkt; wie viel, ist messbar.
+- Keine Aussage ueber Loesbarkeit von N4r10, ueber N5 oder SHA-256. Die Zahlen sind Rechnungen aus der Struktur, keine Messungen eines Laufs.
+
+EINFACH GESAGT
+Bei N4r10 laeuft die Leine ein viertes Mal ueber dieselben Eingangsbits. Dadurch muss der Anschlusskasten an der engsten Stelle 28 Leitungen gleichzeitig halten statt 18 – und jede Leitung mehr verdoppelt die Tabelle. 28 Leitungen heisst 32 MiB fuer eine einzige Tabelle und Schablonen im Gigabyte-Bereich; der Abgleich wuerde Stunden dauern. So, wie wir die Leitungen gerade sortieren, geht es nicht. Ob eine andere Sortierung oder mehr Vorarbeit der Regelmaschine den Kasten klein genug macht, ist offen – und in Sekunden pruefbar.
+
+DATEIEN (kastenmaschine/l1/stern_n4/): n4r10_struktur_voll.py (Kopie von n4r10_struktur.py mit Grenze aus der Umgebung), n4r10_struktur_voll_lauf.py, ERGEBNIS_N4R10_STRUKTUR_VOLL.json, ERGEBNIS_N4R10_STRUKTUR_VOLL_BEGRENZT.json. Abhaengigkeiten mit Pfad + SHA256. Bestehende Dateien unveraendert. Waechter OK (3,2 s, 104 MiB). Stopp.
+--- ENDE ---

@@ -1,0 +1,12 @@
+FABLE AN GHOST – R8L KORRIGIERT (beide Punkte), 2026-10-24 12:45. Nur die letzten vier Ch-Bits erneut gemessen (altes GO); Runde 8 NICHT gestartet.
+
+1. Neuheitsfilter im Code: Messung jetzt nach deiner Definition.
+   A = alle 2^8 Kombinationen der acht Anschluesse (e,f,g,b,cin,z,s,cout) als UNABHAENGIGE Variablen, gefiltert NUR durch D6s lokale Bedingungen
+       (feste Werte, Aliasse, XOR-Pivots, lineare Gleichungen – einschliesslich der Stufengleichung, die D6 besitzt).
+   B = davon die Kombinationen, die Ch UND Stufe gemeinsam erfuellen (das gemeinsame Kaestchen).
+   Gewinn = A - B (zusaetzlich ausgeschlossene Kombinationen). 'Neu' zaehlt nur, was in allen Zeilen von B gilt und in A mindestens einmal verletzt wird –
+   eine anders geschriebene bekannte Beziehung faellt damit heraus (b^cin^s=0 ist in A schon erfuellt und erscheint nicht mehr).
+2. Verlorene echte Loesung -> 'FEHLER', FEHLER_R8L.json, SystemExit(3), kein Bericht. GETESTET: mit absichtlich verfaelschtem Kontrollwert
+   (Umgebungsvariable R8L_TEST_FEHLER=1, nur Test) bricht der Lauf bei Ch#32 mit Exit 3 ab. Ohne Verfaelschung: alle vier erhalten.
+Ergebnis letzte Runde, korrigiert (0,26 s): Ch#32 A 2 -> B 2; Ch#33 A 4 -> B 4; Ch#34 A 4 -> B 4; Ch#35 A 4 -> B 4. Ausgeschlossen 0, neu 0. Unveraendert Nullbefund.
+Aufruf fuer den naechsten Schritt (wartet auf dein GO): python3 r8l.py N4r09 8   – Ch-Bits der Runde 8, gleicher Stand, gleiche Messung, lokal, ohne Weitergabe, ohne R8g.

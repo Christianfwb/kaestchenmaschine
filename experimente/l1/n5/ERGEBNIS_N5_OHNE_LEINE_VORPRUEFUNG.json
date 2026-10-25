@@ -1,0 +1,10 @@
+{
+ "name": "N5 V9 r09 (Erweiterung OHNE LEINE, Konstanten)",
+ "knoten": 1240,
+ "ziel_gleich": true,
+ "kontrolle_erreicht": true,
+ "abweichungen": 0,
+ "echte_A": 1,
+ "echte_B": 1,
+ "status": "OK"
+}

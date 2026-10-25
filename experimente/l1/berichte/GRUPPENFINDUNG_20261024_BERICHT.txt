@@ -1,0 +1,32 @@
+FABLE AN GHOST – GRUPPENFINDUNG (MIN-FILL, BAUM/WALD, AUSTAUSCH): FUENF FAELLE, N3, N3u – 2026-10-25 06:40. GO Christian 20:27. Danach Stopp.
+gruppen.py im Stern-Labor; importiert nur stern.py (Kaestchen) und die Netzdefinitionen aus stern_n3.py. Kein D6/Pruefstand/N4/N5. Bestehende Dateien unveraendert.
+Fable-Container Xeon 2,10 GHz, Python 3.13.16. Waechter 120 s / 400 MiB: Wand 0,6 s, Spitze laut Kern 14,6 MiB. Grenzen 8 Variablen / 256 Zeilen je Gruppe: nicht erreicht.
+Sabotageprotokoll als EIGENE Datei (ERGEBNIS_GRUPPEN_SABOTAGE.json): absichtlich falsche Erwartung bei F1 -> FEHLER, SystemExit 3, kein weiterer Fall; gute Ergebnisdatei
+unveraendert erhalten (Ghosts Hinweis umgesetzt).
+
+UMSETZUNG (Entwurf Fassung 3): S1 Primalgraph; S2 Min-Fill (Gleichstand: Grad, dann Name); S3 ALLE Eliminationsgruppen behalten; S4 Eltern = Gruppe der fruehesten
+spaeter eliminierten Nachbarvariablen (Baum/Wald); S5 Kaestchen -> Gruppe seiner fruehesten Variablen; S6 Gruppe startet mit allen 2^k Zeilen, Kaestchen schraenken ein,
+leer -> WIDERSPRUCH; S7 Strukturpruefungen (genau einmal zugeordnet, Variablen enthalten, Running Intersection je Variable, Kanten mit Schnittmenge, azyklisch) -> FEHLER;
+Groessengrenze -> OFFEN ('diese Reihenfolge ueberschreitet die Grenze'); S8 Austausch Blaetter->Wurzel->Blaetter bis Stillstand, Kantenrelationen gehalten.
+Drei Ergebnisse getrennt; zusaetzlich nachtraeglich: globale Konsistenz (jede gespeicherte Zeile Teil einer echten Loesung).
+
+ERGEBNISSE (ERGEBNIS_GRUPPEN.json): Fall | Status | Gruppen (groesste Var/Zeilen) | Kanten | Takte | Kontrolle | Speicherung verloren/hinzu | global konsistent
+  F1 gleich vs ungleich   WIDERSPRUCH | 2 (2/2)  | 1  | 0 (Gruppe G_a beim Initialisieren leer) | 0  | 0/0 | –
+  F2 gleich + a=0         FIXPUNKT    | 2 (2/1)  | 1  | 2 | 1  | 0/0 | ja
+  F3 Kette                FIXPUNKT    | 4 (2/2)  | 3  | 1 | 2  | 0/0 | ja
+  F4 Dreieck              WIDERSPRUCH | 3 (3/2)  | 2  | 1 | 0  | 0/0 | –      Min-Fill bildet G_a = {a,b,c} mit K1, K3; der Austausch mit G_b = {b,c} (K2) wird leer.
+  F5 Spiegelpaar          FIXPUNKT    | 4 (3/4)  | 3  | 2 | 4  | 0/0 | ja     Gruppen {p,a,b}, {a,b,q}, {b,q}, {q} – GENAU wie von dir vorhergesagt, keine Vierergruppe.
+                                                                              Speicherung exakt und global konsistent; eine ausgeschriebene p-q-Relation entsteht nicht
+                                                                              (sie laege ueber der Kante {a,b} verteilt) – wie angekuendigt nicht gefordert.
+  N3                      FIXPUNKT    | 16 (4/4) | 15 | 2 | 12 | 0/0 | ja     Ordnung: x3, x7, x2, x5, x4, x6, x9, x8, cA, cB, x0, a1, a2, b1, b2, x1.
+                                                                              Groesste Gruppe 4 Variablen (meine Handgruppen: 5/7/8), groesste Zeilenzahl 4.
+  N3u                     WIDERSPRUCH | 16 (4/16)| 15 | 1 | 0  | 0/0 | –      keine Scheinentscheidung.
+Alle sieben Erwartungen bestanden; 0 verloren / 0 hinzugefuegt ueberall.
+
+BEFUND (BELEGT, kleine Netze): Die Mitte findet die Gruppen selbst – rein strukturell, ohne Orakel – und erreicht an N3 mit 16 kleinen Gruppen (hoechstens 4 Variablen)
+dasselbe wie meine drei Handgruppen: Speicherung exakt, globale Konsistenz, 12 Loesungen in der Kontrolle. N3u: Widerspruch. Dreieck: Widerspruch ohne vorab gesetzten Join.
+Die automatischen Gruppen sind KLEINER als die von Hand (4 statt 8 Variablen) – mehr, aber kleinere Tabellen; der Baum (15 Kanten) traegt die Kopplung.
+GRENZEN DER AUSSAGE: kleine Netze; Min-Fill ist Heuristik; 'global konsistent' ist nachtraeglich geprueft, nicht als Satz fuer alle Netze belegt (fuer gueltige Join-Baeume
+ist es der bekannte Satz). Keine Aussage ueber N4/N5/SHA.
+OFFEN (nicht gestartet): Strukturzaehlung an N4r09 (S1–S5 ohne Tabellen: wie gross wird die groesste Gruppe, wo bricht es?); danach Entscheidung zu dritt.
+Dateien: BERICHT.txt, ERGEBNIS_GRUPPEN.json, kastenmaschine/l1/stern/{gruppen.py, gruppen_lauf.py, gruppen_sabotage.py, stern.py, ERGEBNIS_GRUPPEN*.json}, kastenmaschine/l1/stern_n3/stern_n3.py.

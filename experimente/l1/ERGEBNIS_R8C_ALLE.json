@@ -1,0 +1,2422 @@
+[
+ {
+  "netz": "L3 loesbar: 3-Bit-Addierer mit Uebertrag, nur Summe",
+  "frei": 6,
+  "knoten": 24,
+  "wahr": 8,
+  "zeilen": [
+   {
+    "darstellung": "D6+R5+R6+R7+R1b",
+    "status": "FIXPUNKT",
+    "erlaubt": 8,
+    "scheinloesungen": 0,
+    "verlorene": 0,
+    "entschieden": true,
+    "groesse": {
+     "xor_gleichungen": 10,
+     "und_gleichungen": 11,
+     "stufen": 3,
+     "werte": 8,
+     "aliasse": 5,
+     "regeln": {
+      "R1": 3,
+      "R2": 1,
+      "R3": 3,
+      "R4": 7,
+      "R5": 0,
+      "R6": 1,
+      "R7": 2,
+      "R1b": 1
+     },
+     "beziehungen_ueber_freie_bits": [
+      "x0^x3=1",
+      "x1^x4=0",
+      "x2^x4^x5=1"
+     ],
+     "ganzzahlige_beziehungen": [],
+     "wertemengen": [
+      "+1*x2 +1*x4 +1*x5 in [1, 3]",
+      "+4*x2 +4*x4 +4*x5 in [4, 12]"
+     ],
+     "feste_freie_bits": 0,
+     "s": 0.0006
+    },
+    "folgerungen": {
+     "frei_fest": {},
+     "frei_lin": [],
+     "frei_menge": [
+      [
+       [
+        [
+         2,
+         1
+        ],
+        [
+         4,
+         1
+        ],
+        [
+         5,
+         1
+        ]
+       ],
+       [
+        1,
+        3
+       ]
+      ],
+      [
+       [
+        [
+         2,
+         4
+        ],
+        [
+         4,
+         4
+        ],
+        [
+         5,
+         4
+        ]
+       ],
+       [
+        4,
+        12
+       ]
+      ]
+     ],
+     "frei_xor": [
+      [
+       0,
+       3,
+       1
+      ],
+      [
+       1,
+       4,
+       0
+      ],
+      [
+       2,
+       4,
+       5,
+       1
+      ]
+     ],
+     "widerspruch": false
+    },
+    "ableitung_s": 0.0007,
+    "ableitung_peak_mib": 16.4,
+    "kontrolle_s": 0.0002,
+    "wall_s": 0.1,
+    "peak_mib_extern": 0.0,
+    "rlimit_aktiv": true,
+    "rlimit_mib": 1024
+   },
+   {
+    "darstellung": "D6+R1b+R8c(20,22)",
+    "status": "FIXPUNKT",
+    "erlaubt": 8,
+    "scheinloesungen": 0,
+    "verlorene": 0,
+    "entschieden": true,
+    "groesse": {
+     "xor_gleichungen": 10,
+     "und_gleichungen": 11,
+     "stufen": 3,
+     "werte": 8,
+     "aliasse": 5,
+     "regeln": {
+      "R1": 3,
+      "R2": 1,
+      "R3": 3,
+      "R4": 7,
+      "R5": 0,
+      "R6": 1,
+      "R7": 2,
+      "R1b": 1
+     },
+     "beziehungen_ueber_freie_bits": [
+      "x0^x3=1",
+      "x1^x4=0",
+      "x2^x4^x5=1"
+     ],
+     "ganzzahlige_beziehungen": [],
+     "wertemengen": [
+      "+1*x2 +1*x4 +1*x5 in [1, 3]",
+      "+4*x2 +4*x4 +4*x5 in [4, 12]"
+     ],
+     "feste_freie_bits": 0,
+     "s": 0.0005
+    },
+    "folgerungen": {
+     "frei_fest": {},
+     "frei_lin": [],
+     "frei_menge": [
+      [
+       [
+        [
+         2,
+         1
+        ],
+        [
+         4,
+         1
+        ],
+        [
+         5,
+         1
+        ]
+       ],
+       [
+        1,
+        3
+       ]
+      ],
+      [
+       [
+        [
+         2,
+         4
+        ],
+        [
+         4,
+         4
+        ],
+        [
+         5,
+         4
+        ]
+       ],
+       [
+        4,
+        12
+       ]
+      ]
+     ],
+     "frei_xor": [
+      [
+       0,
+       3,
+       1
+      ],
+      [
+       1,
+       4,
+       0
+      ],
+      [
+       2,
+       4,
+       5,
+       1
+      ]
+     ],
+     "widerspruch": false
+    },
+    "ableitung_s": 0.0005,
+    "ableitung_peak_mib": 16.4,
+    "kontrolle_s": 0.0001,
+    "wall_s": 0.1,
+    "peak_mib_extern": 0.0,
+    "rlimit_aktiv": true,
+    "rlimit_mib": 1024
+   },
+   {
+    "darstellung": "D6+R1b+R8c",
+    "status": "FIXPUNKT",
+    "erlaubt": 8,
+    "scheinloesungen": 0,
+    "verlorene": 0,
+    "entschieden": true,
+    "groesse": {
+     "xor_gleichungen": 10,
+     "und_gleichungen": 11,
+     "stufen": 3,
+     "werte": 8,
+     "aliasse": 5,
+     "regeln": {
+      "R1": 3,
+      "R2": 1,
+      "R3": 3,
+      "R4": 7,
+      "R5": 0,
+      "R6": 1,
+      "R7": 2,
+      "R1b": 1
+     },
+     "beziehungen_ueber_freie_bits": [
+      "x0^x3=1",
+      "x1^x4=0",
+      "x2^x4^x5=1"
+     ],
+     "ganzzahlige_beziehungen": [],
+     "wertemengen": [
+      "+1*x2 +1*x4 +1*x5 in [1, 3]",
+      "+4*x2 +4*x4 +4*x5 in [4, 12]"
+     ],
+     "feste_freie_bits": 0,
+     "s": 0.0007
+    },
+    "folgerungen": {
+     "frei_fest": {},
+     "frei_lin": [],
+     "frei_menge": [
+      [
+       [
+        [
+         2,
+         1
+        ],
+        [
+         4,
+         1
+        ],
+        [
+         5,
+         1
+        ]
+       ],
+       [
+        1,
+        3
+       ]
+      ],
+      [
+       [
+        [
+         2,
+         4
+        ],
+        [
+         4,
+         4
+        ],
+        [
+         5,
+         4
+        ]
+       ],
+       [
+        4,
+        12
+       ]
+      ]
+     ],
+     "frei_xor": [
+      [
+       0,
+       3,
+       1
+      ],
+      [
+       1,
+       4,
+       0
+      ],
+      [
+       2,
+       4,
+       5,
+       1
+      ]
+     ],
+     "widerspruch": false
+    },
+    "ableitung_s": 0.0007,
+    "ableitung_peak_mib": 16.4,
+    "kontrolle_s": 0.0002,
+    "wall_s": 0.1,
+    "peak_mib_extern": 0.0,
+    "rlimit_aktiv": true,
+    "rlimit_mib": 1024
+   }
+  ]
+ },
+ {
+  "netz": "L4 loesbar: Fall A mit erfuellbarer Parit\u00e4t",
+  "frei": 4,
+  "knoten": 11,
+  "wahr": 4,
+  "zeilen": [
+   {
+    "darstellung": "D6+R5+R6+R7+R1b",
+    "status": "FIXPUNKT",
+    "erlaubt": 4,
+    "scheinloesungen": 0,
+    "verlorene": 0,
+    "entschieden": true,
+    "groesse": {
+     "xor_gleichungen": 5,
+     "und_gleichungen": 0,
+     "stufen": 0,
+     "werte": 3,
+     "aliasse": 3,
+     "regeln": {
+      "R1": 0,
+      "R2": 0,
+      "R3": 3,
+      "R4": 0,
+      "R5": 0,
+      "R6": 0,
+      "R7": 0
+     },
+     "beziehungen_ueber_freie_bits": [
+      "x0^x1^x3=1",
+      "x2^x3=0"
+     ],
+     "ganzzahlige_beziehungen": [],
+     "wertemengen": [],
+     "feste_freie_bits": 0,
+     "s": 0.0001
+    },
+    "folgerungen": {
+     "frei_fest": {},
+     "frei_lin": [],
+     "frei_menge": [],
+     "frei_xor": [
+      [
+       0,
+       1,
+       3,
+       1
+      ],
+      [
+       2,
+       3,
+       0
+      ]
+     ],
+     "widerspruch": false
+    },
+    "ableitung_s": 0.0002,
+    "ableitung_peak_mib": 16.4,
+    "kontrolle_s": 0.0001,
+    "wall_s": 0.1,
+    "peak_mib_extern": 0.0,
+    "rlimit_aktiv": true,
+    "rlimit_mib": 1024
+   },
+   {
+    "darstellung": "D6+R1b+R8c(20,22)",
+    "status": "FIXPUNKT",
+    "erlaubt": 4,
+    "scheinloesungen": 0,
+    "verlorene": 0,
+    "entschieden": true,
+    "groesse": {
+     "xor_gleichungen": 5,
+     "und_gleichungen": 0,
+     "stufen": 0,
+     "werte": 3,
+     "aliasse": 3,
+     "regeln": {
+      "R1": 0,
+      "R2": 0,
+      "R3": 3,
+      "R4": 0,
+      "R5": 0,
+      "R6": 0,
+      "R7": 0
+     },
+     "beziehungen_ueber_freie_bits": [
+      "x0^x1^x3=1",
+      "x2^x3=0"
+     ],
+     "ganzzahlige_beziehungen": [],
+     "wertemengen": [],
+     "feste_freie_bits": 0,
+     "s": 0.0001
+    },
+    "folgerungen": {
+     "frei_fest": {},
+     "frei_lin": [],
+     "frei_menge": [],
+     "frei_xor": [
+      [
+       0,
+       1,
+       3,
+       1
+      ],
+      [
+       2,
+       3,
+       0
+      ]
+     ],
+     "widerspruch": false
+    },
+    "ableitung_s": 0.0001,
+    "ableitung_peak_mib": 16.4,
+    "kontrolle_s": 0.0,
+    "wall_s": 0.1,
+    "peak_mib_extern": 0.0,
+    "rlimit_aktiv": true,
+    "rlimit_mib": 1024
+   },
+   {
+    "darstellung": "D6+R1b+R8c",
+    "status": "FIXPUNKT",
+    "erlaubt": 4,
+    "scheinloesungen": 0,
+    "verlorene": 0,
+    "entschieden": true,
+    "groesse": {
+     "xor_gleichungen": 5,
+     "und_gleichungen": 0,
+     "stufen": 0,
+     "werte": 3,
+     "aliasse": 3,
+     "regeln": {
+      "R1": 0,
+      "R2": 0,
+      "R3": 3,
+      "R4": 0,
+      "R5": 0,
+      "R6": 0,
+      "R7": 0
+     },
+     "beziehungen_ueber_freie_bits": [
+      "x0^x1^x3=1",
+      "x2^x3=0"
+     ],
+     "ganzzahlige_beziehungen": [],
+     "wertemengen": [],
+     "feste_freie_bits": 0,
+     "s": 0.0001
+    },
+    "folgerungen": {
+     "frei_fest": {},
+     "frei_lin": [],
+     "frei_menge": [],
+     "frei_xor": [
+      [
+       0,
+       1,
+       3,
+       1
+      ],
+      [
+       2,
+       3,
+       0
+      ]
+     ],
+     "widerspruch": false
+    },
+    "ableitung_s": 0.0001,
+    "ableitung_peak_mib": 16.4,
+    "kontrolle_s": 0.0,
+    "wall_s": 0.1,
+    "peak_mib_extern": 0.0,
+    "rlimit_aktiv": true,
+    "rlimit_mib": 1024
+   }
+  ]
+ },
+ {
+  "netz": "N3 zwei gekoppelte Additionen (2 geteilte Bits, cout gleich)",
+  "frei": 10,
+  "knoten": 45,
+  "wahr": 12,
+  "zeilen": [
+   {
+    "darstellung": "D6+R5+R6+R7+R1b",
+    "status": "FIXPUNKT",
+    "erlaubt": 12,
+    "scheinloesungen": 0,
+    "verlorene": 0,
+    "entschieden": true,
+    "groesse": {
+     "xor_gleichungen": 22,
+     "und_gleichungen": 22,
+     "stufen": 6,
+     "werte": 12,
+     "aliasse": 6,
+     "regeln": {
+      "R1": 3,
+      "R2": 1,
+      "R3": 4,
+      "R4": 13,
+      "R5": 1,
+      "R6": 3,
+      "R7": 4,
+      "R1b": 1
+     },
+     "beziehungen_ueber_freie_bits": [
+      "x0^x7=0",
+      "x1^x7^x8=1",
+      "x3^x7=1",
+      "x4^x7^x8=1"
+     ],
+     "ganzzahlige_beziehungen": [
+      "+4*x2 +2*x4 +4*x5 -4*x6 -2*x7 -2*x8 -4*x9 = -2"
+     ],
+     "wertemengen": [
+      "+1*x1 +1*x4 in [0, 2]",
+      "+1*x1 +1*x7 +1*x8 in [1, 3]",
+      "+2*x1 +4*x2 +2*x4 +4*x5 in [4, 12]",
+      "+2*x1 +4*x6 +2*x7 +2*x8 +4*x9 in [6, 14]"
+     ],
+     "feste_freie_bits": 0,
+     "s": 0.0009
+    },
+    "folgerungen": {
+     "frei_fest": {},
+     "frei_lin": [
+      [
+       [
+        [
+         2,
+         4
+        ],
+        [
+         4,
+         2
+        ],
+        [
+         5,
+         4
+        ],
+        [
+         6,
+         -4
+        ],
+        [
+         7,
+         -2
+        ],
+        [
+         8,
+         -2
+        ],
+        [
+         9,
+         -4
+        ]
+       ],
+       -2
+      ]
+     ],
+     "frei_menge": [
+      [
+       [
+        [
+         1,
+         1
+        ],
+        [
+         4,
+         1
+        ]
+       ],
+       [
+        0,
+        2
+       ]
+      ],
+      [
+       [
+        [
+         1,
+         1
+        ],
+        [
+         7,
+         1
+        ],
+        [
+         8,
+         1
+        ]
+       ],
+       [
+        1,
+        3
+       ]
+      ],
+      [
+       [
+        [
+         1,
+         2
+        ],
+        [
+         2,
+         4
+        ],
+        [
+         4,
+         2
+        ],
+        [
+         5,
+         4
+        ]
+       ],
+       [
+        4,
+        12
+       ]
+      ],
+      [
+       [
+        [
+         1,
+         2
+        ],
+        [
+         6,
+         4
+        ],
+        [
+         7,
+         2
+        ],
+        [
+         8,
+         2
+        ],
+        [
+         9,
+         4
+        ]
+       ],
+       [
+        6,
+        14
+       ]
+      ]
+     ],
+     "frei_xor": [
+      [
+       0,
+       7,
+       0
+      ],
+      [
+       1,
+       7,
+       8,
+       1
+      ],
+      [
+       3,
+       7,
+       1
+      ],
+      [
+       4,
+       7,
+       8,
+       1
+      ]
+     ],
+     "widerspruch": false
+    },
+    "ableitung_s": 0.0009,
+    "ableitung_peak_mib": 16.5,
+    "kontrolle_s": 0.0017,
+    "wall_s": 0.1,
+    "peak_mib_extern": 0.0,
+    "rlimit_aktiv": true,
+    "rlimit_mib": 1024
+   },
+   {
+    "darstellung": "D6+R1b+R8c(20,22)",
+    "status": "FIXPUNKT",
+    "erlaubt": 12,
+    "scheinloesungen": 0,
+    "verlorene": 0,
+    "entschieden": true,
+    "groesse": {
+     "xor_gleichungen": 22,
+     "und_gleichungen": 22,
+     "stufen": 6,
+     "werte": 12,
+     "aliasse": 6,
+     "regeln": {
+      "R1": 3,
+      "R2": 1,
+      "R3": 4,
+      "R4": 13,
+      "R5": 1,
+      "R6": 3,
+      "R7": 4,
+      "R1b": 1
+     },
+     "beziehungen_ueber_freie_bits": [
+      "x0^x7=0",
+      "x1^x7^x8=1",
+      "x3^x7=1",
+      "x4^x7^x8=1"
+     ],
+     "ganzzahlige_beziehungen": [
+      "+4*x2 +2*x4 +4*x5 -4*x6 -2*x7 -2*x8 -4*x9 = -2"
+     ],
+     "wertemengen": [
+      "+1*x1 +1*x4 in [0, 2]",
+      "+1*x1 +1*x7 +1*x8 in [1, 3]",
+      "+2*x1 +4*x2 +2*x4 +4*x5 in [4, 12]",
+      "+2*x1 +4*x6 +2*x7 +2*x8 +4*x9 in [6, 14]"
+     ],
+     "feste_freie_bits": 0,
+     "s": 0.001
+    },
+    "folgerungen": {
+     "frei_fest": {},
+     "frei_lin": [
+      [
+       [
+        [
+         2,
+         4
+        ],
+        [
+         4,
+         2
+        ],
+        [
+         5,
+         4
+        ],
+        [
+         6,
+         -4
+        ],
+        [
+         7,
+         -2
+        ],
+        [
+         8,
+         -2
+        ],
+        [
+         9,
+         -4
+        ]
+       ],
+       -2
+      ]
+     ],
+     "frei_menge": [
+      [
+       [
+        [
+         1,
+         1
+        ],
+        [
+         4,
+         1
+        ]
+       ],
+       [
+        0,
+        2
+       ]
+      ],
+      [
+       [
+        [
+         1,
+         1
+        ],
+        [
+         7,
+         1
+        ],
+        [
+         8,
+         1
+        ]
+       ],
+       [
+        1,
+        3
+       ]
+      ],
+      [
+       [
+        [
+         1,
+         2
+        ],
+        [
+         2,
+         4
+        ],
+        [
+         4,
+         2
+        ],
+        [
+         5,
+         4
+        ]
+       ],
+       [
+        4,
+        12
+       ]
+      ],
+      [
+       [
+        [
+         1,
+         2
+        ],
+        [
+         6,
+         4
+        ],
+        [
+         7,
+         2
+        ],
+        [
+         8,
+         2
+        ],
+        [
+         9,
+         4
+        ]
+       ],
+       [
+        6,
+        14
+       ]
+      ]
+     ],
+     "frei_xor": [
+      [
+       0,
+       7,
+       0
+      ],
+      [
+       1,
+       7,
+       8,
+       1
+      ],
+      [
+       3,
+       7,
+       1
+      ],
+      [
+       4,
+       7,
+       8,
+       1
+      ]
+     ],
+     "widerspruch": false
+    },
+    "ableitung_s": 0.001,
+    "ableitung_peak_mib": 16.6,
+    "kontrolle_s": 0.0016,
+    "wall_s": 0.1,
+    "peak_mib_extern": 0.0,
+    "rlimit_aktiv": true,
+    "rlimit_mib": 1024
+   },
+   {
+    "darstellung": "D6+R1b+R8c",
+    "status": "FIXPUNKT",
+    "erlaubt": 12,
+    "scheinloesungen": 0,
+    "verlorene": 0,
+    "entschieden": true,
+    "groesse": {
+     "xor_gleichungen": 22,
+     "und_gleichungen": 22,
+     "stufen": 6,
+     "werte": 12,
+     "aliasse": 6,
+     "regeln": {
+      "R1": 3,
+      "R2": 1,
+      "R3": 4,
+      "R4": 13,
+      "R5": 1,
+      "R6": 3,
+      "R7": 4,
+      "R1b": 1
+     },
+     "beziehungen_ueber_freie_bits": [
+      "x0^x7=0",
+      "x1^x7^x8=1",
+      "x3^x7=1",
+      "x4^x7^x8=1"
+     ],
+     "ganzzahlige_beziehungen": [
+      "+4*x2 +2*x4 +4*x5 -4*x6 -2*x7 -2*x8 -4*x9 = -2"
+     ],
+     "wertemengen": [
+      "+1*x1 +1*x4 in [0, 2]",
+      "+1*x1 +1*x7 +1*x8 in [1, 3]",
+      "+2*x1 +4*x2 +2*x4 +4*x5 in [4, 12]",
+      "+2*x1 +4*x6 +2*x7 +2*x8 +4*x9 in [6, 14]"
+     ],
+     "feste_freie_bits": 0,
+     "s": 0.0009
+    },
+    "folgerungen": {
+     "frei_fest": {},
+     "frei_lin": [
+      [
+       [
+        [
+         2,
+         4
+        ],
+        [
+         4,
+         2
+        ],
+        [
+         5,
+         4
+        ],
+        [
+         6,
+         -4
+        ],
+        [
+         7,
+         -2
+        ],
+        [
+         8,
+         -2
+        ],
+        [
+         9,
+         -4
+        ]
+       ],
+       -2
+      ]
+     ],
+     "frei_menge": [
+      [
+       [
+        [
+         1,
+         1
+        ],
+        [
+         4,
+         1
+        ]
+       ],
+       [
+        0,
+        2
+       ]
+      ],
+      [
+       [
+        [
+         1,
+         1
+        ],
+        [
+         7,
+         1
+        ],
+        [
+         8,
+         1
+        ]
+       ],
+       [
+        1,
+        3
+       ]
+      ],
+      [
+       [
+        [
+         1,
+         2
+        ],
+        [
+         2,
+         4
+        ],
+        [
+         4,
+         2
+        ],
+        [
+         5,
+         4
+        ]
+       ],
+       [
+        4,
+        12
+       ]
+      ],
+      [
+       [
+        [
+         1,
+         2
+        ],
+        [
+         6,
+         4
+        ],
+        [
+         7,
+         2
+        ],
+        [
+         8,
+         2
+        ],
+        [
+         9,
+         4
+        ]
+       ],
+       [
+        6,
+        14
+       ]
+      ]
+     ],
+     "frei_xor": [
+      [
+       0,
+       7,
+       0
+      ],
+      [
+       1,
+       7,
+       8,
+       1
+      ],
+      [
+       3,
+       7,
+       1
+      ],
+      [
+       4,
+       7,
+       8,
+       1
+      ]
+     ],
+     "widerspruch": false
+    },
+    "ableitung_s": 0.0009,
+    "ableitung_peak_mib": 16.6,
+    "kontrolle_s": 0.0015,
+    "wall_s": 0.1,
+    "peak_mib_extern": 0.0,
+    "rlimit_aktiv": true,
+    "rlimit_mib": 1024
+   }
+  ]
+ },
+ {
+  "netz": "N3u gekoppelte Additionen, Variante",
+  "frei": 10,
+  "knoten": 45,
+  "wahr": 0,
+  "zeilen": [
+   {
+    "darstellung": "D6+R5+R6+R7+R1b",
+    "status": "WIDERSPRUCH",
+    "erlaubt": 0,
+    "scheinloesungen": 0,
+    "verlorene": 0,
+    "entschieden": true,
+    "groesse": {
+     "xor_gleichungen": 15,
+     "und_gleichungen": 22,
+     "stufen": 6,
+     "werte": 19,
+     "aliasse": 0,
+     "regeln": {
+      "R1": 0,
+      "R2": 0,
+      "R3": 0,
+      "R4": 14,
+      "R5": 0,
+      "R6": 2,
+      "R7": 0
+     },
+     "beziehungen_ueber_freie_bits": [],
+     "ganzzahlige_beziehungen": [],
+     "wertemengen": [],
+     "feste_freie_bits": 8,
+     "s": 0.0003
+    },
+    "folgerungen": {
+     "frei_fest": {
+      "0": 1,
+      "1": 1,
+      "2": 1,
+      "5": 1,
+      "6": 1,
+      "7": 1,
+      "8": 1,
+      "9": 1
+     },
+     "frei_lin": [],
+     "frei_menge": [],
+     "frei_xor": [],
+     "widerspruch": true
+    },
+    "ableitung_s": 0.0003,
+    "ableitung_peak_mib": 16.4,
+    "kontrolle_s": 0.0001,
+    "wall_s": 0.1,
+    "peak_mib_extern": 0.0,
+    "rlimit_aktiv": true,
+    "rlimit_mib": 1024
+   },
+   {
+    "darstellung": "D6+R1b+R8c(20,22)",
+    "status": "WIDERSPRUCH",
+    "erlaubt": 0,
+    "scheinloesungen": 0,
+    "verlorene": 0,
+    "entschieden": true,
+    "groesse": {
+     "xor_gleichungen": 15,
+     "und_gleichungen": 22,
+     "stufen": 6,
+     "werte": 19,
+     "aliasse": 0,
+     "regeln": {
+      "R1": 0,
+      "R2": 0,
+      "R3": 0,
+      "R4": 14,
+      "R5": 0,
+      "R6": 2,
+      "R7": 0
+     },
+     "beziehungen_ueber_freie_bits": [],
+     "ganzzahlige_beziehungen": [],
+     "wertemengen": [],
+     "feste_freie_bits": 8,
+     "s": 0.0002
+    },
+    "folgerungen": {
+     "frei_fest": {
+      "0": 1,
+      "1": 1,
+      "2": 1,
+      "5": 1,
+      "6": 1,
+      "7": 1,
+      "8": 1,
+      "9": 1
+     },
+     "frei_lin": [],
+     "frei_menge": [],
+     "frei_xor": [],
+     "widerspruch": true
+    },
+    "ableitung_s": 0.0002,
+    "ableitung_peak_mib": 16.4,
+    "kontrolle_s": 0.0001,
+    "wall_s": 0.1,
+    "peak_mib_extern": 0.0,
+    "rlimit_aktiv": true,
+    "rlimit_mib": 1024
+   },
+   {
+    "darstellung": "D6+R1b+R8c",
+    "status": "WIDERSPRUCH",
+    "erlaubt": 0,
+    "scheinloesungen": 0,
+    "verlorene": 0,
+    "entschieden": true,
+    "groesse": {
+     "xor_gleichungen": 15,
+     "und_gleichungen": 22,
+     "stufen": 6,
+     "werte": 19,
+     "aliasse": 0,
+     "regeln": {
+      "R1": 0,
+      "R2": 0,
+      "R3": 0,
+      "R4": 14,
+      "R5": 0,
+      "R6": 2,
+      "R7": 0
+     },
+     "beziehungen_ueber_freie_bits": [],
+     "ganzzahlige_beziehungen": [],
+     "wertemengen": [],
+     "feste_freie_bits": 8,
+     "s": 0.0002
+    },
+    "folgerungen": {
+     "frei_fest": {
+      "0": 1,
+      "1": 1,
+      "2": 1,
+      "5": 1,
+      "6": 1,
+      "7": 1,
+      "8": 1,
+      "9": 1
+     },
+     "frei_lin": [],
+     "frei_menge": [],
+     "frei_xor": [],
+     "widerspruch": true
+    },
+    "ableitung_s": 0.0002,
+    "ableitung_peak_mib": 16.4,
+    "kontrolle_s": 0.0001,
+    "wall_s": 0.1,
+    "peak_mib_extern": 0.0,
+    "rlimit_aktiv": true,
+    "rlimit_mib": 1024
+   }
+  ]
+ },
+ {
+  "netz": "N4r08 Leine W_i=W_(i-3)",
+  "frei": 12,
+  "knoten": 1152,
+  "wahr": 1,
+  "zeilen": [
+   {
+    "darstellung": "D6+R5+R6+R7+R1b",
+    "status": "FIXPUNKT",
+    "erlaubt": 1,
+    "scheinloesungen": 0,
+    "verlorene": 0,
+    "entschieden": true,
+    "groesse": {
+     "xor_gleichungen": 612,
+     "und_gleichungen": 783,
+     "stufen": 224,
+     "werte": 772,
+     "aliasse": 378,
+     "regeln": {
+      "R1": 580,
+      "R2": 113,
+      "R3": 164,
+      "R4": 348,
+      "R5": 43,
+      "R6": 53,
+      "R7": 0,
+      "R1b": 170
+     },
+     "beziehungen_ueber_freie_bits": [],
+     "ganzzahlige_beziehungen": [],
+     "wertemengen": [],
+     "feste_freie_bits": 12,
+     "s": 0.1641
+    },
+    "folgerungen": {
+     "frei_fest": {
+      "0": 1,
+      "1": 1,
+      "10": 0,
+      "11": 1,
+      "2": 0,
+      "3": 1,
+      "4": 1,
+      "5": 0,
+      "6": 0,
+      "7": 0,
+      "8": 1,
+      "9": 0
+     },
+     "frei_lin": [],
+     "frei_menge": [],
+     "frei_xor": [],
+     "widerspruch": false
+    },
+    "ableitung_s": 0.1641,
+    "ableitung_peak_mib": 19.9,
+    "kontrolle_s": 0.002,
+    "wall_s": 0.31,
+    "peak_mib_extern": 17.8,
+    "rlimit_aktiv": true,
+    "rlimit_mib": 1024
+   },
+   {
+    "darstellung": "D6+R1b+R8c(20,22)",
+    "status": "FIXPUNKT",
+    "erlaubt": 1,
+    "scheinloesungen": 0,
+    "verlorene": 0,
+    "entschieden": true,
+    "groesse": {
+     "xor_gleichungen": 616,
+     "und_gleichungen": 783,
+     "stufen": 224,
+     "werte": 772,
+     "aliasse": 378,
+     "regeln": {
+      "R1": 580,
+      "R2": 113,
+      "R3": 162,
+      "R4": 352,
+      "R5": 43,
+      "R6": 53,
+      "R7": 0,
+      "R1b": 170,
+      "R8c": 2
+     },
+     "beziehungen_ueber_freie_bits": [],
+     "ganzzahlige_beziehungen": [],
+     "wertemengen": [],
+     "feste_freie_bits": 12,
+     "s": 0.1608
+    },
+    "folgerungen": {
+     "frei_fest": {
+      "0": 1,
+      "1": 1,
+      "10": 0,
+      "11": 1,
+      "2": 0,
+      "3": 1,
+      "4": 1,
+      "5": 0,
+      "6": 0,
+      "7": 0,
+      "8": 1,
+      "9": 0
+     },
+     "frei_lin": [],
+     "frei_menge": [],
+     "frei_xor": [],
+     "widerspruch": false
+    },
+    "ableitung_s": 0.1608,
+    "ableitung_peak_mib": 19.9,
+    "kontrolle_s": 0.002,
+    "wall_s": 0.3,
+    "peak_mib_extern": 17.9,
+    "rlimit_aktiv": true,
+    "rlimit_mib": 1024
+   },
+   {
+    "darstellung": "D6+R1b+R8c",
+    "status": "FIXPUNKT",
+    "erlaubt": 1,
+    "scheinloesungen": 0,
+    "verlorene": 0,
+    "entschieden": true,
+    "groesse": {
+     "xor_gleichungen": 624,
+     "und_gleichungen": 783,
+     "stufen": 224,
+     "werte": 770,
+     "aliasse": 380,
+     "regeln": {
+      "R1": 581,
+      "R2": 100,
+      "R3": 164,
+      "R4": 357,
+      "R5": 43,
+      "R6": 53,
+      "R7": 0,
+      "R1b": 164,
+      "R8c": 21
+     },
+     "beziehungen_ueber_freie_bits": [],
+     "ganzzahlige_beziehungen": [],
+     "wertemengen": [],
+     "feste_freie_bits": 12,
+     "s": 0.1777
+    },
+    "folgerungen": {
+     "frei_fest": {
+      "0": 1,
+      "1": 1,
+      "10": 0,
+      "11": 1,
+      "2": 0,
+      "3": 1,
+      "4": 1,
+      "5": 0,
+      "6": 0,
+      "7": 0,
+      "8": 1,
+      "9": 0
+     },
+     "frei_lin": [],
+     "frei_menge": [],
+     "frei_xor": [],
+     "widerspruch": false
+    },
+    "ableitung_s": 0.1777,
+    "ableitung_peak_mib": 19.9,
+    "kontrolle_s": 0.0022,
+    "wall_s": 0.3,
+    "peak_mib_extern": 17.8,
+    "rlimit_aktiv": true,
+    "rlimit_mib": 1024
+   }
+  ]
+ },
+ {
+  "netz": "N4r09 Leine W_i=W_(i-3)",
+  "frei": 12,
+  "knoten": 1328,
+  "wahr": 1,
+  "zeilen": [
+   {
+    "darstellung": "D6+R5+R6+R7+R1b",
+    "status": "FIXPUNKT",
+    "erlaubt": 128,
+    "scheinloesungen": 127,
+    "verlorene": 0,
+    "entschieden": false,
+    "groesse": {
+     "xor_gleichungen": 715,
+     "und_gleichungen": 905,
+     "stufen": 252,
+     "werte": 479,
+     "aliasse": 348,
+     "regeln": {
+      "R1": 342,
+      "R2": 75,
+      "R3": 149,
+      "R4": 363,
+      "R5": 171,
+      "R6": 59,
+      "R7": 4,
+      "R1b": 172
+     },
+     "beziehungen_ueber_freie_bits": [
+      "x0^x8=0",
+      "x1^x8^x9=1",
+      "x4^x8=0",
+      "x5^x8=1",
+      "x6^x9=1"
+     ],
+     "ganzzahlige_beziehungen": [],
+     "wertemengen": [
+      "-1*x1 +1*x8 -1*x9 in [-1, 1]",
+      "+1*x1 -1*x8 -1*x9 in [-1, 1]",
+      "+1*x1 +1*x8 +1*x9 in [1, 3]"
+     ],
+     "feste_freie_bits": 0,
+     "s": 0.2567
+    },
+    "folgerungen": {
+     "frei_fest": {},
+     "frei_lin": [],
+     "frei_menge": [
+      [
+       [
+        [
+         1,
+         -1
+        ],
+        [
+         8,
+         1
+        ],
+        [
+         9,
+         -1
+        ]
+       ],
+       [
+        -1,
+        1
+       ]
+      ],
+      [
+       [
+        [
+         1,
+         1
+        ],
+        [
+         8,
+         -1
+        ],
+        [
+         9,
+         -1
+        ]
+       ],
+       [
+        -1,
+        1
+       ]
+      ],
+      [
+       [
+        [
+         1,
+         1
+        ],
+        [
+         8,
+         1
+        ],
+        [
+         9,
+         1
+        ]
+       ],
+       [
+        1,
+        3
+       ]
+      ]
+     ],
+     "frei_xor": [
+      [
+       0,
+       8,
+       0
+      ],
+      [
+       1,
+       8,
+       9,
+       1
+      ],
+      [
+       4,
+       8,
+       0
+      ],
+      [
+       5,
+       8,
+       1
+      ],
+      [
+       6,
+       9,
+       1
+      ]
+     ],
+     "widerspruch": false
+    },
+    "ableitung_s": 0.2567,
+    "ableitung_peak_mib": 20.5,
+    "kontrolle_s": 0.0058,
+    "wall_s": 0.4,
+    "peak_mib_extern": 18.1,
+    "rlimit_aktiv": true,
+    "rlimit_mib": 1024
+   },
+   {
+    "darstellung": "D6+R1b+R8c(20,22)",
+    "status": "FIXPUNKT",
+    "erlaubt": 128,
+    "scheinloesungen": 127,
+    "verlorene": 0,
+    "entschieden": false,
+    "groesse": {
+     "xor_gleichungen": 725,
+     "und_gleichungen": 905,
+     "stufen": 252,
+     "werte": 480,
+     "aliasse": 354,
+     "regeln": {
+      "R1": 342,
+      "R2": 76,
+      "R3": 152,
+      "R4": 373,
+      "R5": 188,
+      "R6": 59,
+      "R7": 4,
+      "R1b": 173,
+      "R8c": 2
+     },
+     "beziehungen_ueber_freie_bits": [
+      "x0^x8=0",
+      "x1^x8^x9=1",
+      "x4^x8=0",
+      "x5^x8=1",
+      "x6^x9=1"
+     ],
+     "ganzzahlige_beziehungen": [],
+     "wertemengen": [
+      "-1*x1 +1*x8 -1*x9 in [-1, 1]",
+      "+1*x1 -1*x8 -1*x9 in [-1, 1]",
+      "+1*x1 +1*x8 +1*x9 in [1, 3]"
+     ],
+     "feste_freie_bits": 0,
+     "s": 0.2552
+    },
+    "folgerungen": {
+     "frei_fest": {},
+     "frei_lin": [],
+     "frei_menge": [
+      [
+       [
+        [
+         1,
+         -1
+        ],
+        [
+         8,
+         1
+        ],
+        [
+         9,
+         -1
+        ]
+       ],
+       [
+        -1,
+        1
+       ]
+      ],
+      [
+       [
+        [
+         1,
+         1
+        ],
+        [
+         8,
+         -1
+        ],
+        [
+         9,
+         -1
+        ]
+       ],
+       [
+        -1,
+        1
+       ]
+      ],
+      [
+       [
+        [
+         1,
+         1
+        ],
+        [
+         8,
+         1
+        ],
+        [
+         9,
+         1
+        ]
+       ],
+       [
+        1,
+        3
+       ]
+      ]
+     ],
+     "frei_xor": [
+      [
+       0,
+       8,
+       0
+      ],
+      [
+       1,
+       8,
+       9,
+       1
+      ],
+      [
+       4,
+       8,
+       0
+      ],
+      [
+       5,
+       8,
+       1
+      ],
+      [
+       6,
+       9,
+       1
+      ]
+     ],
+     "widerspruch": false
+    },
+    "ableitung_s": 0.2554,
+    "ableitung_peak_mib": 20.5,
+    "kontrolle_s": 0.0059,
+    "wall_s": 0.4,
+    "peak_mib_extern": 18.1,
+    "rlimit_aktiv": true,
+    "rlimit_mib": 1024
+   },
+   {
+    "darstellung": "D6+R1b+R8c",
+    "status": "FIXPUNKT",
+    "erlaubt": 128,
+    "scheinloesungen": 127,
+    "verlorene": 0,
+    "entschieden": false,
+    "groesse": {
+     "xor_gleichungen": 731,
+     "und_gleichungen": 905,
+     "stufen": 252,
+     "werte": 480,
+     "aliasse": 354,
+     "regeln": {
+      "R1": 342,
+      "R2": 70,
+      "R3": 145,
+      "R4": 379,
+      "R5": 188,
+      "R6": 59,
+      "R7": 4,
+      "R1b": 173,
+      "R8c": 15
+     },
+     "beziehungen_ueber_freie_bits": [
+      "x0^x8=0",
+      "x1^x8^x9=1",
+      "x4^x8=0",
+      "x5^x8=1",
+      "x6^x9=1"
+     ],
+     "ganzzahlige_beziehungen": [],
+     "wertemengen": [
+      "-1*x1 +1*x8 -1*x9 in [-1, 1]",
+      "+1*x1 -1*x8 -1*x9 in [-1, 1]",
+      "+1*x1 +1*x8 +1*x9 in [1, 3]"
+     ],
+     "feste_freie_bits": 0,
+     "s": 0.2554
+    },
+    "folgerungen": {
+     "frei_fest": {},
+     "frei_lin": [],
+     "frei_menge": [
+      [
+       [
+        [
+         1,
+         -1
+        ],
+        [
+         8,
+         1
+        ],
+        [
+         9,
+         -1
+        ]
+       ],
+       [
+        -1,
+        1
+       ]
+      ],
+      [
+       [
+        [
+         1,
+         1
+        ],
+        [
+         8,
+         -1
+        ],
+        [
+         9,
+         -1
+        ]
+       ],
+       [
+        -1,
+        1
+       ]
+      ],
+      [
+       [
+        [
+         1,
+         1
+        ],
+        [
+         8,
+         1
+        ],
+        [
+         9,
+         1
+        ]
+       ],
+       [
+        1,
+        3
+       ]
+      ]
+     ],
+     "frei_xor": [
+      [
+       0,
+       8,
+       0
+      ],
+      [
+       1,
+       8,
+       9,
+       1
+      ],
+      [
+       4,
+       8,
+       0
+      ],
+      [
+       5,
+       8,
+       1
+      ],
+      [
+       6,
+       9,
+       1
+      ]
+     ],
+     "widerspruch": false
+    },
+    "ableitung_s": 0.2555,
+    "ableitung_peak_mib": 20.5,
+    "kontrolle_s": 0.006,
+    "wall_s": 0.4,
+    "peak_mib_extern": 18.0,
+    "rlimit_aktiv": true,
+    "rlimit_mib": 1024
+   }
+  ]
+ },
+ {
+  "netz": "N4r10 Leine W_i=W_(i-3)",
+  "frei": 12,
+  "knoten": 1506,
+  "wahr": 1,
+  "zeilen": [
+   {
+    "darstellung": "D6+R5+R6+R7+R1b",
+    "status": "FIXPUNKT",
+    "erlaubt": 1024,
+    "scheinloesungen": 1023,
+    "verlorene": 0,
+    "entschieden": false,
+    "groesse": {
+     "xor_gleichungen": 753,
+     "und_gleichungen": 1029,
+     "stufen": 280,
+     "werte": 444,
+     "aliasse": 297,
+     "regeln": {
+      "R1": 330,
+      "R2": 60,
+      "R3": 132,
+      "R4": 349,
+      "R5": 56,
+      "R6": 66,
+      "R7": 5,
+      "R1b": 128
+     },
+     "beziehungen_ueber_freie_bits": [
+      "x0^x8=0",
+      "x1^x8^x9=0"
+     ],
+     "ganzzahlige_beziehungen": [],
+     "wertemengen": [
+      "-1*x1 +1*x8 +1*x9 in [0, 2]",
+      "+1*x1 -1*x8 -1*x9 in [-2, 0]",
+      "+1*x1 -1*x8 +1*x9 in [0, 2]",
+      "+1*x1 +1*x8 -1*x9 in [0, 2]",
+      "+1*x1 +1*x8 +1*x9 in [0, 2]"
+     ],
+     "feste_freie_bits": 0,
+     "s": 0.3776
+    },
+    "folgerungen": {
+     "frei_fest": {},
+     "frei_lin": [],
+     "frei_menge": [
+      [
+       [
+        [
+         1,
+         -1
+        ],
+        [
+         8,
+         1
+        ],
+        [
+         9,
+         1
+        ]
+       ],
+       [
+        0,
+        2
+       ]
+      ],
+      [
+       [
+        [
+         1,
+         1
+        ],
+        [
+         8,
+         -1
+        ],
+        [
+         9,
+         -1
+        ]
+       ],
+       [
+        -2,
+        0
+       ]
+      ],
+      [
+       [
+        [
+         1,
+         1
+        ],
+        [
+         8,
+         -1
+        ],
+        [
+         9,
+         1
+        ]
+       ],
+       [
+        0,
+        2
+       ]
+      ],
+      [
+       [
+        [
+         1,
+         1
+        ],
+        [
+         8,
+         1
+        ],
+        [
+         9,
+         -1
+        ]
+       ],
+       [
+        0,
+        2
+       ]
+      ],
+      [
+       [
+        [
+         1,
+         1
+        ],
+        [
+         8,
+         1
+        ],
+        [
+         9,
+         1
+        ]
+       ],
+       [
+        0,
+        2
+       ]
+      ]
+     ],
+     "frei_xor": [
+      [
+       0,
+       8,
+       0
+      ],
+      [
+       1,
+       8,
+       9,
+       0
+      ]
+     ],
+     "widerspruch": false
+    },
+    "ableitung_s": 0.3778,
+    "ableitung_peak_mib": 21.2,
+    "kontrolle_s": 0.0076,
+    "wall_s": 0.5,
+    "peak_mib_extern": 18.2,
+    "rlimit_aktiv": true,
+    "rlimit_mib": 1024
+   },
+   {
+    "darstellung": "D6+R1b+R8c(20,22)",
+    "status": "FIXPUNKT",
+    "erlaubt": 1024,
+    "scheinloesungen": 1023,
+    "verlorene": 0,
+    "entschieden": false,
+    "groesse": {
+     "xor_gleichungen": 753,
+     "und_gleichungen": 1029,
+     "stufen": 280,
+     "werte": 444,
+     "aliasse": 297,
+     "regeln": {
+      "R1": 330,
+      "R2": 60,
+      "R3": 131,
+      "R4": 349,
+      "R5": 56,
+      "R6": 66,
+      "R7": 5,
+      "R1b": 128,
+      "R8c": 1
+     },
+     "beziehungen_ueber_freie_bits": [
+      "x0^x8=0",
+      "x1^x8^x9=0"
+     ],
+     "ganzzahlige_beziehungen": [],
+     "wertemengen": [
+      "-1*x1 +1*x8 +1*x9 in [0, 2]",
+      "+1*x1 -1*x8 -1*x9 in [-2, 0]",
+      "+1*x1 -1*x8 +1*x9 in [0, 2]",
+      "+1*x1 +1*x8 -1*x9 in [0, 2]",
+      "+1*x1 +1*x8 +1*x9 in [0, 2]"
+     ],
+     "feste_freie_bits": 0,
+     "s": 0.3317
+    },
+    "folgerungen": {
+     "frei_fest": {},
+     "frei_lin": [],
+     "frei_menge": [
+      [
+       [
+        [
+         1,
+         -1
+        ],
+        [
+         8,
+         1
+        ],
+        [
+         9,
+         1
+        ]
+       ],
+       [
+        0,
+        2
+       ]
+      ],
+      [
+       [
+        [
+         1,
+         1
+        ],
+        [
+         8,
+         -1
+        ],
+        [
+         9,
+         -1
+        ]
+       ],
+       [
+        -2,
+        0
+       ]
+      ],
+      [
+       [
+        [
+         1,
+         1
+        ],
+        [
+         8,
+         -1
+        ],
+        [
+         9,
+         1
+        ]
+       ],
+       [
+        0,
+        2
+       ]
+      ],
+      [
+       [
+        [
+         1,
+         1
+        ],
+        [
+         8,
+         1
+        ],
+        [
+         9,
+         -1
+        ]
+       ],
+       [
+        0,
+        2
+       ]
+      ],
+      [
+       [
+        [
+         1,
+         1
+        ],
+        [
+         8,
+         1
+        ],
+        [
+         9,
+         1
+        ]
+       ],
+       [
+        0,
+        2
+       ]
+      ]
+     ],
+     "frei_xor": [
+      [
+       0,
+       8,
+       0
+      ],
+      [
+       1,
+       8,
+       9,
+       0
+      ]
+     ],
+     "widerspruch": false
+    },
+    "ableitung_s": 0.3318,
+    "ableitung_peak_mib": 21.2,
+    "kontrolle_s": 0.0074,
+    "wall_s": 0.4,
+    "peak_mib_extern": 18.3,
+    "rlimit_aktiv": true,
+    "rlimit_mib": 1024
+   },
+   {
+    "darstellung": "D6+R1b+R8c",
+    "status": "FIXPUNKT",
+    "erlaubt": 1024,
+    "scheinloesungen": 1023,
+    "verlorene": 0,
+    "entschieden": false,
+    "groesse": {
+     "xor_gleichungen": 759,
+     "und_gleichungen": 1029,
+     "stufen": 280,
+     "werte": 443,
+     "aliasse": 298,
+     "regeln": {
+      "R1": 330,
+      "R2": 55,
+      "R3": 124,
+      "R4": 355,
+      "R5": 56,
+      "R6": 66,
+      "R7": 5,
+      "R1b": 128,
+      "R8c": 13
+     },
+     "beziehungen_ueber_freie_bits": [
+      "x0^x8=0",
+      "x1^x8^x9=0"
+     ],
+     "ganzzahlige_beziehungen": [],
+     "wertemengen": [
+      "-1*x1 +1*x8 +1*x9 in [0, 2]",
+      "+1*x1 -1*x8 -1*x9 in [-2, 0]",
+      "+1*x1 -1*x8 +1*x9 in [0, 2]",
+      "+1*x1 +1*x8 -1*x9 in [0, 2]",
+      "+1*x1 +1*x8 +1*x9 in [0, 2]"
+     ],
+     "feste_freie_bits": 0,
+     "s": 0.3212
+    },
+    "folgerungen": {
+     "frei_fest": {},
+     "frei_lin": [],
+     "frei_menge": [
+      [
+       [
+        [
+         1,
+         -1
+        ],
+        [
+         8,
+         1
+        ],
+        [
+         9,
+         1
+        ]
+       ],
+       [
+        0,
+        2
+       ]
+      ],
+      [
+       [
+        [
+         1,
+         1
+        ],
+        [
+         8,
+         -1
+        ],
+        [
+         9,
+         -1
+        ]
+       ],
+       [
+        -2,
+        0
+       ]
+      ],
+      [
+       [
+        [
+         1,
+         1
+        ],
+        [
+         8,
+         -1
+        ],
+        [
+         9,
+         1
+        ]
+       ],
+       [
+        0,
+        2
+       ]
+      ],
+      [
+       [
+        [
+         1,
+         1
+        ],
+        [
+         8,
+         1
+        ],
+        [
+         9,
+         -1
+        ]
+       ],
+       [
+        0,
+        2
+       ]
+      ],
+      [
+       [
+        [
+         1,
+         1
+        ],
+        [
+         8,
+         1
+        ],
+        [
+         9,
+         1
+        ]
+       ],
+       [
+        0,
+        2
+       ]
+      ]
+     ],
+     "frei_xor": [
+      [
+       0,
+       8,
+       0
+      ],
+      [
+       1,
+       8,
+       9,
+       0
+      ]
+     ],
+     "widerspruch": false
+    },
+    "ableitung_s": 0.3213,
+    "ableitung_peak_mib": 21.2,
+    "kontrolle_s": 0.0069,
+    "wall_s": 0.4,
+    "peak_mib_extern": 18.3,
+    "rlimit_aktiv": true,
+    "rlimit_mib": 1024
+   }
+  ]
+ }
+]

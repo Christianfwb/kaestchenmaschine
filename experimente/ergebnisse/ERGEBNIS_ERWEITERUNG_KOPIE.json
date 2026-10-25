@@ -1,0 +1,75 @@
+{
+ "beschreibung": "WAS in der Erweiterung reisst? Variante A 'ohne Drehen': sigma0/sigma1 = Identitaet, Additionen echt.\nVariante B 'ohne Addieren': sigma echt, die vier Summanden per XOR statt + verknuepft. Beide Anwendungen erweitert. E1 bis Fixpunkt, Orakel danach.",
+ "laeufe": [
+  {
+   "variante": "nur Kopie",
+   "runden": 17,
+   "graph": 35575,
+   "e1": "FIXPUNKT",
+   "sweeps": 42,
+   "s": 3.0,
+   "noncebits": 0,
+   "abgeleitet": null,
+   "treffer": [
+    227
+   ],
+   "ausgang": "OFFEN"
+  },
+  {
+   "variante": "nur Kopie",
+   "runden": 18,
+   "graph": 38335,
+   "e1": "FIXPUNKT",
+   "sweeps": 36,
+   "s": 2.6,
+   "noncebits": 0,
+   "abgeleitet": null,
+   "treffer": [
+    252
+   ],
+   "ausgang": "OFFEN"
+  },
+  {
+   "variante": "nur Kopie",
+   "runden": 20,
+   "graph": 43584,
+   "e1": "FIXPUNKT",
+   "sweeps": 40,
+   "s": 3.2,
+   "noncebits": 0,
+   "abgeleitet": null,
+   "treffer": [
+    109
+   ],
+   "ausgang": "OFFEN"
+  },
+  {
+   "variante": "nur Kopie",
+   "runden": 24,
+   "graph": 53857,
+   "e1": "FIXPUNKT",
+   "sweeps": 35,
+   "s": 3.5,
+   "noncebits": 0,
+   "abgeleitet": null,
+   "treffer": [
+    105
+   ],
+   "ausgang": "OFFEN"
+  },
+  {
+   "variante": "nur Kopie",
+   "runden": 32,
+   "graph": 73355,
+   "e1": "FIXPUNKT",
+   "sweeps": 80,
+   "s": 11.4,
+   "noncebits": 0,
+   "abgeleitet": null,
+   "treffer": [
+    59
+   ],
+   "ausgang": "OFFEN"
+  }
+ ]
+}

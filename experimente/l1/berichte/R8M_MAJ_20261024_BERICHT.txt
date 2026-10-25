@@ -1,0 +1,28 @@
+FABLE AN GHOST – R8m (MAJ EXAKT): REGEL, GEGENPROBEN, VERGLEICH N4r09 – 2026-10-24 14:30. Auftrag 13:38, Schritte 1–3. Kein R8g.
+Fable-Container Xeon 2,10 GHz 2 Kerne, Python 3.13.16. Pruefstand-Budgets wie bisher.
+Deine zwei Praezisierungen uebernommen: N4r10 heisst 4096 -> 1024 erlaubt (4095 -> 1023 Schein); R8c ist in den nichtlinearen Faellen sicher, aber unvollstaendig.
+
+1. REGEL: Die exakte Kaestchenregel ist jetzt eine gemeinsame Methode _kaestchen_exakt(vier Literale, Wahrheitsfunktion) – R8c = Ch-Tafel, R8m = Maj-Tafel,
+   sonst identisch (Werte UND Aliasse schneiden; Folgerungen: Anschluss fest / zwei gleich oder negiert / XOR dreier konstant; leer -> WIDERSPRUCH).
+   pruefstand.py zeichnet jedes Maj als (a,b,c,out) auf – auch die Uebertraege der Addierer, die als Maj gebaut sind (also wirkt R8m dort mit).
+   EIN FEHLER MEINES REFACTORS, gefunden durch die Gegenproben: Jedes Kaestchen wurde nur EINMAL geprueft und dann als 'fertig' markiert – aber die Gleichheiten
+   der Anschluesse entstehen oft erst spaeter im Durchlauf (Gauss/R3). R8m feuerte deshalb zunaechst fast nie. Behoben: jede Runde erneut pruefen; Konvergenz
+   bleibt, weil nur echte Aenderungen den Durchlauf fortsetzen. Derselbe Fehler steckte in meiner 'R8c an allen'-Messung von 14:05 -> neu gemessen (unten):
+   Ergebnis dort unveraendert (15x, 128), also kein falscher Befund, aber ich melde es.
+2. GEGENPROBEN R8m (gegenproben_r8m.py, ERGEBNIS_GEGENPROBEN_R8M.json; 16 Netze, alle Belegungen gegen Orakel, ohne = D6+R1b+R8c / mit = +R8m; verloren ueberall 0):
+   Maj(a,a,c)=a; Maj(a,~a,c)=c; Maj(a,b,~a)=b; Maj(a,b,b)=b; Maj(~a,a,c)=c (negierter Eingang); Maj(~a,~b,~c) mit a=b (negativer Ausgang): je 8 -> 4 = wahr, R8m 1x.
+   out=~a vorgegeben -> b=c=~a: 8 -> 2 = wahr. out=1,a=0 -> b=c=1 und out=0,a=1 -> b=c=0: schon vorher 1/1 (R1), R8m bestaetigt.
+   Nichtlinear (b=1 -> a ODER c; b=0 -> a UND c; out=a vorgegeben): R8m tut nichts, Scheinloesungen bleiben – sicher, unvollstaendig. 'nichts bekannt': nichts.
+   Zwei unerfuellbare -> WIDERSPRUCH (vorher FIXPUNKT mit 4 Scheinloesungen). Uebertrag im Addierer: a=b -> cout=a wird erkannt (R8m 1x).
+   Die 21 alten Gegenproben (R8c, R6gegen) laufen nach dem Refactor unveraendert: 0 verloren.
+3. VERGLEICH, Pruefstand mit Regression (ERGEBNIS_R8M.json), verloren ueberall 0:
+   L3 L4 N3 N3u: unveraendert. N4r08: 1/1/1 (R8c 21x, R8m 56x).
+   N4r09: R1b 128 | +R8c alle 128 (R8c 15x) | +R8c+R8m 128 (R8c 15x, R8m 44x). Beziehungen ueber freie Bits in allen drei identisch (5 XOR, 3 Wertemengen).
+          Formelbestand: XOR-Gleichungen 715 -> 731 -> 734. Zeit 0,19 / 0,20 / 0,27 s.
+   N4r10 (Nebenbefund, gleicher Lauf): R1b 1024 | +R8c 1024 | +R8c+R8m 512 erlaubt (511 Schein) – neue Beziehung x4^x8=0 (R8m 31x). Dort wirkt Maj bis zu den Eingaengen.
+BEFUND (BELEGT): Am N4r09 bleibt es bei 128, auch mit Ch und Maj exakt. Am N4r10 halbiert R8m die erlaubten Belegungen (1024 -> 512), 0 verloren.
+Damit sind die lokalen Kaestchen Ch und Maj in der linearen/alias-faehigen Form ueberall behandelt. Unbehandelt: die nichtlinearen Faelle beider Kaestchen
+(a ODER c, a UND c, z = e UND f) – das sind genau die, die sich nicht als Wert/Alias/XOR festhalten lassen.
+OFFEN (nicht gestartet): R8g als getrennt gemessene Fallunterscheidung Tiefe 1 (zwei Zweige, nur Schnitt behalten) – waere der erste Schritt, der die nichtlinearen
+Faelle erreicht; oder zuerst eine Karte, WELCHE Kaestchen am N4r09 nach allen Regeln noch offen sind (nur Lesen des Zustands).
+Dateien: d6.py, pruefstand.py, gegenproben_r8m.py, ERGEBNIS_GEGENPROBEN_R8M.json, ERGEBNIS_R8M.json.

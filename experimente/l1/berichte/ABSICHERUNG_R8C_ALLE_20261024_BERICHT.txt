@@ -1,0 +1,26 @@
+FABLE AN GHOST – ABSICHERUNG (z-LITERAL, XOR-AUFHEBUNG, R6-KORREKTUR), GEGENPROBEN NACHGEREICHT, DANN R8c AN ALLEN CH-KAESTCHEN – 2026-10-24 14:05.
+Auftrag 13:21. Kein Maj, kein R8g. Fable-Container Xeon 2,10 GHz 2 Kerne, Python 3.13.16. Deine Deutungskorrektur uebernommen (siehe unten).
+
+1. PUNKT 1 – R8c behandelt jetzt ALLE VIER Anschluesse (e,f,g,z) als Literale: Wurzel+Vorzeichen ueber lit()/find(), bekannte Werte wie Konstanten.
+   Bestaetigt: gate('xor') liefert bei negiertem Eingang ein negiertes Literal, z kann also negativ sein – vorher falsch behandelt (kein Lauf betroffen:
+   in den beiden gemessenen Kaestchen #20/#22 war z positiv; das Ergebnis 128 bleibt identisch, siehe 4.). Folgerungen jetzt symmetrisch ueber alle vier:
+   (a) ein Anschluss fest, (b) zwei gleich/negiert, (c) XOR dreier Anschluesse konstant – mit Aufhebung doppelter Wurzeln (symmetrische Differenz; leer -> Konsistenzpruefung).
+2. PUNKT 2 – R6 'gegensaetzliche Uebertraege': 2*W -> W korrigiert (Summe der Reste = 2^n*(c+c') = W). Vorher instrumentiert gemessen: dieser Zweig hat in
+   KEINEM bisherigen Lauf gefeuert (L3, L4, N3, N3u, N4r08/09/10, mit und ohne R1b: 0x) – kein bisheriges Ergebnis betroffen. Zaehler 'R6gegen' jetzt im Protokoll.
+3. GEGENPROBEN NACHGEREICHT (gegenproben_r8c_r6.py, ERGEBNIS_GEGENPROBEN_R8C_R6.json; alle Belegungen gegen Orakel, je ohne/mit Regel; verloren ueberall 0):
+   R8c, 18 Netze: die sechs Vereinfachungen (f=g; f=~g; e=f mit g=0/1; e=~f mit g=0/1), zwei mit negierten Kaestcheneingaengen, ZWEI MIT NEGATIVEM z
+   (Ch(e,~f,~g) = ~Ch(e,f,g)), zwei Rueckschluesse von bekanntem z auf Eingaenge (z=1,e=0 -> g=1; z=0,f=g -> f=0), z=~g vorgegeben -> e=1,f=~g (8 -> 2 erlaubt),
+   zwei nichtlineare Faelle (z=e vorgegeben; e=g) -> R8c tut richtig nichts, 'nichts bekannt' -> nichts, zwei unerfuellbare -> WIDERSPRUCH.
+   Mit R8c jeweils erlaubt = wahr; ohne bleiben Scheinloesungen (z.B. 8/4, 4/2).
+   R6gegen, 3 Netze (zwei gleich breite Addierer, coutA = NICHT coutB als Ziel): 2-Bit Summen frei 128/20 beide (Regel feuert, aendert nichts); 2-Bit sA=1,sB=2: 16 -> 8 = wahr;
+   3-Bit geteilt sA=5,sB=6: 64 -> 4 = wahr. GEGENKONTROLLE mit dem ALTEN Code (2W) am 3-Bit-Netz: WIDERSPRUCH, 4 echte Loesungen verloren – die Probe haette den Fehler gefangen.
+4. R8c AN ALLEN CH-KAESTCHEN, Pruefstand, mit Regression (ERGEBNIS_R8C_ALLE.json), verloren ueberall 0:
+   L3 L4 N3 N3u: unveraendert (keine Ch). N4r08: 1/1 in allen drei Varianten (R8c feuert 21x).
+   N4r09: R1b 128 | R8c(20,22) 128 (R8c 2x) | R8c alle 128 (R8c 15x). Beziehungen ueber freie Bits in allen drei IDENTISCH (x0^x8=0, x1^x8^x9=1, x4^x8=0, x5^x8=1, x6^x9=1).
+          Formelbestand waechst (XOR-Gleichungen 715 -> 731, R4 363 -> 379), erreicht die Eingaenge aber nicht.
+   N4r10 (Nebenbefund, gleicher Lauf): mit R1b 1024 erlaubt (vorher ohne R1b 4095), R8c alle 1024 (13x); 2 Beziehungen x0^x8=0, x1^x8^x9=0.
+BEFUND (BELEGT): R8c ist an allen 36 Ch-Kaestchen angewendet, feuert 15x, 0 verloren, 128 -> 128. Deine Korrektur zur Deutung uebernommen: Belegt ist nur, dass die
+gespeicherten Eingangsbeziehungen unveraendert bleiben. Dass eine rundenuebergreifende Regel zwingend fehlt, folgt daraus nicht; die lokalen Regeln sind jetzt
+ueberall angewendet, die nichtlinearen Ch-Faelle (z = e UND f bei e=g; z=e vorgegeben) und Maj bleiben lokal unbehandelt.
+OFFEN (nicht gestartet): Maj exakt (gleiche Bauart wie R8c: Wahrheitstafel ueber vier Literale); danach R8g als getrennt gemessene Fallunterscheidung.
+Dateien: d6.py, pruefstand.py, gegenproben_r8c_r6.py, ERGEBNIS_GEGENPROBEN_R8C_R6.json, ERGEBNIS_R8C_ALLE.json.
