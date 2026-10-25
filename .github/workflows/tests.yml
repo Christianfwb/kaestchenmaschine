@@ -32,6 +32,7 @@ jobs:
       - run: python -B -I experimente/skripte/lauf_zielhash_fix.py
       - run: python -B -I experimente/skripte/lauf_runden.py
       - run: python -B -I tests/test_experiment_results.py
+      - run: python -B -I tests/test_stern.py
       - uses: actions/upload-artifact@v7.0.2
         if: always()
         with:
