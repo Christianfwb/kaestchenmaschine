@@ -14,8 +14,10 @@ docs/HERKUNFT.md
 docs/LIZENZ_VORSCHLAG.md
 docs/NACHTRAG_20261113.md
 docs/OFFENE_FRAGEN.md
+docs/README_ABSCHLUSS_20261025.md
 docs/REPRODUKTION.md
 docs/REVIEW_20261023.md
+docs/SPONSOREN.md
 docs/TECHNIK.md
 docs/topologie_erweiterung.svg
 experimente/berichte/BERICHT.txt
