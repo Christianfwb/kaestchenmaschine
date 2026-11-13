@@ -1,0 +1,179 @@
+# Kästchenmaschine – ausführliche README (Stand 25. Oktober / 13. November 2026)
+
+*Archivierte Langfassung. Die aktuelle Kurzfassung steht in der [README](../README.md). Relative Links hier zeigen vom `docs/`-Ordner aus.*
+
+**Experimente zur Constraint-Propagation auf SHA256d.**
+
+Die Kästchenmaschine stellt eine Hashrechnung als Netz kleiner Rechenregeln dar. Für jedes Bit speichert ein „Kästchen“, ob 0, 1 oder noch beides möglich ist. Bekannte Eingaben und Bedingungen am Ausgang engen diese Möglichkeiten ein — vorwärts und rückwärts.
+
+So macht die Kästchenmaschine die **Topologie von SHA-256 greifbar**: Sie legt offen, wie Bits und Rechenschritte miteinander verbunden sind und entlang welcher Verbindungen sich Informationen ausbreiten können.
+
+Dieses Repository enthält **Forschungscode, Offline-Beispiele und Messdaten**. Der produktive GPU-Miner mit Node-Anbindung und Einreichung ist [nicht enthalten](../miner/README.md).
+
+**Stand:** 25. Oktober 2026 · **Projekt abgeschlossen** · [Abschlussbericht](ABSCHLUSS_20261025.md) · [Nachtrag 13. November 2026](NACHTRAG_20261113.md) · [Prüfung und Änderungen vom 23. Oktober](REVIEW_20261023.md) · [MIT-Lizenz](../LICENSE).
+
+[Schnellstart](#schnellstart) · [Abschluss](#abschluss-25-oktober-2026) · [Ergebnisse](#was-ist-gemessen) · [Technik](TECHNIK.md) · [Experimente und Korrekturen](EXPERIMENTE.md) · [Nachrechnen](REPRODUKTION.md) · [Offene Fragen](OFFENE_FRAGEN.md)
+
+## Abschluss (25. Oktober 2026)
+
+Wir haben das Projekt mit drei Messreihen abgeschlossen; alles steht im [Abschlussbericht](ABSCHLUSS_20261025.md) und in [experimente/l1](../experimente/l1).
+
+1. **Wo die Ableitung reißt:** Die Rundenkurve ist scharf – bis 16 Runden je Kompression alle Noncebits, **ab 17 Runden keines mehr bis 64**. Ohne Nachrichtenerweiterung dagegen bis 64 Runden alles. Entscheidend ist die bloße Wiederverwendung eines unbekannten Wortes 16 Runden später („Sicherheitslinie“). [Rundenkurve 17–63](../experimente/berichte/BERICHT_RUNDENKURVE_17_63.txt), [Sicherheitslinie](../experimente/berichte/BERICHT_SICHERHEITSLINIE.txt).
+2. **Der Stern (Join-Baum mit Bitmengen) löst kleine Netze vollständig:** Am Mini-Netz N4r09 (9 Runden mit Leine, 12 freie Bits) findet der exakte Stern nach D6-Grundvereinfachung **die eine Lösung ohne Sonderregeln** – jede der 492 Gruppen endet mit genau einer Zeile, bestätigt durch 4096 Vorwärtsauswertungen. Eine Runde mehr (N4r10) treibt die nötige Gruppenbreite von 18 auf 28 Variablen; der Bedarf wächst exponentiell mit der Breite (Tabellen ~120 MiB, Masken ~6 GiB, Austausch ~1000×). Kleinere Gruppen bewahren alle Lösungen, verlieren aber Erkennung – gemessen am Dreieck und an N3.
+3. **Billig aussortieren statt lösen** (die Frage des Miners): In 48 Fällen mit festem Kopf, wenigen Zielbits und 256 Nonces leitet das Grundgerüst **nichts** über die Noncebits ab; alles, was Kandidaten ausschließt, sitzt am Ziel und kostet 60–70 % des Hashes. Bilanz negativ in allen 48 Fällen, keine Lösung verloren.
+
+**Folgerung:** Die Kästchenmaschine funktioniert im Kleinen vollständig und nachprüfbar und zeigt präzise, wo Hashfunktionen Rückwärtsrechnen verhindern. Ein Mining-Vorteil ist nicht belegt und wird von uns nicht weiter verfolgt. Keine Aussage über andere Verfahren, Hardware oder Neuheit.
+
+## Nachtrag November 2026
+
+Nach dem Abschluss haben wir in begrenztem Umfang weitergearbeitet; der [Nachtrag vom 13. November](NACHTRAG_20261113.md) dokumentiert es mit Prüfsummen-gebundenen Berichten unter [experimente/nachtrag_2026_11](../experimente/nachtrag_2026_11). Kurz: Die Karte des untersuchten Headerbuchs zeigt: In den inneren Zustandswörtern a/e zwischen der ersten unbekannten Header-Runde und dem bekannten Zielbereich sind mit dem damaligen Regelprofil keine festen Bitwerte belegt. Gleichungen verbinden die Bereiche dennoch; Konstanten und bekannte Überträge sind davon ausgenommen. Zweigvergleiche (Dilemma-Regel) an beiden Ufern und eine gemeinsame H5-Auswertung ergaben nur bereits bekanntes Wissen. Im künstlichen Kontrollmodell N4r09 wurde eine konkrete Anschlusslücke gefunden und repariert (26 innere Bitstellen mehr, die 12 Eingangsbits bleiben offen). Ein Nonce-Sampler mit einem ausgewählten Noncemuster zeigte in 1.942 Paaren keinen bestätigten Vorteil. Keine SHA-Abkürzung, kein bestätigter Mining-Vorteil.
+
+## Was ist gemessen?
+
+**Im Kleinen haben wir es geschafft:** In den fünf geprüften, verkürzten SHA256d-Rechnungen mit 4 bis 16 Runden je Kompression hat die Kästchenmaschine alle acht unbekannten Noncebits aus der vorgegebenen Zielhash-Bedingung abgeleitet. Die gefundenen Eingaben wurden unabhängig nachgerechnet und bestätigt.
+
+**Auch mit vollständigem Bitcoin-SHA256d gibt es einen konkreten Sucherfolg:** Unser separat entwickelter GPU-Kästchenminer hat die historische Genesis-Nonce **2083236893 selbst in einer Gruppe von 256 Kandidaten wiedergefunden**. Dabei waren acht Noncebits frei. Die Suche mit Kästchenregeln und Verzweigung meldete nach **8,67 Sekunden** einen Treffer; Graph, Kästchenbedingungen und eine unabhängige SHA256d-Nachrechnung bestätigten ihn. Das ist ein ermutigender praktischer Beleg dafür, dass unser Suchweg in diesem kontrollierten Fall funktioniert. [Original-Testprotokoll, Fall `first_hit_256`](../experimente/ergebnisse/ERGEBNIS_MINER_GENESIS_SEARCH.json).
+
+Die übrigen Headerfelder und der Suchbereich waren für diesen historischen Kontrollversuch festgelegt. Die Zeit ist eine Einzelmessung des damaligen Minerstands. Der Lauf endete beim ersten Treffer, nicht nach vollständiger Prüfung aller 256 Kandidaten. Er fand den gültigen historischen Header durch verzweigte Suche, ohne zusätzlich abgeleitete Noncebits; damit ist weder ein Vorteil gegenüber direktem Hashen noch ein neuer Blockfund belegt. Der produktive Minercode ist nicht Teil dieses Repositorys; das unveränderte Ergebnisprotokoll dokumentiert den damaligen Lauf.
+
+**Beim vollständigen SHA256d steht dieser Nachweis aus.** Die geprüften Regeln rechnen dort bis zum Fixpunkt und bestimmen keine Noncebits – nicht aus Mangel an Rechenzeit, sondern weil die Regeln nichts mehr hergeben. Offen ist, ob stärkere Ableitungsregeln das ändern. Die kleinen Erfolge sind belegt; ein entsprechender Erfolg beim vollständigen Bitcoin-Verfahren ist noch nicht belegt.
+
+**Stand nach Abschluss:** Die Forschungshypothese, dass sich die gemeinsame Ableitung auf anspruchsvollere Fälle übertragen lässt, haben wir am 24./25. Oktober mit dem Stern (Join-Baum) geprüft: Im Kleinen ja, vollständig und ohne Sonderregeln; mit jeder weiteren Rundenwiederholung wächst die nötige Breite exponentiell. Siehe [Abschluss](#abschluss-25-oktober-2026).
+
+Alle Aussagen gelten für die jeweils genannten Vorlagen, freien Bits und Regeln. Zeiten sind Einzelmessungen auf Fables CPU-Umgebung, keine Leistungsversprechen.
+
+| Versuch | Vorgabe | Ergebnis | Beleg |
+|---|---|---|---|
+| Reduziertes SHA256d: 4, 6, 8, 12 und 16 Runden **je Kompression** | Acht freie Noncebits; exakter, erreichbarer Zielhash | E1 bestimmt in allen fünf Kontrollfällen alle acht Bits ohne Kandidatensuche. 0,02–6,1 s reine E1-Zeit. | [Rundenkurve](../experimente/ergebnisse/ERGEBNIS_RUNDEN.json), [Bericht](../experimente/berichte/BERICHT_ABSCHLUSS_ZIELHASH_RUNDEN.txt) |
+| Vollständiges SHA256d: 64 Runden | Zwei gespeicherte Vorlagen, acht freie Bits, Hash ≤ Target | E1+E4 bestimmt an den untersuchten Wurzeln keine Noncebits; keine Nonces ausgeschlossen. Genesis-Zeuge bleibt erhalten. | [Basis und Dreier](../experimente/ergebnisse/ERGEBNIS3_WURZEL.json) |
+| Vollständiges SHA256d mit genauem Endhash | Eine Vorlage, ein vorab festgelegter Zielhash, acht freie Bits | Mehr feste innere Werte, aber weiterhin keine Noncebits. E1 erreicht nach 41 Durchläufen dasselbe H2-Registerbild wie E1+E4; Paare bestimmen zusätzlich 70 innere Bitknoten. | [Korrigierter Vergleich](../experimente/ergebnisse/ERGEBNIS_ZIELHASH_FIX.json) |
+| Exakte Tabellen und NumPy-Fallvektoren | Zwei freie Bits, also vier Kandidaten je Vorlage | Alle acht Digests und Zielentscheidungen stimmen mit hashlib überein. Diese Verfahren werten die Fälle gemeinsam aus; sie sind kein belegter Suchvorteil. | [Tabellen](../experimente/ergebnisse/ERGEBNIS_TABELLEN4.json), [Vektoren](../experimente/ergebnisse/ERGEBNIS_PHASEN.json) |
+| XOR-Gleichungen | Zwei oder acht freie Bits; UND-Ausgänge als freie Variablen | Die untersuchte Lockerung liefert keine neue Eingangsbeziehung und keinen Widerspruch. | [XOR-Auswertung](../experimente/ergebnisse/ERGEBNIS_XORSHA.json) |
+| Rundenkurve 17–63 und Kontrolle ohne Nachrichtenerweiterung | Acht freie Noncebits; exakter Zielhash; W16.. als Konstanten in der Kontrolle | Ab 17 Runden 0/8 Noncebits bis 64 (E1 und E1+E4); ohne Erweiterung 8/8 bis 64 Runden. Wiederverwendung eines Wortes genügt zum Abriss. | [Rundenkurve](../experimente/ergebnisse/ERGEBNIS_RUNDEN2.json), [Kontrolle](../experimente/ergebnisse/ERGEBNIS_ERWEITERUNG_KONTROLLE.json), [Trenntests](../experimente/ergebnisse/ERGEBNIS_ERWEITERUNG_WO.json) |
+| Mini-Netz N4r09 (4-Bit-Wörter, Leine W_i = W_(i−3), 9 Runden), Regelmaschine D6 | 12 freie Bits, alle 32 Registerbits vorgegeben | Grundgerüst 128 Kandidaten, mit R9 die eine Lösung; exakter Stern (Join-Baum, Bitmengen) die eine Lösung **ohne R9**, 492 Gruppen, größte 18, 62 s. | [Stern N4r09](../experimente/l1/berichte/STERN_N4R09_BIT_20261025_BERICHT.txt), [Ergebnisse](../experimente/l1/stern_n4) |
+| Mini-Netz N4r10 (10 Runden), nur Struktur | dasselbe Netz, eine Runde mehr | Größte Gruppe 28 (drei Heuristiken: 28/29/28); gerechneter Bedarf außerhalb von 400 MiB / 600 s. | [Struktur](../experimente/l1/berichte/N4R10_STRUKTUR_VOLL_20261025_BERICHT.txt), [Heuristiken](../experimente/l1/berichte/N4R10_HEURISTIKEN_20261025_BERICHT.txt) |
+| Ausdünnen (Mining-Frage) | 48 Fälle: fester Kopf, 2–4 Zielbits, 256 Nonces, 6 und 9 Runden | Keine Einschränkung über Noncebits (Rang 0); Filter schließen 0 aus; Bilanz negativ in 48/48 bei voller Sicherheit. | [Bericht](../experimente/l1/berichte/AUSDUENNEN_ERGEBNIS_20261025_BERICHT.txt), [Ergebnisse](../experimente/l1/ausduennen) |
+
+Die reduzierten Rechnungen sind **kein Bitcoin-SHA256d**. Für diese Kontrollfälle wird der Zielhash aus einer vorher gewählten Nonce erzeugt; der Löser erhält nur die Vorlage, freie Bits und diesen Hash. Eine getrennte Referenzauswertung aller 256 Kandidaten prüft anschließend das Ergebnis. Der Versuch belegt Ableitung in diesen Fällen, keine allgemeine Urbildlösung und keinen Zeitgewinn gegenüber 256 direkten Auswertungen.
+
+**Nicht fest bestimmte Bits bedeuten nicht fehlende Beziehungen.** Aus Registerkarten lässt sich keine „Lücke ohne Information“ oder Unmöglichkeit eines stärkeren Verfahrens ableiten. Auch Paare und Dreier können Zusammenhänge bewahren. Wir dokumentieren ihre gemessene Wirkung statt einer allgemeinen Grenze der Mathematik.
+
+## Schnellstart
+
+Python 3.10 oder neuer. Diese Befehle laufen offline auf Windows, Linux und macOS; für die ersten beiden Beispiele und Schnelltests sind keine Zusatzpakete nötig. Verwende gegebenenfalls `python3` statt `python`.
+
+```sh
+git clone https://github.com/Christianfwb/kaestchenmaschine.git
+cd kaestchenmaschine
+python -B -I tests/test_schnell.py
+python -B -I tests/test_regression.py
+python -B -I beispiele/01_reduzierte_runden.py 8
+python -B -I beispiele/02_genesis_zeuge.py
+```
+
+Erwartet: fünf bestandene Schnelltests; bestandene Regressionen; im 8-Runden-Beispiel eine vollständig abgeleitete Kontrollnonce; beim Genesis-Beispiel keine neuen Noncebits, aber Erhaltung des bekannten Treffers in allen Bitdomänen.
+
+Für E4 und NumPy-Experimente:
+
+```sh
+python -m pip install -r requirements.txt
+```
+
+Die archivierten vollständigen Experimentläufer benötigen **Linux** (`resource` und `/proc`); unter Windows bitte WSL verwenden. Sie sind keine plattformübergreifenden Minerprogramme. Siehe [Befehle, Voraussetzungen und Referenzpfade](REPRODUKTION.md).
+
+## Wie funktioniert ein Kästchen?
+
+Bei `x XOR y = 0` müssen x und y gleich sein. Einzelne Bitkästchen lassen trotzdem bei beiden 0 und 1 zu. Eine Paarbeziehung kann zusätzlich festhalten: **nur 00 oder 11**. E1 arbeitet auf Bitgattern; E3 auf kleinen Zifferntabellen; E4 hält zusätzlich ausgewählte Paarbeziehungen. Die Regeln werden wiederholt angewendet, bis nichts enger wird oder eine Grenze erreicht ist.
+
+- **FIXPUNKT:** Diese Regeln ändern nichts mehr. Das beweist weder Lösbarkeit noch Unlösbarkeit.
+- **WIDERSPRUCH:** Eine notwendige Bedingung lässt keinen Wert mehr zu.
+- **OFFEN/OPEN:** Noch nicht entschieden oder durch eine Ressourcengrenze beendet; niemals als Ausschluss zählen.
+- **Treffer:** Eine abgeleitete Eingabe wird unabhängig nachgerechnet.
+
+Die Bitregeln brauchen auf zyklisch gekoppelten Netzen keine vollständige Entscheidung zu liefern. [Darstellung, Schnittstellen und Messdisziplin](TECHNIK.md).
+
+## Code und Belege
+
+| Pfad | Inhalt |
+|---|---|
+| [src/kaestchen](../src/kaestchen) | Bitgraph, Referenzrechnung, Bit-/Ziffernregeln, Paarverwaltung und Austausch |
+| [beispiele](../beispiele) | Kleine Einstiege; das Vorratsmodell ist ausdrücklich illustrativ |
+| [tests](../tests) | Schnelltests und Regressionen; [automatischer Testlauf](../.github/workflows/tests.yml) |
+| [experimente/skripte](../experimente/skripte) | Linux-Läufer und festgelegte Eingabedaten |
+| [experimente/ergebnisse](../experimente/ergebnisse) | Archivierte Messungen einschließlich früherer Fehler/Abbrüche |
+| [experimente/berichte](../experimente/berichte) | Historische Originalberichte; manche Aussagen wurden später korrigiert |
+| [experimente/l1](../experimente/l1) | Labor vom 24./25. Oktober: Prüfstand, Regelmaschine D6, Stern (Join-Baum), Gruppenfindung, Arbeitsliste, begrenzte Gruppen, Bitmengen, blockweiser Abgleich, N4r09/N4r10, Ausdünnen; Teamberichte in [experimente/l1/berichte](../experimente/l1/berichte); Schnelltest `python -B -I tests/test_stern.py` (Linux, ~20 s) |
+| [docs/EXPERIMENTE.md](EXPERIMENTE.md) | Heutige Einordnung und sichtbare Korrekturen der Originalberichte |
+| [docs/HERKUNFT.md](HERKUNFT.md) | Herkunft der Dateien und Abweichungen zwischen Fassungen |
+
+Historische Resultate bleiben unverändert. Korrekturen am heutigen Code können Details eines erneuten Laufs ändern; sie sind im [Prüfbericht](REVIEW_20261023.md) benannt. Dateiliste und [SHA256-Prüfsummen](../SHA256SUMS.txt) lassen sich mit `python -B -I tools/manifest.py --check` prüfen.
+
+## Grenzen und nächste Fragen
+
+Die Rundenkurve 17–63 ist seit dem 23. Oktober gemessen (scharfe Kante bei 17); mehr freie Bits und andere Vorlagen wurden nicht systematisch untersucht. Eine feste Ausgangsbedingung kann mehr innere Werte bestimmen, ohne eine Nonce herzuleiten. Das [Vorratsmodell](../experimente/berichte/BERICHT_VORRAT_MODELL.txt) vergleicht unterschiedliche Spielräume und ist kein fairer abschließender Leistungsnachweis. Die [offenen Fragen](OFFENE_FRAGEN.md) sind Forschungsfragen, keine versprochenen Verbesserungen.
+
+## Warum ich diese Forschung veröffentliche
+
+Ich habe sehr lange an der Kästchenmaschine gearbeitet: Ideen entwickelt, Versuche gemacht, Ergebnisse hinterfragt und immer wieder neu angesetzt. In diesem Projekt stecken viel Zeit, Ausdauer und persönliche Arbeit.
+
+Jetzt mache ich den Forschungsstand öffentlich zugänglich, damit andere ihn nachvollziehen, prüfen und darauf aufbauende Ideen diskutieren können. Dazu gehören auch die Grenzen, Fehler und negativen Ergebnisse. Ich veröffentliche den eigenen Code, die Dokumentation und die eigenen Ergebnisdateien unter der [MIT-Lizenz](../LICENSE), damit andere sie nutzen und weiterentwickeln können.
+
+Wenn euch die Arbeit interessiert, freue ich mich über Rückmeldungen, unabhängige Nachprüfungen und Verbesserungsvorschläge. Wer meine bisherige Arbeit und mögliche weitere Forschung freiwillig finanziell unterstützen möchte, kann mir auch eine Bitcoin-Spende senden. Eine Spende ist ein Dankeschön für die Arbeit, kein Kauf und kein Versprechen auf Mining-Erträge oder bestimmte Forschungsergebnisse.
+
+### Sponsoren und Forschungspartner gesucht
+
+#### Welche Messungen eine Hardware-Schätzung braucht
+
+Unabhängige Noncegruppen lassen sich grundsätzlich parallel bearbeiten. Ob eine größere GPU-/CPU-Ausstattung den gewünschten Durchsatz erreicht, muss jedoch an der konkreten Implementierung gemessen werden. Die Gruppenzahl allein und schnelle kleine Kontrollfälle reichen dafür nicht aus. Dafür benötigen wir:
+
+- **Vollständige Laufzeit je Gruppe:** Aufbau beziehungsweise wiederverwendeter Aufbau, Datenübertragung, Propagation, weitere Verzweigungen und unabhängige Trefferprüfung; Mittelwert sowie Streuung und langsame Fälle, jeweils mit Hardware und Stapelgröße.
+- **Tatsächlich eingesparte Kandidatenprüfungen:** Wie viele der 256 Kandidaten werden bereits durch gemeinsame Ableitungen ausgeschlossen, wie viele müssen einzeln entschieden werden? Innere Einschränkungen und ein Fixpunkt allein belegen noch keine eingesparte Sucharbeit.
+- **Ergebnisanteile:** vollständig ausgeschlossene Gruppen, Gruppen mit bestätigten Treffern und weiterhin unentschiedene Gruppen (OPEN). Ein Fixpunkt ohne Entscheidung ist kein vollständig bearbeiteter Suchbereich.
+- **Gemessene Skalierung:** vollständig entschiedene Gruppen pro Sekunde bei einer und mehreren Recheneinheiten, einschließlich Speicherbedarf, Verteilung und Übertragungsaufwand. Für einen Suchvorteil ist außerdem ein Vergleich mit direkter SHA256d-Auswertung derselben Kandidaten auf vergleichbarer Hardware nötig.
+
+**Diese vollständige Durchsatz- und Skalierungsmessung liegt hier noch nicht vor.** In den dokumentierten Wurzeltests am vollständigen SHA256d mit acht freien Bits wurden keine Noncebits abgeleitet und keine Kandidaten ausgeschlossen. Daraus folgt weder eine schnelle vollständige Gruppenprüfung noch ein gemessener Hardwarebedarf. Beispielannahmen wie „50–200 Millisekunden pro Gruppe“ sind keine Ergebnisse dieses Projekts.
+
+Bei einem gemessenen Gesamtdurchsatz von **G vollständig entschiedenen Gruppen pro Sekunde** benötigt der gesamte 32-Bit-Noncebereich einer festen Vorlage rechnerisch **16.777.216 / G Sekunden**. Das setzt voraus, dass dieser Durchsatz über den Bereich gehalten wird; OPEN-Fälle müssen berücksichtigt werden. Diese Rechnung beschreibt den Prüfaufwand, nicht die Wahrscheinlichkeit eines Blockfunds.
+
+**Stand nach Abschluss (25. Oktober 2026):** Die Übertragung der kleinen Ableitungserfolge auf die vollständige Rechnung haben wir mit stärkeren Verfahren (exakter Join-Baum mit Bitmengen) geprüft und mit der Mining-Frage (billiges Aussortieren) konfrontiert. Beides ist gemessen und negativ für das vollständige SHA256d; die Begründung – exponentiell wachsende Breite durch die Wiederverwendung unbekannter Wörter – steht im [Abschlussbericht](ABSCHLUSS_20261025.md). Wir verfolgen die Mining-Frage nicht weiter; das Repository bleibt als nachprüfbares Labor offen.
+
+#### Was Unterstützung ermöglichen würde
+
+**Was mehr Mittel wirklich klären könnten:** Die gemessene Grenze liegt nicht an fehlender Rechenzeit. Beim vollständigen SHA256d rechnen die geprüften Regeln in Sekunden bis Minuten bis zum Fixpunkt und bestimmen keine Noncebits. Der Miner sucht deshalb mit Verzweigungen über die freien Bits; die Regeln schließen dabei in den gemessenen Fällen keine Bereiche vorzeitig aus, und die SHA256d-Referenz bestätigt die gefundenen Treffer. Dass dieser Suchweg funktioniert, ist am Genesis-Block belegt (bekannter Treffer gefunden, Erhaltung in allen Domänen). Ein vollständiger Durchlauf des 32-Bit-Noncebereichs würde diesen Befund nur wiederholen; mehr Laufzeit verändert einen erreichten Fixpunkt nicht.
+
+Offen und messbar – jeweils mit festen Zeit- und Speichergrenzen, weil der Aufwand noch nicht bekannt ist – sind dagegen:
+
+- **Rundenkurve 17 bis 63:** inzwischen gemessen – scharfe Kante bei 17 Runden, Ursache Nachrichtenerweiterung (siehe Abschluss).
+- **Mehr freie Bits im reduzierten Modell:** Alle Rundenläufe hatten 8 freie Bits. Ob die Ableitung bei 16 oder 32 freien Bits vollständig bleibt, trennt „die Regeln lösen es“ von „256 Kandidaten sind wenig“.
+- **Stärkere Ableitungsregeln:** Paare, Tripel und Gleichungssysteme auf reduzierten Runden, um zu sehen, welche Beziehung die Reichweite tatsächlich verlängert.
+- **Unabhängige Nachprüfung:** Wiederholung der archivierten Läufe auf anderer Hardware und durch andere Personen.
+
+**Was daraus nicht folgt:** Kein Mining-Vorteil, kein neuer Block, kein Beleg, dass mehr Hardware das vollständige SHA256d erreichbar macht. Die Unterstützung finanziert ergebnisoffene Forschung an diesen Fragen; negative Ergebnisse werden genauso veröffentlicht wie positive.
+
+Ich suche Unterstützer, die helfen möchten, diese offene Forschungsfrage gründlicher zu untersuchen. Willkommen sind **bereitgestellte Rechenzeit, geeignete Hardware, finanzielle Unterstützung und fachliche Zusammenarbeit**. Damit könnten wir größere, kontrollierte Versuche durchführen, aufwendigere Ableitungsverfahren untersuchen und die Ergebnisse unabhängig nachprüfen lassen.
+
+Die Unterstützung finanziert ergebnisoffene Forschung auf Grundlage der belegten kleinen Erfolge. Ein Mining-Vorteil oder ein gültiger neuer Bitcoin-Block kann daraus nicht zugesichert werden. Auch negative Ergebnisse und Grenzen sollen öffentlich dokumentiert werden. Wer eine Zusammenarbeit oder ein Sponsoring besprechen möchte, kann sich direkt per E-Mail oder über die [GitHub-Issues](https://github.com/Christianfwb/kaestchenmaschine/issues) melden.
+
+**Kontakt für Interessierte, Forschungspartner und Sponsoren:** Christian Berrang · [christianfwb@gmail.com](mailto:christianfwb@gmail.com)
+
+**Freiwillige Bitcoin-Spenden (Bitcoin-Mainnet):**
+
+```text
+14oJK42G3zJBjfzJsfHwYTmgJxDzMwNMAy
+```
+
+Vielen Dank an alle, die das Projekt mit Ideen, Tests oder einer Spende unterstützen. Die Nutzung des Projekts ist nicht an eine Spende gebunden.
+
+— Christian Berrang
+
+## Herkunft, Einordnung und Mitwirkung
+
+Projekt von Christian Berrang, entwickelt mit den KI-Assistenten Ghost und Fable (Claude). KI-Ausgaben wurden geprüft und mehrfach korrigiert; diese Zusammenarbeit ersetzt keine unabhängige Validierung. Rückmeldungen mit reproduzierbaren Beispielen sind über [Issues](https://github.com/Christianfwb/kaestchenmaschine/issues) willkommen. Hinweise für Beiträge stehen in [CONTRIBUTING.md](../CONTRIBUTING.md).
+
+Wir beanspruchen keine Neuheit. Die Bausteine stammen aus der Constraint-Programmierung und booleschen Algebra. Die SHA-Rechnung orientiert sich an [NIST FIPS 180-4](https://doi.org/10.6028/NIST.FIPS.180-4); die Referenzprüfung nutzt [Python hashlib](https://docs.python.org/3/library/hashlib.html). E4 ist eine hier begrenzte Paarpropagation; die Versuche belegen keine allgemeine Vollständigkeit. Das Vorratsmodell ist nicht mit einem implementierten Hellman-Verfahren gleichzusetzen.
+
+Der eigene Code, die Dokumentation und die eigenen Ergebnisdateien stehen unter der [MIT-Lizenz](../LICENSE). Hinweise zu Herkunft und Drittbestandteilen stehen in den [Lizenzhinweisen](LIZENZ_VORSCHLAG.md).
+
+## English summary
+
+This repository studies constraint propagation on Boolean and two-bit-digit representations of SHA256d. In five reduced-round control cases (4–16 rounds per compression, eight unknown nonce bits, a reachable exact output), bit propagation derives the nonce without enumerating candidates in the solver. Full-round experiments do not establish a mining speedup or a new valid block. Exact tables and NumPy vectors evaluate all selected candidates; they are separate baselines. Archived results, corrections and offline examples are included. The production miner is not included. Full historical experiment runners require Linux; the quick tests and first two examples are cross-platform. The project’s own code, documentation and result files are available under the [MIT License](../LICENSE). Voluntary Bitcoin donations can support Christian’s work; see the donation address above.
