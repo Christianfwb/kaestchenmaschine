@@ -1,0 +1,93 @@
+AUTOMATISCHER XOR-RUECKFLUSS UND STERN-KONTROLLE — 2026-11-03
+
+ERGEBNIS
+Die konkret gefundene Luecke ist in einer getrennten Testfassung geschlossen.
+Ohne Vorgabe des Namens n314 entdeckt das neue Modul alle innerhalb seiner
+Grenzen herleitbaren Einzelwerte des aktuellen XOR-Systems, bucht sie mit
+vorhandenen Regeln und gibt sie an die unveraenderte Propagation weiter.
+
+Am gleichen kleinen N4r09-Kontrollmodell:
+- 5 automatisch gebuchte lineare Einzelwert-Zertifikate ueber zwei Durchgaenge.
+- Mit anschliessender Propagation 41 zusaetzliche Bitnamen, entsprechend
+  26 zuvor nicht festen ORIGINALEN inneren Bitstellen. Vorzeichen-/Portnamen
+  sind nicht als unabhaengige Bits zu zaehlen.
+- n314=0 steht jetzt als gepruefter Wert im Buch, neg314=1 erreicht das UND.
+- Die zuvor fehlende Relation n346=n10 ist nun im linearen Aufspann enthalten;
+  ihre Belegsumme wurde unabhaengig mit Mengen-XOR nachgerechnet.
+- Weiterhin 0/12 Eingangsbits fest. Die lineare Eingangsprojektion enthaelt
+  exakt dieselben 128 Stellungen wie zuvor. Kein neuer Nonce-Ausschluss.
+- Originales Baseline-Buch ist byteinhaltlich als Zeilenpraefix erhalten.
+- Vollstaendiger heutiger Pruefer gegen frisch aufgebauten Vertrag: 0 Fehler.
+- 110 Kontrollen bestanden, einschliesslich 100 zufaelliger kleiner Systeme
+  gegen vollstaendige Belegungszaehlung, Budget-/Wiederholungsfaelle und Sabotagen.
+
+UMSETZUNG
+xor_rueckfluss.py: allgemeine Gauss-Elimination plus Rueckeinsetzen auf dem
+eingefrorenen aktuellen XOR-System. Kein Modellname, keine Ziel-Belegnummer,
+kein n314-Sonderfall im Modul, kein Orakel, keine Annahme und keine neue
+mathematische Beweisregel. Ausgabegleichungen sind XOR-Summen bestehender
+GL-Zeilen (RB-R1); B-R4 leitet die Einzelwerte daraus ab. Die Elternmenge wird
+vor der Ausgabe separat durch Mengen-XOR rekonstruiert. Aktuelle Tabellen
+und die vorhandene begrenzte Verbindungsanalyse laufen danach erneut.
+
+Grenzen je Materialisierung: 20000 Gleichungen, 5000 unbekannte Namen,
+2000000 Arbeitszaehlschritte, 4096 Gleichungseltern je Ausgabe,
+5000 Ausgaben, 30 Sekunden. Grenzen bedeuten OFFEN. Fuer eine erkannte
+lineare Inkonsistenz ohne vorhandenen publizierbaren Widerspruchsbeleg wird
+ebenfalls OFFEN mit ausdruecklichem Grund gemeldet; keine unbewiesene
+KEINE_LOESUNG-Zeile. Das ist eine benannte Grenze dieser Testfassung.
+Gesamtlauf: hoechstens16 Kopplungsdurchgaenge, Kernfrist120s,
+Prozessfrist180s einschliesslich Kontrollen. Nach zwei produktiven Runden
+lieferte die dritte keinen Fortschritt. Vollstaendigkeit bezieht sich nur
+auf Einzelwert-Folgen des jeweiligen XOR-Schnappschusses innerhalb der
+Grenzen, nicht auf alle moeglichen nichtlinearen Schluesse.
+
+STERN ALS KONTROLLE
+Christian bestaetigte mit der Antwort auf die Rueckfrage den alten Stern
+mit verbundenen Gruppen. Es wurde kein separater RISC-Baustein behauptet.
+Der alte Stern wurde ebenfalls neu ausgefuehrt: 492 Gruppen, hoechstens18
+Variablen je Gruppe, am Ende jede Gruppe genau eine Zeile, alle zwoelf
+Eingangsbits bestimmt. Gleichheit der Kantenprojektionen und Running
+Intersection wurden geprueft; alle originalen Gatter und das Ziel stimmen.
+Die 531 reduzierten Tafeln wurden lokal gegen ihre Originalgatter geprueft,
+auch die gefalteten Restbedingungen. Kein archivierter Endzustand wurde
+als Startzustand benutzt: Gruppen wurden frisch aus ihren Tafeln aufgebaut.
+
+Wichtige Grenze: Dieser Stern benutzt seine eigene ALTE D6-Vorverarbeitung.
+Ihre Werte/Aliase wurden mit dem frisch wiederholten Alt-Basislauf abgeglichen.
+Er ist deshalb ein zusaetzlicher Vergleichsweg fuer das gleiche Modell,
+kein isolierter Beweis, dass der Stern allein den heutigen Rest beseitigt.
+Sein Ergebnis wird NICHT als Eingabe an die neue Herleitung weitergegeben.
+Die unabhaengige 4096er-Wortreferenz bleibt eine weitere Kontrolle.
+
+PRUEFUNG UND ABGRENZUNG
+Alle4096 Eingaben wurden nach der Herleitung erneut zwischen Originalgraph
+und eigenstaendiger Wortrechnung verglichen:0 Abweichungen; genau eine
+Modellloesung, alle gebuchten Werte stimmen darauf. Der neue Beweispruefer
+bleibt unveraendert. Gekippte Paritaet und negativer Elternindex werden
+abgewiesen. Eingangsprojektion separat aus allen Gleichungen und Werten
+berechnet:128, exakt Baseline.
+
+Vier-Bit-Woerter, zwoelf freie Bits, neun Runden, Kopierfahrplan und voller
+historischer Zielzustand: kuenstliches Kontrollmodell, kein Bitcoin-Header.
+F4-Desktopdateien wurden NICHT ersetzt; kein Node-/GPU-/Mainnetlauf.
+Kein Beleg, dass diese Aenderung einen echten Noncebit herleitet.
+
+VERBLEIBENDER ARBEITSPUNKT
+Die automatische Einzelwert-Weitergabe reicht hier noch nicht bis zu den
+Eingaengen. Als naechsten getrennten Vergleich kann man die erste weitere
+abweichende Folgerung zum alten Vollscan verfolgen, oder den Stern auf
+denselben Vorverarbeitungszustand setzen. Noch kein pauschaler Stern-Umbau
+und keine Behauptung, nun nur noch schneller rechnen zu muessen.
+
+ARTEFAKTE
+xor_rueckfluss.py — neuer begrenzter Aufsatz.
+run_test.py, TESTS.json, RESULT.json, BUCH.jsonl — Aufbau, Messung und Buch.
+check_gap.py, GAP_CLOSED.json — geschlossene konkrete Luecke und Projektion.
+stern_kontrolle.py, STERN.json — separater alter Vergleichsweg.
+QUELLEN.json und SHA256SUMS — Quellenbindung und Paketpruefsummen.
+
+Erster Stern-Adapterversuch stoppte vor dem Lauf, weil gefaltete Resttafeln
+nicht zugelassen waren. Der Adapter prueft diese jetzt ebenfalls direkt
+gegen die Originalgatter; danach bestand der Lauf. Keine Ergebnisdatei
+des alten Forschungsstands wurde dafuer geaendert.

@@ -1,0 +1,48 @@
+FABLE AN GHOST UND CHRISTIAN - KAESTCHENKARTE DES EIGENEN HEADERS (nur lesen und zaehlen; kein Lauf, keine Annahme)
+Paket FABLE_AN_GHOST_KAESTCHENKARTE_20261102. Christians Auftrag 2026-11-02 20:11 ("mach das"), Ghosts Vorschlag. Stand: gestoppt.
+Quelle: GHOST_113_BELEGKETTEN_20261102\BEWEIS_GEMEINSAM.jsonl.gz (SHA 7a1bd27b..., 248 403 Zeilen, geprueft) - das vollstaendigste Buch des
+eigenen Headers (32 freie Noncebits, Ziel 79 Nullbits, RT-R1/RT-R2/SCHNITT3/Z-R-Zielregeln enthalten). karte.py erzeugt RUNDENKARTE.csv,
+WORTKARTE.csv, ENGSTELLEN.json. Ghosts Korrektur uebernommen: dazwischen ist es nicht leer - Regeln und Verbindungen stehen ueberall;
+leer ist dort nur das WISSEN (bekannte Bits).
+
+1. WAS SICHER BEKANNT IST (BIT-Zeilen)
+   66 837 bekannte Bits von 158 212 Namen. Davon: Block0/Midstate vollstaendig (31 232); Block1 Runden 0..3 vollstaendig (a1..a3, e1..e3 je 32;
+   W0..W2, W16, W17 je 32); Zielseite Durchgang 2: e61 = 32, e62 = 32, e63 = 12 (untere 16 Bit bis auf die Verzweigung 8..11), H5 = 15.
+   Rest: Konstanten (K, IV, Padding), Uebertragsbits c.0 = 0 aller Addierer, RT-R1-Uebertraege.
+   NULL bekannte Bits in: Block1 a4..a64 (0/1952), e4..e64 (0/1952), W3, W18..W63 (0/1472); Durchgang 2 a1..a60 (0/1920), e1..e60 (0/1920),
+   alle Fahrplanwoerter W0..W63 (0/1536, der Zwischenhash ist unbekannt), a61..a64 (0/128), e64 (0/32).
+
+2. WELCHE VERBINDUNG ZUM NAECHSTEN KAESTCHEN FUEHRT
+   111 108 Gleichungen, 68 601 Tabellen, 1 800 Addierer. Alle sind verdrahtet - die Verbindung fehlt nirgends. Kontrolle: 0 Gleichungen mit
+   genau einer Unbekannten (die Einheitspropagation ist am Fixpunkt). 2 899 Verbindungen (Gleichungen oder Ch/Maj-Tabellen) brauchen genau
+   EIN weiteres Bit, um zu greifen. Das sind die Kaestchen "einen Schritt vor dem Wissen".
+   Vorderseite: Runde 3 -> 4. x3_3 = x2_3 + W3 (x2_3 bekannt): x3_3.0 = x2_3.0 XOR W3.0 - das erste Kaestchen, das ein Noncebit braucht.
+   T1_3 = x3_3 + K3, e4 = d3 + T1_3, a4 = T1_3 + T2_3: alles an W3 gebunden, nichts bekannt. Ab Runde 4 geht e4 nur noch durch Sigma1 und Ch.
+   Rueckseite: Runde 63 -> 60. e63 (12 bekannt) haengt an a59 + T1_62 (beide unbekannt); e62, e61 bekannt haengen an a58 + T1_61 bzw.
+   a57 + T1_60 (je beide unbekannt). Nach vorne (Runde 60 und frueher) kommt kein bekanntes Bit mehr.
+
+3. WELCHE KONKRETE INFORMATION FEHLT (Engstellen = Bits, deren Kenntnis die meisten wartenden Verbindungen ausloesen wuerde)
+   ENGSTELLEN.json listet 60 Bits mit Ausloese-Wert. Ohne die Vergleichskette (V_lt.*, das sind innere Bits des Vergleichs H <= T, die erst
+   mit H-Bits fallen) bleiben genau zwei Gruppen:
+   (a) Zielseite: k2_e63.10 (8 wartende Verbindungen), e63.8 (6), e63.9 (6), e63.11 (5), e63.17 (5), cA1798.9/.10/.11 (Uebertraege des
+       Feedforwards H5 = e63 + IV5), k2_T1_0.0, k2_y2_17.21. Die fehlende Information ist das Verzweigungsbit e63.8 (Restmenge 0x9774/0x9874,
+       Bits 8..11 haengen paarweise zusammen - die sechs Paarbeziehungen sind im Buch). P-R1 hat beide Stellungen probiert: kein Widerspruch.
+       Es fehlt dort also keine Regel, die "nicht greift" - es fehlt ein Bit, das mit unseren Regeln an nichts Bekanntes mehr anschliesst,
+       weil a59, e59, W62 (Runde 63) und a58, e58, W61 (Runde 62) komplett unbekannt sind.
+   (b) Vorderseite: k1_x3_3.0 (7), k1_T1_3.0 (5), k1_x3_4.0 (5), k1_x3_5.0 (5), k1_y2_18.5 (5), k1_y2_19.0 (5), k1_T1_4.0, k1_T1_5.0 (4).
+       Das ist die Bit-0-Kette der Runde 3 und des Fahrplans: x3_3.0 = x2_3.0 XOR W3.0 (Uebertrag 0). Die fehlende Information ist W3.0 selbst,
+       also Noncebit 24 (ByteSwap). Kenntnis von W3.0 wuerde 7 Verbindungen ausloesen (T1_3.0, e4.0, a4.0, W19.0, ...), aber die naechsten
+       Stellen brauchen den Uebertrag, also W3.1 usw. - das ist die Nonce, nichts Herleitbares.
+
+4. BELEGTE ENGSTELLE ZUR AUSWAHL (Ghost: "eine Engstelle, dann pruefen, welche Regel dort fehlt oder nicht greift")
+   Es gibt nur zwei Kandidaten, beide sind "die Unbekannte selbst": e63.8 (Zielseite) und W3.0 (Nonce). Die Karte zeigt keine Stelle, an der
+   eine vorhandene Regel wegen eines Formfehlers nicht greift; sie zeigt, dass zwischen Runde 4 (Block1) und Runde 60 (Durchgang 2) in
+   keinem Zustands- oder Fahrplanwort ein einziges Bit bekannt ist. Jede Regel, die wir haben, braucht bekannte Nachbarn; dort hat keine welche.
+   Empfehlung fuer den gezielten Schritt: e63.8 als Engstelle nehmen und NICHT nach einer fehlenden Regel suchen, sondern messen, wie weit
+   bedingtes Wissen unter e63.8 = 0 bzw. = 1 nach vorne reicht (Ghost hat 11 bzw. 363 bedingte Bits gemessen): welche Runde erreicht der
+   363er-Zweig, und an welchem Kaestchen endet er? Das ist aus den vorhandenen Annahmebuechern ablesbar, ohne Lauf. Endet er in Runde 62,
+   ist die Zielseite mit Tiefe 1 ausgereizt; endet er frueher, ist dort die Stelle fuer die naechste Regel.
+
+5. GRENZEN DER KARTE
+   Wortnamen mit zweistelligem Index (x1_4 vs x14) sind in WORTKARTE.csv roh; die Zahlen in Abschnitt 1 beziehen sich nur auf eindeutige
+   Woerter (a_t, e_t, W_t, H). Die Karte zaehlt Wissen und Verbindungen, sie bewertet keine Regel. Kein Bau, kein Lauf, keine Annahme.

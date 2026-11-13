@@ -1,0 +1,122 @@
+[
+ {
+  "quelle_paket": "FABLE_AN_GHOST_KAESTCHENKARTE_20261102",
+  "datei": "BERICHT_KAESTCHENKARTE.txt",
+  "sha256": "f18be34ae396e6c3e921a61957baaa76af86c343231f28e3b194542d6ecf443f",
+  "bytes": 5138,
+  "im_repo": "berichte/FABLE_AN_GHOST_KAESTCHENKARTE_20261102__BERICHT_KAESTCHENKARTE.txt",
+  "verwendung": "Zitierfreigabe mit Korrekturen im Antwortblatt; Kopierkandidat fuer PR-Pruefung"
+ },
+ {
+  "quelle_paket": "GHOST_KAESTCHEN_REICHWEITE_20261102",
+  "datei": "ERGEBNIS.json",
+  "sha256": "e15881a8d7f0f91e252321e722a76c8704483782a6969c5eec447beb65048ae9",
+  "bytes": 814,
+  "im_repo": "berichte/GHOST_KAESTCHEN_REICHWEITE_20261102__ERGEBNIS.json",
+  "verwendung": "Zitierfreigabe mit Korrekturen im Antwortblatt; Kopierkandidat fuer PR-Pruefung"
+ },
+ {
+  "quelle_paket": "GHOST_H5_GEMEINSAM_20261103",
+  "datei": "BERICHT.txt",
+  "sha256": "118b21e9e64bf070eb0d408e06de6636322e440a5f8a9029f2fe2e8afed9e847",
+  "bytes": 2080,
+  "im_repo": "berichte/GHOST_H5_GEMEINSAM_20261103__BERICHT.txt",
+  "verwendung": "Zitierfreigabe mit Korrekturen im Antwortblatt; Kopierkandidat fuer PR-Pruefung"
+ },
+ {
+  "quelle_paket": "GHOST_ZWEIGBEZIEHUNGEN_20261103",
+  "datei": "BERICHT.txt",
+  "sha256": "9b4c0c14c117f8938d8b042c26536929a46f0206b81b2749ed58b04e00e75ade",
+  "bytes": 2162,
+  "im_repo": "berichte/GHOST_ZWEIGBEZIEHUNGEN_20261103__BERICHT.txt",
+  "verwendung": "Zitierfreigabe mit Korrekturen im Antwortblatt; Kopierkandidat fuer PR-Pruefung"
+ },
+ {
+  "quelle_paket": "GHOST_W30_ZWEIGVERGLEICH_20261103",
+  "datei": "BERICHT.txt",
+  "sha256": "57daf00e2de17fef7daaba59cf9f22f3861af79c1d1c2be0e7fc1d4ac01e9dcd",
+  "bytes": 2290,
+  "im_repo": "berichte/GHOST_W30_ZWEIGVERGLEICH_20261103__BERICHT.txt",
+  "verwendung": "Zitierfreigabe mit Korrekturen im Antwortblatt; Kopierkandidat fuer PR-Pruefung"
+ },
+ {
+  "quelle_paket": "GHOST_DREIERGRUPPEN_20261103",
+  "datei": "BERICHT.txt",
+  "sha256": "4d8e2ba67bed181113fcb6b82d740a06d97bb3567f83aecbf3da51dbd71680f9",
+  "bytes": 3024,
+  "im_repo": "berichte/GHOST_DREIERGRUPPEN_20261103__BERICHT.txt",
+  "verwendung": "Zitierfreigabe mit Korrekturen im Antwortblatt; Kopierkandidat fuer PR-Pruefung"
+ },
+ {
+  "quelle_paket": "FABLE_AN_GHOST_ZWEIGFENSTER_20261103",
+  "datei": "BERICHT_ZWEIGFENSTER.txt",
+  "sha256": "b7971411a4b2eecdf0bcd7a03bf1899786da27a203480d2a90be85ba1cb036f9",
+  "bytes": 3552,
+  "im_repo": "berichte/FABLE_AN_GHOST_ZWEIGFENSTER_20261103__BERICHT_ZWEIGFENSTER.txt",
+  "verwendung": "Nur OFFEN/Kontext; keine bestaetigte Ergebnisfreigabe"
+ },
+ {
+  "quelle_paket": "GHOST_N4R09_VERGLEICH_20261103",
+  "datei": "BERICHT.txt",
+  "sha256": "8973be5c2c9a04d208e299f3221d9383b201750658732a4dc8e2fc7d56cfae28",
+  "bytes": 5958,
+  "im_repo": "berichte/GHOST_N4R09_VERGLEICH_20261103__BERICHT.txt",
+  "verwendung": "Zitierfreigabe mit Korrekturen im Antwortblatt; Kopierkandidat fuer PR-Pruefung"
+ },
+ {
+  "quelle_paket": "GHOST_XOR_RUECKFLUSS_20261103",
+  "datei": "BERICHT.txt",
+  "sha256": "99e4f725b4ee36b8cac812be48a07695c197b99471531510cce67b0b91c4c620",
+  "bytes": 5521,
+  "im_repo": "berichte/GHOST_XOR_RUECKFLUSS_20261103__BERICHT.txt",
+  "verwendung": "Zitierfreigabe mit Korrekturen im Antwortblatt; Kopierkandidat fuer PR-Pruefung"
+ },
+ {
+  "quelle_paket": "GHOST_ALTWISSEN_ANSCHLUSS_20261105",
+  "datei": "BERICHT.txt",
+  "sha256": "3dc45bb9b09d13a3fb7a5dfe9dc6c5e27f822bdf718100713660a37f99496cba",
+  "bytes": 3099,
+  "im_repo": "berichte/GHOST_ALTWISSEN_ANSCHLUSS_20261105__BERICHT.txt",
+  "verwendung": "Zitierfreigabe mit Korrekturen im Antwortblatt; Kopierkandidat fuer PR-Pruefung"
+ },
+ {
+  "quelle_paket": "GHOST_ALTWISSEN_ANSCHLUSS_20261105",
+  "datei": "ERGEBNIS.json",
+  "sha256": "537955989ddb5d16e8a05181f27dd907512a370000bac464ed94c84477f36d22",
+  "bytes": 900,
+  "im_repo": "berichte/GHOST_ALTWISSEN_ANSCHLUSS_20261105__ERGEBNIS.json",
+  "verwendung": "Zitierfreigabe mit Korrekturen im Antwortblatt; Kopierkandidat fuer PR-Pruefung"
+ },
+ {
+  "quelle_paket": "GHOST_ADDITION_ZIEL_AB_20261105",
+  "datei": "BERICHT.txt",
+  "sha256": "a7e9c91303c31500d5514c58a33c6ee9d8d42b5cb1ff2d7b8df69488d875fc91",
+  "bytes": 2153,
+  "im_repo": "berichte/GHOST_ADDITION_ZIEL_AB_20261105__BERICHT.txt",
+  "verwendung": "Zitierfreigabe mit Korrekturen im Antwortblatt; Kopierkandidat fuer PR-Pruefung"
+ },
+ {
+  "quelle_paket": "GHOST_ADDITION_QUER_JOINT_20261107",
+  "datei": "BERICHT.txt",
+  "sha256": "a4123669b10abf87a77922a344c8d54a1ac4a21a001b7fe6df41da7160d887b6",
+  "bytes": 2889,
+  "im_repo": "berichte/GHOST_ADDITION_QUER_JOINT_20261107__BERICHT.txt",
+  "verwendung": "Zitierfreigabe mit Korrekturen im Antwortblatt; Kopierkandidat fuer PR-Pruefung"
+ },
+ {
+  "quelle_paket": "GHOST_AN_FABLE_F5_20261109",
+  "datei": "UEBERGABE.txt",
+  "sha256": "ccb7f31edbcbad90db68b1542261922271d3823d15e110c2d9118b24d2a6aac7",
+  "bytes": 8632,
+  "im_repo": null,
+  "verwendung": "Nur zitieren; keine komplette oeffentliche Kopie"
+ },
+ {
+  "quelle_paket": "GHOST_EXTREMMUSTER_32_HEADER_20261109",
+  "datei": "BERICHT.txt",
+  "sha256": "9a715ee40ed26b3757861904b06eb9a975d28b07a9b79d08c71036ab585a4ebb",
+  "bytes": 1016,
+  "im_repo": "berichte/GHOST_EXTREMMUSTER_32_HEADER_20261109__BERICHT.txt",
+  "verwendung": "Zitierfreigabe mit Korrekturen im Antwortblatt; Kopierkandidat fuer PR-Pruefung"
+ }
+]

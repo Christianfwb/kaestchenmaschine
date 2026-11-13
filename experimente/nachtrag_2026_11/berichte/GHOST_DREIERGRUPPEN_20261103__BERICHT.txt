@@ -1,0 +1,53 @@
+DREIERGRUPPEN W3.0 - 2026-11-03
+
+Christians Auftrag: berichtigten Entwurf gegenlesen, vorhandene Buecher
+lokal auswerten, Fund oder Null berichten, danach STOP.
+
+Ergebnis: 169 vorab ausgewaehlte Dreiergruppen, 169 ausgewertet.
+Maximal 12 freie Namen je Fenster, maximal 4096 Belegungen je Buch.
+48.402 Sekunden fuer Fensterauswahl und Zaehlung; Budget 120 Sekunden,
+500 Gruppen. Keine dieser beiden Grenzen erreicht. Keine neuen Ausschluesse.
+
+Vorpruefung: Zweig 0 hat im untersuchten Bereich 11 zusaetzliche BIT-Werte
+und 105 syntaktisch zusaetzliche GL/TAF-Zeilen; Zweig 1 hat 17 und 98.
+Die Werte enthalten die Annahme W3.0. Beziehungen sind Text-/Struktur-
+Unterschiede zum Hauptbuch, keine Behauptung linearer Unabhaengigkeit.
+Namen und Belegnummern stehen in VORPRUEFUNG.json.
+
+Auswahl vor der Zaehlung: Dreiergruppen aus den bisherigen 124 Namen,
+die in einer gemeinsamen GL/TAF vorkommen. Die Quellzeile darf nach
+Einsetzen von Basiswerten hoechstens 12 freie Namen haben. Wort-ADD wird
+nicht als komplette Wortrelation entfaltet; ihre bereits gebuchten
+Summengleichungen und Uebertragstafeln werden benutzt.
+15551 GL/TAF-Quellzeilen im gesamten Buch sind fuer die Vorauswahl breiter
+als 12; daraus folgt keine Aussage ueber deren Dreierprojektionen.
+
+Fenster: deterministische gierige Erweiterung aus direkten Basis-Nachbarn
+der Gruppe, sortiert nach Anzahl freier Namen und Zeilennummer, bis 12.
+Zu breite Nachbarzeilen werden nicht aufgenommen. Gleiche Fensternamen
+in allen drei Buechern. Je Buch werden alle GL/TAF verwendet, deren nach
+belegtem Einsetzen verbleibende Namen im Fenster liegen. Randnamen bleiben
+frei. Jede verwendete Zeile und jeder eingesetzte BIT-Beleg sind gespeichert.
+Das Ergebnis ist vollstaendig fuer diese ausgewaehlten Fenster, nicht fuer
+den gesamten Ausschnitt oder alle moeglichen Fenster mit 12 Namen.
+
+Kontrollen:
+- Alle 40 alten gemeinsamen linearen Beziehungen erneut aus ihren
+  Basisbelegen per XOR nachgerechnet. Darstellbare Beziehungen werden
+  im Basisfenster beruecksichtigt.
+- Derselbe Zaehler findet in einer kuenstlichen Ch-Aufgabe den nichtlinearen
+  Ausschluss 111 aus beiden Zweigen, ohne einzelne Bits festzulegen.
+- Entfernen dieser Bedingungen entfernt den Ausschluss.
+- Getrennte skalare Routine prueft alle 507 Fenster/Buch-Kombinationen
+  gegen die vektorisierte Zaehlung: identische Mengen und Modellzahlen.
+- Quelldateien frisch per SHA-256 gegen den bisherigen W3.0-Bericht geprueft.
+  Vollstaendige alte SHA-Beweisbuecher nicht erneut mit dem Gesamtpruefer
+  durchlaufen; ihre bisherige Abnahme wird vorausgesetzt.
+
+Technischer Hinweis: erster Auswertungsstart vor der Gruppenbildung wegen
+unnoetig wiederholter Mengenbildung beendet. Bekannte-Namen-Mengen danach
+einmalig vorbereitet. Keine mathematische Auswahl nach Ergebnissen veraendert.
+
+Ein Fund waere ein zusaetzlicher lokaler Ausschluss, nicht automatisch ein
+Noncebit oder ein gueltiger Header. Hier kein Fund. Kein Eintrag ins Hauptbuch,
+kein neuer Hash-/Node-/GPU-Lauf, F4 unveraendert. STOP.

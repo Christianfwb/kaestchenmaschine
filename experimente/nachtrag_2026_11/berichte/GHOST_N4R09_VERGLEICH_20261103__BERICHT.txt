@@ -1,0 +1,36 @@
+N4r09 — Vergleich Alt/Neu, 2026-11-03
+
+ERGEBNIS
+Der alte erfolgreiche Kontrollfall wurde erneut gerechnet. Alte Basis: 0/12 Eingangsbits fest, 128 erlaubte Eingaben in ihren ausgegebenen Bedingungen. Alter Vollscan mit R9/R9a/R9b: 12/12 fest, eine Eingabe. Heutige allgemeine F4-Regeln mit strukturtreuem Adapter: 0/12 fest; ihre gesamte lineare Projektion auf die Eingänge erlaubt exakt dieselben 128 Eingaben wie die alte Basis. Beide neuen Bücher: 0 Prüffehler.
+
+DIE KONKRETE ERSTE BEOBACHTETE LUECKE
+Originalgatter 346: NOT(Knoten314) AND Knoten2.
+Im abgeschlossenen neuen Gleichungssystem sind 314=0 und 2=10 bereits linear enthalten. 314 wird jedoch nicht als fester Wert eingetragen (auch nicht über einen äquivalenten Aliasnamen). Damit kommt diese Information am UND-Gatter nicht an. Die alte Regel R1b benutzt genau sie: 1 AND Knoten2 = Knoten2, also 346=10. Diese Gleichheit liegt nicht im gesamten abschließenden neuen linearen Aufspann.
+OLD_VS_NEW_TRACE.json hält die chronologische Beobachtung fest: erste solche Wert-/Alias-/R9a-Folgerung an Ereignis545, d6.py Zeile124. Nicht behauptet wird die erste beliebige nichtlineare Aussage: beobachtet wurden erfolgreiche Wert-/Aliasoperationen und neue R9a-Gleichungen. Der lokale Schluss wurde für beide möglichen Werte des verbleibenden Schalters unabhängig geprüft.
+Das ist eine Lücke zwischen linear vorhandenem Wissen, gebuchtem Bitwert und anschließender Tabellenverarbeitung. Noch kein Nachweis, dass eine einzelne Reparatur alle zwölf Bits bestimmt. Die spätere Kette umfasst weitere alte Regeln.
+
+WICHTIGE KORREKTUR UNSERER VERMUTUNG
+Die erste alte Maj80/Maj112-Parität ist bereits im neuen linearen Aufspann enthalten. Sie ist kein fehlender erster Schritt. Der Unterschied zur vollständigen Relationsweitergabe des Sterns besteht weiterhin, ist aber mit diesem Lauf nicht als alleinige Ursache bewiesen. Der aktuelle konkretere Ansatz ist zuerst der belegte Rückfluss eines latenten Bitwerts, nicht ein ungeprüfter großer Stern-Umbau.
+
+MODELL UND FAIRNESS
+N4r09 ist ein künstliches Netz: vier Bit pro Wort, zwölf freie Eingangsbits, neun Runden, Kopierfahrplan W[i]=W[i-3], vollständiges erreichbares Zielregister. Kein Bitcoin-Header und kein neuer Block. Originales Modell und deterministische historische Zielerzeugung wurden beibehalten. Die verborgene Kontrollbelegung wurde keinem Löser als Eingabe gegeben.
+Originaldefinitionen für Modell und alte Regeln wurden unverändert per AST geladen; unerwünschte Linux-Imports und alte Hauptprogramme wurden nicht gestartet. Der Vollscan ist der hier neu ausgeführte alte Lösungsweg. Der alternative alte Stern-Lauf wurde in diesem Vergleich nicht erneut ausgeführt.
+Neu: unveränderte F4 B-R3/B-R4, RB-R1, RT-R1/RT-R2. Primitive UND/XOR-Übersetzung zusätzlich kontrolliert; strukturtreue Variante erhält originale Ch/Maj- und Addierstufen. Deren vollständige Äquivalenz wurde nachgerechnet. SHA-spezifische Z-Regeln und die auf SHA-Namen zugeschnittene RT-R3-Auswahl sind für dieses Toy-Netz nicht anwendbar und wurden nicht als ausgeführt behauptet. Kein P-R1, keine GPU, keine Node-Verbindung. Damit ein gezielter Vergleich der anwendbaren allgemeinen Regeln, kein unveränderter Desktop-Vollproduktlauf.
+Grenzen: acht Anschlussrunden, höchstens2000 neue Zeilen je Runde,64 Eltern,128 Rohvariablen, Eingangsgleichungen mit2..16 Unbekannten. Strukturierte Variante stoppt nach sechs Runden ohne weitere neue Zeilen; diese begrenzte Sättigung ist keine vollständige lineare Herleitung aller Konsequenzen.
+Primitive Variante lässt linear512 Eingaben; strukturierte128. Deshalb ist die primitive Übersetzung allein kein hinreichender Vergleich.
+
+PRUEFUNGEN
+Alle4096 Eingaben: Originalgattergraph gegen unabhängig geschriebene Wortrechnung,0 Abweichungen. 2.359.296 zusätzliche Prüfungen der Ch/Maj/Addierer-Metadaten,0 Abweichungen. Beide neuen Bücher gegen frisch erzeugte Verträge geprüft,0 Fehler. Alle gültigen Modelllösungen bleiben erhalten. Gefälschte Metadaten erkannt; gekippte Beweisparität und negativer Elternverweis vom Prüfer abgewiesen.
+Referenzdateien sind getrennt; die Löser lesen sie nicht. Die Referenzkontrolle ersetzt keinen universellen Prüfer für jede alte Regel; der alte Lauf liefert seinen ursprünglichen Regelausgang, die heutigen Bücher erhalten zusätzlich vollständige Prüfung.
+Quellschutz: F4 Manifest82 Dateien ohne Abweichung; Git-Arbeitsbaum des separaten alten Klons sauber. Keine bestehenden Builds geändert.
+
+NAECHSTER BEGRENZTER SCHRITT
+Eine XOR-Belegkette für314=0 aus dem bestehenden neuen Buch explizit buchen, mit dem heutigen Prüfer prüfen und den Rückfluss in genau das UND-Gatter messen. Erst danach die gesamte Kontrollaufgabe vergleichen. Kein START-Wert aus der Referenz einschleusen. Keine Zusage, dass das auf volle SHA-256d-Header übertragbar ist. Dieser Produktumbau wurde hier nicht vorgenommen.
+
+DATEIEN
+PLAN.txt; MODEL.json; old_run.py; OLD.json; new_run.py; NEW.json; NEW_primitive.jsonl; NEW_structured.jsonl; verify.py; VERIFY.json; VERIFY_EXTRA.json; NEGATIVE_PROOF.json; FIRST_OLD_RULE.json; OLD_VS_NEW_TRACE.json; FIRST_DIFFERENCE_LOCAL.json; SPAN_COMPARE.json.
+Ergänzende Zertifikatsdateien im selben Ordner dokumentieren die explizite lineare Belegkette, sofern enthalten.
+STOP nach Diagnose und Nachricht an Fable.
+
+NACHGERECHNETES DIAGNOSEZERTIFIKAT
+N314_CERTIFICATE.json: XOR-Summe aus35 bereits vorhandenen Gleichungszeilen und15 belegten Bits ergibt n314=0. Die Eltern wurden zusätzlich unabhängig durch Mengen-XOR nachgerechnet. N314_CHECKED_TAIL.json enthält zwei neue Diagnose-Buchzeilen (RB-R1, dann B-R4). Der unveränderte heutige Prüfer akzeptiert Originalbuch plus Diagnoseanhang:0 Fehler. Die ursprünglichen Bücher bleiben unverändert. Damit ist der fehlende Bitwert bereits mit existierenden Regeln belegbar; automatisch gefunden und rückgeführt wurde er vom gemessenen Lauf nicht.

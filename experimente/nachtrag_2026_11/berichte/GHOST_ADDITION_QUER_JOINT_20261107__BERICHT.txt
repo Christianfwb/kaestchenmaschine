@@ -1,0 +1,23 @@
+GEMEINSAME UEBERTRAGS- UND QUERBEZIEHUNGSPRUEFUNG
+Block 840001, ohne bekannte Gewinnernonce. Kein Node-, GPU-, Hash- oder Submitlauf; kein Eingriff in die laufende Maschine.
+
+AUFBAU
+Ausgewaehlt A1798: H5 = e63 + 2600822924 modulo 2^32. Eingaben sind die gespeicherten festen Bitdomaenen der Addition plus genau die 23 dokumentierten Quer-Gleichungen. Bekannte Werte vorab eingesetzt, Herkunft pro Wert gespeichert. Originalbuch mit 237490 Zeilen erneut durch bestehenden Pruefer geprueft; 0 Fehler.
+Aeusseren Variablen werden nicht Werte geraten: sie werden existentiell durch GF(2)-Elimination mit XOR-Elternzertifikaten behandelt. Verbleibende interne Paritaeten werden gemeinsam mit Uebertraegen in einem Zustandsautomaten behalten. Der obere Uebertrag bleibt frei, weil er verworfen wird.
+
+KONTROLLEN
+100 kleine Vier-Bit-Aufgaben mit internen/externen Gleichungen gegen unabhaengige vollstaendige Belegungssuche: 0 Abweichungen.
+Positivkontrolle mit gemeinsamem aeusserem Bit: 256 -> 128 Wortpaare; erzwungene Beziehung korrekt gefunden. Unterschiedliche freie aeussere Bits: 256 bleiben 256. Widerspruch, bekanntes aeusseres Bit, erzwungenes aeusseres Bit, zwei Budgetgrenzen und zwei manipulierte Belege ebenfalls geprueft. Budgetausnahme wird nicht als Unloesbarkeit behandelt.
+
+ERGEBNIS
+262144 zulaessige Wortpaare vorher, 262144 nachher.
+0 zusaetzliche Bituebergaenge entfernt; 0 neue interne feste Bits. Keines der 23 aeusseren Bits wird fest.
+Jede ausgewählte Gleichung hat nach Einsetzen ein eigenes freies S163-Ausgangsbit. Deshalb kann jedes zuvor erlaubte Wortpaar um genau passende Werte dieser 23 Bits ergaenzt werden. Die Projektion ergibt keine zusaetzliche interne Bedingung. Die urspruenglichen Gleichungen und ihre gemeinsamen Abhaengigkeiten gehen dabei nicht verloren: die Erweiterungsregel steht als Zertifikat in BELEGE.json.
+
+UNABHAENGIGE GEGENPRUEFUNG
+Alle 1048576 zu den festen e63-Eingangsbits passenden Woerter direkt als ganze Zahlen addiert, Uebertraege ausgerechnet, alle Domaenen kontrolliert. Genau 262144 erlaubt. Fuer jedes der23 Ausgangsbits beide Fallzahlen nachgezaehlt: identisch zur Zustandsrechnung, 0 Fehler.
+
+GRENZEN
+Vollstaendig fuer den ausdruecklich ausgewaehlten Ausschnitt, NICHT fuer alle SHA-Bedingungen. Andere Gleichungen und Tabellen, die aeussere S163-Bits verknuepfen, wurden nicht mit einbezogen. Diese Bits sind nur innerhalb dieses Ausschnitts frei, nicht als globale Behauptung ueber SHA.
+Die262144 sind nicht mit den213530 Paaren einer frueheren vollstaendigen H5/e63-Zielrelation gleichzusetzen: hier wurde gegen die feste-Bit-Additionsbasis verglichen, nicht gegen die volle Vergleichs-/Wortrelation.
+Kein Nachweis, dass Querbeziehungen allgemein nutzlos sind. Keine neue Nonce-Einschraenkung behauptet, kein Eintrag als neue Tatsache in bestehende Buecher. Bestehende Builds und Daten unveraendert.

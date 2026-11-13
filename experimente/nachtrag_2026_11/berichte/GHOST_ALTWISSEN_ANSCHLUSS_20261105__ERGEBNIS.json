@@ -1,0 +1,35 @@
+{
+  "mode": "extended",
+  "status": "FIXPUNKT",
+  "seconds": 47.87933549999434,
+  "initial_domain": 213530,
+  "remaining_domain": 213530,
+  "rounds": [
+    {
+      "round": 1,
+      "domain": 213530,
+      "word_projection_removed": 301,
+      "solver_removed": 547,
+      "affine_relations": 32,
+      "solver_status": "FIXPUNKT"
+    },
+    {
+      "round": 2,
+      "domain": 213530,
+      "word_projection_removed": 0,
+      "solver_removed": 0,
+      "affine_relations": 32,
+      "solver_status": "FIXPUNKT"
+    }
+  ],
+  "extra_fixed_vs_bits_only": {
+    "cA1770.1": 0,
+    "cA1770.2": 0,
+    "cA1770.3": 0,
+    "cA1777.1": 0
+  },
+  "extra_rows_removed_vs_bits_only": 8,
+  "nonce_fixed": {},
+  "winner_read": false,
+  "scope": "Exact H5/e63 domain, affine relations plus shared-name table projections with feedback; local SHA neighbourhood remains incomplete"
+}
