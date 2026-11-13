@@ -1,0 +1,36 @@
+H5-GEMEINSAM: BEGRENZTER OFFLINE-TEST, 2026-11-03
+
+Aufgabe: gespeicherter eigener Header 974189, Ziel aus AUFGABE.json.
+Vergleich H <= T, Addition H5 = e63 + 0x9b05688c modulo 2^32,
+Rotation S163 = ROTR6(e63) XOR ROTR11(e63) XOR ROTR25(e63).
+Addition und alle 32 Rotationsgleichungen gegen gespeicherte Buecher geprueft.
+Beruecksichtigt: bekannte Bits von H5/e63/S163/cA1798 und jede gebuchte
+XOR-Gleichung, deren unbekannte Namen vollstaendig in diesen vier Woertern
+liegen. Andere freie Namen und sonstige SHA-Tabellen NICHT mitgeloest.
+
+Exakte lokale Projektion des Vergleichs: H6=H7=0; Bytes von H5 in Bitcoin-
+Zahlenreihenfolge. H5-Zahl darf 0 bis (T >> 160) = 124332 sein.
+Am Rand existiert eine lokale Fortsetzung (untere 160 Hashbits null).
+Das ist KEIN Nachweis einer passenden SHA-Fortsetzung oder Headerloesung.
+
+Ergebnis:
+Ausgang: bekannte Bits + Addition 131072 Moeglichkeiten.
+Vollstaendiger Vergleich dazu: 124333. Rotation + lokale Gleichungen:
+weiterhin 124333. Kein neues festes Bit in den vier untersuchten Woertern.
+Annahme e63.8=0: 65536 -> 58797 -> 58797, kein neues festes Bit.
+Annahme e63.8=1: 65536 -> 65536 -> 65536, kein neues festes Bit.
+6739 Kombinationen werden durch die volle Zielgrenze gegenueber dem
+reinen Festbit-/Additionsmodell ausgeschlossen. Die Zielbedingung war
+bereits Teil der Aufgabe; dies ist kein neues Wissen des Gesamtsystems.
+
+Alle verbleibenden Werte mit zweiter Routine gegengeprueft:
+Addition bitweise mit Uebertrag; Rotation ueber explizite Bitpositionen.
+Je noch offenem untersuchten Bit: beide Werte haben lokale Beispielwerte
+in ERGEBNIS.json. Ein einfaches positives Kombinationsbeispiel (x=y,
+x OR y=1 ergibt x=y=1) bestand. Lauf rund 40 Sekunden, CPU, keine GPU.
+
+Enge Aussage: In genau diesem Ausschnitt bringt das Zusammenschalten
+keinen zusaetzlichen festen Bitwert. Keine Aussage, dass andere Gruppen
+nichts bringen. Keine Aussage ueber die Existenz einer gueltigen Nonce.
+F4/Beweisbuecher unveraendert. Keine neuen Regeln in F4 eingebaut.
+Kein Node, Hashsuchlauf oder Submit. Quellen und SHA-256 in ERGEBNIS.json.

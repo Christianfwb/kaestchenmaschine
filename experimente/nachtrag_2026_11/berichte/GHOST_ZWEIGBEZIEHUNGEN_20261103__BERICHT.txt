@@ -1,0 +1,37 @@
+GEMEINSAME ZWEIGBEZIEHUNGEN - LESETEST 2026-11-03
+
+Ergebnis: 41 unabhaengige gemeinsame XOR-Beziehungen im untersuchten
+Ausschnitt, alle 41 bereits aus dem Hauptbuch ableitbar. Kein neuer Fund.
+Die acht erwarteten Beziehungen zwischen e63.8 und den acht weiteren
+Lupe-Bits wurden gefunden und als bereits ableitbar bestaetigt.
+
+Ausschnitt: 71 Namen, die neun bedingten Bits plus unmittelbare offene
+GL/TAF-Nachbarn aus DETAILS.json. ADD-Nachbarschaften nicht wortweit
+hinzugenommen. Auswahl exakt alle GL-Zeilen, die einen dieser Namen
+enthalten (Tiefe 0), plus bekannte BIT-Werte der 71 Namen.
+Externe bekannte Bits eingesetzt mit Belegnummern; unbekannte externe
+Namen eliminiert, nicht geraten. Zielnamen bleiben Variablen, auch wenn
+sie im Zweig bekannt sind; BIT-Zeilen werden als Gleichungen aufgenommen.
+
+Basisbuch: 194 gewaehlte GL, 281 externe Namen, 520 Eliminationsschritte,
+projizierter Rang 41. Zweige je 183 GL, 279 externe Namen, 501 Schritte,
+Rang 42. Schnitt beider Beziehungsraeume: Rang 41.
+Grenzen 4000 Auswahlzeilen / 200000 Schritte nicht erreicht.
+Vollstaendig fuer diese Auswahl; NICHT fuer das globale Gleichungssystem.
+Null-Auslegung: kein neuer gemeinsamer linearer Schluss in dieser Auswahl.
+Keine Aussage ueber nichtlineare gemeinsame Bedingungen oder andere Gruppen.
+
+Belege: Jede gemeinsame Beziehung hat eine XOR-Belegliste aus jedem Zweig
+UND aus dem unbedingten Basisbuch. Alle drei XOR-Summen frisch nachgerechnet,
+bekannte Bitwerte als Quellen mitgefuehrt. Kein Vergleich nur nach Text.
+Quellbuecher und SHA-256 stehen in ERGEBNIS.json. Ihre frueher gepruefte
+Grundgueltigkeit wurde uebernommen, nicht der ganze SHA-Pruefer erneut
+aufgerufen. Genau eine Annahme e63.8=0 bzw. 1 ohne Eltern bestaetigt.
+
+Kontrollen: unabhaengige Rangzaehlung mit Mengen statt Integervektoren;
+synthetischer Fall 00/11 findet x XOR y=0, obwohl kein Bit feststeht;
+geaenderte Ergebnisparitaet stimmt nicht mit der Belegkette ueberein.
+Kein Annahme-Ergebnis in F4 oder Hauptbuch eingetragen. Keine neue Regel,
+kein Loeserlauf, keine GPU, kein Node, keine Einreichung.
+
+Die Zahl 41 zaehlt Beziehungen, nicht feste Bits, Nonces oder Blockloesungen.

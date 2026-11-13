@@ -1,0 +1,13 @@
+ZIELADDITIONEN: ANSCHLUSS UND VORWAERTS/RUECKWAERTS-VERGLEICH
+Block840001, ohne Gewinnernonce. Untersucht: die acht letzten Feedforward-Additionen, nicht alle Additionen aller SHA-Runden.
+
+A: 315 fehlende originale Summen-/Uebertragstabellen ergaenzt. Alle zuvor ausgewaehlten XOR-Gleichungen einschliesslich breiter Zeilen und Wortparitaeten behalten (2178 reduzierte Eintraege). Keine weitere Festlegung gegen den vorherigen Lauf.
+B: Je Addition vollstaendiger Vorwaerts-/Rueckwaertslauf mit feststehenden Bits, Anfangsuebertrag0 und frei zugelassenem Enduebertrag. Exakte zulaessige Bituebergaenge an den gemeinsamen Loeser gegeben. Keine weiteren Belegungen in den bisherigen Tabellen entfernt, kein bisher offener Name des bestehenden Modells festgelegt.
+
+Zwei zusaetzlich eingefuehrte Diagnose-Namen fuer die verworfenen Enduebertraege ergeben1: cA1799.32 und cA1800.32. Das ist der bekannte Ueberlauf der beiden Additionen mit Ergebnisnull. Diese Namen waren nicht Teil des bisherigen Modells; sie sind KEIN Fortschritt zur Nonce und werden nicht den417 bisherigen festen Namen als neue Entdeckung zugeschlagen.
+
+100 kleine Vier-Bit-Aufgaben gegen vollstaendige Paarzaehlung bestanden, einschliesslich eingeschraenkter Zwischenuebertraege und widerspruechlicher Aufgaben. Alle getesteten Uebergangsmengen identisch, 0 Fehler.
+
+Nicht intern von der einfachen Uebertragskette beruecksichtigt: Beziehungen zwischen mehreren freien Stellen eines Wortes. Im Originalbuch beruehren solche Gleichungen vier der acht Additionen: A1794=32, A1795=32, A1796=32, A1798=23. Die anderen vier:0. Diese119 Zeilen sind keine119 unabhaengigen Informationen. Gezählt wird: mindestens zwei noch freie Positionen desselben Eingangs-/Ergebnisworts. Andere Variablen derselben Gleichung koennen ausserhalb der Addition liegen. Die vorher ausgewaehlten Gleichungen bleiben im allgemeinen Loeser; die isolierte DP-Kette erhaelt nur feste Werte.
+
+Ergebnisgrenze: kein Nachweis, dass das Einbeziehen solcher Querbeziehungen weitere Werte liefern wuerde. Kein kompletter SHA-Loeser, keine Gewinnerdaten, kein Node/GPU/Submit. Vorhandene Maschine unveraendert.

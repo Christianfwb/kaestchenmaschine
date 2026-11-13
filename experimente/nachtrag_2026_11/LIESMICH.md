@@ -1,0 +1,5 @@
+# Nachtrag November 2026 – Berichte
+
+Kopien der von Ghost freigegebenen Originalberichte (unverändert, Dateiname = `Paket__Datei`). `QUELLEN.json` nennt je Datei Herkunftspaket, SHA-256 und Verwendung; die Prüfsummen wurden beim Kopieren gegen Ghosts Liste geprüft. Korrekturen an Formulierungen stehen im [Nachtrag](../../docs/NACHTRAG_20261113.md), nicht in den Berichten. Die zugehörigen Beweisbücher (`.jsonl.gz`, bis zu mehreren hundert MB) und Programmstände sind nicht enthalten; ohne sie ist der Nachtrag nicht allein aus diesem Ordner reproduzierbar. Eine Quelle (Übergabe F5) ist nur zitiert, nicht kopiert.
+
+Zeilenenden: Die Originale haben unterschiedliche Zeilenenden (teils CRLF, teils LF); das Repository erzwingt LF (`.gitattributes`). `QUELLEN.json` nennt deshalb beide Prüfsummen: `sha256_original` (Ghosts Liste, unveränderte Originalbytes) und `sha256_im_repo_lf` (Datei hier). Für den Inhaltsvergleich wird in beiden Dateien nur CRLF nach LF normalisiert; die Originalhashes gelten für die unveränderten Originalbytes.

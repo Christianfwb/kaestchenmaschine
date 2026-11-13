@@ -1,0 +1,41 @@
+W3.0 / NONCEBIT 24 - GEMEINSAME ZWEIGBEZIEHUNGEN, 2026-11-03
+
+Vorab festgelegte Probe: W3.0 = Noncebit 24, Zweigbuecher bit_24_0/1
+unter GHOST_NONCE64_F2_20261102. KOPF und genau eine START-ANNAHME
+pro Buch auf exakten Namen/Wert/keine Eltern geprueft.
+
+Ergebnis: 40 unabhaengige gemeinsame lineare Beziehungen. Alle 40
+sind bereits aus dem unbedingten Hauptbuch ableitbar. Kein neuer Fund,
+keine neue Einschraenkung von W3.0 oder anderen Noncebits.
+
+Namensauswahl VOR Auswertung der Zweigergebnisse:
+W3.0, x33.0, T13.0, x34.0, x35.0, a4.0, e4.0 (alle Praefix k1),
+plus unmittelbar ueber GL/TAF verbundene, in der Basis offene Namen.
+Alle sieben Startnamen vorhanden; insgesamt 124 Namen. Unmittelbare
+Nachbarn nicht nachträglich beschnitten, auch wenn sie ausserhalb der
+Runden 3/4 liegen. Keine wortweite ADD-Ausweitung. Liste NAMEN.json.
+
+Basis: 479 ausgewaehlte GL-Zeilen, 673 externe Unbekannte, 1012
+Eliminationsschritte, projizierter Rang 40.
+Zweig 0: 485 GL, 675 externe Unbekannte, 1050 Schritte, Rang 45.
+Zweig 1: 480 GL, 676 externe Unbekannte, 1038 Schritte, Rang 45.
+Schnitt: Rang 40. Auswahlgrenze 4000 / Schrittgrenze 200000 nicht erreicht.
+Vollstaendig fuer diese Tiefe-0-Auswahl; nicht fuer alle globalen Gleichungen.
+
+Jede gemeinsame Beziehung hat drei XOR-Beleglisten: Zweig 0, Zweig 1,
+Hauptbuch. Alle Summen gegen die Originalzeilen nachgerechnet.
+Unabhaengige Rangkontrolle mit Mengen statt Integervektoren bestanden.
+Synthetische 00/11-Positivkontrolle und Paritaets-Manipulationsprobe bestanden.
+Grundgueltigkeit der frueher geprueften Quellbuecher uebernommen; kein
+vollstaendiger SHA-Prueferlauf, keine neue Annahme, keine neue Suche.
+
+Hauptbuch anhand HAUPTBUCH_QUELLE.json identifiziert und SHA geprueft.
+Aufgabenabgleich: alle mathematischen und Lauf-Felder gleich; nur Textfeld
+beschreibung hat in der aelteren Datei einen Zeichensatzfehler bei Hoehe.
+Dieser Unterschied ist dokumentiert in AUFGABEN_ABGLEICH.json.
+
+Enge Aussage: Dieser eine Ausschnitt liefert durch Zusammenfuehren der
+beiden gespeicherten Zweige keine zusaetzliche lineare Information.
+Keine Aussage ueber andere Noncebits, nichtlineare Beziehungen oder
+Loesbarkeit des gesamten Headers. F4 und Quellbuecher unveraendert.
+Wie vereinbart STOP. Kein weiterer Wurf, kein Node/GPU/Submitlauf.

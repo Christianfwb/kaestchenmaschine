@@ -1,0 +1,41 @@
+{
+  "baseline_bits": 66837,
+  "word_counts": {
+    "k1_a4": 0,
+    "k1_e4": 0,
+    "k1_W3": 0,
+    "k1_W18": 0,
+    "k1_W22": 0,
+    "k2_e61": 32,
+    "k2_e62": 32,
+    "k2_e63": 12
+  },
+  "branches": {
+    "0": {
+      "new_bits_including_assumption": 11,
+      "groups": {
+        "V_eq": 1,
+        "V_lt": 1,
+        "cA1798": 3,
+        "k2_H5": 1,
+        "k2_ch63": 1,
+        "k2_e63": 4
+      },
+      "missing_baseline_bits": 0,
+      "conflicting_baseline_bits": []
+    },
+    "1": {
+      "new_bits_including_assumption": 363,
+      "groups": {
+        "V_eq": 177,
+        "V_lt": 177,
+        "cA1798": 3,
+        "k2_H5": 1,
+        "k2_ch63": 1,
+        "k2_e63": 4
+      },
+      "missing_baseline_bits": 0,
+      "conflicting_baseline_bits": []
+    }
+  }
+}

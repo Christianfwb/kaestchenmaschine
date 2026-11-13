@@ -1,0 +1,29 @@
+GEPRUEFTER ALTWISSEN-ANSCHLUSS, BLOCK 840001
+Separate lokale Testfassung, bestehende Desktopmaschine unveraendert.
+
+Der Adapter liest Originalaufgabe und -buch direkt aus der SQLite-Sicherung. Hash, genauer Vertrag und Elternnummern werden geprueft, danach alle 237490 Zeilen mit dem urspruenglichen unabhaengigen Buchpruefer gegen einen neu aufgebauten Vertrag: 0 Fehler. Quell-ID, Hash und originale Zeilennummern bleiben erhalten. Nur source path840001/ohne_w22 wird derzeit freigegeben. Nicht pauschal alle Inhalte der Datenbank.
+
+H5-Wortwissen wird beim Start erneut aus Ziel und bekannter IV ausgerechnet. Es wird nicht allein wegen einer alten Pruefmeldung vertraut. Die gemeinsame Wortmenge und ihre Beziehungen bleiben im bisherigen lokalen Anschluss erhalten.
+
+A/B in zwei Schritten:
+A_IDENTISCH: gleiche Zeilenauswahl aus gepruefter DB statt direkt von Platte. Alle gemeinsamen Tabellen exakt identisch zum vorherigen Stand. Kein Wissensgewinn durch blossen Quellenwechsel.
+Erweitert: 636 weitere GL/TAF-Zeilen aus dem geprueften Buch passen vollstaendig in die bereits aktive Namensmenge. Budget2000, keine Abschneidung. Originalreferenzen in AUSWAHL.json.
+
+Ergebnis nach zwei aeusseren Runden, ca.48 Sekunden:
+cA1770.1=0, cA1770.2=0, cA1770.3=0, cA1777.1=0 zusaetzlich fest.
+Acht weitere Belegungen aus gemeinsamen alten Tabellen entfernt.
+Die ersten drei Bits sind Wiedergewinnung eines alten Ergebnisses GHOST_SCHABLONEN_RUNDEN_840001, nicht aus dessen Bericht eingesetzt. Der vierte Wert ist zusaetzlich gegen unseren unmittelbar vorherigen Lauf; keine projektweite Neuheitsbehauptung.
+Alle vier Werte unabhaengig durch kleine vollstaendige Additionskontrolle aus den Zielwoertern e61/e62 bestaetigt; siehe VIER_BITS_GEGENPRUEFUNG.json.
+Alle213530 H5/e63-Paare bleiben. Keine feste Nonce, keine neue W18-Festlegung.
+
+Kontrollen: neun negative Importproben (Header, Ziel, Teilnonce, Zusatzannahme, negative/vorwaerts/bool-Eltern, manipulierte Quelldatei, mathematisch falsches Bit) abgewiesen. Quellbuch positiv geprueft. A identisch mit Vorgaenger. Produktive lokale Ableitungs-/Projektionslogs werden je Runde gesichert. Laeufe werden mit Zeit und Modus in LAEUFE erhalten.
+
+GRENZEN:
+636 Zeilen beziehen sich nur auf die bestehende lokale Namensmenge. Andere Aufgaben, Zweige und Spielzeugregeln werden nicht gemischt. Weitere Altquellen ohne passenden unabhaengigen Pruefpfad bleiben gesichert, aber nicht automatisch freigegeben. Kein vollstaendiger SHA-/Mininglauf. Die importierten Buchzeilen sind unabhaengig geprueft; die gesamten neuen lokalen Solverlogs sind noch kein formales End-to-End-Buch. Die vier gemeldeten Zusatzbits haben eine separate elementare Gegenpruefung.
+
+BENUTZUNG:
+python -B wortregel.py erzeugt den Wortbeleg fuer diese Aufgabe.
+python -B start.py hit prueft Import mit alter Auswahl.
+python -B start.py extended prueft Import mit zusaetzlich passenden Buchzeilen.
+python -B tests.py prueft die Importsperren.
+Originalquellen/Pruefer werden ueber die Datenbank und creative_lab aufgeloest. Kein universeller portabler Miner.

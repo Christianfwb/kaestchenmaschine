@@ -1,0 +1,48 @@
+FABLE: ZWEIGFENSTER W3.0 - 2026-11-03 (Christians "mach mal ... lass dir was einfallen")
+
+ERGEBNIS IN EINEM SATZ
+Drei lokale Klauseln gelten in beiden Zweigen W3.0=0 und W3.0=1 und folgen in Fenstern bis 24 freie Namen
+NICHT aus dem Basisbuch. Kandidaten, kein bestaetigter Fund: Ghosts Vollmaschine muss sie in der Basis pruefen.
+Keine davon ist ein Noncebit oder legt ein Bit fest.
+
+QUELLEN (SHA geprueft): Basis GHOST_RT3_SCHNITT3_HEADER_20261102/mit/BEWEIS.jsonl.gz (65a67d...),
+Zweige GHOST_NONCE64_F2_20261102/bit_24_0 (da2ae2d0...) und bit_24_1 (0735215b...),
+zusaetzlich BEWEIS_GEMEINSAM (7a1bd27b...) als staerkere Basis. Ghosts W30/DREIERGRUPPEN-JSON nur gelesen.
+
+WAS ANDERS IST ALS DREIERGRUPPEN
+A) Fenster um jede der 203 zusaetzlichen Zweigzeilen (VORPRUEFUNG) statt um Basis-Nachbarn.
+B) Vergleich auf dem ganzen Fenster (bis 16 frei), danach Verkleinerung auf die kleinste tragende Namensmenge.
+C) Basisseite bekommt zusaetzlich alle 181 Zweigbeziehungen, die nachweislich nur per RB-R1 aus wortgleichen
+   Basis-GL entstehen (sonst falsche Alarme, siehe Verlauf).
+Abdeckung Zusatzzeilen: Zweig0 61/105 (vorher 9), Zweig1 28/98 (vorher 7); 90 Saaten breiter als 16, nicht geprueft.
+
+VERLAUF (offen berichtet)
+1. Lauf: 6 'Funde', alle zurueckverfolgt: XOR wortgleicher Basiszeilen, nur ausserhalb meines Basisfensters.
+   Falscher Alarm -> Regel C eingefuehrt. (Erste ERGEBNIS-Datei ueberschrieben; Zahlen hier.)
+2. Lauf: 89 Fenster, 18 Kandidatenfenster, 8 verschiedene kleinste Klauseln + 2 ohne Klausel <= 3 Namen.
+Basispruefung linear (eingefrorene PROJEKTION 68383e2b, Tiefe 1-3, beide Basisbuecher):
+   cA612.1 xor W19.0 = 1, cA768.1 xor cA769.1 = 1: in der Basis gefunden -> nicht neu.
+Basispruefung nichtlinear (Fenster um das Paar bzw. ganze Fenster, bis 20/24 frei, beide Basisbuecher):
+   5 weitere Paarklauseln schon lokal aus der Basis -> nicht neu.
+Uebrig (in beiden Basisbuechern bis 24 frei nicht ausgeschlossen):
+   K1 Saat Zweig0/243024: nicht (cA776.1 = 0 und cA781.1 = 1)                      [16 von 64 Fensterbelegungen]
+   K2 Saat Zweig0/243032: wenn cA769.1 = 0, dann S17.1 xor T13.1 xor x17.1 = 0     [64 von 128]
+   K3 Saat Zweig1/243034: Ausschluss ueber (cA768.1, cA797.2, T13.1, e8.1), Codes 3 und 15
+                          (Bitcode: Namen in dieser Reihenfolge, erstes = Bit 0)  [8 von 32]
+   Alle drei: Namen aus k1 Runde 4..8 (T13, e4/e8, x17, S17, Ueberstrage), direkt hinter der Nonce.
+
+KONTROLLEN
+- Kuenstliche Aufgabe (zwei Ch-artige Zweigbedingungen) -> genau Ausschluss 111; Gegenprobe leer: PASS.
+- K1 skalar unabhaengig nachgezaehlt (nachzaehlung.py): Modelle 64/32/32 wie vektorisiert, Ausschluss bestaetigt.
+- Linearer Teil von K2/K3: affine Huelle der Zweigvereinigung = Huelle der Basis (dim 8 bzw. 7) -> rein nichtlinear.
+
+GELTUNG
+Eine Klausel, die in beiden Zweigen gilt, gilt ohne Annahme (Fallunterscheidung; Dilemma-Regel, Staalmarck,
+keine Neuheit behauptet). 'Nicht aus der Basis' heisst hier nur: nicht in lokalen Basisfenstern bis 24 Namen und
+nicht in der linearen Projektion. Ob Ghosts volle Propagation (alle Regeln) sie in der Basis schon erzwingt, ist offen.
+Kein Eintrag ins Hauptbuch, keine neue Regel, kein Header-/Node-/GPU-Lauf. F4 unveraendert. STOP.
+
+VORSCHLAG PRUEFUNG DURCH GHOST (kein GO erbeten)
+Je Klausel in der BASIS die verbotene Belegung als P-R1-Annahme setzen und mit der Vollmaschine propagieren.
+Widerspruch -> Basis kannte sie schon (kein Fund). Kein Widerspruch -> echter Mehrwert der Zweigzusammenfuehrung
+gegen unsere Regeln (weiterhin kein Noncebit).

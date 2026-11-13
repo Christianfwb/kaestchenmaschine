@@ -8,7 +8,7 @@ So macht die Kästchenmaschine die **Topologie von SHA-256 greifbar**: Sie legt 
 
 Dieses Repository enthält **Forschungscode, Offline-Beispiele und Messdaten**. Der produktive GPU-Miner mit Node-Anbindung und Einreichung ist [nicht enthalten](miner/README.md).
 
-**Stand:** 25. Oktober 2026 · **Projekt abgeschlossen** · [Abschlussbericht](docs/ABSCHLUSS_20261025.md) · [Prüfung und Änderungen vom 23. Oktober](docs/REVIEW_20261023.md) · [MIT-Lizenz](LICENSE).
+**Stand:** 25. Oktober 2026 · **Projekt abgeschlossen** · [Abschlussbericht](docs/ABSCHLUSS_20261025.md) · [Nachtrag 13. November 2026](docs/NACHTRAG_20261113.md) · [Prüfung und Änderungen vom 23. Oktober](docs/REVIEW_20261023.md) · [MIT-Lizenz](LICENSE).
 
 [Schnellstart](#schnellstart) · [Abschluss](#abschluss-25-oktober-2026) · [Ergebnisse](#was-ist-gemessen) · [Technik](docs/TECHNIK.md) · [Experimente und Korrekturen](docs/EXPERIMENTE.md) · [Nachrechnen](docs/REPRODUKTION.md) · [Offene Fragen](docs/OFFENE_FRAGEN.md)
 
@@ -21,6 +21,10 @@ Wir haben das Projekt mit drei Messreihen abgeschlossen; alles steht im [Abschlu
 3. **Billig aussortieren statt lösen** (die Frage des Miners): In 48 Fällen mit festem Kopf, wenigen Zielbits und 256 Nonces leitet das Grundgerüst **nichts** über die Noncebits ab; alles, was Kandidaten ausschließt, sitzt am Ziel und kostet 60–70 % des Hashes. Bilanz negativ in allen 48 Fällen, keine Lösung verloren.
 
 **Folgerung:** Die Kästchenmaschine funktioniert im Kleinen vollständig und nachprüfbar und zeigt präzise, wo Hashfunktionen Rückwärtsrechnen verhindern. Ein Mining-Vorteil ist nicht belegt und wird von uns nicht weiter verfolgt. Keine Aussage über andere Verfahren, Hardware oder Neuheit.
+
+## Nachtrag November 2026
+
+Nach dem Abschluss haben wir in begrenztem Umfang weitergearbeitet; der [Nachtrag vom 13. November](docs/NACHTRAG_20261113.md) dokumentiert es mit Prüfsummen-gebundenen Berichten unter [experimente/nachtrag_2026_11](experimente/nachtrag_2026_11). Kurz: Die Karte des untersuchten Headerbuchs zeigt: In den inneren Zustandswörtern a/e zwischen der ersten unbekannten Header-Runde und dem bekannten Zielbereich sind mit dem damaligen Regelprofil keine festen Bitwerte belegt. Gleichungen verbinden die Bereiche dennoch; Konstanten und bekannte Überträge sind davon ausgenommen. Zweigvergleiche (Dilemma-Regel) an beiden Ufern und eine gemeinsame H5-Auswertung ergaben nur bereits bekanntes Wissen. Im künstlichen Kontrollmodell N4r09 wurde eine konkrete Anschlusslücke gefunden und repariert (26 innere Bitstellen mehr, die 12 Eingangsbits bleiben offen). Ein Nonce-Sampler mit einem ausgewählten Noncemuster zeigte in 1.942 Paaren keinen bestätigten Vorteil. Keine SHA-Abkürzung, kein bestätigter Mining-Vorteil.
 
 ## Was ist gemessen?
 

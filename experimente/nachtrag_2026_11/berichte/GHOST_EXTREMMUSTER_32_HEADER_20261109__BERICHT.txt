@@ -1,0 +1,9 @@
+32 eigene Entwuerfe, 35904 vollstaendige SHA256d-Pruefungen, echte Treffer 0.
+Dauer des letzten Aufrufs inklusive Auswertung 3.41 s; vorherige Arbeit nicht enthalten.
+Auswahl vor Gegenprobe: 01e00000, ['streifen_4']
+Sichtung Mittel 0.30733; Gegenprobe Mittel 0.35443; Zufallsreferenz etwa 0.5. Kleiner ist besser.
+Gegenprobe kleine Messwerte (<1/16): 1/16; KEINE Blocktreffer.
+Einseitiger Vergleich mit Kontrollziehungen: p=0.0231.
+Alle Gruppen: {'sichtung': {'pattern': {'count': 8976, 'mean': 0.49884684946016966, 'small': 543}, 'random': {'count': 8976, 'mean': 0.5016001606968475, 'small': 551}}, 'gegenprobe': {'pattern': {'count': 8976, 'mean': 0.4985179681744594, 'small': 588}, 'random': {'count': 8976, 'mean': 0.4991563112052179, 'small': 525}}}
+Fortgesetzt nach neuem Netzwerkblock und abgewiesenem veraltetem Entwurf; gespeicherte Auswahl und Stichproben beibehalten.
+Kleine Fallzahl pro Muster; keine Aussage ueber garantierte oder generell optimale Nonces. Keine Aenderung des laufenden Miners.
