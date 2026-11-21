@@ -4,11 +4,11 @@
 
 Die Kästchenmaschine stellt die doppelte SHA-256-Rechnung eines Bitcoin-Headers als Netz kleiner Rechenregeln dar. Für jedes Bit hält ein „Kästchen“ fest, ob es 0, 1 oder noch beides sein kann. Bekannte Eingaben und die Zielbedingung am Ausgang engen die Möglichkeiten ein, vorwärts und rückwärts, und jeder Schluss wird in ein Beweisbuch geschrieben, das ein unabhängiger Prüfer Zeile für Zeile nachrechnet.
 
-Das Projekt ist entstanden, um zu sehen, wie SHA-256 im Inneren arbeitet. Das Ergebnis: Man kann es jetzt **haargenau, Bit für Bit** verfolgen, wo Wissen hineinfließt, wie weit es trägt und wo es aufhört. Und so viel vorweg: **SHA256d ist sicher. Bisher.** 😉
+Das Projekt ist entstanden, um zu sehen, wie SHA-256 im Inneren arbeitet. Das Ergebnis: Man kann es jetzt **haargenau, Bit für Bit** verfolgen, wo Wissen hineinfließt, wie weit es trägt und wo es aufhört. Ein bestätigter Mining-Vorteil wurde nicht gefunden; die Versuche sind kein Sicherheitsbeweis für SHA256d.
 
 Viel Spaß beim Erkunden.
 
-**Stand:** 13. November 2026 · [Nachtrag vom 13. November](docs/NACHTRAG_20261113.md) · [Abschlussbericht vom 25. Oktober](docs/ABSCHLUSS_20261025.md) · [MIT-Lizenz](LICENSE)
+**Stand:** 21. November 2026 · [Gläserner Miner: Anleitung](labor/README.md) · [Abschluss der bisherigen Forschung](docs/ABSCHLUSS_20261121.md) · [Nachtrag vom 13. November](docs/NACHTRAG_20261113.md) · [Abschlussbericht vom 25. Oktober](docs/ABSCHLUSS_20261025.md) · [MIT-Lizenz](LICENSE)
 
 [Was wir sehen](#was-wir-sehen) · [Schnellstart](#schnellstart) · [Der Weg dahin](#der-weg-dahin) · [Code und Belege](#code-und-belege) · [Offene Fragen](docs/OFFENE_FRAGEN.md) · [Technik](docs/TECHNIK.md) · [Nachrechnen](docs/REPRODUKTION.md)
 
@@ -20,6 +20,16 @@ Alle Aussagen gelten für die jeweils genannte Aufgabe (Header, freie Bits, Rege
 * **Die Kante.** In den geprüften verkürzten Rechnungen mit acht freien Noncebits und exaktem Zielhash leitet die Maschine bis 16 Runden je Kompression alle acht Bits ab; ab 17 Runden gelingt das mit den dort verwendeten Regeln nicht mehr. Die Kontrollversuche führen diese Grenze auf die Nachrichtenerweiterung zurück: die Wiederverwendung eines unbekannten Wortes 16 Runden später. ([Abschluss](docs/ABSCHLUSS_20261025.md))
 * **Die stärkeren Werkzeuge.** Exakter Join-Baum („Stern“), Zweigvergleich (Dilemma-Regel), gemeinsame Auswertung von Addition, Rotation und Ziel: im Kleinen vollständig, am vollen Header nur bereits bekanntes Wissen. Eine konkrete Anschlusslücke in der Wissensweitergabe wurde im Kontrollmodell gefunden und repariert. ([Nachtrag, Abschnitte 2–5](docs/NACHTRAG_20261113.md))
 * **Die Mining-Frage.** Kein bestätigter Vorteil: weder durch Ableitung noch durch Aussortieren noch durch ein ausgewähltes Noncemuster (1.942 Paare, 49,74 % kleiner). Keine SHA-Abkürzung. ([Nachtrag, Abschnitt 6](docs/NACHTRAG_20261113.md#6-nonce-sampler-methodik-und-historischer-nullbefund-9-november--belegt-als-negativbefund))
+
+## Das Labor benutzen
+
+Das neue [Gläserne Labor](labor/README.md) zeigt SHA-256 Runde für Runde, prüft Beweisbücher und macht Bitflips im Avalanche-Reiter sichtbar. Es bringt seine Abhängigkeiten mit und benötigt für die Oberfläche nur Python mit Tkinter.
+
+```sh
+python -B -I labor/oberflaeche.py
+```
+
+Beim Start wird der bekannte Beispiel-Lebenslauf berechnet; eine Nonce-Suche startet erst durch den Mining-Knopf. Für die Laborfunktionen braucht man weder Wallet noch Node. [Schritt-für-Schritt-Anleitung und Tests ohne Suche](labor/README.md).
 
 ## Schnellstart
 
