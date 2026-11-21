@@ -735,6 +735,7 @@ src/kaestchen/ziffern.py
 src/kaestchen/ziffern_array.py
 src/kaestchen/ziffern_komp.py
 src/kaestchen/ziffern_sha.py
+tests/test_document_encoding.py
 tests/test_experiment_results.py
 tests/test_regression.py
 tests/test_schnell.py

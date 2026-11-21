@@ -16,6 +16,7 @@ jobs:
         with:
           python-version: ${{ matrix.python }}
       - run: python -B -I tools/manifest.py --check
+      - run: python -B -I tests/test_document_encoding.py
       - run: python -B -I tests/test_regression.py
       - run: python -B -I tests/test_schnell.py
       - run: python -B -I beispiele/01_reduzierte_runden.py 8

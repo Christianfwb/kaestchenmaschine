@@ -4,7 +4,7 @@
 
 Die Kästchenmaschine stellt die doppelte SHA-256-Rechnung eines Bitcoin-Headers als Netz kleiner Rechenregeln dar. Für jedes Bit hält ein „Kästchen“ fest, ob es 0, 1 oder noch beides sein kann. Bekannte Eingaben und die Zielbedingung am Ausgang engen die Möglichkeiten ein, vorwärts und rückwärts, und jeder Schluss wird in ein Beweisbuch geschrieben, das ein unabhängiger Prüfer Zeile für Zeile nachrechnet.
 
-Das Projekt ist entstanden, um zu sehen, wie SHA-256 im Inneren arbeitet. Das Ergebnis: Man kann es jetzt **haargenau, Bit für Bit** verfolgen, wo Wissen hineinfließt, wie weit es trägt und wo es aufhört. Ein bestätigter Mining-Vorteil wurde nicht gefunden; die Versuche sind kein Sicherheitsbeweis für SHA256d.
+Das Projekt ist entstanden, um zu sehen, wie SHA-256 im Inneren arbeitet. Das Ergebnis: Man kann es jetzt **haargenau, Bit für Bit** verfolgen, wo Wissen hineinfließt, wie weit es trägt und wo es aufhört. **SHA256d hat uns standgehalten. Bisher. 😉** Ein bestätigter Mining-Vorteil wurde nicht gefunden; die Versuche sind kein Sicherheitsbeweis für SHA256d.
 
 Viel Spaß beim Erkunden.
 
