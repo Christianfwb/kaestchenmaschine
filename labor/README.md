@@ -1,10 +1,14 @@
 # Gläserner Miner und Avalanche-Labor
 
+**English:** The desktop interface is available in English. Choose **English** under **Sprache / Language**, or run `python -B -I labor/oberflaeche.py --lang en` from the repository root. Use the bottom and right scrollbars on smaller screens; Shift + mouse wheel scrolls sideways. Existing results survive language changes. Opening the app traces one known nonce; mining and rate measurement require their own button clicks. See [bilingual usage notes](UI_HINWEISE_DE_EN.txt).
+
 Ein lokales Lern- und Forschungslabor: SHA-256 Runde für Runde betrachten, ein Nonce-Bit kippen und die Unterschiede nachrechnen. Das Programm bündelt den anschaulichen Abschluss unserer bisherigen Kästchenforschung. Es findet keine nachgewiesene SHA-Abkürzung und ist kein rentabler Miner.
 
 ## Start in fünf Minuten
 
 Voraussetzung: Python 3.10 oder neuer. Die Oberfläche benötigt Tkinter (bei der üblichen Windows-Python-Installation enthalten). Alle Laborfunktionen laufen lokal; kein Konto, keine Wallet, kein Node und keine zusätzlichen Python-Pakete sind erforderlich.
+
+**Fenster und Sprache:** Oben bei **Sprache / Language** zwischen Deutsch und Englisch wechseln. Vorhandene Ergebnisse bleiben erhalten. Das Fenster lässt sich bis auf 640 × 420 Pixel verkleinern. Unten und rechts gibt es Bildlaufleisten; **Umschalt + Mausrad** verschiebt die Hauptansicht seitlich. Zeitlupe, Laborerklärungen und Beweisbuch haben eigene Bildlaufleisten. Unter Linux gegebenenfalls `python3-tk` installieren. Die ursprüngliche Header-Herkunftsangabe und maschinellen Beweisbezeichner bleiben unverändert.
 
 1. Das Repository herunterladen oder klonen.
 2. Unter Windows den Ordner `labor` öffnen und `OBERFLAECHE.cmd` doppelklicken. Alternativ vom Repository-Hauptordner:

@@ -676,6 +676,7 @@ experimente/skripte/zielhash_kind.py
 labor/HERKUNFT.md
 labor/OBERFLAECHE.cmd
 labor/README.md
+labor/UI_HINWEISE_DE_EN.txt
 labor/glas/avalanche.py
 labor/glas/kaestchen.py
 labor/glas/lebenslauf.py
@@ -719,7 +720,9 @@ labor/tests_avalanche.py
 labor/tests_beweis.py
 labor/tests_glas.py
 labor/tests_gui.py
+labor/tests_gui_layout_language.py
 labor/tests_release.py
+labor/ui_sprache.py
 miner/README.md
 requirements.txt
 src/kaestchen/austausch.py

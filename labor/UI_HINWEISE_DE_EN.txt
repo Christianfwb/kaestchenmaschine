@@ -1,0 +1,26 @@
+FENSTER UND SPRACHE / WINDOW AND LANGUAGE
+
+Deutsch
+Die Desktop-Verknuepfung startet weiterhin dieselbe Anwendung.
+Oben bei "Sprache / Language" zwischen Deutsch und English wechseln.
+Vorhandene Ergebnisse bleiben beim Wechsel erhalten.
+Unten: seitliche Bildlaufleiste. Rechts: senkrechte Bildlaufleiste.
+Umschalt + Mausrad verschiebt die Hauptansicht nach links/rechts.
+Zeitlupe, Labor-Erklaerung und Beweisbuch haben eigene Bildlaufleisten.
+Das Fenster ist ab 640 x 420 Pixel nutzbar; groessere Inhalte sind scrollbar.
+Beim Oeffnen wird die angezeigte bekannte Nonce einmal nachvollzogen.
+Mining und Vergleichsmessung starten weiterhin nur durch ihren Knopf.
+
+English
+Use "Sprache / Language" at the top to switch to English.
+Existing results are preserved when switching languages.
+Bottom scrollbar: horizontal movement. Right scrollbar: vertical movement.
+Shift + mouse wheel scrolls the main view horizontally.
+Slow motion, lab explanations and the proof book have their own scrollbars.
+The minimum window size is 640 x 420 pixels; larger contents can be scrolled.
+Opening the app traces the displayed known nonce once.
+Mining and rate measurement still require an explicit button click.
+To start in English from a terminal: python oberflaeche.py --lang en
+
+The source-header description and machine-generated proof identifiers remain
+in their original form. The English UI does not alter the calculations.
